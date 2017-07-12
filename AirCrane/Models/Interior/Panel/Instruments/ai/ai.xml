@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+
+  <path>ai.ac</path>
+
+  <animation>
+    <object-name>fond</object-name>
+    <object-name>visses</object-name>
+    <object-name>AttitudeBall</object-name>
+    <object-name>barre</object-name>
+    <object-name>barre1</object-name>
+    <object-name>barre2</object-name>
+    <object-name>SkyPointer</object-name>
+    <object-name>bouton</object-name>
+    <object-name>ai-ring</object-name>
+    <object-name>nav-pitch-steering-ba</object-name>
+    <object-name>nav-yaw-steering-bar</object-name>
+    <object-name>gs-scale</object-name>
+    <object-name>ils-flags</object-name>
+    <object-name>bank-index</object-name>
+    <object-name>course-flag</object-name>
+    <object-name>ring-slip</object-name>
+    <object-name>slip-ball</object-name>
+
+    <object-name>vitre</object-name>
+  </animation>
+
+  <!-- working for Rembrandt -->
+  <effect>
+    <inherits-from>Aircraft/AirCrane/Models/Effects/Glass/glass</inherits-from>
+    <object-name>vitre</object-name>
+  </effect>
+  
+  <animation>
+    <type>material</type>
+    <object-name>AttitudeBall</object-name>
+    <object-name>SkyPointer</object-name>
+    <object-name>slip-ball</object-name>
+    <object-name>ils-flag</object-name>
+    <object-name>course-flag</object-name>
+    <object-name>barre</object-name>
+    <object-name>barre1</object-name>
+    <object-name>barre2</object-name>
+    <object-name>nav-pitch-steering-ba</object-name>
+    <object-name>nav-yaw-steering-bar</object-name>
+    <emission>
+      <factor-prop>systems/electrical/outputs/instrument-lights</factor-prop>
+      <red>   0.50 </red>
+      <green> 0.25 </green>
+      <blue>  0.25 </blue>
+    </emission>
+  </animation>    
+
+  <animation>
+    <type>rotate</type>
+    <object-name>AttitudeBall</object-name>
+    <property>orientation/roll-deg</property>
+    <factor>1</factor>
+    <center>
+      <x-m> -0.056 </x-m>
+      <y-m>  0.000 </y-m>
+      <z-m>  0.000 </z-m>
+    </center>
+    <axis>
+      <x> 1 </x>
+      <y> 0 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>  
+
+  <animation>
+    <type>rotate</type>
+    <object-name>AttitudeBall</object-name>
+    <property>orientation/pitch-deg</property>
+    <factor>1</factor>
+    <center>
+      <x-m> -0.056 </x-m>
+      <y-m>  0.000 </y-m>
+      <z-m>  0.000 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>  
+
+  <animation>
+    <type>rotate</type>
+    <object-name>SkyPointer</object-name>
+    <property>orientation/roll-deg</property>
+    <factor>1</factor>
+    <center>
+      <x-m> -0.056 </x-m>
+      <y-m>  0.000 </y-m>
+      <z-m>  0.000 </z-m>
+    </center>
+    <axis>
+      <x> 1 </x>
+      <y> 0 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+ 
+  <animation>
+    <type>rotate</type>
+    <object-name>slip-ball</object-name>
+    <property>instrumentation/slip-skid-ball/indicated-slip-skid</property>
+    <factor>8</factor>
+    <min-deg> -13 </min-deg>
+    <max-deg>  13 </max-deg>
+    <center>
+      <x-m> -0.056 </x-m>
+      <y-m>  0.000 </y-m>
+      <z-m>  0.000 </z-m> 
+    </center>
+    <axis>
+      <x> -1 </x>
+      <y>  0 </y>
+      <z>  0 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>bank-index</object-name>
+    <property>orientation/roll-deg</property>
+    <min-deg>-120</min-deg>
+    <max-deg>120</max-deg>
+    <center>
+      <x-m> -0.056 </x-m>
+      <y-m>  0.000 </y-m>
+      <z-m>  0.000 </z-m>
+    </center>
+    <axis>
+      <x> -1 </x>
+      <y>  0 </y>
+      <z>  0 </z>
+    </axis>
+  </animation>
+
+</PropertyList>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+
+  <path>panel.ac</path>
+
+  <animation>
+    <!-- Objets opaques -->
+    <object-name>panel1</object-name>
+    <object-name>panel2</object-name>
+    <object-name>panel3</object-name>
+    <object-name>panel4</object-name>
+  </animation>
+
+  <!-- ai -->
+  <model>
+    <path>Aircraft/AirCrane/Models/Interior/Panel/Instruments/ai/ai.xml</path>
+    <offsets>
+      <x-m> 0.007 </x-m>
+      <y-m> 0.453 </y-m>
+      <z-m> 0.017 </z-m>
+    </offsets>
+  </model>
+
+  <!-- asi -->
+  <model>
+    <path>Aircraft/AirCrane/Models/Interior/Panel/Instruments/asi/asi.xml</path>
+    <offsets>
+      <x-m> -0.001 </x-m>
+      <y-m>  0.323 </y-m>
+      <z-m>  0.035 </z-m>
+    </offsets>
+  </model>
+
+  <!-- alt -->
+  <model>
+    <path>Aircraft/AirCrane/Models/Interior/Panel/Instruments/alt/alt.xml</path>
+    <offsets>
+      <x-m> -0.001 </x-m>
+      <y-m>  0.580 </y-m>
+      <z-m>  0.035 </z-m>
+    </offsets>
+  </model>
+
+  <!-- torque -->
+  <model>
+    <path>Aircraft/AirCrane/Models/Interior/Panel/Instruments/torque/torque.xml</path>
+    <offsets>
+      <x-m> -0.001 </x-m>
+      <y-m>  0.171 </y-m>
+      <z-m> -0.070 </z-m>
+    </offsets>
+  </model>
+
+</PropertyList>

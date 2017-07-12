@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+
+  <path>general_pilot.ac</path>
+
+  <animation>
+    <!-- Objets opaques -->
+    <object-name>tete</object-name>
+    <object-name>visiere</object-name>
+    <object-name>corps</object-name>
+    <object-name>brasG</object-name>
+    <object-name>brasD</object-name>
+    <object-name>avantbrasG</object-name>
+    <object-name>avantbrasD</object-name>
+    <object-name>manche</object-name>
+    <object-name>cuisseG</object-name>
+    <object-name>cuisseD</object-name>
+    <object-name>jambeG</object-name>
+    <object-name>jambed</object-name>
+    <object-name>piedG</object-name>
+    <object-name>piedD</object-name>
+
+    <!-- Objets transparents -->
+  </animation>
+
+  <animation>
+    <name>AnimeTete</name>
+    <object-name>tete</object-name>
+    <object-name>visiere</object-name>
+  </animation>
+
+  <!-- Visière invisible depuis le cockpit -->
+  <animation>
+    <type>select</type>
+    <object-name>visiere</object-name>
+    <condition>
+      <greater-than>
+        <property>sim/current-view/view-number</property>
+        <value>0</value>
+      </greater-than>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>AnimeTete</object-name>
+    <property>controls/flight/elevator</property>
+    <factor> -15 </factor> 
+    <center>
+      <x-m> 0.366 </x-m>
+      <y-m> 0.005 </y-m>
+      <z-m> 0.411 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>AnimeTete</object-name>
+    <property>controls/flight/rudder</property>
+    <factor> -25 </factor>
+    <center>
+      <x-m> 0.366 </x-m>
+      <y-m> 0.005 </y-m>
+      <z-m> 0.411 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 0 </y>
+      <z> 1 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>AnimeTete</object-name>
+    <property>surface-positions/left-aileron-pos-norm</property>
+    <factor> -10 </factor>
+    <center>
+      <x-m> 0.366 </x-m>
+      <y-m> 0.005 </y-m>
+      <z-m> 0.411 </z-m>
+    </center>
+    <axis>
+      <x> 1 </x>
+      <y> 0 </y>
+      <z> 0 </z>
+    </axis>
+  </animation> 
+
+</PropertyList>

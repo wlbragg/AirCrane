@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+
+  <default>
+    <menu n="10">
+      <label>S-64 AirCrane</label>
+      <enabled type="bool">true</enabled>
+      <item>
+        <label>Select Livery</label>
+        <binding>
+          <command>nasal</command>
+          <script>aircraft.livery.dialog.toggle()</script>
+        </binding>
+      </item>
+      <item>
+        <label>Blades visible</label>
+        <binding>
+          <command>nasal</command>
+          <script>
+            var p = "rotors/main/bladesvisible";
+            setprop(p, var i = !getprop(p));
+            gui.popupTip("Blades visible " ~ (i ? "On" : "Off"));
+          </script>
+        </binding>
+      </item>
+	  <item>
+        <label>Show particle effects</label>
+        <binding>
+          <command>nasal</command>
+          <script>
+            var p = "sim/model/aircrane/particles/enabled";
+            setprop(p, var i = !getprop(p));
+            gui.popupTip("Particle effects " ~ (i ? "On" : "Off"));
+          </script>
+        </binding>
+      </item>
+	  <item>
+        <label>Fire suppression system</label>
+        <binding>
+          <command>nasal</command>
+          <script>
+            var p = "sim/model/firetank/enabled";
+            setprop(p, var i = !getprop(p));
+            gui.popupTip("Fire suppression system " ~ (i ? "On" : "Off"));
+          </script>
+        </binding>
+      </item>
+	  <item>
+        <label>Water Cannon</label>
+		<enable>
+            <property>/sim/model/firetank/enabled</property>
+        </enable>
+        <binding>
+          <command>nasal</command>
+          <script>
+            var p = "sim/model/watercannon/enabled";
+            setprop(p, var i = !getprop(p));
+            gui.popupTip("Water Cannon " ~ (i ? "On" : "Off"));
+          </script>
+        </binding>
+      </item>
+      <item>
+        <label>Immatriculation</label>
+        <binding>
+          <command>nasal</command>
+          <script>aircrane.immat_dialog.toggle()</script>
+        </binding>
+      </item>
+    </menu>
+  </default>
+
+</PropertyList>

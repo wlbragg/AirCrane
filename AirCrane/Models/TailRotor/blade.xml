@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+
+  <path>blade.ac</path>
+
+  <animation>
+    <object-name>blade</object-name>
+
+    <!-- Transparence -->
+    <object-name>propblur</object-name>
+    <object-name>propdisc</object-name>
+  </animation>
+
+  <effect>
+    <inherits-from>Effects/model-transparent</inherits-from>
+    <object-name>propblur</object-name>
+    <object-name>propdisc</object-name>
+  </effect>
+  <!--  
+  <animation>
+    <type>noshadow</type>
+    <object-name>propblur</object-name>
+    <object-name>propdisc</object-name>
+  </animation>
+  -->
+  <!-- Sélection blade/blur/disc tail rotor-->
+  <animation>
+    <type>select</type>
+    <object-name>propdisc</object-name>
+    <condition>
+      <greater-than>
+        <property>rotors/tail/rpm</property>
+        <value>150</value>
+      </greater-than>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>propblur</object-name>
+    <condition>
+      <and>
+        <greater-than>
+          <property>rotors/tail/rpm</property>
+          <value>60</value>
+        </greater-than>
+        <less-than>
+          <property>rotors/tail/rpm</property>
+          <value>150.001</value>
+        </less-than>
+      </and>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>blade</object-name>
+    <condition>
+      <less-than>
+        <property>rotors/tail/rpm</property>
+        <value>150</value>
+      </less-than>
+    </condition>
+  </animation>
+
+  <!-- Incidence de la pale -->
+  <animation>
+    <type>rotate</type>
+    <object-name>blade</object-name>
+    <property>rotors/tail/blade/incidence-deg</property>
+    <axis>
+      <x> 1 </x>
+      <y> 0 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+
+</PropertyList>

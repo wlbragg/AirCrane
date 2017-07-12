@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+
+  <!-- Chaque pales est formée de 4 parties
+  
+       Axe 0               Axe 1               Axe 2               Axe 3
+         +______blade1_______+_______blade2______+______blade3_______+_____blade4________
+      center
+        of
+       rotor 
+
+  -->
+  <path>blade.ac</path>
+
+  <animation>
+    <object-name>blade1</object-name>
+    <object-name>blade2</object-name>
+    <object-name>blade3</object-name>
+    <object-name>blade4</object-name>
+    <object-name>attache</object-name>
+    <object-name>attache2</object-name>
+    <object-name>attache3</object-name>
+    <object-name>attache4</object-name>
+    <object-name>bielle1</object-name>
+    <object-name>bielle2</object-name>
+
+    <!-- Transparence -->
+    <object-name>propblur1</object-name>
+    <object-name>propblur2</object-name>
+    <object-name>propblur3</object-name>
+    <object-name>propblur4</object-name>
+    <object-name>propdisc1</object-name>
+    <object-name>propdisc2</object-name>
+    <object-name>propdisc3</object-name>
+    <object-name>propdisc4</object-name>
+  </animation>
+
+  <effect>
+    <inherits-from>Effects/model-transparent</inherits-from>
+    <object-name>propblur1</object-name>
+    <object-name>propblur2</object-name>
+    <object-name>propblur3</object-name>
+    <object-name>propblur4</object-name>
+    <object-name>propdisc1</object-name>
+    <object-name>propdisc2</object-name>
+    <object-name>propdisc3</object-name>
+    <object-name>propdisc4</object-name>
+  </effect>
+  <!--  
+  <animation>
+    <type>noshadow</type>
+    <object-name>propblur1</object-name>
+    <object-name>propblur2</object-name>
+    <object-name>propblur3</object-name>
+    <object-name>propblur4</object-name>
+    <object-name>propdisc1</object-name>
+    <object-name>propdisc2</object-name>
+    <object-name>propdisc3</object-name>
+    <object-name>propdisc4</object-name>
+  </animation>
+  -->
+  <!-- Sélection blade/blur/disc main rotor-->
+  <animation>
+    <name>DiscComplet</name>
+    <object-name>propdisc1</object-name>
+    <object-name>propdisc2</object-name>
+    <object-name>propdisc3</object-name>
+    <object-name>propdisc4</object-name>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>DiscComplet</object-name>
+    <condition>
+      <greater-than>
+        <property>rotors/main/rpm</property>
+        <value>150</value>
+      </greater-than>
+    </condition>
+  </animation>
+
+  <animation>
+    <name>BlurComplet</name>
+    <object-name>propblur1</object-name>
+    <object-name>propblur2</object-name>
+    <object-name>propblur3</object-name>
+    <object-name>propblur4</object-name>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>BlurComplet</object-name>
+    <condition>
+      <and>
+        <greater-than>
+          <property>rotors/main/rpm</property>
+          <value>60</value>
+        </greater-than>
+        <less-than>
+          <property>rotors/main/rpm</property>
+          <value>150.001</value>
+        </less-than>
+      </and>
+    </condition>
+  </animation>
+
+  <animation>
+    <name>PaleComplete</name>
+    <object-name>blade1</object-name>
+    <object-name>blade2</object-name>
+    <object-name>blade3</object-name>
+    <object-name>blade4</object-name>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>PaleComplete</object-name>
+    <condition>
+      <or>
+        <less-than>
+          <property>rotors/main/rpm</property>
+          <value>150</value>
+        </less-than>
+        <equals>
+          <property>rotors/main/bladesvisible</property>
+          <value>1</value>
+        </equals>
+      </or>
+    </condition>
+  </animation>
+
+  <!-- Axe 0 de pliage des pâles pour le cône -->
+  <animation>
+    <name>Total0</name>
+    <object-name>blade4</object-name>
+    <object-name>propblur4</object-name>
+    <object-name>propdisc4</object-name>
+    <object-name>blade3</object-name>
+    <object-name>propblur3</object-name>
+    <object-name>propdisc3</object-name>
+    <object-name>blade2</object-name>
+    <object-name>propblur2</object-name>
+    <object-name>propdisc2</object-name>
+    <object-name>blade1</object-name>
+    <object-name>propblur1</object-name>
+    <object-name>propdisc1</object-name>
+    <object-name>attache</object-name>
+    <object-name>attache2</object-name>
+    <object-name>attache3</object-name>
+    <object-name>attache4</object-name>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>Total0</object-name>
+    <property>rotors/main/cone1-deg</property>
+    <factor> -1 </factor>
+    <center>
+       <x-m> 0.702 </x-m>
+       <y-m> 0.000 </y-m>
+       <z-m> 0.000 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+
+  <!-- Axe 1 de pliage des pâles pour le cône -->
+  <animation>
+    <name>Total1</name>
+    <object-name>blade4</object-name>
+    <object-name>propblur4</object-name>
+    <object-name>propdisc4</object-name>
+    <object-name>blade3</object-name>
+    <object-name>propblur3</object-name>
+    <object-name>propdisc3</object-name>
+    <object-name>blade2</object-name>
+    <object-name>propblur2</object-name>
+    <object-name>propdisc2</object-name>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>Total1</object-name>
+    <property>rotors/main/cone2-deg</property>
+    <factor> -1 </factor>
+    <center>
+       <x-m>  4.101 </x-m>
+       <y-m>  0.009 </y-m>
+       <z-m> -0.004 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+
+  <!-- Axe 2 de pliage des pâles pour le cône -->
+  <animation>
+    <name>Total2</name>
+    <object-name>blade4</object-name>
+    <object-name>propblur4</object-name>
+    <object-name>propdisc4</object-name>
+    <object-name>blade3</object-name>
+    <object-name>propblur3</object-name>
+    <object-name>propdisc3</object-name>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>Total2</object-name>
+    <property>rotors/main/cone3-deg</property>
+    <factor> -1 </factor>
+    <center>
+       <x-m>  6.482 </x-m>
+       <y-m>  0.006 </y-m>
+       <z-m> -0.008 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+
+  <!-- Axe 3 de pliage des pâles pour le cône -->
+  <animation>
+    <name>Total3</name>
+    <object-name>blade4</object-name>
+    <object-name>propblur4</object-name>
+    <object-name>propdisc4</object-name>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>Total3</object-name>
+    <property>rotors/main/cone4-deg</property>
+    <factor> -1 </factor>
+    <center>
+       <x-m>  8.863 </x-m>
+       <y-m>  0.002 </y-m>
+       <z-m> -0.012 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+
+  <!-- Incidence de la pale -->
+  <animation>
+    <name>TotalBlade</name>
+    <object-name>blade4</object-name>
+    <object-name>blade3</object-name>
+    <object-name>blade2</object-name>
+    <object-name>blade1</object-name>
+    <object-name>attache</object-name>
+    <object-name>attache2</object-name>
+    <object-name>attache4</object-name>
+    <object-name>bielle1</object-name>
+    <object-name>bielle2</object-name>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>TotalBlade</object-name>
+    <property>rotors/main/blade[5]/incidence-deg</property>
+    <center>
+       <x-m> 0.702 </x-m>
+       <y-m> 0.000 </y-m>
+       <z-m> 0.000 </z-m>
+    </center>
+    <axis>
+      <x> 1 </x>
+      <y> 0 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>bielle2</object-name>
+    <property>rotors/main/blade[5]/incidence-deg</property>
+    <center>
+       <x-m> 0.763 </x-m>
+       <y-m> 0.246 </y-m>
+       <z-m> 0.000 </z-m>
+    </center>
+    <axis>
+      <x> -1 </x>
+      <y>  0 </y>
+      <z>  0 </z>
+    </axis>
+  </animation>
+
+</PropertyList>

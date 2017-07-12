@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+
+  <title>AirCrane - background and help</title>
+  <line>______________________________________________</line>
+  <key>
+    <name>{</name>
+    <desc>Start engines</desc>
+  </key>
+  <key>
+    <name>}</name>
+    <desc>Shutdown engines</desc>
+  </key>
+  <key>
+    <name>R</name>
+    <desc>Toggle rotor brake</desc>
+  </key>
+  <key>
+    <name>r</name>
+    <desc>Apply rotor brake</desc>
+  </key>
+  <key>
+    <name>Ctrl d</name>
+    <desc>Toggle S.A.S.</desc>
+  </key>
+  <key>
+    <name>Ctrl e</name>
+    <desc>Toggle C.A.S.</desc>
+  </key>
+  <key>
+    <name>Ctrl f</name>
+    <desc>Auto hover</desc>
+  </key>
+  <key>
+    <name>Ctrl j</name>
+    <desc>Toggle Ram Scoop Deploy</desc>
+  </key>
+  <key>
+    <name>Ctrl k</name>
+    <desc>Toggle Water Cannon Stream</desc>
+  </key>
+  <key>
+    <name>Ctrl l</name>
+    <desc>Toggle Water Sniffer Deploy</desc>
+  </key>
+  
+</PropertyList>
