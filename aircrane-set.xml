@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList include="aircrane-base.xml">
+
+  <sim>
+
+    <description>AirCrane (Yasim)</description>
+    <author>BARANGER Emmanuel (3D), Heiko Schulz (FDM)</author>
+    <status>alpha</status>
+    <license>GPL v2</license>
+    <flight-model>yasim</flight-model>
+    <aero>aircrane-yasim</aero>
+    
+    <rating>
+      <FDM type="int">     4 </FDM>
+      <systems type="int"> 1 </systems>
+      <cockpit type="int"> 1 </cockpit>
+      <model type="int">   4 </model>
+    </rating>
+    
+  </sim>
+
+</PropertyList>

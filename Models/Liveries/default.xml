@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+  
+  <sim>
+    
+    <model>
+      <livery>
+        <name type="string">Default</name>
+		<index type="int">1</index>
+        <texture>texture.png</texture>
+        <specular>
+          <red>   0.3 </red>
+          <green> 0.3 </green>
+          <blue>  0.3 </blue>
+        </specular>
+        <emission>
+          <red>   0.02 </red>
+          <green> 0.02 </green>
+          <blue>  0.02 </blue>
+        </emission>
+      </livery>
+	  <liverytail>
+		<name type="string">Default</name>
+		<index type="int">1</index>
+		<texture>tailrotor.png</texture>
+        <specular>
+          <red>   0.3 </red>
+          <green> 0.3 </green>
+          <blue>  0.3 </blue>
+        </specular>
+        <emission>
+          <red>   0.02 </red>
+          <green> 0.02 </green>
+          <blue>  0.02 </blue>
+        </emission>
+	  </liverytail>
+    </model>
+    
+  </sim>
+  
+</PropertyList>

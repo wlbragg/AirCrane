@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+
+  <!--sim-->
+  <sim include="System/views.xml">
+
+    <description>AirCrane (Yasim)</description>
+    <author>BARANGER Emmanuel (3D), Heiko Schulz (FDM)</author>
+    <status>alpha</status>
+    <license>GPL v2</license>
+	<aircraft-version>0.3</aircraft-version>
+
+    <fuel-fraction>0.8</fuel-fraction>
+
+    <startup>
+      <splash-texture>Aircraft/AirCrane/aircrane-splash.png</splash-texture>
+    </startup> 
+
+    <sound>
+      <path>Aircraft/AirCrane/Sounds/aircrane-sound.xml</path>
+    </sound>
+	
+	<!--XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX CARGO ADDITION XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX-->
+	<submodels>
+        <path>Aircraft/AirCrane/Models/Cargo-submodel.xml</path>
+    </submodels>
+	<!--XXXXXXXXXXXXXXXXXXXXXXXXXXXXX END CARGO ADDITION XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX-->
+	
+    <model>
+      <path archive="y">Aircraft/AirCrane/Models/aircrane.xml</path>
+      <livery>
+        <file type="string">Default</file>
+      </livery>
+      <aircrane>
+        <state type="int">0</state>
+        <engine type="float">0</engine>
+        <rotor-step-deg type="float">-1</rotor-step-deg>
+		<particles>
+			<enabled type="bool">true</enabled>
+		</particles>
+      </aircrane>
+	  <watercannon>
+		<enabled type="bool">true</enabled>
+	  </watercannon>
+      <firetank>
+		<enabled type="bool">true</enabled>
+		<deployflexhose type="float">1</deployflexhose>
+		<deploywatercannon type="float">0</deploywatercannon>
+		<deployramscoop type="float">0</deployramscoop>
+	  </firetank>
+	  <effects>
+		<particle>
+			<startcolor type="float">.3</startcolor>
+			<endcolor type="float">.3</endcolor>
+	    </particle>
+	  </effects>
+    </model>
+
+    <multiplay>
+      <chat_display>1</chat_display>
+      <generic> 
+        <int type="int" n="0">  0 </int>                                           <!--  0 immat -->
+        <int type="int" n="1">  0 </int>                                           <!--  1 immat -->
+        <int type="int" n="2">  0 </int>                                           <!--  2 immat -->
+        <int type="int" n="3">  0 </int>                                           <!--  3 immat -->
+        <int type="int" n="4">  0 </int>                                           <!--  4 immat -->
+        <int type="int" n="5">  0 </int>                                           <!--  5 immat -->
+        <int type="bool" n="6" alias="/smoke/active"> 0 </int>                     <!--  6 start smoke -->
+        <int type="int" n="7" alias="/smoke/particlepersec"> 50 </int>             <!--  7 particlepersec -->
+        <int type="int" n="10" alias="/controls/armament/trigger">0</int>          <!-- 10 reserved for bombable mode -->
+        <float n="0" alias="/sim/model/door-positions/crew/position-norm"/>
+        <float n="1" alias="/sim/model/door-positions/passenger/position-norm"/>
+        <float n="2" alias="/position/gear-agl-m">  0 </float>                     <!--  2 altitude for MP shadow -->
+        <float n="3" alias="/position/altitude-ft">  0 </float>                    <!--  3 altitude for smoke -->
+        <float n="4" alias="/engines/engine[0]/rpm"/>
+		<float n="5" alias="/sim/model/firetank/deployramscoop/position-norm"/>
+        <float n="6" alias="/sim/model/firetank/deployfirehose/position-norm"/>
+        <!-- For Bombable -->
+        <int type="int" n="10" alias="controls/armament/trigger">0</int>
+        <string n="9" type="string" />
+      </generic>
+    </multiplay>
+
+   <weight n="0">
+      <name>Pilot</name>
+      <weight-lb>180</weight-lb>
+      <max-lb>300</max-lb>
+    </weight>
+
+    <weight n="1">
+      <name>Co-Pilot</name>
+      <weight-lb>180</weight-lb>
+      <max-lb>300</max-lb>
+    </weight>
+
+    <weight n="2">
+      <name>Right Passenger</name>
+      <weight-lb>0</weight-lb>
+      <max-lb>300</max-lb>
+    </weight>
+
+    <weight n="3">
+      <name>Load</name>
+      <weight-lb>0</weight-lb>
+      <max-lb>20000</max-lb>
+    </weight>
+    
+    <help include="System/help.xml"/>
+
+    <menubar include="Dialogs/aircrane-menu.xml"/>
+
+  </sim>
+	
+  <controls>
+    <engines>
+      <engine n="0">
+        <magnetos>0</magnetos>
+      </engine>
+      <engine n="1">
+        <magnetos>0</magnetos>
+      </engine>
+    </engines>
+    <gear>
+      <brake-parking>1</brake-parking>
+    </gear>
+    <rotor>
+      <reltarget>1</reltarget>
+      <maxreltorque>1</maxreltorque>
+    </rotor>
+  </controls>
+
+  <instrumentation>
+    <gsdi>
+      <serviceable type="bool">true</serviceable>
+      <enabled type="bool">true</enabled>
+    </gsdi>
+  </instrumentation>
+
+  <input>
+    <keyboard include="System/aircrane-keyboard.xml"/>
+  </input>
+
+  <rotors>
+    <main>
+      <rpm type="double">0</rpm>
+      <cone-deg type="double">0</cone-deg>
+      <cone1-deg type="double">0</cone1-deg>
+      <cone2-deg type="double">0</cone2-deg>
+      <cone3-deg type="double">0</cone3-deg>
+      <cone4-deg type="double">0</cone4-deg>
+    </main>
+  </rotors>
+
+  <nasal>
+	
+    <doors>
+      <file>Aircraft/AirCrane/Nasal/doors.nas</file>
+    </doors>
+    <aircrane>
+      <file>Aircraft/AirCrane/Nasal/immat.nas</file>
+      <file>Aircraft/AirCrane/Nasal/light.nas</file>
+      <file>Aircraft/AirCrane/Nasal/aircrane.nas</file>
+      <file>Aircraft/AirCrane/Nasal/liveries.nas</file>
+      <file>Aircraft/AirCrane/Nasal/bladevisible.nas</file>
+	  <file>Aircraft/AirCrane/Nasal/rotorwash.nas</file>
+	  <file>Aircraft/AirCrane/Nasal/flexhose.nas</file>
+	  
+	  <!--XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX CARGO ADDITION XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX-->
+      <file>Aircraft/AirCrane/Nasal/Cargo.nas</file>
+      <!--XXXXXXXXXXXXXXXXXXXXXXXXXXXXX CARGO ADDITION XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX-->
+	
+    </aircrane>
+    <fcs>
+      <file>Aircraft/AirCrane/Nasal/fcs-management.nas</file>
+      <file>Aircraft/Generic/helicopter-fcs.nas</file>
+    </fcs>
+  </nasal>
+<position>
+	<altitude-aml-ft type="float">0</altitude-aml-ft>
+</position>
+</PropertyList>
