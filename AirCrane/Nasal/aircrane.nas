@@ -423,11 +423,11 @@ setlistener("/sim/signals/fdm-initialized", func {
     }
   });
 
-  setlistener("/sim/paused", func {
+  setlistener("/sim/freeze/clock", func {
     if (cmdarg().getBoolValue())
       tank_operations_timer.stop();
     else
-	  tank_operations_timer.stop();
+	  tank_operations_timer.start();
   });
 
   # Listen for impact of released payload

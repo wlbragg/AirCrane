@@ -20,7 +20,7 @@
         <and>
 			<property>sim/model/aircrane/particles/enabled</property>
 			<not>
-				<property>sim/paused</property>
+				<property>sim/freeze/clock</property>
 			</not>
 			<not>
 				<property>sim/crashed</property>
