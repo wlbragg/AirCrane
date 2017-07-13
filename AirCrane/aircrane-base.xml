@@ -46,8 +46,10 @@
       <firetank>
 		<enabled type="bool">true</enabled>
 		<deployflexhose type="float">1</deployflexhose>
-		<deploywatercannon type="float">0</deploywatercannon>
 		<deployramscoop type="float">0</deployramscoop>
+		<opencannonvalve type="bool">0</opencannonvalve>
+		<opentankdoors type="bool">0</opentankdoors>
+		<droprate type="int">300</droprate>
 	  </firetank>
 	  <effects>
 		<particle>
@@ -103,7 +105,7 @@
     <weight n="3">
       <name>Load</name>
       <weight-lb>0</weight-lb>
-      <max-lb>20000</max-lb>
+      <max-lb>22115</max-lb>
     </weight>
     
     <help include="System/help.xml"/>
@@ -165,6 +167,7 @@
       <file>Aircraft/AirCrane/Nasal/bladevisible.nas</file>
 	  <file>Aircraft/AirCrane/Nasal/rotorwash.nas</file>
 	  <file>Aircraft/AirCrane/Nasal/flexhose.nas</file>
+	  <file>Aircraft/AirCrane/Nasal/tankoperations.nas</file>
 	  
 	  <!--XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX CARGO ADDITION XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX-->
       <file>Aircraft/AirCrane/Nasal/Cargo.nas</file>

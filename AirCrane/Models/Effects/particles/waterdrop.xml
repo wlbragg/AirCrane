@@ -2,15 +2,14 @@
 
 <PropertyList>
 
-	<!-- <params>
-        IMPORTANT: int properties 14 to 19, both included, are reserved for the immat system. Do not use them! 
-		<spray_wake_speed_kt>
-			<property>sim/multiplay/generic/float[6]</property>
-		</spray_wake_speed_kt>
-    </params>-->
+  <!--params>
+    <release_payload>
+      <property>sim/multiplay/generic/int[17]</property>
+    </release_payload>
+  </params-->
 
   <particlesystem>
-    <name>watercannon</name>
+    <name>waterdrop</name>
     <type>normal</type>
     <texture>smoke.png</texture>
 
@@ -20,9 +19,8 @@
 	<condition>
         <and>
 			<property>sim/model/aircrane/particles/enabled</property>
-			<property>/sim/model/firetank/enabled</property>
-			<property>sim/model/watercannon/enabled</property>
-			<property>sim/model/firetank/opencannonvalve</property>
+			<property>sim/model/firetank/enabled</property>
+			<property>sim/model/firetank/opentankdoors</property>
 			<greater-than>
 				<property>sim/weight[3]/weight-lb</property>
 				<value>10</value>
@@ -31,19 +29,35 @@
 	</condition>
 
     <attach>world</attach>
+    <align>billboard</align>
 
-    <placer>
-      <type>point</type>
+    <placer>  
+        <type>segments</type>
+        <vertex>
+            <x-m>-2.28</x-m>
+            <y-m> 0.00</y-m>
+            <z-m> 0.00</z-m>
+        </vertex>
+        <vertex>
+            <x-m> 0.00</x-m>
+            <y-m> 0.00</y-m>
+            <z-m> 0.00</z-m>
+        </vertex>
+        <vertex>
+            <x-m> 2.28</x-m>
+            <y-m> 0.00</y-m>
+            <z-m> 0.00</z-m>
+        </vertex>
     </placer>
 
     <shooter>
-      <theta-min-deg>-80</theta-min-deg>
-      <theta-max-deg>-86</theta-max-deg>
-      <phi-min-deg>-3</phi-min-deg>
-      <phi-max-deg>3</phi-max-deg>
+      <theta-min-deg>177</theta-min-deg>
+      <theta-max-deg>183</theta-max-deg>
+      <phi-min-deg> -2</phi-min-deg>
+      <phi-max-deg>  2</phi-max-deg>
       <speed-mps>
-		<value>40</value>
-		<spread>30</spread>
+        <value>5.8</value>
+        <spread>3</spread>
       </speed-mps>
       <rotation-speed>
         <x-min-deg-sec>-15 </x-min-deg-sec>
@@ -56,14 +70,13 @@
     </shooter>
 
     <counter>
-      <particles-per-sec>
-		<value>200</value>
-      </particles-per-sec>
+        <particles-per-sec>
+            <property>sim/model/firetank/droprate</property>
+        	<spread>100</spread>
+        </particles-per-sec>
     </counter>
 
-    <align>billboard</align>
-
-   <particle>
+    <particle>
       <start>
         <color>
             <red>
@@ -76,14 +89,14 @@
                 <property>/rendering/scene/diffuse/red</property>
             </blue>
             <alpha>
-			   <value>.1</value>
-			   <spread>.09</spread>
+                <value>.1</value>
             </alpha>
         </color>
         <size>
-          <value>.3</value>
+          <value>.7</value>
         </size>
       </start>
+
       <end>
         <color>
             <red>
@@ -101,19 +114,23 @@
         </color>
         <size>
           <value>4</value>
+
         </size>
       </end>
+
       <life-sec>
-		<value>4</value>
+        <value> 9</value>
+        <spread>4</spread>
       </life-sec>
-      <mass-kg>25</mass-kg>
-      <radius-m>.9</radius-m>
+
+      <mass-kg> 50</mass-kg>
+      <radius-m> .5</radius-m>
     </particle>
 
     <program>
       <fluid>  water</fluid>
-      <gravity>true</gravity>
-      <wind>   true</wind>
+      <gravity>true </gravity>
+      <wind>   true </wind>
     </program>
 
   </particlesystem>

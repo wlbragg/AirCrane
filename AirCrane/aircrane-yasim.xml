@@ -36,6 +36,25 @@
   (IAS) 115 kt. up to 38,000 lb. gross weight
 
   FDM based also on information for the ch53d given in NASA-CR-3144; TR-1087-1
+
+  1300 gal fuel capacity 2 tanks.
+
+  Fire suppression system 2,650 gallons
+  Micro processor coverage levels
+	1 - 1 gal/100 sq. ft.
+	2 - 2 gal/100 sq. ft.
+	3 - 3 gal/100 sq. ft.
+	4 - 4 gal/100 sq. ft.
+	5 - 5 gal/100 sq. ft.
+	6 - 6 gal/100 sq. ft.
+	7 - 7 gal/100 sq. ft.
+	8 - 8 gal/100 sq. ft.
+	9 - entire loade in 3 sec (2,500 gal)
+
+	Water cannon = 300 gal per minute (appx. 8 minutes)
+	Coverage range of 200 ft
+	Hover Snorkel tank fill 2,500 gal 45 sec.
+	Sea Snorkel tank fill 40 sec at 35-45 knots
 -->
 
 <airplane mass="19234">

@@ -436,9 +436,18 @@
   <model>
     <path>Aircraft/AirCrane/Models/Effects/particles/watercannon.xml</path>
     <offsets>
-      <x-m>-11.399</x-m>
+      <x-m>-11.700</x-m>
       <y-m> -1.349</y-m>
       <z-m> -2.971</z-m>
+   </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/AirCrane/Models/Effects/particles/waterdrop.xml</path>
+    <offsets>
+      <x-m>-2.283</x-m>
+      <y-m> 0.059</y-m>
+      <z-m>-2.959</z-m>
    </offsets>
   </model>
   
@@ -446,9 +455,9 @@
   <model>
     <path>Aircraft/AirCrane/Models/Effects/particles/ramscoopwake.xml</path>
     <offsets>
-      <x-m>-4.834 </x-m>
-      <y-m> 0.453 </y-m>
-      <z-m> 0 </z-m>
+      <x-m>-4.834</x-m>
+      <y-m> 0.453</y-m>
+      <z-m> 0.000</z-m>
    </offsets>
   </model>
 
@@ -456,9 +465,9 @@
   <model>	
     <path>Aircraft/AirCrane/Models/Effects/particles/rotorwashidle.xml</path>
     <offsets>
-		<x-m> -3.906 </x-m>
-		<y-m>  0.000 </y-m>
-		<z-m> -2.900 </z-m>
+		<x-m>-3.90</x-m>
+		<y-m> 0.00</y-m>
+		<z-m>-2.90</z-m>
 		<roll-deg>90</roll-deg>
 	</offsets>
   </model>

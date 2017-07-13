@@ -242,7 +242,8 @@ var crash = func {
     # crash
     setprop("rotors/main/rpm", 0);
     setprop("rotors/main/blade[0]/flap-deg", -60);
-    setprop("rotors/main/blade[1]/flap-deg", -50);
+    setprop("rotors/main/blade[1]/flap-deg", -50); # the attitude indicator needs pressure
+  # settimer(func { setprop("engines/engine/rpm", 3000) }, 8);
     setprop("rotors/main/blade[2]/flap-deg", -40);
     setprop("rotors/main/blade[3]/flap-deg", -30);
     setprop("rotors/main/blade[4]/flap-deg", -20);
@@ -421,12 +422,29 @@ setlistener("/sim/signals/fdm-initialized", func {
     }
   });
 
+  # Listen for impact of released payload
+  setlistener("/sim/ai/aircraft/impact/retardant", func (n) {
+    #print("Retardant impact!");
+    var node = props.globals.getNode(n.getValue());
+    var pos  = geo.Coord.new().set_latlon
+                   (node.getNode("impact/latitude-deg").getValue(),
+                    node.getNode("impact/longitude-deg").getValue(),
+                    node.getNode("impact/elevation-m").getValue());
+    # The arguments are: position, radius and volume (currently unused).
+    wildfire.resolve_foam_drop(pos, 10, 0);
+    #wildfire.resolve_retardant_drop(pos, 10, 0);
+ });
+
+
   # the attitude indicator needs pressure
   # settimer(func { setprop("engines/engine/rpm", 3000) }, 8);
 
   setprop("sim/model/firetank/cradleX", 320);
   setprop("sim/model/firetank/cradleY", -8);
   setprop("sim/model/firetank/cradleZ", -10);
+
+  var tank_operations_timer = maketimer(1, func{tank_operations()});
+  tank_operations_timer.start();
 
   main_loop();
 });

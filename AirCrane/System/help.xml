@@ -37,12 +37,16 @@
     <desc>Toggle Ram Scoop Deploy</desc>
   </key>
   <key>
-    <name>Ctrl k</name>
-    <desc>Toggle Water Cannon Stream</desc>
+    <name>Ctrl J</name>
+    <desc>Toggle Water Sniffer Deploy</desc>
   </key>
   <key>
-    <name>Ctrl l</name>
-    <desc>Toggle Water Sniffer Deploy</desc>
+    <name>Ctrl k</name>
+    <desc>Toggle Cannon Valve</desc>
+  </key>
+  <key>
+    <name>Ctrl K</name>
+    <desc>Toggle Tank Doors</desc>
   </key>
   
 </PropertyList>

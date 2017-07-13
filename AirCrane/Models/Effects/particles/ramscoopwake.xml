@@ -11,8 +11,8 @@
 
   <particlesystem>
     <name>ramscoopwake</name>
-
-    <texture>wake.png</texture>
+    <type>normal</type>
+    <texture>smoke.png</texture>
 
     <emissive>true</emissive>
     <lighting>false</lighting>
@@ -46,31 +46,28 @@
     </placer>
 
     <shooter>
-     <theta-min-deg>90</theta-min-deg>
-      <theta-max-deg>98</theta-max-deg>
-      <phi-min-deg>-10</phi-min-deg>
-      <phi-max-deg>10</phi-max-deg>
+      <theta-min-deg>45</theta-min-deg>
+      <theta-max-deg>55</theta-max-deg>
+      <phi-min-deg>-1</phi-min-deg>
+      <phi-max-deg>1</phi-max-deg>
       <speed-mps>
-        <!--property alias="/params/spray_wake_speed_kt/property"/-->
-		<property>/velocities/airspeed-kt</property>
-        <value>10</value>
-        <spread>2.5</spread>
+        <value>5</value>
+        <spread>3</spread>
       </speed-mps>
       <rotation-speed>
-        <x-min-deg-sec>5</x-min-deg-sec>
-        <y-min-deg-sec>5</y-min-deg-sec>
-        <z-min-deg-sec>5</z-min-deg-sec>
-        <x-max-deg-sec>25</x-max-deg-sec>
-        <y-max-deg-sec>25</y-max-deg-sec>
-        <z-max-deg-sec>25</z-max-deg-sec>
+        <x-min-deg-sec>-15</x-min-deg-sec>
+        <y-min-deg-sec> 15</y-min-deg-sec>
+        <z-min-deg-sec>-15</z-min-deg-sec>
+        <x-max-deg-sec> 15</x-max-deg-sec>
+        <y-max-deg-sec>-15</y-max-deg-sec>
+        <z-max-deg-sec> 15</z-max-deg-sec>
       </rotation-speed>
     </shooter>
 
     <counter>
       <particles-per-sec>
-        <!--property alias="/params/spray_wake_speed_kt/property"/-->
 		<property>/velocities/airspeed-kt</property>
-        <factor>7</factor>
+        <factor>5</factor>
         <spread>0</spread>
       </particles-per-sec>
     </counter>
@@ -92,7 +89,7 @@
             <alpha><value>0.5</value></alpha>
         </color>
         <size>
-          <value>0.4</value>
+          <value>0.1</value>
         </size>
       </start>
       <end>
@@ -109,11 +106,11 @@
             <alpha><value>0.001</value></alpha>
         </color>
         <size>
-          <value>3.5</value>
+          <value>3</value>
         </size>
       </end>
       <life-sec>
-        <value>2.0</value>
+        <value>1.75</value>
       </life-sec>
       <mass-kg>25</mass-kg>
       <radius-m>0.2</radius-m>

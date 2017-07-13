@@ -96,6 +96,70 @@
     </binding>
   </key>
   
+  <key n="106">
+    <name>j</name>
+    <desc>Deploy SeaWater Ram Scoop</desc>
+    <binding>
+      <command>nasal</command>
+      <script>
+		doors.ramscoop.toggle();
+	  </script>
+    </binding>
+  </key>
+
+  <key n="74">
+    <name>J</name>
+    <desc>Deploy Flex Hose</desc>
+    <binding>
+      <command>nasal</command>
+      <script>
+		setprop("sim/model/firetank/deployflexhose", !getprop("sim/model/firetank/deployflexhose"));
+		#doors.flexhose.toggle();
+	  </script>
+    </binding>
+  </key>
+
+  <key n="107">
+    <name>k</name>
+    <desc>Open Cannon Valve</desc>
+    <binding>
+      <command>nasal</command>
+      <script>
+		setprop("sim/model/firetank/opencannonvalve", !getprop("sim/model/firetank/opencannonvalve"));
+      </script>
+    </binding>
+  </key>
+
+  <key n="75">
+    <name>K</name>
+    <desc>Open Tank Doors</desc>
+    <binding>
+      <command>nasal</command>
+      <script>
+		setprop("sim/model/firetank/opentankdoors", !getprop("sim/model/firetank/opentankdoors"));
+      </script>
+    </binding>
+  </key>
+
+  <!--key n="108">
+    <name>l</name>
+    <desc></desc>
+    <binding>
+      <command>nasal</command>
+      <script>
+      </script>
+    </binding>
+  </key>
+  <key n="76">
+    <name>L</name>
+    <desc></desc>
+    <binding>
+      <command>nasal</command>
+      <script>
+      </script>
+    </binding>
+  </key-->
+
   <!--XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX MY CARGO ADDITION XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX-->
 	<key n="15">
 		<name>Ctrl-O</name>
@@ -125,37 +189,5 @@
 	  </binding>
 	</key>
 	<!--XXXXXXXXXXXXXXXXXXXXXXXXXXXXX END MY CARGO ADDITION XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX-->
-  
-  <key n="106">
-    <name>j</name>
-    <desc>Deploy SeaWater Ram Scoop</desc>
-    <binding>
-      <command>nasal</command>
-      <script>
-		doors.ramscoop.toggle();
-	  </script>
-    </binding>
-  </key>
-  <key n="107">
-    <name>k</name>
-    <desc>Spray Fire Hose Boom</desc>
-    <binding>
-      <command>nasal</command>
-      <script>
-		setprop("sim/model/firetank/deploywatercannon", !getprop("sim/model/firetank/deploywatercannon"));
-      </script>
-    </binding>
-  </key>
-  <key n="108">
-    <name>l</name>
-    <desc>Deploy Flex Hose</desc>
-    <binding>
-      <command>nasal</command>
-      <script>
-		setprop("sim/model/firetank/deployflexhose", !getprop("sim/model/firetank/deployflexhose"));
-		#doors.flexhose.toggle();
-	  </script>
-    </binding>
-  </key>
 
 </PropertyList>
