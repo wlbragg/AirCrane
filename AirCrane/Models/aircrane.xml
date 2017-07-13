@@ -466,7 +466,7 @@
     <path>Aircraft/AirCrane/Models/Effects/particles/rotorwashidle.xml</path>
     <offsets>
 		<x-m>-3.90</x-m>
-		<y-m> 0.00</y-m>
+		<y-m>-3.98</y-m>
 		<z-m>-2.90</z-m>
 		<roll-deg>90</roll-deg>
 	</offsets>

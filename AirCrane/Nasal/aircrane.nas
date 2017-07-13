@@ -443,7 +443,7 @@ setlistener("/sim/signals/fdm-initialized", func {
   setprop("sim/model/firetank/cradleY", -8);
   setprop("sim/model/firetank/cradleZ", -10);
 
-  var tank_operations_timer = maketimer(1, func{tank_operations()});
+  var tank_operations_timer = maketimer(.25, func{tank_operations()});
   tank_operations_timer.start();
 
   main_loop();
