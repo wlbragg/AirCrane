@@ -20,6 +20,12 @@
 	<condition>
         <and>
 			<property>sim/model/aircrane/particles/enabled</property>
+			<not>
+				<property>sim/paused</property>
+			</not>
+			<not>
+				<property>sim/crashed</property>
+			</not>
 			<property>sim/model/firetank/deployramscoop/enabled</property>
 		    <less-than>
 			    <property>position/altitude-agl-ft</property>

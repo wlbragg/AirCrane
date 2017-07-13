@@ -409,6 +409,7 @@ setlistener("/sim/signals/fdm-initialized", func {
 
   setlistener("sim/crashed", func {
     cprint("31;1", "crashed ", cmdarg().getValue());
+	tank_operations_timer.stop();
     turbine_timer.stop();
     if (cmdarg().getBoolValue()) {
       crash(crashed = 1);
@@ -420,6 +421,13 @@ setlistener("/sim/signals/fdm-initialized", func {
     if (crashed) {
       crash(!cmdarg().getBoolValue())
     }
+  });
+
+  setlistener("/sim/paused", func {
+    if (cmdarg().getBoolValue())
+      tank_operations_timer.stop();
+    else
+	  tank_operations_timer.stop();
   });
 
   # Listen for impact of released payload

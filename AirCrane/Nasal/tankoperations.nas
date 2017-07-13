@@ -3,6 +3,7 @@
 var capacity = 0.0;
 
 var tank_operations = func {
+			
 
 	var payload = getprop("sim/model/firetank/enabled");
 	var cannon = getprop("sim/model/watercannon/enabled");
@@ -56,7 +57,7 @@ var tank_operations = func {
 		#2500 gal * 8.345 weight per gal = 20862.5 / 45 second fill = 463.61 per sec / 4 (.25 seconds timer cycle) = 115.90 capacity per cycle
 		#2500 gal / 45 sec = 55.55 per second / 4 (.25 seconds timer cycle) = 13.89 * 8.345 weight per gallon = 115.91 capacity per cycle
 		capacity = 115.91;
-		if (hopperweight < 20863) 
+		if (hopperweight < 20000) 
         	hopperweight = hopperweight + capacity;
 		else
 			hopperweight = 20000;
