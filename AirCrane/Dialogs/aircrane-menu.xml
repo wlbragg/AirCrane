@@ -48,9 +48,6 @@
       </item>
 	  <item>
         <label>Water Cannon</label>
-		<enable>
-            <property>/sim/model/firetank/enabled</property>
-        </enable>
         <binding>
           <command>nasal</command>
           <script>

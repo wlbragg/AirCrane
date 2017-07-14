@@ -18,18 +18,16 @@ var tank_operations = func {
 	var altitude = getprop("position/altitude-agl-ft");
 	var airspeed = getprop("velocities/airspeed-kt");
 
-    if ((!hopperweight or hopperweight < 5) and ((payload and cannon and cannonvalveopen) or (payload and tankdooropen))) {
-        logger.screen.white("Hopper is empty");
+    #if (!hopperweight and ((payload and cannon and cannonvalveopen) or (payload and tankdooropen))) {
+    #    logger.screen.white("Hopper is empty");
         #return;
-    }
+    #}
     if (cannonvalveopen and hopperweight and payload and cannon) {
 		#300 * 8.345 weight per gal = 2503.5 weight per minute / 60 = 41.72 per second / 4 (.25 seconds timer cycle) = 10.43 capacity per cycle
  		#300 gal per minute / 60 = 5 per second / 4 (.25 seconds timer cycle) = 1.25 per cycle * 8.345 weight per gallon = 10.43 capacity per cycle
         capacity = 10.43; 
 		if (hopperweight > 0)
         	hopperweight = hopperweight - capacity;
-		else 
-			hopperweight = 0;
 		setprop("sim/weight[3]/weight-lb", hopperweight);
     }
 	if (tankdooropen and hopperweight and payload) {
@@ -38,8 +36,6 @@ var tank_operations = func {
         capacity = 1738.53; #will be one of 9 modes, currenty dump load in three seconds
 		if (hopperweight > 0) 
         	hopperweight = hopperweight - capacity;
-		else
-			hopperweight = 0;
 		setprop("sim/weight[3]/weight-lb", hopperweight);
     }
 
@@ -49,8 +45,6 @@ var tank_operations = func {
 		capacity = 130.37;
 		if (hopperweight < 20000) 
         	hopperweight = hopperweight + capacity;
-		else
-			hopperweight = 20000;
 		setprop("sim/weight[3]/weight-lb", hopperweight);
 	}
 	if (!overland and !sniffer and altitude < 27.5 and airspeed < 35) {
@@ -59,8 +53,15 @@ var tank_operations = func {
 		capacity = 115.91;
 		if (hopperweight < 20000) 
         	hopperweight = hopperweight + capacity;
-		else
-			hopperweight = 20000;
+		setprop("sim/weight[3]/weight-lb", hopperweight);
+	}
+
+	if (hopperweight > 20000) { 
+		hopperweight = 20000;
+		setprop("sim/weight[3]/weight-lb", hopperweight);
+	}
+	if (hopperweight < 0) {
+		hopperweight = 0;
 		setprop("sim/weight[3]/weight-lb", hopperweight);
 	}
 }

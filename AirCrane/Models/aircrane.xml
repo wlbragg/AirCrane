@@ -401,6 +401,7 @@
   	<object-name>watercannonframe</object-name>
     <condition>
       <property>/sim/model/watercannon/enabled</property>
+	  <property>/sim/model/firetank/enabled</property>
     </condition>
   </animation>
 
