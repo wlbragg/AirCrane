@@ -1,6 +1,6 @@
 var flex_hose = func {
 
-var deg_rot = sin(getprop("sim/model/firetank/deployflexhose")*0.01745329252);
+var deg_rot = sin(getprop("sim/model/firetank/deployflexhose/position-norm")*0.01745329252);
 var trans_factorX = getprop("sim/model/firetank/cradleX");
 var trans_factorY = getprop("sim/model/firetank/cradleY");
 var trans_factorZ = getprop("sim/model/firetank/cradleZ");

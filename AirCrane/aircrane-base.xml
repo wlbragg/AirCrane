@@ -23,6 +23,8 @@
 	
 	<!--XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX CARGO ADDITION XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX-->
 	<submodels>
+		<serviceable type="bool">true</serviceable>
+		<path>Models/retardant_drop-submodel.xml</path>
         <path>Aircraft/AirCrane/Models/Cargo-submodel.xml</path>
     </submodels>
 	<!--XXXXXXXXXXXXXXXXXXXXXXXXXXXXX END CARGO ADDITION XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX-->
@@ -50,6 +52,10 @@
 		<opencannonvalve type="bool">0</opencannonvalve>
 		<opentankdoors type="bool">0</opentankdoors>
 		<droprate type="int">300</droprate>
+		<watercannonparticlectrl type="bool">false</watercannonparticlectrl>
+		<watercannonretardantctrl type="bool">false</watercannonretardantctrl>
+		<waterdropparticlectrl type="bool">false</waterdropparticlectrl>
+		<waterdropretardantctrl type="bool">false</waterdropretardantctrl>
 	  </firetank>
 	  <effects>
 		<particle>
@@ -179,7 +185,5 @@
       <file>Aircraft/Generic/helicopter-fcs.nas</file>
     </fcs>
   </nasal>
-<position>
-	<altitude-aml-ft type="float">0</altitude-aml-ft>
-</position>
+
 </PropertyList>

@@ -113,8 +113,7 @@
     <binding>
       <command>nasal</command>
       <script>
-		setprop("sim/model/firetank/deployflexhose", !getprop("sim/model/firetank/deployflexhose"));
-		#doors.flexhose.toggle();
+		doors.flexhose.toggle();
 	  </script>
     </binding>
   </key>

@@ -18,7 +18,7 @@
     <lighting>false</lighting>
 
 	<condition>
-        <and>
+        <!--and>
 			<property>sim/model/aircrane/particles/enabled</property>
 			<not>
 				<property>sim/freeze/clock</property>
@@ -33,7 +33,8 @@
 				<property>sim/weight[3]/weight-lb</property>
 				<value>10</value>
 			</greater-than>
-        </and>
+        </and-->
+		<property>sim/model/firetank/watercannonparticlectrl</property>
 	</condition>
 
     <attach>world</attach>
@@ -48,8 +49,8 @@
       <phi-min-deg>-3</phi-min-deg>
       <phi-max-deg>3</phi-max-deg>
       <speed-mps>
-		<value>40</value>
-		<spread>30</spread>
+		<value>1000</value>
+		<spread>990</spread>
       </speed-mps>
       <rotation-speed>
         <x-min-deg-sec>-15 </x-min-deg-sec>
@@ -63,7 +64,7 @@
 
     <counter>
       <particles-per-sec>
-		<value>200</value>
+		<value>700</value>
       </particles-per-sec>
     </counter>
 
@@ -110,7 +111,7 @@
         </size>
       </end>
       <life-sec>
-		<value>4</value>
+		<value>4.9</value>
       </life-sec>
       <mass-kg>25</mass-kg>
       <radius-m>.9</radius-m>

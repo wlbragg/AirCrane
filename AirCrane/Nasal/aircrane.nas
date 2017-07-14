@@ -430,6 +430,18 @@ setlistener("/sim/signals/fdm-initialized", func {
 	  tank_operations_timer.start();
   });
 
+  # firebug fire starter ctrl+shift+leftmouseclick
+  setlistener("/sim/signals/click", func {
+	  if (__kbd.shift.getBoolValue()) {
+		  var click_pos = geo.click_position();
+		  if (__kbd.ctrl.getBoolValue()) {
+			  wildfire.ignite(click_pos);
+		  } else {
+			  wildfire.resolve_foam_drop(click_pos, 50, 1);
+		  }
+	  }
+  });
+
   # Listen for impact of released payload
   setlistener("/sim/ai/aircraft/impact/retardant", func (n) {
     #print("Retardant impact!");

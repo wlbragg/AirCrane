@@ -13,16 +13,42 @@ var tank_operations = func {
 	var hopperweight = getprop("sim/weight[3]/weight-lb");
 
 	var scoopdown = getprop("sim/model/firetank/deployramscoop/position-norm");
-	var sniffer = getprop("sim/model/firetank/deployflexhose");
+	var sniffer = getprop("sim/model/firetank/deployflexhose/position-norm");
 	var overland = getprop("gear/gear/ground-is-solid");
 	var altitude = getprop("position/altitude-agl-ft");
 	var airspeed = getprop("velocities/airspeed-kt");
 
-    #if (!hopperweight and ((payload and cannon and cannonvalveopen) or (payload and tankdooropen))) {
-    #    logger.screen.white("Hopper is empty");
-        #return;
-    #}
-    if (cannonvalveopen and hopperweight and payload and cannon) {
+	var particles = getprop("sim/model/aircrane/particles/enabled");
+	var paused = getprop("sim/freeze/clock");
+	var crashed = getprop("sim/crashed");
+
+	if (!payload or crashed or paused) {
+		setprop("waterdropparticlectrl", 0);
+		setprop("waterdropretardantctrl", 0);
+		setprop("watercannonparticlectrl", 0);
+		setprop("watercannonretardantctrl", 0);
+        return;
+    }
+
+	setprop("sim/model/firetank/waterdropparticlectrl", tankdooropen*hopperweight*particles);
+	setprop("sim/model/firetank/watercannonparticlectrl", cannonvalveopen*hopperweight*particles);
+
+	if (hopperweight) {
+		if (tankdooropen)
+			setprop("sim/model/firetank/waterdropretardantctrl", 1);
+		else
+			setprop("sim/model/firetank/waterdropretardantctrl", 0);
+		if (cannon and cannonvalveopen)
+			setprop("sim/model/firetank/watercannonretardantctrl", 1);
+		else
+			setprop("sim/model/firetank/watercannonretardantctrl", 0);
+	} else {
+		setprop("sim/model/firetank/waterdropretardantctrl", 0);
+		setprop("sim/model/firetank/watercannonretardantctrl", 0);
+	}
+		
+    
+    if (cannonvalveopen and hopperweight and cannon) {
 		#300 * 8.345 weight per gal = 2503.5 weight per minute / 60 = 41.72 per second / 4 (.25 seconds timer cycle) = 10.43 capacity per cycle
  		#300 gal per minute / 60 = 5 per second / 4 (.25 seconds timer cycle) = 1.25 per cycle * 8.345 weight per gallon = 10.43 capacity per cycle
         capacity = 10.43; 
@@ -30,7 +56,7 @@ var tank_operations = func {
         	hopperweight = hopperweight - capacity;
 		setprop("sim/weight[3]/weight-lb", hopperweight);
     }
-	if (tankdooropen and hopperweight and payload) {
+	if (tankdooropen and hopperweight) {
 		#2500 gal * 8.345 weight per gal = 20862.5 / 3 sec dump = 6954.17 per sec / 4 (.25 seconds timer cycle) = 1738.54 capacity per cycle
 		#2500 gal / 3 sec dump = 833.33 per second / 4 (.25 seconds timer cycle) = 208.33 * 8.345 weight per gallon = 1738.51 capacity per cycle
         capacity = 1738.53; #will be one of 9 modes, currenty dump load in three seconds
