@@ -105,7 +105,7 @@
     <weight n="3">
       <name>Load</name>
       <weight-lb>0</weight-lb>
-      <max-lb>22115</max-lb>
+      <max-lb>20000</max-lb>
     </weight>
     
     <help include="System/help.xml"/>

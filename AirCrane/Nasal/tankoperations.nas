@@ -56,10 +56,6 @@ var tank_operations = func {
 		setprop("sim/weight[3]/weight-lb", hopperweight);
 	}
 
-	if (hopperweight > 20000) { 
-		hopperweight = 20000;
-		setprop("sim/weight[3]/weight-lb", hopperweight);
-	}
 	if (hopperweight < 0) {
 		hopperweight = 0;
 		setprop("sim/weight[3]/weight-lb", hopperweight);
