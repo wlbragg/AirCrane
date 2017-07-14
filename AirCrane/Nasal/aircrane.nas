@@ -423,16 +423,8 @@ setlistener("/sim/signals/fdm-initialized", func {
     }
   });
 
-<<<<<<< .mine
   setlistener("/sim/freeze/clock", func {
     if (getprop("/sim/freeze/clock"))
-||||||| .r9
-  setlistener("/sim/paused", func {
-    if (cmdarg().getBoolValue())
-=======
-  setlistener("/sim/freeze/clock", func {
-    if (cmdarg().getBoolValue())
->>>>>>> .r10
       tank_operations_timer.stop();
     else
 	  tank_operations_timer.start();
