@@ -26,7 +26,7 @@ var tank_operations = func {
 	var overland = getprop("gear/gear/ground-is-solid");
 	var altitude = getprop("position/altitude-agl-ft");
 	var airspeed = getprop("velocities/airspeed-kt");
-	var particles = getprop("sim/model/aircrane/particles/enabled");
+	var particles = getprop("sim/model/aircrane/effects/particles/enabled");
 	var normalized = 1-(altitude-0)/(55-0);
 
 	setprop("sim/model/firetank/waterdropparticlectrl", tankdooropen*hopperweight*particles);

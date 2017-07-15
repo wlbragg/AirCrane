@@ -38,9 +38,11 @@
         <state type="int">0</state>
         <engine type="float">0</engine>
         <rotor-step-deg type="float">-1</rotor-step-deg>
-		<particles>
+		<effects>
+		  <particles>
 			<enabled type="bool">true</enabled>
-		</particles>
+		  </particles>
+		</effects>
       </aircrane>
 	  <watercannon>
 		<enabled type="bool">true</enabled>
@@ -57,12 +59,6 @@
 		<waterdropparticlectrl type="bool">false</waterdropparticlectrl>
 		<waterdropretardantctrl type="bool">false</waterdropretardantctrl>
 	  </firetank>
-	  <effects>
-		<particle>
-			<startcolor type="float">.3</startcolor>
-			<endcolor type="float">.3</endcolor>
-	    </particle>
-	  </effects>
     </model>
 
     <multiplay>

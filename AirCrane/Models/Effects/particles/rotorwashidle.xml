@@ -16,7 +16,7 @@
 		</placer>
 
 		<condition>
-			<property>sim/model/aircrane/particles/enabled</property>
+			<property>sim/model/aircrane/effects/particles/enabled</property>
 			<not>
 				<property>sim/freeze/clock</property>
 			</not>
@@ -31,6 +31,7 @@
 				<property>rotors/main/rpm</property>
 				<value>60</value>
 			</greater-than>
+			<property>gear/gear/ground-is-solid</property>
 		</condition>
 
 		<shooter>
@@ -55,9 +56,8 @@
 
 		<counter>
 			<particles-per-sec>
-				<property>position/altitude-agl-ft</property>
-				<factor>-40</factor>
-				<offset-m>2000</offset-m>
+				<value>  30 </value>
+        		<spread> 25 </spread>
 			</particles-per-sec>
 		</counter>
 
@@ -66,46 +66,62 @@
 		<particle>
 			<start>
 				<color>
-					<red><value>   0.4 </value></red>
-          			<green><value> 0.4 </value></green>
-          			<blue><value>  0.4 </value></blue>
+					<red>
+						<property>/rendering/scene/diffuse/red</property>
+					</red>
+					<green>
+						<property>/rendering/scene/diffuse/red</property>
+					</green>
+					<blue>
+						<property>/rendering/scene/diffuse/red</property>
+					</blue>
 					<alpha>
 						<property>rotors/main/rpm</property>
 						<factor>0.00009</factor>
 					</alpha>
 				</color>
 				<size>
-					<value> 1</value>
-					<spread>0.5</spread>
+					<value> 4</value>
+					<spread>1</spread>
 				</size>
 			</start>
 
 			<end>
 				<color>
-					<red><value>   0.7 </value></red>
-          			<green><value> 0.7 </value></green>
-          			<blue><value>  0.7 </value></blue>
+					<red>
+						<property>/rendering/scene/diffuse/red</property>
+					</red>
+					<green>
+						<property>/rendering/scene/diffuse/red</property>
+					</green>
+					<blue>
+						<property>/rendering/scene/diffuse/red</property>
+					</blue>
 					<alpha>
 						<property>rotors/main/rpm</property>
-						<factor>0.0007</factor>
+						<factor>0.0001</factor>
 					</alpha>
 				</color>
 				<size>
-					<value> 0.4</value>
-					<spread>0.4</spread>
+					<value> 40</value>
+					<spread>15</spread>
 				</size>
 			</end>
 
 			<life-sec>
-				<value>2</value>
+				<value>3</value>
+				<spread>.5</spread>
 			</life-sec>
-			<mass-kg>0.01</mass-kg>
-			<radius-m>0.01</radius-m>
+			<mass-kg> 6000 </mass-kg>
+      		<radius-m>  10 </radius-m>
 		</particle>
 
 		<program>
-			<fluid>air</fluid>
+			<!--fluid>air</fluid>
 			<gravity>false</gravity>
+			<wind>true</wind-->
+			<fluid>water</fluid>
+			<gravity>true</gravity>
 			<wind>true</wind>
 		</program>
 

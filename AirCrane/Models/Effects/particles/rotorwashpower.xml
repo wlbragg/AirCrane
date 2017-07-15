@@ -21,7 +21,7 @@
 
 	<condition>
 		<and>
-			<property>sim/model/aircrane/particles/enabled</property>
+			<property>sim/model/aircrane/effects/particles/enabled</property>
 			<not>
 				<property>sim/freeze/clock</property>
 			</not>
@@ -73,41 +73,37 @@
     <particle>
       <start>
         <color>
-          <red><value>   0.3 </value></red>
-          <green><value> 0.3 </value></green>
-          <blue><value>  0.3 </value></blue>
+		  <red>
+              <property>/rendering/scene/diffuse/red</property>
+          </red>
+          <green>
+              <property>/rendering/scene/diffuse/red</property>
+          </green>
+          <blue>
+              <property>/rendering/scene/diffuse/red</property>
+          </blue>
 		  <alpha>
 		    <property>rotors/main/rpm</property>
 			<factor>0.0004</factor>
 		  </alpha>
         </color>
         <size>
-          <value>   <!--Translate to ground level  -->
-  <animation>
-   <type>translate</type>
-   <object-name>rotorwashidle</object-name>
-   <property>/position/altitude-agl-ft</property>
-   <factor>-0.3048</factor>
-   <center>
-     <x-m>0</x-m>
-     <y-m>0</y-m>
-     <z-m>0</z-m>
-   </center>
-   <axis>
-     <x>0</x>
-     <y>0</y>
-     <z>-1</z>
-   </axis>
- </animation> 4 </value>
+          <value>  4 </value>
           <spread> 1 </spread>
         </size>
       </start>
 
       <end>
         <color>
-          <red><value>   0.8 </value></red>
-          <green><value> 0.8 </value></green>
-          <blue><value>  0.8 </value></blue>
+		  <red>
+              <property>/rendering/scene/diffuse/red</property>
+          </red>
+          <green>
+              <property>/rendering/scene/diffuse/red</property>
+          </green>
+          <blue>
+              <property>/rendering/scene/diffuse/red</property>
+          </blue>
           <alpha>
 			<property>rotors/main/rpm</property>
 			<factor>0.002</factor>

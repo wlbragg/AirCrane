@@ -19,7 +19,7 @@
 
 	<condition>
         <and>
-			<property>sim/model/aircrane/particles/enabled</property>
+			<property>sim/model/aircrane/effects/particles/enabled</property>
 			<not>
 				<property>sim/freeze/clock</property>
 			</not>

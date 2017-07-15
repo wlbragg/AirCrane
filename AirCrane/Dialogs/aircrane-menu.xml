@@ -29,7 +29,7 @@
         <binding>
           <command>nasal</command>
           <script>
-            var p = "sim/model/aircrane/particles/enabled";
+            var p = "sim/model/aircrane/effects/particles/enabled";
             setprop(p, var i = !getprop(p));
             gui.popupTip("Particle effects " ~ (i ? "On" : "Off"));
           </script>
