@@ -31,7 +31,6 @@
 				<property>rotors/main/rpm</property>
 				<value>60</value>
 			</greater-than>
-			<property>gear/gear/ground-is-solid</property>
 		</condition>
 
 		<shooter>
