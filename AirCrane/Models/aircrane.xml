@@ -443,6 +443,7 @@
    </offsets>
   </model>
 
+  <!-- Water drop -->
   <model>
     <path>Aircraft/AirCrane/Models/Effects/particles/waterdrop.xml</path>
     <offsets>
@@ -451,7 +452,17 @@
       <z-m>-2.959</z-m>
    </offsets>
   </model>
-  
+
+  <!-- Snorkel splash  -->
+  <model>
+    <path>Aircraft/AirCrane/Models/Effects/particles/snorkelsplash.xml</path>
+    <offsets>
+	  <x-m> 2.90</x-m>
+      <y-m>-0.53</y-m>
+      <z-m>-1.75</z-m>
+   </offsets>
+  </model>
+
   <!-- Ramscoop wake -->
   <model>
     <path>Aircraft/AirCrane/Models/Effects/particles/ramscoopwake.xml</path>

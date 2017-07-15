@@ -17,21 +17,6 @@
     <lighting>false</lighting>
 
 	<condition>
-        <!--and>
-			<property>sim/model/aircrane/particles/enabled</property>
-			<not>
-				<property>sim/freeze/clock</property>
-			</not>
-			<not>
-				<property>sim/crashed</property>
-			</not>
-			<property>sim/model/firetank/enabled</property>
-			<property>sim/model/firetank/opentankdoors</property>
-			<greater-than>
-				<property>sim/weight[3]/weight-lb</property>
-				<value>10</value>
-			</greater-than>
-        </and-->
 		<property>sim/model/firetank/waterdropparticlectrl</property>
 	</condition>
 
