@@ -40,7 +40,19 @@
         <rotor-step-deg type="float">-1</rotor-step-deg>
 		<effects>
 		  <particles>
+			<rotorwash>
+				<enabled type="bool">true</enabled>
+				<redcombinedstart type="float">.3</redcombinedstart>
+				<greencombinedstart type="float">.3</greencombinedstart>
+				<bluecombinedstart type="float">.3</bluecombinedstart>
+				<redcombinedend type="float">.5</redcombinedend>
+				<greencombinedend type="float">.5</greencombinedend>
+				<bluecombinedend type="float">.5</bluecombinedend>
+			</rotorwash>
 			<enabled type="bool">true</enabled>
+			<redcombined type="float">0</redcombined>
+			<greencombined type="float">0</greencombined>
+			<bluecombined type="float">0</bluecombined>
 		  </particles>
 		</effects>
       </aircrane>

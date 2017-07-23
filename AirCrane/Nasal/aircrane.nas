@@ -459,10 +459,6 @@ setlistener("/sim/signals/fdm-initialized", func {
   # the attitude indicator needs pressure
   # settimer(func { setprop("engines/engine/rpm", 3000) }, 8);
 
-  setprop("sim/model/firetank/cradleX", 320);
-  setprop("sim/model/firetank/cradleY", -8);
-  setprop("sim/model/firetank/cradleZ", -10);
-
   var tank_operations_timer = maketimer(.25, func{tank_operations()});
   tank_operations_timer.start();
 

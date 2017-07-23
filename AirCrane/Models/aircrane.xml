@@ -459,7 +459,7 @@
     <offsets>
 	  <x-m> 2.90</x-m>
       <y-m>-0.53</y-m>
-      <z-m>-1.75</z-m>
+      <z-m>-1.45</z-m>
    </offsets>
   </model>
 
@@ -1012,7 +1012,7 @@
 		<object-name>flexfillhose.017</object-name>
     	<object-name>flexfillhose.018</object-name>
 		<property>sim/model/firetank/deployflexhose/position-norm</property>
-        <factor>-12</factor>
+        <factor>-10.5</factor>
         <offset-deg>0</offset-deg>   
         <center>
             <x-m>-4.80848</x-m>
@@ -1020,9 +1020,9 @@
             <z-m>-2.54611</z-m>
         </center>
         <axis>
-            <x>0.0</x>
+            <x>0</x>
             <y>1</y>
-            <z>0.10</z>
+            <z>.10</z>
         </axis>
     </animation>
     <animation>
@@ -1045,7 +1045,7 @@
 		<object-name>flexfillhose.017</object-name>
     	<object-name>flexfillhose.018</object-name>
         <property>sim/model/firetank/deployflexhose/position-norm</property>
-        <factor>-12</factor>
+        <factor>-10.5</factor>
         <offset-deg>0</offset-deg>   
         <center>
             <x-m>-4.80879</x-m>
@@ -1053,9 +1053,9 @@
             <z-m>-2.80733</z-m>
         </center>
         <axis>
-            <x>0.0</x>
+            <x>0</x>
             <y>1</y>
-            <z>0.10</z>
+            <z>.10</z>
         </axis>
     </animation>
     <animation>
@@ -1077,7 +1077,7 @@
 		<object-name>flexfillhose.017</object-name>
     	<object-name>flexfillhose.018</object-name>
         <property>sim/model/firetank/deployflexhose/position-norm</property>
-        <factor>-12</factor>
+        <factor>-10.5</factor>
         <offset-deg>0</offset-deg>   
         <center>
             <x-m>-4.80914</x-m>
@@ -1085,9 +1085,9 @@
             <z-m>-3.09784</z-m>
         </center>
         <axis>
-            <x>0.0</x>
+            <x>0</x>
             <y>1</y>
-            <z>0.10</z>
+            <z>.10</z>
         </axis>
     </animation>
     <animation>
@@ -1108,7 +1108,7 @@
 		<object-name>flexfillhose.017</object-name>
     	<object-name>flexfillhose.018</object-name>
         <property>sim/model/firetank/deployflexhose/position-norm</property>
-        <factor>-12</factor>
+        <factor>-10.5</factor>
         <offset-deg>0</offset-deg>   
         <center>
             <x-m>-4.80951</x-m>
@@ -1116,9 +1116,9 @@
             <z-m>-3.40909</z-m>
         </center>
         <axis>
-            <x>0.0</x>
+            <x>0</x>
             <y>1</y>
-            <z>0.10</z>
+            <z>.10</z>
         </axis>
     </animation>
     <animation>
@@ -1138,7 +1138,7 @@
 		<object-name>flexfillhose.017</object-name>
     	<object-name>flexfillhose.018</object-name>
         <property>sim/model/firetank/deployflexhose/position-norm</property>
-        <factor>-12</factor>
+        <factor>-10.5</factor>
         <offset-deg>0</offset-deg>   
         <center>
             <x-m>-4.80988</x-m>
@@ -1146,9 +1146,9 @@
             <z-m>-3.72035</z-m>
         </center>
         <axis>
-            <x>0.0</x>
+            <x>0</x>
             <y>1</y>
-            <z>0.10</z>
+            <z>.10</z>
         </axis>
     </animation>
     <animation>
@@ -1167,7 +1167,7 @@
 		<object-name>flexfillhose.017</object-name>
     	<object-name>flexfillhose.018</object-name>
         <property>sim/model/firetank/deployflexhose/position-norm</property>
-        <factor>-12</factor>
+        <factor>-10.5</factor>
         <offset-deg>0</offset-deg>   
         <center>
             <x-m>-4.81007</x-m>
@@ -1175,9 +1175,9 @@
             <z-m>-4.03951</z-m>
         </center>
         <axis>
-            <x>0.0</x>
+            <x>0</x>
             <y>1</y>
-            <z>0.10</z>
+            <z>.10</z>
         </axis>
     </animation>
     <animation>
@@ -1195,7 +1195,7 @@
 		<object-name>flexfillhose.017</object-name>
     	<object-name>flexfillhose.018</object-name>
         <property>sim/model/firetank/deployflexhose/position-norm</property>
-        <factor>-12</factor>
+        <factor>-10.5</factor>
         <offset-deg>0</offset-deg>   
         <center>
             <x-m>-4.81007</x-m>
@@ -1203,9 +1203,9 @@
             <z-m>-4.36246</z-m>
         </center>
         <axis>
-            <x>0.0</x>
+            <x>0</x>
             <y>1</y>
-            <z>0.10</z>
+            <z>.10</z>
         </axis>
     </animation>
     <animation>
@@ -1230,9 +1230,9 @@
             <z-m>-4.67943</z-m>
         </center>
         <axis>
-            <x>0.0</x>
+            <x>0</x>
             <y>1</y>
-            <z>0.10</z>
+            <z>.10</z>
         </axis>
     </animation>
     <animation>
@@ -1256,9 +1256,9 @@
             <z-m>-5.00236</z-m>
         </center>
         <axis>
-            <x>0.0</x>
+            <x>0</x>
             <y>1</y>
-            <z>0.10</z>
+            <z>.10</z>
         </axis>
     </animation>
     <animation>
@@ -1281,9 +1281,9 @@
             <z-m>-5.34927</z-m>
         </center>
         <axis>
-            <x>0.0</x>
+            <x>0</x>
             <y>1</y>
-            <z>0.10</z>
+            <z>.10</z>
         </axis>
     </animation>
     <animation>
@@ -1305,9 +1305,9 @@
             <z-m>-5.71419</z-m>
         </center>
         <axis>
-            <x>0.0</x>
+            <x>0</x>
             <y>1</y>
-            <z>0.10</z>
+            <z>.10</z>
         </axis>
     </animation>
     <animation>
@@ -1319,7 +1319,7 @@
 		<object-name>flexfillhose.016</object-name>
 		<object-name>flexfillhose.017</object-name>
     	<object-name>flexfillhose.018</object-name>
-        <property>sim/model/firetank/deployflexhose/position-norm</property>1
+        <property>sim/model/firetank/deployflexhose/position-norm</property>
         <factor>-8.5</factor>
         <offset-deg>0</offset-deg>   
         <center>
@@ -1328,9 +1328,9 @@
             <z-m>-6.12689</z-m>
         </center>
         <axis>
-            <x>0.0</x>
+            <x>0</x>
             <y>1</y>
-            <z>0.10</z>
+            <z>.10</z>
         </axis>
     </animation>
     <animation>
@@ -1350,9 +1350,9 @@
             <z-m>-6.56949</z-m>
         </center>
         <axis>
-            <x>0.0</x>
+            <x>0</x>
             <y>1</y>
-            <z>0.10</z>
+            <z>.10</z>
         </axis>
     </animation>
     <animation>
@@ -1371,9 +1371,9 @@
             <z-m>-6.98219</z-m>
         </center>
         <axis>
-            <x>0.0</x>
+            <x>0</x>
             <y>1</y>
-            <z>0.10</z>
+            <z>.10</z>
         </axis>
     </animation>
     <animation>
@@ -1390,10 +1390,10 @@
             <y-m>-0.50767</y-m>
             <z-m>-7.38772</z-m>
         </center>
-        <axis>
-            <x>0.0</x>
+        <axis>0.
+            <x>0</x>
             <y>1</y>
-            <z>0.10</z>
+            <z>.10</z>
         </axis>
     </animation>
     <animation>
@@ -1410,9 +1410,9 @@
             <z-m>-7.8301</z-m>
         </center>
         <axis>
-            <x>0.0</x>
+            <x>0</x>
             <y>1</y>
-            <z>0.10</z>
+            <z>.10</z>
         </axis>
     </animation>
     <animation>
@@ -1428,9 +1428,9 @@
             <z-m>-8.29025</z-m>
         </center>
         <axis>
-            <x>0.0</x>
+            <x>0</x>
             <y>1</y>
-            <z>0.10</z>
+            <z>.10</z>
         </axis>
     </animation>
     <animation>
@@ -1443,11 +1443,11 @@
             <x-m>-4.84547</x-m>
             <y-m>-0.53373</y-m>
             <z-m>-8.87548</z-m>
-        </center>
+        </center>0.
         <axis>
-            <x>0.0</x>
+            <x>0</x>
             <y>1</y>
-            <z>0.10</z>
+            <z>.10</z>
         </axis>
     </animation>
 
@@ -1456,7 +1456,13 @@
         <type>translate</type>
         <object-name>flexfillhose.001</object-name>
         <property>sim/model/firetank/cradleX1</property>
-        <factor>1</factor>
+        <factor>1700</factor>
+		<condition>
+			<greater-than-equals>
+			 <property>sim/model/firetank/deployflexhose/position-norm</property>
+			 <value>0</value>
+			</greater-than-equals>
+		</condition>
         <axis>
             <x>1.0</x>
             <y>0.0</y>
@@ -1467,18 +1473,30 @@
         <type>translate</type>
         <object-name>flexfillhose.002</object-name>
         <property>sim/model/firetank/cradleX2</property>
-        <factor>1</factor>
+        <factor>1700</factor>
+		<condition>
+			<greater-than-equals>
+			 <property>sim/model/firetank/deployflexhose/position-norm</property>
+			 <value>0</value>
+			</greater-than-equals>
+		</condition>
         <axis>
             <x>1.0</x>
             <y>0.0</y>
             <z>0.0</z>
         </axis>
     </animation>
-        <animation>
+    <animation>
         <type>translate</type>
         <object-name>flexfillhose.003</object-name>
         <property>sim/model/firetank/cradleX3</property>
-        <factor>1</factor>
+        <factor>1700</factor>
+		<condition>
+			<greater-than-equals>
+			 <property>sim/model/firetank/deployflexhose/position-norm</property>
+			 <value>0</value>
+			</greater-than-equals>
+		</condition>
         <axis>
             <x>1.0</x>
             <y>0.0</y>
@@ -1489,7 +1507,13 @@
         <type>translate</type>
         <object-name>flexfillhose.004</object-name>
         <property>sim/model/firetank/cradleX4</property>
-        <factor>1</factor>
+        <factor>1700</factor>
+		<condition>
+			<greater-than-equals>
+			 <property>sim/model/firetank/deployflexhose/position-norm</property>
+			 <value>0</value>
+			</greater-than-equals>
+		</condition>
         <axis>
             <x>1.0</x>
             <y>0.0</y>
@@ -1500,7 +1524,13 @@
         <type>translate</type>
         <object-name>flexfillhose.005</object-name>
         <property>sim/model/firetank/cradleX5</property>
-        <factor>1</factor>
+        <factor>1700</factor>
+		<condition>
+			<greater-than-equals>
+			 <property>sim/model/firetank/deployflexhose/position-norm</property>
+			 <value>0</value>
+			</greater-than-equals>
+		</condition>
         <axis>
             <x>1.0</x>
             <y>0.0</y>
@@ -1511,7 +1541,13 @@
         <type>translate</type>
         <object-name>flexfillhose.006</object-name>
         <property>sim/model/firetank/cradleX6</property>
-        <factor>1</factor>
+        <factor>1700</factor>
+		<condition>
+			<greater-than-equals>
+			 <property>sim/model/firetank/deployflexhose/position-norm</property>
+			 <value>0</value>
+			</greater-than-equals>
+		</condition>
         <axis>
             <x>1.0</x>
             <y>0.0</y>
@@ -1522,7 +1558,13 @@
         <type>translate</type>
         <object-name>flexfillhose.007</object-name>
         <property>sim/model/firetank/cradleX7</property>
-        <factor>1</factor>
+        <factor>1700</factor>
+		<condition>
+			<greater-than-equals>
+			 <property>sim/model/firetank/deployflexhose/position-norm</property>
+			 <value>0</value>
+			</greater-than-equals>
+		</condition>
         <axis>
             <x>1.0</x>
             <y>0.0</y>
@@ -1533,7 +1575,13 @@
         <type>translate</type>
         <object-name>flexfillhose.008</object-name>
         <property>sim/model/firetank/cradleX8</property>
-        <factor>1</factor>
+        <factor>1700</factor>
+		<condition>
+			<greater-than-equals>
+			 <property>sim/model/firetank/deployflexhose/position-norm</property>
+			 <value>0</value>
+			</greater-than-equals>
+		</condition>
         <axis>
             <x>1.0</x>
             <y>0.0</y>
@@ -1544,7 +1592,13 @@
         <type>translate</type>
         <object-name>flexfillhose.009</object-name>
         <property>sim/model/firetank/cradleX9</property>
-        <factor>1</factor>
+        <factor>1700</factor>
+		<condition>
+			<greater-than-equals>
+			 <property>sim/model/firetank/deployflexhose/position-norm</property>
+			 <value>0</value>
+			</greater-than-equals>
+		</condition>
         <axis>
             <x>1.0</x>
             <y>0.0</y>
@@ -1555,7 +1609,13 @@
         <type>translate</type>
         <object-name>flexfillhose.010</object-name>
         <property>sim/model/firetank/cradleX10</property>
-        <factor>1</factor>
+        <factor>1700</factor>
+		<condition>
+			<greater-than-equals>
+			 <property>sim/model/firetank/deployflexhose/position-norm</property>
+			 <value>0</value>
+			</greater-than-equals>
+		</condition>
         <axis>
             <x>1.0</x>
             <y>0.0</y>
@@ -1566,7 +1626,13 @@
         <type>translate</type>
         <object-name>flexfillhose.011</object-name>
         <property>sim/model/firetank/cradleX11</property>
-        <factor>1</factor>
+        <factor>1700</factor>
+		<condition>
+			<greater-than-equals>
+			 <property>sim/model/firetank/deployflexhose/position-norm</property>
+			 <value>0</value>
+			</greater-than-equals>
+		</condition>
         <axis>
             <x>1.0</x>
             <y>0.0</y>
@@ -1577,7 +1643,13 @@
         <type>translate</type>
         <object-name>flexfillhose.012</object-name>
         <property>sim/model/firetank/cradleX12</property>
-        <factor>1</factor>
+        <factor>1700</factor>
+		<condition>
+			<greater-than-equals>
+			 <property>sim/model/firetank/deployflexhose/position-norm</property>
+			 <value>0</value>
+			</greater-than-equals>
+		</condition>
         <axis>
             <x>1.0</x>
             <y>0.0</y>
@@ -1588,7 +1660,13 @@
         <type>translate</type>
         <object-name>flexfillhose.013</object-name>
         <property>sim/model/firetank/cradleX13</property>
-        <factor>1</factor>
+        <factor>1700</factor>
+		<condition>
+			<greater-than-equals>
+			 <property>sim/model/firetank/deployflexhose/position-norm</property>
+			 <value>0</value>
+			</greater-than-equals>
+		</condition>
         <axis>
             <x>1.0</x>
             <y>0.0</y>
@@ -1599,7 +1677,13 @@
         <type>translate</type>
         <object-name>flexfillhose.014</object-name>
         <property>sim/model/firetank/cradleX14</property>
-        <factor>1</factor>
+        <factor>1700</factor>
+		<condition>
+			<greater-than-equals>
+			 <property>sim/model/firetank/deployflexhose/position-norm</property>
+			 <value>0</value>
+			</greater-than-equals>
+		</condition>
         <axis>
             <x>1.0</x>
             <y>0.0</y>
@@ -1610,7 +1694,13 @@
         <type>translate</type>
         <object-name>flexfillhose.015</object-name>
         <property>sim/model/firetank/cradleX15</property>
-        <factor>1</factor>
+        <factor>1700</factor>
+		<condition>
+			<greater-than-equals>
+			 <property>sim/model/firetank/deployflexhose/position-norm</property>
+			 <value>0</value>
+			</greater-than-equals>
+		</condition>
         <axis>
             <x>1.0</x>
             <y>0.0</y>
@@ -1621,7 +1711,13 @@
         <type>translate</type>
         <object-name>flexfillhose.016</object-name>
         <property>sim/model/firetank/cradleX16</property>
-        <factor>1</factor>
+        <factor>1700</factor>
+		<condition>
+			<greater-than-equals>
+			 <property>sim/model/firetank/deployflexhose/position-norm</property>
+			 <value>0</value>
+			</greater-than-equals>
+		</condition>
         <axis>
             <x>1.0</x>
             <y>0.0</y>
@@ -1632,7 +1728,13 @@
         <type>translate</type>
         <object-name>flexfillhose.017</object-name>
         <property>sim/model/firetank/cradleX17</property>
-        <factor>1</factor>
+        <factor>1700</factor>
+		<condition>
+			<greater-than-equals>
+			 <property>sim/model/firetank/deployflexhose/position-norm</property>
+			 <value>0</value>
+			</greater-than-equals>
+		</condition>
         <axis>
             <x>1.0</x>
             <y>0.0</y>
@@ -1643,7 +1745,321 @@
         <type>translate</type>
         <object-name>flexfillhose.018</object-name>
         <property>sim/model/firetank/cradleX18</property>
-        <factor>1</factor>
+        <factor>1700</factor>
+		<condition>
+			<greater-than-equals>
+			 <property>sim/model/firetank/deployflexhose/position-norm</property>
+			 <value>0</value>
+			</greater-than-equals>
+		</condition>
+        <axis>
+            <x>1.0</x>
+            <y>0.0</y>
+            <z>0.0</z>
+        </axis>
+    </animation>
+
+    <!-- Flex Hose X-shift Negative (for/aft)-->
+    <animation>
+        <type>translate</type>
+        <object-name>flexfillhose.001</object-name>
+        <property>sim/model/firetank/cradleX1</property>
+        <factor>-1700</factor>
+		<condition>
+			<less-than>
+			 <property>sim/model/firetank/deployflexhose/position-norm</property>
+			 <value>0</value>
+			</less-than>
+		</condition>
+        <axis>
+            <x>1.0</x>
+            <y>0.0</y>
+            <z>0.0</z>
+        </axis>
+    </animation>
+    <animation>
+        <type>translate</type>
+        <object-name>flexfillhose.002</object-name>
+        <property>sim/model/firetank/cradleX2</property>
+        <factor>-1700</factor>
+		<condition>
+			<less-than>
+			 <property>sim/model/firetank/deployflexhose/position-norm</property>
+			 <value>0</value>
+			</less-than>
+		</condition>
+        <axis>
+            <x>1.0</x>
+            <y>0.0</y>
+            <z>0.0</z>
+        </axis>
+    </animation>
+    <animation>
+        <type>translate</type>
+        <object-name>flexfillhose.003</object-name>
+        <property>sim/model/firetank/cradleX3</property>
+        <factor>-1700</factor>
+		<condition>
+			<less-than>
+			 <property>sim/model/firetank/deployflexhose/position-norm</property>
+			 <value>0</value>
+			</less-than>
+		</condition>
+        <axis>
+            <x>1.0</x>
+            <y>0.0</y>
+            <z>0.0</z>
+        </axis>
+    </animation>
+    <animation>
+        <type>translate</type>
+        <object-name>flexfillhose.004</object-name>
+        <property>sim/model/firetank/cradleX4</property>
+        <factor>-1700</factor>
+		<condition>
+			<less-than>
+			 <property>sim/model/firetank/deployflexhose/position-norm</property>
+			 <value>0</value>
+			</less-than>
+		</condition>
+        <axis>
+            <x>1.0</x>
+            <y>0.0</y>
+            <z>0.0</z>
+        </axis>
+    </animation>
+    <animation>
+        <type>translate</type>
+        <object-name>flexfillhose.005</object-name>
+        <property>sim/model/firetank/cradleX5</property>
+        <factor>-1700</factor>
+		<condition>
+			<less-than>
+			 <property>sim/model/firetank/deployflexhose/position-norm</property>
+			 <value>0</value>
+			</less-than>
+		</condition>
+        <axis>
+            <x>1.0</x>
+            <y>0.0</y>
+            <z>0.0</z>
+        </axis>
+    </animation>
+    <animation>
+        <type>translate</type>
+        <object-name>flexfillhose.006</object-name>
+        <property>sim/model/firetank/cradleX6</property>
+        <factor>-1700</factor>
+		<condition>
+			<less-than>
+			 <property>sim/model/firetank/deployflexhose/position-norm</property>
+			 <value>0</value>
+			</less-than>
+		</condition>
+        <axis>
+            <x>1.0</x>
+            <y>0.0</y>
+            <z>0.0</z>
+        </axis>
+    </animation>
+    <animation>
+        <type>translate</type>
+        <object-name>flexfillhose.007</object-name>
+        <property>sim/model/firetank/cradleX7</property>
+        <factor>-1700</factor>
+		<condition>
+			<less-than>
+			 <property>sim/model/firetank/deployflexhose/position-norm</property>
+			 <value>0</value>
+			</less-than>
+		</condition>
+        <axis>
+            <x>1.0</x>
+            <y>0.0</y>
+            <z>0.0</z>
+        </axis>
+    </animation>
+    <animation>
+        <type>translate</type>
+        <object-name>flexfillhose.008</object-name>
+        <property>sim/model/firetank/cradleX8</property>
+        <factor>-1700</factor>
+		<condition>
+			<less-than>
+			 <property>sim/model/firetank/deployflexhose/position-norm</property>
+			 <value>0</value>
+			</less-than>
+		</condition>
+        <axis>
+            <x>1.0</x>
+            <y>0.0</y>
+            <z>0.0</z>
+        </axis>
+    </animation>
+    <animation>
+        <type>translate</type>
+        <object-name>flexfillhose.009</object-name>
+        <property>sim/model/firetank/cradleX9</property>
+        <factor>-1700</factor>
+		<condition>
+			<less-than>
+			 <property>sim/model/firetank/deployflexhose/position-norm</property>
+			 <value>0</value>
+			</less-than>
+		</condition>
+        <axis>
+            <x>1.0</x>
+            <y>0.0</y>
+            <z>0.0</z>
+        </axis>
+    </animation>
+    <animation>
+        <type>translate</type>
+        <object-name>flexfillhose.010</object-name>
+        <property>sim/model/firetank/cradleX10</property>
+        <factor>-1700</factor>
+		<condition>
+			<less-than>
+			 <property>sim/model/firetank/deployflexhose/position-norm</property>
+			 <value>0</value>
+			</less-than>
+		</condition>
+        <axis>
+            <x>1.0</x>
+            <y>0.0</y>
+            <z>0.0</z>
+        </axis>
+    </animation>
+    <animation>
+        <type>translate</type>
+        <object-name>flexfillhose.011</object-name>
+        <property>sim/model/firetank/cradleX11</property>
+        <factor>-1700</factor>
+		<condition>
+			<less-than>
+			 <property>sim/model/firetank/deployflexhose/position-norm</property>
+			 <value>0</value>
+			</less-than>
+		</condition>
+        <axis>
+            <x>1.0</x>
+            <y>0.0</y>
+            <z>0.0</z>
+        </axis>
+    </animation>
+    <animation>
+        <type>translate</type>
+        <object-name>flexfillhose.012</object-name>
+        <property>sim/model/firetank/cradleX12</property>
+        <factor>-1700</factor>
+		<condition>
+			<less-than>
+			 <property>sim/model/firetank/deployflexhose/position-norm</property>
+			 <value>0</value>
+			</less-than>
+		</condition>
+        <axis>
+            <x>1.0</x>
+            <y>0.0</y>
+            <z>0.0</z>
+        </axis>
+    </animation>
+    <animation>
+        <type>translate</type>
+        <object-name>flexfillhose.013</object-name>
+        <property>sim/model/firetank/cradleX13</property>
+        <factor>-1700</factor>
+		<condition>
+			<less-than>
+			 <property>sim/model/firetank/deployflexhose/position-norm</property>
+			 <value>0</value>
+			</less-than>
+		</condition>
+        <axis>
+            <x>1.0</x>
+            <y>0.0</y>
+            <z>0.0</z>
+        </axis>
+    </animation>
+    <animation>
+        <type>translate</type>
+        <object-name>flexfillhose.014</object-name>
+        <property>sim/model/firetank/cradleX14</property>
+        <factor>-1700</factor>
+		<condition>
+			<less-than>
+			 <property>sim/model/firetank/deployflexhose/position-norm</property>
+			 <value>0</value>
+			</less-than>
+		</condition>
+        <axis>
+            <x>1.0</x>
+            <y>0.0</y>
+            <z>0.0</z>
+        </axis>
+    </animation>
+    <animation>
+        <type>translate</type>
+        <object-name>flexfillhose.015</object-name>
+        <property>sim/model/firetank/cradleX15</property>
+        <factor>-1700</factor>
+		<condition>
+			<less-than>
+			 <property>sim/model/firetank/deployflexhose/position-norm</property>
+			 <value>0</value>
+			</less-than>
+		</condition>
+        <axis>
+            <x>1.0</x>
+            <y>0.0</y>
+            <z>0.0</z>
+        </axis>
+    </animation>
+    <animation>
+        <type>translate</type>
+        <object-name>flexfillhose.016</object-name>
+        <property>sim/model/firetank/cradleX16</property>
+        <factor>-1700</factor>
+		<condition>
+			<less-than>
+			 <property>sim/model/firetank/deployflexhose/position-norm</property>
+			 <value>0</value>
+			</less-than>
+		</condition>
+        <axis>
+            <x>1.0</x>
+            <y>0.0</y>
+            <z>0.0</z>
+        </axis>
+    </animation>
+    <animation>
+        <type>translate</type>
+        <object-name>flexfillhose.017</object-name>
+        <property>sim/model/firetank/cradleX17</property>
+        <factor>-1700</factor>
+		<condition>
+			<less-than>
+			 <property>sim/model/firetank/deployflexhose/position-norm</property>
+			 <value>0</value>
+			</less-than>
+		</condition>
+        <axis>
+            <x>1.0</x>
+            <y>0.0</y>
+            <z>0.0</z>
+        </axis>
+    </animation>
+    <animation>
+        <type>translate</type>
+        <object-name>flexfillhose.018</object-name>
+        <property>sim/model/firetank/cradleX18</property>
+        <factor>-1700</factor>
+		<condition>
+			<less-than>
+			 <property>sim/model/firetank/deployflexhose/position-norm</property>
+			 <value>0</value>
+			</less-than>
+		</condition>
         <axis>
             <x>1.0</x>
             <y>0.0</y>
@@ -1656,7 +2072,7 @@
         <type>translate</type>
         <object-name>flexfillhose.001</object-name>
         <property>sim/model/firetank/cradleY1</property>
-        <factor>-8</factor>
+        <factor>230</factor>
         <axis>
             <x>0.0</x>
             <y>1.0</y>
@@ -1667,18 +2083,18 @@
         <type>translate</type>
         <object-name>flexfillhose.002</object-name>
         <property>sim/model/firetank/cradleY2</property>
-        <factor>-8</factor>
+        <factor>230</factor>
         <axis>
             <x>0.0</x>
             <y>1.0</y>
             <z>0.0</z>
         </axis>
     </animation>
-        <animation>
+    <animation>
         <type>translate</type>
         <object-name>flexfillhose.003</object-name>
         <property>sim/model/firetank/cradleY3</property>
-        <factor>-8</factor>
+        <factor>230</factor>
         <axis>
             <x>0.0</x>
             <y>1.0</y>
@@ -1689,7 +2105,7 @@
         <type>translate</type>
         <object-name>flexfillhose.004</object-name>
         <property>sim/model/firetank/cradleY4</property>
-        <factor>-8</factor>
+        <factor>230</factor>
         <axis>
             <x>0.0</x>
             <y>1.0</y>
@@ -1700,7 +2116,7 @@
         <type>translate</type>
         <object-name>flexfillhose.005</object-name>
         <property>sim/model/firetank/cradleY5</property>
-        <factor>-8</factor>
+        <factor>230</factor>
         <axis>
             <x>0.0</x>
             <y>1.0</y>
@@ -1711,7 +2127,7 @@
         <type>translate</type>
         <object-name>flexfillhose.006</object-name>
         <property>sim/model/firetank/cradleY6</property>
-        <factor>-8</factor>
+        <factor>230</factor>
         <axis>
             <x>0.0</x>
             <y>1.0</y>
@@ -1722,7 +2138,7 @@
         <type>translate</type>
         <object-name>flexfillhose.007</object-name>
         <property>sim/model/firetank/cradleY7</property>
-        <factor>-8</factor>
+        <factor>230</factor>
         <axis>
             <x>0.0</x>
             <y>1.0</y>
@@ -1733,7 +2149,7 @@
         <type>translate</type>
         <object-name>flexfillhose.008</object-name>
         <property>sim/model/firetank/cradleY8</property>
-        <factor>-8</factor>
+        <factor>230</factor>
         <axis>
             <x>0.0</x>
             <y>1.0</y>
@@ -1744,7 +2160,7 @@
         <type>translate</type>
         <object-name>flexfillhose.009</object-name>
         <property>sim/model/firetank/cradleY9</property>
-        <factor>-8</factor>
+        <factor>230</factor>
         <axis>
             <x>0.0</x>
             <y>1.0</y>
@@ -1755,7 +2171,7 @@
         <type>translate</type>
         <object-name>flexfillhose.010</object-name>
         <property>sim/model/firetank/cradleY10</property>
-        <factor>-8</factor>
+        <factor>230</factor>
         <axis>
             <x>0.0</x>
             <y>1.0</y>
@@ -1766,7 +2182,7 @@
         <type>translate</type>
         <object-name>flexfillhose.011</object-name>
         <property>sim/model/firetank/cradleY11</property>
-        <factor>-8</factor>
+        <factor>230</factor>
         <axis>
             <x>0.0</x>
             <y>1.0</y>
@@ -1777,7 +2193,7 @@
         <type>translate</type>
         <object-name>flexfillhose.012</object-name>
         <property>sim/model/firetank/cradleY12</property>
-        <factor>-8</factor>
+        <factor>230</factor>
         <axis>
             <x>0.0</x>
             <y>1.0</y>
@@ -1788,7 +2204,7 @@
         <type>translate</type>
         <object-name>flexfillhose.013</object-name>
         <property>sim/model/firetank/cradleY13</property>
-        <factor>-8</factor>
+        <factor>230</factor>
         <axis>
             <x>0.0</x>
             <y>1.0</y>
@@ -1799,7 +2215,7 @@
         <type>translate</type>
         <object-name>flexfillhose.014</object-name>
         <property>sim/model/firetank/cradleY14</property>
-        <factor>-8</factor>
+        <factor>230</factor>
         <axis>
             <x>0.0</x>
             <y>1.0</y>
@@ -1810,7 +2226,7 @@
         <type>translate</type>
         <object-name>flexfillhose.015</object-name>
         <property>sim/model/firetank/cradleY15</property>
-        <factor>-8</factor>
+        <factor>230</factor>
         <axis>
             <x>0.0</x>
             <y>1.0</y>
@@ -1821,7 +2237,7 @@
         <type>translate</type>
         <object-name>flexfillhose.016</object-name>
         <property>sim/model/firetank/cradleY16</property>
-        <factor>-8</factor>
+        <factor>230</factor>
         <axis>
             <x>0.0</x>
             <y>1.0</y>
@@ -1832,7 +2248,7 @@
         <type>translate</type>
         <object-name>flexfillhose.017</object-name>
         <property>sim/model/firetank/cradleY17</property>
-        <factor>-8</factor>
+        <factor>230</factor>
         <axis>
             <x>0.0</x>
             <y>1.0</y>
@@ -1843,7 +2259,7 @@
         <type>translate</type>
         <object-name>flexfillhose.018</object-name>
         <property>sim/model/firetank/cradleY18</property>
-        <factor>-8</factor>
+        <factor>230</factor>
         <axis>
             <x>0.0</x>
             <y>1.0</y>
@@ -1851,12 +2267,320 @@
         </axis>
     </animation>
 
+    <!-- Flex Hose Y-shift Negative (left/right)
+    <animation>
+        <type>translate</type>
+        <object-name>flexfillhose.001</object-name>
+        <property>sim/model/firetank/cradleY1</property>
+        <factor>-230</factor>
+		<condition>
+			<less-than>
+			 <property>sim/model/firetank/deployflexhose/position-norm</property>
+			 <value>0</value>
+			</less-than>
+		</condition>
+        <axis>
+            <x>0.0</x>
+            <y>1.0</y>
+            <z>0.0</z>
+        </axis>
+    </animation>
+    <animation>
+        <type>translate</type>
+        <object-name>flexfillhose.002</object-name>
+        <property>sim/model/firetank/cradleY2</property>
+		<factor>-230</factor>
+		<condition>
+			<less-than>
+			 <property>sim/model/firetank/deployflexhose/position-norm</property>
+			 <value>0</value>
+			</less-than>
+		</condition>
+        <axis>
+            <x>0.0</x>
+            <y>1.0</y>
+            <z>0.0</z>
+        </axis>
+    </animation>
+    <animation>
+        <type>translate</type>
+        <object-name>flexfillhose.003</object-name>
+        <property>sim/model/firetank/cradleY3</property>
+        <factor>-230</factor>
+		<condition>
+			<less-than>
+			 <property>sim/model/firetank/deployflexhose/position-norm</property>
+			 <value>0</value>
+			</less-than>
+		</condition>
+        <axis>
+            <x>0.0</x>
+            <y>1.0</y>
+            <z>0.0</z>
+        </axis>
+    </animation>
+    <animation>
+        <type>translate</type>
+        <object-name>flexfillhose.004</object-name>
+        <property>sim/model/firetank/cradleY4</property>
+        <factor>-230</factor>
+		<condition>
+			<less-than>
+			 <property>sim/model/firetank/deployflexhose/position-norm</property>
+			 <value>0</value>
+			</less-than>
+		</condition>
+        <axis>
+            <x>0.0</x>
+            <y>1.0</y>
+            <z>0.0</z>
+        </axis>
+    </animation>
+    <animation>
+        <type>translate</type>
+        <object-name>flexfillhose.005</object-name>
+        <property>sim/model/firetank/cradleY5</property>
+        <factor>-230</factor>
+		<condition>
+			<less-than>
+			 <property>sim/model/firetank/deployflexhose/position-norm</property>
+			 <value>0</value>
+			</less-than>
+		</condition>
+        <axis>
+            <x>0.0</x>
+            <y>1.0</y>
+            <z>0.0</z>
+        </axis>
+    </animation>
+    <animation>
+        <type>translate</type>
+        <object-name>flexfillhose.006</object-name>
+        <property>sim/model/firetank/cradleY6</property>
+        <factor>-230</factor>
+		<condition>
+			<less-than>
+			 <property>sim/model/firetank/deployflexhose/position-norm</property>
+			 <value>0</value>
+			</less-than>
+		</condition>
+        <axis>
+            <x>0.0</x>
+            <y>1.0</y>
+            <z>0.0</z>
+        </axis>
+    </animation>
+    <animation>
+        <type>translate</type>
+        <object-name>flexfillhose.007</object-name>
+        <property>sim/model/firetank/cradleY7</property>
+        <factor>-230</factor>
+		<condition>
+			<less-than>
+			 <property>sim/model/firetank/deployflexhose/position-norm</property>
+			 <value>0</value>
+			</less-than>
+		</condition>
+        <axis>
+            <x>0.0</x>
+            <y>1.0</y>
+            <z>0.0</z>
+        </axis>
+    </animation>
+    <animation>
+        <type>translate</type>
+        <object-name>flexfillhose.008</object-name>
+        <property>sim/model/firetank/cradleY8</property>
+        <factor>-230</factor>
+		<condition>
+			<less-than>
+			 <property>sim/model/firetank/deployflexhose/position-norm</property>
+			 <value>0</value>
+			</less-than>
+		</condition>
+        <axis>
+            <x>0.0</x>
+            <y>1.0</y>
+            <z>0.0</z>
+        </axis>
+    </animation>
+    <animation>
+        <type>translate</type>
+        <object-name>flexfillhose.009</object-name>
+        <property>sim/model/firetank/cradleY9</property>
+        <factor>-230</factor>
+		<condition>
+			<less-than>
+			 <property>sim/model/firetank/deployflexhose/position-norm</property>
+			 <value>0</value>
+			</less-than>
+		</condition>
+        <axis>
+            <x>0.0</x>
+            <y>1.0</y>
+            <z>0.0</z>
+        </axis>
+    </animation>
+    <animation>
+        <type>translate</type>
+        <object-name>flexfillhose.010</object-name>
+        <property>sim/model/firetank/cradleY10</property>
+        <factor>-230</factor>
+		<condition>
+			<less-than>
+			 <property>sim/model/firetank/deployflexhose/position-norm</property>
+			 <value>0</value>
+			</less-than>
+		</condition>
+        <axis>
+            <x>0.0</x>
+            <y>1.0</y>
+            <z>0.0</z>
+        </axis>
+    </animation>
+    <animation>
+        <type>translate</type>
+        <object-name>flexfillhose.011</object-name>
+        <property>sim/model/firetank/cradleY11</property>
+        <factor>-230</factor>
+		<condition>
+			<less-than>
+			 <property>sim/model/firetank/deployflexhose/position-norm</property>
+			 <value>0</value>
+			</less-than>
+		</condition>
+        <axis>
+            <x>0.0</x>
+            <y>1.0</y>
+            <z>0.0</z>
+        </axis>
+    </animation>
+    <animation>
+        <type>translate</type>
+        <object-name>flexfillhose.012</object-name>
+        <property>sim/model/firetank/cradleY12</property>
+        <factor>-230</factor>
+		<condition>
+			<less-than>
+			 <property>sim/model/firetank/deployflexhose/position-norm</property>
+			 <value>0</value>
+			</less-than>
+		</condition>
+        <axis>
+            <x>0.0</x>
+            <y>1.0</y>
+            <z>0.0</z>
+        </axis>
+    </animation>
+    <animation>
+        <type>translate</type>
+        <object-name>flexfillhose.013</object-name>
+        <property>sim/model/firetank/cradleY13</property>
+        <factor>-230</factor>
+		<condition>
+			<less-than>
+			 <property>sim/model/firetank/deployflexhose/position-norm</property>
+			 <value>0</value>
+			</less-than>
+		</condition>
+        <axis>
+            <x>0.0</x>
+            <y>1.0</y>
+            <z>0.0</z>
+        </axis>
+    </animation>
+    <animation>
+        <type>translate</type>
+        <object-name>flexfillhose.014</object-name>
+        <property>sim/model/firetank/cradleY14</property>
+        <factor>-230</factor>
+		<condition>
+			<less-than>
+			 <property>sim/model/firetank/deployflexhose/position-norm</property>
+			 <value>0</value>
+			</less-than>
+		</condition>
+        <axis>
+            <x>0.0</x>
+            <y>1.0</y>
+            <z>0.0</z>
+        </axis>
+    </animation>
+    <animation>
+        <type>translate</type>
+        <object-name>flexfillhose.015</object-name>
+        <property>sim/model/firetank/cradleY15</property>
+        <factor>-230</factor>
+		<condition>
+			<less-than>
+			 <property>sim/model/firetank/deployflexhose/position-norm</property>
+			 <value>0</value>
+			</less-than>
+		</condition>
+        <axis>
+            <x>0.0</x>
+            <y>1.0</y>
+            <z>0.0</z>
+        </axis>
+    </animation>
+    <animation>
+        <type>translate</type>
+        <object-name>flexfillhose.016</object-name>
+        <property>sim/model/firetank/cradleY16</property>
+        <factor>-230</factor>
+		<condition>
+			<less-than>
+			 <property>sim/model/firetank/deployflexhose/position-norm</property>
+			 <value>0</value>
+			</less-than>
+		</condition>
+        <axis>
+            <x>0.0</x>
+            <y>1.0</y>
+            <z>0.0</z>
+        </axis>
+    </animation>
+    <animation>
+        <type>translate</type>
+        <object-name>flexfillhose.017</object-name>
+        <property>sim/model/firetank/cradleY17</property>
+        <factor>-230</factor>
+		<condition>
+			<less-than>
+			 <property>sim/model/firetank/deployflexhose/position-norm</property>
+			 <value>0</value>
+			</less-than>
+		</condition>
+        <axis>
+            <x>0.0</x>
+            <y>1.0</y>
+            <z>0.0</z>
+        </axis>
+    </animation>
+    <animation>
+        <type>translate</type>
+        <object-name>flexfillhose.018</object-name>
+        <property>sim/model/firetank/cradleY18</property>
+        <factor>-230</factor>
+		<condition>
+			<less-than>
+			 <property>sim/model/firetank/deployflexhose/position-norm</property>
+			 <value>0</value>
+			</less-than>
+		</condition>
+        <axis>
+            <x>0.0</x>
+            <y>1.0</y>
+            <z>0.0</z>
+        </axis>
+    </animation> -->
+
     <!-- Flex Hose Z-shift (up/down) -->
     <animation>
         <type>translate</type>
         <object-name>flexfillhose.001</object-name>
         <property>sim/model/firetank/cradleZ1</property>
-        <factor>-8</factor>
+        <factor>9</factor>
         <axis>
             <x>0.0</x>
             <y>0.0</y>
@@ -1867,18 +2591,19 @@
         <type>translate</type>
         <object-name>flexfillhose.002</object-name>
         <property>sim/model/firetank/cradleZ2</property>
-        <factor>-8</factor>
+        <factor>8.5</factor>
         <axis>
             <x>0.0</x>
             <y>0.0</y>
             <z>1.0</z>
         </axis>
     </animation>
-        <animation>
+    <animation>
         <type>translate</type>
         <object-name>flexfillhose.003</object-name>
         <property>sim/model/firetank/cradleZ3</property>
-        <factor>-8</factor>
+        <factor>8</factor>
+
         <axis>
             <x>0.0</x>
             <y>0.0</y>
@@ -1889,7 +2614,7 @@
         <type>translate</type>
         <object-name>flexfillhose.004</object-name>
         <property>sim/model/firetank/cradleZ4</property>
-        <factor>-8</factor>
+        <factor>7.5</factor>
         <axis>
             <x>0.0</x>
             <y>0.0</y>
@@ -1900,7 +2625,7 @@
         <type>translate</type>
         <object-name>flexfillhose.005</object-name>
         <property>sim/model/firetank/cradleZ5</property>
-        <factor>-8</factor>
+        <factor>7</factor>
         <axis>
             <x>0.0</x>
             <y>0.0</y>
@@ -1911,7 +2636,7 @@
         <type>translate</type>
         <object-name>flexfillhose.006</object-name>
         <property>sim/model/firetank/cradleZ6</property>
-        <factor>-8</factor>
+        <factor>6.5</factor>
         <axis>
             <x>0.0</x>
             <y>0.0</y>
@@ -1922,7 +2647,7 @@
         <type>translate</type>
         <object-name>flexfillhose.007</object-name>
         <property>sim/model/firetank/cradleZ7</property>
-        <factor>-8</factor>
+        <factor>6</factor>
         <axis>
             <x>0.0</x>
             <y>0.0</y>
@@ -1933,7 +2658,8 @@
         <type>translate</type>
         <object-name>flexfillhose.008</object-name>
         <property>sim/model/firetank/cradleZ8</property>
-        <factor>-8</factor>
+        <factor>5.5</factor>
+
         <axis>
             <x>0.0</x>
             <y>0.0</y>
@@ -1944,7 +2670,7 @@
         <type>translate</type>
         <object-name>flexfillhose.009</object-name>
         <property>sim/model/firetank/cradleZ9</property>
-        <factor>-8</factor>
+        <factor>5</factor>
         <axis>
             <x>0.0</x>
             <y>0.0</y>
@@ -1955,7 +2681,7 @@
         <type>translate</type>
         <object-name>flexfillhose.010</object-name>
         <property>sim/model/firetank/cradleZ10</property>
-        <factor>-8</factor>
+        <factor>4.5</factor>
         <axis>
             <x>0.0</x>
             <y>0.0</y>
@@ -1966,7 +2692,7 @@
         <type>translate</type>
         <object-name>flexfillhose.011</object-name>
         <property>sim/model/firetank/cradleZ11</property>
-        <factor>-8</factor>
+        <factor>4</factor>
         <axis>
             <x>0.0</x>
             <y>0.0</y>
@@ -1977,7 +2703,7 @@
         <type>translate</type>
         <object-name>flexfillhose.012</object-name>
         <property>sim/model/firetank/cradleZ12</property>
-        <factor>-8</factor>
+        <factor>3.5</factor>
         <axis>
             <x>0.0</x>
             <y>0.0</y>
@@ -1988,7 +2714,7 @@
         <type>translate</type>
         <object-name>flexfillhose.013</object-name>
         <property>sim/model/firetank/cradleZ13</property>
-        <factor>-8</factor>
+        <factor>3</factor>
         <axis>
             <x>0.0</x>
             <y>0.0</y>
@@ -1999,7 +2725,7 @@
         <type>translate</type>
         <object-name>flexfillhose.014</object-name>
         <property>sim/model/firetank/cradleZ14</property>
-        <factor>-8</factor>
+        <factor>2.5</factor>
         <axis>
             <x>0.0</x>
             <y>0.0</y>
@@ -2010,7 +2736,8 @@
         <type>translate</type>
         <object-name>flexfillhose.015</object-name>
         <property>sim/model/firetank/cradleZ15</property>
-        <factor>-8</factor>
+        <factor>2</factor>
+
         <axis>
             <x>0.0</x>
             <y>0.0</y>
@@ -2021,7 +2748,7 @@
         <type>translate</type>
         <object-name>flexfillhose.016</object-name>
         <property>sim/model/firetank/cradleZ16</property>
-        <factor>-8</factor>
+        <factor>1.5</factor>
         <axis>
             <x>0.0</x>
             <y>0.0</y>
@@ -2032,7 +2759,8 @@
         <type>translate</type>
         <object-name>flexfillhose.017</object-name>
         <property>sim/model/firetank/cradleZ17</property>
-        <factor>-8</factor>
+        <factor>1</factor>
+
         <axis>
             <x>0.0</x>
             <y>0.0</y>
@@ -2043,7 +2771,7 @@
         <type>translate</type>
         <object-name>flexfillhose.018</object-name>
         <property>sim/model/firetank/cradleZ18</property>
-        <factor>-8</factor>
+        <factor>1</factor>
         <axis>
             <x>0.0</x>
             <y>0.0</y>

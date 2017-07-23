@@ -16,20 +16,20 @@
 		</placer>
 
 		<condition>
-			<property>sim/model/aircrane/effects/particles/enabled</property>
+			<property>/sim/model/aircrane/effects/particles/enabled</property>
 			<not>
-				<property>sim/freeze/clock</property>
+				<property>/sim/freeze/clock</property>
 			</not>
 			<not>
-				<property>sim/crashed</property>
+				<property>/sim/crashed</property>
 			</not>
 			<less-than>
-				<property>position/altitude-agl-ft</property>
-				<value>70</value>
+				<property>/position/altitude-agl-ft</property>
+				<value>30</value>
 			</less-than>
 			<greater-than>
-				<property>rotors/main/rpm</property>
-				<value>60</value>
+				<property>/rotors/main/rpm</property>
+				<value>50</value>
 			</greater-than>
 		</condition>
 
@@ -39,7 +39,7 @@
 			<phi-min-deg>-0.1</phi-min-deg>
 			<phi-max-deg>0.1</phi-max-deg>
 			<speed-mps>
-				<property>rotors/main/rpm</property>
+				<property>/rotors/main/rpm</property>
 				<factor>0.1</factor>
 				<spread>2</spread>
 			</speed-mps>
@@ -66,13 +66,13 @@
 			<start>
 				<color>
 					<red>
-						<property>/rendering/scene/diffuse/red</property>
+						<property>/sim/model/aircrane/effects/particles/rotorwash/redcombinedstart</property>
 					</red>
 					<green>
-						<property>/rendering/scene/diffuse/red</property>
+						<property>/sim/model/aircrane/effects/particles/rotorwash/greencombinedstart</property>
 					</green>
 					<blue>
-						<property>/rendering/scene/diffuse/red</property>
+						<property>/sim/model/aircrane/effects/particles/rotorwash/bluecombinedstart</property>
 					</blue>
 					<alpha>
 						<property>rotors/main/rpm</property>
@@ -88,16 +88,16 @@
 			<end>
 				<color>
 					<red>
-						<property>/rendering/scene/diffuse/red</property>
+						<property>/sim/model/aircrane/effects/particles/rotorwash/redcombinedend</property>
 					</red>
 					<green>
-						<property>/rendering/scene/diffuse/red</property>
+						<property>/sim/model/aircrane/effects/particles/rotorwash/greencombinedend</property>
 					</green>
 					<blue>
-						<property>/rendering/scene/diffuse/red</property>
+						<property>/sim/model/aircrane/effects/particles/rotorwash/bluecombinedend</property>
 					</blue>
 					<alpha>
-						<property>rotors/main/rpm</property>
+						<property>/rotors/main/rpm</property>
 						<factor>0.0001</factor>
 					</alpha>
 				</color>

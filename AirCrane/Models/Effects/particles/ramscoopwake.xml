@@ -14,7 +14,7 @@
     <type>normal</type>
     <texture>smoke.png</texture>
 
-    <emissive>true</emissive>
+    <emissive>false</emissive>
     <lighting>false</lighting>
 
 	<condition>
@@ -84,14 +84,14 @@
       <start>
         <color>
             <red>
-                <property>/rendering/scene/diffuse/red</property>
-            </red>
-            <green>
-                <property>/rendering/scene/diffuse/red</property>
-            </green>
-            <blue>
-                <property>/rendering/scene/diffuse/red</property>
-            </blue>
+				<property>/sim/model/aircrane/effects/particles/redcombined</property>
+			</red>
+			<green>
+				<property>/sim/model/aircrane/effects/particles/greencombined</property>
+			</green>
+			<blue>
+				<property>/sim/model/aircrane/effects/particles/bluecombined</property>
+			</blue>
             <alpha><value>0.5</value></alpha>
         </color>
         <size>
@@ -101,14 +101,14 @@
       <end>
         <color>
             <red>
-                <property>/rendering/scene/diffuse/red</property>
-            </red>
-            <green>
-                <property>/rendering/scene/diffuse/red</property>
-            </green>
-            <blue>
-                <property>/rendering/scene/diffuse/red</property>
-            </blue>
+				<property>/sim/model/aircrane/effects/particles/redcombined</property>
+			</red>
+			<green>
+				<property>/sim/model/aircrane/effects/particles/greencombined</property>
+			</green>
+			<blue>
+				<property>/sim/model/aircrane/effects/particles/bluecombined</property>
+			</blue>
             <alpha><value>0.001</value></alpha>
         </color>
         <size>
