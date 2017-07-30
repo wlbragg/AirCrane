@@ -242,8 +242,7 @@ var crash = func {
     # crash
     setprop("rotors/main/rpm", 0);
     setprop("rotors/main/blade[0]/flap-deg", -60);
-    setprop("rotors/main/blade[1]/flap-deg", -50); # the attitude indicator needs pressure
-  # settimer(func { setprop("engines/engine/rpm", 3000) }, 8);
+    setprop("rotors/main/blade[1]/flap-deg", -50);
     setprop("rotors/main/blade[2]/flap-deg", -40);
     setprop("rotors/main/blade[3]/flap-deg", -30);
     setprop("rotors/main/blade[4]/flap-deg", -20);
@@ -381,7 +380,7 @@ var main_loop = func {
   update_rotor_cone_angle();
 
   rotor_wash_loop();
-  flex_hose();
+  tank_operations();
 
   settimer(main_loop, 0);
 }
@@ -409,7 +408,6 @@ setlistener("/sim/signals/fdm-initialized", func {
 
   setlistener("sim/crashed", func {
     cprint("31;1", "crashed ", cmdarg().getValue());
-	tank_operations_timer.stop();
     turbine_timer.stop();
     if (cmdarg().getBoolValue()) {
       crash(crashed = 1);
@@ -455,12 +453,8 @@ setlistener("/sim/signals/fdm-initialized", func {
     #wildfire.resolve_retardant_drop(pos, 10, 0);
  });
 
-
   # the attitude indicator needs pressure
   # settimer(func { setprop("engines/engine/rpm", 3000) }, 8);
-
-  var tank_operations_timer = maketimer(.25, func{tank_operations()});
-  tank_operations_timer.start();
 
   main_loop();
 });

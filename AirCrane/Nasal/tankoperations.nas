@@ -1,6 +1,11 @@
 # 1 Gallon = 8.345404 lbs * 2500 = 20863 lbs
 
 var capacity = 0.0;
+var flex_angle_v_array = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
+var flex_angle_vr_array = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
+var flex_angle_r_array = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
+var onground_flag = 0;
+var drop_flag = 0;
 
 var tank_operations = func {
 			
@@ -93,70 +98,186 @@ var tank_operations = func {
 		hopperweight = 0;
 		setprop("sim/weight[3]/weight-lb", hopperweight);
 	}
-}
 
-var flex_hose = func {
+	#################### flexhose ####################
 
-	var rad_rots = math.abs(math.sin(getprop("sim/model/firetank/deployflexhose/position-norm")*0.01745329252));
-	var rad_rotc = math.cos(getprop("sim/model/firetank/deployflexhose/position-norm")*0.01745329252);
+	if (sniffer == 1) 
+		{
+			drop_flag = 25;
+			return;
+		}
+	else
+		if (drop_flag > 1 and !onground_flag)
+			drop_flag -= 1;
+		else
+			{
+				#setprop("sim/model/firetank/deployflexhose/position-norm", 0);
+				#sniffer = 0;
+				drop_flag = 0;
+			}
 
-	#for/aft offset
-	setprop("sim/model/firetank/cradleX1", (.5*0.264)-(.5*0.264*rad_rotc));
-	setprop("sim/model/firetank/cradleX2", ((.5*0.273)-(.5*0.273*rad_rotc))+getprop("sim/model/firetank/cradleX1"));
-	setprop("sim/model/firetank/cradleX3", ((.5*0.323)-(.5*0.323*rad_rotc))+getprop("sim/model/firetank/cradleX2"));
-	setprop("sim/model/firetank/cradleX4", ((.5*0.314)-(.5*0.314*rad_rotc))+getprop("sim/model/firetank/cradleX3"));
-	setprop("sim/model/firetank/cradleX5", ((.5*0.323)-(.5*0.323*rad_rotc))+getprop("sim/model/firetank/cradleX4"));
-	setprop("sim/model/firetank/cradleX6", ((.5*0.351)-(.5*0.351*rad_rotc))+getprop("sim/model/firetank/cradleX5"));
-	setprop("sim/model/firetank/cradleX7", ((.5*0.351)-(.5*0.351*rad_rotc))+getprop("sim/model/firetank/cradleX6"));
-	setprop("sim/model/firetank/cradleX8", ((.5*0.345)-(.5*0.345*rad_rotc))+getprop("sim/model/firetank/cradleX7"));
-	setprop("sim/model/firetank/cradleX9", ((.5*0.356)-(.5*0.356*rad_rotc))+getprop("sim/model/firetank/cradleX8"));
-	setprop("sim/model/firetank/cradleX10", ((.5*0.365)-(.5*0.365*rad_rotc))+getprop("sim/model/firetank/cradleX9"));
-	setprop("sim/model/firetank/cradleX11", ((.5*0.370)-(.5*0.370*rad_rotc))+getprop("sim/model/firetank/cradleX10"));
-	setprop("sim/model/firetank/cradleX12", ((.5*0.403)-(.5*0.403*rad_rotc))+getprop("sim/model/firetank/cradleX11"));
-	setprop("sim/model/firetank/cradleX13", ((.5*0.393)-(.5*0.393*rad_rotc))+getprop("sim/model/firetank/cradleX12"));
-	setprop("sim/model/firetank/cradleX14", ((.5*0.379)-(.5*0.379*rad_rotc))+getprop("sim/model/firetank/cradleX13"));
-	setprop("sim/model/firetank/cradleX15", ((.5*0.388)-(.5*0.388*rad_rotc))+getprop("sim/model/firetank/cradleX14"));
-	setprop("sim/model/firetank/cradleX16", ((.5*0.408)-(.5*0.408*rad_rotc))+getprop("sim/model/firetank/cradleX15"));
-	setprop("sim/model/firetank/cradleX17", ((.5*0.398)-(.5*0.398*rad_rotc))+getprop("sim/model/firetank/cradleX16"));
-	setprop("sim/model/firetank/cradleX18", ((.5*0.681)-(.5*0.681*rad_rotc))+getprop("sim/model/firetank/cradleX17"));
+	var n_segments = 31;
+	var segment_length = getprop("/sim/model/firetank/flexhose/factor");
+	var flex_force = getprop("/sim/model/firetank/flexhose/flex-force");
 
-	#left/right offset
-	setprop("sim/model/firetank/cradleY1", (.5*0.264)-(.5*0.264*rad_rotc));
-	setprop("sim/model/firetank/cradleY2", ((.5*0.273)-(.5*0.273*rad_rotc))+getprop("sim/model/firetank/cradleY1"));
-	setprop("sim/model/firetank/cradleY3", ((.5*0.323)-(.5*0.323*rad_rotc))+getprop("sim/model/firetank/cradleY2"));
-	setprop("sim/model/firetank/cradleY4", ((.5*0.314)-(.5*0.314*rad_rotc))+getprop("sim/model/firetank/cradleY3"));
-	setprop("sim/model/firetank/cradleY5", ((.5*0.323)-(.5*0.323*rad_rotc))+getprop("sim/model/firetank/cradleY4"));
-	setprop("sim/model/firetank/cradleY6", ((.5*0.351)-(.5*0.351*rad_rotc))+getprop("sim/model/firetank/cradleY5"));
-	setprop("sim/model/firetank/cradleY7", ((.5*0.351)-(.5*0.351*rad_rotc))+getprop("sim/model/firetank/cradleY6"));
-	setprop("sim/model/firetank/cradleY8", ((.5*0.345)-(.5*0.345*rad_rotc))+getprop("sim/model/firetank/cradleY7"));
-	setprop("sim/model/firetank/cradleY9", ((.5*0.356)-(.5*0.356*rad_rotc))+getprop("sim/model/firetank/cradleY8"));
-	setprop("sim/model/firetank/cradleY10", ((.5*0.365)-(.5*0.365*rad_rotc))+getprop("sim/model/firetank/cradleY9"));
-	setprop("sim/model/firetank/cradleY11", ((.5*0.370)-(.5*0.370*rad_rotc))+getprop("sim/model/firetank/cradleY10"));
-	setprop("sim/model/firetank/cradleY12", ((.5*0.403)-(.5*0.403*rad_rotc))+getprop("sim/model/firetank/cradleY11"));
-	setprop("sim/model/firetank/cradleY13", ((.5*0.393)-(.5*0.393*rad_rotc))+getprop("sim/model/firetank/cradleY12"));
-	setprop("sim/model/firetank/cradleY14", ((.5*0.379)-(.5*0.379*rad_rotc))+getprop("sim/model/firetank/cradleY13"));
-	setprop("sim/model/firetank/cradleY15", ((.5*0.388)-(.5*0.388*rad_rotc))+getprop("sim/model/firetank/cradleY14"));
-	setprop("sim/model/firetank/cradleY16", ((.5*0.408)-(.5*0.408*rad_rotc))+getprop("sim/model/firetank/cradleY15"));
-	setprop("sim/model/firetank/cradleY17", ((.5*0.398)-(.5*0.398*rad_rotc))+getprop("sim/model/firetank/cradleY16"));
-	setprop("sim/model/firetank/cradleY18", ((.5*0.681)-(.5*0.681*rad_rotc))+getprop("sim/model/firetank/cradleY17"));
+	var damping = getprop("/sim/model/firetank/flexhose/damping");
+	var stiffness = getprop("/sim/model/firetank/flexhose/stiffness");
 
-	#up/down offset
-	setprop("sim/model/firetank/cradleZ1", .5*0.264*rad_rots);
-	setprop("sim/model/firetank/cradleZ2", (.5*0.273*rad_rots)+getprop("sim/model/firetank/cradleZ1"));
-	setprop("sim/model/firetank/cradleZ3", (.5*0.323*rad_rots)+getprop("sim/model/firetank/cradleZ2"));
-	setprop("sim/model/firetank/cradleZ4", (.5*0.314*rad_rots)+getprop("sim/model/firetank/cradleZ3"));
-	setprop("sim/model/firetank/cradleZ5", (.5*0.323*rad_rots)+getprop("sim/model/firetank/cradleZ4"));
-	setprop("sim/model/firetank/cradleZ6", (.5*0.351*rad_rots)+getprop("sim/model/firetank/cradleZ5"));
-	setprop("sim/model/firetank/cradleZ7", (.5*0.351*rad_rots)+getprop("sim/model/firetank/cradleZ6"));
-	setprop("sim/model/firetank/cradleZ8", (.5*0.345*rad_rots)+getprop("sim/model/firetank/cradleZ7"));
-	setprop("sim/model/firetank/cradleZ9", (.5*0.356*rad_rots)+getprop("sim/model/firetank/cradleZ8"));
-	setprop("sim/model/firetank/cradleZ10", (.5*0.365*rad_rots)+getprop("sim/model/firetank/cradleZ9"));
-	setprop("sim/model/firetank/cradleZ11", (.5*0.370*rad_rots)+getprop("sim/model/firetank/cradleZ10"));
-	setprop("sim/model/firetank/cradleZ12", (.5*0.403*rad_rots)+getprop("sim/model/firetank/cradleZ11"));
-	setprop("sim/model/firetank/cradleZ13", (.5*0.393*rad_rots)+getprop("sim/model/firetank/cradleZ12"));
-	setprop("sim/model/firetank/cradleZ14", (.5*0.379*rad_rots)+getprop("sim/model/firetank/cradleZ13"));
-	setprop("sim/model/firetank/cradleZ15", (.5*0.388*rad_rots)+getprop("sim/model/firetank/cradleZ14"));
-	setprop("sim/model/firetank/cradleZ16", (.5*0.408*rad_rots)+getprop("sim/model/firetank/cradleZ15"));
-	setprop("sim/model/firetank/cradleZ17", (.5*0.398*rad_rots)+getprop("sim/model/firetank/cradleZ16"));
-	setprop("sim/model/firetank/cradleZ18", (.5*0.681*rad_rots)+getprop("sim/model/firetank/cradleZ17"));
+	var sum_angle = 0.0;
+	
+	var alt_agl = altitude * 0.3048 + getprop("/sim/model/firetank/flexhose/offset");
+
+	if (overland)
+		{
+		if (alt_agl - n_segments * segment_length < 0.0)
+		   {
+			  onground_flag = 1;
+		   }
+		else
+			  onground_flag = 0;
+		} 
+	else
+		{
+		   onground_flag = 0;
+		}
+
+	var dt = getprop("/sim/time/delta-sec");
+
+	if (onground_flag == 0) {
+		var ax = getprop("/accelerations/pilot/x-accel-fps_sec") + drop_flag;
+		var ay = getprop("/accelerations/pilot/y-accel-fps_sec");
+		var az = getprop("/accelerations/pilot/z-accel-fps_sec");
+	} else {
+		var ax = 0;
+		var ay = 0;
+		var az = 0;
+	}
+	var a = math.sqrt(ax* ax + ay*ay + az*az);
+
+	if (a==0.0) {a=1.0;}
+
+	var ref_ang1 = math.asin(ax/a) * 180.0/math.pi;
+	var ref_ang2 = math.asin(ay/a) * 180.0/math.pi;
+
+	var damping_factor = math.pow(damping, dt);
+
+	if (onground_flag == 0)
+	   {
+
+	   var current_angle = getprop("/sim/model/firetank/flexhose/pitch1");
+	   var ang_error = ref_ang1 - current_angle;
+
+
+	   flex_angle_v_array[0] += ang_error * stiffness * dt;
+	   flex_angle_v_array[0] *= damping_factor;
+
+	   var ang_speed = flex_angle_v_array[0];
+
+	   setprop("/sim/model/firetank/flexhose/pitch1", current_angle + dt * ang_speed);
+
+
+	   var current_roll = getprop("/sim/model/firetank/flexhose/roll1");
+	   ang_error = ref_ang2 - current_roll;
+
+
+	   flex_angle_vr_array[0] +=  ang_error * stiffness * dt;
+	   flex_angle_vr_array[0] *= damping_factor;
+
+	   ang_speed = flex_angle_vr_array[0];
+
+	   var next_roll =  current_roll + dt * ang_speed;
+	   setprop("/sim/model/firetank/flexhose/roll1", next_roll);
+
+	   # kink excitation
+	   
+	   var kink =  -(next_roll - flex_angle_r_array[0]);
+	   
+	   setprop("/sim/model/firetank/flexhose/roll2",  kink) ;
+	   flex_angle_r_array[1] = kink;
+
+	   }
+	else
+	   {
+	   setprop("/sim/model/firetank/flexhose/pitch1", ref_ang1);
+	   setprop("/sim/model/firetank/flexhose/roll1", ref_ang2);
+	   }
+
+	var roll_target = 0.0;
+
+	for (var i = 1; i< n_segments; i=i+1)
+	   	{
+	   	var gravity = n_segments - i;
+
+		var velocity = getprop("/velocities/equivalent-kt") - (drop_flag*2);
+
+		if (velocity == nil) {velocity = 0;}
+		if (velocity > 500.0) {velocity = 500.0;}
+
+		var dist_above_ground = alt_agl - (i+1) * segment_length;
+
+		var force = flex_force * math.cos(sum_angle * math.pi/180.0) * 0.05 * velocity;
+
+		if (overland)
+		{
+		   if (dist_above_ground < 0.0)
+			  {
+			  force = force + 20 * math.cos(sum_angle * math.pi/180.0);
+			  }
+		}
+
+		if (force > 1.0 * gravity) {force = 1.0 * gravity;}
+
+		var angle = - 180.0 /math.pi * math.atan2(force, gravity);#(force/gravity);
+		sum_angle += angle;
+
+		if (onground_flag == 0)
+		  {
+		  current_angle = getprop("/sim/model/firetank/flexhose/pitch"~(i+1));
+		  ang_error = angle - current_angle;
+
+
+		  flex_angle_v_array[i] += ang_error * stiffness * dt;
+		  flex_angle_v_array[i] *= damping_factor;
+
+		  ang_speed = flex_angle_v_array[i];
+
+		  setprop("/sim/model/firetank/flexhose/pitch"~(i+1), current_angle + dt * ang_speed);
+
+		  # the transverse dynamics is largely waves excited by the helicopter
+
+		  if (i==1) # this is set by the kink excitation
+			 {
+			 continue;
+			 }   
+		  else
+			 {
+			 roll_target =  flex_angle_r_array[i-1];
+			 }
+
+		  ang_error = roll_target - flex_angle_r_array[i];
+
+		  flex_angle_vr_array[i] += ang_error * stiffness * dt;
+		  flex_angle_vr_array[i] *= damping_factor;
+
+		  ang_speed = flex_angle_vr_array[i];
+
+		  setprop("/sim/model/firetank/flexhose/roll"~(i+1), roll_target);
+
+
+		  }
+		else
+		  {
+		  setprop("/sim/model/firetank/flexhose/pitch"~(i+1), angle + .3);
+		  setprop("/sim/model/firetank/flexhose/roll"~(i+1), 0.0);
+		  }
+
+		}
+
+	# copy the current values into the last step array
+
+	for (var i = 0; i< n_segments; i=i+1)
+	   {
+	   flex_angle_r_array[i] = getprop("/sim/model/firetank/flexhose/roll"~(i+1));
+	   }
+
 }

@@ -167,7 +167,7 @@
     <object-name>flexfillhose.017</object-name>
     <object-name>flexfillhoseconnector</object-name>
     <object-name>flexfillhoseend</object-name>
-    <object-name>flexhosedeploycable</object-name>
+    <object-name>flexhoserelease</object-name>
     <object-name>controlboxfor</object-name>
     <object-name>controlboxaft</object-name>
     <object-name>watercannonjointfl</object-name>
@@ -247,6 +247,7 @@
     <object-name>tank</object-name>
   	<object-name>watercannon</object-name>
   	<object-name>watercannonframe</object-name>
+	<object-name>flexhoserelease</object-name>
 
     <property-base>sim/model/livery/</property-base>
     <texture-prop>texture</texture-prop>
@@ -333,7 +334,6 @@
     <object-name>flexfillhose.017</object-name>
     <object-name>flexfillhoseconnector</object-name>
     <object-name>flexfillhoseend</object-name>
-    <!--object-name>flexhosedeploycable</object-name-->
     <object-name>controlboxfor</object-name>
     <object-name>controlboxaft</object-name>
     <object-name>watercannonjointfl</object-name>
@@ -346,6 +346,7 @@
   	<object-name>watercannon</object-name>
   	<object-name>watercannonhose</object-name>
   	<object-name>watercannonframe</object-name>
+	<object-name>flexhoserelease</object-name>
   </effect>
 
   <animation>
@@ -379,7 +380,7 @@
     <object-name>flexfillhose.017</object-name>
     <object-name>flexfillhoseconnector</object-name>
     <object-name>flexfillhoseend</object-name>
-    <!--object-name>flexhosedeploycable</object-name-->
+	<object-name>flexhoserelease</object-name>
     <object-name>controlboxfor</object-name>
     <object-name>controlboxaft</object-name>
     <object-name>watercannonjointfl</object-name>
@@ -907,17 +908,7 @@
     </offsets>
   </model>
 
-<!--== particles ==-->
-
-  <!--model>
-    <name>mainrotors_dirt</name>
-    <path>Effects/particles/rotor_particle.xml</path>
-    <offsets>
-      <x-m>  0.000 </x-m>
-      <y-m>  0.000 </y-m>
-      <z-m>  0.000 </z-m>
-    </offsets>
-  </model-->
+  <!-- particles -->
 
 	<animation>
 		<type>rotate</type>
@@ -955,50 +946,28 @@
     <!-- Flex Hose Animation -->
 
 	<animation>
-        <name>flexfillhose.018</name>
+        <name>flexfillhose.031</name>
 		<object-name>flexfillhoseend</object-name>
 		<object-name>valvemotor</object-name>
     </animation>
 
-	<animation>
-        <type>select</type>
-		<object-name>flexhosedeploycable</object-name>
-        <condition>
-          <value>0</value>
-        </condition>
-    </animation>
-
-	<!--animation>
-		<type>scale</type>
-		<object-name>flexhosedeploycable</object-name>
-		<property>sim/model/firetank/deployflexhose/position-norm</property>
-		<center>
-			<x-m>-1.08972</x-m>
-			<y-m>-1.32577</y-m>
-			<z-m>-0.96072</z-m>
-		</center>
-		<x-min>.046</x-min>
-		<y-min>.046</y-min>
-		<z-min>0</z-min>
-		<x-factor>.046</x-factor>
-		<y-factor>.046</y-factor>
-		<z-factor>-31</z-factor>
-		<x-offset>0.0</x-offset>
-		<y-offset>0.0</y-offset>
-		<z-offset>0.0</z-offset>
-	</animation-->
-
-    <!-- Flex Hose Rotation -->
+    <!-- Flex Hose Rotation Docked-->
     <animation>
         <type>rotate</type>
         <object-name>flexfillhose.001</object-name>
 		<property>sim/model/firetank/deployflexhose/position-norm</property>
-        <factor>-10.5</factor>
+		<condition>
+			<greater-than>
+				<property>sim/model/firetank/deployflexhose/position-norm</property>
+				<value>0</value>
+			</greater-than>
+		</condition>
+        <factor>-8.5</factor>
         <offset-deg>0</offset-deg>   
         <center>
-            <x-m>-4.80833</x-m>
-            <y-m>-0.45652</y-m>
-            <z-m>-2.41769</z-m>
+            <x-m>-4.80865</x-m>
+            <y-m>-0.45683</y-m>
+            <z-m>-2.41935</z-m>
         </center>
         <axis>
             <x>0</x>
@@ -1010,12 +979,18 @@
         <type>rotate</type>
 		<object-name>flexfillhose.002</object-name>
         <property>sim/model/firetank/deployflexhose/position-norm</property>
-        <factor>-10.5</factor>
+		<condition>
+			<greater-than>
+				<property>sim/model/firetank/deployflexhose/position-norm</property>
+				<value>0</value>
+			</greater-than>
+		</condition>
+        <factor>-8.5</factor>
         <offset-deg>0</offset-deg>   
         <center>
-            <x-m>-4.80863</x-m>
-            <y-m>-0.46552</y-m>
-            <z-m>-2.67453</z-m>
+            <x-m>-4.80865</x-m>
+            <y-m>-0.45683</y-m>
+            <z-m>-2.6211</z-m>
         </center>
         <axis>
             <x>0</x>
@@ -1027,12 +1002,18 @@
         <type>rotate</type>
 		<object-name>flexfillhose.003</object-name>
         <property>sim/model/firetank/deployflexhose/position-norm</property>
-        <factor>-10.5</factor>
+		<condition>
+			<greater-than>
+				<property>sim/model/firetank/deployflexhose/position-norm</property>
+				<value>0</value>
+			</greater-than>
+		</condition>
+        <factor>-8.5</factor>
         <offset-deg>0</offset-deg>   
         <center>
-            <x-m>-4.80895</x-m>
-            <y-m>-0.47482</y-m>
-            <z-m>-2.94013</z-m>
+            <x-m>-4.80865</x-m>
+            <y-m>-0.45683</y-m>
+            <z-m>-2.82149</z-m>
         </center>
         <axis>
             <x>0</x>
@@ -1044,12 +1025,18 @@
         <type>rotate</type>
 		<object-name>flexfillhose.004</object-name>
         <property>sim/model/firetank/deployflexhose/position-norm</property>
-        <factor>-10.5</factor>
+		<condition>
+			<greater-than>
+				<property>sim/model/firetank/deployflexhose/position-norm</property>
+				<value>0</value>
+			</greater-than>
+		</condition>
+        <factor>-8.5</factor>
         <offset-deg>0</offset-deg>   
         <center>
-            <x-m>-4.80932</x-m>
-            <y-m>-0.48587</y-m>
-            <z-m>-3.25554</z-m>
+            <x-m>-4.80865</x-m>
+            <y-m>-0.45683</y-m>
+            <z-m>-3.02129</z-m>
         </center>
         <axis>
             <x>0</x>
@@ -1061,12 +1048,18 @@
         <type>rotate</type>
 		<object-name>flexfillhose.005</object-name>
         <property>sim/model/firetank/deployflexhose/position-norm</property>
-        <factor>-10.5</factor>
+		<condition>
+			<greater-than>
+				<property>sim/model/firetank/deployflexhose/position-norm</property>
+				<value>0</value>
+			</greater-than>
+		</condition>
+        <factor>-8.5</factor>
         <offset-deg>0</offset-deg>   
         <center>
-            <x-m>-4.80969</x-m>
-            <y-m>-0.49662</y-m>
-            <z-m>-3.56264</z-m>
+            <x-m>-4.80865</x-m>
+            <y-m>-0.45683</y-m>
+            <z-m>-3.22083</z-m>
         </center>
         <axis>
             <x>0</x>
@@ -1078,12 +1071,18 @@
         <type>rotate</type>
 		<object-name>flexfillhose.006</object-name>
         <property>sim/model/firetank/deployflexhose/position-norm</property>
-        <factor>-10.5</factor>
+		<condition>
+			<greater-than>
+				<property>sim/model/firetank/deployflexhose/position-norm</property>
+				<value>0</value>
+			</greater-than>
+		</condition>
+        <factor>-8.5</factor>
         <offset-deg>0</offset-deg>   
         <center>
-            <x-m>-4.81007</x-m>
-            <y-m>-0.50767</y-m>
-            <z-m>-3.87805</z-m>
+            <x-m>-4.80865</x-m>
+            <y-m>-0.45683</y-m>
+            <z-m>-3.42214</z-m>
         </center>
         <axis>
             <x>0</x>
@@ -1095,12 +1094,18 @@
         <type>rotate</type>
 		<object-name>flexfillhose.007</object-name>
         <property>sim/model/firetank/deployflexhose/position-norm</property>
-        <factor>-10.5</factor>
+		<condition>
+			<greater-than>
+				<property>sim/model/firetank/deployflexhose/position-norm</property>
+				<value>0</value>
+			</greater-than>
+		</condition>
+        <factor>-8.5</factor>
         <offset-deg>0</offset-deg>   
         <center>
-            <x-m>-4.81007</x-m>
-            <y-m>-0.50767</y-m>
-            <z-m>-4.20098</z-m>
+            <x-m>-4.80865</x-m>
+            <y-m>-0.45683</y-m>
+            <z-m>-3.62225</z-m>
         </center>
         <axis>
             <x>0</x>
@@ -1112,12 +1117,18 @@
         <type>rotate</type>
 		<object-name>flexfillhose.008</object-name>
         <property>sim/model/firetank/deployflexhose/position-norm</property>
-        <factor>-8.5</factor>
+		<condition>
+			<greater-than>
+				<property>sim/model/firetank/deployflexhose/position-norm</property>
+				<value>0</value>
+			</greater-than>
+		</condition>
+        <factor>-4.75</factor>
         <offset-deg>0</offset-deg>   
         <center>
-            <x-m>-4.81007</x-m>
-            <y-m>-0.50767</y-m>
-            <z-m>-4.52394</z-m>
+            <x-m>-4.80865</x-m>
+            <y-m>-0.45683</y-m>
+            <z-m>-3.82241</z-m>
         </center>
         <axis>
             <x>0</x>
@@ -1129,12 +1140,18 @@
         <type>rotate</type>
 		<object-name>flexfillhose.009</object-name>
         <property>sim/model/firetank/deployflexhose/position-norm</property>
-        <factor>-8.5</factor>
+		<condition>
+			<greater-than>
+				<property>sim/model/firetank/deployflexhose/position-norm</property>
+				<value>0</value>
+			</greater-than>
+		</condition>
+        <factor>-4.75</factor>
         <offset-deg>0</offset-deg>   
         <center>
-            <x-m>-4.81007</x-m>
-            <y-m>-0.50767</y-m>
-            <z-m>-4.83493</z-m>
+            <x-m>-4.80865</x-m>
+            <y-m>-0.45683</y-m>
+            <z-m>-4.02171</z-m>
         </center>
         <axis>
             <x>0</x>
@@ -1146,12 +1163,18 @@
         <type>rotate</type>
 		<object-name>flexfillhose.010</object-name>
         <property>sim/model/firetank/deployflexhose/position-norm</property>
-        <factor>-8.5</factor>
+		<condition>
+			<greater-than>
+				<property>sim/model/firetank/deployflexhose/position-norm</property>
+				<value>0</value>
+			</greater-than>
+		</condition>
+        <factor>-4.75</factor>
         <offset-deg>0</offset-deg>   
         <center>
-            <x-m>-4.81007</x-m>
-            <y-m>-0.50767</y-m>
-            <z-m>-5.16979</z-m>
+            <x-m>-4.80865</x-m>
+            <y-m>-0.45683</y-m>
+            <z-m>-4.22354</z-m>
         </center>
         <axis>
             <x>0</x>
@@ -1163,12 +1186,18 @@
         <type>rotate</type>
 		<object-name>flexfillhose.011</object-name>
         <property>sim/model/firetank/deployflexhose/position-norm</property>
-        <factor>-8.5</factor>
+		<condition>
+			<greater-than>
+				<property>sim/model/firetank/deployflexhose/position-norm</property>
+				<value>0</value>
+			</greater-than>
+		</condition>
+        <factor>-4.75</factor>
         <offset-deg>0</offset-deg>   
         <center>
-            <x-m>-4.81007</x-m>
-            <y-m>-0.50767</y-m>
-            <z-m>-5.52875</z-m>
+            <x-m>-4.80865</x-m>
+            <y-m>-0.45683</y-m>
+            <z-m>-4.42529</z-m>
         </center>
         <axis>
             <x>0</x>
@@ -1180,12 +1209,18 @@
         <type>rotate</type>
 		<object-name>flexfillhose.012</object-name>
         <property>sim/model/firetank/deployflexhose/position-norm</property>
-        <factor>-8.5</factor>
+		<condition>
+			<greater-than>
+				<property>sim/model/firetank/deployflexhose/position-norm</property>
+				<value>0</value>
+			</greater-than>
+		</condition>
+        <factor>-4.75</factor>
         <offset-deg>0</offset-deg>   
         <center>
-            <x-m>-4.81007</x-m>
-            <y-m>-0.50767</y-m>
-            <z-m>-5.89963</z-m>
+            <x-m>-4.80865</x-m>
+            <y-m>-0.45683</y-m>
+            <z-m>-4.62568</z-m>
         </center>
         <axis>
             <x>0</x>
@@ -1197,12 +1232,18 @@
         <type>rotate</type>
 		<object-name>flexfillhose.013</object-name>
         <property>sim/model/firetank/deployflexhose/position-norm</property>
-        <factor>-8.5</factor>
+		<condition>
+			<greater-than>
+				<property>sim/model/firetank/deployflexhose/position-norm</property>
+				<value>0</value>
+			</greater-than>
+		</condition>
+        <factor>-4.75</factor>
         <offset-deg>0</offset-deg>   
         <center>
-            <x-m>-4.81006</x-m>
-            <y-m>-0.50767</y-m>
-            <z-m>-6.35415</z-m>
+            <x-m>-4.80865</x-m>
+            <y-m>-0.45683</y-m>
+            <z-m>-4.82548</z-m>
         </center>
         <axis>
             <x>0</x>
@@ -1214,12 +1255,18 @@
         <type>rotate</type>
 		<object-name>flexfillhose.014</object-name>
         <property>sim/model/firetank/deployflexhose/position-norm</property>
-        <factor>-8.5</factor>
+		<condition>
+			<greater-than>
+				<property>sim/model/firetank/deployflexhose/position-norm</property>
+				<value>0</value>
+			</greater-than>
+		</condition>
+        <factor>-4.75</factor>
         <offset-deg>0</offset-deg>   
         <center>
-            <x-m>-4.81006</x-m>
-            <y-m>-0.50767</y-m>
-            <z-m>-6.78483</z-m>
+            <x-m>-4.80865</x-m>
+            <y-m>-0.45683</y-m>
+            <z-m>-5.02502</z-m>
         </center>
         <axis>
             <x>0</x>
@@ -1231,14 +1278,20 @@
         <type>rotate</type>
 		<object-name>flexfillhose.015</object-name>
         <property>sim/model/firetank/deployflexhose/position-norm</property>
-        <factor>-8.5</factor>
+		<condition>
+			<greater-than>
+				<property>sim/model/firetank/deployflexhose/position-norm</property>
+				<value>0</value>
+			</greater-than>
+		</condition>
+        <factor>-4.75</factor>
         <offset-deg>0</offset-deg>   
         <center>
-            <x-m>-4.81006</x-m>
-            <y-m>-0.50767</y-m>
-            <z-m>-7.17955</z-m>
+            <x-m>-4.80865</x-m>
+            <y-m>-0.45683</y-m>
+            <z-m>-5.22632</z-m>
         </center>
-        <axis>0.
+        <axis>
             <x>0</x>
             <y>1</y>
             <z>.10</z>
@@ -1248,12 +1301,18 @@
         <type>rotate</type>
 		<object-name>flexfillhose.016</object-name>
         <property>sim/model/firetank/deployflexhose/position-norm</property>
-        <factor>-8.5</factor>
+		<condition>
+			<greater-than>
+				<property>sim/model/firetank/deployflexhose/position-norm</property>
+				<value>0</value>
+			</greater-than>
+		</condition>
+        <factor>-4.75</factor>
         <offset-deg>0</offset-deg>   
         <center>
-            <x-m>-4.8205</x-m>
-            <y-m>-0.50724</y-m>
-            <z-m>-7.63576</z-m>
+            <x-m>-4.80865</x-m>
+            <y-m>-0.45683</y-m>
+            <z-m>-5.42644</z-m>
         </center>
         <axis>
             <x>0</x>
@@ -1265,12 +1324,18 @@
         <type>rotate</type>
     	<object-name>flexfillhose.017</object-name>
         <property>sim/model/firetank/deployflexhose/position-norm</property>
-        <factor>-8.5</factor>
+		<condition>
+			<greater-than>
+				<property>sim/model/firetank/deployflexhose/position-norm</property>
+				<value>0</value>
+			</greater-than>
+		</condition>
+        <factor>-4.75</factor>
         <offset-deg>0</offset-deg>   
         <center>
-            <x-m>-4.81006</x-m>
-            <y-m>-0.50767</y-m>
-            <z-m>-8.06432</z-m>
+            <x-m>-4.80865</x-m>
+            <y-m>-0.45683</y-m>
+            <z-m>-5.6266</z-m>
         </center>
         <axis>
             <x>0</x>
@@ -1280,18 +1345,1691 @@
     </animation>
     <animation>
         <type>rotate</type>
-    	<object-name>flexfillhose.018</object-name>
+		<object-name>flexfillhose.018</object-name>
         <property>sim/model/firetank/deployflexhose/position-norm</property>
-        <factor>-8.5</factor>
+		<condition>
+			<greater-than>
+				<property>sim/model/firetank/deployflexhose/position-norm</property>
+				<value>0</value>
+			</greater-than>
+		</condition>
+        <factor>-4.75</factor>
         <offset-deg>0</offset-deg>   
         <center>
-            <x-m>-4.81006</x-m>
-            <y-m>-0.50767</y-m>
-            <z-m>-8.52118</z-m>
+            <x-m>-4.80865</x-m>
+            <y-m>-0.45683</y-m>
+            <z-m>-5.82589</z-m>
         </center>
         <axis>
             <x>0</x>
             <y>1</y>
+            <z>.10</z>
+        </axis>
+    </animation>
+    <animation>
+        <type>rotate</type>
+		<object-name>flexfillhose.019</object-name>
+        <property>sim/model/firetank/deployflexhose/position-norm</property>
+		<condition>
+			<greater-than>
+				<property>sim/model/firetank/deployflexhose/position-norm</property>
+				<value>0</value>
+			</greater-than>
+		</condition>
+        <factor>-4.75</factor>
+        <offset-deg>0</offset-deg>   
+        <center>
+            <x-m>-4.80865</x-m>
+            <y-m>-0.45683</y-m>
+            <z-m>-6.02503</z-m>
+        </center>
+        <axis>
+            <x>0</x>
+            <y>1</y>
+            <z>.10</z>
+        </axis>
+    </animation>
+    <animation>
+        <type>rotate</type>
+		<object-name>flexfillhose.020</object-name>
+        <property>sim/model/firetank/deployflexhose/position-norm</property>
+		<condition>
+			<greater-than>
+				<property>sim/model/firetank/deployflexhose/position-norm</property>
+				<value>0</value>
+			</greater-than>
+		</condition>
+        <factor>-4.75</factor>
+        <offset-deg>0</offset-deg>   
+        <center>
+            <x-m>-4.80865</x-m>
+            <y-m>-0.45683</y-m>
+            <z-m>-6.22678</z-m>
+        </center>
+        <axis>
+            <x>0</x>
+            <y>1</y>
+            <z>.10</z>
+        </axis>
+    </animation>
+    <animation>
+        <type>rotate</type>
+		<object-name>flexfillhose.021</object-name>
+        <property>sim/model/firetank/deployflexhose/position-norm</property>
+		<condition>
+			<greater-than>
+				<property>sim/model/firetank/deployflexhose/position-norm</property>
+				<value>0</value>
+			</greater-than>
+		</condition>
+        <factor>-4.75</factor>
+        <offset-deg>0</offset-deg>   
+        <center>
+            <x-m>-4.80865</x-m>
+            <y-m>-0.45683</y-m>
+            <z-m>-6.42718</z-m>
+        </center>
+        <axis>
+            <x>0</x>
+            <y>1</y>
+            <z>.10</z>
+        </axis>
+    </animation>
+    <animation>
+        <type>rotate</type>
+		<object-name>flexfillhose.022</object-name>
+        <property>sim/model/firetank/deployflexhose/position-norm</property>
+		<condition>
+			<greater-than>
+				<property>sim/model/firetank/deployflexhose/position-norm</property>
+				<value>0</value>
+			</greater-than>
+		</condition>
+        <factor>-4.75</factor>
+        <offset-deg>0</offset-deg>   
+        <center>
+            <x-m>-4.80865</x-m>
+            <y-m>-0.45683</y-m>
+            <z-m>-6.62697</z-m>
+        </center>
+        <axis>
+            <x>0</x>
+            <y>1</y>
+            <z>.10</z>
+        </axis>
+    </animation>
+    <animation>
+        <type>rotate</type>
+		<object-name>flexfillhose.023</object-name>
+        <property>sim/model/firetank/deployflexhose/position-norm</property>
+		<condition>
+			<greater-than>
+				<property>sim/model/firetank/deployflexhose/position-norm</property>
+				<value>0</value>
+			</greater-than>
+		</condition>
+        <factor>-4.75</factor>
+        <offset-deg>0</offset-deg>   
+        <center>
+            <x-m>-4.80865</x-m>
+            <y-m>-0.45683</y-m>
+            <z-m>-6.82651</z-m>
+        </center>
+        <axis>
+            <x>0</x>
+            <y>1</y>
+            <z>.10</z>
+        </axis>
+    </animation>
+    <animation>
+        <type>rotate</type>
+		<object-name>flexfillhose.024</object-name>
+        <property>sim/model/firetank/deployflexhose/position-norm</property>
+		<condition>
+			<greater-than>
+				<property>sim/model/firetank/deployflexhose/position-norm</property>
+				<value>0</value>
+			</greater-than>
+		</condition>
+        <factor>-4.75</factor>
+        <offset-deg>0</offset-deg>   
+        <center>
+            <x-m>-4.80865</x-m>
+            <y-m>-0.45683</y-m>
+            <z-m>-7.02782</z-m>
+        </center>
+        <axis>
+            <x>0</x>
+            <y>1</y>
+            <z>.10</z>
+        </axis>
+    </animation>
+    <animation>
+        <type>rotate</type>
+		<object-name>flexfillhose.025</object-name>
+        <property>sim/model/firetank/deployflexhose/position-norm</property>
+		<condition>
+			<greater-than>
+				<property>sim/model/firetank/deployflexhose/position-norm</property>
+				<value>0</value>
+			</greater-than>
+		</condition>
+        <factor>-4.75</factor>
+        <offset-deg>0</offset-deg>   
+        <center>
+            <x-m>-4.80865</x-m>
+            <y-m>-0.45683</y-m>
+            <z-m>-7.22793</z-m>
+        </center>
+        <axis>
+            <x>0</x>
+            <y>1</y>
+            <z>.10</z>
+        </axis>
+    </animation>
+    <animation>
+        <type>rotate</type>
+		<object-name>flexfillhose.026</object-name>
+        <property>sim/model/firetank/deployflexhose/position-norm</property>
+		<condition>
+			<greater-than>
+				<property>sim/model/firetank/deployflexhose/position-norm</property>
+				<value>0</value>
+			</greater-than>
+		</condition>
+        <factor>-4.75</factor>
+        <offset-deg>0</offset-deg>   
+        <center>
+            <x-m>-4.80865</x-m>
+            <y-m>-0.45683</y-m>
+            <z-m>-7.4281</z-m>
+        </center>
+        <axis>
+            <x>0</x>
+            <y>1</y>
+            <z>.10</z>
+        </axis>
+    </animation>
+    <animation>
+        <type>rotate</type>
+		<object-name>flexfillhose.027</object-name>
+        <property>sim/model/firetank/deployflexhose/position-norm</property>
+		<condition>
+			<greater-than>
+				<property>sim/model/firetank/deployflexhose/position-norm</property>
+				<value>0</value>
+			</greater-than>
+		</condition>
+        <factor>-4.75</factor>
+        <offset-deg>0</offset-deg>   
+        <center>
+            <x-m>-4.80865</x-m>
+            <y-m>-0.45683</y-m>
+            <z-m>-7.62739</z-m>
+        </center>
+        <axis>
+            <x>0</x>
+            <y>1</y>
+            <z>.10</z>
+        </axis>
+    </animation>
+    <animation>
+        <type>rotate</type>
+		<object-name>flexfillhose.028</object-name>
+        <property>sim/model/firetank/deployflexhose/position-norm</property>
+		<condition>
+			<greater-than>
+				<property>sim/model/firetank/deployflexhose/position-norm</property>
+				<value>0</value>
+			</greater-than>
+		</condition>
+        <factor>-4.75</factor>
+        <offset-deg>0</offset-deg>   
+        <center>
+            <x-m>-4.80865</x-m>
+            <y-m>-0.45683</y-m>
+            <z-m>-7.82785</z-m>
+        </center>
+        <axis>
+            <x>0</x>
+            <y>1</y>
+            <z>.10</z>
+        </axis>
+    </animation>
+    <animation>
+        <type>rotate</type>
+		<object-name>flexfillhose.029</object-name>
+        <property>sim/model/firetank/deployflexhose/position-norm</property>
+		<condition>
+			<greater-than>
+				<property>sim/model/firetank/deployflexhose/position-norm</property>
+				<value>0</value>
+			</greater-than>
+		</condition>
+        <factor>-4.75</factor>
+        <offset-deg>0</offset-deg>   
+        <center>
+            <x-m>-4.80865</x-m>
+            <y-m>-0.45683</y-m>
+            <z-m>-8.02802</z-m>
+        </center>
+        <axis>
+            <x>0</x>
+            <y>1</y>
+            <z>.10</z>
+        </axis>
+    </animation>
+    <animation>
+        <type>rotate</type>
+    	<object-name>flexfillhose.030</object-name>
+        <property>sim/model/firetank/deployflexhose/position-norm</property>
+		<condition>
+			<greater-than>
+				<property>sim/model/firetank/deployflexhose/position-norm</property>
+				<value>0</value>
+			</greater-than>
+		</condition>
+        <factor>-4.75</factor>
+        <offset-deg>0</offset-deg>   
+        <center>
+            <x-m>-4.80865</x-m>
+            <y-m>-0.45683</y-m>
+            <z-m>-8.22731</z-m>
+        </center>
+        <axis>
+            <x>0</x>
+            <y>1</y>
+            <z>.10</z>
+        </axis>
+    </animation>
+    <animation>
+        <type>rotate</type>
+    	<object-name>flexfillhose.031</object-name>
+        <property>sim/model/firetank/deployflexhose/position-norm</property>
+		<condition>
+			<greater-than>
+				<property>sim/model/firetank/deployflexhose/position-norm</property>
+				<value>0</value>
+			</greater-than>
+		</condition>
+        <factor>-4.75</factor>
+        <offset-deg>0</offset-deg>   
+        <center>
+            <x-m>-4.80865</x-m>
+            <y-m>-0.45683</y-m>
+            <z-m>-8.42757</z-m>
+        </center>
+        <axis>
+            <x>0</x>
+            <y>1</y>
+            <z>.10</z>
+        </axis>
+    </animation>
+
+    <!-- Flex Hose Rotation Pitch-->
+    <animation>
+        <type>rotate</type>
+        <object-name>flexfillhose.001</object-name>
+        <property>/sim/model/firetank/flexhose/pitch1</property>
+		<condition>
+			<not>
+				<property>sim/model/firetank/deployflexhose/position-norm</property>
+			</not>
+		</condition>
+        <factor>1</factor>
+        <offset-deg>0</offset-deg>   
+        <center>
+            <x-m>-4.80865</x-m>
+            <y-m>-0.45683</y-m>
+            <z-m>-2.41935</z-m>
+        </center>
+        <axis>
+            <x>0</x>
+            <y>1</y>
+            <z>.10</z>
+        </axis>
+    </animation>
+    <animation>
+        <type>rotate</type>
+		<object-name>flexfillhose.002</object-name>
+        <property>/sim/model/firetank/flexhose/pitch2</property>
+        <condition>
+			<not>
+				<property>sim/model/firetank/deployflexhose/position-norm</property>
+			</not>
+		</condition>
+        <factor>1</factor>
+        <offset-deg>0</offset-deg>   
+        <center>
+            <x-m>-4.80865</x-m>
+            <y-m>-0.45683</y-m>
+            <z-m>-2.6211</z-m>
+        </center>
+        <axis>
+            <x>0</x>
+            <y>1</y>
+            <z>.10</z>
+        </axis>
+    </animation>
+    <animation>
+        <type>rotate</type>
+		<object-name>flexfillhose.003</object-name>
+        <property>/sim/model/firetank/flexhose/pitch3</property>
+        <condition>
+			<not>
+				<property>sim/model/firetank/deployflexhose/position-norm</property>
+			</not>
+		</condition>
+        <factor>1</factor>
+        <offset-deg>0</offset-deg>   
+        <center>
+            <x-m>-4.80865</x-m>
+            <y-m>-0.45683</y-m>
+            <z-m>-2.82149</z-m>
+        </center>
+        <axis>
+            <x>0</x>
+            <y>1</y>
+            <z>.10</z>
+        </axis>
+    </animation>
+    <animation>
+        <type>rotate</type>
+		<object-name>flexfillhose.004</object-name>
+        <property>/sim/model/firetank/flexhose/pitch4</property>
+        <condition>
+			<not>
+				<property>sim/model/firetank/deployflexhose/position-norm</property>
+			</not>
+		</condition>
+        <factor>1</factor>
+        <offset-deg>0</offset-deg>   
+        <center>
+            <x-m>-4.80865</x-m>
+            <y-m>-0.45683</y-m>
+            <z-m>-3.02129</z-m>
+        </center>
+        <axis>
+            <x>0</x>
+            <y>1</y>
+            <z>.10</z>
+        </axis>
+    </animation>
+    <animation>
+        <type>rotate</type>
+		<object-name>flexfillhose.005</object-name>
+        <property>/sim/model/firetank/flexhose/pitch5</property>
+        <condition>
+			<not>
+				<property>sim/model/firetank/deployflexhose/position-norm</property>
+			</not>
+		</condition>
+        <factor>1</factor>
+        <offset-deg>0</offset-deg>   
+        <center>
+            <x-m>-4.80865</x-m>
+            <y-m>-0.45683</y-m>
+            <z-m>-3.22083</z-m>
+        </center>
+        <axis>
+            <x>0</x>
+            <y>1</y>
+            <z>.10</z>
+        </axis>
+    </animation>
+    <animation>
+        <type>rotate</type>
+		<object-name>flexfillhose.006</object-name>
+        <property>/sim/model/firetank/flexhose/pitch6</property>
+        <condition>
+			<not>
+				<property>sim/model/firetank/deployflexhose/position-norm</property>
+			</not>
+		</condition>
+        <factor>1</factor>
+        <offset-deg>0</offset-deg>   
+        <center>
+            <x-m>-4.80865</x-m>
+            <y-m>-0.45683</y-m>
+            <z-m>-3.42214</z-m>
+        </center>
+        <axis>
+            <x>0</x>
+            <y>1</y>
+            <z>.10</z>
+        </axis>
+    </animation>
+    <animation>
+        <type>rotate</type>
+		<object-name>flexfillhose.007</object-name>
+        <property>/sim/model/firetank/flexhose/pitch7</property>
+        <condition>
+			<not>
+				<property>sim/model/firetank/deployflexhose/position-norm</property>
+			</not>
+		</condition>
+        <factor>1</factor>
+        <offset-deg>0</offset-deg>   
+        <center>
+            <x-m>-4.80865</x-m>
+            <y-m>-0.45683</y-m>
+            <z-m>-3.62225</z-m>
+        </center>
+        <axis>
+            <x>0</x>
+            <y>1</y>
+            <z>.10</z>
+        </axis>
+    </animation>
+    <animation>
+        <type>rotate</type>
+		<object-name>flexfillhose.008</object-name>
+        <property>/sim/model/firetank/flexhose/pitch8</property>
+        <condition>
+			<not>
+				<property>sim/model/firetank/deployflexhose/position-norm</property>
+			</not>
+		</condition>
+        <factor>1</factor>
+        <offset-deg>0</offset-deg>   
+        <center>
+            <x-m>-4.80865</x-m>
+            <y-m>-0.45683</y-m>
+            <z-m>-3.82241</z-m>
+        </center>
+        <axis>
+            <x>0</x>
+            <y>1</y>
+            <z>.10</z>
+        </axis>
+    </animation>
+    <animation>
+        <type>rotate</type>
+		<object-name>flexfillhose.009</object-name>
+        <property>/sim/model/firetank/flexhose/pitch9</property>
+        <condition>
+			<not>
+				<property>sim/model/firetank/deployflexhose/position-norm</property>
+			</not>
+		</condition>
+        <factor>1</factor>
+        <offset-deg>0</offset-deg>   
+        <center>
+            <x-m>-4.80865</x-m>
+            <y-m>-0.45683</y-m>
+            <z-m>-4.02171</z-m>
+        </center>
+        <axis>
+            <x>0</x>
+            <y>1</y>
+            <z>.10</z>
+        </axis>
+    </animation>
+    <animation>
+        <type>rotate</type>
+		<object-name>flexfillhose.010</object-name>
+        <property>/sim/model/firetank/flexhose/pitch10</property>
+        <condition>
+			<not>
+				<property>sim/model/firetank/deployflexhose/position-norm</property>
+			</not>
+		</condition>
+        <factor>1</factor>
+        <offset-deg>0</offset-deg>   
+        <center>
+            <x-m>-4.80865</x-m>
+            <y-m>-0.45683</y-m>
+            <z-m>-4.22354</z-m>
+        </center>
+        <axis>
+            <x>0</x>
+            <y>1</y>
+            <z>.10</z>
+        </axis>
+    </animation>
+    <animation>
+        <type>rotate</type>
+		<object-name>flexfillhose.011</object-name>
+        <property>/sim/model/firetank/flexhose/pitch11</property>
+        <condition>
+			<not>
+				<property>sim/model/firetank/deployflexhose/position-norm</property>
+			</not>
+		</condition>
+        <factor>1</factor>
+        <offset-deg>0</offset-deg>   
+        <center>
+            <x-m>-4.80865</x-m>
+            <y-m>-0.45683</y-m>
+            <z-m>-4.42529</z-m>
+        </center>
+        <axis>
+            <x>0</x>
+            <y>1</y>
+            <z>.10</z>
+        </axis>
+    </animation>
+    <animation>
+        <type>rotate</type>
+		<object-name>flexfillhose.012</object-name>
+        <property>/sim/model/firetank/flexhose/pitch12</property>
+        <condition>
+			<not>
+				<property>sim/model/firetank/deployflexhose/position-norm</property>
+			</not>
+		</condition>
+        <factor>1</factor>
+        <offset-deg>0</offset-deg>   
+        <center>
+            <x-m>-4.80865</x-m>
+            <y-m>-0.45683</y-m>
+            <z-m>-4.62568</z-m>
+        </center>
+        <axis>
+            <x>0</x>
+            <y>1</y>
+            <z>.10</z>
+        </axis>
+    </animation>
+    <animation>
+        <type>rotate</type>
+		<object-name>flexfillhose.013</object-name>
+        <property>/sim/model/firetank/flexhose/pitch13</property>
+        <condition>
+			<not>
+				<property>sim/model/firetank/deployflexhose/position-norm</property>
+			</not>
+		</condition>
+        <factor>1</factor>
+        <offset-deg>0</offset-deg>   
+        <center>
+            <x-m>-4.80865</x-m>
+            <y-m>-0.45683</y-m>
+            <z-m>-4.82548</z-m>
+        </center>
+        <axis>
+            <x>0</x>
+            <y>1</y>
+            <z>.10</z>
+        </axis>
+    </animation>
+    <animation>
+        <type>rotate</type>
+		<object-name>flexfillhose.014</object-name>
+        <property>/sim/model/firetank/flexhose/pitch14</property>
+        <condition>
+			<not>
+				<property>sim/model/firetank/deployflexhose/position-norm</property>
+			</not>
+		</condition>
+        <factor>1</factor>
+        <offset-deg>0</offset-deg>   
+        <center>
+            <x-m>-4.80865</x-m>
+            <y-m>-0.45683</y-m>
+            <z-m>-5.02502</z-m>
+        </center>
+        <axis>
+            <x>0</x>
+            <y>1</y>
+            <z>.10</z>
+        </axis>
+    </animation>
+    <animation>
+        <type>rotate</type>
+		<object-name>flexfillhose.015</object-name>
+        <property>/sim/model/firetank/flexhose/pitch15</property>
+        <condition>
+			<not>
+				<property>sim/model/firetank/deployflexhose/position-norm</property>
+			</not>
+		</condition>
+        <factor>1</factor>
+        <offset-deg>0</offset-deg>   
+        <center>
+            <x-m>-4.80865</x-m>
+            <y-m>-0.45683</y-m>
+            <z-m>-5.22632</z-m>
+        </center>
+        <axis>
+            <x>0</x>
+            <y>1</y>
+            <z>.10</z>
+        </axis>
+    </animation>
+    <animation>
+        <type>rotate</type>
+		<object-name>flexfillhose.016</object-name>
+        <property>/sim/model/firetank/flexhose/pitch16</property>
+        <condition>
+			<not>
+				<property>sim/model/firetank/deployflexhose/position-norm</property>
+			</not>
+		</condition>
+        <factor>1</factor>
+        <offset-deg>0</offset-deg>   
+        <center>
+            <x-m>-4.80865</x-m>
+            <y-m>-0.45683</y-m>
+            <z-m>-5.42644</z-m>
+        </center>
+        <axis>
+            <x>0</x>
+            <y>1</y>
+            <z>.10</z>
+        </axis>
+    </animation>
+    <animation>
+        <type>rotate</type>
+		<object-name>flexfillhose.017</object-name>
+        <property>/sim/model/firetank/flexhose/pitch17</property>
+        <condition>
+			<not>
+				<property>sim/model/firetank/deployflexhose/position-norm</property>
+			</not>
+		</condition>
+        <factor>1</factor>
+        <offset-deg>0</offset-deg>   
+        <center>
+            <x-m>-4.80865</x-m>
+            <y-m>-0.45683</y-m>
+            <z-m>-5.6266</z-m>
+        </center>
+        <axis>
+            <x>0</x>
+            <y>1</y>
+            <z>.10</z>
+        </axis>
+    </animation>
+    <animation>
+        <type>rotate</type>
+		<object-name>flexfillhose.018</object-name>
+        <property>/sim/model/firetank/flexhose/pitch18</property>
+        <condition>
+			<not>
+				<property>sim/model/firetank/deployflexhose/position-norm</property>
+			</not>
+		</condition>
+        <factor>1</factor>
+        <offset-deg>0</offset-deg>   
+        <center>
+            <x-m>-4.80865</x-m>
+            <y-m>-0.45683</y-m>
+            <z-m>-5.82589</z-m>
+        </center>
+        <axis>
+            <x>0</x>
+            <y>1</y>
+            <z>.10</z>
+        </axis>
+    </animation>
+    <animation>
+        <type>rotate</type>
+		<object-name>flexfillhose.019</object-name>
+        <property>/sim/model/firetank/flexhose/pitch19</property>
+        <condition>
+			<not>
+				<property>sim/model/firetank/deployflexhose/position-norm</property>
+			</not>
+		</condition>
+        <factor>1</factor>
+        <offset-deg>0</offset-deg>   
+        <center>
+            <x-m>-4.80865</x-m>
+            <y-m>-0.45683</y-m>
+            <z-m>-6.02503</z-m>
+        </center>
+        <axis>
+            <x>0</x>
+            <y>1</y>
+            <z>.10</z>
+        </axis>
+    </animation>
+    <animation>
+        <type>rotate</type>
+		<object-name>flexfillhose.020</object-name>
+        <property>/sim/model/firetank/flexhose/pitch20</property>
+        <condition>
+			<not>
+				<property>sim/model/firetank/deployflexhose/position-norm</property>
+			</not>
+		</condition>
+        <factor>1</factor>
+        <offset-deg>0</offset-deg>   
+        <center>
+            <x-m>-4.80865</x-m>
+            <y-m>-0.45683</y-m>
+            <z-m>-6.22678</z-m>
+        </center>
+        <axis>
+            <x>0</x>
+            <y>1</y>
+            <z>.10</z>
+        </axis>
+    </animation>
+    <animation>
+        <type>rotate</type>
+		<object-name>flexfillhose.021</object-name>
+        <property>/sim/model/firetank/flexhose/pitch21</property>
+        <condition>
+			<not>
+				<property>sim/model/firetank/deployflexhose/position-norm</property>
+			</not>
+		</condition>
+        <factor>1</factor>
+        <offset-deg>0</offset-deg>   
+        <center>
+            <x-m>-4.80865</x-m>
+            <y-m>-0.45683</y-m>
+            <z-m>-6.42718</z-m>
+        </center>
+        <axis>
+            <x>0</x>
+            <y>1</y>
+            <z>.10</z>
+        </axis>
+    </animation>
+    <animation>
+        <type>rotate</type>
+		<object-name>flexfillhose.022</object-name>
+        <property>/sim/model/firetank/flexhose/pitch22</property>
+        <condition>
+			<not>
+				<property>sim/model/firetank/deployflexhose/position-norm</property>
+			</not>
+		</condition>
+        <factor>1</factor>
+        <offset-deg>0</offset-deg>   
+        <center>
+            <x-m>-4.80865</x-m>
+            <y-m>-0.45683</y-m>
+            <z-m>-6.62697</z-m>
+        </center>
+        <axis>
+            <x>0</x>
+            <y>1</y>
+            <z>.10</z>
+        </axis>
+    </animation>
+    <animation>
+        <type>rotate</type>
+		<object-name>flexfillhose.023</object-name>
+        <property>/sim/model/firetank/flexhose/pitch23</property>
+        <condition>
+			<not>
+				<property>sim/model/firetank/deployflexhose/position-norm</property>
+			</not>
+		</condition>
+        <factor>1</factor>
+        <offset-deg>0</offset-deg>   
+        <center>
+            <x-m>-4.80865</x-m>
+            <y-m>-0.45683</y-m>
+            <z-m>-6.82651</z-m>
+        </center>
+        <axis>
+            <x>0</x>
+            <y>1</y>
+            <z>.10</z>
+        </axis>
+    </animation>
+    <animation>
+        <type>rotate</type>
+		<object-name>flexfillhose.024</object-name>
+        <property>/sim/model/firetank/flexhose/pitch24</property>
+        <condition>
+			<not>
+				<property>sim/model/firetank/deployflexhose/position-norm</property>
+			</not>
+		</condition>
+        <factor>1</factor>
+        <offset-deg>0</offset-deg>   
+        <center>
+            <x-m>-4.80865</x-m>
+            <y-m>-0.45683</y-m>
+            <z-m>-7.02782</z-m>
+        </center>
+        <axis>
+            <x>0</x>
+            <y>1</y>
+            <z>.10</z>
+        </axis>
+    </animation>
+    <animation>
+        <type>rotate</type>
+		<object-name>flexfillhose.025</object-name>
+        <property>/sim/model/firetank/flexhose/pitch25</property>
+        <condition>
+			<not>
+				<property>sim/model/firetank/deployflexhose/position-norm</property>
+			</not>
+		</condition>
+        <factor>1</factor>
+        <offset-deg>0</offset-deg>   
+        <center>
+            <x-m>-4.80865</x-m>
+            <y-m>-0.45683</y-m>
+            <z-m>-7.22793</z-m>
+        </center>
+        <axis>
+            <x>0</x>
+            <y>1</y>
+            <z>.10</z>
+        </axis>
+    </animation>
+    <animation>
+        <type>rotate</type>
+		<object-name>flexfillhose.026</object-name>
+        <property>/sim/model/firetank/flexhose/pitch26</property>
+        <condition>
+			<not>
+				<property>sim/model/firetank/deployflexhose/position-norm</property>
+			</not>
+		</condition>
+        <factor>1</factor>
+        <offset-deg>0</offset-deg>   
+        <center>
+            <x-m>-4.80865</x-m>
+            <y-m>-0.45683</y-m>
+            <z-m>-7.4281</z-m>
+        </center>
+        <axis>
+            <x>0</x>
+            <y>1</y>
+            <z>.10</z>
+        </axis>
+    </animation>
+    <animation>
+        <type>rotate</type>
+		<object-name>flexfillhose.027</object-name>
+        <property>/sim/model/firetank/flexhose/pitch27</property>
+        <condition>
+			<not>
+				<property>sim/model/firetank/deployflexhose/position-norm</property>
+			</not>
+		</condition>
+        <factor>1</factor>
+        <offset-deg>0</offset-deg>   
+        <center>
+            <x-m>-4.80865</x-m>
+            <y-m>-0.45683</y-m>
+            <z-m>-7.62739</z-m>
+        </center>
+        <axis>
+            <x>0</x>
+            <y>1</y>
+            <z>.10</z>
+        </axis>
+    </animation>
+    <animation>
+        <type>rotate</type>
+		<object-name>flexfillhose.028</object-name>
+        <property>/sim/model/firetank/flexhose/pitch28</property>
+        <condition>
+			<not>
+				<property>sim/model/firetank/deployflexhose/position-norm</property>
+			</not>
+		</condition>
+        <factor>1</factor>
+        <offset-deg>0</offset-deg>   
+        <center>
+            <x-m>-4.80865</x-m>
+            <y-m>-0.45683</y-m>
+            <z-m>-7.82785</z-m>
+        </center>
+        <axis>
+            <x>0</x>
+            <y>1</y>
+            <z>.10</z>
+        </axis>
+    </animation>
+    <animation>
+        <type>rotate</type>
+		<object-name>flexfillhose.029</object-name>
+        <property>/sim/model/firetank/flexhose/pitch29</property>
+        <condition>
+			<not>
+				<property>sim/model/firetank/deployflexhose/position-norm</property>
+			</not>
+		</condition>
+        <factor>1</factor>
+        <offset-deg>0</offset-deg>   
+        <center>
+            <x-m>-4.80865</x-m>
+            <y-m>-0.45683</y-m>
+            <z-m>-8.02802</z-m>
+        </center>
+        <axis>
+            <x>0</x>
+            <y>1</y>
+            <z>.10</z>
+        </axis>
+    </animation>
+    <animation>
+        <type>rotate</type>
+    	<object-name>flexfillhose.030</object-name>
+        <property>/sim/model/firetank/flexhose/pitch30</property>
+        <condition>
+			<not>
+				<property>sim/model/firetank/deployflexhose/position-norm</property>
+			</not>
+		</condition>
+        <factor>1</factor>
+        <offset-deg>0</offset-deg>   
+        <center>
+            <x-m>-4.80865</x-m>
+            <y-m>-0.45683</y-m>
+            <z-m>-8.22731</z-m>
+        </center>
+        <axis>
+            <x>0</x>
+            <y>1</y>
+            <z>.10</z>
+        </axis>
+    </animation>
+    <animation>
+        <type>rotate</type>
+		<object-name>flexfillhose.031</object-name>
+        <property>/sim/model/firetank/flexhose/pitch31</property>
+        <condition>
+			<not>
+				<property>sim/model/firetank/deployflexhose/position-norm</property>
+			</not>
+		</condition>
+        <factor>1</factor>
+        <offset-deg>0</offset-deg>   
+        <center>
+            <x-m>-4.80865</x-m>
+            <y-m>-0.45683</y-m>
+            <z-m>-8.42757</z-m>
+        </center>
+        <axis>
+            <x>0</x>
+            <y>1</y>
+            <z>.10</z>
+        </axis>
+    </animation>
+
+    <!-- Flex Hose Rotation Roll -->
+    <animation>
+        <type>rotate</type>
+        <object-name>flexfillhose.001</object-name>
+		<property>/sim/model/firetank/flexhose/roll1</property>
+        <condition>
+			<not>
+				<property>sim/model/firetank/deployflexhose/position-norm</property>
+			</not>
+		</condition>
+        <factor>1</factor>
+        <offset-deg>0</offset-deg>   
+        <center>
+            <x-m>-4.80865</x-m>
+            <y-m>-0.45683</y-m>
+            <z-m>-2.41935</z-m>
+        </center>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>.10</z>
+        </axis>
+    </animation>
+    <animation>
+        <type>rotate</type>
+		<object-name>flexfillhose.002</object-name>
+        <property>/sim/model/firetank/flexhose/roll2</property>
+        <condition>
+			<not>
+				<property>sim/model/firetank/deployflexhose/position-norm</property>
+			</not>
+		</condition>
+        <factor>1</factor>
+        <offset-deg>0</offset-deg>   
+        <center>
+            <x-m>-4.80865</x-m>
+            <y-m>-0.45683</y-m>
+            <z-m>-2.6211</z-m>
+        </center>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>.10</z>
+        </axis>
+    </animation>
+    <animation>
+        <type>rotate</type>
+		<object-name>flexfillhose.003</object-name>
+        <property>/sim/model/firetank/flexhose/roll3</property>
+        <condition>
+			<not>
+				<property>sim/model/firetank/deployflexhose/position-norm</property>
+			</not>
+		</condition>
+        <factor>1</factor>
+        <offset-deg>0</offset-deg>   
+        <center>
+            <x-m>-4.80865</x-m>
+            <y-m>-0.45683</y-m>
+            <z-m>-2.82149</z-m>
+        </center>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>.10</z>
+        </axis>
+    </animation>
+    <animation>
+        <type>rotate</type>
+		<object-name>flexfillhose.004</object-name>
+        <property>/sim/model/firetank/flexhose/roll4</property>
+        <condition>
+			<not>
+				<property>sim/model/firetank/deployflexhose/position-norm</property>
+			</not>
+		</condition>
+        <factor>1</factor>
+        <offset-deg>0</offset-deg>   
+        <center>
+            <x-m>-4.80865</x-m>
+            <y-m>-0.45683</y-m>
+            <z-m>-3.02129</z-m>
+        </center>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>.10</z>
+        </axis>
+    </animation>
+    <animation>
+        <type>rotate</type>
+		<object-name>flexfillhose.005</object-name>
+        <property>/sim/model/firetank/flexhose/roll5</property>
+        <condition>
+			<not>
+				<property>sim/model/firetank/deployflexhose/position-norm</property>
+			</not>
+		</condition>
+        <factor>1</factor>
+        <offset-deg>0</offset-deg>   
+        <center>
+            <x-m>-4.80865</x-m>
+            <y-m>-0.45683</y-m>
+            <z-m>-3.22083</z-m>
+        </center>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>.10</z>
+        </axis>
+    </animation>
+    <animation>
+        <type>rotate</type>
+		<object-name>flexfillhose.006</object-name>
+        <property>/sim/model/firetank/flexhose/roll6</property>
+        <condition>
+			<not>
+				<property>sim/model/firetank/deployflexhose/position-norm</property>
+			</not>
+		</condition>
+        <factor>1</factor>
+        <offset-deg>0</offset-deg>   
+        <center>
+            <x-m>-4.80865</x-m>
+            <y-m>-0.45683</y-m>
+            <z-m>-3.42214</z-m>
+        </center>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>.10</z>
+        </axis>
+    </animation>
+    <animation>
+        <type>rotate</type>
+		<object-name>flexfillhose.007</object-name>
+        <property>/sim/model/firetank/flexhose/roll7</property>
+        <condition>
+			<not>
+				<property>sim/model/firetank/deployflexhose/position-norm</property>
+			</not>
+		</condition>
+        <factor>1</factor>
+        <offset-deg>0</offset-deg>   
+        <center>
+            <x-m>-4.80865</x-m>
+            <y-m>-0.45683</y-m>
+            <z-m>-3.62225</z-m>
+        </center>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>.10</z>
+        </axis>
+    </animation>
+    <animation>
+        <type>rotate</type>
+		<object-name>flexfillhose.008</object-name>
+        <property>/sim/model/firetank/flexhose/roll8</property>
+        <condition>
+			<not>
+				<property>sim/model/firetank/deployflexhose/position-norm</property>
+			</not>
+		</condition>
+        <factor>1</factor>
+        <offset-deg>0</offset-deg>   
+        <center>
+            <x-m>-4.80865</x-m>
+            <y-m>-0.45683</y-m>
+            <z-m>-3.82241</z-m>
+        </center>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>.10</z>
+        </axis>
+    </animation>
+    <animation>
+        <type>rotate</type>
+		<object-name>flexfillhose.009</object-name>
+        <property>/sim/model/firetank/flexhose/roll9</property>
+        <condition>
+			<not>
+				<property>sim/model/firetank/deployflexhose/position-norm</property>
+			</not>
+		</condition>
+        <factor>1</factor>
+        <offset-deg>0</offset-deg>   
+        <center>
+            <x-m>-4.80865</x-m>
+            <y-m>-0.45683</y-m>
+            <z-m>-4.02171</z-m>
+        </center>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>.10</z>
+        </axis>
+    </animation>
+    <animation>
+        <type>rotate</type>
+		<object-name>flexfillhose.010</object-name>
+        <property>/sim/model/firetank/flexhose/roll10</property>
+        <condition>
+			<not>
+				<property>sim/model/firetank/deployflexhose/position-norm</property>
+			</not>
+		</condition>
+        <factor>1</factor>
+        <offset-deg>0</offset-deg>   
+        <center>
+            <x-m>-4.80865</x-m>
+            <y-m>-0.45683</y-m>
+            <z-m>-4.22354</z-m>
+        </center>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>.10</z>
+        </axis>
+    </animation>
+    <animation>
+        <type>rotate</type>
+		<object-name>flexfillhose.011</object-name>
+        <property>/sim/model/firetank/flexhose/roll11</property>
+        <condition>
+			<not>
+				<property>sim/model/firetank/deployflexhose/position-norm</property>
+			</not>
+		</condition>
+        <factor>1</factor>
+        <offset-deg>0</offset-deg>   
+        <center>
+            <x-m>-4.80865</x-m>
+            <y-m>-0.45683</y-m>
+            <z-m>-4.42529</z-m>
+        </center>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>.10</z>
+        </axis>
+    </animation>
+    <animation>
+        <type>rotate</type>
+		<object-name>flexfillhose.012</object-name>
+        <property>/sim/model/firetank/flexhose/roll12</property>
+        <condition>
+			<not>
+				<property>sim/model/firetank/deployflexhose/position-norm</property>
+			</not>
+		</condition>
+        <factor>1</factor>
+        <offset-deg>0</offset-deg>   
+        <center>
+            <x-m>-4.80865</x-m>
+            <y-m>-0.45683</y-m>
+            <z-m>-4.62568</z-m>
+        </center>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>.10</z>
+        </axis>
+    </animation>
+    <animation>
+        <type>rotate</type>
+		<object-name>flexfillhose.013</object-name>
+        <property>/sim/model/firetank/flexhose/roll13</property>
+        <condition>
+			<not>
+				<property>sim/model/firetank/deployflexhose/position-norm</property>
+			</not>
+		</condition>
+        <factor>1</factor>
+        <offset-deg>0</offset-deg>   
+        <center>
+            <x-m>-4.80865</x-m>
+            <y-m>-0.45683</y-m>
+            <z-m>-4.82548</z-m>
+        </center>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>.10</z>
+        </axis>
+    </animation>
+    <animation>
+        <type>rotate</type>
+		<object-name>flexfillhose.014</object-name>
+        <property>/sim/model/firetank/flexhose/roll14</property>
+        <condition>
+			<not>
+				<property>sim/model/firetank/deployflexhose/position-norm</property>
+			</not>
+		</condition>
+        <factor>1</factor>
+        <offset-deg>0</offset-deg>   
+        <center>
+            <x-m>-4.80865</x-m>
+            <y-m>-0.45683</y-m>
+            <z-m>-5.02502</z-m>
+        </center>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>.10</z>
+        </axis>
+    </animation>
+    <animation>
+        <type>rotate</type>
+		<object-name>flexfillhose.015</object-name>
+        <property>/sim/model/firetank/flexhose/roll15</property>
+        <condition>
+			<not>
+				<property>sim/model/firetank/deployflexhose/position-norm</property>
+			</not>
+		</condition>
+        <factor>1</factor>
+        <offset-deg>0</offset-deg>   
+        <center>
+            <x-m>-4.80865</x-m>
+            <y-m>-0.45683</y-m>
+            <z-m>-5.22632</z-m>
+        </center>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>.10</z>
+        </axis>
+    </animation>
+    <animation>
+        <type>rotate</type>
+		<object-name>flexfillhose.016</object-name>
+        <property>/sim/model/firetank/flexhose/roll16</property>
+        <condition>
+			<not>
+				<property>sim/model/firetank/deployflexhose/position-norm</property>
+			</not>
+		</condition>
+        <factor>1</factor>
+        <offset-deg>0</offset-deg>   
+        <center>
+            <x-m>-4.80865</x-m>
+            <y-m>-0.45683</y-m>
+            <z-m>-5.42644</z-m>
+        </center>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>.10</z>
+        </axis>
+    </animation>
+    <animation>
+        <type>rotate</type>
+    	<object-name>flexfillhose.017</object-name>
+        <property>/sim/model/firetank/flexhose/roll17</property>
+        <condition>
+			<not>
+				<property>sim/model/firetank/deployflexhose/position-norm</property>
+			</not>
+		</condition>
+        <factor>1</factor>
+        <offset-deg>0</offset-deg>   
+        <center>
+            <x-m>-4.80865</x-m>
+            <y-m>-0.45683</y-m>
+            <z-m>-5.6266</z-m>
+        </center>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>.10</z>
+        </axis>
+    </animation>
+    <animation>
+        <type>rotate</type>
+		<object-name>flexfillhose.018</object-name>
+        <property>/sim/model/firetank/flexhose/roll18</property>
+        <condition>
+			<not>
+				<property>sim/model/firetank/deployflexhose/position-norm</property>
+			</not>
+		</condition>
+        <factor>1</factor>
+        <offset-deg>0</offset-deg>   
+        <center>
+            <x-m>-4.80865</x-m>
+            <y-m>-0.45683</y-m>
+            <z-m>-5.82589</z-m>
+        </center>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>.10</z>
+        </axis>
+    </animation>
+    <animation>
+        <type>rotate</type>
+		<object-name>flexfillhose.019</object-name>
+        <property>/sim/model/firetank/flexhose/roll19</property>
+        <condition>
+			<not>
+				<property>sim/model/firetank/deployflexhose/position-norm</property>
+			</not>
+		</condition>
+        <factor>1</factor>
+        <offset-deg>0</offset-deg>   
+        <center>
+            <x-m>-4.80865</x-m>
+            <y-m>-0.45683</y-m>
+            <z-m>-6.02503</z-m>
+        </center>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>.10</z>
+        </axis>
+    </animation>
+    <animation>
+        <type>rotate</type>
+		<object-name>flexfillhose.020</object-name>
+        <property>/sim/model/firetank/flexhose/roll20</property>
+        <condition>
+			<not>
+				<property>sim/model/firetank/deployflexhose/position-norm</property>
+			</not>
+		</condition>
+        <factor>1</factor>
+        <offset-deg>0</offset-deg>   
+        <center>
+            <x-m>-4.80865</x-m>
+            <y-m>-0.45683</y-m>
+            <z-m>-6.22678</z-m>
+        </center>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>.10</z>
+        </axis>
+    </animation>
+    <animation>
+        <type>rotate</type>
+		<object-name>flexfillhose.021</object-name>
+        <property>/sim/model/firetank/flexhose/roll21</property>
+        <condition>
+			<not>
+				<property>sim/model/firetank/deployflexhose/position-norm</property>
+			</not>
+		</condition>
+        <factor>1</factor>
+        <offset-deg>0</offset-deg>   
+        <center>
+            <x-m>-4.80865</x-m>
+            <y-m>-0.45683</y-m>
+            <z-m>-6.42718</z-m>
+        </center>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>.10</z>
+        </axis>
+    </animation>
+    <animation>
+        <type>rotate</type>
+		<object-name>flexfillhose.022</object-name>
+        <property>/sim/model/firetank/flexhose/roll22</property>
+        <condition>
+			<not>
+				<property>sim/model/firetank/deployflexhose/position-norm</property>
+			</not>
+		</condition>
+        <factor>1</factor>
+        <offset-deg>0</offset-deg>   
+        <center>
+            <x-m>-4.80865</x-m>
+            <y-m>-0.45683</y-m>
+            <z-m>-6.62697</z-m>
+        </center>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>.10</z>
+        </axis>
+    </animation>
+    <animation>
+        <type>rotate</type>
+		<object-name>flexfillhose.023</object-name>
+        <property>/sim/model/firetank/flexhose/roll23</property>
+        <condition>
+			<not>
+				<property>sim/model/firetank/deployflexhose/position-norm</property>
+			</not>
+		</condition>
+        <factor>1</factor>
+        <offset-deg>0</offset-deg>   
+        <center>
+            <x-m>-4.80865</x-m>
+            <y-m>-0.45683</y-m>
+            <z-m>-6.82651</z-m>
+        </center>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>.10</z>
+        </axis>
+    </animation>
+    <animation>
+        <type>rotate</type>
+		<object-name>flexfillhose.024</object-name>
+        <property>/sim/model/firetank/flexhose/roll24</property>
+        <condition>
+			<not>
+				<property>sim/model/firetank/deployflexhose/position-norm</property>
+			</not>
+		</condition>
+        <factor>1</factor>
+        <offset-deg>0</offset-deg>   
+        <center>
+            <x-m>-4.80865</x-m>
+            <y-m>-0.45683</y-m>
+            <z-m>-7.02782</z-m>
+        </center>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>.10</z>
+        </axis>
+    </animation>
+    <animation>
+        <type>rotate</type>
+		<object-name>flexfillhose.025</object-name>
+        <property>/sim/model/firetank/flexhose/roll25</property>
+        <condition>
+			<not>
+				<property>sim/model/firetank/deployflexhose/position-norm</property>
+			</not>
+		</condition>
+        <factor>1</factor>
+        <offset-deg>0</offset-deg>   
+        <center>
+            <x-m>-4.80865</x-m>
+            <y-m>-0.45683</y-m>
+            <z-m>-7.22793</z-m>
+        </center>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>.10</z>
+        </axis>
+    </animation>
+    <animation>
+        <type>rotate</type>
+		<object-name>flexfillhose.026</object-name>
+        <property>/sim/model/firetank/flexhose/roll26</property>
+        <condition>
+			<not>
+				<property>sim/model/firetank/deployflexhose/position-norm</property>
+			</not>
+		</condition>
+        <factor>1</factor>
+        <offset-deg>0</offset-deg>   
+        <center>
+            <x-m>-4.80865</x-m>
+            <y-m>-0.45683</y-m>
+            <z-m>-7.4281</z-m>
+        </center>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>.10</z>
+        </axis>
+    </animation>
+    <animation>
+        <type>rotate</type>
+		<object-name>flexfillhose.027</object-name>
+        <property>/sim/model/firetank/flexhose/roll27</property>
+        <condition>
+			<not>
+				<property>sim/model/firetank/deployflexhose/position-norm</property>
+			</not>
+		</condition>
+        <factor>1</factor>
+        <offset-deg>0</offset-deg>   
+        <center>
+            <x-m>-4.80865</x-m>
+            <y-m>-0.45683</y-m>
+            <z-m>-7.62739</z-m>
+        </center>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>.10</z>
+        </axis>
+    </animation>
+    <animation>
+        <type>rotate</type>
+		<object-name>flexfillhose.028</object-name>
+        <property>/sim/model/firetank/flexhose/roll28</property>
+        <condition>
+			<not>
+				<property>sim/model/firetank/deployflexhose/position-norm</property>
+			</not>
+		</condition>
+        <factor>1</factor>
+        <offset-deg>0</offset-deg>   
+        <center>
+            <x-m>-4.80865</x-m>
+            <y-m>-0.45683</y-m>
+            <z-m>-7.82785</z-m>
+        </center>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>.10</z>
+        </axis>
+    </animation>
+    <animation>
+        <type>rotate</type>
+		<object-name>flexfillhose.029</object-name>
+        <property>/sim/model/firetank/flexhose/roll29</property>
+        <condition>
+			<not>
+				<property>sim/model/firetank/deployflexhose/position-norm</property>
+			</not>
+		</condition>
+        <factor>1</factor>
+        <offset-deg>0</offset-deg>   
+        <center>
+            <x-m>-4.80865</x-m>
+            <y-m>-0.45683</y-m>
+            <z-m>-8.02802</z-m>
+        </center>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>.10</z>
+        </axis>
+    </animation>
+    <animation>
+        <type>rotate</type>
+    	<object-name>flexfillhose.030</object-name>
+        <property>/sim/model/firetank/flexhose/roll30</property>
+        <condition>
+			<not>
+				<property>sim/model/firetank/deployflexhose/position-norm</property>
+			</not>
+		</condition>
+        <factor>1</factor>
+        <offset-deg>0</offset-deg>   
+        <center>
+            <x-m>-4.80865</x-m>
+            <y-m>-0.45683</y-m>
+            <z-m>-8.22731</z-m>
+        </center>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>.10</z>
+        </axis>
+    </animation>
+    <animation>
+        <type>rotate</type>
+    	<object-name>flexfillhose.031</object-name>
+        <property>/sim/model/firetank/flexhose/roll31</property>
+        <condition>
+			<not>
+				<property>sim/model/firetank/deployflexhose/position-norm</property>
+			</not>
+		</condition>
+        <factor>1</factor>
+        <offset-deg>0</offset-deg>   
+        <center>
+            <x-m>-4.80865</x-m>
+            <y-m>-0.45683</y-m>
+            <z-m>-8.42757</z-m>
+        </center>
+        <axis>
+            <x>1</x>
+            <y>0</y>
             <z>.10</z>
         </axis>
     </animation>

@@ -113,7 +113,10 @@
     <binding>
       <command>nasal</command>
       <script>
-		doors.flexhose.toggle();
+		if (getprop("sim/model/firetank/deployflexhose/position-norm") == 1)
+			doors.flexhose.toggle();
+		else
+			screen.log.write("Hose already deployed!");
 	  </script>
     </binding>
   </key>

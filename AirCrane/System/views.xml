@@ -4,7 +4,7 @@
 
   <chase-distance-m type="double" archive="y">-30</chase-distance-m>
 
-<view n="0">
+  <view n="0">
     <internal type="bool" archive="y">true</internal>
     <config>
       <x-offset-m archive="y" type="double">0.520</x-offset-m>
