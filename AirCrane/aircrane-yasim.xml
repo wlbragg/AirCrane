@@ -196,7 +196,8 @@
          <stall aoa="0" width="0" peak="1.5"/>
   </hstab>
 
-  <gear x="8.295" y="0" z="-4"
+  <!-- front gear -->
+  <gear x="8.295" y="0" z="-4.05"
         compression="0.1"
         spring="3"
         damp="1.0"
@@ -207,7 +208,7 @@
   </gear>
 
   <!-- left gear -->
-  <gear x="1.190" y="3.237" z="-4"
+  <gear x="1.190" y="3.237" z="-4.069"
         compression="0.1"
         spring="3.2"
         damp="1.0"
@@ -219,7 +220,7 @@
   </gear>
 
   <!-- right gear -->
-  <gear x="1.190" y="-3.237" z="-4"
+  <gear x="1.190" y="-3.237" z="-4.069"
         compression="0.1"
         spring="3.2"
         damp="1.0"

@@ -101,9 +101,29 @@ var tank_operations = func {
 
 	#################### flexhose ####################
 
+	var alt_agl = altitude * 0.3048 + getprop("/sim/model/firetank/flexhose/offset");
+	var n_segments = 31;
+	var segment_length = getprop("/sim/model/firetank/flexhose/factor");
+
+	if (overland)
+		{
+			if (alt_agl - n_segments * segment_length < 0.0)
+			   {
+				  onground_flag = 1;
+			   }
+			else
+				  onground_flag = 0;
+		} 
+	else
+		{
+		   onground_flag = 0;
+		}
+
+	setprop("/sim/model/firetank/flexhose/hosehitsground", onground_flag);
+
 	if (sniffer == 1) 
 		{
-			drop_flag = 25;
+			drop_flag = 50;
 			return;
 		}
 	else
@@ -116,42 +136,36 @@ var tank_operations = func {
 				drop_flag = 0;
 			}
 
-	var n_segments = 31;
-	var segment_length = getprop("/sim/model/firetank/flexhose/factor");
 	var flex_force = getprop("/sim/model/firetank/flexhose/flex-force");
-
 	var damping = getprop("/sim/model/firetank/flexhose/damping");
 	var stiffness = getprop("/sim/model/firetank/flexhose/stiffness");
-
 	var sum_angle = 0.0;
-	
-	var alt_agl = altitude * 0.3048 + getprop("/sim/model/firetank/flexhose/offset");
+	var dt = getprop("/sim/time/delta-sec");
+	var bend_force = getprop("/sim/model/firetank/flexhose/bendforce");
+	var angle_correction = getprop("/sim/model/firetank/flexhose/correction");
 
-	if (overland)
+	if (onground_flag == 0)
 		{
-		if (alt_agl - n_segments * segment_length < 0.0)
-		   {
-			  onground_flag = 1;
-		   }
-		else
-			  onground_flag = 0;
-		} 
+			if (drop_flag) 
+				{
+					var ax = drop_flag;
+					var ay = 0;
+					var az = -60;
+				}
+			else
+				{
+					var ax = getprop("/accelerations/pilot/x-accel-fps_sec");
+					var ay = getprop("/accelerations/pilot/y-accel-fps_sec");
+					var az = getprop("/accelerations/pilot/z-accel-fps_sec");
+				}
+		}
 	else
 		{
-		   onground_flag = 0;
+			var ax = 0;
+			var ay = 0;
+			var az = 0;
 		}
 
-	var dt = getprop("/sim/time/delta-sec");
-
-	if (onground_flag == 0) {
-		var ax = getprop("/accelerations/pilot/x-accel-fps_sec") + drop_flag;
-		var ay = getprop("/accelerations/pilot/y-accel-fps_sec");
-		var az = getprop("/accelerations/pilot/z-accel-fps_sec");
-	} else {
-		var ax = 0;
-		var ay = 0;
-		var az = 0;
-	}
 	var a = math.sqrt(ax* ax + ay*ay + az*az);
 
 	if (a==0.0) {a=1.0;}
@@ -167,14 +181,12 @@ var tank_operations = func {
 	   var current_angle = getprop("/sim/model/firetank/flexhose/pitch1");
 	   var ang_error = ref_ang1 - current_angle;
 
-
 	   flex_angle_v_array[0] += ang_error * stiffness * dt;
 	   flex_angle_v_array[0] *= damping_factor;
 
 	   var ang_speed = flex_angle_v_array[0];
 
 	   setprop("/sim/model/firetank/flexhose/pitch1", current_angle + dt * ang_speed);
-
 
 	   var current_roll = getprop("/sim/model/firetank/flexhose/roll1");
 	   ang_error = ref_ang2 - current_roll;
@@ -198,14 +210,17 @@ var tank_operations = func {
 	   }
 	else
 	   {
+
 	   setprop("/sim/model/firetank/flexhose/pitch1", ref_ang1);
 	   setprop("/sim/model/firetank/flexhose/roll1", ref_ang2);
+
 	   }
 
 	var roll_target = 0.0;
 
 	for (var i = 1; i< n_segments; i=i+1)
 	   	{
+
 	   	var gravity = n_segments - i;
 
 		var velocity = getprop("/velocities/equivalent-kt") - (drop_flag*2);
@@ -221,7 +236,7 @@ var tank_operations = func {
 		{
 		   if (dist_above_ground < 0.0)
 			  {
-			  force = force + 20 * math.cos(sum_angle * math.pi/180.0);
+			  force = force + bend_force * math.cos(sum_angle * math.pi/180.0);
 			  }
 		}
 
@@ -263,11 +278,10 @@ var tank_operations = func {
 
 		  setprop("/sim/model/firetank/flexhose/roll"~(i+1), roll_target);
 
-
 		  }
 		else
 		  {
-		  setprop("/sim/model/firetank/flexhose/pitch"~(i+1), angle + .3);
+		  setprop("/sim/model/firetank/flexhose/pitch"~(i+1), angle + angle_correction);
 		  setprop("/sim/model/firetank/flexhose/roll"~(i+1), 0.0);
 		  }
 

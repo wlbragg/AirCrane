@@ -73,9 +73,12 @@
 		<flexhose>
 		  <flex-force type="double">0.08</flex-force>
 		  <factor type="double">0.22</factor>
-		  <offset type="double">-2.8</offset>
+		  <offset type="double">-2.6</offset>
+		  <bendforce type="int">15</bendforce>
 		  <damping type="double">0.6</damping>
 		  <stiffness type="double">9.0</stiffness>
+		  <hosehitsground type="bool">true</hosehitsground>
+		  <correction type="double">0.7</correction>
 		  <pitch1 type="double">0.0</pitch1>
 		  <pitch2 type="double">0.0</pitch2>
 		  <pitch3 type="double">0.0</pitch3>
@@ -261,5 +264,5 @@
       <file>Aircraft/Generic/helicopter-fcs.nas</file>
     </fcs>
   </nasal>
-   
+
 </PropertyList>
