@@ -11,7 +11,7 @@
 
     <attach>world</attach>
 
-    <align>billboard</align> <!-- fixed -->
+    <align>billboard</align>
 
     <placer>
       <type>sector</type>
@@ -34,11 +34,11 @@
 			</less-than>
 			<greater-than>
 				<property>/rotors/main/rpm</property>
-				<value>112</value>
+				<value>189</value>
 			</greater-than>
 			<less-than>
 				<property>/controls/engines/engine/throttle</property>
-				<value>.80</value>
+				<value>.60</value>
 			</less-than>
 		</and>
 	</condition>
@@ -130,22 +130,58 @@
 
   </particlesystem>
 
+  <!-- pitch -->
+  <animation>
+    <type>rotate</type>
+    <object-name>rotorwashpower</object-name>
+    <property>/orientation/pitch-deg</property>
+    <factor>-1.0</factor>
+    <center>
+      <x-m>0</x-m>
+      <y-m>0</y-m>
+      <z-m>0</z-m>
+    </center>
+    <axis>
+      <x>0</x>
+      <y>1</y>
+      <z>0</z>
+    </axis>
+  </animation>
+
+  <!-- roll -->
+  <animation>
+    <type>rotate</type>
+    <object-name>rotorwashpower</object-name>
+    <property>/orientation/roll-deg</property>
+    <factor>1.0</factor>
+    <center>
+      <x-m>0</x-m>
+      <y-m>0</y-m>
+      <z-m>0</z-m>
+    </center>
+    <axis>
+      <x>1</x>
+      <y>0</y>
+      <z>0</z>
+    </axis>
+  </animation>
+
   <!--Translate to ground level  -->
   <animation>
-   <type>translate</type>
-   <object-name>rotorwashpower</object-name>
-   <property>/position/altitude-agl-ft</property>
-   <factor>-0.3048</factor>
-   <center>
-     <x-m>0</x-m>
-     <y-m>0</y-m>
-     <z-m>0</z-m>
-   </center>
-   <axis>
-     <x>0</x>
-     <y>0</y>
-     <z>1</z>
-   </axis>
- </animation>
+    <type>translate</type>
+    <object-name>rotorwashpower</object-name>
+    <property>/position/altitude-agl-ft</property>
+    <factor>-0.3048</factor>
+    <center>
+      <x-m>0</x-m>
+      <y-m>0</y-m>
+      <z-m>0</z-m>
+    </center>
+    <axis>
+      <x>0</x>
+      <y>0</y>
+      <z>1</z>
+    </axis>
+  </animation>
 
 </PropertyList>

@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<PropertyList>
+	<scenario>
+		<description>
+			Author: Wayne Bragg
+			"Thanks to Moyes Dragonfly, Flug's Bombable and Vivian's Ballistic for inspiration and code base."
+		    Haul cargo with any aircraft.
+			Required:
+				AI/aircrane_cargo.xml,
+				AI/FlightPlans/aircrane_cargo.xml,
+				cargo.nas, 
+				cargo.xml, 
+				cargo-submodel.xml,
+				shipping-container-big.ac,
+				shipping-container-big.png, 
+				aircraft to be equiped with snippits of Cargo XML code.
+			<!-- see: http://forum.flightgear.org/viewtopic.php?f=23&t=23996 -->
+			<!-- package: git://gitorious.org/ai-cargotow/fgdata.git -->
+		</description>
+		<entry>
+			<!-- callsigns need to be distinct if multiple cargos are used, but always cargo[]-->
+			<callsign>cargo1</callsign>
+			<type>aircraft</type>
+			<model>Aircraft/AirCrane/Models/Cargo-Hauling/shipping-container-big.ac</model>
+			<flightplan>aircrane_cargo.xml</flightplan>
+			<repeat>1</repeat>
+		</entry>
+		<entry>
+			<callsign>cargo2</callsign>
+			<type>aircraft</type>
+			<model>Aircraft/AirCrane/Models/Cargo-Hauling/shipping-container-big.ac</model>
+			<flightplan>aircrane_cargo.xml</flightplan>
+			<repeat>1</repeat>
+		</entry>
+		<entry>
+			<callsign>cargo3</callsign>
+			<type>aircraft</type>
+			<model>Aircraft/AirCrane/Models/Cargo-Hauling/shipping-container-big.ac</model>
+			<flightplan>aircrane_cargo.xml</flightplan>
+			<repeat>1</repeat>
+		</entry>
+		<entry>
+			<callsign>cargo4</callsign>
+			<type>aircraft</type>
+			<model>Aircraft/AirCrane/Models/Cargo-Hauling/cub.ac</model>
+			<flightplan>aircrane_cargo.xml</flightplan>
+			<repeat>1</repeat>
+		</entry>
+	</scenario>
+</PropertyList>

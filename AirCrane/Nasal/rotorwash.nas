@@ -23,22 +23,24 @@ var rotor_wash_loop = func {
 
 	setprop("/environment/aircraft-effects/wash-strength", strength);
 
-	#particle effect colors
+	#rotor wash particle effect colors
 	var land = getprop("/gear/gear/ground-is-solid");
 
+  var red_diffuse = getprop("/rendering/scene/diffuse/red");
+
 	if (land) {
-		setprop("/sim/model/aircrane/effects/particles/rotorwash/redcombinedstart", getprop("/rendering/scene/diffuse/red")*.4);
-		setprop("/sim/model/aircrane/effects/particles/rotorwash/greencombinedstart", getprop("/rendering/scene/diffuse/green")*.4);
-		setprop("/sim/model/aircrane/effects/particles/rotorwash/bluecombinedstart", getprop("/rendering/scene/diffuse/blue")*.4);
-		setprop("/sim/model/aircrane/effects/particles/rotorwash/redcombinedend", getprop("/rendering/scene/diffuse/red")*.7);
-		setprop("/sim/model/aircrane/effects/particles/rotorwash/greencombinedend", getprop("/rendering/scene/diffuse/green")*.7);
-		setprop("/sim/model/aircrane/effects/particles/rotorwash/bluecombinedend", getprop("/rendering/scene/diffuse/blue")*.7);
+		setprop("/sim/model/aircrane/effects/particles/rotorwash/redcombinedstart", red_diffuse*.4);
+		setprop("/sim/model/aircrane/effects/particles/rotorwash/greencombinedstart", red_diffuse*.4);
+		setprop("/sim/model/aircrane/effects/particles/rotorwash/bluecombinedstart", red_diffuse*.4);
+		setprop("/sim/model/aircrane/effects/particles/rotorwash/redcombinedend", red_diffuse*.7);
+		setprop("/sim/model/aircrane/effects/particles/rotorwash/greencombinedend", red_diffuse*.7);
+		setprop("/sim/model/aircrane/effects/particles/rotorwash/bluecombinedend", red_diffuse*.7);
 	} else {
-		setprop("/sim/model/aircrane/effects/particles/rotorwash/redcombinedstart", getprop("/rendering/scene/diffuse/red")*.5);
-		setprop("/sim/model/aircrane/effects/particles/rotorwash/greencombinedstart", getprop("/rendering/scene/diffuse/green")*.7);
-		setprop("/sim/model/aircrane/effects/particles/rotorwash/bluecombinedstart", getprop("/rendering/scene/diffuse/blue")*.8);
-		setprop("/sim/model/aircrane/effects/particles/rotorwash/redcombinedend", getprop("/rendering/scene/diffuse/red")*.6);
-		setprop("/sim/model/aircrane/effects/particles/rotorwash/greencombinedend", getprop("/rendering/scene/diffuse/green")*.8);
-		setprop("/sim/model/aircrane/effects/particles/rotorwash/bluecombinedend", getprop("/rendering/scene/diffuse/blue")*.9);
+		setprop("/sim/model/aircrane/effects/particles/rotorwash/redcombinedstart", red_diffuse*.65);
+		setprop("/sim/model/aircrane/effects/particles/rotorwash/greencombinedstart", red_diffuse*.80);
+		setprop("/sim/model/aircrane/effects/particles/rotorwash/bluecombinedstart", red_diffuse*.75);
+		setprop("/sim/model/aircrane/effects/particles/rotorwash/redcombinedend", red_diffuse*.85);
+		setprop("/sim/model/aircrane/effects/particles/rotorwash/greencombinedend", red_diffuse*1);
+		setprop("/sim/model/aircrane/effects/particles/rotorwash/bluecombinedend", red_diffuse*.90);
 	}
 }

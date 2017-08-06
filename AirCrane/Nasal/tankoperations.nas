@@ -146,7 +146,7 @@ var tank_operations = func {
 
 	if (onground_flag == 0)
 		{
-			if (drop_flag) 
+			if (drop_flag and overland) 
 				{
 					var ax = drop_flag;
 					var ay = 0;

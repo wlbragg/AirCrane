@@ -2,146 +2,179 @@
 
 <PropertyList>
 
-	<particlesystem>
+  <particlesystem>
 
-		<name>rotorwashidle</name>
-		<texture>dirt.rgb</texture>
-		<emissive>false</emissive>
-		<lighting>false</lighting>
+    <name>rotorwashidle</name>
+    <texture>dirt.rgb</texture>
+    <emissive>false</emissive>
+    <lighting>false</lighting>
 
-		<attach>world</attach>
+    <attach>world</attach>
 
-		<placer>
-			<type>point</type>
-		</placer>
+    <placer>
+      <type>point</type>
+    </placer>
 
-		<condition>
-			<property>/sim/model/aircrane/effects/particles/enabled</property>
-			<not>
-				<property>/sim/freeze/clock</property>
-			</not>
-			<not>
-				<property>/sim/crashed</property>
-			</not>
-			<less-than>
-				<property>/position/altitude-agl-ft</property>
-				<value>30</value>
-			</less-than>
-			<greater-than>
-				<property>/rotors/main/rpm</property>
-				<value>50</value>
-			</greater-than>
-		</condition>
+    <condition>
+      <property>/sim/model/aircrane/effects/particles/enabled</property>
+      <not>
+        <property>/sim/freeze/clock</property>
+      </not>
+      <not>
+        <property>/sim/crashed</property>
+      </not>
+      <less-than>
+        <property>position/altitude-agl-ft</property>
+        <value>70</value>
+      </less-than>
+      <greater-than>
+        <property>rotors/main/rpm</property>
+        <value>60</value>
+      </greater-than>
+    </condition>
 
-		<shooter>
-			<theta-min-deg>0</theta-min-deg>
-			<theta-max-deg>360</theta-max-deg>
-			<phi-min-deg>-0.1</phi-min-deg>
-			<phi-max-deg>0.1</phi-max-deg>
-			<speed-mps>
-				<property>/rotors/main/rpm</property>
-				<factor>0.1</factor>
-				<spread>2</spread>
-			</speed-mps>
-			<rotation-speed>
-				<x-max-deg-sec>15</x-max-deg-sec>
-				<x-min-deg-sec>-15</x-min-deg-sec>
-				<y-max-deg-sec>15</y-max-deg-sec>
-				<y-min-deg-sec>-15</y-min-deg-sec>
-				<z-max-deg-sec>15</z-max-deg-sec>
-				<z-min-deg-sec>-15</z-min-deg-sec>
-			</rotation-speed>
-		</shooter>
+    <shooter>
+      <theta-min-deg>0</theta-min-deg>
+      <theta-max-deg>360</theta-max-deg>
+      <phi-min-deg>-0.1</phi-min-deg>
+      <phi-max-deg>0.1</phi-max-deg>
+      <speed-mps>
+        <property>/rotors/main/rpm</property>
+        <factor>0.1</factor>
+        <spread>2</spread>
+      </speed-mps>
+      <rotation-speed>
+        <x-max-deg-sec>15</x-max-deg-sec>
+        <x-min-deg-sec>-15</x-min-deg-sec>
+        <y-max-deg-sec>15</y-max-deg-sec>
+        <y-min-deg-sec>-15</y-min-deg-sec>
+        <z-max-deg-sec>15</z-max-deg-sec>
+        <z-min-deg-sec>-15</z-min-deg-sec>
+      </rotation-speed>
+    </shooter>
 
-		<counter>
-			<particles-per-sec>
-				<value>  30 </value>
-        		<spread> 25 </spread>
-			</particles-per-sec>
-		</counter>
+    <counter>
+      <particles-per-sec>
+        <property>position/altitude-agl-ft</property>
+        <factor>-40</factor>
+        <offset-m>2000</offset-m>
+      </particles-per-sec>
+    </counter>
 
-		<align>billboard</align>
+    <align>billboard</align>
 
-		<particle>
-			<start>
-				<color>
-					<red>
-						<property>/sim/model/aircrane/effects/particles/rotorwash/redcombinedstart</property>
-					</red>
-					<green>
-						<property>/sim/model/aircrane/effects/particles/rotorwash/greencombinedstart</property>
-					</green>
-					<blue>
-						<property>/sim/model/aircrane/effects/particles/rotorwash/bluecombinedstart</property>
-					</blue>
-					<alpha>
-						<property>rotors/main/rpm</property>
-						<factor>0.00009</factor>
-					</alpha>
-				</color>
-				<size>
-					<value> 4</value>
-					<spread>1</spread>
-				</size>
-			</start>
+    <particle>
+      <start>
+        <color>
+          <red>
+            <property>/sim/model/aircrane/effects/particles/rotorwash/redcombinedstart</property>
+          </red>
+          <green>
+            <property>/sim/model/aircrane/effects/particles/rotorwash/greencombinedstart</property>
+          </green>
+          <blue>
+            <property>/sim/model/aircrane/effects/particles/rotorwash/bluecombinedstart</property>
+          </blue>
+          <alpha>
+            <property>rotors/main/rpm</property>
+            <factor>0.00009</factor>
+          </alpha>
+        </color>
+        <size>
+          <value> 1</value>
+          <spread>0.5</spread>
+        </size>
+      </start>
 
-			<end>
-				<color>
-					<red>
-						<property>/sim/model/aircrane/effects/particles/rotorwash/redcombinedend</property>
-					</red>
-					<green>
-						<property>/sim/model/aircrane/effects/particles/rotorwash/greencombinedend</property>
-					</green>
-					<blue>
-						<property>/sim/model/aircrane/effects/particles/rotorwash/bluecombinedend</property>
-					</blue>
-					<alpha>
-						<property>/rotors/main/rpm</property>
-						<factor>0.0001</factor>
-					</alpha>
-				</color>
-				<size>
-					<value> 40</value>
-					<spread>15</spread>
-				</size>
-			</end>
+      <end>
+        <color>
+          <red>
+            <property>/sim/model/aircrane/effects/particles/rotorwash/redcombinedend</property>
+          </red>
+          <green>
+            <property>/sim/model/aircrane/effects/particles/rotorwash/greencombinedend</property>
+          </green>
+          <blue>
+            <property>/sim/model/aircrane/effects/particles/rotorwash/bluecombinedend</property>
+          </blue>
+          <alpha>
+            <property>/rotors/main/rpm</property>
+            <factor>0.0007</factor>
+          </alpha>
+        </color>
+        <size>
+          <value> 0.4</value>
+          <spread>0.4</spread>
+        </size>
+      </end>
 
-			<life-sec>
-				<value>3</value>
-				<spread>.5</spread>
-			</life-sec>
-			<mass-kg> 6000 </mass-kg>
-      		<radius-m>  10 </radius-m>
-		</particle>
+      <life-sec>
+        <value>2</value>
+      </life-sec>
+      <mass-kg>0.01</mass-kg>
+      <radius-m>0.01</radius-m>
+    </particle>
 
-		<program>
-			<!--fluid>air</fluid>
-			<gravity>false</gravity>
-			<wind>true</wind-->
-			<fluid>water</fluid>
-			<gravity>true</gravity>
-			<wind>true</wind>
-		</program>
+    <program>
+      <fluid>air</fluid>
+      <gravity>false</gravity>
+      <wind>true</wind>
+    </program>
 
-	</particlesystem>
+  </particlesystem>
+
+  <!-- pitch -->
+  <animation>
+    <type>rotate</type>
+    <object-name>rotorwashidle</object-name>
+    <property>/orientation/pitch-deg</property>
+    <factor>1.0</factor>
+    <center>
+      <x-m>0</x-m>
+      <y-m>0</y-m>
+      <z-m>0</z-m>
+    </center>
+    <axis>
+      <x>0</x>
+      <y>0</y>
+      <z>1</z>
+    </axis>
+  </animation>
+
+  <!-- roll -->
+  <animation>
+    <type>rotate</type>
+    <object-name>rotorwashidle</object-name>
+    <property>/orientation/roll-deg</property>
+    <factor>1.0</factor>
+    <center>
+      <x-m>0</x-m>
+      <y-m>0</y-m>
+      <z-m>0</z-m>
+    </center>
+    <axis>
+      <x>1</x>
+      <y>0</y>
+      <z>0</z>
+    </axis>
+  </animation>
 
   <!--Translate to ground level  -->
   <animation>
-   <type>translate</type>
-   <object-name>rotorwashidle</object-name>
-   <property>/position/altitude-agl-ft</property>
-   <factor>-0.3048</factor>
-   <center>
-     <x-m>0</x-m>
-     <y-m>0</y-m>
-     <z-m>0</z-m>
-   </center>
-   <axis>
-     <x>0</x>
-     <y>0</y>
-     <z>1</z>
-   </axis>
- </animation>
+    <type>translate</type>
+    <object-name>rotorwashidle</object-name>
+    <property>/position/altitude-agl-ft</property>
+    <factor>-0.3048</factor>
+    <center>
+      <x-m>0</x-m>
+      <y-m>0</y-m>
+      <z-m>0</z-m>
+    </center>
+    <axis>
+      <x>0</x>
+      <y>1</y>
+      <z>0</z>
+    </axis>
+  </animation>
 
 </PropertyList>

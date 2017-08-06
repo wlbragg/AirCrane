@@ -1,0 +1,243 @@
+<?xml version="1.0"?>
+
+<!---->
+<!--  Submodels are objects which can be dropped or launched from the user aircraft.
+The trigger is a boolean property, which you define, which when "true" causes
+the submodel to be released/launched.
+A submodel will create an AIBallistic object which will follow a ballistic path.
+By default one submodel will be released when the corresponding trigger is "true".
+The initial conditions (IC) define the object's starting point (relative to the
+user aircraft's "reported position"), and its initial speed and direction
+(relative to the user aircraft).  If you want to release many similar objects
+with similar IC, then you may use the<repeat>,<delay>and<count>properties
+to define this.  The allowed properties are:
+
+<name>The name of the submodel.
+<model>The path to the visual model.
+<trigger>The property which will act as the trigger.
+<speed>Initial speed, in feet/sec, relative to user aircraft.
+<repeat>Set "true" if you want multiple releases of this submodel. Defaults
+to false
+<delay>Time, in seconds, between repeated releases.
+<count>Number of submodels available for multiple release.
+<x-offset>Submodel's initial fore/aft position relative to user aircraft.
+Fore is positive. (ft)
+<y-offset>Submodel's initial left/right position relative to user aircraft.
+Right is positive. (ft)
+<z-offset>Submodel's initial up/down position relative to user aircraft.
+Up is positive. (ft)
+<yaw-offset>Submodel's initial azimuth, in degrees, relative to user aircraft's
+nose.  Right is positive.
+<pitch-offset>Submodel's initial elevation, in degrees, relative to user aircraft's
+pitch.  Up is positive.
+<buoyancy>Submodel's upward acceleration (fps) due to buoyancy in air. 32 is
+neutral (contrails),  >32 exhaust gas, smoke.
+<wind>	   		 If true, Submodel is affected by local wind. Defaults to false.
+<cd>The Coeffient of Drag. Varies with submodel shape - 0.295 for a bullet,
+0.045 for an airfoil. Enter an appropriate value. Defaults to 0.295.
+<eda>Effective drag area (sq ft). Usually the cross-sectional area of the
+submodel normal to the airflow.
+<weight>The weight of the submodel (lbs). Defaults to 0.25
+<aero-stabilised>If true, the submodel aligns with the local airflow. Defaults to true
+
+-->
+
+<PropertyList>
+
+  <!-- Overlay these to set the trigger and signal properties. 
+  <params>
+      <trigger>controls/armament/trigger</trigger>
+      <signal>sim/ai/aircraft/impact/retardant</signal>
+  </params>-->
+
+  <!-- Fire retardant marker for water cannon -->
+  <submodel>
+    <name>cannon-marker</name>
+    <!-- model>Aircraft/Submarine_Scout/Models/65lb_bomb.ac</model -->
+    <model>Models/Geometry/null.ac</model>
+    <trigger>sim/model/firetank/watercannonretardantctrl</trigger>
+    <speed>80</speed>
+    <repeat>true</repeat>
+    <count>-10000</count>
+    <!--repeat>false</repeat>
+    <count>-1</count-->
+    <x-offset> 14.76 </x-offset>
+    <y-offset>  0.0  </y-offset>
+    <z-offset> 11.15 </z-offset>
+    <yaw-offset>0</yaw-offset>
+    <pitch-offset>15</pitch-offset>
+    <wind>false</wind>
+    <eda>3.68</eda>
+    <weight>10</weight>
+    <cd>0.05</cd>
+    <impact>true</impact>
+    <impact-reports>sim/ai/aircraft/impact/retardant</impact-reports>
+    <!--impact-reports>/sim/ai/aircraft/impact/foam</impact-reports-->
+  </submodel>
+
+  <!-- Fire retardant marker for water drop -->
+  <submodel>
+    <name>waterdrop-marker</name>
+    <model>Models/Geometry/null.ac</model>
+    <trigger>sim/model/firetank/waterdropretardantctrl</trigger>
+    <!--trigger alias="../params/trigger"/-->
+    <speed>16</speed>
+    <repeat>true</repeat>
+    <delay>0.5</delay>
+    <count>10000</count>
+    <x-offset>  0.0 </x-offset>
+    <y-offset>  0.0  </y-offset>
+    <z-offset> -1.0 </z-offset>
+    <yaw-offset>0</yaw-offset>
+    <pitch-offset>-90</pitch-offset>
+    <wind>true</wind>
+    <eda>1.0</eda>
+    <cd>1.50</cd>
+    <weight>1.0</weight>
+    <impact>true</impact>
+    <impact-reports>sim/ai/aircraft/impact/retardant</impact-reports>
+    <!--impact-reports alias="../params/signal"/-->
+  </submodel>
+
+  <!-- Fire retardant bomb
+  <submodel>
+    <name>water-bomb</name>
+    <model>Aircraft/AirCrane/Models/Effects/packages/water-bomb.xml</model>
+    <trigger>sim/model/firetank/opentankdoors</trigger-->
+    <!--trigger alias="../params/trigger"/-->
+    <!--speed>0</speed>
+    <repeat>true</repeat>
+    <delay>0.3</delay>
+    <count>10</count>
+    <x-offset>0</x-offset>
+    <y-offset>0</y-offset>
+    <z-offset>-4</z-offset>
+    <yaw-offset>0.0</yaw-offset>
+    <pitch-offset>0.0</pitch-offset>
+    <cd>1.2</cd>
+    <eda>200</eda>
+    <weight>5000</weight>
+    <wind>true</wind>
+    <cd>0.4</cd>
+    <buoyancy>20</buoyancy>
+    <life>600</life>
+  </submodel> -->
+
+  <!--XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX CARGO ADDITION XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX-->
+  <submodel>
+    <name>ShippingContainer1</name>
+    <model>Models/Cargo-Hauling/shipping-container-big.xml</model>
+    <trigger>controls/release-cargo1</trigger>
+    <delay>0</delay>
+    <speed>0</speed>
+    <repeat>false</repeat>
+    <count>1000</count>
+    <!-- 
+      Cargo Docked
+      shippingContainer.ac
+	      x-offset = -2.5
+	      y-offset = 0
+	      z-offset = -3.25
+      shippingContainerBig.ac
+	      x-offset = -2.5
+	      y-offset = 0
+	      z-offset = -11
+      shippingContainerHuge.ac
+	      x-offset = -1.5
+	      y-offset = 0
+	      z-offset = -4.65
+      shippingContainerWide.ac
+	      x-offset = -1.25
+	      y-offset = 0
+	      z-offset = 4
+      Cargo Hanging	
+      x-offset = 0
+      y-offset = 0
+      z-offset = -103
+    -->
+    <x-offset>-2.5</x-offset>
+    <y-offset>0</y-offset>
+    <z-offset>-11</z-offset>
+    <yaw-offset>0</yaw-offset>
+    <pitch-offset>0</pitch-offset>
+    <buoyancy>0</buoyancy> 
+    <cd>0.6</cd>
+    <eda>160</eda>
+    <weight>2000</weight>
+    <!--life>100</life>
+    <wind>true</wind-->
+    <impact>true</impact>
+    <impact-reports>/ai/models/ballistic/impact</impact-reports>
+  </submodel>
+
+  <submodel>
+    <name>ShippingContainer2</name>
+    <model>Models/Cargo-Hauling/shipping-container-big.xml</model>
+    <trigger>controls/release-cargo2</trigger>
+    <delay>0</delay>
+    <speed>0</speed>
+    <repeat>false</repeat>
+    <count>1000</count>
+    <x-offset>-2.5</x-offset>
+    <y-offset>0</y-offset>
+    <z-offset>-11</z-offset>
+    <yaw-offset>0</yaw-offset>
+    <pitch-offset>0</pitch-offset>
+    <buoyancy>0</buoyancy> 
+    <cd>0.6</cd>
+    <eda>160</eda>
+    <weight>2000</weight>
+    <!--life>100</life>
+    <wind>true</wind-->
+    <impact>true</impact>
+    <impact-reports>/ai/models/ballistic/impact</impact-reports>
+  </submodel>
+
+  <submodel>
+    <name>ShippingContainer3</name>
+    <model>Models/Cargo-Hauling/shipping-container-big.xml</model>
+    <trigger>controls/release-cargo3</trigger>
+    <delay>0</delay>
+    <speed>0</speed>
+    <repeat>false</repeat>
+    <count>1000</count>
+    <x-offset>-2.5</x-offset>
+    <y-offset>0</y-offset>
+    <z-offset>-11</z-offset>
+    <yaw-offset>0</yaw-offset>
+    <pitch-offset>0</pitch-offset>
+    <buoyancy>0</buoyancy> 
+    <cd>0.6</cd>
+    <eda>160</eda>
+    <weight>2000</weight>
+    <!--life>100</life>
+    <wind>true</wind-->
+    <impact>true</impact>
+    <impact-reports>/ai/models/ballistic/impact</impact-reports>
+  </submodel>
+
+  <submodel>
+    <name>Cub</name>
+    <model>Models/Cargo-Hauling/cub.xml</model>
+    <trigger>controls/release-cargo4</trigger>
+    <delay>0</delay>
+    <speed>0</speed>
+    <repeat>false</repeat>
+    <count>1000</count>
+    <x-offset>-2.5</x-offset>
+    <y-offset>0</y-offset>
+    <z-offset>-11</z-offset>
+    <yaw-offset>0</yaw-offset>
+    <pitch-offset>0</pitch-offset>
+    <buoyancy>0</buoyancy> 
+    <cd>0.6</cd>
+    <eda>160</eda>
+    <weight>2000</weight>
+    <!--life>100</life>
+    <wind>true</wind-->
+    <impact>true</impact>
+    <impact-reports>/ai/models/ballistic/impact</impact-reports>
+  </submodel>
+  <!--XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX END CARGO ADDITION XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX-->
+
+</PropertyList>

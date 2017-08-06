@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+
+<!--
+  Version: 2014-03-01
+-->
+
+<PropertyList>
+
+  <path>ropes.ac</path>
+  
+  <offsets>
+    <x-m>0.0</x-m>
+    <y-m>0.0</y-m>
+    <z-m>0.0</z-m>
+    <pitch-deg>0</pitch-deg>
+  </offsets>
+  
+<!-- towrope -->
+
+  <animation>
+    <type>select</type>
+    <object-name>towrope</object-name>
+    <condition>
+      <property>sim/hitches/aerotow/rope/exist</property>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>scale</type>
+    <object-name>towrope</object-name>
+    <condition>
+      <property>sim/hitches/aerotow/rope/exist</property>
+     </condition>
+    <property>sim/hitches/aerotow/tow/dist</property>
+    <x-min>0.0</x-min>
+    <y-min>1.0</y-min>   <!-- unscaled model: 4cm diameter -->
+    <z-min>1.0</z-min>
+    <x-factor>1</x-factor>
+    <y-factor>0</y-factor>
+    <z-factor>0</z-factor>
+  </animation>
+
+  <animation>
+    <type>scale</type>
+    <object-name>towrope</object-name>
+    <property>sim/hitches/aerotow/rope/rope-diameter-mm</property>
+    <x-min>1.0</x-min>
+    <y-min>0.0</y-min>   <!-- unscaled model: 4cm diameter -->
+    <z-min>0.0</z-min>
+    <x-factor>0.0</x-factor>
+    <y-factor>0.025</y-factor>   
+    <z-factor>0.025</z-factor>
+  </animation>  
+
+  <animation>
+    <object-name>towrope</object-name>
+    <enable-hot type="bool">false</enable-hot>
+  </animation>
+
+   
+</PropertyList>

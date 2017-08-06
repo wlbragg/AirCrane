@@ -32,6 +32,20 @@
       <and>
         <not><property>sim/freeze/replay-state</property></not>
         <not><property>sim/rendering/shadows/enabled</property></not>
+        <less-than>
+          <property>sim/multiplay/generic/float[3]</property>
+          <value>2000</value>
+        </less-than>
+        <and>
+          <greater-than>
+            <property>orientation/roll-deg</property>
+            <value>-90</value>
+          </greater-than>
+          <less-than>
+            <property>orientation/roll-deg</property>
+            <value>90</value>
+          </less-than>
+        </and>
       </and>
     </condition>
   </animation>
@@ -41,6 +55,18 @@
     <type>rotate</type>
     <object-name>AllShadow</object-name>
     <property>/orientation/pitch-deg</property>
+    <condition>
+      <and>
+        <greater-than>
+          <property>orientation/roll-deg</property>
+          <value>-90</value>
+        </greater-than>
+        <less-than>
+          <property>orientation/roll-deg</property>
+          <value>90</value>
+        </less-than>
+      </and>
+    </condition>
     <factor> -1 </factor>
     <axis>
       <x> 0 </x>
@@ -68,6 +94,7 @@
    <object-name>AllShadow</object-name>
    <property>sim/multiplay/generic/float[2]</property>
    <factor> -1 </factor>
+   <offset-m>0</offset-m>
    <axis>
      <x> 0 </x>
      <y> 0 </y>

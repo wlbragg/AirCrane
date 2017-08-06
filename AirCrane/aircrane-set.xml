@@ -1,15 +1,28 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 
-<PropertyList include="aircrane-base.xml">
+<PropertyList include="Systems/aircrane-base.xml">
 
   <sim>
 
     <description>AirCrane (Yasim)</description>
     <author>BARANGER Emmanuel (3D), Heiko Schulz (FDM)</author>
+    
     <status>alpha</status>
     <license>GPL v2</license>
+    
     <flight-model>yasim</flight-model>
-    <aero>aircrane-yasim</aero>
+    <aero>Systems/aircrane-yasim</aero>
+    
+    <tags>
+      <tag>Sikorsky</tag>
+      <tag>helicopter</tag>
+      <tag>2-engine</tag>
+      <tag>1960s</tag>
+      <tag>1970s</tag>
+      <tag>1980s</tag>
+      <tag>1990s</tag>
+      <tag>2000s</tag>
+    </tags>
     
     <rating>
       <FDM type="int">     4 </FDM>

@@ -421,13 +421,6 @@ setlistener("/sim/signals/fdm-initialized", func {
     }
   });
 
-  setlistener("/sim/freeze/clock", func {
-    if (getprop("/sim/freeze/clock"))
-      tank_operations_timer.stop();
-    else
-	  tank_operations_timer.start();
-  });
-
   # firebug fire starter ctrl+shift+leftmouseclick
   setlistener("/sim/signals/click", func {
 	  if (__kbd.shift.getBoolValue()) {

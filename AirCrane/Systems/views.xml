@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+
+  <chase-distance-m type="double" archive="y">-30</chase-distance-m>
+
+  <view n="0">
+    <internal type="bool" archive="y">true</internal>
+    <config>
+      <x-offset-m archive="y" type="double">0.520</x-offset-m>
+      <y-offset-m archive="y" type="double">-1.091</y-offset-m>
+      <z-offset-m archive="y" type="double">-8.668</z-offset-m>
+      <pitch-offset-deg type="double">-15</pitch-offset-deg>
+      <default-field-of-view-deg type="double">60</default-field-of-view-deg>
+    </config>
+  </view>
+
+  <view n="100">
+    <name>Passanger Seat View</name>
+    <type>lookfrom</type>
+    <internal archive="y">true</internal>
+    <config>
+      <!--dynamic-view type="bool">true</dynamic-view-->
+      <from-model type="bool">true</from-model>
+	  <from-model-idx type="int">0</from-model-idx>
+      <ground-level-nearplane-m type="double">0.5f</ground-level-nearplane-m>
+      <x-offset-m archive="y" type="double">-0.520</x-offset-m> <!--right-->
+      <y-offset-m archive="y" type="double">-1.091</y-offset-m> <!--up-->
+      <z-offset-m archive="y" type="double">-8.668</z-offset-m> <!--back-->
+      <pitch-offset-deg type="double">-15</pitch-offset-deg>
+      <default-field-of-view-deg type="double">60</default-field-of-view-deg>
+    </config>
+  </view>
+
+  <view n="101">
+    <name>Crane Seat View</name>
+    <type>lookfrom</type>
+    <internal archive="y">true</internal>
+    <config>
+      <!--dynamic-view type="bool">true</dynamic-view-->
+      <from-model type="bool">true</from-model>
+	  <from-model-idx type="int">0</from-model-idx>
+      <ground-level-nearplane-m type="double">0.5f</ground-level-nearplane-m>
+      <x-offset-m archive="y" type="double">-0.575</x-offset-m> <!--right-->
+      <y-offset-m archive="y" type="double">-1.665</y-offset-m> <!--up-->
+      <z-offset-m archive="y" type="double">-7.735</z-offset-m> <!--back-->
+      <pitch-offset-deg type="double">0</pitch-offset-deg>
+      <default-field-of-view-deg type="double">60</default-field-of-view-deg>
+      <heading-offset-deg type="double">180</heading-offset-deg>
+    </config>
+  </view>
+
+  <!--view n="102">
+    <name>Tail Camera View</name>
+    <type>lookfrom</type>
+    <internal archive="y">true</internal>
+    <config>
+      <from-model type="bool">true</from-model>
+      <from-model-idx type="int">0</from-model-idx>
+      <ground-level-nearplane-m type="double">0.01f</ground-level-nearplane-m>
+      <x-offset-m archive="y" type="double">  0.000 </x-offset-m>
+      <y-offset-m archive="y" type="double">  1.801 </y-offset-m>
+      <z-offset-m archive="y" type="double"> 10.637 </z-offset-m>
+      <pitch-offset-deg type="double">-5</pitch-offset-deg>
+      <default-field-of-view-deg type="double">30</default-field-of-view-deg>
+    </config>
+  </view-->
+
+  <view n="1">
+    <config>
+      <target-z-offset-m archive="y" type="double"> 0 </target-z-offset-m>
+    </config>
+  </view>
+
+  <view n="2">
+    <config>
+      <target-z-offset-m archive="y" type="double"> 0 </target-z-offset-m>
+    </config>
+  </view>
+
+  <view n="3">
+    <config>
+      <target-z-offset-m archive="y" type="double"> 0 </target-z-offset-m>
+    </config>
+  </view>
+
+  <view n="4">
+    <config>
+      <target-z-offset-m archive="y" type="double"> 0 </target-z-offset-m>
+    </config>
+  </view>
+
+  <view n="5">
+    <config>
+      <target-z-offset-m archive="y" type="double"> 0 </target-z-offset-m>
+    </config>
+  </view>
+
+  <view n="6">
+    <config>
+      <target-z-offset-m archive="y" type="double"> 0 </target-z-offset-m>
+    </config>
+  </view>
+
+</PropertyList>

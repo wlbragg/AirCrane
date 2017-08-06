@@ -1,32 +1,32 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 
 <PropertyList>
-
-	<!-- <params>
-        IMPORTANT: int properties 14 to 19, both included, are reserved for the immat system. Do not use them! 
-		<spray_wake_speed_kt>
-			<property>sim/multiplay/generic/float[6]</property>
-		</spray_wake_speed_kt>
-    </params>-->
-
+  
+  <!-- <params>
+    IMPORTANT: int properties 14 to 19, both included, are reserved for the immat system. Do not use them! 
+    <spray_wake_speed_kt>
+    <property>sim/multiplay/generic/float[6]</property>
+    </spray_wake_speed_kt>
+  </params>-->
+  
   <particlesystem>
     <name>snorkeldrop</name>
     <type>normal</type>
     <texture>smoke.png</texture>
-
+    
     <emissive>false</emissive>
     <lighting>false</lighting>
-
-	<condition>
-		<property>sim/model/firetank/snorkelsplashparticlectrl</property>
-	</condition>
-
+    
+    <condition>
+      <property>sim/model/firetank/snorkelsplashparticlectrl</property>
+    </condition>
+    
     <attach>world</attach>
-
+    
     <placer>
       <type>point</type>
     </placer>
-
+    
     <shooter>
       <theta-min-deg>-10</theta-min-deg>
       <theta-max-deg>10</theta-max-deg>
@@ -45,28 +45,28 @@
         <z-max-deg-sec> 15</z-max-deg-sec>
       </rotation-speed>
     </shooter>
-
+    
     <counter>
       <particles-per-sec>
         <value>100</value>
       </particles-per-sec>
     </counter>
-
+    
     <align>billboard</align>
-
-   <particle>
+    
+    <particle>
       <start>
         <color>
-            <red>
-				<property>/sim/model/aircrane/effects/particles/redcombined</property>
-			</red>
-			<green>
-				<property>/sim/model/aircrane/effects/particles/greencombined</property>
-			</green>
-			<blue>
-				<property>/sim/model/aircrane/effects/particles/bluecombined</property>
-			</blue>
-            <alpha><value>0.2</value></alpha>
+          <red>
+            <property>/sim/model/aircrane/effects/particles/redcombined</property>
+          </red>
+          <green>
+            <property>/sim/model/aircrane/effects/particles/greencombined</property>
+          </green>
+          <blue>
+            <property>/sim/model/aircrane/effects/particles/bluecombined</property>
+          </blue>
+          <alpha><value>0.2</value></alpha>
         </color>
         <size>
           <value>0.9</value>
@@ -74,16 +74,16 @@
       </start>
       <end>
         <color>
-            <red>
-				<property>/sim/model/aircrane/effects/particles/redcombined</property>
-			</red>
-			<green>
-				<property>/sim/model/aircrane/effects/particles/greencombined</property>
-			</green>
-			<blue>
-				<property>/sim/model/aircrane/effects/particles/bluecombined</property>
-			</blue>
-            <alpha><value>0.001</value></alpha>
+          <red>
+            <property>/sim/model/aircrane/effects/particles/redcombined</property>
+          </red>
+          <green>
+            <property>/sim/model/aircrane/effects/particles/greencombined</property>
+          </green>
+          <blue>
+            <property>/sim/model/aircrane/effects/particles/bluecombined</property>
+          </blue>
+          <alpha><value>0.001</value></alpha>
         </color>
         <size>
           <value>3</value>
@@ -95,50 +95,39 @@
       <mass-kg>25</mass-kg>
       <radius-m>0.2</radius-m>
     </particle>
-
+    
     <program>
       <fluid>water</fluid>
       <gravity>true</gravity>
       <wind>false</wind>
     </program>
-
+    
   </particlesystem>
-
+  
   <!--Translate to ground level  -->
   <animation>
-   <type>translate</type>
-   <object-name>snorkeldrop</object-name>
-   <property>/position/altitude-agl-ft</property>
-   <factor>-0.3048</factor>
-   <center>
-     <x-m>0</x-m>
-     <y-m>0</y-m>
-     <z-m>0</z-m>
-   </center>
-   <axis>
-     <x>0</x>
-     <y>0</y>
-     <z>1</z>
-   </axis>
- </animation>
-
+    <type>translate</type>
+    <object-name>snorkeldrop</object-name>
+    <property>/position/altitude-agl-ft</property>
+    <factor>-0.3048</factor>
+    <axis>
+      <x> 0 </x>
+      <y> 0 </y>
+      <z> 1 </z>
+    </axis>
+  </animation>
+  
   <!--Translate to angle  -->
   <animation>
-   <type>translate</type>
-   <object-name>snorkeldrop</object-name>
-   <property>/position/altitude-agl-ft</property>
-   <factor>.19</factor>
-   <center>
-     <x-m>0</x-m>
-     <y-m>0</y-m>
-     <z-m>0</z-m>
-   </center>
-   <axis>
-     <x>-1</x>
-     <y>0</y>
-     <z>0</z>
-   </axis>
- </animation>
-
+    <type>translate</type>
+    <object-name>snorkeldrop</object-name>
+    <property>/position/altitude-agl-ft</property>
+    <factor>.19</factor>
+    <axis>
+      <x> -1 </x>
+      <y>  0 </y>
+      <z>  0 </z>
+    </axis>
+  </animation>
+  
 </PropertyList>
-

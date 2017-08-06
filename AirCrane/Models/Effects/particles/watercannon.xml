@@ -1,40 +1,40 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 
 <PropertyList>
-
-	<!-- <params>
-        IMPORTANT: int properties 14 to 19, both included, are reserved for the immat system. Do not use them! 
-		<spray_wake_speed_kt>
-			<property>sim/multiplay/generic/float[6]</property>
-		</spray_wake_speed_kt>
-    </params>-->
-
+  
+  <!-- <params>
+    IMPORTANT: int properties 14 to 19, both included, are reserved for the immat system. Do not use them! 
+    <spray_wake_speed_kt>
+    <property>sim/multiplay/generic/float[6]</property>
+    </spray_wake_speed_kt>
+  </params>-->
+  
   <particlesystem>
     <name>watercannon</name>
     <type>normal</type>
     <texture>smoke.png</texture>
-
+    
     <emissive>false</emissive>
     <lighting>false</lighting>
-
-	<condition>
-		<property>sim/model/firetank/watercannonparticlectrl</property>
-	</condition>
-
+    
+    <condition>
+      <property>sim/model/firetank/watercannonparticlectrl</property>
+    </condition>
+    
     <attach>world</attach>
-
+    
     <placer>
       <type>point</type>
     </placer>
-
+    
     <shooter>
       <theta-min-deg>-80</theta-min-deg>
       <theta-max-deg>-86</theta-max-deg>
       <phi-min-deg>-3</phi-min-deg>
       <phi-max-deg>3</phi-max-deg>
       <speed-mps>
-		<value>1000</value>
-		<spread>990</spread>
+        <value>1000</value>
+        <spread>990</spread>
       </speed-mps>
       <rotation-speed>
         <x-min-deg-sec>-15 </x-min-deg-sec>
@@ -45,31 +45,31 @@
         <z-max-deg-sec> 15 </z-max-deg-sec>
       </rotation-speed>
     </shooter>
-
+    
     <counter>
       <particles-per-sec>
-		<value>700</value>
+        <value>700</value>
       </particles-per-sec>
     </counter>
-
+    
     <align>billboard</align>
-
-   <particle>
+    
+    <particle>
       <start>
         <color>
-            <red>
-				<property>/sim/model/aircrane/effects/particles/redcombined</property>
-			</red>
-			<green>
-				<property>/sim/model/aircrane/effects/particles/greencombined</property>
-			</green>
-			<blue>
-				<property>/sim/model/aircrane/effects/particles/bluecombined</property>
-			</blue>
-            <alpha>
-			   <value>.1</value>
-			   <spread>.09</spread>
-            </alpha>
+          <red>
+            <property>/sim/model/aircrane/effects/particles/redcombined</property>
+          </red>
+          <green>
+            <property>/sim/model/aircrane/effects/particles/greencombined</property>
+          </green>
+          <blue>
+            <property>/sim/model/aircrane/effects/particles/bluecombined</property>
+          </blue>
+          <alpha>
+            <value>.1</value>
+            <spread>.09</spread>
+          </alpha>
         </color>
         <size>
           <value>.3</value>
@@ -77,37 +77,36 @@
       </start>
       <end>
         <color>
-            <red>
-				<property>/sim/model/aircrane/effects/particles/redcombined</property>
-			</red>
-			<green>
-				<property>/sim/model/aircrane/effects/particles/greencombined</property>
-			</green>
-			<blue>
-				<property>/sim/model/aircrane/effects/particles/bluecombined</property>
-			</blue>
-            <alpha>
-			   <value>.01</value>
-            </alpha>
+          <red>
+            <property>/sim/model/aircrane/effects/particles/redcombined</property>
+          </red>
+          <green>
+            <property>/sim/model/aircrane/effects/particles/greencombined</property>
+          </green>
+          <blue>
+            <property>/sim/model/aircrane/effects/particles/bluecombined</property>
+          </blue>
+          <alpha>
+            <value>.01</value>
+          </alpha>
         </color>
         <size>
           <value>4</value>
         </size>
       </end>
       <life-sec>
-		<value>4.9</value>
+        <value>4.9</value>
       </life-sec>
       <mass-kg>25</mass-kg>
       <radius-m>.9</radius-m>
     </particle>
-
+    
     <program>
       <fluid>  water</fluid>
       <gravity>true</gravity>
       <wind>   true</wind>
     </program>
-
+    
   </particlesystem>
-
+  
 </PropertyList>
-
