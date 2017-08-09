@@ -64,6 +64,20 @@
           <script>aircrane.immat_dialog.toggle()</script>
         </binding>
       </item>
+      <item>
+          <label>Aircraft Options</label>
+          <binding>
+              <command>dialog-show</command>
+              <dialog-name>aircraft-dialog</dialog-name>
+          </binding>
+      </item>
+      <item>
+          <label>AI Cargo</label>
+          <binding>
+              <command>dialog-show</command>
+              <dialog-name>aicargo-dialog</dialog-name>
+          </binding>
+      </item>
     </menu>
   </default>
   

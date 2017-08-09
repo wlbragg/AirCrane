@@ -172,7 +172,7 @@ AircraftCargo.new = func {
   # needs adjusting for best performance
   obj.interval = .025;
 
-  obj.timer();
+  #obj.timer();
   
   return obj;
 }
@@ -328,10 +328,14 @@ var init_cargo = func {
 		}
 	}
 	#gui.fpsDisplay(1);
-	if (!ct)
+	if (!ct) {
 		print("No AI Cargo, exiting cargo.nas!");
-	else
+    return;
+  }
+	else {
 		init_towCargo_dialog();
+    aircraftCargo.timer();
+  }
 }
 
 setlistener("/sim/signals/fdm-initialized", init_cargo );

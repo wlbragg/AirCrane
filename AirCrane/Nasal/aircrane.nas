@@ -428,7 +428,15 @@ setlistener("/sim/signals/fdm-initialized", func {
 		  if (__kbd.ctrl.getBoolValue()) {
 			  wildfire.ignite(click_pos);
 		  } else {
-			  wildfire.resolve_foam_drop(click_pos, 50, 1);
+			  #wildfire.resolve_foam_drop(click_pos, 50, 1);
+        var cp = getprop("/sim/gui/dialogs/aicargo-dialog/ai-path");
+        if (cp != nil) {
+          setprop("/ai/models/"~cp~"/position/latitude-deg", click_pos.lat());
+          setprop("/ai/models/"~cp~"/position/longitude-deg", click_pos.lon());
+          setprop("/ai/models/"~cp~"/position/altitude-ft", click_pos.alt * 0.3048);
+        } else {
+          gui.popupTip("No Cargo Selected, select cargo in the AI Cargo Menu", 3);
+        }
 		  }
 	  }
   });

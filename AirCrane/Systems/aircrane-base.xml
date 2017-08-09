@@ -146,8 +146,6 @@
         <int type="int" n="3">  0 </int>                                           <!--  3 immat -->
         <int type="int" n="4">  0 </int>                                           <!--  4 immat -->
         <int type="int" n="5">  0 </int>                                           <!--  5 immat -->
-        <int type="bool" n="6" alias="/smoke/active"> 0 </int>                     <!--  6 start smoke -->
-        <int type="int" n="7" alias="/smoke/particlepersec"> 50 </int>             <!--  7 particlepersec -->
         <int type="int" n="10" alias="/controls/armament/trigger">0</int>          <!-- 10 reserved for bombable mode -->
         <float n="0" alias="/sim/model/door-positions/crew/position-norm"/>
         <float n="1" alias="/sim/model/door-positions/passenger/position-norm"/>
@@ -213,6 +211,8 @@
       <file>Aircraft/AirCrane/Nasal/rotorwash.nas</file>
       <file>Aircraft/AirCrane/Nasal/tankoperations.nas</file>
 
+      <file>Aircraft/AirCrane/Nasal/aircraft-dialog.nas</file>
+
       <!--XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX CARGO ADDITION XXXXXXXXXXXXXXXXXXXXXXXXXXXX-->
       <file>Aircraft/AirCrane/Nasal/cargo.nas</file>
       <!--XXXXXXXXXXXXXXXXXXXXXXXXXXXXX CARGO ADDITION XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX-->
@@ -223,5 +223,8 @@
       <file>Aircraft/Generic/helicopter-fcs.nas</file>
     </fcs>
   </nasal>
+
+<lat type="double">0</lat>
+<lon type="double">0</lon>
   
 </PropertyList>

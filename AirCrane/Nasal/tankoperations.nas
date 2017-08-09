@@ -14,13 +14,13 @@ var tank_operations = func {
 	var paused = getprop("sim/freeze/clock");
 	var crashed = getprop("sim/crashed");
 
-	if (!payload or crashed or paused) {
-		setprop("waterdropparticlectrl", 0);
-		setprop("waterdropretardantctrl", 0);
-		setprop("watercannonparticlectrl", 0);
-		setprop("watercannonretardantctrl", 0);
-        return;
-    }
+  if (!payload or crashed or paused) {
+    setprop("sim/model/firetank/waterdropparticlectrl", 0);
+    setprop("sim/model/firetank/waterdropretardantctrl", 0);
+    setprop("sim/model/firetank/watercannonparticlectrl", 0);
+    setprop("sim/model/firetank/watercannonretardantctrl", 0);
+    return;
+  }
 
 	var cannon = getprop("sim/model/watercannon/enabled");
 	var cannonvalveopen = getprop("sim/model/firetank/opencannonvalve");
