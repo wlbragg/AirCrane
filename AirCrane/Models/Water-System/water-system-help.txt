@@ -1,0 +1,60 @@
+The AirCrane water system is used for multiple tasks. Two of the most common tasks including fire fighting, and ground erosion control.
+
+Filling the Tank
+
+1) Filling the tank using the Sea Snorkel
+
+The Sea Snorkel is designed to force water at a high rate of speed into the tank while skimming over the water. 
+The fill rate is approximately 2,500 gallons in 40 second at 35-45 knots.
+
+To use the Sea Snorkel, lower the Sea Snorkel boom using the "j" key.
+Skimming the surface of the water, position the helicopter at an AGL where the red line on the boom is at the water line.
+Continue skimming until the desired fill level is reached (approx. 40 seconds).
+When the tank is filled to the desired level, raise the Sea Snorkel back to the stow position using the "j" key again.
+
+
+2) Filling the tank using the Hover Snorkel
+
+The Hover Snorkel can be used to fill the tank from a variety of sources.
+Fresh water ponds and lakes, saltwater and open top tanks.
+It can operate in as little as 18 inches of water.
+It has a fill rate of 2,500 gallons in 45 seconds.
+
+To use the Hover Snorkel, deploy the Sniffer Head and hose over the water using the "J" key.
+If over land, deploy when the AGL is high enough to not allow the Sniffer Head to make contact with the ground.
+Hitting the sniffer head on the ground from a high enough AGL could cause damage to the Sniffer Head.
+The Sniffer Head will automatically suck water into the tank once it is below the surface of the water.
+Continue in a hover until the desired fill level is reached (approx. 45 seconds).
+When the tank is filled to the desired level, raise the helicopter AGL to where the Sniffer Head is above the surface of the water.
+
+Currently the Hover Snorkel can only be deployed and not retracted or latched. Retracting and re-latching is on the TODO list.
+
+
+Deploying the Tank Payload
+
+1) Deploy payload using the Tank Doors
+
+The tank doors are operated using a micro processor to control coverage levels.
+The coverage level can be programed to the following-
+  1 - 1 gal/100 sq. ft.
+  2 - 2 gal/100 sq. ft.
+  3 - 3 gal/100 sq. ft.
+  4 - 4 gal/100 sq. ft.
+  5 - 5 gal/100 sq. ft.
+  6 - 6 gal/100 sq. ft.
+  7 - 7 gal/100 sq. ft.
+  8 - 8 gal/100 sq. ft.
+  9 - entire loade in 3 sec (2,500 gal).
+Currently the flow rate is set at 9 and cannot be change. Flow rate is on the TODO list.
+
+Toggle the Tank Door open and closed using the "K" key.
+
+
+2) Deploy payload using the Water Cannon
+
+The Water Cannon has a flow rate of approximately 300 gallons per minute, with a range of 200 feet.
+That is approximately 8 minutes on a full tank.
+The Water Cannon can be used to spray water, fire retardant or a mixture of water and ground cover seed.
+
+Toggle the Water Cannon on and off using the "k" key.
+
