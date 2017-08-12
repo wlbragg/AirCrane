@@ -111,7 +111,15 @@
       <binding>
         <command>nasal</command>
         <script>
-          doors.flexhose.toggle();
+          if (getprop("sim/model/firetank/deployflexhose/position-norm") == 1)
+          {
+            if (getprop("/sim/model/firetank/flexhose/hosehitsground"))
+            screen.log.write("Damage will occur if hose is deployed this low!");
+            else
+            doors.flexhose.toggle();
+          }
+          else
+            screen.log.write("Hose already deployed!");
         </script>
       </binding>
     </key>

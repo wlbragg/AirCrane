@@ -239,14 +239,629 @@
   
   <!-- Flex Hose Animation -->
   <animation>
-    <name>flexfillhose.031</name>
+    <name>FlexFill01</name>
+    <object-name>flexfillhose.001</object-name>
+    <object-name>flexfillhose.002</object-name>
+    <object-name>flexfillhose.003</object-name>
+    <object-name>flexfillhose.004</object-name>
+    <object-name>flexfillhose.005</object-name>
+    <object-name>flexfillhose.006</object-name>
+    <object-name>flexfillhose.007</object-name>
+    <object-name>flexfillhose.008</object-name>
+    <object-name>flexfillhose.009</object-name>
+    <object-name>flexfillhose.010</object-name>
+    <object-name>flexfillhose.011</object-name>
+    <object-name>flexfillhose.012</object-name>
+    <object-name>flexfillhose.013</object-name>
+    <object-name>flexfillhose.014</object-name>
+    <object-name>flexfillhose.015</object-name>
+    <object-name>flexfillhose.016</object-name>
+    <object-name>flexfillhose.017</object-name>
+    <object-name>flexfillhose.018</object-name>
+    <object-name>flexfillhose.019</object-name>
+    <object-name>flexfillhose.020</object-name>
+    <object-name>flexfillhose.021</object-name>
+    <object-name>flexfillhose.022</object-name>
+    <object-name>flexfillhose.023</object-name>
+    <object-name>flexfillhose.024</object-name>
+    <object-name>flexfillhose.025</object-name>
+    <object-name>flexfillhose.026</object-name>
+    <object-name>flexfillhose.027</object-name>
+    <object-name>flexfillhose.028</object-name>
+    <object-name>flexfillhose.029</object-name>
+    <object-name>flexfillhose.030</object-name>
+    <object-name>flexfillhoseend</object-name>
+  </animation>
+  
+  <animation>
+    <name>FlexFill02</name>
+    <object-name>flexfillhose.002</object-name>
+    <object-name>flexfillhose.003</object-name>
+    <object-name>flexfillhose.004</object-name>
+    <object-name>flexfillhose.005</object-name>
+    <object-name>flexfillhose.006</object-name>
+    <object-name>flexfillhose.007</object-name>
+    <object-name>flexfillhose.008</object-name>
+    <object-name>flexfillhose.009</object-name>
+    <object-name>flexfillhose.010</object-name>
+    <object-name>flexfillhose.011</object-name>
+    <object-name>flexfillhose.012</object-name>
+    <object-name>flexfillhose.013</object-name>
+    <object-name>flexfillhose.014</object-name>
+    <object-name>flexfillhose.015</object-name>
+    <object-name>flexfillhose.016</object-name>
+    <object-name>flexfillhose.017</object-name>
+    <object-name>flexfillhose.018</object-name>
+    <object-name>flexfillhose.019</object-name>
+    <object-name>flexfillhose.020</object-name>
+    <object-name>flexfillhose.021</object-name>
+    <object-name>flexfillhose.022</object-name>
+    <object-name>flexfillhose.023</object-name>
+    <object-name>flexfillhose.024</object-name>
+    <object-name>flexfillhose.025</object-name>
+    <object-name>flexfillhose.026</object-name>
+    <object-name>flexfillhose.027</object-name>
+    <object-name>flexfillhose.028</object-name>
+    <object-name>flexfillhose.029</object-name>
+    <object-name>flexfillhose.030</object-name>
+    <object-name>flexfillhoseend</object-name>
+  </animation>
+
+  <animation>
+    <name>FlexFill03</name>
+    <object-name>flexfillhose.003</object-name>
+    <object-name>flexfillhose.004</object-name>
+    <object-name>flexfillhose.005</object-name>
+    <object-name>flexfillhose.006</object-name>
+    <object-name>flexfillhose.007</object-name>
+    <object-name>flexfillhose.008</object-name>
+    <object-name>flexfillhose.009</object-name>
+    <object-name>flexfillhose.010</object-name>
+    <object-name>flexfillhose.011</object-name>
+    <object-name>flexfillhose.012</object-name>
+    <object-name>flexfillhose.013</object-name>
+    <object-name>flexfillhose.014</object-name>
+    <object-name>flexfillhose.015</object-name>
+    <object-name>flexfillhose.016</object-name>
+    <object-name>flexfillhose.017</object-name>
+    <object-name>flexfillhose.018</object-name>
+    <object-name>flexfillhose.019</object-name>
+    <object-name>flexfillhose.020</object-name>
+    <object-name>flexfillhose.021</object-name>
+    <object-name>flexfillhose.022</object-name>
+    <object-name>flexfillhose.023</object-name>
+    <object-name>flexfillhose.024</object-name>
+    <object-name>flexfillhose.025</object-name>
+    <object-name>flexfillhose.026</object-name>
+    <object-name>flexfillhose.027</object-name>
+    <object-name>flexfillhose.028</object-name>
+    <object-name>flexfillhose.029</object-name>
+    <object-name>flexfillhose.030</object-name>
+    <object-name>flexfillhoseend</object-name>
+  </animation>
+  
+  <animation>
+    <name>FlexFill04</name>
+    <object-name>flexfillhose.004</object-name>
+    <object-name>flexfillhose.005</object-name>
+    <object-name>flexfillhose.006</object-name>
+    <object-name>flexfillhose.007</object-name>
+    <object-name>flexfillhose.008</object-name>
+    <object-name>flexfillhose.009</object-name>
+    <object-name>flexfillhose.010</object-name>
+    <object-name>flexfillhose.011</object-name>
+    <object-name>flexfillhose.012</object-name>
+    <object-name>flexfillhose.013</object-name>
+    <object-name>flexfillhose.014</object-name>
+    <object-name>flexfillhose.015</object-name>
+    <object-name>flexfillhose.016</object-name>
+    <object-name>flexfillhose.017</object-name>
+    <object-name>flexfillhose.018</object-name>
+    <object-name>flexfillhose.019</object-name>
+    <object-name>flexfillhose.020</object-name>
+    <object-name>flexfillhose.021</object-name>
+    <object-name>flexfillhose.022</object-name>
+    <object-name>flexfillhose.023</object-name>
+    <object-name>flexfillhose.024</object-name>
+    <object-name>flexfillhose.025</object-name>
+    <object-name>flexfillhose.026</object-name>
+    <object-name>flexfillhose.027</object-name>
+    <object-name>flexfillhose.028</object-name>
+    <object-name>flexfillhose.029</object-name>
+    <object-name>flexfillhose.030</object-name>
+    <object-name>flexfillhoseend</object-name>
+  </animation>
+  
+  <animation>
+    <name>FlexFill05</name>
+    <object-name>flexfillhose.005</object-name>
+    <object-name>flexfillhose.006</object-name>
+    <object-name>flexfillhose.007</object-name>
+    <object-name>flexfillhose.008</object-name>
+    <object-name>flexfillhose.009</object-name>
+    <object-name>flexfillhose.010</object-name>
+    <object-name>flexfillhose.011</object-name>
+    <object-name>flexfillhose.012</object-name>
+    <object-name>flexfillhose.013</object-name>
+    <object-name>flexfillhose.014</object-name>
+    <object-name>flexfillhose.015</object-name>
+    <object-name>flexfillhose.016</object-name>
+    <object-name>flexfillhose.017</object-name>
+    <object-name>flexfillhose.018</object-name>
+    <object-name>flexfillhose.019</object-name>
+    <object-name>flexfillhose.020</object-name>
+    <object-name>flexfillhose.021</object-name>
+    <object-name>flexfillhose.022</object-name>
+    <object-name>flexfillhose.023</object-name>
+    <object-name>flexfillhose.024</object-name>
+    <object-name>flexfillhose.025</object-name>
+    <object-name>flexfillhose.026</object-name>
+    <object-name>flexfillhose.027</object-name>
+    <object-name>flexfillhose.028</object-name>
+    <object-name>flexfillhose.029</object-name>
+    <object-name>flexfillhose.030</object-name>
+    <object-name>flexfillhoseend</object-name>
+  </animation>
+  
+  <animation>
+    <name>FlexFill06</name>
+    <object-name>flexfillhose.006</object-name>
+    <object-name>flexfillhose.007</object-name>
+    <object-name>flexfillhose.008</object-name>
+    <object-name>flexfillhose.009</object-name>
+    <object-name>flexfillhose.010</object-name>
+    <object-name>flexfillhose.011</object-name>
+    <object-name>flexfillhose.012</object-name>
+    <object-name>flexfillhose.013</object-name>
+    <object-name>flexfillhose.014</object-name>
+    <object-name>flexfillhose.015</object-name>
+    <object-name>flexfillhose.016</object-name>
+    <object-name>flexfillhose.017</object-name>
+    <object-name>flexfillhose.018</object-name>
+    <object-name>flexfillhose.019</object-name>
+    <object-name>flexfillhose.020</object-name>
+    <object-name>flexfillhose.021</object-name>
+    <object-name>flexfillhose.022</object-name>
+    <object-name>flexfillhose.023</object-name>
+    <object-name>flexfillhose.024</object-name>
+    <object-name>flexfillhose.025</object-name>
+    <object-name>flexfillhose.026</object-name>
+    <object-name>flexfillhose.027</object-name>
+    <object-name>flexfillhose.028</object-name>
+    <object-name>flexfillhose.029</object-name>
+    <object-name>flexfillhose.030</object-name>
+    <object-name>flexfillhoseend</object-name>
+  </animation>
+  
+  <animation>
+    <name>FlexFill07</name>
+    <object-name>flexfillhose.007</object-name>
+    <object-name>flexfillhose.008</object-name>
+    <object-name>flexfillhose.009</object-name>
+    <object-name>flexfillhose.010</object-name>
+    <object-name>flexfillhose.011</object-name>
+    <object-name>flexfillhose.012</object-name>
+    <object-name>flexfillhose.013</object-name>
+    <object-name>flexfillhose.014</object-name>
+    <object-name>flexfillhose.015</object-name>
+    <object-name>flexfillhose.016</object-name>
+    <object-name>flexfillhose.017</object-name>
+    <object-name>flexfillhose.018</object-name>
+    <object-name>flexfillhose.019</object-name>
+    <object-name>flexfillhose.020</object-name>
+    <object-name>flexfillhose.021</object-name>
+    <object-name>flexfillhose.022</object-name>
+    <object-name>flexfillhose.023</object-name>
+    <object-name>flexfillhose.024</object-name>
+    <object-name>flexfillhose.025</object-name>
+    <object-name>flexfillhose.026</object-name>
+    <object-name>flexfillhose.027</object-name>
+    <object-name>flexfillhose.028</object-name>
+    <object-name>flexfillhose.029</object-name>
+    <object-name>flexfillhose.030</object-name>
+    <object-name>flexfillhoseend</object-name>
+  </animation>
+  
+  <animation>
+    <name>FlexFill08</name>
+    <object-name>flexfillhose.008</object-name>
+    <object-name>flexfillhose.009</object-name>
+    <object-name>flexfillhose.010</object-name>
+    <object-name>flexfillhose.011</object-name>
+    <object-name>flexfillhose.012</object-name>
+    <object-name>flexfillhose.013</object-name>
+    <object-name>flexfillhose.014</object-name>
+    <object-name>flexfillhose.015</object-name>
+    <object-name>flexfillhose.016</object-name>
+    <object-name>flexfillhose.017</object-name>
+    <object-name>flexfillhose.018</object-name>
+    <object-name>flexfillhose.019</object-name>
+    <object-name>flexfillhose.020</object-name>
+    <object-name>flexfillhose.021</object-name>
+    <object-name>flexfillhose.022</object-name>
+    <object-name>flexfillhose.023</object-name>
+    <object-name>flexfillhose.024</object-name>
+    <object-name>flexfillhose.025</object-name>
+    <object-name>flexfillhose.026</object-name>
+    <object-name>flexfillhose.027</object-name>
+    <object-name>flexfillhose.028</object-name>
+    <object-name>flexfillhose.029</object-name>
+    <object-name>flexfillhose.030</object-name>
+    <object-name>flexfillhoseend</object-name>
+  </animation>
+  
+  <animation>
+    <name>FlexFill09</name>
+    <object-name>flexfillhose.009</object-name>
+    <object-name>flexfillhose.010</object-name>
+    <object-name>flexfillhose.011</object-name>
+    <object-name>flexfillhose.012</object-name>
+    <object-name>flexfillhose.013</object-name>
+    <object-name>flexfillhose.014</object-name>
+    <object-name>flexfillhose.015</object-name>
+    <object-name>flexfillhose.016</object-name>
+    <object-name>flexfillhose.017</object-name>
+    <object-name>flexfillhose.018</object-name>
+    <object-name>flexfillhose.019</object-name>
+    <object-name>flexfillhose.020</object-name>
+    <object-name>flexfillhose.021</object-name>
+    <object-name>flexfillhose.022</object-name>
+    <object-name>flexfillhose.023</object-name>
+    <object-name>flexfillhose.024</object-name>
+    <object-name>flexfillhose.025</object-name>
+    <object-name>flexfillhose.026</object-name>
+    <object-name>flexfillhose.027</object-name>
+    <object-name>flexfillhose.028</object-name>
+    <object-name>flexfillhose.029</object-name>
+    <object-name>flexfillhose.030</object-name>
+    <object-name>flexfillhoseend</object-name>
+  </animation>
+  
+  <animation>
+    <name>FlexFill10</name>
+    <object-name>flexfillhose.010</object-name>
+    <object-name>flexfillhose.011</object-name>
+    <object-name>flexfillhose.012</object-name>
+    <object-name>flexfillhose.013</object-name>
+    <object-name>flexfillhose.014</object-name>
+    <object-name>flexfillhose.015</object-name>
+    <object-name>flexfillhose.016</object-name>
+    <object-name>flexfillhose.017</object-name>
+    <object-name>flexfillhose.018</object-name>
+    <object-name>flexfillhose.019</object-name>
+    <object-name>flexfillhose.020</object-name>
+    <object-name>flexfillhose.021</object-name>
+    <object-name>flexfillhose.022</object-name>
+    <object-name>flexfillhose.023</object-name>
+    <object-name>flexfillhose.024</object-name>
+    <object-name>flexfillhose.025</object-name>
+    <object-name>flexfillhose.026</object-name>
+    <object-name>flexfillhose.027</object-name>
+    <object-name>flexfillhose.028</object-name>
+    <object-name>flexfillhose.029</object-name>
+    <object-name>flexfillhose.030</object-name>
+    <object-name>flexfillhoseend</object-name>
+  </animation>
+  
+  <animation>
+    <name>FlexFill11</name>
+    <object-name>flexfillhose.011</object-name>
+    <object-name>flexfillhose.012</object-name>
+    <object-name>flexfillhose.013</object-name>
+    <object-name>flexfillhose.014</object-name>
+    <object-name>flexfillhose.015</object-name>
+    <object-name>flexfillhose.016</object-name>
+    <object-name>flexfillhose.017</object-name>
+    <object-name>flexfillhose.018</object-name>
+    <object-name>flexfillhose.019</object-name>
+    <object-name>flexfillhose.020</object-name>
+    <object-name>flexfillhose.021</object-name>
+    <object-name>flexfillhose.022</object-name>
+    <object-name>flexfillhose.023</object-name>
+    <object-name>flexfillhose.024</object-name>
+    <object-name>flexfillhose.025</object-name>
+    <object-name>flexfillhose.026</object-name>
+    <object-name>flexfillhose.027</object-name>
+    <object-name>flexfillhose.028</object-name>
+    <object-name>flexfillhose.029</object-name>
+    <object-name>flexfillhose.030</object-name>
+    <object-name>flexfillhoseend</object-name>
+  </animation>
+  
+  <animation>
+    <name>FlexFill12</name>
+    <object-name>flexfillhose.012</object-name>
+    <object-name>flexfillhose.013</object-name>
+    <object-name>flexfillhose.014</object-name>
+    <object-name>flexfillhose.015</object-name>
+    <object-name>flexfillhose.016</object-name>
+    <object-name>flexfillhose.017</object-name>
+    <object-name>flexfillhose.018</object-name>
+    <object-name>flexfillhose.019</object-name>
+    <object-name>flexfillhose.020</object-name>
+    <object-name>flexfillhose.021</object-name>
+    <object-name>flexfillhose.022</object-name>
+    <object-name>flexfillhose.023</object-name>
+    <object-name>flexfillhose.024</object-name>
+    <object-name>flexfillhose.025</object-name>
+    <object-name>flexfillhose.026</object-name>
+    <object-name>flexfillhose.027</object-name>
+    <object-name>flexfillhose.028</object-name>
+    <object-name>flexfillhose.029</object-name>
+    <object-name>flexfillhose.030</object-name>
+    <object-name>flexfillhoseend</object-name>
+  </animation>
+  
+  <animation>
+    <name>FlexFill13</name>
+    <object-name>flexfillhose.013</object-name>
+    <object-name>flexfillhose.014</object-name>
+    <object-name>flexfillhose.015</object-name>
+    <object-name>flexfillhose.016</object-name>
+    <object-name>flexfillhose.017</object-name>
+    <object-name>flexfillhose.018</object-name>
+    <object-name>flexfillhose.019</object-name>
+    <object-name>flexfillhose.020</object-name>
+    <object-name>flexfillhose.021</object-name>
+    <object-name>flexfillhose.022</object-name>
+    <object-name>flexfillhose.023</object-name>
+    <object-name>flexfillhose.024</object-name>
+    <object-name>flexfillhose.025</object-name>
+    <object-name>flexfillhose.026</object-name>
+    <object-name>flexfillhose.027</object-name>
+    <object-name>flexfillhose.028</object-name>
+    <object-name>flexfillhose.029</object-name>
+    <object-name>flexfillhose.030</object-name>
+    <object-name>flexfillhoseend</object-name>
+  </animation>
+  
+  <animation>
+    <name>FlexFill14</name>
+    <object-name>flexfillhose.014</object-name>
+    <object-name>flexfillhose.015</object-name>
+    <object-name>flexfillhose.016</object-name>
+    <object-name>flexfillhose.017</object-name>
+    <object-name>flexfillhose.018</object-name>
+    <object-name>flexfillhose.019</object-name>
+    <object-name>flexfillhose.020</object-name>
+    <object-name>flexfillhose.021</object-name>
+    <object-name>flexfillhose.022</object-name>
+    <object-name>flexfillhose.023</object-name>
+    <object-name>flexfillhose.024</object-name>
+    <object-name>flexfillhose.025</object-name>
+    <object-name>flexfillhose.026</object-name>
+    <object-name>flexfillhose.027</object-name>
+    <object-name>flexfillhose.028</object-name>
+    <object-name>flexfillhose.029</object-name>
+    <object-name>flexfillhose.030</object-name>
+    <object-name>flexfillhoseend</object-name>
+  </animation>
+  
+  <animation>
+    <name>FlexFill15</name>
+    <object-name>flexfillhose.015</object-name>
+    <object-name>flexfillhose.016</object-name>
+    <object-name>flexfillhose.017</object-name>
+    <object-name>flexfillhose.018</object-name>
+    <object-name>flexfillhose.019</object-name>
+    <object-name>flexfillhose.020</object-name>
+    <object-name>flexfillhose.021</object-name>
+    <object-name>flexfillhose.022</object-name>
+    <object-name>flexfillhose.023</object-name>
+    <object-name>flexfillhose.024</object-name>
+    <object-name>flexfillhose.025</object-name>
+    <object-name>flexfillhose.026</object-name>
+    <object-name>flexfillhose.027</object-name>
+    <object-name>flexfillhose.028</object-name>
+    <object-name>flexfillhose.029</object-name>
+    <object-name>flexfillhose.030</object-name>
+    <object-name>flexfillhoseend</object-name>
+  </animation>
+  
+  <animation>
+    <name>FlexFill16</name>
+    <object-name>flexfillhose.016</object-name>
+    <object-name>flexfillhose.017</object-name>
+    <object-name>flexfillhose.018</object-name>
+    <object-name>flexfillhose.019</object-name>
+    <object-name>flexfillhose.020</object-name>
+    <object-name>flexfillhose.021</object-name>
+    <object-name>flexfillhose.022</object-name>
+    <object-name>flexfillhose.023</object-name>
+    <object-name>flexfillhose.024</object-name>
+    <object-name>flexfillhose.025</object-name>
+    <object-name>flexfillhose.026</object-name>
+    <object-name>flexfillhose.027</object-name>
+    <object-name>flexfillhose.028</object-name>
+    <object-name>flexfillhose.029</object-name>
+    <object-name>flexfillhose.030</object-name>
+    <object-name>flexfillhoseend</object-name>
+  </animation>
+  
+  <animation>
+    <name>FlexFill17</name>
+    <object-name>flexfillhose.017</object-name>
+    <object-name>flexfillhose.018</object-name>
+    <object-name>flexfillhose.019</object-name>
+    <object-name>flexfillhose.020</object-name>
+    <object-name>flexfillhose.021</object-name>
+    <object-name>flexfillhose.022</object-name>
+    <object-name>flexfillhose.023</object-name>
+    <object-name>flexfillhose.024</object-name>
+    <object-name>flexfillhose.025</object-name>
+    <object-name>flexfillhose.026</object-name>
+    <object-name>flexfillhose.027</object-name>
+    <object-name>flexfillhose.028</object-name>
+    <object-name>flexfillhose.029</object-name>
+    <object-name>flexfillhose.030</object-name>
+    <object-name>flexfillhoseend</object-name>
+  </animation>
+  
+  <animation>
+    <name>FlexFill18</name>
+    <object-name>flexfillhose.018</object-name>
+    <object-name>flexfillhose.019</object-name>
+    <object-name>flexfillhose.020</object-name>
+    <object-name>flexfillhose.021</object-name>
+    <object-name>flexfillhose.022</object-name>
+    <object-name>flexfillhose.023</object-name>
+    <object-name>flexfillhose.024</object-name>
+    <object-name>flexfillhose.025</object-name>
+    <object-name>flexfillhose.026</object-name>
+    <object-name>flexfillhose.027</object-name>
+    <object-name>flexfillhose.028</object-name>
+    <object-name>flexfillhose.029</object-name>
+    <object-name>flexfillhose.030</object-name>
+    <object-name>flexfillhoseend</object-name>
+  </animation>
+  
+  <animation>
+    <name>FlexFill19</name>
+    <object-name>flexfillhose.019</object-name>
+    <object-name>flexfillhose.020</object-name>
+    <object-name>flexfillhose.021</object-name>
+    <object-name>flexfillhose.022</object-name>
+    <object-name>flexfillhose.023</object-name>
+    <object-name>flexfillhose.024</object-name>
+    <object-name>flexfillhose.025</object-name>
+    <object-name>flexfillhose.026</object-name>
+    <object-name>flexfillhose.027</object-name>
+    <object-name>flexfillhose.028</object-name>
+    <object-name>flexfillhose.029</object-name>
+    <object-name>flexfillhose.030</object-name>
+    <object-name>flexfillhoseend</object-name>
+  </animation>
+  
+  <animation>
+    <name>FlexFill20</name>
+    <object-name>flexfillhose.020</object-name>
+    <object-name>flexfillhose.021</object-name>
+    <object-name>flexfillhose.022</object-name>
+    <object-name>flexfillhose.023</object-name>
+    <object-name>flexfillhose.024</object-name>
+    <object-name>flexfillhose.025</object-name>
+    <object-name>flexfillhose.026</object-name>
+    <object-name>flexfillhose.027</object-name>
+    <object-name>flexfillhose.028</object-name>
+    <object-name>flexfillhose.029</object-name>
+    <object-name>flexfillhose.030</object-name>
+    <object-name>flexfillhoseend</object-name>
+  </animation>
+  
+  <animation>
+    <name>FlexFill21</name>
+    <object-name>flexfillhose.021</object-name>
+    <object-name>flexfillhose.022</object-name>
+    <object-name>flexfillhose.023</object-name>
+    <object-name>flexfillhose.024</object-name>
+    <object-name>flexfillhose.025</object-name>
+    <object-name>flexfillhose.026</object-name>
+    <object-name>flexfillhose.027</object-name>
+    <object-name>flexfillhose.028</object-name>
+    <object-name>flexfillhose.029</object-name>
+    <object-name>flexfillhose.030</object-name>
+    <object-name>flexfillhoseend</object-name>
+  </animation>
+  
+  <animation>
+    <name>FlexFill22</name>
+    <object-name>flexfillhose.022</object-name>
+    <object-name>flexfillhose.023</object-name>
+    <object-name>flexfillhose.024</object-name>
+    <object-name>flexfillhose.025</object-name>
+    <object-name>flexfillhose.026</object-name>
+    <object-name>flexfillhose.027</object-name>
+    <object-name>flexfillhose.028</object-name>
+    <object-name>flexfillhose.029</object-name>
+    <object-name>flexfillhose.030</object-name>
+    <object-name>flexfillhoseend</object-name>
+  </animation>
+  
+  <animation>
+    <name>FlexFill23</name>
+    <object-name>flexfillhose.023</object-name>
+    <object-name>flexfillhose.024</object-name>
+    <object-name>flexfillhose.025</object-name>
+    <object-name>flexfillhose.026</object-name>
+    <object-name>flexfillhose.027</object-name>
+    <object-name>flexfillhose.028</object-name>
+    <object-name>flexfillhose.029</object-name>
+    <object-name>flexfillhose.030</object-name>
+    <object-name>flexfillhoseend</object-name>
+  </animation>
+  
+  <animation>
+    <name>FlexFill24</name>
+    <object-name>flexfillhose.024</object-name>
+    <object-name>flexfillhose.025</object-name>
+    <object-name>flexfillhose.026</object-name>
+    <object-name>flexfillhose.027</object-name>
+    <object-name>flexfillhose.028</object-name>
+    <object-name>flexfillhose.029</object-name>
+    <object-name>flexfillhose.030</object-name>
+    <object-name>flexfillhoseend</object-name>
+  </animation>
+  
+  <animation>
+    <name>FlexFill25</name>
+    <object-name>flexfillhose.025</object-name>
+    <object-name>flexfillhose.026</object-name>
+    <object-name>flexfillhose.027</object-name>
+    <object-name>flexfillhose.028</object-name>
+    <object-name>flexfillhose.029</object-name>
+    <object-name>flexfillhose.030</object-name>
+    <object-name>flexfillhoseend</object-name>
+  </animation>
+  
+  <animation>
+    <name>FlexFill26</name>
+    <object-name>flexfillhose.026</object-name>
+    <object-name>flexfillhose.027</object-name>
+    <object-name>flexfillhose.028</object-name>
+    <object-name>flexfillhose.029</object-name>
+    <object-name>flexfillhose.030</object-name>
+    <object-name>flexfillhoseend</object-name>
+  </animation>
+  
+  <animation>
+    <name>FlexFill27</name>
+    <object-name>flexfillhose.027</object-name>
+    <object-name>flexfillhose.028</object-name>
+    <object-name>flexfillhose.029</object-name>
+    <object-name>flexfillhose.030</object-name>
+    <object-name>flexfillhoseend</object-name>
+  </animation>
+  
+  <animation>
+    <name>FlexFill28</name>
+    <object-name>flexfillhose.028</object-name>
+    <object-name>flexfillhose.029</object-name>
+    <object-name>flexfillhose.030</object-name>
+    <object-name>flexfillhoseend</object-name>
+  </animation>
+  
+  <animation>
+    <name>FlexFill29</name>
+    <object-name>flexfillhose.029</object-name>
+    <object-name>flexfillhose.030</object-name>
+    <object-name>flexfillhoseend</object-name>
+  </animation>
+  
+  <animation>
+    <name>FlexFill30</name>
+    <object-name>flexfillhose.030</object-name>
+    <object-name>flexfillhoseend</object-name>
+  </animation>
+  
+  <animation>
+    <name>FlexFill31</name>
     <object-name>flexfillhoseend</object-name>
   </animation>
   
   <!-- Flex Hose Rotation Docked-->
   <animation>
     <type>rotate</type>
-    <object-name>flexfillhose.001</object-name>
+    <object-name>FlexFill01</object-name>
     <property>sim/model/firetank/deployflexhose/position-norm</property>
     <condition>
       <greater-than>
@@ -270,7 +885,7 @@
   
   <animation>
     <type>rotate</type>
-    <object-name>flexfillhose.002</object-name>
+    <object-name>FlexFill02</object-name>
     <property>sim/model/firetank/deployflexhose/position-norm</property>
     <condition>
       <greater-than>
@@ -294,7 +909,7 @@
   
   <animation>
     <type>rotate</type>
-    <object-name>flexfillhose.003</object-name>
+    <object-name>FlexFill03</object-name>
     <property>sim/model/firetank/deployflexhose/position-norm</property>
     <condition>
       <greater-than>
@@ -318,7 +933,7 @@
   
   <animation>
     <type>rotate</type>
-    <object-name>flexfillhose.004</object-name>
+    <object-name>FlexFill04</object-name>
     <property>sim/model/firetank/deployflexhose/position-norm</property>
     <condition>
       <greater-than>
@@ -342,7 +957,7 @@
   
   <animation>
     <type>rotate</type>
-    <object-name>flexfillhose.005</object-name>
+    <object-name>FlexFill05</object-name>
     <property>sim/model/firetank/deployflexhose/position-norm</property>
     <condition>
       <greater-than>
@@ -366,7 +981,7 @@
   
   <animation>
     <type>rotate</type>
-    <object-name>flexfillhose.006</object-name>
+    <object-name>FlexFill06</object-name>
     <property>sim/model/firetank/deployflexhose/position-norm</property>
     <condition>
       <greater-than>
@@ -390,7 +1005,7 @@
   
   <animation>
     <type>rotate</type>
-    <object-name>flexfillhose.007</object-name>
+    <object-name>FlexFill07</object-name>
     <property>sim/model/firetank/deployflexhose/position-norm</property>
     <condition>
       <greater-than>
@@ -414,7 +1029,7 @@
   
   <animation>
     <type>rotate</type>
-    <object-name>flexfillhose.008</object-name>
+    <object-name>FlexFill08</object-name>
     <property>sim/model/firetank/deployflexhose/position-norm</property>
     <condition>
       <greater-than>
@@ -438,7 +1053,7 @@
   
   <animation>
     <type>rotate</type>
-    <object-name>flexfillhose.009</object-name>
+    <object-name>FlexFill09</object-name>
     <property>sim/model/firetank/deployflexhose/position-norm</property>
     <condition>
       <greater-than>
@@ -462,7 +1077,7 @@
   
   <animation>
     <type>rotate</type>
-    <object-name>flexfillhose.010</object-name>
+    <object-name>FlexFill10</object-name>
     <property>sim/model/firetank/deployflexhose/position-norm</property>
     <condition>
       <greater-than>
@@ -486,7 +1101,7 @@
   
   <animation>
     <type>rotate</type>
-    <object-name>flexfillhose.011</object-name>
+    <object-name>FlexFill11</object-name>
     <property>sim/model/firetank/deployflexhose/position-norm</property>
     <condition>
       <greater-than>
@@ -510,7 +1125,7 @@
   
   <animation>
     <type>rotate</type>
-    <object-name>flexfillhose.012</object-name>
+    <object-name>FlexFill12</object-name>
     <property>sim/model/firetank/deployflexhose/position-norm</property>
     <condition>
       <greater-than>
@@ -534,7 +1149,7 @@
   
   <animation>
     <type>rotate</type>
-    <object-name>flexfillhose.013</object-name>
+    <object-name>FlexFill13</object-name>
     <property>sim/model/firetank/deployflexhose/position-norm</property>
     <condition>
       <greater-than>
@@ -558,7 +1173,7 @@
   
   <animation>
     <type>rotate</type>
-    <object-name>flexfillhose.014</object-name>
+    <object-name>FlexFill14</object-name>
     <property>sim/model/firetank/deployflexhose/position-norm</property>
     <condition>
       <greater-than>
@@ -582,7 +1197,7 @@
   
   <animation>
     <type>rotate</type>
-    <object-name>flexfillhose.015</object-name>
+    <object-name>FlexFill15</object-name>
     <property>sim/model/firetank/deployflexhose/position-norm</property>
     <condition>
       <greater-than>
@@ -606,7 +1221,7 @@
   
   <animation>
     <type>rotate</type>
-    <object-name>flexfillhose.016</object-name>
+    <object-name>FlexFill16</object-name>
     <property>sim/model/firetank/deployflexhose/position-norm</property>
     <condition>
       <greater-than>
@@ -630,7 +1245,7 @@
   
   <animation>
     <type>rotate</type>
-    <object-name>flexfillhose.017</object-name>
+    <object-name>FlexFill17</object-name>
     <property>sim/model/firetank/deployflexhose/position-norm</property>
     <condition>
       <greater-than>
@@ -654,7 +1269,7 @@
   
   <animation>
     <type>rotate</type>
-    <object-name>flexfillhose.018</object-name>
+    <object-name>FlexFill18</object-name>
     <property>sim/model/firetank/deployflexhose/position-norm</property>
     <condition>
       <greater-than>
@@ -678,7 +1293,7 @@
   
   <animation>
     <type>rotate</type>
-    <object-name>flexfillhose.019</object-name>
+    <object-name>FlexFill19</object-name>
     <property>sim/model/firetank/deployflexhose/position-norm</property>
     <condition>
       <greater-than>
@@ -702,7 +1317,7 @@
   
   <animation>
     <type>rotate</type>
-    <object-name>flexfillhose.020</object-name>
+    <object-name>FlexFill20</object-name>
     <property>sim/model/firetank/deployflexhose/position-norm</property>
     <condition>
       <greater-than>
@@ -726,7 +1341,7 @@
   
   <animation>
     <type>rotate</type>
-    <object-name>flexfillhose.021</object-name>
+    <object-name>FlexFill21</object-name>
     <property>sim/model/firetank/deployflexhose/position-norm</property>
     <condition>
       <greater-than>
@@ -750,7 +1365,7 @@
   
   <animation>
     <type>rotate</type>
-    <object-name>flexfillhose.022</object-name>
+    <object-name>FlexFill22</object-name>
     <property>sim/model/firetank/deployflexhose/position-norm</property>
     <condition>
       <greater-than>
@@ -774,7 +1389,7 @@
   
   <animation>
     <type>rotate</type>
-    <object-name>flexfillhose.023</object-name>
+    <object-name>FlexFill23</object-name>
     <property>sim/model/firetank/deployflexhose/position-norm</property>
     <condition>
       <greater-than>
@@ -798,7 +1413,7 @@
   
   <animation>
     <type>rotate</type>
-    <object-name>flexfillhose.024</object-name>
+    <object-name>FlexFill24</object-name>
     <property>sim/model/firetank/deployflexhose/position-norm</property>
     <condition>
       <greater-than>
@@ -822,7 +1437,7 @@
   
   <animation>
     <type>rotate</type>
-    <object-name>flexfillhose.025</object-name>
+    <object-name>FlexFill25</object-name>
     <property>sim/model/firetank/deployflexhose/position-norm</property>
     <condition>
       <greater-than>
@@ -846,7 +1461,7 @@
   
   <animation>
     <type>rotate</type>
-    <object-name>flexfillhose.026</object-name>
+    <object-name>FlexFill26</object-name>
     <property>sim/model/firetank/deployflexhose/position-norm</property>
     <condition>
       <greater-than>
@@ -870,7 +1485,7 @@
   
   <animation>
     <type>rotate</type>
-    <object-name>flexfillhose.027</object-name>
+    <object-name>FlexFill27</object-name>
     <property>sim/model/firetank/deployflexhose/position-norm</property>
     <condition>
       <greater-than>
@@ -894,7 +1509,7 @@
   
   <animation>
     <type>rotate</type>
-    <object-name>flexfillhose.028</object-name>
+    <object-name>FlexFill28</object-name>
     <property>sim/model/firetank/deployflexhose/position-norm</property>
     <condition>
       <greater-than>
@@ -918,7 +1533,7 @@
   
   <animation>
     <type>rotate</type>
-    <object-name>flexfillhose.029</object-name>
+    <object-name>FlexFill29</object-name>
     <property>sim/model/firetank/deployflexhose/position-norm</property>
     <condition>
       <greater-than>
@@ -942,7 +1557,7 @@
   
   <animation>
     <type>rotate</type>
-    <object-name>flexfillhose.030</object-name>
+    <object-name>FlexFill30</object-name>
     <property>sim/model/firetank/deployflexhose/position-norm</property>
     <condition>
       <greater-than>
@@ -966,7 +1581,7 @@
   
   <animation>
     <type>rotate</type>
-    <object-name>flexfillhose.031</object-name>
+    <object-name>FlexFill31</object-name>
     <property>sim/model/firetank/deployflexhose/position-norm</property>
     <condition>
       <greater-than>
@@ -988,10 +1603,10 @@
     </axis>
   </animation>
   
-  <!-- Flex Hose Rotation Pitch-->
+  <!-- Flex Hose Rotation Pitch -->
   <animation>
     <type>rotate</type>
-    <object-name>flexfillhose.001</object-name>
+    <object-name>FlexFill01</object-name>
     <property>/sim/model/firetank/flexhose/pitch1</property>
     <condition>
       <not>
@@ -1014,7 +1629,7 @@
   
   <animation>
     <type>rotate</type>
-    <object-name>flexfillhose.002</object-name>
+    <object-name>FlexFill02</object-name>
     <property>/sim/model/firetank/flexhose/pitch2</property>
     <condition>
       <not>
@@ -1037,7 +1652,7 @@
   
   <animation>
     <type>rotate</type>
-    <object-name>flexfillhose.003</object-name>
+    <object-name>FlexFill03</object-name>
     <property>/sim/model/firetank/flexhose/pitch3</property>
     <condition>
       <not>
@@ -1060,7 +1675,7 @@
   
   <animation>
     <type>rotate</type>
-    <object-name>flexfillhose.004</object-name>
+    <object-name>FlexFill04</object-name>
     <property>/sim/model/firetank/flexhose/pitch4</property>
     <condition>
       <not>
@@ -1083,7 +1698,7 @@
   
   <animation>
     <type>rotate</type>
-    <object-name>flexfillhose.005</object-name>
+    <object-name>FlexFill05</object-name>
     <property>/sim/model/firetank/flexhose/pitch5</property>
     <condition>
       <not>
@@ -1106,7 +1721,7 @@
   
   <animation>
     <type>rotate</type>
-    <object-name>flexfillhose.006</object-name>
+    <object-name>FlexFill06</object-name>
     <property>/sim/model/firetank/flexhose/pitch6</property>
     <condition>
       <not>
@@ -1129,7 +1744,7 @@
   
   <animation>
     <type>rotate</type>
-    <object-name>flexfillhose.007</object-name>
+    <object-name>FlexFill07</object-name>
     <property>/sim/model/firetank/flexhose/pitch7</property>
     <condition>
       <not>
@@ -1152,7 +1767,7 @@
   
   <animation>
     <type>rotate</type>
-    <object-name>flexfillhose.008</object-name>
+    <object-name>FlexFill08</object-name>
     <property>/sim/model/firetank/flexhose/pitch8</property>
     <condition>
       <not>
@@ -1175,7 +1790,7 @@
   
   <animation>
     <type>rotate</type>
-    <object-name>flexfillhose.009</object-name>
+    <object-name>FlexFill09</object-name>
     <property>/sim/model/firetank/flexhose/pitch9</property>
     <condition>
       <not>
@@ -1198,7 +1813,7 @@
   
   <animation>
     <type>rotate</type>
-    <object-name>flexfillhose.010</object-name>
+    <object-name>FlexFill10</object-name>
     <property>/sim/model/firetank/flexhose/pitch10</property>
     <condition>
       <not>
@@ -1221,7 +1836,7 @@
   
   <animation>
     <type>rotate</type>
-    <object-name>flexfillhose.011</object-name>
+    <object-name>FlexFill11</object-name>
     <property>/sim/model/firetank/flexhose/pitch11</property>
     <condition>
       <not>
@@ -1244,7 +1859,7 @@
   
   <animation>
     <type>rotate</type>
-    <object-name>flexfillhose.012</object-name>
+    <object-name>FlexFill12</object-name>
     <property>/sim/model/firetank/flexhose/pitch12</property>
     <condition>
       <not>
@@ -1267,7 +1882,7 @@
   
   <animation>
     <type>rotate</type>
-    <object-name>flexfillhose.013</object-name>
+    <object-name>FlexFill13</object-name>
     <property>/sim/model/firetank/flexhose/pitch13</property>
     <condition>
       <not>
@@ -1290,7 +1905,7 @@
   
   <animation>
     <type>rotate</type>
-    <object-name>flexfillhose.014</object-name>
+    <object-name>FlexFill14</object-name>
     <property>/sim/model/firetank/flexhose/pitch14</property>
     <condition>
       <not>
@@ -1313,7 +1928,7 @@
   
   <animation>
     <type>rotate</type>
-    <object-name>flexfillhose.015</object-name>
+    <object-name>FlexFill15</object-name>
     <property>/sim/model/firetank/flexhose/pitch15</property>
     <condition>
       <not>
@@ -1336,7 +1951,7 @@
   
   <animation>
     <type>rotate</type>
-    <object-name>flexfillhose.016</object-name>
+    <object-name>FlexFill16</object-name>
     <property>/sim/model/firetank/flexhose/pitch16</property>
     <condition>
       <not>
@@ -1359,7 +1974,7 @@
   
   <animation>
     <type>rotate</type>
-    <object-name>flexfillhose.017</object-name>
+    <object-name>FlexFill17</object-name>
     <property>/sim/model/firetank/flexhose/pitch17</property>
     <condition>
       <not>
@@ -1382,7 +1997,7 @@
   
   <animation>
     <type>rotate</type>
-    <object-name>flexfillhose.018</object-name>
+    <object-name>FlexFill18</object-name>
     <property>/sim/model/firetank/flexhose/pitch18</property>
     <condition>
       <not>
@@ -1405,7 +2020,7 @@
   
   <animation>
     <type>rotate</type>
-    <object-name>flexfillhose.019</object-name>
+    <object-name>FlexFill19</object-name>
     <property>/sim/model/firetank/flexhose/pitch19</property>
     <condition>
       <not>
@@ -1428,7 +2043,7 @@
   
   <animation>
     <type>rotate</type>
-    <object-name>flexfillhose.020</object-name>
+    <object-name>FlexFill20</object-name>
     <property>/sim/model/firetank/flexhose/pitch20</property>
     <condition>
       <not>
@@ -1451,7 +2066,7 @@
   
   <animation>
     <type>rotate</type>
-    <object-name>flexfillhose.021</object-name>
+    <object-name>FlexFill21</object-name>
     <property>/sim/model/firetank/flexhose/pitch21</property>
     <condition>
       <not>
@@ -1474,7 +2089,7 @@
   
   <animation>
     <type>rotate</type>
-    <object-name>flexfillhose.022</object-name>
+    <object-name>FlexFill22</object-name>
     <property>/sim/model/firetank/flexhose/pitch22</property>
     <condition>
       <not>
@@ -1497,7 +2112,7 @@
   
   <animation>
     <type>rotate</type>
-    <object-name>flexfillhose.023</object-name>
+    <object-name>FlexFill23</object-name>
     <property>/sim/model/firetank/flexhose/pitch23</property>
     <condition>
       <not>
@@ -1520,7 +2135,7 @@
   
   <animation>
     <type>rotate</type>
-    <object-name>flexfillhose.024</object-name>
+    <object-name>FlexFill24</object-name>
     <property>/sim/model/firetank/flexhose/pitch24</property>
     <condition>
       <not>
@@ -1543,7 +2158,7 @@
   
   <animation>
     <type>rotate</type>
-    <object-name>flexfillhose.025</object-name>
+    <object-name>FlexFill25</object-name>
     <property>/sim/model/firetank/flexhose/pitch25</property>
     <condition>
       <not>
@@ -1566,7 +2181,7 @@
   
   <animation>
     <type>rotate</type>
-    <object-name>flexfillhose.026</object-name>
+    <object-name>FlexFill26</object-name>
     <property>/sim/model/firetank/flexhose/pitch26</property>
     <condition>
       <not>
@@ -1589,7 +2204,7 @@
   
   <animation>
     <type>rotate</type>
-    <object-name>flexfillhose.027</object-name>
+    <object-name>FlexFill27</object-name>
     <property>/sim/model/firetank/flexhose/pitch27</property>
     <condition>
       <not>
@@ -1612,7 +2227,7 @@
   
   <animation>
     <type>rotate</type>
-    <object-name>flexfillhose.028</object-name>
+    <object-name>FlexFill28</object-name>
     <property>/sim/model/firetank/flexhose/pitch28</property>
     <condition>
       <not>
@@ -1635,7 +2250,7 @@
   
   <animation>
     <type>rotate</type>
-    <object-name>flexfillhose.029</object-name>
+    <object-name>FlexFill29</object-name>
     <property>/sim/model/firetank/flexhose/pitch29</property>
     <condition>
       <not>
@@ -1658,7 +2273,7 @@
   
   <animation>
     <type>rotate</type>
-    <object-name>flexfillhose.030</object-name>
+    <object-name>FlexFill30</object-name>
     <property>/sim/model/firetank/flexhose/pitch30</property>
     <condition>
       <not>
@@ -1681,7 +2296,7 @@
   
   <animation>
     <type>rotate</type>
-    <object-name>flexfillhose.031</object-name>
+    <object-name>FlexFill31</object-name>
     <property>/sim/model/firetank/flexhose/pitch31</property>
     <condition>
       <not>
@@ -1705,7 +2320,7 @@
   <!-- Flex Hose Rotation Roll -->
   <animation>
     <type>rotate</type>
-    <object-name>flexfillhose.001</object-name>
+    <object-name>FlexFill01</object-name>
     <property>/sim/model/firetank/flexhose/roll1</property>
     <condition>
       <not>
@@ -1728,7 +2343,7 @@
   
   <animation>
     <type>rotate</type>
-    <object-name>flexfillhose.002</object-name>
+    <object-name>FlexFill02</object-name>
     <property>/sim/model/firetank/flexhose/roll2</property>
     <condition>
       <not>
@@ -1751,7 +2366,7 @@
   
   <animation>
     <type>rotate</type>
-    <object-name>flexfillhose.003</object-name>
+    <object-name>FlexFill03</object-name>
     <property>/sim/model/firetank/flexhose/roll3</property>
     <condition>
       <not>
@@ -1774,7 +2389,7 @@
   
   <animation>
     <type>rotate</type>
-    <object-name>flexfillhose.004</object-name>
+    <object-name>FlexFill04</object-name>
     <property>/sim/model/firetank/flexhose/roll4</property>
     <condition>
       <not>
@@ -1797,7 +2412,7 @@
   
   <animation>
     <type>rotate</type>
-    <object-name>flexfillhose.005</object-name>
+    <object-name>FlexFill05</object-name>
     <property>/sim/model/firetank/flexhose/roll5</property>
     <condition>
       <not>
@@ -1820,7 +2435,7 @@
   
   <animation>
     <type>rotate</type>
-    <object-name>flexfillhose.006</object-name>
+    <object-name>FlexFill06</object-name>
     <property>/sim/model/firetank/flexhose/roll6</property>
     <condition>
       <not>
@@ -1843,7 +2458,7 @@
   
   <animation>
     <type>rotate</type>
-    <object-name>flexfillhose.007</object-name>
+    <object-name>FlexFill07</object-name>
     <property>/sim/model/firetank/flexhose/roll7</property>
     <condition>
       <not>
@@ -1866,7 +2481,7 @@
   
   <animation>
     <type>rotate</type>
-    <object-name>flexfillhose.008</object-name>
+    <object-name>FlexFill08</object-name>
     <property>/sim/model/firetank/flexhose/roll8</property>
     <condition>
       <not>
@@ -1889,7 +2504,7 @@
   
   <animation>
     <type>rotate</type>
-    <object-name>flexfillhose.009</object-name>
+    <object-name>FlexFill09</object-name>
     <property>/sim/model/firetank/flexhose/roll9</property>
     <condition>
       <not>
@@ -1912,7 +2527,7 @@
   
   <animation>
     <type>rotate</type>
-    <object-name>flexfillhose.010</object-name>
+    <object-name>FlexFill10</object-name>
     <property>/sim/model/firetank/flexhose/roll10</property>
     <condition>
       <not>
@@ -1935,7 +2550,7 @@
   
   <animation>
     <type>rotate</type>
-    <object-name>flexfillhose.011</object-name>
+    <object-name>FlexFill11</object-name>
     <property>/sim/model/firetank/flexhose/roll11</property>
     <condition>
       <not>
@@ -1958,7 +2573,7 @@
   
   <animation>
     <type>rotate</type>
-    <object-name>flexfillhose.012</object-name>
+    <object-name>FlexFill12</object-name>
     <property>/sim/model/firetank/flexhose/roll12</property>
     <condition>
       <not>
@@ -1981,7 +2596,7 @@
   
   <animation>
     <type>rotate</type>
-    <object-name>flexfillhose.013</object-name>
+    <object-name>FlexFill13</object-name>
     <property>/sim/model/firetank/flexhose/roll13</property>
     <condition>
       <not>
@@ -2004,7 +2619,7 @@
   
   <animation>
     <type>rotate</type>
-    <object-name>flexfillhose.014</object-name>
+    <object-name>FlexFill14</object-name>
     <property>/sim/model/firetank/flexhose/roll14</property>
     <condition>
       <not>
@@ -2027,7 +2642,7 @@
   
   <animation>
     <type>rotate</type>
-    <object-name>flexfillhose.015</object-name>
+    <object-name>FlexFill15</object-name>
     <property>/sim/model/firetank/flexhose/roll15</property>
     <condition>
       <not>
@@ -2050,7 +2665,7 @@
   
   <animation>
     <type>rotate</type>
-    <object-name>flexfillhose.016</object-name>
+    <object-name>FlexFill16</object-name>
     <property>/sim/model/firetank/flexhose/roll16</property>
     <condition>
       <not>
@@ -2073,7 +2688,7 @@
   
   <animation>
     <type>rotate</type>
-    <object-name>flexfillhose.017</object-name>
+    <object-name>FlexFill17</object-name>
     <property>/sim/model/firetank/flexhose/roll17</property>
     <condition>
       <not>
@@ -2096,7 +2711,7 @@
   
   <animation>
     <type>rotate</type>
-    <object-name>flexfillhose.018</object-name>
+    <object-name>FlexFill18</object-name>
     <property>/sim/model/firetank/flexhose/roll18</property>
     <condition>
       <not>
@@ -2119,7 +2734,7 @@
   
   <animation>
     <type>rotate</type>
-    <object-name>flexfillhose.019</object-name>
+    <object-name>FlexFill19</object-name>
     <property>/sim/model/firetank/flexhose/roll19</property>
     <condition>
       <not>
@@ -2142,7 +2757,7 @@
   
   <animation>
     <type>rotate</type>
-    <object-name>flexfillhose.020</object-name>
+    <object-name>FlexFill20</object-name>
     <property>/sim/model/firetank/flexhose/roll20</property>
     <condition>
       <not>
@@ -2165,7 +2780,7 @@
   
   <animation>
     <type>rotate</type>
-    <object-name>flexfillhose.021</object-name>
+    <object-name>FlexFill21</object-name>
     <property>/sim/model/firetank/flexhose/roll21</property>
     <condition>
       <not>
@@ -2188,7 +2803,7 @@
   
   <animation>
     <type>rotate</type>
-    <object-name>flexfillhose.022</object-name>
+    <object-name>FlexFill22</object-name>
     <property>/sim/model/firetank/flexhose/roll22</property>
     <condition>
       <not>
@@ -2211,7 +2826,7 @@
   
   <animation>
     <type>rotate</type>
-    <object-name>flexfillhose.023</object-name>
+    <object-name>FlexFill23</object-name>
     <property>/sim/model/firetank/flexhose/roll23</property>
     <condition>
       <not>
@@ -2234,7 +2849,7 @@
   
   <animation>
     <type>rotate</type>
-    <object-name>flexfillhose.024</object-name>
+    <object-name>FlexFill24</object-name>
     <property>/sim/model/firetank/flexhose/roll24</property>
     <condition>
       <not>
@@ -2257,7 +2872,7 @@
   
   <animation>
     <type>rotate</type>
-    <object-name>flexfillhose.025</object-name>
+    <object-name>FlexFill25</object-name>
     <property>/sim/model/firetank/flexhose/roll25</property>
     <condition>
       <not>
@@ -2280,7 +2895,7 @@
   
   <animation>
     <type>rotate</type>
-    <object-name>flexfillhose.026</object-name>
+    <object-name>FlexFill26</object-name>
     <property>/sim/model/firetank/flexhose/roll26</property>
     <condition>
       <not>
@@ -2303,7 +2918,7 @@
   
   <animation>
     <type>rotate</type>
-    <object-name>flexfillhose.027</object-name>
+    <object-name>FlexFill27</object-name>
     <property>/sim/model/firetank/flexhose/roll27</property>
     <condition>
       <not>
@@ -2326,7 +2941,7 @@
   
   <animation>
     <type>rotate</type>
-    <object-name>flexfillhose.028</object-name>
+    <object-name>FlexFill28</object-name>
     <property>/sim/model/firetank/flexhose/roll28</property>
     <condition>
       <not>
@@ -2349,7 +2964,7 @@
   
   <animation>
     <type>rotate</type>
-    <object-name>flexfillhose.029</object-name>
+    <object-name>FlexFill29</object-name>
     <property>/sim/model/firetank/flexhose/roll29</property>
     <condition>
       <not>
@@ -2372,7 +2987,7 @@
   
   <animation>
     <type>rotate</type>
-    <object-name>flexfillhose.030</object-name>
+    <object-name>FlexFill30</object-name>
     <property>/sim/model/firetank/flexhose/roll30</property>
     <condition>
       <not>
@@ -2395,7 +3010,7 @@
   
   <animation>
     <type>rotate</type>
-    <object-name>flexfillhose.031</object-name>
+    <object-name>FlexFill31</object-name>
     <property>/sim/model/firetank/flexhose/roll31</property>
     <condition>
       <not>

@@ -4,105 +4,48 @@
 	<nasal>
 		<open><![CDATA[
 		
+      var dlgRoot = cmdarg();
+      var DIALOG_ROOT  = "/sim/gui/dialogs/aicargo-dialog";
 
-var dlgRoot = cmdarg();
-var DIALOG_ROOT  = "/sim/gui/dialogs/aicargo-dialog";
+      # Fill in the cargo names combo box.
+      var cargo = props.globals.getNode( "/ai/models", 1 ).getChildren( "aircraft" );
 
-# Fill in the cargo names combo box.
-var cargo = props.globals.getNode( "/ai/models", 1 ).getChildren( "aircraft" );
+      if (size(cargo) == 0) {
+        # No cargo found - no point filling in rest of dialog
+        setprop(DIALOG_ROOT ~ "/cargo-count", 0);  
+      } else {
+        var cgselect = gui.findElementByName(dlgRoot, "cgselect" );
 
-if (size(cargo) == 0) {
-  # No cargo found - no point filling in rest of dialog
-  setprop(DIALOG_ROOT ~ "/cargo-count", 0);  
-} else {
-
-  var aiselect = gui.findElementByName(dlgRoot, "aiselect" );
-  var cgselect = gui.findElementByName(dlgRoot, "cgselect" );
-
-  forindex (var cargo_index; cargo) {   
-    var ai_id = "unknown";
-    var cg = cargo[cargo_index];
-    var cg_id = "unknown";
-    if (string.match(cg.getNode("callsign").getValue(), "cargo*")){
-      if ((cg.getNode("callsign") != nil) and (cg.getNode("callsign").getValue() != nil))
-      {
-        ai_id = cg.getNode("callsign").getParent().getName() ~ "[" ~ cg.getNode("callsign").getParent().getIndex() ~ "]";
-        cg_id = cg.getNode("callsign").getValue();
+        forindex (var cargo_index; cargo) {   
+          var cg = cargo[cargo_index];
+          var cg_id = "unknown";
+          if (string.match(cg.getNode("callsign").getValue(), "cargo*")){
+            if ((cg.getNode("callsign") != nil) and (cg.getNode("callsign").getValue() != nil))
+            {
+              cg_id = cg.getNode("callsign").getValue();
+            }
+            cgselect.getNode("value[" ~ cargo_index ~ "]", 1).setValue(cg_id);
+          }
+        }
       }
-      aiselect.getNode("value[" ~ cargo_index ~ "]", 1).setValue(ai_id);
-      cgselect.getNode("value[" ~ cargo_index ~ "]", 1).setValue(cg_id);
-    }
-  }
-}
-
-var cargo_index = getprop(DIALOG_ROOT ~ "/selected-cargo-index");
-
-var writeCargoConfig = func(dialog_root="/sim/gui/dialogs/aicargo-dialog", reset=0) {
-
-  # Write out the cargo file.
-  var config = props.Node.new();
-  var id = getprop(dialog_root ~ "/selected-cargo");
-
-  if (reset == 1) {
-    # We've been asked to reset the cargo config to the default.  As we can't
-    # delete the configuration file, we achieve this by setting an invalid name
-    # tag that won't match.
-    config.getNode("name", 1).setValue("UNUSED INVALID CONFIG");
-  } else {
-    config.getNode("name", 1).setValue(id);
-  }
-
-  var nasals = props.globals.getNode(dialog_root).getChildren("nasal");
-  forindex (var nas; nasals) {
-      var nasalscript = config.getNode("nasal[" ~ nas ~ "]", 1);
-      props.copy(props.globals.getNode(dialog_root ~ "/nasal[" ~ nas ~ "]/original_script", 1), nasalscript);
-  }
-
-
-  var filename = id;
-  filename = string.replace(filename, " ", "-");
-  filename = string.replace(filename, ".", "");
-  filename = string.replace(filename, "/", "");
-
-  # Write out the file
-  io.write_properties(getprop("/sim/fg-home") ~ "/cargos/" ~ filename ~ ".xml", config);
-}
-
-var resetCargoConfig = func(dialog_root="/sim/gui/dialogs/aicargo-dialog") {
-  writeCargoConfig(dialog_root, 1);
-}
-
-var updateConfig = func() {
-  writeCargoConfig();
-  fgcommand("reinit", props.Node.new({"subsystem": "input"}));
-  fgcommand("dialog-close", props.Node.new({"dialog-name": "aicargo-dialog"}));
-  fgcommand("dialog-show", props.Node.new({"dialog-name": "aicargo-dialog"}));
-}
 
 		]]></open>
-
 		<close><![CDATA[		
 		]]></close>
 	</nasal>
-
 
 	<name>aicargo-dialog</name>
 	<layout>vbox</layout>
 	<resizable>true</resizable>
 	<default-padding>3</default-padding>
-
 	<group>
 		<layout>hbox</layout>
 		<default-padding>1</default-padding>
-
 		<empty><stretch>true</stretch></empty>
-
 		<text>
 			<label>Cargo Positioning</label>
 		</text>
-
 		<empty><stretch>true</stretch></empty>
-
 		<button>
 			<legend></legend>
 			<key>Esc</key>
@@ -114,36 +57,30 @@ var updateConfig = func() {
 			</binding>
 		</button>
 	</group>
-	
 	<hrule/>
-	
 	<text>
 	  <halign>left</halign>
-	  <label>  To position your cargo:</label>
+	  <label>  To process cargo:</label>
+  </text>
+	<text>
+	  <halign>left</halign>
+	  <label>    1) Select the cargo you wish to process from the drop-down.</label>
+  </text>
+	<text>
+	  <halign>left</halign>
+	  <label>    2) Shift+left-click on ground to position cargo.</label>
+  </text>
+	<text>
+	  <halign>left</halign>
+	  <label>    3) Click "Save" to make position persistant.</label>
+  </text>
+  <text>
+	  <halign>left</halign>
+	  <label>    4) Click "Reset" to hide cargo.</label>
   </text>
 
-	<text>
-	  <halign>left</halign>
-	  <label>    1) Select the cargo you wish to position from the drop-down.</label>
-  </text>
-
-	<text>
-	  <halign>left</halign>
-	  <label>    2) Adjust your view to allow you to see the cargo object you want to reposition.</label>
-  </text>
-
-	<text>
-	  <halign>left</halign>
-	  <label>    3) Adjust the axis slider you wish to move the cargo along.</label>
-  </text>
-
-	<text>
-	  <halign>left</halign>
-	  <label>    4) Click on the save button to make the position persistant.</label>
-  </text>
-  
   <hrule/>
-	
+
 	<!-- Cargo selector -->
 	<group>
 	  <layout>table</layout>
@@ -152,7 +89,7 @@ var updateConfig = func() {
 	    <row>0</row>
 	    <col>0</col>
 	    <halign>right</halign>
-	    <label>Cargo:</label>
+	    <label>Cargo</label>
     </text>
     <combo>
       <name>cgselect</name>
@@ -167,49 +104,26 @@ var updateConfig = func() {
       </binding>
       <binding>
         <command>nasal</command>
-        <script>     
+        <script>
+          var aic_id = "none";
+          var cargo = props.globals.getNode( "/ai/models", 1 ).getChildren( "aircraft" );
+          var cargo_choice = getprop("/sim/gui/dialogs/aicargo-dialog/selected-cargo");
+          forindex (var cargo_index; cargo) {
+            var cg = cargo[cargo_index];
+            if (string.match(cg.getNode("callsign").getValue(), cargo_choice)){
+              aic_id = cg.getNode("callsign").getParent().getName() ~ "[" ~ cg.getNode("callsign").getParent().getIndex() ~ "]";
+              setprop("/sim/gui/dialogs/aicargo-dialog/ai-path", aic_id);
+            }
+          }
+          setprop("/sim/gui/dialogs/aicargo-dialog/selected_cargo_lat",  getprop("/ai/models/"~aic_id~"/position/latitude-deg"));
+          setprop("/sim/gui/dialogs/aicargo-dialog/selected_cargo_lon",  getprop("/ai/models/"~aic_id~"/position/longitude-deg"));
+          setprop("/sim/gui/dialogs/aicargo-dialog/selected_cargo_alt",  getprop("/ai/models/"~aic_id~"/position/altitude-ft"));
           fgcommand("dialog-close", props.Node.new({"dialog-name": "aicargo-dialog"}));
           fgcommand("dialog-show", props.Node.new({"dialog-name": "aicargo-dialog"}));
         </script>
       </binding>
     </combo>   
   </group>
-
-	<group>
-	  <layout>table</layout>
-	  <halign>left</halign>	  
-	  <text>
-	    <row>0</row>
-	    <col>0</col>
-	    <halign>right</halign>
-	    <label>Path:</label>
-    </text>
-    <combo>
-      <name>aiselect</name>
-	    <row>0</row>
-	    <col>1</col>
-      <halign>left</halign>
-      <property>/sim/gui/dialogs/aicargo-dialog/ai-path</property>
-      <pref-width>350</pref-width>
-      <binding>
-        <command>dialog-apply</command>
-        <object-name>aiselect</object-name>
-      </binding>
-      <binding>
-        <command>nasal</command>
-        <script>        
-          var cp = getprop("/sim/gui/dialogs/aicargo-dialog/ai-path");
-          var fplat = getprop("/ai/models/"~cp~"/position/latitude-deg");
-          var fplon = getprop("/ai/models/"~cp~"/position/longitude-deg");
-          setprop("/selected_cargo_lat",  fplat);
-          setprop("/selected_cargo_lon",  fplon);
-          fgcommand("dialog-close", props.Node.new({"dialog-name": "aicargo-dialog"}));
-          fgcommand("dialog-show", props.Node.new({"dialog-name": "aicargo-dialog"}));
-        </script>
-      </binding>
-    </combo>   
-  </group>
-
   <group>
     <layout>hbox</layout>
     <valign>top</valign>
@@ -218,46 +132,44 @@ var updateConfig = func() {
       <layout>vbox</layout>
       <text>
         <halign>left</halign>
-        <label>Latitude</label>
+        <label>AI Object:</label>
         <enable>
           <not>
             <property>/sim/rendering/rembrandt/enabled</property>
           </not>
         </enable>
       </text>
-      <slider>
-        <name>Latitude</name>
+      <text>
+        <halign>left</halign>
+        <row>1</row>
+        <col>2</col>
+        <property>/sim/gui/dialogs/aicargo-dialog/ai-path</property>
+        <format>%s</format>
+        <live>true</live>
+        <color>
+          <red>0.9</red>
+          <green>0.4</green>
+          <blue>0.2</blue>
+          <alpha>1</alpha>
+        </color>
+      </text>
+    </group>
+    <group>
+      <layout>vbox</layout>
+      <text>
+        <halign>left</halign>
+        <label>Latitude:</label>
         <enable>
           <not>
             <property>/sim/rendering/rembrandt/enabled</property>
           </not>
         </enable>
-        <min>-.0001</min>
-        <max>.0001</max>
-        <step>.00001</step>
-        <live>true</live>
-        <property>/lat</property>
-        <binding>
-          <command>dialog-apply</command>
-          <object-name>Latitude</object-name>
-        </binding>
-        <binding>
-          <command>nasal</command>
-          <script>        
-            var cp = getprop("/sim/gui/dialogs/aicargo-dialog/ai-path");
-            var fplat = getprop("/ai/models/"~cp~"/position/latitude-deg");
-            setprop("/selected_cargo_lat",  fplat+getprop("/lat"));
-            setprop("/ai/models/"~cp~"/position/latitude-deg",  getprop("/selected_cargo_lat"));
-            var elev_m = geo.elevation(getprop("/ai/models/"~cp~"/position/latitude-deg"), getprop("/ai/models/"~cp~"/position/longitude-deg"));
-		        setprop("/ai/models/"~cp~"/position/altitude-ft", elev_m * 0.3048);
-          </script>
-        </binding>
-      </slider>
+      </text>
       <text>
         <halign>left</halign>
         <row>1</row>
         <col>2</col>
-        <property>/selected_cargo_lat</property>
+        <property>/sim/gui/dialogs/aicargo-dialog/selected_cargo_lat</property>
         <format>%f</format>
         <live>true</live>
         <color>
@@ -272,46 +184,18 @@ var updateConfig = func() {
       <layout>vbox</layout>
       <text>
       <halign>left</halign>
-      <label>Longitude</label>
+      <label>Longitude:</label>
       <enable>
         <not>
           <property>/sim/rendering/rembrandt/enabled</property>
         </not>
       </enable>
       </text>
-      <slider>
-        <name>Longitude</name>
-        <enable>
-          <not>
-            <property>/sim/rendering/rembrandt/enabled</property>
-          </not>
-        </enable>
-        <min>-.0001</min>
-        <max>.0001</max>
-        <step>.00001</step>
-        <live>true</live>
-        <property>/lon</property>
-        <binding>
-          <command>dialog-apply</command>
-          <object-name>Longitude</object-name>
-        </binding>
-        <binding>
-          <command>nasal</command>
-          <script>        
-            var cp = getprop("/sim/gui/dialogs/aicargo-dialog/ai-path");
-            var fplon = getprop("/ai/models/"~cp~"/position/longitude-deg");
-            setprop("/selected_cargo_lon",  fplon+getprop("/lon"));
-            setprop("/ai/models/"~cp~"/position/longitude-deg",  getprop("/selected_cargo_lon"));
-            var elev_m = geo.elevation(getprop("/ai/models/"~cp~"/position/latitude-deg"), getprop("/ai/models/"~cp~"/position/longitude-deg"));
-		        setprop("/ai/models/"~cp~"/position/altitude-ft", elev_m * 0.3048);
-          </script>
-        </binding>
-      </slider>
       <text>
         <halign>left</halign>
         <row>1</row>
         <col>2</col>
-        <property>/selected_cargo_lon</property>
+        <property>/sim/gui/dialogs/aicargo-dialog/selected_cargo_lon</property>
         <format>%f</format>
         <live>true</live>
         <color>
@@ -322,33 +206,104 @@ var updateConfig = func() {
         </color>
       </text>
     </group>
+    <group>
+      <layout>vbox</layout>
+      <text>
+      <halign>left</halign>
+      <label>Altitude:</label>
+      <enable>
+        <not>
+          <property>/sim/rendering/rembrandt/enabled</property>
+        </not>
+      </enable>
+      </text>
+      <text>
+        <halign>left</halign>
+        <row>1</row>
+        <col>2</col>
+        <property>/sim/gui/dialogs/aicargo-dialog/selected_cargo_alt</property>
+        <format>%f</format>
+        <live>true</live>
+        <color>
+          <red>0.9</red>
+          <green>0.4</green>
+          <blue>0.2</blue>
+          <alpha>1</alpha>
+        </color>
+      </text>
+    </group>
+    <button>
+      <legend>Save</legend>
+      <default>true</default>
+      <binding>
+        <command>property-assign</command>
+        <property>/sim/gui/dialogs/aicargo-dialog/save</property>
+        <value>1</value>
+      </binding>
+      <binding>
+        <command>nasal</command>
+        <script>
+          var cargo = getprop("/sim/gui/dialogs/aicargo-dialog/selected-cargo");
+          setprop("/sim/model/aircrane/"~cargo~"/saved", 1);
+          setprop("/sim/model/aircrane/"~cargo~"/position/latitude-deg", getprop("/sim/gui/dialogs/aicargo-dialog/selected_cargo_lat"));
+          setprop("/sim/model/aircrane/"~cargo~"/position/longitude-deg", getprop("/sim/gui/dialogs/aicargo-dialog/selected_cargo_lon"));
+          setprop("/sim/model/aircrane/"~cargo~"/position/altitude-ft", getprop("/sim/gui/dialogs/aicargo-dialog/selected_cargo_alt"));
+          aircraft.data.add("/sim/model/aircrane/"~cargo~"/position/latitude-deg",
+                            "/sim/model/aircrane/"~cargo~"/position/longitude-deg",
+                            "/sim/model/aircrane/"~cargo~"/position/altitude-ft",
+                            "/sim/model/aircrane/"~cargo~"/saved");
+          aircraft.data.save();
+          setprop("/sim/gui/dialogs/aicargo-dialog/save", 0);
+          fgcommand("dialog-close", props.Node.new({"dialog-name": "aicargo-dialog"}));
+          fgcommand("dialog-show", props.Node.new({"dialog-name": "aicargo-dialog"}));
+        </script>
+      </binding>
+    </button>
+    <button>
+      <legend>Reset</legend>
+      <default>true</default>
+      <binding>
+        <command>property-assign</command>
+        <property>/sim/gui/dialogs/aicargo-dialog/reset</property>
+        <value>1</value>
+      </binding>
+      <binding>
+        <command>nasal</command>
+        <script>
+          var reset_cargo = getprop("/sim/gui/dialogs/aicargo-dialog/reset");
+          var cargo = getprop("/sim/gui/dialogs/aicargo-dialog/selected-cargo");
+          var aic = getprop("/sim/gui/dialogs/aicargo-dialog/ai-path");
+          if (reset_cargo){
+            setprop("/sim/model/aircrane/"~cargo~"/saved", 0);
+            setprop("/ai/models/"~aic~"/position/altitude-ft", -1000);
+          }
+          setprop("/sim/gui/dialogs/aicargo-dialog/reset", 0);
+          fgcommand("dialog-close", props.Node.new({"dialog-name": "aicargo-dialog"}));
+          fgcommand("dialog-show", props.Node.new({"dialog-name": "aicargo-dialog"}));
+        </script>
+      </binding>
+    </button>
     <empty>
-	    <width>150</width>
-	    <col>5</col>
-	    <row>0</row>
+      <width>150</width>
+      <col>5</col>
+      <row>0</row>
     </empty>
 	</group>
-	  
   <hrule/>
-  
   <!-- Button bar -->
   <group>
     <layout>hbox</layout>
-    
     <empty>
       <stretch>true</stretch>
     </empty>
-    
     <button>
       <legend>Close</legend>
       <binding>
         <command>dialog-close</command>
       </binding>
     </button>
-    
     <empty>
       <stretch>true</stretch>
     </empty>
   </group>  
-  
 </PropertyList>

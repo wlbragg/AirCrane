@@ -60,7 +60,7 @@ var tank_operations = func {
 		setprop("sim/model/firetank/watercannonretardantctrl", 0);
 	}
 		
-    if (cannonvalveopen and hopperweight and cannon) {
+  if (cannonvalveopen and hopperweight and cannon) {
 		#300 * 8.345 weight per gal = 2503.5 weight per minute / 60 = 41.72 per second / 4 (.25 seconds timer cycle) = 10.43 capacity per cycle
  		#300 gal per minute / 60 = 5 per second / 4 (.25 seconds timer cycle) = 1.25 per cycle * 8.345 weight per gallon = 10.43 capacity per cycle
         capacity = 10.43; 
