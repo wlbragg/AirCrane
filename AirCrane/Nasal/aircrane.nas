@@ -429,13 +429,37 @@ setlistener("/sim/signals/fdm-initialized", func {
 			  wildfire.ignite(click_pos);
 		  } else {
 			  #wildfire.resolve_foam_drop(click_pos, 50, 1);
-        var cp = getprop("/sim/gui/dialogs/aicargo-dialog/ai-path");
-        if (cp != nil) {
-          setprop("/ai/models/"~cp~"/position/latitude-deg", click_pos.lat());
-          setprop("/ai/models/"~cp~"/position/longitude-deg", click_pos.lon());
-          setprop("/ai/models/"~cp~"/position/altitude-ft", click_pos.alt * 0.3048);
+        var aic = getprop("/sim/gui/dialogs/aicargo-dialog/ai-path");
+        if (aic != nil) {
+          var pos_lat = click_pos.lat();
+          var pos_lon = click_pos.lon();
+          var click_alt = geo.elevation(click_pos.lat(), click_pos.lon()) * 3.28;
+          setprop("/ai/models/"~aic~"/position/latitude-deg", pos_lat);
+          setprop("/ai/models/"~aic~"/position/longitude-deg", pos_lon);
+          setprop("/ai/models/"~aic~"/position/altitude-ft", click_alt);
+          setprop("/sim/gui/dialogs/aicargo-dialog/selected_cargo_lat", pos_lat);
+          setprop("/sim/gui/dialogs/aicargo-dialog/selected_cargo_lon", pos_lon);
+          setprop("/sim/gui/dialogs/aicargo-dialog/selected_cargo_alt", click_alt);
+          setprop("/sim/gui/dialogs/aicargo-dialog/selected_cargo_head", getprop("/sim/gui/dialogs/aicargo-dialog/selected_cargo_head"));
+
+          if (getprop("/sim/gui/dialogs/aicargo-dialog/save")) {
+            var cargo = getprop("/sim/gui/dialogs/aicargo-dialog/selected-cargo");
+            setprop("/sim/model/aircrane/"~cargo~"/saved", 1);
+            setprop("/sim/model/aircrane/"~cargo~"/position/latitude-deg", getprop("/sim/gui/dialogs/aicargo-dialog/selected_cargo_lat"));
+            setprop("/sim/model/aircrane/"~cargo~"/position/longitude-deg", getprop("/sim/gui/dialogs/aicargo-dialog/selected_cargo_lon"));
+            setprop("/sim/model/aircrane/"~cargo~"/position/altitude-ft", getprop("/sim/gui/dialogs/aicargo-dialog/selected_cargo_alt"));
+            setprop("/sim/model/aircrane/"~cargo~"/orientation/true-heading-deg", getprop("/sim/gui/dialogs/aicargo-dialog/selected_cargo_head"));
+            aircraft.data.add("/sim/model/aircrane/"~cargo~"/position/latitude-deg",
+                              "/sim/model/aircrane/"~cargo~"/position/longitude-deg",
+                              "/sim/model/aircrane/"~cargo~"/position/altitude-ft",
+                              "/sim/model/aircrane/"~cargo~"/orientation/true-heading-deg");
+            aircraft.data.save();
+          }
+
+          fgcommand("dialog-close", props.Node.new({"dialog-name": "aicargo-dialog"}));
+          fgcommand("dialog-show", props.Node.new({"dialog-name": "aicargo-dialog"}));
         } else {
-          gui.popupTip("No Cargo Selected, select cargo in the AI Cargo Menu", 3);
+          gui.popupTip("No Cargo Selected, first select cargo to move in the AirCrane's Cargo Menu", 3);
         }
 		  }
 	  }

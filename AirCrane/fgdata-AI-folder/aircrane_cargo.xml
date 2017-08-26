@@ -20,30 +20,31 @@
 		<entry>
 			<!-- callsigns need to be distinct if multiple cargos are used, but always cargo[]-->
 			<callsign>cargo1</callsign>
+      <name>Shipping Container</name>
 			<type>aircraft</type>
 			<model>Aircraft/AirCrane/Models/Cargo-Hauling/shipping-container-big.ac</model>
-			<flightplan>aircrane_cargo.xml</flightplan>
+			<flightplan>aircrane_cargo1.xml</flightplan>
 			<repeat>1</repeat>
 		</entry>
 		<entry>
 			<callsign>cargo2</callsign>
 			<type>aircraft</type>
 			<model>Aircraft/AirCrane/Models/Cargo-Hauling/shipping-container-big.ac</model>
-			<flightplan>aircrane_cargo.xml</flightplan>
+			<flightplan>aircrane_cargo2.xml</flightplan>
 			<repeat>1</repeat>
 		</entry>
 		<entry>
 			<callsign>cargo3</callsign>
 			<type>aircraft</type>
 			<model>Aircraft/AirCrane/Models/Cargo-Hauling/shipping-container-big.ac</model>
-			<flightplan>aircrane_cargo.xml</flightplan>
+			<flightplan>aircrane_cargo3.xml</flightplan>
 			<repeat>1</repeat>
 		</entry>
 		<entry>
 			<callsign>cargo4</callsign>
 			<type>aircraft</type>
 			<model>Aircraft/AirCrane/Models/Cargo-Hauling/cub.ac</model>
-			<flightplan>aircrane_cargo.xml</flightplan>
+			<flightplan>aircrane_cargo4.xml</flightplan>
 			<repeat>1</repeat>
 		</entry>
 	</scenario>

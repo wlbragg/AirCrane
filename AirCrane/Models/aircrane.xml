@@ -13,6 +13,7 @@
         <property>sim/model/cargo1-onhook</property>
         <property>sim/model/cargo2-onhook</property>
         <property>sim/model/cargo3-onhook</property>
+        <!--property>sim/model/cargo-falling</property-->
       </or>
     </condition>
     <offsets>
