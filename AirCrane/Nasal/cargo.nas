@@ -89,6 +89,7 @@ var cargo_tow = func () {
   var latNode = getprop("/position/latitude-deg");
   var altNode = getprop("/position/altitude-agl-ft");
   var headNode = getprop("/orientation/heading-deg");
+  var onGround = getprop("gear/gear/wow") * getprop("gear/gear[1]/wow") * getprop("gear/gear[2]/wow");
 
 	if(onHookNode == 0 and (altNode < hookHeight) and cargoReleased == 0) {
     #gui.popupTip("In Ranging", 1);
@@ -105,7 +106,7 @@ var cargo_tow = func () {
 					if(dist <= hookDistance) { 
 					#towRope in meters 103
 					#if(dist <= hookDistance and altNode > 103) {
-						gui.popupTip("Cargo in Range", 1);
+						gui.popupTip(cargoN.getNode("callsign").getValue()~" in Range", 1);
 						if (hookNode == 1 or autoHookNode == 1) {
 							hooked = 1;
 							cargoParent = cargoN.getNode("callsign").getParent().getName() ~ "[" ~ cargoN.getNode("callsign").getParent().getIndex() ~ "]";
@@ -122,14 +123,19 @@ var cargo_tow = func () {
   if (hooked == 1) {
     #gui.popupTip(cargoName~" in Tow", 1);
 		if (releaseNode == 1 and onHookNode == 1) {
-      setprop("sim/model/cargo-on-hook", 0);
-      setprop("controls/cargo-release", 0);
-			hooked = 0;
-      setprop("sim/model/cargo-hook", 0);
-			cargoReleased = 1;
-			#gui.popupTip("Cargo Released", 3);
-			setprop("sim/model/"~cargoName~"-onhook", 0);
-			setprop("controls/release-"~cargoName, 1);
+      if (onGround) {
+        setprop("sim/model/cargo-on-hook", 0);
+        setprop("controls/cargo-release", 0);
+			  hooked = 0;
+        setprop("sim/model/cargo-hook", 0);
+			  cargoReleased = 1;
+			  #gui.popupTip("Cargo Released", 3);
+			  setprop("sim/model/"~cargoName~"-onhook", 0);
+			  setprop("controls/release-"~cargoName, 1);
+      } else {
+        gui.popupTip("Cargo Not On Ground", 1);
+        setprop("controls/cargo-release", 0);
+      }
 		}
 	} else {
 		if (autoHookNode == 1) {
@@ -142,42 +148,41 @@ var cargo_tow = func () {
 		}
 	}
 	if (cargoReleased == 1) {
+		  var x = math.cos((headNode+90)*0.0174533);
+		  var y = math.sin((headNode+90)*0.0174533);
+      y = y * -1;
+		  x = x * .0000239;
+		  y = y * .0000239;
 
-		var x = math.cos((headNode+90)*0.0174533);
-		var y = math.sin((headNode+90)*0.0174533);
-    y = y * -1;
-		x = x * .0000239;
-		y = y * .0000239;
+      setprop("/ai/models/" ~ cargoParent ~ "/position/latitude-deg", latNode-y);
+      setprop("/ai/models/" ~ cargoParent ~ "/position/longitude-deg", lonNode-x);
+      setprop("/ai/models/" ~ cargoParent ~ "/orientation/true-heading-deg", headNode);
+      setprop("/ai/models/" ~ cargoParent ~ "/position/altitude-ft", geo.elevation(latNode-y, lonNode-x) * 3.2808);
+   
+      if (getprop("/sim/model/aircrane/"~cargoName~"/saved")) {
+        #gui.popupTip(cargoName~" position saved", 1);
+        setprop("/sim/model/aircrane/"~cargoName~"/position/latitude-deg", getprop("/ai/models/" ~ cargoParent ~ "/position/latitude-deg"));
+        setprop("/sim/model/aircrane/"~cargoName~"/position/longitude-deg", getprop("/ai/models/" ~ cargoParent ~ "/position/longitude-deg"));
+        setprop("/sim/model/aircrane/"~cargoName~"/position/altitude-ft", getprop("/ai/models/" ~ cargoParent ~ "/position/altitude-ft"));
+        setprop("/sim/model/aircrane/"~cargoName~"/orientation/true-heading-deg", getprop("/ai/models/" ~ cargoParent ~ "/orientation/true-heading-deg"));
+        aircraft.data.add("/sim/model/aircrane/"~cargoName~"/position/latitude-deg",
+                          "/sim/model/aircrane/"~cargoName~"/position/longitude-deg",
+                          "/sim/model/aircrane/"~cargoName~"/position/altitude-ft",
+                          "/sim/model/aircrane/"~cargoName~"/orientation/true-heading-deg");
+        aircraft.data.save();
+      }
+      cargoName="";
+      cargoReleased=0;
+      var aic = getprop("/sim/gui/dialogs/aicargo-dialog/ai-path");
+      if (aic != nil and aic == cargoParent) {
+        setprop("/sim/gui/dialogs/aicargo-dialog/selected_cargo_lat", getprop("/ai/models/" ~ cargoParent ~ "/position/latitude-deg"));
+        setprop("/sim/gui/dialogs/aicargo-dialog/selected_cargo_lon", getprop("/ai/models/" ~ cargoParent ~ "/position/longitude-deg"));
+        setprop("/sim/gui/dialogs/aicargo-dialog/selected_cargo_alt", getprop("/ai/models/" ~ cargoParent ~ "/position/altitude-ft"));
+        setprop("/sim/gui/dialogs/aicargo-dialog/selected_cargo_head", getprop("/ai/models/" ~ cargoParent ~ "/orientation/true-heading-deg"));
 
-    setprop("/ai/models/" ~ cargoParent ~ "/position/latitude-deg", latNode-y);
-    setprop("/ai/models/" ~ cargoParent ~ "/position/longitude-deg", lonNode-x);
-    setprop("/ai/models/" ~ cargoParent ~ "/orientation/true-heading-deg", headNode);
-    setprop("/ai/models/" ~ cargoParent ~ "/position/altitude-ft", geo.elevation(latNode-y, lonNode-x) * 3.2808);
- 
-    if (getprop("/sim/model/aircrane/"~cargoName~"/saved")) {
-      #gui.popupTip(cargoName~" position saved", 1);
-      setprop("/sim/model/aircrane/"~cargoName~"/position/latitude-deg", getprop("/ai/models/" ~ cargoParent ~ "/position/latitude-deg"));
-      setprop("/sim/model/aircrane/"~cargoName~"/position/longitude-deg", getprop("/ai/models/" ~ cargoParent ~ "/position/longitude-deg"));
-      setprop("/sim/model/aircrane/"~cargoName~"/position/altitude-ft", getprop("/ai/models/" ~ cargoParent ~ "/position/altitude-ft"));
-      setprop("/sim/model/aircrane/"~cargoName~"/orientation/true-heading-deg", getprop("/ai/models/" ~ cargoParent ~ "/orientation/true-heading-deg"));
-      aircraft.data.add("/sim/model/aircrane/"~cargoName~"/position/latitude-deg",
-                        "/sim/model/aircrane/"~cargoName~"/position/longitude-deg",
-                        "/sim/model/aircrane/"~cargoName~"/position/altitude-ft",
-                        "/sim/model/aircrane/"~cargoName~"/orientation/true-heading-deg");
-      aircraft.data.save();
-    }
-    cargoName="";
-    cargoReleased=0;
-    var aic = getprop("/sim/gui/dialogs/aicargo-dialog/ai-path");
-    if (aic != nil and aic == cargoParent) {
-      setprop("/sim/gui/dialogs/aicargo-dialog/selected_cargo_lat", getprop("/ai/models/" ~ cargoParent ~ "/position/latitude-deg"));
-      setprop("/sim/gui/dialogs/aicargo-dialog/selected_cargo_lon", getprop("/ai/models/" ~ cargoParent ~ "/position/longitude-deg"));
-      setprop("/sim/gui/dialogs/aicargo-dialog/selected_cargo_alt", getprop("/ai/models/" ~ cargoParent ~ "/position/altitude-ft"));
-      setprop("/sim/gui/dialogs/aicargo-dialog/selected_cargo_head", getprop("/ai/models/" ~ cargoParent ~ "/orientation/true-heading-deg"));
-
-      fgcommand("dialog-close", props.Node.new({"dialog-name": "aicargo-dialog"}));
-      fgcommand("dialog-show", props.Node.new({"dialog-name": "aicargo-dialog"}));
-    }
+        fgcommand("dialog-close", props.Node.new({"dialog-name": "aicargo-dialog"}));
+        fgcommand("dialog-show", props.Node.new({"dialog-name": "aicargo-dialog"}));
+      }
 	}	
 
 	settimer(cargo_tow, interval);
