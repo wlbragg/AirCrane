@@ -134,7 +134,7 @@ var cargo_tow = func () {
 			  setprop("controls/release-"~cargoName, 1);
       } else {
         gui.popupTip("Cargo Not On Ground", 1);
-        setprop("controls/cargo-release", 0);
+        setprop("controls/cargo-release", cargoReleased = 0);
       }
 		}
 	} else {
@@ -148,6 +148,7 @@ var cargo_tow = func () {
 		}
 	}
 	if (cargoReleased == 1) {
+      gui.popupTip(cargoName~" Released", 1);
 		  var x = math.cos((headNode+90)*0.0174533);
 		  var y = math.sin((headNode+90)*0.0174533);
       y = y * -1;
@@ -160,7 +161,7 @@ var cargo_tow = func () {
       setprop("/ai/models/" ~ cargoParent ~ "/position/altitude-ft", geo.elevation(latNode-y, lonNode-x) * 3.2808);
    
       if (getprop("/sim/model/aircrane/"~cargoName~"/saved")) {
-        #gui.popupTip(cargoName~" position saved", 1);
+        gui.popupTip(cargoName~" position saved", 1);
         setprop("/sim/model/aircrane/"~cargoName~"/position/latitude-deg", getprop("/ai/models/" ~ cargoParent ~ "/position/latitude-deg"));
         setprop("/sim/model/aircrane/"~cargoName~"/position/longitude-deg", getprop("/ai/models/" ~ cargoParent ~ "/position/longitude-deg"));
         setprop("/sim/model/aircrane/"~cargoName~"/position/altitude-ft", getprop("/ai/models/" ~ cargoParent ~ "/position/altitude-ft"));
