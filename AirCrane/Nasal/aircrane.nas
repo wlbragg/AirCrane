@@ -367,6 +367,7 @@ dynamic_view.register(func {
 var delta_time = props.globals.getNode("/sim/time/delta-realtime-sec", 1);
 var adf_rotation = props.globals.getNode("/instrumentation/adf/rotation-deg", 1);
 var hi_heading = props.globals.getNode("/instrumentation/heading-indicator/indicated-heading-deg", 1);
+var persistent = getprop("/sim/model/aircrane/persistent");
 
 var main_loop = func {
   # adf_rotation.setDoubleValue(hi_heading.getValue());
@@ -382,9 +383,16 @@ var main_loop = func {
   rotor_wash_loop();
   tank_operations();
 
+  persistent = getprop("/sim/model/aircrane/persistent");
+  if (persistent) {
+    setprop("/sim/model/aircrane/currentlat", getprop("/position/latitude-deg"));
+    setprop("/sim/model/aircrane/currentlon", getprop("/position/longitude-deg"));
+    setprop("/sim/model/aircrane/currentalt", getprop("/position/altitude-ft"));
+    setprop("/sim/model/aircrane/currenthead", getprop("/orientation/heading-deg"));
+  }
+
   settimer(main_loop, 0);
 }
-
 
 var crashed = 0;
 var variant = nil;
@@ -393,6 +401,13 @@ var config_dialog = nil;
 
 # initialization
 setlistener("/sim/signals/fdm-initialized", func {
+
+  if (persistent) {
+		setprop("position/latitude-deg", getprop("/sim/model/aircrane/currentlat"));
+    setprop("position/longitude-deg", getprop("/sim/model/aircrane/currentlon"));
+		setprop("position/altitude-ft", getprop("/sim/model/aircrane/currentalt"));
+		setprop("orientation/heading-deg", getprop("/sim/model/aircrane/currenthead"));
+  }
 
   init_rotoranim();
   collective.setDoubleValue(1);

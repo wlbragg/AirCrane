@@ -40,6 +40,11 @@
             <bluecombined type="float">0</bluecombined>
           </particles>
         </effects>
+        <persistent type="bool">false</persistent>
+        <currentlat type="double">0.0</currentlat>
+        <currentlon type="double">0.0</currentlon>
+        <currentalt type="double">0.0</currentalt>
+        <currenthead type="double">0.0</currenthead>
       </aircrane>
       <watercannon>
         <enabled type="bool">true</enabled>
@@ -128,13 +133,21 @@
           <roll31  type="double">0.0</roll31>
         </flexhose>
       </firetank>
-
     </model>
 
 	  <submodels>
 		  <serviceable type="bool">true</serviceable>
 		  <path>Aircraft/AirCrane/Models/submodels.xml</path>
     </submodels>
+
+    <!-- persistent properties -->
+    <aircraft-data>
+      <path>/sim/model/aircrane/persistent</path>
+      <path>/sim/model/aircrane/currentlat</path>
+      <path>/sim/model/aircrane/currentlon</path>
+      <path>/sim/model/aircrane/currentalt</path>
+      <path>/sim/model/aircrane/currenthead</path>
+    </aircraft-data> 
 
     <multiplay>
       <chat_display>1</chat_display>

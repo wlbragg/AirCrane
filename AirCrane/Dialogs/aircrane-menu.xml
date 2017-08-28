@@ -14,7 +14,7 @@
         </binding>
       </item>
       <item>
-        <label>Blades visible</label>
+        <label>Blades Visible</label>
         <binding>
           <command>nasal</command>
           <script>
@@ -25,7 +25,7 @@
         </binding>
       </item>
       <item>
-        <label>Show particle effects</label>
+        <label>Show Particle Effects</label>
         <binding>
           <command>nasal</command>
           <script>
@@ -36,7 +36,7 @@
         </binding>
       </item>
       <item>
-        <label>Fire suppression system</label>
+        <label>Fire Suppression System</label>
         <binding>
           <command>nasal</command>
           <script>
@@ -64,19 +64,30 @@
           <script>aircrane.immat_dialog.toggle()</script>
         </binding>
       </item>
-      <item>
+      <!--item>
           <label>Aircraft Options</label>
           <binding>
               <command>dialog-show</command>
               <dialog-name>aircraft-dialog</dialog-name>
           </binding>
-      </item>
+      </item-->
       <item>
           <label>AI Cargo</label>
           <binding>
               <command>dialog-show</command>
               <dialog-name>aicargo-dialog</dialog-name>
           </binding>
+      </item>
+      <item>
+        <label>Persistent Position</label>
+        <binding>
+          <command>nasal</command>
+          <script>
+            var p = "sim/model/aircrane/persistent";
+            setprop(p, var i = !getprop(p));
+            gui.popupTip("Persistent Position " ~ (i ? "On" : "Off"));
+          </script>
+        </binding>
       </item>
     </menu>
   </default>
