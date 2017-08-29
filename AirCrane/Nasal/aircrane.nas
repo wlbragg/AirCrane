@@ -472,9 +472,6 @@ setlistener("/sim/signals/fdm-initialized", func {
                               "/sim/model/aircrane/"~cargo~"/orientation/true-heading-deg");
             aircraft.data.save();
           }
-
-          fgcommand("dialog-close", props.Node.new({"dialog-name": "aicargo-dialog"}));
-          fgcommand("dialog-show", props.Node.new({"dialog-name": "aicargo-dialog"}));
         } else {
           gui.popupTip("No Cargo Selected, first select cargo to move in the AirCrane's Cargo Menu", 3);
         }

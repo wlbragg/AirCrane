@@ -90,6 +90,7 @@ var cargo_tow = func () {
   var altNode = getprop("/position/altitude-agl-ft");
   var headNode = getprop("/orientation/heading-deg");
   var onGround = getprop("gear/gear/wow") * getprop("gear/gear[1]/wow") * getprop("gear/gear[2]/wow");
+  var cargoWeight = 0;
 
 	if(onHookNode == 0 and (altNode < hookHeight) and cargoReleased == 0) {
     #gui.popupTip("In Ranging", 1);
@@ -114,6 +115,15 @@ var cargo_tow = func () {
               setprop("sim/model/cargo-on-hook", 1);
 							setprop("sim/model/"~cargoName~"-onhook", 1);
 							cargoN.getNode("position/altitude-ft").setDoubleValue(-999);
+              if (cargoName == "cargo1")
+                cargoWeight = 8377;
+              if (cargoName == "cargo2")
+                cargoWeight = 5070;
+              if (cargoName == "cargo3")
+                cargoWeight = 2000;
+              if (cargoName == "cargo4")
+                cargoWeight = 1200;
+              setprop("sim/weight[3]/weight-lb", cargoWeight);
 						} 
 					}
 				}
@@ -149,6 +159,9 @@ var cargo_tow = func () {
 	}
 	if (cargoReleased == 1) {
       gui.popupTip(cargoName~" Released", 1);
+
+      setprop("sim/weight[3]/weight-lb", 0);
+
 		  var x = math.cos((headNode+90)*0.0174533);
 		  var y = math.sin((headNode+90)*0.0174533);
       y = y * -1;
@@ -180,9 +193,6 @@ var cargo_tow = func () {
         setprop("/sim/gui/dialogs/aicargo-dialog/selected_cargo_lon", getprop("/ai/models/" ~ cargoParent ~ "/position/longitude-deg"));
         setprop("/sim/gui/dialogs/aicargo-dialog/selected_cargo_alt", getprop("/ai/models/" ~ cargoParent ~ "/position/altitude-ft"));
         setprop("/sim/gui/dialogs/aicargo-dialog/selected_cargo_head", getprop("/ai/models/" ~ cargoParent ~ "/orientation/true-heading-deg"));
-
-        fgcommand("dialog-close", props.Node.new({"dialog-name": "aicargo-dialog"}));
-        fgcommand("dialog-show", props.Node.new({"dialog-name": "aicargo-dialog"}));
       }
 	}	
 
