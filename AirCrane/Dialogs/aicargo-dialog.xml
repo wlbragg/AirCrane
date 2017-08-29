@@ -58,6 +58,7 @@
 	<layout>vbox</layout>
 	<resizable>true</resizable>
 	<default-padding>3</default-padding>
+
 	<group>
 		<layout>hbox</layout>
 		<default-padding>1</default-padding>

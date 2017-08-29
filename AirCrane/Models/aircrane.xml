@@ -4,7 +4,6 @@
   
   <path>aircrane.ac</path>
 
-  <!--XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX CARGO ADDITION XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX-->
   <model>
     <path>Cargo-Hauling/shipping-container-big.xml</path>
     <name>shipping-container-big</name>
@@ -84,7 +83,6 @@
       </not>
     </condition>
   </animation>
-  <!--XXXXXXXXXXXXXXXXXXXXXXXXXXXXX END CARGO ADDITION XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX-->
 
   <nasal>
     <load>

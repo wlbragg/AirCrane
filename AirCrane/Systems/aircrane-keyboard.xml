@@ -128,10 +128,8 @@
       <name>k</name>
       <desc>Open Cannon Valve</desc>
       <binding>
-        <command>nasal</command>
-        <script>
-          setprop("sim/model/firetank/opencannonvalve", !getprop("sim/model/firetank/opencannonvalve"));
-        </script>
+        <command>property-toggle</command>
+        <property>sim/model/firetank/opencannonvalve</property>
       </binding>
     </key>
     
@@ -139,22 +137,17 @@
       <name>K</name>
       <desc>Open Tank Doors</desc>
       <binding>
-        <command>nasal</command>
-        <script>
-          setprop("sim/model/firetank/opentankdoors", !getprop("sim/model/firetank/opentankdoors"));
-        </script>
+        <command>property-toggle</command>
+        <property>sim/model/firetank/opentankdoors</property>
       </binding>
     </key>
 
-    <!--XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX CARGO ADDITION XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX-->
     <key n="15">
       <name>Ctrl-O</name>
       <desc>Auto Attach Cargo</desc>
       <binding>
-        <command>nasal</command>
-        <script>
-          setprop("/sim/model/cargo-auto-hook", !getprop("/sim/model/cargo-auto-hook"));
-        </script>
+        <command>property-toggle</command>
+        <property>/sim/model/cargo-auto-hook</property>
       </binding>
     </key>
 
@@ -177,7 +170,6 @@
         <value type="bool">true</value>
       </binding>
     </key>
-    <!--XXXXXXXXXXXXXXXXXXXXXXXXXXXXX END CARGO ADDITION XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX-->
     
   </keyboard>
   

@@ -140,7 +140,6 @@
 		  <path>Aircraft/AirCrane/Models/submodels.xml</path>
     </submodels>
 
-    <!-- persistent properties -->
     <aircraft-data>
       <path>/sim/model/aircrane/persistent</path>
       <path>/sim/model/aircrane/currentlat</path>
@@ -222,13 +221,8 @@
       <file>Aircraft/AirCrane/Nasal/bladevisible.nas</file>
       <file>Aircraft/AirCrane/Nasal/rotorwash.nas</file>
       <file>Aircraft/AirCrane/Nasal/tankoperations.nas</file>
-
       <file>Aircraft/AirCrane/Nasal/aircraft-dialog.nas</file>
-
-      <!--XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX CARGO ADDITION XXXXXXXXXXXXXXXXXXXXXXXXXXXX-->
       <file>Aircraft/AirCrane/Nasal/cargo.nas</file>
-      <!--XXXXXXXXXXXXXXXXXXXXXXXXXXXXX CARGO ADDITION XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX-->
-
     </aircrane>
     <fcs>
       <file>Aircraft/AirCrane/Nasal/fcs-management.nas</file>

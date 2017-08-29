@@ -6,6 +6,7 @@
     <menu n="10">
       <label>S-64 AirCrane</label>
       <enabled type="bool">true</enabled>
+
       <item>
         <label>Select Livery</label>
         <binding>
@@ -36,24 +37,13 @@
         </binding>
       </item>
       <item>
-        <label>Fire Suppression System</label>
+        <label>Persistent Position</label>
         <binding>
           <command>nasal</command>
           <script>
-            var p = "sim/model/firetank/enabled";
+            var p = "sim/model/aircrane/persistent";
             setprop(p, var i = !getprop(p));
-            gui.popupTip("Fire suppression system " ~ (i ? "On" : "Off"));
-          </script>
-        </binding>
-      </item>
-      <item>
-        <label>Water Cannon</label>
-        <binding>
-          <command>nasal</command>
-          <script>
-            var p = "sim/model/watercannon/enabled";
-            setprop(p, var i = !getprop(p));
-            gui.popupTip("Water Cannon " ~ (i ? "On" : "Off"));
+            gui.popupTip("Persistent Position " ~ (i ? "On" : "Off"));
           </script>
         </binding>
       </item>
@@ -64,29 +54,18 @@
           <script>aircrane.immat_dialog.toggle()</script>
         </binding>
       </item>
-      <!--item>
+      <item>
           <label>Aircraft Options</label>
           <binding>
-              <command>dialog-show</command>
-              <dialog-name>aircraft-dialog</dialog-name>
-          </binding>
-      </item-->
-      <item>
-          <label>AI Cargo</label>
-          <binding>
-              <command>dialog-show</command>
-              <dialog-name>aicargo-dialog</dialog-name>
+            <command>dialog-show</command>
+            <dialog-name>aircraft-dialog</dialog-name>
           </binding>
       </item>
       <item>
-        <label>Persistent Position</label>
+        <label>Cargo Settings</label>
         <binding>
-          <command>nasal</command>
-          <script>
-            var p = "sim/model/aircrane/persistent";
-            setprop(p, var i = !getprop(p));
-            gui.popupTip("Persistent Position " ~ (i ? "On" : "Off"));
-          </script>
+            <command>dialog-show</command>
+            <dialog-name>aicargo-dialog</dialog-name>
         </binding>
       </item>
     </menu>

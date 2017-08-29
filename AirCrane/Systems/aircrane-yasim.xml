@@ -100,11 +100,11 @@
          rotor-correction-factor="0.77"
          balance="0.9985">
          <control-input control="CYCLICAIL"  axis="/controls/flight/aileron-trim" split="true"/>
-         <control-input control="CYCLICAIL"  axis="/controls/flight/fcs/roll"            src0="-1.0" src1="1.0" dst0="-1.0" dst1="1.0"/>
+         <control-input control="CYCLICAIL"  axis="/controls/flight/fcs/roll" src0="-1.0" src1="1.0" dst0="-1.0" dst1="1.0"/>
          <control-input control="CYCLICAIL"  axis="/controls/engines/engine[0]/throttle" src0=" 0.0" src1="1.0" dst0="-0.1" dst1="0.1"/>
          
          <control-input control="CYCLICELE"  axis="/controls/flight/elevator-trim" split="true"/>
-         <control-input control="CYCLICELE"  axis="/controls/flight/fcs/pitch"           src0="-1.0" src1="1.0" dst0="-1.0" dst1=" 1.0"/>
+         <control-input control="CYCLICELE"  axis="/controls/flight/fcs/pitch" src0="-1.0" src1="1.0" dst0="-1.0" dst1=" 1.0"/>
          <control-input control="COLLECTIVE" axis="/controls/engines/engine[0]/throttle" src0=" 0.0" src1="1.0" dst0=" 1.0" dst1="-1.0"/>
   </rotor>
 
