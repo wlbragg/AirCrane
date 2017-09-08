@@ -92,6 +92,14 @@ var cargo_tow = func () {
   var onGround = getprop("gear/gear/wow") * getprop("gear/gear[1]/wow") * getprop("gear/gear[2]/wow");
   var cargoWeight = 0;
 
+  if (getprop("/sim/gui/dialogs/aicargo-dialog/rope")) {
+    hookHeight = 50;
+    setprop("sim/model/cargo", 0);
+  } else {
+    setprop("sim/model/cargo", 50);
+    hookHeight = 15;
+  }
+
 	if(onHookNode == 0 and (altNode < hookHeight) and cargoReleased == 0) {
     #gui.popupTip("In Ranging", 1);
 		foreach(var cargoN; props.globals.getNode("/ai/models", 1).getChildren("aircraft")) {

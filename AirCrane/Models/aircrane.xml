@@ -60,6 +60,17 @@
     </condition>
   </animation>
 
+  <animation>
+    <type>translate</type>
+    <object-name>shipping-container-big</object-name>
+    <property>sim/model/cargo</property>
+    <axis>
+      <x> 0 </x>
+      <y> 0 </y>
+      <z> -1 </z>
+    </axis>
+  </animation>
+
   <model>
     <path>Cargo-Hauling/cub.xml</path>
     <name>cub</name>
@@ -311,6 +322,11 @@
       <z-m> -3.8 </z-m>
     </offsets>
   </model>
+
+  <!-- Rope -->
+  <model>
+    <path>Aircraft/AirCrane/Models/Cargo-Hauling/rope/rope.xml</path>
+  </model>
   
   <!-- Water System -->
   <model>
@@ -329,7 +345,7 @@
     <object-name>ramscoopconnector</object-name>
     <object-name>ramscoopdock</object-name>
     <object-name>ramscoopjoint</object-name>
-    <object-name>flexfillhose.001</object-name>
+    <!--object-name>flexfillhose.001</object-name>
     <object-name>flexfillhose.002</object-name>
     <object-name>flexfillhose.003</object-name>
     <object-name>flexfillhose.004</object-name>
@@ -358,7 +374,7 @@
     <object-name>flexfillhose.027</object-name>
     <object-name>flexfillhose.028</object-name>
     <object-name>flexfillhose.029</object-name>
-    <object-name>flexfillhose.030</object-name>
+    <object-name>flexfillhose.030</object-name-->
     <object-name>flexfillhoseconnector</object-name>
     <object-name>flexfillhoseend</object-name>
     <object-name>controlboxfor</object-name>

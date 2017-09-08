@@ -123,7 +123,8 @@ var tank_operations = func {
 
 	if (sniffer == 1) 
 		{
-			drop_flag = 50;
+			#drop_flag = 50;
+      drop_flag = 35;
 			return;
 		}
 	else
@@ -143,6 +144,8 @@ var tank_operations = func {
 	var dt = getprop("/sim/time/delta-sec");
 	var bend_force = getprop("/sim/model/firetank/flexhose/bendforce");
 	var angle_correction = getprop("/sim/model/firetank/flexhose/correction");
+  var pitchdeg = getprop("/orientation/pitch-deg");
+  var rolldeg = getprop("/orientation/roll-deg");
 
 	if (onground_flag == 0)
 		{
@@ -191,8 +194,7 @@ var tank_operations = func {
 	   var current_roll = getprop("/sim/model/firetank/flexhose/roll1");
 	   ang_error = ref_ang2 - current_roll;
 
-
-	   flex_angle_vr_array[0] +=  ang_error * stiffness * dt;
+     flex_angle_vr_array[0] += ang_error * stiffness * dt;
 	   flex_angle_vr_array[0] *= damping_factor;
 
 	   ang_speed = flex_angle_vr_array[0];

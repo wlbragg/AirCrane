@@ -61,13 +61,6 @@
             <dialog-name>aircraft-dialog</dialog-name>
           </binding>
       </item>
-      <item>
-        <label>Cargo Settings</label>
-        <binding>
-            <command>dialog-show</command>
-            <dialog-name>aicargo-dialog</dialog-name>
-        </binding>
-      </item>
     </menu>
   </default>
   

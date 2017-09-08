@@ -383,6 +383,7 @@ var main_loop = func {
 
   rotor_wash_loop();
   tank_operations();
+  rope_operations();
 
   persistent = getprop("/sim/model/aircrane/persistent") * getprop("gear/gear/wow") * getprop("gear/gear[1]/wow") * getprop("gear/gear[2]/wow");
   vsfps = getprop("/velocities/vertical-speed-fps");
@@ -391,6 +392,8 @@ var main_loop = func {
     setprop("/sim/model/aircrane/currentlon", getprop("/position/longitude-deg"));
     setprop("/sim/model/aircrane/currentalt", getprop("/position/altitude-ft"));
     setprop("/sim/model/aircrane/currenthead", getprop("/orientation/heading-deg"));
+    setprop("/sim/model/aircrane/currentpitch", getprop("/orientation/pitch-deg"));
+    setprop("/sim/model/aircrane/currentroll", getprop("orientation/roll-deg"));
   }
 
   settimer(main_loop, 0);
@@ -409,6 +412,10 @@ setlistener("/sim/signals/fdm-initialized", func {
     setprop("position/longitude-deg", getprop("/sim/model/aircrane/currentlon"));
 		setprop("position/altitude-ft", getprop("/sim/model/aircrane/currentalt"));
 		setprop("orientation/heading-deg", getprop("/sim/model/aircrane/currenthead"));
+    setprop("orientation/pitch-deg", getprop("/sim/model/aircrane/currentpitch"));
+    setprop("orientation/roll-deg", getprop("/sim/model/aircrane/currentroll"));
+    setprop("velocities/vertical-speed-fps", 0);
+    setprop("velocities/equivalent-kt", 0);
   }
 
   init_rotoranim();
