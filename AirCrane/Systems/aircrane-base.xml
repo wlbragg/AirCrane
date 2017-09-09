@@ -266,7 +266,7 @@
           <stiffness type="double">9.0</stiffness>
           <hosehitsground type="bool">true</hosehitsground>
           <!--correction type="double">0.7</correction-->
-          <correction type="double">0.0</correction>
+          <correction type="double">0.3</correction>
           <pitch1  type="double">0.0</pitch1>
           <pitch2  type="double">0.0</pitch2>
           <pitch3  type="double">0.0</pitch3>

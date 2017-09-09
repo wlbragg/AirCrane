@@ -3233,7 +3233,7 @@
 
   <animation>
     <type>rotate</type>
-    <object-name>FlexFill04</object-name>
+    <object-name>FlexFill05</object-name>
     <property>/orientation/pitch-deg</property>
     <condition>
       <not>
