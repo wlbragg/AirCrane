@@ -7,8 +7,9 @@
 		<max-m>2000</max-m>
 	</animation-->
 	<!--Use the below only for Cargo Hanging-->
-	<!-- z-m value needs to be the same value as length of rope being used on both pitch and roll
-	<animation>
+	<!-- z-m value needs to be the same value as length of rope being used on both pitch and roll-->
+
+	<!--animation>
 		<type>rotate</type>
 		<property>orientation/roll-deg</property>
 		<factor>.99</factor>
@@ -37,6 +38,6 @@
 			<y>-.1</y>
 			<z>0</z>
 		</axis>
-	</animation>-->
+	</animation-->
 	   
 </PropertyList>

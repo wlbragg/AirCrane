@@ -4,97 +4,6 @@
   
   <path>aircrane.ac</path>
 
-  <model>
-    <path>Cargo-Hauling/shipping-container-big.xml</path>
-    <name>shipping-container-big</name>
-    <condition>
-      <or>
-        <property>sim/model/cargo1-onhook</property>
-        <property>sim/model/cargo2-onhook</property>
-        <property>sim/model/cargo3-onhook</property>
-        <!--property>sim/model/cargo-falling</property-->
-      </or>
-    </condition>
-    <offsets>
-      <!-- 
-      Cargo Docked
-      shippingContainer.ac
-      x-m = -2.5
-      y-m = 0
-      z-m = -3.25
-      shippingContainerBig.ac
-      x-m = -2.5
-      y-m = 0
-      z-m = -3.85
-      shippingContainerHuge.ac
-      x-m = -1.5
-      y-m = 0
-      z-m = -4.65
-      shippingContainerWide.ac
-      x-m = -1.25
-      y-m = 0
-      z-m = 4
-      Cargo Hanging	
-      x-m = -2.5
-      y-m = 0
-      z-m = -30
-      -->
-      <x-m>-2.5</x-m>
-      <y-m>0</y-m>
-      <z-m>-3.85</z-m>
-      <pitch-deg>0</pitch-deg>
-    </offsets>
-  </model>
-
-  <animation>
-    <type>noshadow</type>
-    <object-name>shipping-container-big</object-name>
-    <condition>
-      <not>
-        <or>
-          <property>sim/model/cargo1-onhook</property>
-          <property>sim/model/cargo2-onhook</property>
-          <property>sim/model/cargo3-onhook</property>
-        </or>
-      </not>
-    </condition>
-  </animation>
-
-  <animation>
-    <type>translate</type>
-    <object-name>shipping-container-big</object-name>
-    <property>sim/model/cargo</property>
-    <axis>
-      <x> 0 </x>
-      <y> 0 </y>
-      <z> -1 </z>
-    </axis>
-  </animation>
-
-  <model>
-    <path>Cargo-Hauling/cub.xml</path>
-    <name>cub</name>
-    <condition>
-      <property>sim/model/cargo4-onhook</property>
-    </condition>
-    <offsets>
-      <x-m>-2.5</x-m>
-      <y-m>0</y-m>
-      <z-m>-3.85</z-m>
-      <pitch-deg>0</pitch-deg>
-    </offsets>
-  </model>
-
-  <animation>
-    <type>noshadow</type>
-    <object-name>cub</object-name>
-    <condition>
-      <not>
-        <property>sim/model/cargo4-onhook</property>
-      </not>
-    </condition>
-  </animation>
-
   <nasal>
     <load>
       <![CDATA[
@@ -323,9 +232,14 @@
     </offsets>
   </model>
 
+  <!-- Cargo -->
+  <model>
+    <path>Aircraft/AirCrane/Models/Cargo-Hauling/cargo.xml</path>
+  </model>
+
   <!-- Rope -->
   <model>
-    <path>Aircraft/AirCrane/Models/Cargo-Hauling/rope/rope.xml</path>
+    <path>Aircraft/AirCrane/Models/Cargo-Hauling/rope.xml</path>
   </model>
   
   <!-- Water System -->
@@ -345,36 +259,6 @@
     <object-name>ramscoopconnector</object-name>
     <object-name>ramscoopdock</object-name>
     <object-name>ramscoopjoint</object-name>
-    <!--object-name>flexfillhose.001</object-name>
-    <object-name>flexfillhose.002</object-name>
-    <object-name>flexfillhose.003</object-name>
-    <object-name>flexfillhose.004</object-name>
-    <object-name>flexfillhose.005</object-name>
-    <object-name>flexfillhose.006</object-name>
-    <object-name>flexfillhose.007</object-name>
-    <object-name>flexfillhose.008</object-name>
-    <object-name>flexfillhose.009</object-name>
-    <object-name>flexfillhose.010</object-name>
-    <object-name>flexfillhose.011</object-name>
-    <object-name>flexfillhose.012</object-name>
-    <object-name>flexfillhose.013</object-name>
-    <object-name>flexfillhose.014</object-name>
-    <object-name>flexfillhose.015</object-name>
-    <object-name>flexfillhose.016</object-name>
-    <object-name>flexfillhose.017</object-name>
-    <object-name>flexfillhose.018</object-name>
-    <object-name>flexfillhose.019</object-name>
-    <object-name>flexfillhose.020</object-name>
-    <object-name>flexfillhose.021</object-name>
-    <object-name>flexfillhose.022</object-name>
-    <object-name>flexfillhose.023</object-name>
-    <object-name>flexfillhose.024</object-name>
-    <object-name>flexfillhose.025</object-name>
-    <object-name>flexfillhose.026</object-name>
-    <object-name>flexfillhose.027</object-name>
-    <object-name>flexfillhose.028</object-name>
-    <object-name>flexfillhose.029</object-name>
-    <object-name>flexfillhose.030</object-name-->
     <object-name>flexfillhoseconnector</object-name>
     <object-name>flexfillhoseend</object-name>
     <object-name>controlboxfor</object-name>

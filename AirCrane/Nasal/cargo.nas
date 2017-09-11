@@ -2,10 +2,11 @@ props.Node.new({ "controls/hook-assist":0 });
 props.globals.initNode("controls/hook-assist", 0, "BOOL" );
 props.Node.new({ "controls/cargo-release":0 });
 props.globals.initNode("controls/cargo-release", 0, "BOOL" );
-props.Node.new({ "sim/model/cargo-hook":0, "sim/model/cargo-auto-hook":0, "sim/model/cargo-on-hook":0 });
+props.Node.new({ "sim/model/cargo-hook":0, "sim/model/cargo-auto-hook":0, "sim/model/cargo-on-hook":0, "sim/model/cargo-height":0 });
 props.globals.initNode("sim/model/cargo-hook", 0, "BOOL" );
 props.globals.initNode("sim/model/cargo-auto-hook", 0, "BOOL" );
 props.globals.initNode("sim/model/cargo-on-hook", 0, "BOOL" );
+props.globals.initNode("sim/model/cargo-height", 0, "DOUBLE" );
 
 var AircraftCargo = {};
 var parents = [AircraftCargo];
@@ -16,7 +17,6 @@ var hookDistance = 1e-8;
 #hardDock (meters)
 var hookHeight = 15;
 #ropeTow (meters)
-#var hookHeight = 110;
 var hooked = 0;
 var cargoReleased = 0;
 var minDist = 999;
@@ -91,12 +91,13 @@ var cargo_tow = func () {
   var headNode = getprop("/orientation/heading-deg");
   var onGround = getprop("gear/gear/wow") * getprop("gear/gear[1]/wow") * getprop("gear/gear[2]/wow");
   var cargoWeight = 0;
+  var longline = getprop("/sim/gui/dialogs/aicargo-dialog/rope");
 
-  if (getprop("/sim/gui/dialogs/aicargo-dialog/rope")) {
-    hookHeight = 50;
-    setprop("sim/model/cargo", 0);
+  if (longline) {
+    hookHeight = 30;
+    setprop("sim/model/cargo-height", 2.6);
   } else {
-    setprop("sim/model/cargo", 50);
+    setprop("sim/model/cargo-height", 0);
     hookHeight = 15;
   }
 
@@ -112,9 +113,7 @@ var cargo_tow = func () {
 						minDist = dist;
 					}
 					#hardDock
-					if(dist <= hookDistance) { 
-					#towRope in meters 103
-					#if(dist <= hookDistance and altNode > 103) {
+					if(dist <= hookDistance or (dist <= hookDistance and (altNode < hookHeight) and longline)) { 
 						gui.popupTip(cargoN.getNode("callsign").getValue()~" in Range", 1);
 						if (hookNode == 1 or autoHookNode == 1) {
 							hooked = 1;

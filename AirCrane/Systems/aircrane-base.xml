@@ -52,11 +52,11 @@
       </aircrane>
       <cargo>
         <rope>
-          <flex-force type="double">0.5</flex-force>
+          <flex-force type="double">0.0</flex-force>
           <factor type="double">.164</factor>
           <offset type="double">-1.5</offset>
           <bendforce type="int">50</bendforce>
-          <damping type="double">0.7</damping>
+          <damping type="double">0.01</damping>
           <stiffness type="double">3.0</stiffness>
           <ropehitsground type="bool">true</ropehitsground>
           <correction type="double">0.7</correction>
@@ -258,14 +258,12 @@
         <waterdropretardantctrl type="bool">false</waterdropretardantctrl>
         <flexhose>
           <flex-force type="double">0.08</flex-force>
-          <!--factor type="double">0.20</factor-->
           <factor type="double">0.27</factor>
           <offset type="double">-2.6</offset>
           <bendforce type="int">15</bendforce>
           <damping type="double">0.6</damping>
           <stiffness type="double">9.0</stiffness>
           <hosehitsground type="bool">true</hosehitsground>
-          <!--correction type="double">0.7</correction-->
           <correction type="double">0.3</correction>
           <pitch1  type="double">0.0</pitch1>
           <pitch2  type="double">0.0</pitch2>

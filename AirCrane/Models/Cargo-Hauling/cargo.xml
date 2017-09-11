@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+
+  <model>
+    <path>shipping-container-big.xml</path>
+    <name>shipping-container-big</name>
+    <condition>
+      <and>
+        <or>
+          <property>sim/model/cargo1-onhook</property>
+          <property>sim/model/cargo2-onhook</property>
+          <property>sim/model/cargo3-onhook</property>
+          <!--property>sim/model/cargo-falling</property-->
+        </or>
+        <not>
+          <property>/sim/gui/dialogs/aicargo-dialog/rope</property>
+        </not>
+      </and>
+    </condition>
+    <offsets>
+      <x-m>-2.5</x-m>
+      <y-m>0</y-m>
+      <z-m>-3.85</z-m>
+      <pitch-deg>0</pitch-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Cargo-Hauling/cub.xml</path>
+    <name>cub</name>
+    <condition>
+      <property>sim/model/cargo4-onhook</property>
+    </condition>
+    <offsets>
+      <x-m>-2.5</x-m>
+      <y-m>0</y-m>
+      <z-m>-3.85</z-m>
+      <pitch-deg>0</pitch-deg>
+    </offsets>
+  </model>
+
+  <animation>
+    <type>noshadow</type>
+    <object-name>cub</object-name>
+    <condition>
+      <not>
+        <property>sim/model/cargo4-onhook</property>
+      </not>
+    </condition>
+  </animation>
+
+</PropertyList>
