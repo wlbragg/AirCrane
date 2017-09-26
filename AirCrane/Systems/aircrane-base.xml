@@ -51,6 +51,10 @@
         <currenteqnt type="double">0.0</currenteqnt>
       </aircrane>
       <cargo>
+        <currentyaw type="double">0.0</currentyaw>
+        <currentalt type="double">0.0</currentalt>
+        <currentposx type="double">0.0</currentposx>
+        <currentposy type="double">0.0</currentposy>
         <rope>
           <flex-force type="double">0.0</flex-force>
           <factor type="double">.164</factor>
@@ -431,5 +435,8 @@
       <file>Aircraft/Generic/helicopter-fcs.nas</file>
     </fcs>
   </nasal>
+
+<xfactor type="double">0</xfactor>
+<yfactor type="double">0</yfactor>
 
 </PropertyList>

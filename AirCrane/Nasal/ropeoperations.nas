@@ -1,7 +1,8 @@
 var rope_angle_v_array = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
 var rope_angle_vr_array = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
 var rope_angle_r_array = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
-
+var cargoheight = 0;
+#var modelswap = 0;
 
 var rope_operations = func {
 
@@ -13,21 +14,28 @@ var rope_operations = func {
 	var n_segments = 90;
 	var segment_length = getprop("/sim/model/cargo/rope/factor");
 
-	if (overland)
-		{
-			if (alt_agl - n_segments * segment_length < 0.0)
-			   {
-				  onground_flag = 1;
-			   }
-			else
-				  onground_flag = 0;
-		} 
-	else
-		{
-		   onground_flag = 0;
-		}
+  #temporary until set correctly
+  cargoheight = getprop("/sim/model/cargo-height");
+  #modelswap = getprop("/sim/model/cargo/swappoint");
 
-	setprop("/sim/model/cargo/rope/ropehitsground", onground_flag);
+  if (overland)
+    {
+      if (((alt_agl - (n_segments * segment_length)) + cargoheight) < 0.0)
+        {
+        onground_flag = 1;
+        setprop("/sim/model/cargo/rope/ropehitsground", 1);
+        }
+      else {
+        onground_flag = 0;
+        setprop("/sim/model/cargo/rope/ropehitsground", 0);
+      }
+    } 
+  else
+	  {
+      #TODO: decide how to handel this event, slowly allow to sink?
+	    onground_flag = 0;
+      setprop("/sim/model/cargo/rope/ropehitsground", 0);
+	  }
 
 	var flex_force = getprop("/sim/model/cargo/rope/flex-force");
 	var damping = getprop("/sim/model/cargo/rope/damping");
@@ -84,21 +92,8 @@ var rope_operations = func {
 	   var next_roll =  current_roll + dt * ang_speed;
 	   setprop("/sim/model/cargo/rope/roll1", next_roll);
 
-	   # kink excitation
-	   
-	   var kink =  -(next_roll - rope_angle_r_array[0]);
-	   
-	   setprop("/sim/model/cargo/rope/roll2",  kink) ;
-	   rope_angle_r_array[1] = kink;
-
 	   }
-	else
-	   {
 
-	   setprop("/sim/model/cargo/rope/pitch1", ref_ang1);
-	   setprop("/sim/model/cargo/rope/roll1", ref_ang2);
-
-	   }
 
 	var roll_target = 0.0;
 
@@ -115,14 +110,6 @@ var rope_operations = func {
 		var dist_above_ground = alt_agl - (i+1) * segment_length;
 
 		var force = flex_force * math.cos(sum_angle * math.pi/180.0) * 0.05 * velocity;
-
-		if (overland)
-		{
-		   if (dist_above_ground < 0.0)
-			  {
-			  force = force + bend_force * math.cos(sum_angle * math.pi/180.0);
-			  }
-		}
 
 		if (force > 1.0 * gravity) {force = 1.0 * gravity;}
 
@@ -162,11 +149,6 @@ var rope_operations = func {
 
 		  setprop("/sim/model/cargo/rope/roll"~(i+1), roll_target);
 
-		  }
-		else
-		  {
-		  setprop("/sim/model/cargo/rope/pitch"~(i+1), angle + angle_correction);
-		  setprop("/sim/model/cargo/rope/roll"~(i+1), 0.0);
 		  }
 
 		}

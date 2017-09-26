@@ -291,21 +291,6 @@
     </condition>
   </animation>
 
-  <animation>
-    <type>select</type>
-    <object-name>cube</object-name>
-    <condition>
-      <and>
-        <property>/sim/gui/dialogs/aicargo-dialog/rope</property>
-        <or>
-          <property>sim/model/cargo1-onhook</property>
-          <property>sim/model/cargo2-onhook</property>
-          <property>sim/model/cargo3-onhook</property>
-        </or>
-      </and>
-    </condition>
-  </animation>
-
   <!-- Rope Segment Animation -->
   <animation>
     <name>RopeSegment01</name>
@@ -8296,20 +8281,42 @@
     </axis>
   </animation>
 
+  <animation>
+    <type>select</type>
+    <object-name>cube</object-name>
+    <condition>
+      <and>
+        <property>/sim/gui/dialogs/aicargo-dialog/rope</property>
+        <or>
+          <property>sim/model/cargo1-onhook</property>
+          <property>sim/model/cargo2-onhook</property>
+          <property>sim/model/cargo3-onhook</property>
+        </or>
+      </and>
+    </condition>
+  </animation>
+
   <!-- yaw -->
   <animation>
     <type>rotate</type>
     <object-name>cube</object-name>
-    <property>/orientation/heading-deg</property>
+    <property>/sim/model/cargo/currentyaw</property>
     <condition>
-      <property>/sim/gui/dialogs/aicargo-dialog/rope</property>
+      <and>
+        <property>/sim/gui/dialogs/aicargo-dialog/rope</property>
+        <or>
+          <property>sim/model/cargo1-onhook</property>
+          <property>sim/model/cargo2-onhook</property>
+          <property>sim/model/cargo3-onhook</property>
+        </or>
+      </and>
     </condition>
     <factor>1</factor>
     <offset-deg>0</offset-deg>
     <center>
-      <x-m>-1.38047</x-m>
-      <y-m> 0.00551</y-m>
-      <z-m>-16.31891</z-m>
+      <x-m> -1.40464 </x-m>
+      <y-m> -0.0181  </y-m>
+      <z-m> -16.3493 </z-m>
     </center>
     <axis>
       <x>0</x>
@@ -8318,4 +8325,107 @@
     </axis>
   </animation>
 
+  <!--Translate to ground level on ropehitsground -->
+  <animation>
+    <type>translate</type>
+    <object-name>cube</object-name>
+    <property>/sim/model/cargo/currentalt</property>
+    <condition>
+      <and>
+        <property>/sim/gui/dialogs/aicargo-dialog/rope</property>
+        <or>
+          <property>sim/model/cargo1-onhook</property>
+          <property>sim/model/cargo2-onhook</property>
+          <property>sim/model/cargo3-onhook</property>
+        </or>
+      </and>
+    </condition>
+    <factor>1</factor>
+    <center>
+      <x-m> -1.40464 </x-m>
+      <y-m> -0.0181  </y-m>
+      <z-m> -16.3493 </z-m>
+    </center>
+    <axis>
+      <x>0</x>
+      <y>0</y>
+      <z>1</z>
+    </axis>
+  </animation>
+
+  <!--Translate on ground when rope is not taught
+  <animation>
+    <type>translate</type>
+    <object-name>cube</object-name>
+    <property>/sim/model/cargo/currentposx</property>
+    <condition>
+      <and>
+        <property>/sim/gui/dialogs/aicargo-dialog/rope</property>
+        <or>
+          <property>sim/model/cargo1-onhook</property>
+          <property>sim/model/cargo2-onhook</property>
+          <property>sim/model/cargo3-onhook</property>
+        </or>
+      </and>
+    </condition>
+    <factor>1</factor>
+    <center>
+      <x-m>  -1.40464 </x-m>
+      <y-m>  -0.0181  </y-m>
+      <z-m> -16.3493 </z-m>
+    </center>
+    <axis>
+      <x>1</x>
+      <y>0</y>
+      <z>0</z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>translate</type>
+    <object-name>cube</object-name>
+    <property>/sim/model/cargo/currentposy</property>
+    <condition>
+      <and>
+        <property>/sim/gui/dialogs/aicargo-dialog/rope</property>
+        <or>
+          <property>sim/model/cargo1-onhook</property>
+          <property>sim/model/cargo2-onhook</property>
+          <property>sim/model/cargo3-onhook</property>
+        </or>
+      </and>
+    </condition>
+    <factor>1</factor>
+    <center>
+      <x-m>  -1.40464 </x-m>
+      <y-m>  -0.0181  </y-m>
+      <z-m> -16.3493 </z-m>
+    </center>
+    <axis>
+      <x>0</x>
+      <y>1</y>
+      <z>0</z>
+    </axis>
+  </animation> -->
+
 </PropertyList>
+
+<!--
+ai cargo
+x=2
+y=2
+z=100
+
+aircraft 0 position
+x=4
+y=4
+z=1000
+
+aircraft cargo model 0 position from aircraft pos
+x= -1.40464
+y=  -0.0181
+z= -16.3493
+-->
+
+
+
