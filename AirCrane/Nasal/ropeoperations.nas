@@ -92,21 +92,6 @@ var rope_operations = func {
 	   var next_roll =  current_roll + dt * ang_speed;
 	   setprop("/sim/model/cargo/rope/roll1", next_roll);
 
-
-     var end_current_angle = getprop("/sim/model/cargo/rope/pitch90");
-	   var end_ang_error = ref_ang1 - end_current_angle;
-	   rope_angle_v_array[89] += end_ang_error * stiffness * dt;
-	   rope_angle_v_array[89] *= damping_factor;
-	   var end_ang_speed = rope_angle_v_array[89];
-	   setprop("/sim/model/cargo/rope/pitch90", end_current_angle + dt * end_ang_speed);
-	   var end_current_roll = getprop("/sim/model/cargo/rope/roll90");
-	   end_ang_error = ref_ang2 - end_current_roll;
-	   rope_angle_vr_array[89] +=  end_ang_error * stiffness * dt;
-	   rope_angle_vr_array[89] *= damping_factor;
-	   end_ang_speed = rope_angle_vr_array[89];
-	   var end_next_roll = end_current_roll + dt * end_ang_speed;
-	   setprop("/sim/model/cargo/rope/roll90", end_next_roll);
-
 	   }
 
 

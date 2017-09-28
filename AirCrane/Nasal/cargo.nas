@@ -187,7 +187,6 @@ setprop("/a4-hookHeight", hookHeight);
             setprop("/sim/model/cargo/rope/damping", 0.6);
             setprop("/sim/model/cargo/rope/flex-force", 0.01);
             #setprop("/sim/model/cargo/rope/stiffness", 3);
-
 					} 
 				}
 			}
@@ -315,14 +314,12 @@ setprop("/sim/model/cargo/currentalt", (-groundNode) + 14.8 + getprop("/xfactor"
       x = x * .0000239;
       y = y * .0000239;
 
+      setprop("/ai/models/" ~ cargoParent ~ "/position/altitude-ft", groundElevFt);
+      #setprop("/ai/models/" ~ cargoParent ~ "/position/altitude-ft", geo.elevation(latNode-y, lonNode-x) * 3.2808);
       if (!longline)
         setprop("/ai/models/" ~ cargoParent ~ "/orientation/true-heading-deg", headNode);
       else
         setprop("/ai/models/" ~ cargoParent ~ "/orientation/true-heading-deg", originalYaw);
-
-      #setprop("/ai/models/" ~ cargoParent ~ "/position/altitude-ft", groundElevFt);
-      setprop("/ai/models/" ~ cargoParent ~ "/position/altitude-ft", geo.elevation(latNode-y, lonNode-x) * 3.2808);
-
       #if (reset or !longline) {
         setprop("/ai/models/" ~ cargoParent ~ "/position/latitude-deg", latNode-y);
         setprop("/ai/models/" ~ cargoParent ~ "/position/longitude-deg", lonNode-x);
