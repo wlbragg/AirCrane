@@ -123,8 +123,7 @@ var tank_operations = func {
 
 	if (sniffer == 1) 
 		{
-			#drop_flag = 50;
-      drop_flag = 35;
+      drop_flag = 20;
 			return;
 		}
 	else
@@ -132,8 +131,6 @@ var tank_operations = func {
 			drop_flag -= 1;
 		else
 			{
-				#setprop("sim/model/firetank/deployflexhose/position-norm", 0);
-				#sniffer = 0;
 				drop_flag = 0;
 			}
 
@@ -147,9 +144,9 @@ var tank_operations = func {
   var pitchdeg = getprop("/orientation/pitch-deg");
   var rolldeg = getprop("/orientation/roll-deg");
 
-	if (onground_flag == 0)
+  if (!onground_flag)
 		{
-			if (drop_flag and overland) 
+      if (drop_flag and overland)
 				{
 					var ax = drop_flag;
 					var ay = 0;
