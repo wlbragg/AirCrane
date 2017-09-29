@@ -19,6 +19,7 @@
       <livery>
         <file type="string">default</file>
       </livery>
+      <immatenabled type="bool">true</immatenabled>
       <aircrane>
         <state type="int">0</state>
         <engine type="float">0</engine>

@@ -17,6 +17,12 @@ var refresh_immat = func {
      glyph = 36;
   props.globals.getNode("/sim/multiplay/generic/int["~i~"]", 1).setValue(glyph+1);
     }
+
+  var liveryidx = props.globals.getNode("/sim/model/livery/index",1).getValue();
+  if (liveryidx > 2)
+    setprop("sim/model/immatenabled", 0);
+  else
+    setprop("sim/model/immatenabled", 1);
 }
 
 var immat_dialog = gui.Dialog.new("/sim/gui/dialogs/aircrane/status/dialog",
@@ -31,4 +37,6 @@ setlistener("/sim/signals/fdm-initialized", func {
   }
   refresh_immat();
   setlistener("sim/model/immat", refresh_immat, 0);
+  setlistener("sim/model/livery/index", refresh_immat, 0);
 },0);
+
