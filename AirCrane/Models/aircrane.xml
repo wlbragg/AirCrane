@@ -158,11 +158,11 @@
     <property-base>sim/model/livery/</property-base>
     <texture-prop>texture</texture-prop>
     <texture>texture.png</texture>
-    <emission>
+    <!--<emission>
       <red-prop>emission/red</red-prop>
       <green-prop>emission/green</green-prop>
       <blue-prop>emission/blue</blue-prop>
-    </emission>
+    </emission>-->
   </animation>
   
   <animation>
