@@ -33,4 +33,13 @@
     
   </sim>
 
+  <light>
+        <diffuse type="double">0.9</diffuse>
+        <ambient type="double">1</ambient>
+        <specular type="double">0.80</specular>
+        <shine type="int">40</shine>
+        <metal type="double">0.8</metal>
+        <occlude type="double">0.20</occlude>
+    </light>
+
 </PropertyList>
