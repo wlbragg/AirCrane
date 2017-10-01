@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+  
+  <sim>
+    
+    <model>
+      <livery>
+        <name type="string">USArmy478ASHC</name>
+        <index type="int">10</index>
+        <texture>Liveries/2096x2096/USArmy478ASHC.png</texture>
+        <specular>
+          <red>   0.3 </red>
+          <green> 0.3 </green>
+          <blue>  0.3 </blue>
+        </specular>
+      </livery>
+      <liverytail>
+        <name type="string">Grey</name>
+        <index type="int">2</index>
+        <texture>Liveries/1024x1024/greytailrotor.png</texture>
+        <specular>
+          <red>   0.3 </red>
+          <green> 0.3 </green>
+          <blue>  0.3 </blue>
+        </specular>
+      </liverytail>
+      <liverytank>
+        <name type="string">Default</name>
+        <index type="int">1</index>
+        <texture>Liveries/1024x1024/greywater-system.png</texture>
+        <specular>
+          <red>   0.3 </red>
+          <green> 0.3 </green>
+          <blue>  0.3 </blue>
+        </specular>
+      </liverytank>
+    </model>
+    
+  </sim>
+  
+</PropertyList>

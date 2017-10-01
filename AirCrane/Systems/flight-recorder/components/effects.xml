@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+
+  <signal>
+    <type>float</type>
+    <property type="string">/velocities/groundspeed-kt</property>
+  </signal>
+
+    <!-- Sprayer - Water Drop -->
+  <signal>
+    <type>bool</type>
+    <property type="string">/sim/model/cargo-hook</property>
+  </signal>
+  <signal>
+    <type>bool</type>
+    <property type="string">/sim/model/cargo-auto-hook</property>
+  </signal>
+  <signal>
+    <type>bool</type>
+    <property type="string">/sim/model/cargo-on-hook</property>
+  </signal>
+  <signal>
+    <type>float</type>
+    <property type="string">/controls/cargo-release</property>
+  </signal>
+
+  <signal>
+    <type>float</type>
+    <property type="string">/position/longitude-deg</property>
+  </signal>
+  <signal>
+    <type>float</type>
+    <property type="string">/position/latitude-deg</property>
+  </signal>
+  <signal>
+    <type>float</type>
+    <property type="string">/position/altitude-agl-ft</property>
+  </signal>
+  <signal>
+    <type>float</type>
+    <property type="string">/position/gear-agl-m</property>
+  </signal>
+  <signal>
+    <type>float</type>
+    <property type="string">/position/ground-elev-ft</property>
+  </signal>
+  <signal>
+    <type>float</type>
+    <property type="string">/orientation/heading-deg</property>
+  </signal>
+
+  <signal>
+    <type>bool</type>
+    <property type="string">/sim/gui/dialogs/aicargo-dialog/rope</property>
+  </signal>
+  <signal>
+    <type>bool</type>
+    <property type="string">/sim/model/cargo/rope/ropehitsground</property>
+  </signal>
+  <signal>
+    <type>bool</type>
+    <property type="string">/sim/model/firetank/enabled</property>
+  </signal>
+  <signal>
+    <type>bool</type>
+    <property type="string">/sim/freeze/clock</property>
+  </signal>
+  <signal>
+    <type>bool</type>
+    <property type="string">/sim/crashed</property>
+  </signal>
+
+  <signal>
+    <type>bool</type>
+    <property type="string">/sim/model/firetank/waterdropparticlectrl</property>
+  </signal>
+  <signal>
+    <type>bool</type>
+    <property type="string">/sim/model/firetank/waterdropretardantctrl</property>
+  </signal>
+  <signal>
+    <type>bool</type>
+    <property type="string">/sim/model/firetank/watercannonparticlectrl</property>
+  </signal>
+  <signal>
+    <type>bool</type>
+    <property type="string">/sim/model/firetank/watercannonretardantctrl</property>
+  </signal>
+
+  <signal>
+    <type>bool</type>
+    <property type="string">/sim/model/watercannon/enabled</property>
+  </signal>
+  <signal>
+    <type>bool</type>
+    <property type="string">/sim/model/firetank/opencannonvalve</property>
+  </signal>
+  <signal>
+    <type>bool</type>
+    <property type="string">/sim/model/firetank/opentankdoors</property>
+  </signal>
+  <signal>
+    <type>bool</type>
+    <property type="string">/sim/model/firetank/deployramscoop/position-norm</property>
+  </signal>
+  <signal>
+    <type>bool</type>
+    <property type="string">/sim/model/firetank/deployflexhose/position-norm</property>
+  </signal>
+  <signal>
+    <type>bool</type>
+    <property type="string">/gear/gear/ground-is-solid</property>
+  </signal>
+  <signal>
+    <type>float</type>
+    <property type="string">/position/altitude-agl-ft</property>
+  </signal>
+  <signal>
+    <type>float</type>
+    <property type="string">/velocities/airspeed-kt</property>
+  </signal>
+  <signal>
+    <type>bool</type>
+    <property type="string">/sim/model/aircrane/effects/particles/enabled</property>
+  </signal>
+  <signal>
+    <type>float</type>
+    <property type="string">/sim/model/firetank/flexhose/flex-force</property>
+  </signal>
+  <signal>
+    <type>float</type>
+    <property type="string">/sim/model/firetank/flexhose/factor</property>
+  </signal>
+  <signal>
+    <type>float</type>
+    <property type="string">/sim/model/firetank/flexhose/offset</property>
+  </signal>
+  <signal>
+    <type>float</type>
+    <property type="string">/sim/model/firetank/flexhose/bendforce</property>
+  </signal>
+  <signal>
+    <type>float</type>
+    <property type="string">/sim/model/firetank/flexhose/damping</property>
+  </signal>
+  <signal>
+    <type>float</type>
+    <property type="string">/sim/model/firetank/flexhose/stiffness</property>
+  </signal>
+  <signal>
+    <type>float</type>
+    <property type="string">/sim/model/firetank/flexhose/correction</property>
+  </signal>
+  <signal>
+    <type>float</type>
+    <property type="string">/rotors/main/blade[0]/position-deg</property>
+  </signal>
+  <signal>
+    <type>float</type>
+    <property type="string">/rotors/tail/blade[0]/position-deg</property>
+  </signal>
+  <signal>
+    <type>float</type>
+    <property type="string">/rotors/main/rpm</property>
+  </signal>
+  <signal>
+    <type>float</type>
+    <property type="string">/rotors/main/bladesvisible</property>
+  </signal>
+  <signal>
+    <type>float</type>
+    <property type="string">/rotors/main/cone1-deg</property>
+  </signal>
+  <signal>
+    <type>float</type>
+    <property type="string">/rotors/main/cone2-deg</property>
+  </signal>
+  <signal>
+    <type>float</type>
+    <property type="string">/rotors/main/cone3-deg</property>
+  </signal>
+  <signal>
+    <type>float</type>
+    <property type="string">/rotors/main/cone4-deg</property>
+  </signal>
+  <signal>
+    <type>float</type>
+    <property type="string">/rotors/main/blade[0]/incidence-deg</property>
+  </signal>
+  <signal>
+    <type>float</type>
+    <property type="string">/rotors/main/blade[1]/incidence-deg</property>
+  </signal>
+  <signal>
+    <type>float</type>
+    <property type="string">/rotors/main/blade[2]/incidence-deg</property>
+  </signal>
+  <signal>
+    <type>float</type>
+    <property type="string">/rotors/main/blade[3]/incidence-deg</property>
+  </signal>
+  <signal>
+    <type>float</type>
+    <property type="string">/rotors/main/blade[4]/incidence-deg</property>
+  </signal>
+  <signal>
+    <type>float</type>
+    <property type="string">/rotors/main/blade[5]/incidence-deg</property>
+  </signal>
+  <signal>
+    <type>float</type>
+    <property type="string">/rotors/tail/rpm</property>
+  </signal>
+  <signal>
+    <type>float</type>
+    <property type="string">/rotors/tail/blade/incidence-deg</property>
+  </signal>
+
+  <signal>
+    <type>float</type>
+    <property type="string">/main/rpm</property>
+  </signal>
+  <signal>
+    <type>float</type>
+    <property type="string">/main/cone-deg</property>
+  </signal>
+  <signal>
+    <type>float</type>
+    <property type="string">/main/cone1-deg</property>
+  </signal>
+  <signal>
+    <type>float</type>
+    <property type="string">/main/cone2-deg</property>
+  </signal>
+  <signal>
+    <type>float</type>
+    <property type="string">/main/cone3-deg</property>
+  </signal>
+  <signal>
+    <type>float</type>
+    <property type="string">/main/cone4-deg</property>
+  </signal>
+  <signal>
+    <type>float</type>
+    <property type="string">/rotor/reltarget</property>
+  </signal>
+  <signal>
+    <type>float</type>
+    <property type="string">/rotor/maxreltorque</property>
+  </signal>
+
+</PropertyList>

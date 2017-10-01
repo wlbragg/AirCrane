@@ -24,7 +24,6 @@ var interval = 0;
 var currentYaw = 0;
 var originalYaw = 0;
 var dist = 0;
-var reset = 0;
 
 var originalLat = 0;
 var originalLon = 0;
@@ -200,6 +199,7 @@ setprop("/a3-altNode", altNode);
 setprop("/a4-hookHeight", hookHeight);
 
     if ((longline and !ropeOnGround) or !longline) {
+
       # TODO: -optimize- some of this this may need to only happen once, each time the condition becomes true VS every loop
 
       currentYaw = (headNode+(headNode-originalYaw))-headNode;
@@ -207,33 +207,20 @@ setprop("/a4-hookHeight", hookHeight);
       if (currentYaw < 0) currentYaw = currentYaw + 360;
       setprop("/sim/model/cargo/currentyaw", currentYaw);
 
-      setprop("/ai/models/" ~ cargoParent ~ "/position/altitude-ft", -999);
       setprop("/sim/model/cargo/currentalt", 0);
-
-      setprop("/ai/models/" ~ cargoParent ~ "/position/latitude-deg", latNode);
-      setprop("/ai/models/" ~ cargoParent ~ "/position/longitude-deg", lonNode);
-      #reset = 1;
 
       setprop("sim/weight[3]/weight-lb", cargoWeight);
       
-      #originalLat = latNode;
-      #originalLon = lonNode;
-      #setprop("/sim/model/cargo/currentposx", 0);
-      #setprop("/sim/model/cargo/currentposy", 0);
-      
     } else {
+
       dist = rope_distance(getprop("/ai/models/" ~ cargoParent ~ "/position/latitude-deg") - latNode, getprop("/ai/models/" ~ cargoParent ~ "/position/longitude-deg") - lonNode);
       if(dist <= hookDistance and ropeOnGround) {
-        
-        #reset = 0;
 
         currentYaw = (headNode+(headNode-originalYaw))-headNode;
         if (currentYaw > 360) currentYaw = currentYaw - 360;
         if (currentYaw < 0) currentYaw = currentYaw + 360;
         setprop("/sim/model/cargo/currentyaw", currentYaw);
 
-        #setprop("/sim/model/cargo/currentalt", -100);
-        #setprop("/ai/models/" ~ cargoParent ~ "/position/altitude-ft", groundElevFt);
         setprop("/sim/model/cargo/currentalt", (-groundNode) + 14.8 + getprop("/xfactor"));
 
         setprop("sim/weight[3]/weight-lb", 0);
@@ -256,20 +243,10 @@ setprop("/a4-hookHeight", hookHeight);
         if (currentYaw < 0) currentYaw = currentYaw + 360;
         setprop("/sim/model/cargo/currentyaw", currentYaw);
 
-        setprop("/ai/models/" ~ cargoParent ~ "/position/latitude-deg", latNode);
-        setprop("/ai/models/" ~ cargoParent ~ "/position/longitude-deg", lonNode);
-        #reset = 1;
+        setprop("/sim/model/cargo/currentalt", (-groundNode) + 14.8 + getprop("/xfactor"));
 
         setprop("sim/weight[3]/weight-lb", cargoWeight);
 
-        #originalLat = latNode;
-        #originalLon = lonNode;
-        #setprop("/sim/model/cargo/currentposx", 0);
-        #setprop("/sim/model/cargo/currentposy", 0);
-
-setprop("/ai/models/" ~ cargoParent ~ "/position/altitude-ft", -999);
-setprop("/sim/model/cargo/currentalt", (-groundNode) + 14.8 + getprop("/xfactor"));
-       
       }
     }
 
@@ -314,16 +291,15 @@ setprop("/sim/model/cargo/currentalt", (-groundNode) + 14.8 + getprop("/xfactor"
       x = x * .0000239;
       y = y * .0000239;
 
-      setprop("/ai/models/" ~ cargoParent ~ "/position/altitude-ft", groundElevFt);
-      #setprop("/ai/models/" ~ cargoParent ~ "/position/altitude-ft", geo.elevation(latNode-y, lonNode-x) * 3.2808);
+      #setprop("/ai/models/" ~ cargoParent ~ "/position/altitude-ft", groundElevFt);
+      setprop("/ai/models/" ~ cargoParent ~ "/position/altitude-ft", geo.elevation(latNode-y, lonNode-x) * 3.2808);
       if (!longline)
         setprop("/ai/models/" ~ cargoParent ~ "/orientation/true-heading-deg", headNode);
       else
         setprop("/ai/models/" ~ cargoParent ~ "/orientation/true-heading-deg", originalYaw);
-      #if (reset or !longline) {
-        setprop("/ai/models/" ~ cargoParent ~ "/position/latitude-deg", latNode-y);
-        setprop("/ai/models/" ~ cargoParent ~ "/position/longitude-deg", lonNode-x);
-      #}
+      setprop("/ai/models/" ~ cargoParent ~ "/position/latitude-deg", latNode-y);
+      setprop("/ai/models/" ~ cargoParent ~ "/position/longitude-deg", lonNode-x);
+
 
       if (getprop("/sim/model/aircrane/"~cargoName~"/saved")) {
         gui.popupTip(cargoName~" position saved", 1);

@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+
+  <!-- ============================================================== -->
+  <!-- Switches                                                       -->
+  <!-- ============================================================== -->
+
+  <signal>
+    <type>bool</type>
+    <property type="string">/controls/engines/engine/primer-lever</property>
+  </signal>
+  <signal>
+    <type>bool</type>
+    <property type="string">/controls/switches/starter</property>
+  </signal>
+  <signal>
+    <type>int8</type>
+    <property type="string">/controls/switches/magnetos</property>
+  </signal>
+  <signal>
+    <type>bool</type>
+    <property type="string">/controls/switches/master-bat</property>
+  </signal>
+  <signal>
+    <type>bool</type>
+    <property type="string">/controls/switches/master-alt</property>
+  </signal>
+
+  <!-- Note: /controls/switches/master-avionics is set in
+             Aircraft/Generic/flightrecorder/components/controls.xml.
+  -->
+
+  <!-- Passengers and baggage -->
+  <signal>
+    <type>float</type>
+    <property type="string">/sim/weight[0]/weight-lb</property>
+  </signal>
+  <signal>
+    <type>float</type>
+    <property type="string">/sim/weight[1]/weight-lb</property>
+  </signal>
+  <signal>
+    <type>float</type>
+    <property type="string">/sim/weight[2]/weight-lb</property>
+  </signal>
+  <signal>
+    <type>float</type>
+    <property type="string">/sim/weight[3]/weight-lb</property>
+  </signal>
+
+  <!-- Lights -->
+  <signal>
+    <type>bool</type>
+    <property type="string">/controls/lighting/nav-lights</property>
+  </signal>
+  <signal>
+    <type>bool</type>
+    <property type="string">/controls/lighting/beacon</property>
+  </signal>
+  <signal>
+    <type>bool</type>
+    <property type="string">/controls/lighting/strobe</property>
+  </signal>
+  <signal>
+    <type>bool</type>
+    <property type="string">/controls/lighting/landing-light</property>
+  </signal>
+  <signal>
+    <type>bool</type>
+    <property type="string">/controls/lighting/taxi-light</property>
+  </signal>
+  <signal>
+    <type>float</type>
+    <property type="string">/sim/model/material/instruments/factor</property>
+  </signal>
+
+  <!-- ============================================================== -->
+  <!-- Doors and Movable Objects                                      -->
+  <!-- ============================================================== -->
+
+  <signal>
+    <type>float</type>
+    <property type="string">/sim/model/door-positions/crew/position-norm</property>
+  </signal>
+  <signal>
+    <type>float</type>
+    <property type="string">/sim/model/door-positions/passenger/position-norm</property>
+  </signal>
+  <signal>
+    <type>float</type>
+    <property type="string">sim/model/firetank/deployramscoop/position-norm</property>
+  </signal>
+  <signal>
+    <type>float</type>
+    <property type="string">sim/model/firetank/deployflexhose/position-norm</property>
+  </signal>
+
+</PropertyList>
