@@ -177,10 +177,60 @@
       <blue-prop>emission/blue</blue-prop>
     </specular>
   </animation>
+
+  <effect>
+    <inherits-from>Aircraft/AirCrane/Models/Effects/fuselage/aircrane-fuselage</inherits-from>
+    <parameters>
+      <!--<metallic type="float">0.80</metallic>
+      <ambient-factor type="float">0.50</ambient-factor>-->
+    </parameters>
+    <object-name>fuselage</object-name>
+    <object-name>aileron</object-name>
+    <object-name>moteurs</object-name>
+    <object-name>rebords</object-name>
+    <object-name>structure</object-name>
+    <object-name>supportaileron</object-name>
+    <object-name>supportlight</object-name>
+    <object-name>porteG</object-name>
+    <object-name>porteD</object-name>
+    <object-name>lampetail</object-name>
+    <object-name>lampenez</object-name>
+    <object-name>caches</object-name>
+    <object-name>caches2</object-name>
+    <object-name>caches4</object-name>
+    <object-name>articuleAH</object-name>
+    <object-name>articuleAB</object-name>
+    <object-name>articuleGH</object-name>
+    <object-name>articuleGB</object-name>
+    <object-name>articuleDH</object-name>
+    <object-name>articuleDB</object-name>
+  </effect>
   
   <effect>
-    <inherits-from>Aircraft/Generic/Effects/Fuselagereflect</inherits-from>
+    <inherits-from>Aircraft/AirCrane/Models/Effects/fuselage/aircrane-fuselage</inherits-from>
+    <parameters>
+      <!--<metallic type="float">0.80</metallic>-->
+      <ambient-factor type="float">1.00</ambient-factor><!-- since the AO map does not include these objects the factor needs to be 1, then AO map is ignored. -->
+    </parameters>
+    <object-name>antennes</object-name>  
+    <object-name>axeAH</object-name>
+    <object-name>axeAB</object-name>
+    <object-name>axeGH</object-name>
+    <object-name>axeGB</object-name>
+    <object-name>axeDH</object-name>
+    <object-name>axeDB</object-name>
+    <object-name>pate1</object-name>
+    <object-name>pate2</object-name>
+    <object-name>pate3</object-name>
+    <object-name>pate4</object-name>
+    <object-name>blocmoteur1</object-name>
+  </effect>
+
+  <animation>
+    <type>material</type> 
+    <object-name>moteurs</object-name>
     <object-name>fuselage</object-name>
+    <object-name>aileron</object-name>
     <object-name>porteG</object-name>
     <object-name>porteD</object-name>
     <object-name>antennes</object-name>
@@ -206,13 +256,30 @@
     <object-name>caches</object-name>
     <object-name>caches2</object-name>
     <object-name>caches4</object-name>
-    <object-name>aileron</object-name>
     <object-name>blocmoteur1</object-name>
     <object-name>structure</object-name>
     <object-name>supportaileron</object-name>
     <object-name>lampetail</object-name>
-
-  </effect>
+    <diffuse>
+        <red>1</red>
+        <green>1</green>
+        <blue>1</blue>
+        <factor-prop>/light/diffuse</factor-prop>
+    </diffuse>
+    <ambient>
+        <red>1</red>
+        <green>1</green>
+        <blue>1</blue>
+        <factor-prop>/light/ambient</factor-prop>
+    </ambient>
+    <specular>
+        <red>1</red>
+        <green>1</green>
+        <blue>1</blue>
+        <factor-prop>/light/specular</factor-prop>
+    </specular>
+    <shininess-prop>/light/shine</shininess-prop>
+  </animation>
   
   <!-- working for Rembrandt -->
   <effect>
