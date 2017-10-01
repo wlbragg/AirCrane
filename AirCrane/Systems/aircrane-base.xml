@@ -19,7 +19,6 @@
       <livery>
         <file type="string">default</file>
       </livery>
-      <immatenabled type="bool">true</immatenabled>
       <aircrane>
         <state type="int">0</state>
         <engine type="float">0</engine>
@@ -406,6 +405,13 @@
     <help include="help.xml"/>
     
     <menubar include="../Dialogs/aircrane-menu.xml"/>
+
+    <flight-recorder>
+      <replay-config type="int">0</replay-config>
+      <config n="0" include="Systems/flight-recorder/flight-recorder.xml">
+        <name type="string">Aircrane Flight Recorder</name>
+      </config>
+    </flight-recorder>
     
   </sim>
   
