@@ -47,5 +47,21 @@
 			<flightplan>aircrane_cargo4.xml</flightplan>
 			<repeat>1</repeat>
 		</entry>
+		<entry>
+			<callsign>cargo5</callsign>
+      <name>Ground Tank</name>
+			<type>aircraft</type>
+			<model>Aircraft/AirCrane/Models/Cargo-Hauling/ground-tank.ac</model>
+			<flightplan>aircrane_cargo5.xml</flightplan>
+			<repeat>1</repeat>
+		</entry>
+		<entry>
+			<callsign>cargo6</callsign>
+      <name>Tank Frame</name>
+			<type>aircraft</type>
+			<model>Aircraft/AirCrane/Models/Cargo-Hauling/tank-frame.ac</model>
+			<flightplan>aircrane_cargo6.xml</flightplan>
+			<repeat>1</repeat>
+		</entry>
 	</scenario>
 </PropertyList>
