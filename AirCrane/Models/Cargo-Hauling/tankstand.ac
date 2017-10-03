@@ -1,10 +1,10 @@
 AC3Db
 MATERIAL "DefaultWhite" rgb 1.0000 1.0000 1.0000  amb 0.2000 0.2000 0.2000  emis 0.0000 0.0000 0.0000  spec 0.5000 0.5000 0.5000  shi 10 trans 0.0000
 OBJECT world
-name "Blender_export__tank-frame.ac"
+name "Blender_export__tankstand.ac"
 kids 1
 OBJECT poly
-name "tankframe.001"
+name "tankstand"
 loc -2.7379849 1.1589983 0.9954410
 numvert 920
 -0.0106062 0.7803186 -1.6799098

@@ -97,6 +97,9 @@
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
     <object-name>cube</object-name>
+    <object-name>cub</object-name>
+    <object-name>groundtank</object-name>
+    <object-name>tankstand</object-name>
   </animation>
 
   <effect>
@@ -192,6 +195,9 @@
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
     <object-name>cube</object-name>
+    <object-name>cub</object-name>
+    <object-name>groundtank</object-name>
+    <object-name>tankstand</object-name>
   </effect>
   
   <animation>
@@ -384,7 +390,10 @@
     <object-name>ropesegment.088</object-name>
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
-    <object-name>cube</object-name> 
+    <object-name>cube</object-name>
+    <object-name>cub</object-name>
+    <object-name>groundtank</object-name>
+    <object-name>tankstand</object-name>
   </animation>
   
   <animation>
@@ -479,6 +488,9 @@
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
     <object-name>cube</object-name>
+    <object-name>cub</object-name>
+    <object-name>groundtank</object-name>
+    <object-name>tankstand</object-name>
   </animation>
 
   <animation>
@@ -572,6 +584,9 @@
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
     <object-name>cube</object-name>
+    <object-name>cub</object-name>
+    <object-name>groundtank</object-name>
+    <object-name>tankstand</object-name>
   </animation>
   
   <animation>
@@ -664,6 +679,9 @@
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
     <object-name>cube</object-name>
+    <object-name>cub</object-name>
+    <object-name>groundtank</object-name>
+    <object-name>tankstand</object-name>
   </animation>
   
   <animation>
@@ -755,6 +773,9 @@
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
     <object-name>cube</object-name>
+    <object-name>cub</object-name>
+    <object-name>groundtank</object-name>
+    <object-name>tankstand</object-name>
   </animation>
   
   <animation>
@@ -845,6 +866,9 @@
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
     <object-name>cube</object-name>
+    <object-name>cub</object-name>
+    <object-name>groundtank</object-name>
+    <object-name>tankstand</object-name>
   </animation>
   
   <animation>
@@ -934,6 +958,9 @@
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
     <object-name>cube</object-name>
+    <object-name>cub</object-name>
+    <object-name>groundtank</object-name>
+    <object-name>tankstand</object-name>
   </animation>
   
   <animation>
@@ -1022,6 +1049,9 @@
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
     <object-name>cube</object-name>
+    <object-name>cub</object-name>
+    <object-name>groundtank</object-name>
+    <object-name>tankstand</object-name>
   </animation>
   
   <animation>
@@ -1109,6 +1139,9 @@
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
     <object-name>cube</object-name>
+    <object-name>cub</object-name>
+    <object-name>groundtank</object-name>
+    <object-name>tankstand</object-name>
   </animation>
   
   <animation>
@@ -1194,7 +1227,10 @@
     <object-name>ropesegment.088</object-name>
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
-    <object-name>cube</object-name>   
+    <object-name>cube</object-name>
+    <object-name>cub</object-name>
+    <object-name>groundtank</object-name>
+    <object-name>tankstand</object-name>   
   </animation>
   
   <animation>
@@ -1280,6 +1316,9 @@
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
     <object-name>cube</object-name>
+    <object-name>cub</object-name>
+    <object-name>groundtank</object-name>
+    <object-name>tankstand</object-name>
   </animation>
   
   <animation>
@@ -1364,6 +1403,9 @@
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
     <object-name>cube</object-name>
+    <object-name>cub</object-name>
+    <object-name>groundtank</object-name>
+    <object-name>tankstand</object-name>
   </animation>
   
   <animation>
@@ -1447,6 +1489,9 @@
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
     <object-name>cube</object-name>
+    <object-name>cub</object-name>
+    <object-name>groundtank</object-name>
+    <object-name>tankstand</object-name>
   </animation>
   
   <animation>
@@ -1529,6 +1574,9 @@
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
     <object-name>cube</object-name>
+    <object-name>cub</object-name>
+    <object-name>groundtank</object-name>
+    <object-name>tankstand</object-name>
   </animation>
   
   <animation>
@@ -1610,6 +1658,9 @@
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
     <object-name>cube</object-name>
+    <object-name>cub</object-name>
+    <object-name>groundtank</object-name>
+    <object-name>tankstand</object-name>
   </animation>
   
   <animation>
@@ -1690,6 +1741,9 @@
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
     <object-name>cube</object-name>
+    <object-name>cub</object-name>
+    <object-name>groundtank</object-name>
+    <object-name>tankstand</object-name>
   </animation>
   
   <animation>
@@ -1769,6 +1823,9 @@
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
     <object-name>cube</object-name>
+    <object-name>cub</object-name>
+    <object-name>groundtank</object-name>
+    <object-name>tankstand</object-name>
   </animation>
   
   <animation>
@@ -1847,6 +1904,9 @@
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
     <object-name>cube</object-name>
+    <object-name>cub</object-name>
+    <object-name>groundtank</object-name>
+    <object-name>tankstand</object-name>
   </animation>
   
   <animation>
@@ -1924,6 +1984,9 @@
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
     <object-name>cube</object-name>
+    <object-name>cub</object-name>
+    <object-name>groundtank</object-name>
+    <object-name>tankstand</object-name>
   </animation>
   
   <animation>
@@ -2000,6 +2063,9 @@
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
     <object-name>cube</object-name>
+    <object-name>cub</object-name>
+    <object-name>groundtank</object-name>
+    <object-name>tankstand</object-name>
   </animation>
   
   <animation>
@@ -2075,6 +2141,9 @@
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
     <object-name>cube</object-name>
+    <object-name>cub</object-name>
+    <object-name>groundtank</object-name>
+    <object-name>tankstand</object-name>
   </animation>
   
   <animation>
@@ -2149,6 +2218,9 @@
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
     <object-name>cube</object-name>
+    <object-name>cub</object-name>
+    <object-name>groundtank</object-name>
+    <object-name>tankstand</object-name>
   </animation>
   
   <animation>
@@ -2222,6 +2294,9 @@
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
     <object-name>cube</object-name>
+    <object-name>cub</object-name>
+    <object-name>groundtank</object-name>
+    <object-name>tankstand</object-name>
   </animation>
   
   <animation>
@@ -2294,6 +2369,9 @@
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
     <object-name>cube</object-name>
+    <object-name>cub</object-name>
+    <object-name>groundtank</object-name>
+    <object-name>tankstand</object-name>
   </animation>
   
   <animation>
@@ -2365,6 +2443,9 @@
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
     <object-name>cube</object-name>
+    <object-name>cub</object-name>
+    <object-name>groundtank</object-name>
+    <object-name>tankstand</object-name>
   </animation>
   
   <animation>
@@ -2435,6 +2516,9 @@
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
     <object-name>cube</object-name>
+    <object-name>cub</object-name>
+    <object-name>groundtank</object-name>
+    <object-name>tankstand</object-name>
   </animation>
   
   <animation>
@@ -2504,6 +2588,9 @@
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
     <object-name>cube</object-name>
+    <object-name>cub</object-name>
+    <object-name>groundtank</object-name>
+    <object-name>tankstand</object-name>
   </animation>
   
   <animation>
@@ -2572,6 +2659,9 @@
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
     <object-name>cube</object-name>
+    <object-name>cub</object-name>
+    <object-name>groundtank</object-name>
+    <object-name>tankstand</object-name>
   </animation>
   
   <animation>
@@ -2639,6 +2729,9 @@
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
     <object-name>cube</object-name>
+    <object-name>cub</object-name>
+    <object-name>groundtank</object-name>
+    <object-name>tankstand</object-name>
   </animation>
   
   <animation>
@@ -2705,6 +2798,9 @@
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
     <object-name>cube</object-name>
+    <object-name>cub</object-name>
+    <object-name>groundtank</object-name>
+    <object-name>tankstand</object-name>
   </animation>
 
   <animation>
@@ -2769,7 +2865,10 @@
     <object-name>ropesegment.088</object-name>
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
-    <object-name>cube</object-name>  
+    <object-name>cube</object-name>
+    <object-name>cub</object-name>
+    <object-name>groundtank</object-name>
+    <object-name>tankstand</object-name>  
   </animation>
   
   <animation>
@@ -2834,6 +2933,9 @@
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
     <object-name>cube</object-name>
+    <object-name>cub</object-name>
+    <object-name>groundtank</object-name>
+    <object-name>tankstand</object-name>
   </animation>
 
   <animation>
@@ -2897,6 +2999,9 @@
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
     <object-name>cube</object-name>
+    <object-name>cub</object-name>
+    <object-name>groundtank</object-name>
+    <object-name>tankstand</object-name>
   </animation>
   
   <animation>
@@ -2959,6 +3064,9 @@
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
     <object-name>cube</object-name>
+    <object-name>cub</object-name>
+    <object-name>groundtank</object-name>
+    <object-name>tankstand</object-name>
   </animation>
   
   <animation>
@@ -3020,6 +3128,9 @@
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
     <object-name>cube</object-name>
+    <object-name>cub</object-name>
+    <object-name>groundtank</object-name>
+    <object-name>tankstand</object-name>
   </animation>
   
   <animation>
@@ -3080,6 +3191,9 @@
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
     <object-name>cube</object-name>
+    <object-name>cub</object-name>
+    <object-name>groundtank</object-name>
+    <object-name>tankstand</object-name>
   </animation>
   
   <animation>
@@ -3139,6 +3253,9 @@
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
     <object-name>cube</object-name>
+    <object-name>cub</object-name>
+    <object-name>groundtank</object-name>
+    <object-name>tankstand</object-name>
   </animation>
   
   <animation>
@@ -3197,6 +3314,9 @@
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
     <object-name>cube</object-name>
+    <object-name>cub</object-name>
+    <object-name>groundtank</object-name>
+    <object-name>tankstand</object-name>
   </animation>
   
   <animation>
@@ -3254,6 +3374,9 @@
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
     <object-name>cube</object-name>
+    <object-name>cub</object-name>
+    <object-name>groundtank</object-name>
+    <object-name>tankstand</object-name>
   </animation>
   
   <animation>
@@ -3309,7 +3432,10 @@
     <object-name>ropesegment.088</object-name>
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
-    <object-name>cube</object-name>   
+    <object-name>cube</object-name>
+    <object-name>cub</object-name>
+    <object-name>groundtank</object-name>
+    <object-name>tankstand</object-name>   
   </animation>
   
   <animation>
@@ -3365,6 +3491,9 @@
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
     <object-name>cube</object-name>
+    <object-name>cub</object-name>
+    <object-name>groundtank</object-name>
+    <object-name>tankstand</object-name>
   </animation>
   
   <animation>
@@ -3419,6 +3548,9 @@
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
     <object-name>cube</object-name>
+    <object-name>cub</object-name>
+    <object-name>groundtank</object-name>
+    <object-name>tankstand</object-name>
   </animation>
   
   <animation>
@@ -3472,6 +3604,9 @@
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
     <object-name>cube</object-name>
+    <object-name>cub</object-name>
+    <object-name>groundtank</object-name>
+    <object-name>tankstand</object-name>
   </animation>
   
   <animation>
@@ -3524,6 +3659,9 @@
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
     <object-name>cube</object-name>
+    <object-name>cub</object-name>
+    <object-name>groundtank</object-name>
+    <object-name>tankstand</object-name>
   </animation>
   
   <animation>
@@ -3575,6 +3713,9 @@
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
     <object-name>cube</object-name>
+    <object-name>cub</object-name>
+    <object-name>groundtank</object-name>
+    <object-name>tankstand</object-name>
   </animation>
   
   <animation>
@@ -3625,6 +3766,9 @@
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
     <object-name>cube</object-name>
+    <object-name>cub</object-name>
+    <object-name>groundtank</object-name>
+    <object-name>tankstand</object-name>
   </animation>
   
   <animation>
@@ -3674,6 +3818,9 @@
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
     <object-name>cube</object-name>
+    <object-name>cub</object-name>
+    <object-name>groundtank</object-name>
+    <object-name>tankstand</object-name>
   </animation>
   
   <animation>
@@ -3722,6 +3869,9 @@
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
     <object-name>cube</object-name>
+    <object-name>cub</object-name>
+    <object-name>groundtank</object-name>
+    <object-name>tankstand</object-name>
   </animation>
   
   <animation>
@@ -3769,6 +3919,9 @@
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
     <object-name>cube</object-name>
+    <object-name>cub</object-name>
+    <object-name>groundtank</object-name>
+    <object-name>tankstand</object-name>
   </animation>
   
   <animation>
@@ -3815,6 +3968,9 @@
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
     <object-name>cube</object-name>
+    <object-name>cub</object-name>
+    <object-name>groundtank</object-name>
+    <object-name>tankstand</object-name>
   </animation>
   
   <animation>
@@ -3860,6 +4016,9 @@
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
     <object-name>cube</object-name>
+    <object-name>cub</object-name>
+    <object-name>groundtank</object-name>
+    <object-name>tankstand</object-name>
   </animation>
   
   <animation>
@@ -3904,6 +4063,9 @@
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
     <object-name>cube</object-name>
+    <object-name>cub</object-name>
+    <object-name>groundtank</object-name>
+    <object-name>tankstand</object-name>
   </animation>
   
   <animation>
@@ -3947,6 +4109,9 @@
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
     <object-name>cube</object-name>
+    <object-name>cub</object-name>
+    <object-name>groundtank</object-name>
+    <object-name>tankstand</object-name>
   </animation>
   
   <animation>
@@ -3989,6 +4154,9 @@
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
     <object-name>cube</object-name>
+    <object-name>cub</object-name>
+    <object-name>groundtank</object-name>
+    <object-name>tankstand</object-name>
   </animation>
   
   <animation>
@@ -4030,6 +4198,9 @@
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
     <object-name>cube</object-name>
+    <object-name>cub</object-name>
+    <object-name>groundtank</object-name>
+    <object-name>tankstand</object-name>
   </animation>
   
   <animation>
@@ -4070,6 +4241,9 @@
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
     <object-name>cube</object-name>
+    <object-name>cub</object-name>
+    <object-name>groundtank</object-name>
+    <object-name>tankstand</object-name>
   </animation>
   
   <animation>
@@ -4109,6 +4283,9 @@
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
     <object-name>cube</object-name>
+    <object-name>cub</object-name>
+    <object-name>groundtank</object-name>
+    <object-name>tankstand</object-name>
   </animation>
   
   <animation>
@@ -4147,6 +4324,9 @@
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
     <object-name>cube</object-name>
+    <object-name>cub</object-name>
+    <object-name>groundtank</object-name>
+    <object-name>tankstand</object-name>
   </animation>
   
   <animation>
@@ -4184,6 +4364,9 @@
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
     <object-name>cube</object-name>
+    <object-name>cub</object-name>
+    <object-name>groundtank</object-name>
+    <object-name>tankstand</object-name>
   </animation>
   
   <animation>
@@ -4220,6 +4403,9 @@
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
     <object-name>cube</object-name>
+    <object-name>cub</object-name>
+    <object-name>groundtank</object-name>
+    <object-name>tankstand</object-name>
   </animation>
 
   <animation>
@@ -4254,7 +4440,10 @@
     <object-name>ropesegment.088</object-name>
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
-    <object-name>cube</object-name>  
+    <object-name>cube</object-name>
+    <object-name>cub</object-name>
+    <object-name>groundtank</object-name>
+    <object-name>tankstand</object-name>  
   </animation>
   
   <animation>
@@ -4289,6 +4478,9 @@
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
     <object-name>cube</object-name>
+    <object-name>cub</object-name>
+    <object-name>groundtank</object-name>
+    <object-name>tankstand</object-name>
   </animation>
 
   <animation>
@@ -4322,6 +4514,9 @@
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
     <object-name>cube</object-name>
+    <object-name>cub</object-name>
+    <object-name>groundtank</object-name>
+    <object-name>tankstand</object-name>
   </animation>
   
   <animation>
@@ -4354,6 +4549,9 @@
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
     <object-name>cube</object-name>
+    <object-name>cub</object-name>
+    <object-name>groundtank</object-name>
+    <object-name>tankstand</object-name>
   </animation>
   
   <animation>
@@ -4385,6 +4583,9 @@
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
     <object-name>cube</object-name>
+    <object-name>cub</object-name>
+    <object-name>groundtank</object-name>
+    <object-name>tankstand</object-name>
   </animation>
   
   <animation>
@@ -4415,6 +4616,9 @@
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
     <object-name>cube</object-name>
+    <object-name>cub</object-name>
+    <object-name>groundtank</object-name>
+    <object-name>tankstand</object-name>
   </animation>
   
   <animation>
@@ -4444,6 +4648,9 @@
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
     <object-name>cube</object-name>
+    <object-name>cub</object-name>
+    <object-name>groundtank</object-name>
+    <object-name>tankstand</object-name>
   </animation>
   
   <animation>
@@ -4472,6 +4679,9 @@
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
     <object-name>cube</object-name>
+    <object-name>cub</object-name>
+    <object-name>groundtank</object-name>
+    <object-name>tankstand</object-name>
   </animation>
   
   <animation>
@@ -4499,6 +4709,9 @@
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
     <object-name>cube</object-name>
+    <object-name>cub</object-name>
+    <object-name>groundtank</object-name>
+    <object-name>tankstand</object-name>
   </animation>
   
   <animation>
@@ -4524,7 +4737,10 @@
     <object-name>ropesegment.088</object-name>
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
-    <object-name>cube</object-name>   
+    <object-name>cube</object-name>
+    <object-name>cub</object-name>
+    <object-name>groundtank</object-name>
+    <object-name>tankstand</object-name>   
   </animation>
   
   <animation>
@@ -4550,6 +4766,9 @@
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
     <object-name>cube</object-name>
+    <object-name>cub</object-name>
+    <object-name>groundtank</object-name>
+    <object-name>tankstand</object-name>
   </animation>
   
   <animation>
@@ -4574,6 +4793,9 @@
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
     <object-name>cube</object-name>
+    <object-name>cub</object-name>
+    <object-name>groundtank</object-name>
+    <object-name>tankstand</object-name>
   </animation>
   
   <animation>
@@ -4597,6 +4819,9 @@
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
     <object-name>cube</object-name>
+    <object-name>cub</object-name>
+    <object-name>groundtank</object-name>
+    <object-name>tankstand</object-name>
   </animation>
   
   <animation>
@@ -4619,6 +4844,9 @@
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
     <object-name>cube</object-name>
+    <object-name>cub</object-name>
+    <object-name>groundtank</object-name>
+    <object-name>tankstand</object-name>
   </animation>
   
   <animation>
@@ -4640,6 +4868,9 @@
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
     <object-name>cube</object-name>
+    <object-name>cub</object-name>
+    <object-name>groundtank</object-name>
+    <object-name>tankstand</object-name>
   </animation>
   
   <animation>
@@ -4660,6 +4891,9 @@
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
     <object-name>cube</object-name>
+    <object-name>cub</object-name>
+    <object-name>groundtank</object-name>
+    <object-name>tankstand</object-name>
   </animation>
   
   <animation>
@@ -4679,6 +4913,9 @@
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
     <object-name>cube</object-name>
+    <object-name>cub</object-name>
+    <object-name>groundtank</object-name>
+    <object-name>tankstand</object-name>
   </animation>
   
   <animation>
@@ -4697,6 +4934,9 @@
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
     <object-name>cube</object-name>
+    <object-name>cub</object-name>
+    <object-name>groundtank</object-name>
+    <object-name>tankstand</object-name>
   </animation>
   
   <animation>
@@ -4714,6 +4954,9 @@
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
     <object-name>cube</object-name>
+    <object-name>cub</object-name>
+    <object-name>groundtank</object-name>
+    <object-name>tankstand</object-name>
   </animation>
   
   <animation>
@@ -4730,6 +4973,9 @@
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
     <object-name>cube</object-name>
+    <object-name>cub</object-name>
+    <object-name>groundtank</object-name>
+    <object-name>tankstand</object-name>
   </animation>
   
   <animation>
@@ -4745,6 +4991,9 @@
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
     <object-name>cube</object-name>
+    <object-name>cub</object-name>
+    <object-name>groundtank</object-name>
+    <object-name>tankstand</object-name>
   </animation>
   
   <animation>
@@ -4759,6 +5008,9 @@
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
     <object-name>cube</object-name>
+    <object-name>cub</object-name>
+    <object-name>groundtank</object-name>
+    <object-name>tankstand</object-name>
   </animation>
   
   <animation>
@@ -4772,6 +5024,9 @@
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
     <object-name>cube</object-name>
+    <object-name>cub</object-name>
+    <object-name>groundtank</object-name>
+    <object-name>tankstand</object-name>
   </animation>
   
   <animation>
@@ -4784,6 +5039,9 @@
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
     <object-name>cube</object-name>
+    <object-name>cub</object-name>
+    <object-name>groundtank</object-name>
+    <object-name>tankstand</object-name>
   </animation>
   
   <animation>
@@ -4795,6 +5053,9 @@
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
     <object-name>cube</object-name>
+    <object-name>cub</object-name>
+    <object-name>groundtank</object-name>
+    <object-name>tankstand</object-name>
   </animation>
   
   <animation>
@@ -4805,6 +5066,9 @@
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
     <object-name>cube</object-name>
+    <object-name>cub</object-name>
+    <object-name>groundtank</object-name>
+    <object-name>tankstand</object-name>
   </animation>
   
   <animation>
@@ -4814,6 +5078,9 @@
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
     <object-name>cube</object-name>
+    <object-name>cub</object-name>
+    <object-name>groundtank</object-name>
+    <object-name>tankstand</object-name>
   </animation>
   
   <animation>
@@ -4822,6 +5089,8 @@
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
     <object-name>cube</object-name>
+    <object-name>cub</object-name>
+    <object-name>tankstand</object-name>
   </animation>
   
   <animation>
@@ -4829,12 +5098,16 @@
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
     <object-name>cube</object-name>
+    <object-name>cub</object-name>
+    <object-name>tankstand</object-name>
   </animation>
   
   <animation>
     <name>RopeSegment90</name>
     <object-name>ropesegment.090</object-name>
     <object-name>cube</object-name>
+    <object-name>cub</object-name>
+    <object-name>tankstand</object-name> 
   </animation>
 
   <!-- Flex Hose Rotation Pitch -->
@@ -4847,7 +5120,6 @@
     <center>
       <x-m>-1.38048</x-m>
       <y-m> 0.00551</y-m>
-      <!--z-m>−1.10549</z-m-->
       <z-m>-1.10667</z-m>
     </center>
     <axis>
@@ -4866,7 +5138,6 @@
     <center>
       <x-m>-1.38048</x-m>
       <y-m> 0.00551</y-m>
-      <!--z-m>-1.27029</z-m-->
       <z-m>-1.27142</z-m>
     </center>
     <axis>
@@ -4885,7 +5156,6 @@
     <center>
       <x-m>-1.38048</x-m>
       <y-m> 0.00551</y-m>
-      <!--z-m>-1.43504</z-m-->
       <z-m>-1.43502</z-m>
     </center>
     <axis>
@@ -4904,7 +5174,6 @@
     <center>
       <x-m>-1.38048</x-m>
       <y-m> 0.00551</y-m>
-      <!--z-m>-1.59864</z-m-->
       <z-m>-1.59915</z-m>
     </center>
     <axis>
@@ -4923,7 +5192,6 @@
     <center>
       <x-m>-1.38048</x-m>
       <y-m> 0.00551</y-m>
-      <!--z-m>-1.76277</z-m-->
       <z-m>-1.76312</z-m>
     </center>
     <axis>
@@ -6473,7 +6741,6 @@
     <center>
       <x-m>-1.38048</x-m>
       <y-m> 0.00551</y-m>
-      <!--z-m>−1.10549</z-m-->
       <z-m>-1.10667</z-m>
     </center>
     <axis>
@@ -6492,7 +6759,6 @@
     <center>
       <x-m>-1.38048</x-m>
       <y-m> 0.00551</y-m>
-      <!--z-m>-1.27029</z-m-->
       <z-m>-1.27142</z-m>
     </center>
     <axis>
@@ -6511,7 +6777,6 @@
     <center>
       <x-m>-1.38048</x-m>
       <y-m> 0.00551</y-m>
-      <!--z-m>-1.43504</z-m-->
       <z-m>-1.43502</z-m>
     </center>
     <axis>
@@ -6530,7 +6795,6 @@
     <center>
       <x-m>-1.38048</x-m>
       <y-m> 0.00551</y-m>
-      <!--z-m>-1.59864</z-m-->
       <z-m>-1.59915</z-m>
     </center>
     <axis>
@@ -6549,7 +6813,6 @@
     <center>
       <x-m>-1.38048</x-m>
       <y-m> 0.00551</y-m>
-      <!--z-m>-1.76277</z-m-->
       <z-m>-1.76312</z-m>
     </center>
     <axis>
@@ -8099,7 +8362,6 @@
     <center>
       <x-m>-1.38048</x-m>
       <y-m> 0.00551</y-m>
-      <!--z-m>−1.10549</z-m-->
       <z-m>-1.10667</z-m>
     </center>
     <axis>
@@ -8118,7 +8380,6 @@
     <center>
       <x-m>-1.38048</x-m>
       <y-m> 0.00551</y-m>
-      <!--z-m>-1.27029</z-m-->
       <z-m>-1.27142</z-m>
     </center>
     <axis>
@@ -8137,7 +8398,6 @@
     <center>
       <x-m>-1.38048</x-m>
       <y-m> 0.00551</y-m>
-      <!--z-m>-1.43504</z-m-->
       <z-m>-1.43502</z-m>
     </center>
     <axis>
@@ -8156,7 +8416,6 @@
     <center>
       <x-m>-1.38048</x-m>
       <y-m> 0.00551</y-m>
-      <!--z-m>-1.59864</z-m-->
       <z-m>-1.59915</z-m>
     </center>
     <axis>
@@ -8175,7 +8434,6 @@
     <center>
       <x-m>-1.38048</x-m>
       <y-m> 0.00551</y-m>
-      <!--z-m>-1.76277</z-m-->
       <z-m>-1.76312</z-m>
     </center>
     <axis>
@@ -8195,7 +8453,6 @@
     <center>
       <x-m>-1.38048</x-m>
       <y-m> 0.00551</y-m>
-      <!--z-m>−1.10549</z-m-->
       <z-m>-1.10667</z-m>
     </center>
     <axis>
@@ -8214,7 +8471,6 @@
     <center>
       <x-m>-1.38048</x-m>
       <y-m> 0.00551</y-m>
-      <!--z-m>-1.27029</z-m-->
       <z-m>-1.27142</z-m>
     </center>
     <axis>
@@ -8233,7 +8489,6 @@
     <center>
       <x-m>-1.38048</x-m>
       <y-m> 0.00551</y-m>
-      <!--z-m>-1.43504</z-m-->
       <z-m>-1.43502</z-m>
     </center>
     <axis>
@@ -8252,7 +8507,6 @@
     <center>
       <x-m>-1.38048</x-m>
       <y-m> 0.00551</y-m>
-      <!--z-m>-1.59864</z-m-->
       <z-m>-1.59915</z-m>
     </center>
     <axis>
@@ -8271,7 +8525,6 @@
     <center>
       <x-m>-1.38048</x-m>
       <y-m> 0.00551</y-m>
-      <!--z-m>-1.76277</z-m-->
       <z-m>-1.76312</z-m>
     </center>
     <axis>
@@ -8281,6 +8534,7 @@
     </axis>
   </animation>
 
+  <!-- shipping-container-big -->
   <animation>
     <type>select</type>
     <object-name>cube</object-name>
@@ -8295,8 +8549,6 @@
       </and>
     </condition>
   </animation>
-
-  <!-- yaw -->
   <animation>
     <type>rotate</type>
     <object-name>cube</object-name>
@@ -8324,8 +8576,6 @@
       <z>1</z>
     </axis>
   </animation>
-
-  <!--Translate to ground level on ropehitsground -->
   <animation>
     <type>translate</type>
     <object-name>cube</object-name>
@@ -8353,60 +8603,185 @@
     </axis>
   </animation>
 
-  <!--Translate on ground when rope is not taught
+<!-- cub -->
+  <!--animation>
+    <type>noshadow</type>
+    <object-name>cub</object-name>
+    <condition>
+      <not>
+        <property>sim/model/cargo4-onhook</property>
+      </not>
+    </condition>
+  </animation-->
   <animation>
-    <type>translate</type>
-    <object-name>cube</object-name>
-    <property>/sim/model/cargo/currentposx</property>
+    <type>select</type>
+    <object-name>cub</object-name>
     <condition>
       <and>
         <property>/sim/gui/dialogs/aicargo-dialog/rope</property>
-        <or>
-          <property>sim/model/cargo1-onhook</property>
-          <property>sim/model/cargo2-onhook</property>
-          <property>sim/model/cargo3-onhook</property>
-        </or>
+        <property>sim/model/cargo4-onhook</property>
       </and>
     </condition>
-    <factor>1</factor>
-    <center>
-      <x-m>  -1.40464 </x-m>
-      <y-m>  -0.0181  </y-m>
-      <z-m> -16.3493 </z-m>
-    </center>
-    <axis>
-      <x>1</x>
-      <y>0</y>
-      <z>0</z>
-    </axis>
   </animation>
-
   <animation>
-    <type>translate</type>
-    <object-name>cube</object-name>
-    <property>/sim/model/cargo/currentposy</property>
+    <type>rotate</type>
+    <object-name>cub</object-name>
+    <property>/sim/model/cargo/currentyaw</property>
     <condition>
       <and>
         <property>/sim/gui/dialogs/aicargo-dialog/rope</property>
-        <or>
-          <property>sim/model/cargo1-onhook</property>
-          <property>sim/model/cargo2-onhook</property>
-          <property>sim/model/cargo3-onhook</property>
-        </or>
+        <property>sim/model/cargo4-onhook</property>
       </and>
     </condition>
     <factor>1</factor>
+    <offset-deg>0</offset-deg>
     <center>
-      <x-m>  -1.40464 </x-m>
-      <y-m>  -0.0181  </y-m>
+      <x-m> -1.40464 </x-m>
+      <y-m> -0.0181  </y-m>
       <z-m> -16.3493 </z-m>
     </center>
     <axis>
       <x>0</x>
-      <y>1</y>
-      <z>0</z>
+      <y>0</y>
+      <z>1</z>
     </axis>
-  </animation> -->
+  </animation>
+  <animation>
+    <type>translate</type>
+    <object-name>cub</object-name>
+    <property>/sim/model/cargo/currentalt</property>
+    <condition>
+      <and>
+        <property>/sim/gui/dialogs/aicargo-dialog/rope</property>
+        <property>sim/model/cargo4-onhook</property>
+      </and>
+    </condition>
+    <factor>1</factor>
+    <center>
+      <x-m> -1.40464 </x-m>
+      <y-m> -0.0181  </y-m>
+      <z-m> -16.3493 </z-m>
+    </center>
+    <axis>
+      <x>0</x>
+      <y>0</y>
+      <z>1</z>
+    </axis>
+  </animation>
+
+<!-- ground-tank -->
+  <animation>
+    <type>select</type>
+    <object-name>groundtank</object-name>
+    <condition>
+      <and>
+        <property>/sim/gui/dialogs/aicargo-dialog/rope</property>
+        <property>sim/model/cargo5-onhook</property>
+      </and>
+    </condition>
+  </animation>
+  <animation>
+    <type>rotate</type>
+    <object-name>groundtank</object-name>
+    <property>/sim/model/cargo/currentyaw</property>
+    <condition>
+      <and>
+        <property>/sim/gui/dialogs/aicargo-dialog/rope</property>
+        <property>sim/model/cargo5-onhook</property>
+      </and>
+    </condition>
+    <factor>1</factor>
+    <offset-deg>0</offset-deg>
+    <center>
+      <x-m> -1.40464 </x-m>
+      <y-m> -0.0181  </y-m>
+      <z-m> -16.3493 </z-m>
+    </center>
+    <axis>
+      <x>0</x>
+      <y>0</y>
+      <z>1</z>
+    </axis>
+  </animation>
+  <animation>
+    <type>translate</type>
+    <object-name>groundtank</object-name>
+    <property>/sim/model/cargo/currentalt</property>
+    <condition>
+      <and>
+        <property>/sim/gui/dialogs/aicargo-dialog/rope</property>
+        <property>sim/model/cargo5-onhook</property>
+      </and>
+    </condition>
+    <factor>1</factor>
+    <center>
+      <x-m> -1.40464 </x-m>
+      <y-m> -0.0181  </y-m>
+      <z-m> -16.3493 </z-m>
+    </center>
+    <axis>
+      <x>0</x>
+      <y>0</y>
+      <z>1</z>
+    </axis>
+  </animation>
+
+<!-- tank-stand -->
+  <animation>
+    <type>select</type>
+    <object-name>tankstand</object-name>
+    <condition>
+      <and>
+        <property>/sim/gui/dialogs/aicargo-dialog/rope</property>
+        <property>sim/model/cargo6-onhook</property>
+      </and>
+    </condition>
+  </animation>
+  <animation>
+    <type>rotate</type>
+    <object-name>tankstand</object-name>
+    <property>/sim/model/cargo/currentyaw</property>
+    <condition>
+      <and>
+        <property>/sim/gui/dialogs/aicargo-dialog/rope</property>
+        <property>sim/model/cargo6-onhook</property>
+      </and>
+    </condition>
+    <factor>1</factor>
+    <offset-deg>0</offset-deg>
+    <center>
+      <x-m> -1.40464 </x-m>
+      <y-m> -0.0181  </y-m>
+      <z-m> -16.3493 </z-m>
+    </center>
+    <axis>
+      <x>0</x>
+      <y>0</y>
+      <z>1</z>
+    </axis>
+  </animation>
+  <animation>
+    <type>translate</type>
+    <object-name>tankstand</object-name>
+    <property>/sim/model/cargo/currentalt</property>
+    <condition>
+      <and>
+        <property>/sim/gui/dialogs/aicargo-dialog/rope</property>
+        <property>sim/model/cargo6-onhook</property>
+      </and>
+    </condition>
+    <factor>1</factor>
+    <center>
+      <x-m> -1.40464 </x-m>
+      <y-m> -0.0181  </y-m>
+      <z-m> -16.3493 </z-m>
+    </center>
+    <axis>
+      <x>0</x>
+      <y>0</y>
+      <z>1</z>
+    </axis>
+  </animation>
 
 </PropertyList>
 

@@ -353,6 +353,8 @@
       <path>/sim/model/aircrane/currentvsfps</path>
       <path>/sim/model/aircrane/currenteqnt</path>
       <path>/sim/gui/dialogs/aicargo-dialog/rope</path>
+      <path>/rotors/main/bladesvisible</path>
+      <path>/sim/model/aircrane/effects/particles/enabled</path>
     </aircraft-data> 
 
     <multiplay>

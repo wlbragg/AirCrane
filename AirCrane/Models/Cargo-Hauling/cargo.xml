@@ -3,7 +3,7 @@
 <PropertyList>
 
   <model>
-    <path>shipping-container-big.xml</path>
+    <path>shipping-container-big.ac</path>
     <name>shipping-container-big</name>
     <condition>
       <and>
@@ -11,7 +11,6 @@
           <property>sim/model/cargo1-onhook</property>
           <property>sim/model/cargo2-onhook</property>
           <property>sim/model/cargo3-onhook</property>
-          <!--property>sim/model/cargo-falling</property-->
         </or>
         <not>
           <property>/sim/gui/dialogs/aicargo-dialog/rope</property>
@@ -27,10 +26,15 @@
   </model>
 
   <model>
-    <path>Cargo-Hauling/cub.xml</path>
+    <path>cub.ac</path>
     <name>cub</name>
     <condition>
-      <property>sim/model/cargo4-onhook</property>
+      <and>
+        <property>sim/model/cargo4-onhook</property>
+        <not>
+          <property>/sim/gui/dialogs/aicargo-dialog/rope</property>
+        </not>
+      </and>
     </condition>
     <offsets>
       <x-m>-2.5</x-m>
@@ -40,14 +44,42 @@
     </offsets>
   </model>
 
-  <animation>
-    <type>noshadow</type>
-    <object-name>cub</object-name>
+  <model>
+    <path>groundtank.ac</path>
+    <name>ground-tank</name>
     <condition>
-      <not>
-        <property>sim/model/cargo4-onhook</property>
-      </not>
+      <and>
+        <property>sim/model/cargo5-onhook</property>
+        <not>
+          <property>/sim/gui/dialogs/aicargo-dialog/rope</property>
+        </not>
+      </and>
     </condition>
-  </animation>
+    <offsets>
+      <x-m>-2.5</x-m>
+      <y-m>0</y-m>
+      <z-m>-3.85</z-m>
+      <pitch-deg>0</pitch-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>tankstand.ac</path>
+    <name>tank-stand</name>
+    <condition>
+      <and>
+        <property>sim/model/cargo6-onhook</property>
+        <not>
+          <property>/sim/gui/dialogs/aicargo-dialog/rope</property>
+        </not>
+      </and>
+    </condition>
+    <offsets>
+      <x-m>-2.5</x-m>
+      <y-m>0</y-m>
+      <z-m>-3.85</z-m>
+      <pitch-deg>0</pitch-deg>
+    </offsets>
+  </model>
 
 </PropertyList>

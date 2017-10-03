@@ -14,7 +14,7 @@
           <script>aircraft.livery.dialog.toggle()</script>
         </binding>
       </item>
-      <item>
+      <!--item>
         <label>Blades Visible</label>
         <binding>
           <command>nasal</command>
@@ -46,7 +46,7 @@
             gui.popupTip("Persistent Position " ~ (i ? "On" : "Off"));
           </script>
         </binding>
-      </item>
+      </item-->
       <item>
         <label>Immatriculation</label>
         <binding>

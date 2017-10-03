@@ -210,19 +210,6 @@
       </binding>
     </checkbox>
 
-    <checkbox>
-      <col>3</col>
-      <row>0</row>
-      <halign>left</halign>
-      <label>Rope</label>
-      <property>/sim/gui/dialogs/aicargo-dialog/rope</property>
-      <live>true</live>
-      <binding>
-        <command>property-toggle</command>
-        <property>/sim/gui/dialogs/aicargo-dialog/rope</property>
-      </binding>
-    </checkbox>
-
   </group>
 
   <group>
