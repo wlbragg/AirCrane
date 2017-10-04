@@ -172,17 +172,21 @@ setprop("/a4-hookHeight", hookHeight);
             originalLon = lonNode;
 
             if (cargoName == "cargo1")
-              cargoWeight = 8000;
+              cargoWeight = 5000;
             if (cargoName == "cargo2")
-              cargoWeight = 6000;
+              cargoWeight = 1500;
             if (cargoName == "cargo3")
-              cargoWeight = 3000;
+              cargoWeight = 1000;
             if (cargoName == "cargo4")
               cargoWeight = 1200;
             if (cargoName == "cargo5")
               cargoWeight = 2000;
             if (cargoName == "cargo6")
               cargoWeight = 4200;
+            if (cargoName == "cargo7")
+              cargoWeight = 3000;
+            if (cargoName == "cargo8")
+              cargoWeight = 600;
 
             setprop("/ai/models/" ~ cargoParent ~ "/position/altitude-ft", -999);
             setprop("/sim/model/cargo/currentalt", (-groundNode) + 14.8 + getprop("/xfactor"));

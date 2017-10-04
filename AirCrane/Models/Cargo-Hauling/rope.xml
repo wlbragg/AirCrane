@@ -8669,7 +8669,7 @@
     </axis>
   </animation>
 
-<!-- ground-tank -->
+<!-- ground-tanks -->
   <animation>
     <type>select</type>
     <object-name>groundtank</object-name>
@@ -8681,13 +8681,37 @@
     </condition>
   </animation>
   <animation>
+    <type>select</type>
+    <object-name>groundtanklarge</object-name>
+    <condition>
+      <and>
+        <property>/sim/gui/dialogs/aicargo-dialog/rope</property>
+        <property>sim/model/cargo6-onhook</property>
+      </and>
+    </condition>
+  </animation>
+  <animation>
+    <type>select</type>
+    <object-name>groundtanktall</object-name>
+    <condition>
+      <and>
+        <property>/sim/gui/dialogs/aicargo-dialog/rope</property>
+        <property>sim/model/cargo7-onhook</property>
+      </and>
+    </condition>
+  </animation>
+  <animation>
     <type>rotate</type>
     <object-name>groundtank</object-name>
     <property>/sim/model/cargo/currentyaw</property>
     <condition>
       <and>
         <property>/sim/gui/dialogs/aicargo-dialog/rope</property>
-        <property>sim/model/cargo5-onhook</property>
+        <or>
+          <property>sim/model/cargo5-onhook</property>
+          <property>sim/model/cargo6-onhook</property>
+          <property>sim/model/cargo7-onhook</property>
+        </or>
       </and>
     </condition>
     <factor>1</factor>
@@ -8710,7 +8734,11 @@
     <condition>
       <and>
         <property>/sim/gui/dialogs/aicargo-dialog/rope</property>
-        <property>sim/model/cargo5-onhook</property>
+        <or>
+          <property>sim/model/cargo5-onhook</property>
+          <property>sim/model/cargo6-onhook</property>
+          <property>sim/model/cargo7-onhook</property>
+        </or>
       </and>
     </condition>
     <factor>1</factor>
@@ -8733,7 +8761,7 @@
     <condition>
       <and>
         <property>/sim/gui/dialogs/aicargo-dialog/rope</property>
-        <property>sim/model/cargo6-onhook</property>
+        <property>sim/model/cargo8-onhook</property>
       </and>
     </condition>
   </animation>
@@ -8744,7 +8772,7 @@
     <condition>
       <and>
         <property>/sim/gui/dialogs/aicargo-dialog/rope</property>
-        <property>sim/model/cargo6-onhook</property>
+        <property>sim/model/cargo8-onhook</property>
       </and>
     </condition>
     <factor>1</factor>
@@ -8767,7 +8795,7 @@
     <condition>
       <and>
         <property>/sim/gui/dialogs/aicargo-dialog/rope</property>
-        <property>sim/model/cargo6-onhook</property>
+        <property>sim/model/cargo8-onhook</property>
       </and>
     </condition>
     <factor>1</factor>

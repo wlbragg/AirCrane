@@ -64,11 +64,49 @@
   </model>
 
   <model>
+    <path>groundtanklarge.ac</path>
+    <name>ground-tank-large</name>
+    <condition>
+      <and>
+        <property>sim/model/cargo6-onhook</property>
+        <not>
+          <property>/sim/gui/dialogs/aicargo-dialog/rope</property>
+        </not>
+      </and>
+    </condition>
+    <offsets>
+      <x-m>-2.5</x-m>
+      <y-m>0</y-m>
+      <z-m>-3.85</z-m>
+      <pitch-deg>0</pitch-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>groundtanktall.ac</path>
+    <name>ground-tank-tall</name>
+    <condition>
+      <and>
+        <property>sim/model/cargo7-onhook</property>
+        <not>
+          <property>/sim/gui/dialogs/aicargo-dialog/rope</property>
+        </not>
+      </and>
+    </condition>
+    <offsets>
+      <x-m>-2.5</x-m>
+      <y-m>0</y-m>
+      <z-m>-3.85</z-m>
+      <pitch-deg>0</pitch-deg>
+    </offsets>
+  </model>
+
+  <model>
     <path>tankstand.ac</path>
     <name>tank-stand</name>
     <condition>
       <and>
-        <property>sim/model/cargo6-onhook</property>
+        <property>sim/model/cargo8-onhook</property>
         <not>
           <property>/sim/gui/dialogs/aicargo-dialog/rope</property>
         </not>

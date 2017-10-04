@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<PropertyList>
+	<flightplan>
+		<wpt>
+			<name>END</name>
+			<lat>37.77953</lat>
+			<lon>-96.81557</lon>
+			<alt>1382.78736</alt>
+			<ktas>0</ktas>
+			<on-ground>1</on-ground>
+		</wpt>
+        <wpt>
+            <name>END</name>
+        </wpt>
+	</flightplan>
+</PropertyList>

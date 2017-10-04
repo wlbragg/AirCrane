@@ -28,6 +28,7 @@
 		</entry>
 		<entry>
 			<callsign>cargo2</callsign>
+      <name>Shipping Container</name>
 			<type>aircraft</type>
 			<model>Aircraft/AirCrane/Models/Cargo-Hauling/shipping-container-big.ac</model>
 			<flightplan>aircrane_cargo2.xml</flightplan>
@@ -35,6 +36,7 @@
 		</entry>
 		<entry>
 			<callsign>cargo3</callsign>
+      <name>Shipping Container</name>
 			<type>aircraft</type>
 			<model>Aircraft/AirCrane/Models/Cargo-Hauling/shipping-container-big.ac</model>
 			<flightplan>aircrane_cargo3.xml</flightplan>
@@ -42,6 +44,7 @@
 		</entry>
 		<entry>
 			<callsign>cargo4</callsign>
+      <name>Aircraft</name>
 			<type>aircraft</type>
 			<model>Aircraft/AirCrane/Models/Cargo-Hauling/cub.ac</model>
 			<flightplan>aircrane_cargo4.xml</flightplan>
@@ -57,10 +60,26 @@
 		</entry>
 		<entry>
 			<callsign>cargo6</callsign>
+     <name>Ground Tank</name>
+			<type>aircraft</type>
+			<model>Aircraft/AirCrane/Models/Cargo-Hauling/groundtanklarge.ac</model>
+			<flightplan>aircrane_cargo6.xml</flightplan>
+			<repeat>1</repeat>
+		</entry>
+		<entry>
+			<callsign>cargo7</callsign>
+      <name>Ground Tank Tall</name>
+			<type>aircraft</type>
+			<model>Aircraft/AirCrane/Models/Cargo-Hauling/groundtanktall.ac</model>
+			<flightplan>aircrane_cargo7.xml</flightplan>
+			<repeat>1</repeat>
+		</entry>
+		<entry>
+			<callsign>cargo8</callsign>
       <name>Tank Frame</name>
 			<type>aircraft</type>
 			<model>Aircraft/AirCrane/Models/Cargo-Hauling/tankstand.ac</model>
-			<flightplan>aircrane_cargo6.xml</flightplan>
+			<flightplan>aircrane_cargo8.xml</flightplan>
 			<repeat>1</repeat>
 		</entry>
 	</scenario>
