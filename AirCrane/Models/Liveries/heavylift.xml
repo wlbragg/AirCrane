@@ -28,7 +28,7 @@
       <liverytank>
         <name type="string">Default</name>
         <index type="int">1</index>
-        <texture>Liveries/1024x1024/greywater-system.png</texture>
+        <texture>Liveries/2096x2096/HeavyLift-water-system.png</texture>
         <specular>
           <red>   0.3 </red>
           <green> 0.3 </green>
