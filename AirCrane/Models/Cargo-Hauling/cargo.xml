@@ -26,8 +26,8 @@
   </model>
 
   <model>
-    <path>cub.ac</path>
-    <name>cub</name>
+    <path>cub-ground.ac</path>
+    <name>cub-ground</name>
     <condition>
       <and>
         <property>sim/model/cargo4-onhook</property>

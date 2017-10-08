@@ -239,7 +239,7 @@
 
   <!-- Rope -->
   <model>
-    <path>Aircraft/AirCrane/Models/Cargo-Hauling/rope.xml</path>
+    <path>Aircraft/AirCrane/Models/Cargo-Hauling/long-line.xml</path>
   </model>
   
   <!-- Water System -->

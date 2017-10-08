@@ -3,7 +3,7 @@
 <PropertyList>
   
   <sim include="views.xml">
-    
+
     <fuel-fraction>0.8</fuel-fraction>
     
     <startup>
@@ -52,7 +52,8 @@
       </aircrane>
       <cargo>
         <currentyaw type="double">0.0</currentyaw>
-        <currentalt type="double">0.0</currentalt>
+        <cargoalt type="double">0.0</cargoalt>
+        <cargoheight type="double">0.0</cargoheight>
         <currentposx type="double">0.0</currentposx>
         <currentposy type="double">0.0</currentposy>
         <rope>
@@ -446,8 +447,5 @@
       <file>Aircraft/Generic/helicopter-fcs.nas</file>
     </fcs>
   </nasal>
-
-<xfactor type="double">0</xfactor>
-<yfactor type="double">0</yfactor>
 
 </PropertyList>

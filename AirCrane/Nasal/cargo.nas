@@ -2,11 +2,11 @@ props.Node.new({ "controls/hook-assist":0 });
 props.globals.initNode("controls/hook-assist", 0, "BOOL" );
 props.Node.new({ "controls/cargo-release":0 });
 props.globals.initNode("controls/cargo-release", 0, "BOOL" );
-props.Node.new({ "sim/model/cargo-hook":0, "sim/model/cargo-auto-hook":0, "sim/model/cargo-on-hook":0, "sim/model/cargo-height":0 });
+props.Node.new({ "sim/model/cargo-hook":0, "sim/model/cargo-auto-hook":0, "sim/model/cargo-on-hook":0, "sim/model/cargo-offset":0 });
 props.globals.initNode("sim/model/cargo-hook", 0, "BOOL" );
 props.globals.initNode("sim/model/cargo-auto-hook", 0, "BOOL" );
 props.globals.initNode("sim/model/cargo-on-hook", 0, "BOOL" );
-props.globals.initNode("sim/model/cargo-height", 0, "DOUBLE" );
+props.globals.initNode("sim/model/cargo-offset", 0, "DOUBLE" );
 
 var AircraftCargo = {};
 var parents = [AircraftCargo];
@@ -24,11 +24,6 @@ var interval = 0;
 var currentYaw = 0;
 var originalYaw = 0;
 var dist = 0;
-
-var originalLat = 0;
-var originalLon = 0;
-var new_x = 0;
-var new_y = 0;
 
 var cargo_create = func () {
 
@@ -91,19 +86,12 @@ var rope_distance = func (dlat, dlon) {
   if(dist < minDist) {
     minDist = dist;
   }
-  setprop("/a1-minDist", minDist);
   return dist; 
 }
 
-var rope_distanceNEW = func (dlat, dlon) {
-  var sdist = dlat * dlat + dlon * dlon;
-  var ndist = math.sqrt(sdist);
-  if(ndist < minDistNEW) {
-    minDistNEW = ndist;
-  }
-  setprop("/a1-minDistNEW", minDistNEW);
-  return ndist;
-}
+var ropeLength = 12.2;
+var cargoHeight = 0;
+var cargoWeight = 0;
 
 var cargo_tow = func () {
 
@@ -119,10 +107,7 @@ var cargo_tow = func () {
   var headNode = getprop("/orientation/heading-deg");
   var onGround = getprop("gear/gear/wow") * getprop("gear/gear[1]/wow") * getprop("gear/gear[2]/wow");
   var longline = getprop("/sim/gui/dialogs/aicargo-dialog/rope");
-  var ropeOnGround = getprop("/sim/model/cargo/rope/ropehitsground");
-  var cargoWeight = 0;
- 
-  hookDistance = getprop("/a1-hookDistAdd");
+  var cargoOnGround = getprop("/sim/model/cargo/hitsground");
 
   if (longline) {
     hookHeight = 43;
@@ -137,13 +122,6 @@ var cargo_tow = func () {
 		foreach(var cargoN; props.globals.getNode("/ai/models", 1).getChildren("aircraft")) {
 			if (string.match(cargoN.getNode("callsign").getValue(), "cargo*")){
         dist = rope_distance(cargoN.getNode("position/latitude-deg").getValue() - latNode, cargoN.getNode("position/longitude-deg").getValue() - lonNode);
-        var distNEW = rope_distanceNEW(cargoN.getNode("position/latitude-deg").getValue() - latNode, cargoN.getNode("position/longitude-deg").getValue() - lonNode);
-
-setprop("/a1-dist", dist);
-setprop("/a1-distNEW", distNEW);
-setprop("/a2-hookdist", hookDistance);
-setprop("/a3-altNode", altNode);
-setprop("/a4-hookHeight", hookHeight);
 
         if(dist <= hookDistance) {
 					gui.popupTip(cargoN.getNode("callsign").getValue()~" in Range", 1);
@@ -155,12 +133,6 @@ setprop("/a4-hookHeight", hookHeight);
             setprop("sim/model/cargo-on-hook", 1);
 						setprop("sim/model/"~cargoName~"-onhook", 1);
 
-            #TODO: is this the approprate place and method to do this?
-            if ((cargoName == "cargo1") or (cargoName == "cargo2") or (cargoName == "cargo3"))
-              setprop("sim/model/cargo-height", -2.7);
-            else
-              setprop("sim/model/cargo-height", 0);
-
             #maybe condition to only if longline
             currentYaw = (headNode+(headNode-cargoN.getNode("orientation/true-heading-deg").getValue()))-headNode;
             originalYaw = cargoN.getNode("orientation/true-heading-deg").getValue();
@@ -168,31 +140,46 @@ setprop("/a4-hookHeight", hookHeight);
             if (currentYaw < 0) currentYaw = currentYaw + 360;
             setprop("/sim/model/cargo/currentyaw", currentYaw);
 
-            originalLat = latNode;
-            originalLon = lonNode;
-
-            if (cargoName == "cargo1")
+            if (cargoName == "cargo1") {
               cargoWeight = 5000;
-            if (cargoName == "cargo2")
+              cargoHeight = 2.5;
+            } else
+            if (cargoName == "cargo2") {
               cargoWeight = 1500;
-            if (cargoName == "cargo3")
+              cargoHeight = 2.5;8
+            } else
+            if (cargoName == "cargo3") {
               cargoWeight = 1000;
-            if (cargoName == "cargo4")
+              cargoHeight = 2.5;
+            } else
+            if (cargoName == "cargo4") {
               cargoWeight = 1200;
-            if (cargoName == "cargo5")
+              cargoHeight = 1.83;
+            } else
+            if (cargoName == "cargo5") {
               cargoWeight = 2000;
-            if (cargoName == "cargo6")
+              cargoHeight = 2.42;
+            } else
+            if (cargoName == "cargo6") {
               cargoWeight = 4200;
-            if (cargoName == "cargo7")
+              cargoHeight = 4.18;
+            } else
+            if (cargoName == "cargo7") {
               cargoWeight = 3000;
-            if (cargoName == "cargo8")
+              cargoHeight = 3.69;
+            } else
+            if (cargoName == "cargo8") {
               cargoWeight = 600;
+              cargoHeight = 2.12;
+            }
 
-            setprop("/ai/models/" ~ cargoParent ~ "/position/altitude-ft", -999);
-            setprop("/sim/model/cargo/currentalt", (-groundNode) + 14.8 + getprop("/xfactor"));
+            setprop("sim/model/cargo/cargoheight", -cargoHeight);
 
-            setprop("/sim/model/cargo/rope/damping", 0.6);
-            setprop("/sim/model/cargo/rope/flex-force", 0.01);
+            setprop("ai/models/" ~ cargoParent ~ "/position/altitude-ft", -999);
+            setprop("sim/model/cargo/cargoalt", (-groundNode) + ropeLength + cargoHeight);
+
+            setprop("sim/model/cargo/rope/damping", 0.6);
+            setprop("sim/model/cargo/rope/flex-force", 0.01);
             #setprop("/sim/model/cargo/rope/stiffness", 3);
 					} 
 				}
@@ -201,12 +188,7 @@ setprop("/a4-hookHeight", hookHeight);
 	}
   if (hooked == 1) {
 
-setprop("/a1-dist", dist);
-setprop("/a2-hookdist", hookDistance);
-setprop("/a3-altNode", altNode);
-setprop("/a4-hookHeight", hookHeight);
-
-    if ((longline and !ropeOnGround) or !longline) {
+    if ((longline and !cargoOnGround) or !longline) {
 
       # TODO: -optimize- some of this this may need to only happen once, each time the condition becomes true VS every loop
 
@@ -215,32 +197,23 @@ setprop("/a4-hookHeight", hookHeight);
       if (currentYaw < 0) currentYaw = currentYaw + 360;
       setprop("/sim/model/cargo/currentyaw", currentYaw);
 
-      setprop("/sim/model/cargo/currentalt", 0);
+      setprop("sim/model/cargo/cargoalt", 0);
 
       setprop("sim/weight[3]/weight-lb", cargoWeight);
       
     } else {
 
       dist = rope_distance(getprop("/ai/models/" ~ cargoParent ~ "/position/latitude-deg") - latNode, getprop("/ai/models/" ~ cargoParent ~ "/position/longitude-deg") - lonNode);
-      if(dist <= hookDistance and ropeOnGround) {
+      if(dist <= hookDistance and cargoOnGround) {
 
         currentYaw = (headNode+(headNode-originalYaw))-headNode;
         if (currentYaw > 360) currentYaw = currentYaw - 360;
         if (currentYaw < 0) currentYaw = currentYaw + 360;
         setprop("/sim/model/cargo/currentyaw", currentYaw);
 
-        setprop("/sim/model/cargo/currentalt", (-groundNode) + 14.8 + getprop("/xfactor"));
+        setprop("sim/model/cargo/cargoalt", (-groundNode) + ropeLength + cargoHeight);
 
         setprop("sim/weight[3]/weight-lb", 0);
-
-        #setprop("/sim/model/cargo/currentalt", (-groundNode) + 14.8 + getprop("/xfactor"));
-        #111,111 meters (111.111 km) in the y direction is 1 degree (of latitude) 
-        #111,111 * cos(latitude) meters in the x direction is 1 degree (of longitude).
-        #(90-lat)/90
-        #new_x = (originalLon - lonNode) * 111320 * math.cos(latNode);
-        #new_y = (originalLat - latNode) * 111320;
-        #setprop("/sim/model/cargo/currentposx", new_x);
-        #setprop("/sim/model/cargo/currentposy", new_y);
 
       } else {
 
@@ -251,7 +224,7 @@ setprop("/a4-hookHeight", hookHeight);
         if (currentYaw < 0) currentYaw = currentYaw + 360;
         setprop("/sim/model/cargo/currentyaw", currentYaw);
 
-        setprop("/sim/model/cargo/currentalt", (-groundNode) + 14.8 + getprop("/xfactor"));
+        setprop("sim/model/cargo/cargoalt", (-groundNode) + ropeLength + cargoHeight);
 
         setprop("sim/weight[3]/weight-lb", cargoWeight);
 
@@ -260,7 +233,7 @@ setprop("/a4-hookHeight", hookHeight);
 
     #gui.popupTip(cargoName~" in Tow", 1);
 		if (releaseNode == 1 and onHookNode == 1) {
-      if (onGround or (longline and ropeOnGround)) {
+      if (onGround or (longline and cargoOnGround)) {
         setprop("sim/model/cargo-on-hook", 0);
         setprop("controls/cargo-release", 0);
 			  hooked = 0;

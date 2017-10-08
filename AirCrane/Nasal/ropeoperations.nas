@@ -1,8 +1,7 @@
 var rope_angle_v_array = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
 var rope_angle_vr_array = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
 var rope_angle_r_array = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
-var cargoheight = 0;
-#var modelswap = 0;
+var cargo_height = 0;
 
 var rope_operations = func {
 
@@ -14,27 +13,25 @@ var rope_operations = func {
 	var n_segments = 90;
 	var segment_length = getprop("/sim/model/cargo/rope/factor");
 
-  #temporary until set correctly
-  cargoheight = getprop("/sim/model/cargo-height");
-  #modelswap = getprop("/sim/model/cargo/swappoint");
+  cargo_height = getprop("/sim/model/cargo/cargoheight");
 
   if (overland)
     {
-      if (((alt_agl - (n_segments * segment_length)) + cargoheight) < 0.0)
+      if (((alt_agl - (n_segments * segment_length)) + cargo_height) < 0.0)
         {
         onground_flag = 1;
-        setprop("/sim/model/cargo/rope/ropehitsground", 1);
+        setprop("/sim/model/cargo/hitsground", 1);
         }
       else {
         onground_flag = 0;
-        setprop("/sim/model/cargo/rope/ropehitsground", 0);
+        setprop("/sim/model/cargo/hitsground", 0);
       }
     } 
   else
 	  {
       #TODO: decide how to handel this event, slowly allow to sink?
 	    onground_flag = 0;
-      setprop("/sim/model/cargo/rope/ropehitsground", 0);
+      setprop("/sim/model/cargo/hitsground", 0);
 	  }
 
 	var flex_force = getprop("/sim/model/cargo/rope/flex-force");
