@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 
+<!--
+  This is the Long Line portion of the cargo hauling capability.
+  Any new cargo must be included here and organized like the current cargo is.
+  It also needs to be defined in Cargo-Hauling/hard-docked.xml and aircrane_cargo.xml in the fgdata AI system.
+-->
+
 <PropertyList>
 
   <model>

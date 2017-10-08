@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 
+<!--
+  This is the Hard Docked portion of the cargo hauling capability.
+  Any new cargo must be included here and organized like the current cargo is.
+  It also needs to be defined in Cargo-Hauling/long-line.xml and aircrane_cargo.xml in the fgdata AI system.
+-->
+
 <PropertyList>
 
   <model>
@@ -45,7 +51,7 @@
   </model>
 
   <model>
-    <path>groundtank.ac</path>
+    <path>ground-tank.ac</path>
     <name>ground-tank</name>
     <condition>
       <and>
@@ -64,7 +70,7 @@
   </model>
 
   <model>
-    <path>groundtanklarge.ac</path>
+    <path>ground-tank-large.ac</path>
     <name>ground-tank-large</name>
     <condition>
       <and>
@@ -83,7 +89,7 @@
   </model>
 
   <model>
-    <path>groundtanktall.ac</path>
+    <path>ground-tank-tall.ac</path>
     <name>ground-tank-tall</name>
     <condition>
       <and>
@@ -102,7 +108,7 @@
   </model>
 
   <model>
-    <path>tankstand.ac</path>
+    <path>tank-stand.ac</path>
     <name>tank-stand</name>
     <condition>
       <and>

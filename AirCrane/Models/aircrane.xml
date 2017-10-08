@@ -232,12 +232,12 @@
     </offsets>
   </model>
 
-  <!-- Cargo -->
+  <!-- Hard Docked Cargo -->
   <model>
-    <path>Aircraft/AirCrane/Models/Cargo-Hauling/cargo.xml</path>
+    <path>Aircraft/AirCrane/Models/Cargo-Hauling/hard-dock.xml</path>
   </model>
 
-  <!-- Rope -->
+  <!-- Long Line Cargo -->
   <model>
     <path>Aircraft/AirCrane/Models/Cargo-Hauling/long-line.xml</path>
   </model>
