@@ -106,7 +106,7 @@ var cargo_tow = func () {
   var groundElevFt = getprop("/position/ground-elev-ft");
   var headNode = getprop("/orientation/heading-deg");
   var onGround = getprop("gear/gear/wow") * getprop("gear/gear[1]/wow") * getprop("gear/gear[2]/wow");
-  var longline = getprop("/sim/gui/dialogs/aicargo-dialog/rope");
+  var longline = getprop("/sim/gui/dialogs/aicargo-dialog/connection");
   var cargoOnGround = getprop("/sim/model/cargo/hitsground");
 
   if (longline) {
@@ -172,6 +172,15 @@ var cargo_tow = func () {
               cargoWeight = 600;
               cargoHeight = 2.12;
             }
+            if (cargoName == "cargo9" or cargoName == "cargo10" or cargoName == "cargo11" or cargoName == "cargo12" or cargoName == "cargo13") {
+              cargoWeight = 250;
+              cargoHeight = 2.08;
+            } else
+            if (cargoName == "cargo14") {
+              cargoWeight = 4000;
+              cargoHeight = 9.3;
+            }
+
 
             if (cargoHeight < 3.0)
               haulable = 1;

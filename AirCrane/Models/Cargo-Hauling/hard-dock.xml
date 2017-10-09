@@ -19,7 +19,7 @@
           <property>sim/model/cargo3-onhook</property>
         </or>
         <not>
-          <property>/sim/gui/dialogs/aicargo-dialog/rope</property>
+          <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
         </not>
       </and>
     </condition>
@@ -38,7 +38,7 @@
       <and>
         <property>sim/model/cargo4-onhook</property>
         <not>
-          <property>/sim/gui/dialogs/aicargo-dialog/rope</property>
+          <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
         </not>
       </and>
     </condition>
@@ -57,7 +57,7 @@
       <and>
         <property>sim/model/cargo5-onhook</property>
         <not>
-          <property>/sim/gui/dialogs/aicargo-dialog/rope</property>
+          <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
         </not>
       </and>
     </condition>
@@ -76,7 +76,7 @@
       <and>
         <property>sim/model/cargo6-onhook</property>
         <not>
-          <property>/sim/gui/dialogs/aicargo-dialog/rope</property>
+          <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
         </not>
       </and>
     </condition>
@@ -95,7 +95,7 @@
       <and>
         <property>sim/model/cargo7-onhook</property>
         <not>
-          <property>/sim/gui/dialogs/aicargo-dialog/rope</property>
+          <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
         </not>
       </and>
     </condition>
@@ -114,7 +114,32 @@
       <and>
         <property>sim/model/cargo8-onhook</property>
         <not>
-          <property>/sim/gui/dialogs/aicargo-dialog/rope</property>
+          <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
+        </not>
+      </and>
+    </condition>
+    <offsets>
+      <x-m>-2.5</x-m>
+      <y-m>0</y-m>
+      <z-m>-3.85</z-m>
+      <pitch-deg>0</pitch-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>pine-trees.ac</path>
+    <name>pine-trees</name>
+    <condition>
+      <and>
+        <or>
+          <property>sim/model/cargo9-onhook</property>
+          <property>sim/model/cargo10-onhook</property>
+          <property>sim/model/cargo11-onhook</property>
+          <property>sim/model/cargo12-onhook</property>
+          <property>sim/model/cargo13-onhook</property>
+        </or>
+        <not>
+          <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
         </not>
       </and>
     </condition>

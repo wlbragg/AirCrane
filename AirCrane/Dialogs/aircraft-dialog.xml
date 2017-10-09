@@ -16,10 +16,16 @@
   <nasal>
         <open>
             # Cargo Hauling option
-            var p = getprop("sim/gui/dialogs/aicargo-dialog/rope");
+            var p = getprop("sim/gui/dialogs/aicargo-dialog/connection");
             setprop("/sim/model/aircrane/cargo_connection_flag_0", 0);
             setprop("/sim/model/aircrane/cargo_connection_flag_1", 0);
             setprop("/sim/model/aircrane/cargo_connection_flag_" ~ p, 1);
+
+            # Long Line option
+            p = getprop("sim/gui/dialogs/aicargo-dialog/longline");
+            setprop("sim/model/aircrane/longline_flag_0",0);
+						setprop("sim/model/aircrane/longline_flag_1",0);
+            setprop("/sim/model/aircrane/longline_flag_" ~ p, 1);
         </open>
     </nasal>
 
@@ -121,7 +127,7 @@
           var p = "sim/model/firetank/enabled";
           setprop(p, var i = !getprop(p));
           gui.popupTip("Pumping system " ~ (i ? "On" : "Off"));
-          setprop("sim/gui/dialogs/aicargo-dialog/rope", 0);
+          setprop("sim/gui/dialogs/aicargo-dialog/connection", 0);
           setprop("sim/model/aircrane/cargo_connection_flag_0",1);
 				  setprop("sim/model/aircrane/cargo_connection_flag_1",0);
         </script>
@@ -175,7 +181,7 @@
           <binding>
             <command>nasal</command>
             <script>
-              var p = "sim/gui/dialogs/aicargo-dialog/rope";
+              var p = "sim/gui/dialogs/aicargo-dialog/connection";
               setprop(p, var i = 0);
               gui.popupTip("Cargo connection " ~ (i ? "Long Line" : "Hard Docked"));
               setprop("sim/model/aircrane/cargo_connection_flag_0",1);
@@ -189,19 +195,70 @@
 					<property>sim/model/aircrane/cargo_connection_flag_1</property>
 					<live>true</live>
 					<enable>
-						<not>
-							<property>/sim/freeze/replay-state</property>
-						</not>
+					  <not>
+						  <property>/sim/freeze/replay-state</property>
+					  </not>
 					</enable>
           <binding>
             <command>nasal</command>
             <script>
-              var p = "sim/gui/dialogs/aicargo-dialog/rope";
+              var p = "sim/gui/dialogs/aicargo-dialog/connection";
               setprop(p, var i = 1);
               gui.popupTip("Cargo connection " ~ (i ? "Long Line" : "Hard Docked"));
               setprop("sim/model/aircrane/cargo_connection_flag_0",0);
 							setprop("sim/model/aircrane/cargo_connection_flag_1",1);
               setprop("sim/model/firetank/enabled", 0);
+            </script>
+          </binding>
+				</radio>
+			</group>
+			<group>
+				<layout>hbox</layout>
+				<radio>
+					<halign>left</halign>
+					<label>Rope</label>
+					<property>sim/model/aircrane/longline_flag_0</property>
+					<live>true</live>
+					<enable>
+            <and>
+						  <not>
+							  <property>/sim/freeze/replay-state</property>
+						  </not>
+              <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
+            </and>
+					</enable>
+          <binding>
+            <command>nasal</command>
+            <script>
+              var p = "sim/gui/dialogs/aicargo-dialog/longline";
+              setprop(p, var i = 0);
+              gui.popupTip("Line type " ~ (i ? "Rope" : "Cable"));
+              setprop("sim/model/aircrane/longline_flag_0",1);
+							setprop("sim/model/aircrane/longline_flag_1",0);
+            </script>
+          </binding>
+				</radio>
+				<radio>
+					<halign>left</halign>
+					<label>Cable</label>
+					<property>sim/model/aircrane/longline_flag_1</property>
+					<live>true</live>
+          <enable>
+            <and>
+						  <not>
+							  <property>/sim/freeze/replay-state</property>
+						  </not>
+              <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
+            </and>
+					</enable>
+          <binding>
+            <command>nasal</command>
+            <script>
+              var p = "sim/gui/dialogs/aicargo-dialog/longline";
+              setprop(p, var i = 1);
+              gui.popupTip("Line type " ~ (i ? "Rope" : "Cable"));
+              setprop("sim/model/aircrane/longline_flag_0",0);
+							setprop("sim/model/aircrane/longline_flag_1",1);
             </script>
           </binding>
 				</radio>

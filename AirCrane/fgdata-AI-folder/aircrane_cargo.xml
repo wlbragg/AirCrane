@@ -82,5 +82,53 @@
 			<flightplan>aircrane_cargo8.xml</flightplan>
 			<repeat>1</repeat>
 		</entry>
+		<entry>
+			<callsign>cargo9</callsign>
+      <name>Pine Trees</name>
+			<type>aircraft</type>
+			<model>Aircraft/AirCrane/Models/Cargo-Hauling/pine-trees.ac</model>
+			<flightplan>aircrane_cargo9.xml</flightplan>
+			<repeat>1</repeat>
+		</entry>
+    <entry>
+			<callsign>cargo10</callsign>
+      <name>Pine Trees</name>
+			<type>aircraft</type>
+			<model>Aircraft/AirCrane/Models/Cargo-Hauling/pine-trees.ac</model>
+			<flightplan>aircrane_cargo9.xml</flightplan>
+			<repeat>1</repeat>
+		</entry>
+    <entry>
+			<callsign>cargo11</callsign>
+      <name>Pine Trees</name>
+			<type>aircraft</type>
+			<model>Aircraft/AirCrane/Models/Cargo-Hauling/pine-trees.ac</model>
+			<flightplan>aircrane_cargo9.xml</flightplan>
+			<repeat>1</repeat>
+		</entry>
+    <entry>
+			<callsign>cargo12</callsign>
+      <name>Pine Trees</name>
+			<type>aircraft</type>
+			<model>Aircraft/AirCrane/Models/Cargo-Hauling/pine-trees.ac</model>
+			<flightplan>aircrane_cargo9.xml</flightplan>
+			<repeat>1</repeat>
+		</entry>
+    <entry>
+			<callsign>cargo13</callsign>
+      <name>Pine Trees</name>
+			<type>aircraft</type>
+			<model>Aircraft/AirCrane/Models/Cargo-Hauling/pine-trees.ac</model>
+			<flightplan>aircrane_cargo9.xml</flightplan>
+			<repeat>1</repeat>
+		</entry>
+    <entry>
+			<callsign>cargo14</callsign>
+      <name>Dump Truck</name>
+			<type>aircraft</type>
+			<model>Aircraft/AirCrane/Models/Cargo-Hauling/truck.ac</model>
+			<flightplan>aircrane_cargo14.xml</flightplan>
+			<repeat>1</repeat>
+		</entry>
 	</scenario>
 </PropertyList>

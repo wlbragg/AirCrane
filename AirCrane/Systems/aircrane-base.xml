@@ -13,6 +13,15 @@
     <sound>
       <path>Aircraft/AirCrane/Sounds/aircrane-sound.xml</path>
     </sound>
+
+    <gui>
+      <dialogs>
+        <aicargo-dialog>
+          <longline type="bool">false</longline>
+          <connection type="bool">false</connection>
+        </aicargo-dialog>
+      </dialogs>
+    </gui>
     
     <model>
       <path archive="y">Aircraft/AirCrane/Models/aircrane.xml</path>
@@ -353,7 +362,8 @@
       <path>/sim/model/aircrane/currentroll</path>
       <path>/sim/model/aircrane/currentvsfps</path>
       <path>/sim/model/aircrane/currenteqnt</path>
-      <path>/sim/gui/dialogs/aicargo-dialog/rope</path>
+      <path>/sim/gui/dialogs/aicargo-dialog/longline</path>
+      <path>/sim/gui/dialogs/aicargo-dialog/connection</path>
       <path>/rotors/main/bladesvisible</path>
       <path>/sim/model/aircrane/effects/particles/enabled</path>
     </aircraft-data> 

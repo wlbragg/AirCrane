@@ -17,7 +17,7 @@
           <property>sim/model/cargo2-onhook</property>
           <property>sim/model/cargo3-onhook</property>
         </or>
-        <property>/sim/gui/dialogs/aicargo-dialog/rope</property>
+        <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
       </and>
     </condition>
   </model>
@@ -26,7 +26,7 @@
     <condition>
       <and>
         <property>sim/model/cargo4-onhook</property>
-        <property>/sim/gui/dialogs/aicargo-dialog/rope</property>
+        <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
       </and>
     </condition>
   </model>
@@ -35,7 +35,7 @@
     <condition>
       <and>
         <property>sim/model/cargo5-onhook</property>
-        <property>/sim/gui/dialogs/aicargo-dialog/rope</property>
+        <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
       </and>
     </condition>
   </model>
@@ -44,7 +44,7 @@
     <condition>
       <and>
         <property>sim/model/cargo6-onhook</property>
-        <property>/sim/gui/dialogs/aicargo-dialog/rope</property>
+        <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
       </and>
     </condition>
   </model>
@@ -53,7 +53,7 @@
     <condition>
       <and>
         <property>sim/model/cargo7-onhook</property>
-        <property>/sim/gui/dialogs/aicargo-dialog/rope</property>
+        <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
       </and>
     </condition>
   </model>
@@ -62,13 +62,51 @@
     <condition>
       <and>
         <property>sim/model/cargo8-onhook</property>
-        <property>/sim/gui/dialogs/aicargo-dialog/rope</property>
+        <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
+      </and>
+    </condition>
+  </model>
+  <model>
+    <path>pinetrees.ac</path>
+    <condition>
+      <and>
+        <or>
+          <property>sim/model/cargo9-onhook</property>
+          <property>sim/model/cargo10-onhook</property>
+          <property>sim/model/cargo11-onhook</property>
+          <property>sim/model/cargo12-onhook</property>
+          <property>sim/model/cargo13-onhook</property>
+        </or>
+        <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
+      </and>
+    </condition>
+  </model>
+  <model>
+    <path>truck.ac</path>
+    <condition>
+      <and>
+        <property>sim/model/cargo14-onhook</property>
+        <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
       </and>
     </condition>
   </model>
 
-  <path>rope.ac</path>
-  
+  <model>
+    <path>rope.ac</path>
+    <condition>
+      <not>
+        <property>/sim/gui/dialogs/aicargo-dialog/longline</property>
+      </not>
+    </condition>
+  </model>
+
+  <model>
+    <path>cable.ac</path>
+    <condition>
+      <property>/sim/gui/dialogs/aicargo-dialog/longline</property>
+    </condition>
+  </model>
+
   <animation>
     <!-- Objets opaques -->
     <object-name>ropesegment.001</object-name>
@@ -167,6 +205,8 @@
     <object-name>groundtanklarge</object-name>
     <object-name>groundtanktall</object-name>
     <object-name>tankstand</object-name>
+    <object-name>pinetrees</object-name>
+    <object-name>truck</object-name>
   </animation>
 
   <effect>
@@ -267,6 +307,8 @@
     <object-name>groundtanklarge</object-name>
     <object-name>groundtanktall</object-name>
     <object-name>tankstand</object-name>
+    <object-name>pinetrees</object-name>
+    <object-name>truck</object-name>
   </effect>
   
   <animation>
@@ -362,7 +404,7 @@
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
     <condition>
-      <property>/sim/gui/dialogs/aicargo-dialog/rope</property>
+      <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
     </condition>
   </animation>
 
@@ -465,6 +507,8 @@
     <object-name>groundtanklarge</object-name>
     <object-name>groundtanktall</object-name>
     <object-name>tankstand</object-name>
+    <object-name>pinetrees</object-name>
+    <object-name>truck</object-name>
   </animation>
   
   <animation>
@@ -564,6 +608,8 @@
     <object-name>groundtanklarge</object-name>
     <object-name>groundtanktall</object-name>
     <object-name>tankstand</object-name>
+    <object-name>pinetrees</object-name>
+    <object-name>truck</object-name>
   </animation>
 
   <animation>
@@ -662,6 +708,8 @@
     <object-name>groundtanklarge</object-name>
     <object-name>groundtanktall</object-name>
     <object-name>tankstand</object-name>
+    <object-name>pinetrees</object-name>
+    <object-name>truck</object-name>
   </animation>
   
   <animation>
@@ -759,6 +807,8 @@
     <object-name>groundtanklarge</object-name>
     <object-name>groundtanktall</object-name>
     <object-name>tankstand</object-name>
+    <object-name>pinetrees</object-name>
+    <object-name>truck</object-name>
   </animation>
   
   <animation>
@@ -855,6 +905,8 @@
     <object-name>groundtanklarge</object-name>
     <object-name>groundtanktall</object-name>
     <object-name>tankstand</object-name>
+    <object-name>pinetrees</object-name>
+    <object-name>truck</object-name>
   </animation>
   
   <animation>
@@ -950,6 +1002,8 @@
     <object-name>groundtanklarge</object-name>
     <object-name>groundtanktall</object-name>
     <object-name>tankstand</object-name>
+    <object-name>pinetrees</object-name>
+    <object-name>truck</object-name>
   </animation>
   
   <animation>
@@ -1044,6 +1098,8 @@
     <object-name>groundtanklarge</object-name>
     <object-name>groundtanktall</object-name>
     <object-name>tankstand</object-name>
+    <object-name>pinetrees</object-name>
+    <object-name>truck</object-name>
   </animation>
   
   <animation>
@@ -1137,6 +1193,8 @@
     <object-name>groundtanklarge</object-name>
     <object-name>groundtanktall</object-name>
     <object-name>tankstand</object-name>
+    <object-name>pinetrees</object-name>
+    <object-name>truck</object-name>
   </animation>
   
   <animation>
@@ -1229,6 +1287,8 @@
     <object-name>groundtanklarge</object-name>
     <object-name>groundtanktall</object-name>
     <object-name>tankstand</object-name>
+    <object-name>pinetrees</object-name>
+    <object-name>truck</object-name>
   </animation>
   
   <animation>
@@ -1319,7 +1379,9 @@
     <object-name>groundtank</object-name>
     <object-name>groundtanklarge</object-name>
     <object-name>groundtanktall</object-name>
-    <object-name>tankstand</object-name>   
+    <object-name>tankstand</object-name>
+    <object-name>pinetrees</object-name>
+    <object-name>truck</object-name>   
   </animation>
   
   <animation>
@@ -1410,6 +1472,8 @@
     <object-name>groundtanklarge</object-name>
     <object-name>groundtanktall</object-name>
     <object-name>tankstand</object-name>
+    <object-name>pinetrees</object-name>
+    <object-name>truck</object-name>
   </animation>
   
   <animation>
@@ -1499,6 +1563,8 @@
     <object-name>groundtanklarge</object-name>
     <object-name>groundtanktall</object-name>
     <object-name>tankstand</object-name>
+    <object-name>pinetrees</object-name>
+    <object-name>truck</object-name>
   </animation>
   
   <animation>
@@ -1587,6 +1653,8 @@
     <object-name>groundtanklarge</object-name>
     <object-name>groundtanktall</object-name>
     <object-name>tankstand</object-name>
+    <object-name>pinetrees</object-name>
+    <object-name>truck</object-name>
   </animation>
   
   <animation>
@@ -1674,6 +1742,8 @@
     <object-name>groundtanklarge</object-name>
     <object-name>groundtanktall</object-name>
     <object-name>tankstand</object-name>
+    <object-name>pinetrees</object-name>
+    <object-name>truck</object-name>
   </animation>
   
   <animation>
@@ -1760,6 +1830,8 @@
     <object-name>groundtanklarge</object-name>
     <object-name>groundtanktall</object-name>
     <object-name>tankstand</object-name>
+    <object-name>pinetrees</object-name>
+    <object-name>truck</object-name>
   </animation>
   
   <animation>
@@ -1845,6 +1917,8 @@
     <object-name>groundtanklarge</object-name>
     <object-name>groundtanktall</object-name>
     <object-name>tankstand</object-name>
+    <object-name>pinetrees</object-name>
+    <object-name>truck</object-name>
   </animation>
   
   <animation>
@@ -1929,6 +2003,8 @@
     <object-name>groundtanklarge</object-name>
     <object-name>groundtanktall</object-name>
     <object-name>tankstand</object-name>
+    <object-name>pinetrees</object-name>
+    <object-name>truck</object-name>
   </animation>
   
   <animation>
@@ -2012,6 +2088,8 @@
     <object-name>groundtanklarge</object-name>
     <object-name>groundtanktall</object-name>
     <object-name>tankstand</object-name>
+    <object-name>pinetrees</object-name>
+    <object-name>truck</object-name>
   </animation>
   
   <animation>
@@ -2094,6 +2172,8 @@
     <object-name>groundtanklarge</object-name>
     <object-name>groundtanktall</object-name>
     <object-name>tankstand</object-name>
+    <object-name>pinetrees</object-name>
+    <object-name>truck</object-name>
   </animation>
   
   <animation>
@@ -2175,6 +2255,8 @@
     <object-name>groundtanklarge</object-name>
     <object-name>groundtanktall</object-name>
     <object-name>tankstand</object-name>
+    <object-name>pinetrees</object-name>
+    <object-name>truck</object-name>
   </animation>
   
   <animation>
@@ -2255,6 +2337,8 @@
     <object-name>groundtanklarge</object-name>
     <object-name>groundtanktall</object-name>
     <object-name>tankstand</object-name>
+    <object-name>pinetrees</object-name>
+    <object-name>truck</object-name>
   </animation>
   
   <animation>
@@ -2334,6 +2418,8 @@
     <object-name>groundtanklarge</object-name>
     <object-name>groundtanktall</object-name>
     <object-name>tankstand</object-name>
+    <object-name>pinetrees</object-name>
+    <object-name>truck</object-name>
   </animation>
   
   <animation>
@@ -2412,6 +2498,8 @@
     <object-name>groundtanklarge</object-name>
     <object-name>groundtanktall</object-name>
     <object-name>tankstand</object-name>
+    <object-name>pinetrees</object-name>
+    <object-name>truck</object-name>
   </animation>
   
   <animation>
@@ -2489,6 +2577,8 @@
     <object-name>groundtanklarge</object-name>
     <object-name>groundtanktall</object-name>
     <object-name>tankstand</object-name>
+    <object-name>pinetrees</object-name>
+    <object-name>truck</object-name>
   </animation>
   
   <animation>
@@ -2565,6 +2655,8 @@
     <object-name>groundtanklarge</object-name>
     <object-name>groundtanktall</object-name>
     <object-name>tankstand</object-name>
+    <object-name>pinetrees</object-name>
+    <object-name>truck</object-name>
   </animation>
   
   <animation>
@@ -2640,6 +2732,8 @@
     <object-name>groundtanklarge</object-name>
     <object-name>groundtanktall</object-name>
     <object-name>tankstand</object-name>
+    <object-name>pinetrees</object-name>
+    <object-name>truck</object-name>
   </animation>
   
   <animation>
@@ -2714,6 +2808,8 @@
     <object-name>groundtanklarge</object-name>
     <object-name>groundtanktall</object-name>
     <object-name>tankstand</object-name>
+    <object-name>pinetrees</object-name>
+    <object-name>truck</object-name>
   </animation>
   
   <animation>
@@ -2787,6 +2883,8 @@
     <object-name>groundtanklarge</object-name>
     <object-name>groundtanktall</object-name>
     <object-name>tankstand</object-name>
+    <object-name>pinetrees</object-name>
+    <object-name>truck</object-name>
   </animation>
   
   <animation>
@@ -2859,6 +2957,8 @@
     <object-name>groundtanklarge</object-name>
     <object-name>groundtanktall</object-name>
     <object-name>tankstand</object-name>
+    <object-name>pinetrees</object-name>
+    <object-name>truck</object-name>
   </animation>
   
   <animation>
@@ -2930,6 +3030,8 @@
     <object-name>groundtanklarge</object-name>
     <object-name>groundtanktall</object-name>
     <object-name>tankstand</object-name>
+    <object-name>pinetrees</object-name>
+    <object-name>truck</object-name>
   </animation>
 
   <animation>
@@ -2999,7 +3101,9 @@
     <object-name>groundtank</object-name>
     <object-name>groundtanklarge</object-name>
     <object-name>groundtanktall</object-name>
-    <object-name>tankstand</object-name>  
+    <object-name>tankstand</object-name>
+    <object-name>pinetrees</object-name>
+    <object-name>truck</object-name>  
   </animation>
   
   <animation>
@@ -3069,6 +3173,8 @@
     <object-name>groundtanklarge</object-name>
     <object-name>groundtanktall</object-name>
     <object-name>tankstand</object-name>
+    <object-name>pinetrees</object-name>
+    <object-name>truck</object-name>
   </animation>
 
   <animation>
@@ -3137,6 +3243,8 @@
     <object-name>groundtanklarge</object-name>
     <object-name>groundtanktall</object-name>
     <object-name>tankstand</object-name>
+    <object-name>pinetrees</object-name>
+    <object-name>truck</object-name>
   </animation>
   
   <animation>
@@ -3204,6 +3312,8 @@
     <object-name>groundtanklarge</object-name>
     <object-name>groundtanktall</object-name>
     <object-name>tankstand</object-name>
+    <object-name>pinetrees</object-name>
+    <object-name>truck</object-name>
   </animation>
   
   <animation>
@@ -3270,6 +3380,8 @@
     <object-name>groundtanklarge</object-name>
     <object-name>groundtanktall</object-name>
     <object-name>tankstand</object-name>
+    <object-name>pinetrees</object-name>
+    <object-name>truck</object-name>
   </animation>
   
   <animation>
@@ -3335,6 +3447,8 @@
     <object-name>groundtanklarge</object-name>
     <object-name>groundtanktall</object-name>
     <object-name>tankstand</object-name>
+    <object-name>pinetrees</object-name>
+    <object-name>truck</object-name>
   </animation>
   
   <animation>
@@ -3399,6 +3513,8 @@
     <object-name>groundtanklarge</object-name>
     <object-name>groundtanktall</object-name>
     <object-name>tankstand</object-name>
+    <object-name>pinetrees</object-name>
+    <object-name>truck</object-name>
   </animation>
   
   <animation>
@@ -3462,6 +3578,8 @@
     <object-name>groundtanklarge</object-name>
     <object-name>groundtanktall</object-name>
     <object-name>tankstand</object-name>
+    <object-name>pinetrees</object-name>
+    <object-name>truck</object-name>
   </animation>
   
   <animation>
@@ -3524,6 +3642,8 @@
     <object-name>groundtanklarge</object-name>
     <object-name>groundtanktall</object-name>
     <object-name>tankstand</object-name>
+    <object-name>pinetrees</object-name>
+    <object-name>truck</object-name>
   </animation>
   
   <animation>
@@ -3584,7 +3704,9 @@
     <object-name>groundtank</object-name>
     <object-name>groundtanklarge</object-name>
     <object-name>groundtanktall</object-name>
-    <object-name>tankstand</object-name>   
+    <object-name>tankstand</object-name>
+    <object-name>pinetrees</object-name>
+    <object-name>truck</object-name>   
   </animation>
   
   <animation>
@@ -3645,6 +3767,8 @@
     <object-name>groundtanklarge</object-name>
     <object-name>groundtanktall</object-name>
     <object-name>tankstand</object-name>
+    <object-name>pinetrees</object-name>
+    <object-name>truck</object-name>
   </animation>
   
   <animation>
@@ -3704,6 +3828,8 @@
     <object-name>groundtanklarge</object-name>
     <object-name>groundtanktall</object-name>
     <object-name>tankstand</object-name>
+    <object-name>pinetrees</object-name>
+    <object-name>truck</object-name>
   </animation>
   
   <animation>
@@ -3762,6 +3888,8 @@
     <object-name>groundtanklarge</object-name>
     <object-name>groundtanktall</object-name>
     <object-name>tankstand</object-name>
+    <object-name>pinetrees</object-name>
+    <object-name>truck</object-name>
   </animation>
   
   <animation>
@@ -3819,6 +3947,8 @@
     <object-name>groundtanklarge</object-name>
     <object-name>groundtanktall</object-name>
     <object-name>tankstand</object-name>
+    <object-name>pinetrees</object-name>
+    <object-name>truck</object-name>
   </animation>
   
   <animation>
@@ -3875,6 +4005,8 @@
     <object-name>groundtanklarge</object-name>
     <object-name>groundtanktall</object-name>
     <object-name>tankstand</object-name>
+    <object-name>pinetrees</object-name>
+    <object-name>truck</object-name>
   </animation>
   
   <animation>
@@ -3930,6 +4062,8 @@
     <object-name>groundtanklarge</object-name>
     <object-name>groundtanktall</object-name>
     <object-name>tankstand</object-name>
+    <object-name>pinetrees</object-name>
+    <object-name>truck</object-name>
   </animation>
   
   <animation>
@@ -3984,6 +4118,8 @@
     <object-name>groundtanklarge</object-name>
     <object-name>groundtanktall</object-name>
     <object-name>tankstand</object-name>
+    <object-name>pinetrees</object-name>
+    <object-name>truck</object-name>
   </animation>
   
   <animation>
@@ -4037,6 +4173,8 @@
     <object-name>groundtanklarge</object-name>
     <object-name>groundtanktall</object-name>
     <object-name>tankstand</object-name>
+    <object-name>pinetrees</object-name>
+    <object-name>truck</object-name>
   </animation>
   
   <animation>
@@ -4089,6 +4227,8 @@
     <object-name>groundtanklarge</object-name>
     <object-name>groundtanktall</object-name>
     <object-name>tankstand</object-name>
+    <object-name>pinetrees</object-name>
+    <object-name>truck</object-name>
   </animation>
   
   <animation>
@@ -4140,6 +4280,8 @@
     <object-name>groundtanklarge</object-name>
     <object-name>groundtanktall</object-name>
     <object-name>tankstand</object-name>
+    <object-name>pinetrees</object-name>
+    <object-name>truck</object-name>
   </animation>
   
   <animation>
@@ -4190,6 +4332,8 @@
     <object-name>groundtanklarge</object-name>
     <object-name>groundtanktall</object-name>
     <object-name>tankstand</object-name>
+    <object-name>pinetrees</object-name>
+    <object-name>truck</object-name>
   </animation>
   
   <animation>
@@ -4239,6 +4383,8 @@
     <object-name>groundtanklarge</object-name>
     <object-name>groundtanktall</object-name>
     <object-name>tankstand</object-name>
+    <object-name>pinetrees</object-name>
+    <object-name>truck</object-name>
   </animation>
   
   <animation>
@@ -4287,6 +4433,8 @@
     <object-name>groundtanklarge</object-name>
     <object-name>groundtanktall</object-name>
     <object-name>tankstand</object-name>
+    <object-name>pinetrees</object-name>
+    <object-name>truck</object-name>
   </animation>
   
   <animation>
@@ -4334,6 +4482,8 @@
     <object-name>groundtanklarge</object-name>
     <object-name>groundtanktall</object-name>
     <object-name>tankstand</object-name>
+    <object-name>pinetrees</object-name>
+    <object-name>truck</object-name>
   </animation>
   
   <animation>
@@ -4380,6 +4530,8 @@
     <object-name>groundtanklarge</object-name>
     <object-name>groundtanktall</object-name>
     <object-name>tankstand</object-name>
+    <object-name>pinetrees</object-name>
+    <object-name>truck</object-name>
   </animation>
   
   <animation>
@@ -4425,6 +4577,8 @@
     <object-name>groundtanklarge</object-name>
     <object-name>groundtanktall</object-name>
     <object-name>tankstand</object-name>
+    <object-name>pinetrees</object-name>
+    <object-name>truck</object-name>
   </animation>
   
   <animation>
@@ -4469,6 +4623,8 @@
     <object-name>groundtanklarge</object-name>
     <object-name>groundtanktall</object-name>
     <object-name>tankstand</object-name>
+    <object-name>pinetrees</object-name>
+    <object-name>truck</object-name>
   </animation>
   
   <animation>
@@ -4512,6 +4668,8 @@
     <object-name>groundtanklarge</object-name>
     <object-name>groundtanktall</object-name>
     <object-name>tankstand</object-name>
+    <object-name>pinetrees</object-name>
+    <object-name>truck</object-name>
   </animation>
   
   <animation>
@@ -4554,6 +4712,8 @@
     <object-name>groundtanklarge</object-name>
     <object-name>groundtanktall</object-name>
     <object-name>tankstand</object-name>
+    <object-name>pinetrees</object-name>
+    <object-name>truck</object-name>
   </animation>
   
   <animation>
@@ -4595,6 +4755,8 @@
     <object-name>groundtanklarge</object-name>
     <object-name>groundtanktall</object-name>
     <object-name>tankstand</object-name>
+    <object-name>pinetrees</object-name>
+    <object-name>truck</object-name>
   </animation>
 
   <animation>
@@ -4634,7 +4796,9 @@
     <object-name>groundtank</object-name>
     <object-name>groundtanklarge</object-name>
     <object-name>groundtanktall</object-name>
-    <object-name>tankstand</object-name>  
+    <object-name>tankstand</object-name>
+    <object-name>pinetrees</object-name>
+    <object-name>truck</object-name>  
   </animation>
   
   <animation>
@@ -4674,6 +4838,8 @@
     <object-name>groundtanklarge</object-name>
     <object-name>groundtanktall</object-name>
     <object-name>tankstand</object-name>
+    <object-name>pinetrees</object-name>
+    <object-name>truck</object-name>
   </animation>
 
   <animation>
@@ -4712,6 +4878,8 @@
     <object-name>groundtanklarge</object-name>
     <object-name>groundtanktall</object-name>
     <object-name>tankstand</object-name>
+    <object-name>pinetrees</object-name>
+    <object-name>truck</object-name>
   </animation>
   
   <animation>
@@ -4749,6 +4917,8 @@
     <object-name>groundtanklarge</object-name>
     <object-name>groundtanktall</object-name>
     <object-name>tankstand</object-name>
+    <object-name>pinetrees</object-name>
+    <object-name>truck</object-name>
   </animation>
   
   <animation>
@@ -4785,6 +4955,8 @@
     <object-name>groundtanklarge</object-name>
     <object-name>groundtanktall</object-name>
     <object-name>tankstand</object-name>
+    <object-name>pinetrees</object-name>
+    <object-name>truck</object-name>
   </animation>
   
   <animation>
@@ -4820,6 +4992,8 @@
     <object-name>groundtanklarge</object-name>
     <object-name>groundtanktall</object-name>
     <object-name>tankstand</object-name>
+    <object-name>pinetrees</object-name>
+    <object-name>truck</object-name>
   </animation>
   
   <animation>
@@ -4854,6 +5028,8 @@
     <object-name>groundtanklarge</object-name>
     <object-name>groundtanktall</object-name>
     <object-name>tankstand</object-name>
+    <object-name>pinetrees</object-name>
+    <object-name>truck</object-name>
   </animation>
   
   <animation>
@@ -4887,6 +5063,8 @@
     <object-name>groundtanklarge</object-name>
     <object-name>groundtanktall</object-name>
     <object-name>tankstand</object-name>
+    <object-name>pinetrees</object-name>
+    <object-name>truck</object-name>
   </animation>
   
   <animation>
@@ -4919,6 +5097,8 @@
     <object-name>groundtanklarge</object-name>
     <object-name>groundtanktall</object-name>
     <object-name>tankstand</object-name>
+    <object-name>pinetrees</object-name>
+    <object-name>truck</object-name>
   </animation>
   
   <animation>
@@ -4949,7 +5129,9 @@
     <object-name>groundtank</object-name>
     <object-name>groundtanklarge</object-name>
     <object-name>groundtanktall</object-name>
-    <object-name>tankstand</object-name>   
+    <object-name>tankstand</object-name>
+    <object-name>pinetrees</object-name>
+    <object-name>truck</object-name>   
   </animation>
   
   <animation>
@@ -4980,6 +5162,8 @@
     <object-name>groundtanklarge</object-name>
     <object-name>groundtanktall</object-name>
     <object-name>tankstand</object-name>
+    <object-name>pinetrees</object-name>
+    <object-name>truck</object-name>
   </animation>
   
   <animation>
@@ -5009,6 +5193,8 @@
     <object-name>groundtanklarge</object-name>
     <object-name>groundtanktall</object-name>
     <object-name>tankstand</object-name>
+    <object-name>pinetrees</object-name>
+    <object-name>truck</object-name>
   </animation>
   
   <animation>
@@ -5037,6 +5223,8 @@
     <object-name>groundtanklarge</object-name>
     <object-name>groundtanktall</object-name>
     <object-name>tankstand</object-name>
+    <object-name>pinetrees</object-name>
+    <object-name>truck</object-name>
   </animation>
   
   <animation>
@@ -5064,6 +5252,8 @@
     <object-name>groundtanklarge</object-name>
     <object-name>groundtanktall</object-name>
     <object-name>tankstand</object-name>
+    <object-name>pinetrees</object-name>
+    <object-name>truck</object-name>
   </animation>
   
   <animation>
@@ -5090,6 +5280,8 @@
     <object-name>groundtanklarge</object-name>
     <object-name>groundtanktall</object-name>
     <object-name>tankstand</object-name>
+    <object-name>pinetrees</object-name>
+    <object-name>truck</object-name>
   </animation>
   
   <animation>
@@ -5115,6 +5307,8 @@
     <object-name>groundtanklarge</object-name>
     <object-name>groundtanktall</object-name>
     <object-name>tankstand</object-name>
+    <object-name>pinetrees</object-name>
+    <object-name>truck</object-name>
   </animation>
   
   <animation>
@@ -5139,6 +5333,8 @@
     <object-name>groundtanklarge</object-name>
     <object-name>groundtanktall</object-name>
     <object-name>tankstand</object-name>
+    <object-name>pinetrees</object-name>
+    <object-name>truck</object-name>
   </animation>
   
   <animation>
@@ -5162,6 +5358,8 @@
     <object-name>groundtanklarge</object-name>
     <object-name>groundtanktall</object-name>
     <object-name>tankstand</object-name>
+    <object-name>pinetrees</object-name>
+    <object-name>truck</object-name>
   </animation>
   
   <animation>
@@ -5184,6 +5382,8 @@
     <object-name>groundtanklarge</object-name>
     <object-name>groundtanktall</object-name>
     <object-name>tankstand</object-name>
+    <object-name>pinetrees</object-name>
+    <object-name>truck</object-name>
   </animation>
   
   <animation>
@@ -5205,6 +5405,8 @@
     <object-name>groundtanklarge</object-name>
     <object-name>groundtanktall</object-name>
     <object-name>tankstand</object-name>
+    <object-name>pinetrees</object-name>
+    <object-name>truck</object-name>
   </animation>
   
   <animation>
@@ -5225,6 +5427,8 @@
     <object-name>groundtanklarge</object-name>
     <object-name>groundtanktall</object-name>
     <object-name>tankstand</object-name>
+    <object-name>pinetrees</object-name>
+    <object-name>truck</object-name>
   </animation>
   
   <animation>
@@ -5244,6 +5448,8 @@
     <object-name>groundtanklarge</object-name>
     <object-name>groundtanktall</object-name>
     <object-name>tankstand</object-name>
+    <object-name>pinetrees</object-name>
+    <object-name>truck</object-name>
   </animation>
   
   <animation>
@@ -5262,6 +5468,8 @@
     <object-name>groundtanklarge</object-name>
     <object-name>groundtanktall</object-name>
     <object-name>tankstand</object-name>
+    <object-name>pinetrees</object-name>
+    <object-name>truck</object-name>
   </animation>
   
   <animation>
@@ -5279,6 +5487,8 @@
     <object-name>groundtanklarge</object-name>
     <object-name>groundtanktall</object-name>
     <object-name>tankstand</object-name>
+    <object-name>pinetrees</object-name>
+    <object-name>truck</object-name>
   </animation>
   
   <animation>
@@ -5295,6 +5505,8 @@
     <object-name>groundtanklarge</object-name>
     <object-name>groundtanktall</object-name>
     <object-name>tankstand</object-name>
+    <object-name>pinetrees</object-name>
+    <object-name>truck</object-name>
   </animation>
   
   <animation>
@@ -5310,6 +5522,8 @@
     <object-name>groundtanklarge</object-name>
     <object-name>groundtanktall</object-name>
     <object-name>tankstand</object-name>
+    <object-name>pinetrees</object-name>
+    <object-name>truck</object-name>
   </animation>
   
   <animation>
@@ -5324,6 +5538,8 @@
     <object-name>groundtanklarge</object-name>
     <object-name>groundtanktall</object-name>
     <object-name>tankstand</object-name>
+    <object-name>pinetrees</object-name>
+    <object-name>truck</object-name>
   </animation>
   
   <animation>
@@ -5337,6 +5553,8 @@
     <object-name>groundtanklarge</object-name>
     <object-name>groundtanktall</object-name>
     <object-name>tankstand</object-name>
+    <object-name>pinetrees</object-name>
+    <object-name>truck</object-name>
   </animation>
   
   <animation>
@@ -5349,6 +5567,8 @@
     <object-name>groundtanklarge</object-name>
     <object-name>groundtanktall</object-name>
     <object-name>tankstand</object-name>
+    <object-name>pinetrees</object-name>
+    <object-name>truck</object-name>
   </animation>
   
   <animation>
@@ -5360,6 +5580,8 @@
     <object-name>groundtanklarge</object-name>
     <object-name>groundtanktall</object-name>
     <object-name>tankstand</object-name>
+    <object-name>pinetrees</object-name>
+    <object-name>truck</object-name>
   </animation>
 
   <!-- Flex Hose Rotation Pitch -->
@@ -8786,13 +9008,13 @@
     </axis>
   </animation>
 
-  <!-- shipping-container-big -->
+  <!-- shippingcontainerbig -->
   <animation>
     <type>select</type>
     <object-name>shippingcontainerbig</object-name>
     <condition>
       <and>
-        <property>/sim/gui/dialogs/aicargo-dialog/rope</property>
+        <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
         <or>
           <property>sim/model/cargo1-onhook</property>
           <property>sim/model/cargo2-onhook</property>
@@ -8807,7 +9029,7 @@
     <property>/sim/model/cargo/currentyaw</property>
     <condition>
       <and>
-        <property>/sim/gui/dialogs/aicargo-dialog/rope</property>
+        <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
         <or>
           <property>sim/model/cargo1-onhook</property>
           <property>sim/model/cargo2-onhook</property>
@@ -8834,7 +9056,7 @@
     <property>sim/model/cargo/cargoalt</property>
     <condition>
       <and>
-        <property>/sim/gui/dialogs/aicargo-dialog/rope</property>
+        <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
         <or>
           <property>sim/model/cargo1-onhook</property>
           <property>sim/model/cargo2-onhook</property>
@@ -8871,7 +9093,7 @@
     <object-name>cub</object-name>
     <condition>
       <and>
-        <property>/sim/gui/dialogs/aicargo-dialog/rope</property>
+        <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
         <property>sim/model/cargo4-onhook</property>
       </and>
     </condition>
@@ -8882,7 +9104,7 @@
     <property>/sim/model/cargo/currentyaw</property>
     <condition>
       <and>
-        <property>/sim/gui/dialogs/aicargo-dialog/rope</property>
+        <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
         <property>sim/model/cargo4-onhook</property>
       </and>
     </condition>
@@ -8905,7 +9127,7 @@
     <property>sim/model/cargo/cargoalt</property>
     <condition>
       <and>
-        <property>/sim/gui/dialogs/aicargo-dialog/rope</property>
+        <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
         <property>sim/model/cargo4-onhook</property>
       </and>
     </condition>
@@ -8922,13 +9144,13 @@
     </axis>
   </animation>
 
-  <!-- ground-tanks -->
+  <!-- groundtanks -->
   <animation>
     <type>select</type>
     <object-name>groundtank</object-name>
     <condition>
       <and>
-        <property>/sim/gui/dialogs/aicargo-dialog/rope</property>
+        <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
         <property>sim/model/cargo5-onhook</property>
       </and>
     </condition>
@@ -8938,7 +9160,7 @@
     <object-name>groundtanklarge</object-name>
     <condition>
       <and>
-        <property>/sim/gui/dialogs/aicargo-dialog/rope</property>
+        <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
         <property>sim/model/cargo6-onhook</property>
       </and>
     </condition>
@@ -8948,7 +9170,7 @@
     <object-name>groundtanktall</object-name>
     <condition>
       <and>
-        <property>/sim/gui/dialogs/aicargo-dialog/rope</property>
+        <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
         <property>sim/model/cargo7-onhook</property>
       </and>
     </condition>
@@ -8961,7 +9183,7 @@
     <property>/sim/model/cargo/currentyaw</property>
     <condition>
       <and>
-        <property>/sim/gui/dialogs/aicargo-dialog/rope</property>
+        <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
         <or>
           <property>sim/model/cargo5-onhook</property>
           <property>sim/model/cargo6-onhook</property>
@@ -8990,7 +9212,7 @@
     <property>sim/model/cargo/cargoalt</property>
     <condition>
       <and>
-        <property>/sim/gui/dialogs/aicargo-dialog/rope</property>
+        <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
         <or>
           <property>sim/model/cargo5-onhook</property>
           <property>sim/model/cargo6-onhook</property>
@@ -9011,13 +9233,13 @@
     </axis>
   </animation>
 
-<!-- tank-stand -->
+  <!-- tankstand -->
   <animation>
     <type>select</type>
     <object-name>tankstand</object-name>
     <condition>
       <and>
-        <property>/sim/gui/dialogs/aicargo-dialog/rope</property>
+        <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
         <property>sim/model/cargo8-onhook</property>
       </and>
     </condition>
@@ -9028,7 +9250,7 @@
     <property>/sim/model/cargo/currentyaw</property>
     <condition>
       <and>
-        <property>/sim/gui/dialogs/aicargo-dialog/rope</property>
+        <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
         <property>sim/model/cargo8-onhook</property>
       </and>
     </condition>
@@ -9051,8 +9273,140 @@
     <property>sim/model/cargo/cargoalt</property>
     <condition>
       <and>
-        <property>/sim/gui/dialogs/aicargo-dialog/rope</property>
+        <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
         <property>sim/model/cargo8-onhook</property>
+      </and>
+    </condition>
+    <factor>1</factor>
+    <center>
+      <x-m> -1.40464 </x-m>
+      <y-m> -0.0181  </y-m>
+      <z-m> -16.3493 </z-m>
+    </center>
+    <axis>
+      <x>0</x>
+      <y>0</y>
+      <z>1</z>
+    </axis>
+  </animation>
+
+  <!-- pinetrees -->
+  <animation>
+    <type>select</type>
+    <object-name>pinetrees</object-name>
+    <condition>
+      <and>
+        <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
+        <or>
+          <property>sim/model/cargo9-onhook</property>
+          <property>sim/model/cargo10-onhook</property>
+          <property>sim/model/cargo11-onhook</property>
+          <property>sim/model/cargo12-onhook</property>
+          <property>sim/model/cargo13-onhook</property>
+        </or>
+      </and>
+    </condition>
+  </animation>
+  <animation>
+    <type>rotate</type>
+    <object-name>pinetrees</object-name>
+    <property>/sim/model/cargo/currentyaw</property>
+    <condition>
+      <and>
+        <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
+        <or>
+          <property>sim/model/cargo9-onhook</property>
+          <property>sim/model/cargo10-onhook</property>
+          <property>sim/model/cargo11-onhook</property>
+          <property>sim/model/cargo12-onhook</property>
+          <property>sim/model/cargo13-onhook</property>
+        </or>
+      </and>
+    </condition>
+    <factor>1</factor>
+    <offset-deg>0</offset-deg>
+    <center>
+      <x-m> -1.40464 </x-m>
+      <y-m> -0.0181  </y-m>
+      <z-m> -16.3493 </z-m>
+    </center>
+    <axis>
+      <x>0</x>
+      <y>0</y>
+      <z>1</z>
+    </axis>
+  </animation>
+  <animation>
+    <type>translate</type>
+    <object-name>pinetrees</object-name>
+    <property>sim/model/cargo/cargoalt</property>
+    <condition>
+      <and>
+        <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
+        <or>
+          <property>sim/model/cargo9-onhook</property>
+          <property>sim/model/cargo10-onhook</property>
+          <property>sim/model/cargo11-onhook</property>
+          <property>sim/model/cargo12-onhook</property>
+          <property>sim/model/cargo13-onhook</property>
+        </or>
+      </and>
+    </condition>
+    <factor>1</factor>
+    <center>
+      <x-m> -1.40464 </x-m>
+      <y-m> -0.0181  </y-m>
+      <z-m> -16.3493 </z-m>
+    </center>
+    <axis>
+      <x>0</x>
+      <y>0</y>
+      <z>1</z>
+    </axis>
+  </animation>
+
+  <!-- dumptruck -->
+  <animation>
+    <type>select</type>
+    <object-name>truck</object-name>
+    <condition>
+      <and>
+        <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
+        <property>sim/model/cargo14-onhook</property>
+      </and>
+    </condition>
+  </animation>
+  <animation>
+    <type>rotate</type>
+    <object-name>truck</object-name>
+    <property>/sim/model/cargo/currentyaw</property>
+    <condition>
+      <and>
+        <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
+        <property>sim/model/cargo14-onhook</property>
+      </and>
+    </condition>
+    <factor>1</factor>
+    <offset-deg>0</offset-deg>
+    <center>
+      <x-m> -1.40464 </x-m>
+      <y-m> -0.0181  </y-m>
+      <z-m> -16.3493 </z-m>
+    </center>
+    <axis>
+      <x>0</x>
+      <y>0</y>
+      <z>1</z>
+    </axis>
+  </animation>
+  <animation>
+    <type>translate</type>
+    <object-name>truck</object-name>
+    <property>sim/model/cargo/cargoalt</property>
+    <condition>
+      <and>
+        <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
+        <property>sim/model/cargo14-onhook</property>
       </and>
     </condition>
     <factor>1</factor>
