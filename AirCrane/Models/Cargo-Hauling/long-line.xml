@@ -9368,7 +9368,7 @@
   <!-- dumptruck -->
   <animation>
     <type>select</type>
-    <object-name>truck</object-name>
+    <object-name>dumptruck</object-name>
     <condition>
       <and>
         <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
@@ -9378,7 +9378,7 @@
   </animation>
   <animation>
     <type>rotate</type>
-    <object-name>truck</object-name>
+    <object-name>dumptruck</object-name>
     <property>/sim/model/cargo/currentyaw</property>
     <condition>
       <and>
@@ -9401,7 +9401,7 @@
   </animation>
   <animation>
     <type>translate</type>
-    <object-name>truck</object-name>
+    <object-name>dumptruck</object-name>
     <property>sim/model/cargo/cargoalt</property>
     <condition>
       <and>
