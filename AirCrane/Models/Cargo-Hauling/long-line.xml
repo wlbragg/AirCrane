@@ -82,7 +82,7 @@
     </condition>
   </model>
   <model>
-    <path>truck.ac</path>
+    <path>dumptruck.ac</path>
     <condition>
       <and>
         <property>sim/model/cargo14-onhook</property>

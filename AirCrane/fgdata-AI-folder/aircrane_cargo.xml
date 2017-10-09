@@ -126,7 +126,7 @@
 			<callsign>cargo14</callsign>
       <name>Dump Truck</name>
 			<type>aircraft</type>
-			<model>Aircraft/AirCrane/Models/Cargo-Hauling/truck.ac</model>
+			<model>Aircraft/AirCrane/Models/Cargo-Hauling/dump-truck.ac</model>
 			<flightplan>aircrane_cargo14.xml</flightplan>
 			<repeat>1</repeat>
 		</entry>

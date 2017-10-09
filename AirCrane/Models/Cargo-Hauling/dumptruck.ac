@@ -4,10 +4,10 @@ MATERIAL "def" rgb 1 1 1 amb 0.2 0.2 0.2 emis 0 0 0 spec 0 0 0 shi 128 trans 0
 OBJECT world
 kids 1
 OBJECT poly
-name "truck"
-loc 11.261644 0.008009 0.002087
-data 5
-truck
+name "dumptruck"
+loc 10.728634 -24.162672 0.002087
+data 9
+dumptruck
 texture "truck.png"
 texrep 1.000000 1.000000
 crease 45.000001

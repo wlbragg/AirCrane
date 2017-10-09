@@ -151,4 +151,23 @@
     </offsets>
   </model>
 
+  <model>
+    <path>dump-truck.ac</path>
+    <name>dump-truck</name>
+    <condition>
+      <and>
+        <property>sim/model/cargo14-onhook</property>
+        <not>
+          <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
+        </not>
+      </and>
+    </condition>
+    <offsets>
+      <x-m>-2.5</x-m>
+      <y-m>0</y-m>
+      <z-m>-3.85</z-m>
+      <pitch-deg>0</pitch-deg>
+    </offsets>
+  </model>
+
 </PropertyList>

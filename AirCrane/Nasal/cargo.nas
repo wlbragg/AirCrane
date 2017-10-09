@@ -171,7 +171,7 @@ var cargo_tow = func () {
             if (cargoName == "cargo8") {
               cargoWeight = 600;
               cargoHeight = 2.12;
-            }
+            } else
             if (cargoName == "cargo9" or cargoName == "cargo10" or cargoName == "cargo11" or cargoName == "cargo12" or cargoName == "cargo13") {
               cargoWeight = 250;
               cargoHeight = 2.08;
@@ -180,7 +180,6 @@ var cargo_tow = func () {
               cargoWeight = 4000;
               cargoHeight = 9.3;
             }
-
 
             if (cargoHeight < 3.0)
               haulable = 1;
