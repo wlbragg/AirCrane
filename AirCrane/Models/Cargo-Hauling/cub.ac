@@ -1,17 +1,11 @@
 AC3Db
 MATERIAL "DefaultWhite" rgb 1.0000 1.0000 1.0000  amb 0.2000 0.2000 0.2000  emis 0.0000 0.0000 0.0000  spec 0.5000 0.5000 0.5000  shi 10 trans 0.0000
-MATERIAL "uv_undercoat.001" rgb 0.9911 0.9911 0.9911  amb 0.9911 0.9911 0.9911  emis 0.0000 0.0000 0.0000  spec 0.0069 0.0068 0.0068  shi 50 trans 0.0000
-MATERIAL "metal.001" rgb 0.6713 0.6731 0.7780  amb 0.7074 0.7074 0.7074  emis 0.0000 0.0000 0.0000  spec 0.0344 0.0344 0.0344  shi 50 trans 0.0000
-MATERIAL "window" rgb 0.4672 0.4672 0.4672  amb 0.5330 0.5330 0.5330  emis 0.0000 0.0000 0.0000  spec 0.0021 0.0021 0.0021  shi 50 trans 0.0000
-MATERIAL "cub_yellow" rgb 0.9759 0.7725 0.0249  amb 0.5911 0.5911 0.5911  emis 0.0000 0.0000 0.0000  spec 0.0137 0.0136 0.0136  shi 50 trans 0.0000
-MATERIAL "dark.001" rgb 0.0597 0.0597 0.0625  amb 0.0606 0.0606 0.0606  emis 0.0000 0.0000 0.0000  spec 0.0014 0.0015 0.0020  shi 50 trans 0.0000
-MATERIAL "DefaultWhite.002" rgb 1.0000 1.0000 1.0000  amb 1.0000 1.0000 1.0000  emis 0.0000 0.0000 0.0000  spec 0.0200 0.0200 0.0200  shi 50 trans 0.0000
-MATERIAL "black" rgb 0.0548 0.0532 0.0532  amb 0.0537 0.0537 0.0537  emis 0.0000 0.0000 0.0000  spec 0.0057 0.0057 0.0057  shi 50 trans 0.0000
+MATERIAL "uv_undercoat.001" rgb 0.9911 0.9911 0.9911  amb 0.9911 0.9911 0.9911  emis 0.0000 0.0000 0.0000  spec 0.0034 0.0034 0.0034  shi 50 trans 0.0000
 OBJECT world
 name "Blender_export__cub.ac"
 kids 1
 OBJECT poly
-name "cub"
+name "cargo"
 loc -1.6496408 -16.4490318 -0.0343521
 texture "cub.png"
 texrep 1 1

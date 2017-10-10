@@ -1,11 +1,11 @@
 AC3Db
 MATERIAL "DefaultWhite" rgb 1.0000 1.0000 1.0000  amb 0.2000 0.2000 0.2000  emis 0.0000 0.0000 0.0000  spec 0.5000 0.5000 0.5000  shi 10 trans 0.0000
-MATERIAL "Material" rgb 0.8000 0.8000 0.8000  amb 1.0000 1.0000 1.0000  emis 0.0000 0.0000 0.0000  spec 0.2500 0.2500 0.2500  shi 50 trans 0.0000
+MATERIAL "Material" rgb 0.8000 0.8000 0.8000  amb 1.0000 1.0000 1.0000  emis 0.0000 0.0000 0.0000  spec 0.1250 0.1250 0.1250  shi 50 trans 0.0000
 OBJECT world
 name "Blender_export__groundtanklarge.ac"
 kids 1
 OBJECT poly
-name "groundtanklarge"
+name "cargo"
 loc -1.3755542 -18.6180992 -0.0237298
 texture "cargo.png"
 texrep 1 1

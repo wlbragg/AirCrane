@@ -62,18 +62,20 @@
       <cargo>
         <currentyaw type="double">0.0</currentyaw>
         <cargoalt type="double">0.0</cargoalt>
+        <harnessalt type="double">0.0</harnessalt>
         <cargoheight type="double">0.0</cargoheight>
+        <cargoharness type="double">6.0</cargoharness>
         <currentposx type="double">0.0</currentposx>
         <currentposy type="double">0.0</currentposy>
         <rope>
           <flex-force type="double">0.09</flex-force>
-          <factor type="double">0.164</factor>
-          <offset type="double">-1.5</offset>
-          <!--bendforce type="int">2</bendforce-->
+          <factor type="double">0.19</factor>
+          <offset type="double">-1.1</offset>
+          <bendforce type="int">50</bendforce>
           <damping type="double">0.6</damping>
-          <stiffness type="double">3.0</stiffness>
+          <stiffness type="double">9.0</stiffness>
+          <correction type="double">-.01</correction>
           <ropehitsground type="bool">true</ropehitsground>
-          <correction type="double">0.7</correction>
           <pitch1  type="double">0.0</pitch1>
           <pitch2  type="double">0.0</pitch2>
           <pitch3  type="double">0.0</pitch3>

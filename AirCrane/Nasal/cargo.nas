@@ -27,6 +27,7 @@ var dist = 0;
 var ropeLength = 12.2;
 var cargoHeight = 0;
 var cargoWeight = 0;
+var cargoHarness = 0;
 var haulable = 0;
 
 var cargo_create = func () {
@@ -108,6 +109,8 @@ var cargo_tow = func () {
   var onGround = getprop("gear/gear/wow") * getprop("gear/gear[1]/wow") * getprop("gear/gear[2]/wow");
   var longline = getprop("/sim/gui/dialogs/aicargo-dialog/connection");
   var cargoOnGround = getprop("/sim/model/cargo/hitsground");
+  
+var harnessPos = getprop("sim/model/cargo/harnessalt");
 
   if (longline) {
     hookHeight = 43;
@@ -143,42 +146,52 @@ var cargo_tow = func () {
             if (cargoName == "cargo1") {
               cargoWeight = 5000;
               cargoHeight = 2.5;
+              cargoHarness = 6.10;
             } else
             if (cargoName == "cargo2") {
               cargoWeight = 1500;
               cargoHeight = 2.5;
+              cargoHarness = 6.10;
             } else
             if (cargoName == "cargo3") {
               cargoWeight = 1000;
               cargoHeight = 2.5;
+              cargoHarness = 6.10;
             } else
             if (cargoName == "cargo4") {
               cargoWeight = 1200;
               cargoHeight = 1.83;
+              cargoHarness = 5.98;
             } else
             if (cargoName == "cargo5") {
               cargoWeight = 2000;
               cargoHeight = 2.42;
+              cargoHarness = 6.44;
             } else
             if (cargoName == "cargo6") {
               cargoWeight = 4200;
               cargoHeight = 4.18;
+              cargoHarness = 6.02;
             } else
             if (cargoName == "cargo7") {
               cargoWeight = 3000;
               cargoHeight = 3.69;
+              cargoHarness = 6.02;
             } else
             if (cargoName == "cargo8") {
               cargoWeight = 600;
               cargoHeight = 2.12;
+              cargoHarness = 6.08;
             } else
             if (cargoName == "cargo9" or cargoName == "cargo10" or cargoName == "cargo11" or cargoName == "cargo12" or cargoName == "cargo13") {
               cargoWeight = 250;
               cargoHeight = 2.08;
+              cargoHarness = 6.12;
             } else
             if (cargoName == "cargo14") {
               cargoWeight = 4000;
               cargoHeight = 9.3;
+              cargoHarness = 10.59;
             }
 
             if (cargoHeight < 3.0)
@@ -187,12 +200,16 @@ var cargo_tow = func () {
               haulable = 0;
 
             if (longline or haulable) {
+
+              setprop("sim/model/cargo/cargoharness", -cargoHarness);
               setprop("sim/model/cargo/cargoheight", -cargoHeight);
               setprop("ai/models/" ~ cargoParent ~ "/position/altitude-ft", -999);
               setprop("sim/model/cargo/cargoalt", (-groundNode) + ropeLength + cargoHeight);
+              #setprop("sim/model/cargo/harnessalt", groundNode + ropeLength + cargoHeight - cargoHarness);
+
               setprop("sim/model/cargo/rope/damping", 0.6);
               setprop("sim/model/cargo/rope/flex-force", 0.01);
-              #setprop("/sim/model/cargo/rope/stiffness", 3);
+              setprop("/sim/model/cargo/rope/stiffness", 3);
             }
 					} 
 				}
@@ -226,7 +243,8 @@ var cargo_tow = func () {
         if (currentYaw < 0) currentYaw = currentYaw + 360;
         setprop("/sim/model/cargo/currentyaw", currentYaw);
 
-        setprop("sim/model/cargo/cargoalt", 0);
+        setprop("sim/model/cargo/cargoalt", -cargoHarness);
+        setprop("sim/model/cargo/harnessalt", -cargoHarness - .1);
 
         setprop("sim/weight[3]/weight-lb", cargoWeight);
       } else {
@@ -239,6 +257,7 @@ var cargo_tow = func () {
           setprop("/sim/model/cargo/currentyaw", currentYaw);
 
           setprop("sim/model/cargo/cargoalt", (-groundNode) + ropeLength + cargoHeight);
+          #setprop("sim/model/cargo/harnessalt", ropeLength + cargoHeight - cargoHarness);
 
           setprop("sim/weight[3]/weight-lb", 0);
         } else {
@@ -250,6 +269,7 @@ var cargo_tow = func () {
           setprop("/sim/model/cargo/currentyaw", currentYaw);
 
           setprop("sim/model/cargo/cargoalt", (-groundNode) + ropeLength + cargoHeight);
+          setprop("sim/model/cargo/harnessalt", -cargoHarness - .1);
 
           setprop("sim/weight[3]/weight-lb", cargoWeight);
         }
@@ -287,9 +307,13 @@ var cargo_tow = func () {
 
       setprop("sim/weight[3]/weight-lb", 0);
 
-      setprop("/sim/model/cargo/rope/damping", 0.6);
       setprop("/sim/model/cargo/rope/flex-force", 0.09);
-      #setprop("/sim/model/cargo/rope/stiffness", 3);
+      setprop("/sim/model/cargo/rope/factor", 0.19);
+      setprop("/sim/model/cargo/rope/offset", -1.1);
+      setprop("/sim/model/cargo/rope/bendforce", 50);
+      setprop("/sim/model/cargo/rope/damping", 0.6);
+      setprop("/sim/model/cargo/rope/stiffness", 9);
+      setprop("/sim/model/cargo/rope/correction", -.01);
 
       var x = math.cos((headNode+90)*0.0174533);
       var y = math.sin((headNode+90)*0.0174533);

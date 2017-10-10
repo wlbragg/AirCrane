@@ -22,6 +22,20 @@
     </condition>
   </model>
   <model>
+    <path>shippingcontainerbigharness.ac</path>
+    <condition>
+      <and>
+        <or>
+          <property>sim/model/cargo1-onhook</property>
+          <property>sim/model/cargo2-onhook</property>
+          <property>sim/model/cargo3-onhook</property>
+        </or>
+        <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
+      </and>
+    </condition>
+  </model>
+
+  <model>
     <path>cub.ac</path>
     <condition>
       <and>
@@ -30,6 +44,16 @@
       </and>
     </condition>
   </model>
+  <model>
+    <path>cubharness.ac</path>
+    <condition>
+      <and>
+        <property>sim/model/cargo4-onhook</property>
+        <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
+      </and>
+    </condition>
+  </model>
+
   <model>
     <path>groundtank.ac</path>
     <condition>
@@ -40,6 +64,16 @@
     </condition>
   </model>
   <model>
+    <path>groundtankharness.ac</path>
+    <condition>
+      <and>
+        <property>sim/model/cargo5-onhook</property>
+        <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
+      </and>
+    </condition>
+  </model>
+
+  <model>
     <path>groundtanklarge.ac</path>
     <condition>
       <and>
@@ -48,6 +82,16 @@
       </and>
     </condition>
   </model>
+  <model>
+    <path>groundtanklargeharness.ac</path>
+    <condition>
+      <and>
+        <property>sim/model/cargo6-onhook</property>
+        <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
+      </and>
+    </condition>
+  </model>
+
   <model>
     <path>groundtanktall.ac</path>
     <condition>
@@ -58,6 +102,16 @@
     </condition>
   </model>
   <model>
+    <path>groundtanktallharness.ac</path>
+    <condition>
+      <and>
+        <property>sim/model/cargo7-onhook</property>
+        <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
+      </and>
+    </condition>
+  </model>
+
+  <model>
     <path>tankstand.ac</path>
     <condition>
       <and>
@@ -66,6 +120,16 @@
       </and>
     </condition>
   </model>
+  <model>
+    <path>tankstandharness.ac</path>
+    <condition>
+      <and>
+        <property>sim/model/cargo8-onhook</property>
+        <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
+      </and>
+    </condition>
+  </model>
+
   <model>
     <path>pinetrees.ac</path>
     <condition>
@@ -82,7 +146,32 @@
     </condition>
   </model>
   <model>
+    <path>pinetreesharness.ac</path>
+    <condition>
+      <and>
+        <or>
+          <property>sim/model/cargo9-onhook</property>
+          <property>sim/model/cargo10-onhook</property>
+          <property>sim/model/cargo11-onhook</property>
+          <property>sim/model/cargo12-onhook</property>
+          <property>sim/model/cargo13-onhook</property>
+        </or>
+        <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
+      </and>
+    </condition>
+  </model>
+
+  <model>
     <path>dumptruck.ac</path>
+    <condition>
+      <and>
+        <property>sim/model/cargo14-onhook</property>
+        <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
+      </and>
+    </condition>
+  </model>
+  <model>
+    <path>dumptruckharness.ac</path>
     <condition>
       <and>
         <property>sim/model/cargo14-onhook</property>
@@ -199,14 +288,8 @@
     <object-name>ropesegment.088</object-name>
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
-    <object-name>shippingcontainerbig</object-name>
-    <object-name>cub</object-name>
-    <object-name>groundtank</object-name>
-    <object-name>groundtanklarge</object-name>
-    <object-name>groundtanktall</object-name>
-    <object-name>tankstand</object-name>
-    <object-name>pinetrees</object-name>
-    <object-name>dumptruck</object-name>
+    <object-name>cargo</object-name>
+    <object-name>cargoharness</object-name>
   </animation>
 
   <effect>
@@ -301,14 +384,8 @@
     <object-name>ropesegment.088</object-name>
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
-    <object-name>shippingcontainerbig</object-name>
-    <object-name>cub</object-name>
-    <object-name>groundtank</object-name>
-    <object-name>groundtanklarge</object-name>
-    <object-name>groundtanktall</object-name>
-    <object-name>tankstand</object-name>
-    <object-name>pinetrees</object-name>
-    <object-name>dumptruck</object-name>
+    <object-name>cargo</object-name>
+    <object-name>cargoharness</object-name>
   </effect>
   
   <animation>
@@ -501,14 +578,8 @@
     <object-name>ropesegment.088</object-name>
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
-    <object-name>shippingcontainerbig</object-name>
-    <object-name>cub</object-name>
-    <object-name>groundtank</object-name>
-    <object-name>groundtanklarge</object-name>
-    <object-name>groundtanktall</object-name>
-    <object-name>tankstand</object-name>
-    <object-name>pinetrees</object-name>
-    <object-name>dumptruck</object-name>
+    <object-name>cargo</object-name>
+    <object-name>cargoharness</object-name>
   </animation>
   
   <animation>
@@ -602,14 +673,8 @@
     <object-name>ropesegment.088</object-name>
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
-    <object-name>shippingcontainerbig</object-name>
-    <object-name>cub</object-name>
-    <object-name>groundtank</object-name>
-    <object-name>groundtanklarge</object-name>
-    <object-name>groundtanktall</object-name>
-    <object-name>tankstand</object-name>
-    <object-name>pinetrees</object-name>
-    <object-name>dumptruck</object-name>
+    <object-name>cargo</object-name>
+    <object-name>cargoharness</object-name>
   </animation>
 
   <animation>
@@ -702,14 +767,8 @@
     <object-name>ropesegment.088</object-name>
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
-    <object-name>shippingcontainerbig</object-name>
-    <object-name>cub</object-name>
-    <object-name>groundtank</object-name>
-    <object-name>groundtanklarge</object-name>
-    <object-name>groundtanktall</object-name>
-    <object-name>tankstand</object-name>
-    <object-name>pinetrees</object-name>
-    <object-name>dumptruck</object-name>
+    <object-name>cargo</object-name>
+    <object-name>cargoharness</object-name>
   </animation>
   
   <animation>
@@ -801,14 +860,8 @@
     <object-name>ropesegment.088</object-name>
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
-    <object-name>shippingcontainerbig</object-name>
-    <object-name>cub</object-name>
-    <object-name>groundtank</object-name>
-    <object-name>groundtanklarge</object-name>
-    <object-name>groundtanktall</object-name>
-    <object-name>tankstand</object-name>
-    <object-name>pinetrees</object-name>
-    <object-name>dumptruck</object-name>
+    <object-name>cargo</object-name>
+    <object-name>cargoharness</object-name>
   </animation>
   
   <animation>
@@ -899,14 +952,8 @@
     <object-name>ropesegment.088</object-name>
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
-    <object-name>shippingcontainerbig</object-name>
-    <object-name>cub</object-name>
-    <object-name>groundtank</object-name>
-    <object-name>groundtanklarge</object-name>
-    <object-name>groundtanktall</object-name>
-    <object-name>tankstand</object-name>
-    <object-name>pinetrees</object-name>
-    <object-name>dumptruck</object-name>
+    <object-name>cargo</object-name>
+    <object-name>cargoharness</object-name>
   </animation>
   
   <animation>
@@ -996,14 +1043,8 @@
     <object-name>ropesegment.088</object-name>
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
-    <object-name>shippingcontainerbig</object-name>
-    <object-name>cub</object-name>
-    <object-name>groundtank</object-name>
-    <object-name>groundtanklarge</object-name>
-    <object-name>groundtanktall</object-name>
-    <object-name>tankstand</object-name>
-    <object-name>pinetrees</object-name>
-    <object-name>dumptruck</object-name>
+    <object-name>cargo</object-name>
+    <object-name>cargoharness</object-name>
   </animation>
   
   <animation>
@@ -1092,14 +1133,8 @@
     <object-name>ropesegment.088</object-name>
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
-    <object-name>shippingcontainerbig</object-name>
-    <object-name>cub</object-name>
-    <object-name>groundtank</object-name>
-    <object-name>groundtanklarge</object-name>
-    <object-name>groundtanktall</object-name>
-    <object-name>tankstand</object-name>
-    <object-name>pinetrees</object-name>
-    <object-name>dumptruck</object-name>
+    <object-name>cargo</object-name>
+    <object-name>cargoharness</object-name>
   </animation>
   
   <animation>
@@ -1187,14 +1222,8 @@
     <object-name>ropesegment.088</object-name>
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
-    <object-name>shippingcontainerbig</object-name>
-    <object-name>cub</object-name>
-    <object-name>groundtank</object-name>
-    <object-name>groundtanklarge</object-name>
-    <object-name>groundtanktall</object-name>
-    <object-name>tankstand</object-name>
-    <object-name>pinetrees</object-name>
-    <object-name>dumptruck</object-name>
+    <object-name>cargo</object-name>
+    <object-name>cargoharness</object-name>
   </animation>
   
   <animation>
@@ -1281,14 +1310,8 @@
     <object-name>ropesegment.088</object-name>
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
-    <object-name>shippingcontainerbig</object-name>
-    <object-name>cub</object-name>
-    <object-name>groundtank</object-name>
-    <object-name>groundtanklarge</object-name>
-    <object-name>groundtanktall</object-name>
-    <object-name>tankstand</object-name>
-    <object-name>pinetrees</object-name>
-    <object-name>dumptruck</object-name>
+    <object-name>cargo</object-name>
+    <object-name>cargoharness</object-name>
   </animation>
   
   <animation>
@@ -1374,14 +1397,8 @@
     <object-name>ropesegment.088</object-name>
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
-    <object-name>shippingcontainerbig</object-name>
-    <object-name>cub</object-name>
-    <object-name>groundtank</object-name>
-    <object-name>groundtanklarge</object-name>
-    <object-name>groundtanktall</object-name>
-    <object-name>tankstand</object-name>
-    <object-name>pinetrees</object-name>
-    <object-name>dumptruck</object-name>   
+    <object-name>cargo</object-name>
+    <object-name>cargoharness</object-name>   
   </animation>
   
   <animation>
@@ -1466,14 +1483,8 @@
     <object-name>ropesegment.088</object-name>
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
-    <object-name>shippingcontainerbig</object-name>
-    <object-name>cub</object-name>
-    <object-name>groundtank</object-name>
-    <object-name>groundtanklarge</object-name>
-    <object-name>groundtanktall</object-name>
-    <object-name>tankstand</object-name>
-    <object-name>pinetrees</object-name>
-    <object-name>dumptruck</object-name>
+    <object-name>cargo</object-name>
+    <object-name>cargoharness</object-name>
   </animation>
   
   <animation>
@@ -1557,14 +1568,8 @@
     <object-name>ropesegment.088</object-name>
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
-    <object-name>shippingcontainerbig</object-name>
-    <object-name>cub</object-name>
-    <object-name>groundtank</object-name>
-    <object-name>groundtanklarge</object-name>
-    <object-name>groundtanktall</object-name>
-    <object-name>tankstand</object-name>
-    <object-name>pinetrees</object-name>
-    <object-name>dumptruck</object-name>
+    <object-name>cargo</object-name>
+    <object-name>cargoharness</object-name>
   </animation>
   
   <animation>
@@ -1647,14 +1652,8 @@
     <object-name>ropesegment.088</object-name>
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
-    <object-name>shippingcontainerbig</object-name>
-    <object-name>cub</object-name>
-    <object-name>groundtank</object-name>
-    <object-name>groundtanklarge</object-name>
-    <object-name>groundtanktall</object-name>
-    <object-name>tankstand</object-name>
-    <object-name>pinetrees</object-name>
-    <object-name>dumptruck</object-name>
+    <object-name>cargo</object-name>
+    <object-name>cargoharness</object-name>
   </animation>
   
   <animation>
@@ -1736,14 +1735,8 @@
     <object-name>ropesegment.088</object-name>
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
-    <object-name>shippingcontainerbig</object-name>
-    <object-name>cub</object-name>
-    <object-name>groundtank</object-name>
-    <object-name>groundtanklarge</object-name>
-    <object-name>groundtanktall</object-name>
-    <object-name>tankstand</object-name>
-    <object-name>pinetrees</object-name>
-    <object-name>dumptruck</object-name>
+    <object-name>cargo</object-name>
+    <object-name>cargoharness</object-name>
   </animation>
   
   <animation>
@@ -1824,14 +1817,8 @@
     <object-name>ropesegment.088</object-name>
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
-    <object-name>shippingcontainerbig</object-name>
-    <object-name>cub</object-name>
-    <object-name>groundtank</object-name>
-    <object-name>groundtanklarge</object-name>
-    <object-name>groundtanktall</object-name>
-    <object-name>tankstand</object-name>
-    <object-name>pinetrees</object-name>
-    <object-name>dumptruck</object-name>
+    <object-name>cargo</object-name>
+    <object-name>cargoharness</object-name>
   </animation>
   
   <animation>
@@ -1911,14 +1898,8 @@
     <object-name>ropesegment.088</object-name>
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
-    <object-name>shippingcontainerbig</object-name>
-    <object-name>cub</object-name>
-    <object-name>groundtank</object-name>
-    <object-name>groundtanklarge</object-name>
-    <object-name>groundtanktall</object-name>
-    <object-name>tankstand</object-name>
-    <object-name>pinetrees</object-name>
-    <object-name>dumptruck</object-name>
+    <object-name>cargo</object-name>
+    <object-name>cargoharness</object-name>
   </animation>
   
   <animation>
@@ -1997,14 +1978,8 @@
     <object-name>ropesegment.088</object-name>
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
-    <object-name>shippingcontainerbig</object-name>
-    <object-name>cub</object-name>
-    <object-name>groundtank</object-name>
-    <object-name>groundtanklarge</object-name>
-    <object-name>groundtanktall</object-name>
-    <object-name>tankstand</object-name>
-    <object-name>pinetrees</object-name>
-    <object-name>dumptruck</object-name>
+    <object-name>cargo</object-name>
+    <object-name>cargoharness</object-name>
   </animation>
   
   <animation>
@@ -2082,14 +2057,8 @@
     <object-name>ropesegment.088</object-name>
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
-    <object-name>shippingcontainerbig</object-name>
-    <object-name>cub</object-name>
-    <object-name>groundtank</object-name>
-    <object-name>groundtanklarge</object-name>
-    <object-name>groundtanktall</object-name>
-    <object-name>tankstand</object-name>
-    <object-name>pinetrees</object-name>
-    <object-name>dumptruck</object-name>
+    <object-name>cargo</object-name>
+    <object-name>cargoharness</object-name>
   </animation>
   
   <animation>
@@ -2166,14 +2135,8 @@
     <object-name>ropesegment.088</object-name>
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
-    <object-name>shippingcontainerbig</object-name>
-    <object-name>cub</object-name>
-    <object-name>groundtank</object-name>
-    <object-name>groundtanklarge</object-name>
-    <object-name>groundtanktall</object-name>
-    <object-name>tankstand</object-name>
-    <object-name>pinetrees</object-name>
-    <object-name>dumptruck</object-name>
+    <object-name>cargo</object-name>
+    <object-name>cargoharness</object-name>
   </animation>
   
   <animation>
@@ -2249,14 +2212,8 @@
     <object-name>ropesegment.088</object-name>
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
-    <object-name>shippingcontainerbig</object-name>
-    <object-name>cub</object-name>
-    <object-name>groundtank</object-name>
-    <object-name>groundtanklarge</object-name>
-    <object-name>groundtanktall</object-name>
-    <object-name>tankstand</object-name>
-    <object-name>pinetrees</object-name>
-    <object-name>dumptruck</object-name>
+    <object-name>cargo</object-name>
+    <object-name>cargoharness</object-name>
   </animation>
   
   <animation>
@@ -2331,14 +2288,8 @@
     <object-name>ropesegment.088</object-name>
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
-    <object-name>shippingcontainerbig</object-name>
-    <object-name>cub</object-name>
-    <object-name>groundtank</object-name>
-    <object-name>groundtanklarge</object-name>
-    <object-name>groundtanktall</object-name>
-    <object-name>tankstand</object-name>
-    <object-name>pinetrees</object-name>
-    <object-name>dumptruck</object-name>
+    <object-name>cargo</object-name>
+    <object-name>cargoharness</object-name>
   </animation>
   
   <animation>
@@ -2412,14 +2363,8 @@
     <object-name>ropesegment.088</object-name>
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
-    <object-name>shippingcontainerbig</object-name>
-    <object-name>cub</object-name>
-    <object-name>groundtank</object-name>
-    <object-name>groundtanklarge</object-name>
-    <object-name>groundtanktall</object-name>
-    <object-name>tankstand</object-name>
-    <object-name>pinetrees</object-name>
-    <object-name>dumptruck</object-name>
+    <object-name>cargo</object-name>
+    <object-name>cargoharness</object-name>
   </animation>
   
   <animation>
@@ -2492,14 +2437,8 @@
     <object-name>ropesegment.088</object-name>
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
-    <object-name>shippingcontainerbig</object-name>
-    <object-name>cub</object-name>
-    <object-name>groundtank</object-name>
-    <object-name>groundtanklarge</object-name>
-    <object-name>groundtanktall</object-name>
-    <object-name>tankstand</object-name>
-    <object-name>pinetrees</object-name>
-    <object-name>dumptruck</object-name>
+    <object-name>cargo</object-name>
+    <object-name>cargoharness</object-name>
   </animation>
   
   <animation>
@@ -2571,14 +2510,8 @@
     <object-name>ropesegment.088</object-name>
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
-    <object-name>shippingcontainerbig</object-name>
-    <object-name>cub</object-name>
-    <object-name>groundtank</object-name>
-    <object-name>groundtanklarge</object-name>
-    <object-name>groundtanktall</object-name>
-    <object-name>tankstand</object-name>
-    <object-name>pinetrees</object-name>
-    <object-name>dumptruck</object-name>
+    <object-name>cargo</object-name>
+    <object-name>cargoharness</object-name>
   </animation>
   
   <animation>
@@ -2649,14 +2582,8 @@
     <object-name>ropesegment.088</object-name>
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
-    <object-name>shippingcontainerbig</object-name>
-    <object-name>cub</object-name>
-    <object-name>groundtank</object-name>
-    <object-name>groundtanklarge</object-name>
-    <object-name>groundtanktall</object-name>
-    <object-name>tankstand</object-name>
-    <object-name>pinetrees</object-name>
-    <object-name>dumptruck</object-name>
+    <object-name>cargo</object-name>
+    <object-name>cargoharness</object-name>
   </animation>
   
   <animation>
@@ -2726,14 +2653,8 @@
     <object-name>ropesegment.088</object-name>
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
-    <object-name>shippingcontainerbig</object-name>
-    <object-name>cub</object-name>
-    <object-name>groundtank</object-name>
-    <object-name>groundtanklarge</object-name>
-    <object-name>groundtanktall</object-name>
-    <object-name>tankstand</object-name>
-    <object-name>pinetrees</object-name>
-    <object-name>dumptruck</object-name>
+    <object-name>cargo</object-name>
+    <object-name>cargoharness</object-name>
   </animation>
   
   <animation>
@@ -2802,14 +2723,8 @@
     <object-name>ropesegment.088</object-name>
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
-    <object-name>shippingcontainerbig</object-name>
-    <object-name>cub</object-name>
-    <object-name>groundtank</object-name>
-    <object-name>groundtanklarge</object-name>
-    <object-name>groundtanktall</object-name>
-    <object-name>tankstand</object-name>
-    <object-name>pinetrees</object-name>
-    <object-name>dumptruck</object-name>
+    <object-name>cargo</object-name>
+    <object-name>cargoharness</object-name>
   </animation>
   
   <animation>
@@ -2877,14 +2792,8 @@
     <object-name>ropesegment.088</object-name>
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
-    <object-name>shippingcontainerbig</object-name>
-    <object-name>cub</object-name>
-    <object-name>groundtank</object-name>
-    <object-name>groundtanklarge</object-name>
-    <object-name>groundtanktall</object-name>
-    <object-name>tankstand</object-name>
-    <object-name>pinetrees</object-name>
-    <object-name>dumptruck</object-name>
+    <object-name>cargo</object-name>
+    <object-name>cargoharness</object-name>
   </animation>
   
   <animation>
@@ -2951,14 +2860,8 @@
     <object-name>ropesegment.088</object-name>
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
-    <object-name>shippingcontainerbig</object-name>
-    <object-name>cub</object-name>
-    <object-name>groundtank</object-name>
-    <object-name>groundtanklarge</object-name>
-    <object-name>groundtanktall</object-name>
-    <object-name>tankstand</object-name>
-    <object-name>pinetrees</object-name>
-    <object-name>dumptruck</object-name>
+    <object-name>cargo</object-name>
+    <object-name>cargoharness</object-name>
   </animation>
   
   <animation>
@@ -3024,14 +2927,8 @@
     <object-name>ropesegment.088</object-name>
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
-    <object-name>shippingcontainerbig</object-name>
-    <object-name>cub</object-name>
-    <object-name>groundtank</object-name>
-    <object-name>groundtanklarge</object-name>
-    <object-name>groundtanktall</object-name>
-    <object-name>tankstand</object-name>
-    <object-name>pinetrees</object-name>
-    <object-name>dumptruck</object-name>
+    <object-name>cargo</object-name>
+    <object-name>cargoharness</object-name>
   </animation>
 
   <animation>
@@ -3096,14 +2993,8 @@
     <object-name>ropesegment.088</object-name>
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
-    <object-name>shippingcontainerbig</object-name>
-    <object-name>cub</object-name>
-    <object-name>groundtank</object-name>
-    <object-name>groundtanklarge</object-name>
-    <object-name>groundtanktall</object-name>
-    <object-name>tankstand</object-name>
-    <object-name>pinetrees</object-name>
-    <object-name>dumptruck</object-name>  
+    <object-name>cargo</object-name>
+    <object-name>cargoharness</object-name>  
   </animation>
   
   <animation>
@@ -3167,14 +3058,8 @@
     <object-name>ropesegment.088</object-name>
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
-    <object-name>shippingcontainerbig</object-name>
-    <object-name>cub</object-name>
-    <object-name>groundtank</object-name>
-    <object-name>groundtanklarge</object-name>
-    <object-name>groundtanktall</object-name>
-    <object-name>tankstand</object-name>
-    <object-name>pinetrees</object-name>
-    <object-name>dumptruck</object-name>
+    <object-name>cargo</object-name>
+    <object-name>cargoharness</object-name>
   </animation>
 
   <animation>
@@ -3237,14 +3122,8 @@
     <object-name>ropesegment.088</object-name>
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
-    <object-name>shippingcontainerbig</object-name>
-    <object-name>cub</object-name>
-    <object-name>groundtank</object-name>
-    <object-name>groundtanklarge</object-name>
-    <object-name>groundtanktall</object-name>
-    <object-name>tankstand</object-name>
-    <object-name>pinetrees</object-name>
-    <object-name>dumptruck</object-name>
+    <object-name>cargo</object-name>
+    <object-name>cargoharness</object-name>
   </animation>
   
   <animation>
@@ -3306,14 +3185,8 @@
     <object-name>ropesegment.088</object-name>
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
-    <object-name>shippingcontainerbig</object-name>
-    <object-name>cub</object-name>
-    <object-name>groundtank</object-name>
-    <object-name>groundtanklarge</object-name>
-    <object-name>groundtanktall</object-name>
-    <object-name>tankstand</object-name>
-    <object-name>pinetrees</object-name>
-    <object-name>dumptruck</object-name>
+    <object-name>cargo</object-name>
+    <object-name>cargoharness</object-name>
   </animation>
   
   <animation>
@@ -3374,14 +3247,8 @@
     <object-name>ropesegment.088</object-name>
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
-    <object-name>shippingcontainerbig</object-name>
-    <object-name>cub</object-name>
-    <object-name>groundtank</object-name>
-    <object-name>groundtanklarge</object-name>
-    <object-name>groundtanktall</object-name>
-    <object-name>tankstand</object-name>
-    <object-name>pinetrees</object-name>
-    <object-name>dumptruck</object-name>
+    <object-name>cargo</object-name>
+    <object-name>cargoharness</object-name>
   </animation>
   
   <animation>
@@ -3441,14 +3308,8 @@
     <object-name>ropesegment.088</object-name>
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
-    <object-name>shippingcontainerbig</object-name>
-    <object-name>cub</object-name>
-    <object-name>groundtank</object-name>
-    <object-name>groundtanklarge</object-name>
-    <object-name>groundtanktall</object-name>
-    <object-name>tankstand</object-name>
-    <object-name>pinetrees</object-name>
-    <object-name>dumptruck</object-name>
+    <object-name>cargo</object-name>
+    <object-name>cargoharness</object-name>
   </animation>
   
   <animation>
@@ -3507,14 +3368,8 @@
     <object-name>ropesegment.088</object-name>
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
-    <object-name>shippingcontainerbig</object-name>
-    <object-name>cub</object-name>
-    <object-name>groundtank</object-name>
-    <object-name>groundtanklarge</object-name>
-    <object-name>groundtanktall</object-name>
-    <object-name>tankstand</object-name>
-    <object-name>pinetrees</object-name>
-    <object-name>dumptruck</object-name>
+    <object-name>cargo</object-name>
+    <object-name>cargoharness</object-name>
   </animation>
   
   <animation>
@@ -3572,14 +3427,8 @@
     <object-name>ropesegment.088</object-name>
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
-    <object-name>shippingcontainerbig</object-name>
-    <object-name>cub</object-name>
-    <object-name>groundtank</object-name>
-    <object-name>groundtanklarge</object-name>
-    <object-name>groundtanktall</object-name>
-    <object-name>tankstand</object-name>
-    <object-name>pinetrees</object-name>
-    <object-name>dumptruck</object-name>
+    <object-name>cargo</object-name>
+    <object-name>cargoharness</object-name>
   </animation>
   
   <animation>
@@ -3636,14 +3485,8 @@
     <object-name>ropesegment.088</object-name>
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
-    <object-name>shippingcontainerbig</object-name>
-    <object-name>cub</object-name>
-    <object-name>groundtank</object-name>
-    <object-name>groundtanklarge</object-name>
-    <object-name>groundtanktall</object-name>
-    <object-name>tankstand</object-name>
-    <object-name>pinetrees</object-name>
-    <object-name>dumptruck</object-name>
+    <object-name>cargo</object-name>
+    <object-name>cargoharness</object-name>
   </animation>
   
   <animation>
@@ -3699,14 +3542,8 @@
     <object-name>ropesegment.088</object-name>
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
-    <object-name>shippingcontainerbig</object-name>
-    <object-name>cub</object-name>
-    <object-name>groundtank</object-name>
-    <object-name>groundtanklarge</object-name>
-    <object-name>groundtanktall</object-name>
-    <object-name>tankstand</object-name>
-    <object-name>pinetrees</object-name>
-    <object-name>dumptruck</object-name>   
+    <object-name>cargo</object-name>
+    <object-name>cargoharness</object-name>   
   </animation>
   
   <animation>
@@ -3761,14 +3598,8 @@
     <object-name>ropesegment.088</object-name>
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
-    <object-name>shippingcontainerbig</object-name>
-    <object-name>cub</object-name>
-    <object-name>groundtank</object-name>
-    <object-name>groundtanklarge</object-name>
-    <object-name>groundtanktall</object-name>
-    <object-name>tankstand</object-name>
-    <object-name>pinetrees</object-name>
-    <object-name>dumptruck</object-name>
+    <object-name>cargo</object-name>
+    <object-name>cargoharness</object-name>
   </animation>
   
   <animation>
@@ -3822,14 +3653,8 @@
     <object-name>ropesegment.088</object-name>
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
-    <object-name>shippingcontainerbig</object-name>
-    <object-name>cub</object-name>
-    <object-name>groundtank</object-name>
-    <object-name>groundtanklarge</object-name>
-    <object-name>groundtanktall</object-name>
-    <object-name>tankstand</object-name>
-    <object-name>pinetrees</object-name>
-    <object-name>dumptruck</object-name>
+    <object-name>cargo</object-name>
+    <object-name>cargoharness</object-name>
   </animation>
   
   <animation>
@@ -3882,14 +3707,8 @@
     <object-name>ropesegment.088</object-name>
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
-    <object-name>shippingcontainerbig</object-name>
-    <object-name>cub</object-name>
-    <object-name>groundtank</object-name>
-    <object-name>groundtanklarge</object-name>
-    <object-name>groundtanktall</object-name>
-    <object-name>tankstand</object-name>
-    <object-name>pinetrees</object-name>
-    <object-name>dumptruck</object-name>
+    <object-name>cargo</object-name>
+    <object-name>cargoharness</object-name>
   </animation>
   
   <animation>
@@ -3941,14 +3760,8 @@
     <object-name>ropesegment.088</object-name>
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
-    <object-name>shippingcontainerbig</object-name>
-    <object-name>cub</object-name>
-    <object-name>groundtank</object-name>
-    <object-name>groundtanklarge</object-name>
-    <object-name>groundtanktall</object-name>
-    <object-name>tankstand</object-name>
-    <object-name>pinetrees</object-name>
-    <object-name>dumptruck</object-name>
+    <object-name>cargo</object-name>
+    <object-name>cargoharness</object-name>
   </animation>
   
   <animation>
@@ -3999,14 +3812,8 @@
     <object-name>ropesegment.088</object-name>
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
-    <object-name>shippingcontainerbig</object-name>
-    <object-name>cub</object-name>
-    <object-name>groundtank</object-name>
-    <object-name>groundtanklarge</object-name>
-    <object-name>groundtanktall</object-name>
-    <object-name>tankstand</object-name>
-    <object-name>pinetrees</object-name>
-    <object-name>dumptruck</object-name>
+    <object-name>cargo</object-name>
+    <object-name>cargoharness</object-name>
   </animation>
   
   <animation>
@@ -4056,14 +3863,8 @@
     <object-name>ropesegment.088</object-name>
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
-    <object-name>shippingcontainerbig</object-name>
-    <object-name>cub</object-name>
-    <object-name>groundtank</object-name>
-    <object-name>groundtanklarge</object-name>
-    <object-name>groundtanktall</object-name>
-    <object-name>tankstand</object-name>
-    <object-name>pinetrees</object-name>
-    <object-name>dumptruck</object-name>
+    <object-name>cargo</object-name>
+    <object-name>cargoharness</object-name>
   </animation>
   
   <animation>
@@ -4112,14 +3913,8 @@
     <object-name>ropesegment.088</object-name>
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
-    <object-name>shippingcontainerbig</object-name>
-    <object-name>cub</object-name>
-    <object-name>groundtank</object-name>
-    <object-name>groundtanklarge</object-name>
-    <object-name>groundtanktall</object-name>
-    <object-name>tankstand</object-name>
-    <object-name>pinetrees</object-name>
-    <object-name>dumptruck</object-name>
+    <object-name>cargo</object-name>
+    <object-name>cargoharness</object-name>
   </animation>
   
   <animation>
@@ -4167,14 +3962,8 @@
     <object-name>ropesegment.088</object-name>
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
-    <object-name>shippingcontainerbig</object-name>
-    <object-name>cub</object-name>
-    <object-name>groundtank</object-name>
-    <object-name>groundtanklarge</object-name>
-    <object-name>groundtanktall</object-name>
-    <object-name>tankstand</object-name>
-    <object-name>pinetrees</object-name>
-    <object-name>dumptruck</object-name>
+    <object-name>cargo</object-name>
+    <object-name>cargoharness</object-name>
   </animation>
   
   <animation>
@@ -4221,14 +4010,8 @@
     <object-name>ropesegment.088</object-name>
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
-    <object-name>shippingcontainerbig</object-name>
-    <object-name>cub</object-name>
-    <object-name>groundtank</object-name>
-    <object-name>groundtanklarge</object-name>
-    <object-name>groundtanktall</object-name>
-    <object-name>tankstand</object-name>
-    <object-name>pinetrees</object-name>
-    <object-name>dumptruck</object-name>
+    <object-name>cargo</object-name>
+    <object-name>cargoharness</object-name>
   </animation>
   
   <animation>
@@ -4274,14 +4057,8 @@
     <object-name>ropesegment.088</object-name>
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
-    <object-name>shippingcontainerbig</object-name>
-    <object-name>cub</object-name>
-    <object-name>groundtank</object-name>
-    <object-name>groundtanklarge</object-name>
-    <object-name>groundtanktall</object-name>
-    <object-name>tankstand</object-name>
-    <object-name>pinetrees</object-name>
-    <object-name>dumptruck</object-name>
+    <object-name>cargo</object-name>
+    <object-name>cargoharness</object-name>
   </animation>
   
   <animation>
@@ -4326,14 +4103,8 @@
     <object-name>ropesegment.088</object-name>
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
-    <object-name>shippingcontainerbig</object-name>
-    <object-name>cub</object-name>
-    <object-name>groundtank</object-name>
-    <object-name>groundtanklarge</object-name>
-    <object-name>groundtanktall</object-name>
-    <object-name>tankstand</object-name>
-    <object-name>pinetrees</object-name>
-    <object-name>dumptruck</object-name>
+    <object-name>cargo</object-name>
+    <object-name>cargoharness</object-name>
   </animation>
   
   <animation>
@@ -4377,14 +4148,8 @@
     <object-name>ropesegment.088</object-name>
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
-    <object-name>shippingcontainerbig</object-name>
-    <object-name>cub</object-name>
-    <object-name>groundtank</object-name>
-    <object-name>groundtanklarge</object-name>
-    <object-name>groundtanktall</object-name>
-    <object-name>tankstand</object-name>
-    <object-name>pinetrees</object-name>
-    <object-name>dumptruck</object-name>
+    <object-name>cargo</object-name>
+    <object-name>cargoharness</object-name>
   </animation>
   
   <animation>
@@ -4427,14 +4192,8 @@
     <object-name>ropesegment.088</object-name>
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
-    <object-name>shippingcontainerbig</object-name>
-    <object-name>cub</object-name>
-    <object-name>groundtank</object-name>
-    <object-name>groundtanklarge</object-name>
-    <object-name>groundtanktall</object-name>
-    <object-name>tankstand</object-name>
-    <object-name>pinetrees</object-name>
-    <object-name>dumptruck</object-name>
+    <object-name>cargo</object-name>
+    <object-name>cargoharness</object-name>
   </animation>
   
   <animation>
@@ -4476,14 +4235,8 @@
     <object-name>ropesegment.088</object-name>
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
-    <object-name>shippingcontainerbig</object-name>
-    <object-name>cub</object-name>
-    <object-name>groundtank</object-name>
-    <object-name>groundtanklarge</object-name>
-    <object-name>groundtanktall</object-name>
-    <object-name>tankstand</object-name>
-    <object-name>pinetrees</object-name>
-    <object-name>dumptruck</object-name>
+    <object-name>cargo</object-name>
+    <object-name>cargoharness</object-name>
   </animation>
   
   <animation>
@@ -4524,14 +4277,8 @@
     <object-name>ropesegment.088</object-name>
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
-    <object-name>shippingcontainerbig</object-name>
-    <object-name>cub</object-name>
-    <object-name>groundtank</object-name>
-    <object-name>groundtanklarge</object-name>
-    <object-name>groundtanktall</object-name>
-    <object-name>tankstand</object-name>
-    <object-name>pinetrees</object-name>
-    <object-name>dumptruck</object-name>
+    <object-name>cargo</object-name>
+    <object-name>cargoharness</object-name>
   </animation>
   
   <animation>
@@ -4571,14 +4318,8 @@
     <object-name>ropesegment.088</object-name>
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
-    <object-name>shippingcontainerbig</object-name>
-    <object-name>cub</object-name>
-    <object-name>groundtank</object-name>
-    <object-name>groundtanklarge</object-name>
-    <object-name>groundtanktall</object-name>
-    <object-name>tankstand</object-name>
-    <object-name>pinetrees</object-name>
-    <object-name>dumptruck</object-name>
+    <object-name>cargo</object-name>
+    <object-name>cargoharness</object-name>
   </animation>
   
   <animation>
@@ -4617,14 +4358,8 @@
     <object-name>ropesegment.088</object-name>
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
-    <object-name>shippingcontainerbig</object-name>
-    <object-name>cub</object-name>
-    <object-name>groundtank</object-name>
-    <object-name>groundtanklarge</object-name>
-    <object-name>groundtanktall</object-name>
-    <object-name>tankstand</object-name>
-    <object-name>pinetrees</object-name>
-    <object-name>dumptruck</object-name>
+    <object-name>cargo</object-name>
+    <object-name>cargoharness</object-name>
   </animation>
   
   <animation>
@@ -4662,14 +4397,8 @@
     <object-name>ropesegment.088</object-name>
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
-    <object-name>shippingcontainerbig</object-name>
-    <object-name>cub</object-name>
-    <object-name>groundtank</object-name>
-    <object-name>groundtanklarge</object-name>
-    <object-name>groundtanktall</object-name>
-    <object-name>tankstand</object-name>
-    <object-name>pinetrees</object-name>
-    <object-name>dumptruck</object-name>
+    <object-name>cargo</object-name>
+    <object-name>cargoharness</object-name>
   </animation>
   
   <animation>
@@ -4706,14 +4435,8 @@
     <object-name>ropesegment.088</object-name>
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
-    <object-name>shippingcontainerbig</object-name>
-    <object-name>cub</object-name>
-    <object-name>groundtank</object-name>
-    <object-name>groundtanklarge</object-name>
-    <object-name>groundtanktall</object-name>
-    <object-name>tankstand</object-name>
-    <object-name>pinetrees</object-name>
-    <object-name>dumptruck</object-name>
+    <object-name>cargo</object-name>
+    <object-name>cargoharness</object-name>
   </animation>
   
   <animation>
@@ -4749,14 +4472,8 @@
     <object-name>ropesegment.088</object-name>
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
-    <object-name>shippingcontainerbig</object-name>
-    <object-name>cub</object-name>
-    <object-name>groundtank</object-name>
-    <object-name>groundtanklarge</object-name>
-    <object-name>groundtanktall</object-name>
-    <object-name>tankstand</object-name>
-    <object-name>pinetrees</object-name>
-    <object-name>dumptruck</object-name>
+    <object-name>cargo</object-name>
+    <object-name>cargoharness</object-name>
   </animation>
 
   <animation>
@@ -4791,14 +4508,8 @@
     <object-name>ropesegment.088</object-name>
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
-    <object-name>shippingcontainerbig</object-name>
-    <object-name>cub</object-name>
-    <object-name>groundtank</object-name>
-    <object-name>groundtanklarge</object-name>
-    <object-name>groundtanktall</object-name>
-    <object-name>tankstand</object-name>
-    <object-name>pinetrees</object-name>
-    <object-name>dumptruck</object-name>  
+    <object-name>cargo</object-name>
+    <object-name>cargoharness</object-name>  
   </animation>
   
   <animation>
@@ -4832,14 +4543,8 @@
     <object-name>ropesegment.088</object-name>
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
-    <object-name>shippingcontainerbig</object-name>
-    <object-name>cub</object-name>
-    <object-name>groundtank</object-name>
-    <object-name>groundtanklarge</object-name>
-    <object-name>groundtanktall</object-name>
-    <object-name>tankstand</object-name>
-    <object-name>pinetrees</object-name>
-    <object-name>dumptruck</object-name>
+    <object-name>cargo</object-name>
+    <object-name>cargoharness</object-name>
   </animation>
 
   <animation>
@@ -4872,14 +4577,8 @@
     <object-name>ropesegment.088</object-name>
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
-    <object-name>shippingcontainerbig</object-name>
-    <object-name>cub</object-name>
-    <object-name>groundtank</object-name>
-    <object-name>groundtanklarge</object-name>
-    <object-name>groundtanktall</object-name>
-    <object-name>tankstand</object-name>
-    <object-name>pinetrees</object-name>
-    <object-name>dumptruck</object-name>
+    <object-name>cargo</object-name>
+    <object-name>cargoharness</object-name>
   </animation>
   
   <animation>
@@ -4911,14 +4610,8 @@
     <object-name>ropesegment.088</object-name>
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
-    <object-name>shippingcontainerbig</object-name>
-    <object-name>cub</object-name>
-    <object-name>groundtank</object-name>
-    <object-name>groundtanklarge</object-name>
-    <object-name>groundtanktall</object-name>
-    <object-name>tankstand</object-name>
-    <object-name>pinetrees</object-name>
-    <object-name>dumptruck</object-name>
+    <object-name>cargo</object-name>
+    <object-name>cargoharness</object-name>
   </animation>
   
   <animation>
@@ -4949,14 +4642,8 @@
     <object-name>ropesegment.088</object-name>
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
-    <object-name>shippingcontainerbig</object-name>
-    <object-name>cub</object-name>
-    <object-name>groundtank</object-name>
-    <object-name>groundtanklarge</object-name>
-    <object-name>groundtanktall</object-name>
-    <object-name>tankstand</object-name>
-    <object-name>pinetrees</object-name>
-    <object-name>dumptruck</object-name>
+    <object-name>cargo</object-name>
+    <object-name>cargoharness</object-name>
   </animation>
   
   <animation>
@@ -4986,14 +4673,8 @@
     <object-name>ropesegment.088</object-name>
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
-    <object-name>shippingcontainerbig</object-name>
-    <object-name>cub</object-name>
-    <object-name>groundtank</object-name>
-    <object-name>groundtanklarge</object-name>
-    <object-name>groundtanktall</object-name>
-    <object-name>tankstand</object-name>
-    <object-name>pinetrees</object-name>
-    <object-name>dumptruck</object-name>
+    <object-name>cargo</object-name>
+    <object-name>cargoharness</object-name>
   </animation>
   
   <animation>
@@ -5022,14 +4703,8 @@
     <object-name>ropesegment.088</object-name>
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
-    <object-name>shippingcontainerbig</object-name>
-    <object-name>cub</object-name>
-    <object-name>groundtank</object-name>
-    <object-name>groundtanklarge</object-name>
-    <object-name>groundtanktall</object-name>
-    <object-name>tankstand</object-name>
-    <object-name>pinetrees</object-name>
-    <object-name>dumptruck</object-name>
+    <object-name>cargo</object-name>
+    <object-name>cargoharness</object-name>
   </animation>
   
   <animation>
@@ -5057,14 +4732,8 @@
     <object-name>ropesegment.088</object-name>
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
-    <object-name>shippingcontainerbig</object-name>
-    <object-name>cub</object-name>
-    <object-name>groundtank</object-name>
-    <object-name>groundtanklarge</object-name>
-    <object-name>groundtanktall</object-name>
-    <object-name>tankstand</object-name>
-    <object-name>pinetrees</object-name>
-    <object-name>dumptruck</object-name>
+    <object-name>cargo</object-name>
+    <object-name>cargoharness</object-name>
   </animation>
   
   <animation>
@@ -5091,14 +4760,8 @@
     <object-name>ropesegment.088</object-name>
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
-    <object-name>shippingcontainerbig</object-name>
-    <object-name>cub</object-name>
-    <object-name>groundtank</object-name>
-    <object-name>groundtanklarge</object-name>
-    <object-name>groundtanktall</object-name>
-    <object-name>tankstand</object-name>
-    <object-name>pinetrees</object-name>
-    <object-name>dumptruck</object-name>
+    <object-name>cargo</object-name>
+    <object-name>cargoharness</object-name>
   </animation>
   
   <animation>
@@ -5124,14 +4787,8 @@
     <object-name>ropesegment.088</object-name>
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
-    <object-name>shippingcontainerbig</object-name>
-    <object-name>cub</object-name>
-    <object-name>groundtank</object-name>
-    <object-name>groundtanklarge</object-name>
-    <object-name>groundtanktall</object-name>
-    <object-name>tankstand</object-name>
-    <object-name>pinetrees</object-name>
-    <object-name>dumptruck</object-name>   
+    <object-name>cargo</object-name>
+    <object-name>cargoharness</object-name>   
   </animation>
   
   <animation>
@@ -5156,14 +4813,8 @@
     <object-name>ropesegment.088</object-name>
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
-    <object-name>shippingcontainerbig</object-name>
-    <object-name>cub</object-name>
-    <object-name>groundtank</object-name>
-    <object-name>groundtanklarge</object-name>
-    <object-name>groundtanktall</object-name>
-    <object-name>tankstand</object-name>
-    <object-name>pinetrees</object-name>
-    <object-name>dumptruck</object-name>
+    <object-name>cargo</object-name>
+    <object-name>cargoharness</object-name>
   </animation>
   
   <animation>
@@ -5187,14 +4838,8 @@
     <object-name>ropesegment.088</object-name>
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
-    <object-name>shippingcontainerbig</object-name>
-    <object-name>cub</object-name>
-    <object-name>groundtank</object-name>
-    <object-name>groundtanklarge</object-name>
-    <object-name>groundtanktall</object-name>
-    <object-name>tankstand</object-name>
-    <object-name>pinetrees</object-name>
-    <object-name>dumptruck</object-name>
+    <object-name>cargo</object-name>
+    <object-name>cargoharness</object-name>
   </animation>
   
   <animation>
@@ -5217,14 +4862,8 @@
     <object-name>ropesegment.088</object-name>
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
-    <object-name>shippingcontainerbig</object-name>
-    <object-name>cub</object-name>
-    <object-name>groundtank</object-name>
-    <object-name>groundtanklarge</object-name>
-    <object-name>groundtanktall</object-name>
-    <object-name>tankstand</object-name>
-    <object-name>pinetrees</object-name>
-    <object-name>dumptruck</object-name>
+    <object-name>cargo</object-name>
+    <object-name>cargoharness</object-name>
   </animation>
   
   <animation>
@@ -5246,14 +4885,8 @@
     <object-name>ropesegment.088</object-name>
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
-    <object-name>shippingcontainerbig</object-name>
-    <object-name>cub</object-name>
-    <object-name>groundtank</object-name>
-    <object-name>groundtanklarge</object-name>
-    <object-name>groundtanktall</object-name>
-    <object-name>tankstand</object-name>
-    <object-name>pinetrees</object-name>
-    <object-name>dumptruck</object-name>
+    <object-name>cargo</object-name>
+    <object-name>cargoharness</object-name>
   </animation>
   
   <animation>
@@ -5274,14 +4907,8 @@
     <object-name>ropesegment.088</object-name>
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
-    <object-name>shippingcontainerbig</object-name>
-    <object-name>cub</object-name>
-    <object-name>groundtank</object-name>
-    <object-name>groundtanklarge</object-name>
-    <object-name>groundtanktall</object-name>
-    <object-name>tankstand</object-name>
-    <object-name>pinetrees</object-name>
-    <object-name>dumptruck</object-name>
+    <object-name>cargo</object-name>
+    <object-name>cargoharness</object-name>
   </animation>
   
   <animation>
@@ -5301,14 +4928,8 @@
     <object-name>ropesegment.088</object-name>
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
-    <object-name>shippingcontainerbig</object-name>
-    <object-name>cub</object-name>
-    <object-name>groundtank</object-name>
-    <object-name>groundtanklarge</object-name>
-    <object-name>groundtanktall</object-name>
-    <object-name>tankstand</object-name>
-    <object-name>pinetrees</object-name>
-    <object-name>dumptruck</object-name>
+    <object-name>cargo</object-name>
+    <object-name>cargoharness</object-name>
   </animation>
   
   <animation>
@@ -5327,14 +4948,8 @@
     <object-name>ropesegment.088</object-name>
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
-    <object-name>shippingcontainerbig</object-name>
-    <object-name>cub</object-name>
-    <object-name>groundtank</object-name>
-    <object-name>groundtanklarge</object-name>
-    <object-name>groundtanktall</object-name>
-    <object-name>tankstand</object-name>
-    <object-name>pinetrees</object-name>
-    <object-name>dumptruck</object-name>
+    <object-name>cargo</object-name>
+    <object-name>cargoharness</object-name>
   </animation>
   
   <animation>
@@ -5352,14 +4967,8 @@
     <object-name>ropesegment.088</object-name>
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
-    <object-name>shippingcontainerbig</object-name>
-    <object-name>cub</object-name>
-    <object-name>groundtank</object-name>
-    <object-name>groundtanklarge</object-name>
-    <object-name>groundtanktall</object-name>
-    <object-name>tankstand</object-name>
-    <object-name>pinetrees</object-name>
-    <object-name>dumptruck</object-name>
+    <object-name>cargo</object-name>
+    <object-name>cargoharness</object-name>
   </animation>
   
   <animation>
@@ -5376,14 +4985,8 @@
     <object-name>ropesegment.088</object-name>
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
-    <object-name>shippingcontainerbig</object-name>
-    <object-name>cub</object-name>
-    <object-name>groundtank</object-name>
-    <object-name>groundtanklarge</object-name>
-    <object-name>groundtanktall</object-name>
-    <object-name>tankstand</object-name>
-    <object-name>pinetrees</object-name>
-    <object-name>dumptruck</object-name>
+    <object-name>cargo</object-name>
+    <object-name>cargoharness</object-name>
   </animation>
   
   <animation>
@@ -5399,14 +5002,8 @@
     <object-name>ropesegment.088</object-name>
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
-    <object-name>shippingcontainerbig</object-name>
-    <object-name>cub</object-name>
-    <object-name>groundtank</object-name>
-    <object-name>groundtanklarge</object-name>
-    <object-name>groundtanktall</object-name>
-    <object-name>tankstand</object-name>
-    <object-name>pinetrees</object-name>
-    <object-name>dumptruck</object-name>
+    <object-name>cargo</object-name>
+    <object-name>cargoharness</object-name>
   </animation>
   
   <animation>
@@ -5421,14 +5018,8 @@
     <object-name>ropesegment.088</object-name>
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
-    <object-name>shippingcontainerbig</object-name>
-    <object-name>cub</object-name>
-    <object-name>groundtank</object-name>
-    <object-name>groundtanklarge</object-name>
-    <object-name>groundtanktall</object-name>
-    <object-name>tankstand</object-name>
-    <object-name>pinetrees</object-name>
-    <object-name>dumptruck</object-name>
+    <object-name>cargo</object-name>
+    <object-name>cargoharness</object-name>
   </animation>
   
   <animation>
@@ -5442,14 +5033,8 @@
     <object-name>ropesegment.088</object-name>
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
-    <object-name>shippingcontainerbig</object-name>
-    <object-name>cub</object-name>
-    <object-name>groundtank</object-name>
-    <object-name>groundtanklarge</object-name>
-    <object-name>groundtanktall</object-name>
-    <object-name>tankstand</object-name>
-    <object-name>pinetrees</object-name>
-    <object-name>dumptruck</object-name>
+    <object-name>cargo</object-name>
+    <object-name>cargoharness</object-name>
   </animation>
   
   <animation>
@@ -5462,14 +5047,8 @@
     <object-name>ropesegment.088</object-name>
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
-    <object-name>shippingcontainerbig</object-name>
-    <object-name>cub</object-name>
-    <object-name>groundtank</object-name>
-    <object-name>groundtanklarge</object-name>
-    <object-name>groundtanktall</object-name>
-    <object-name>tankstand</object-name>
-    <object-name>pinetrees</object-name>
-    <object-name>dumptruck</object-name>
+    <object-name>cargo</object-name>
+    <object-name>cargoharness</object-name>
   </animation>
   
   <animation>
@@ -5481,14 +5060,8 @@
     <object-name>ropesegment.088</object-name>
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
-    <object-name>shippingcontainerbig</object-name>
-    <object-name>cub</object-name>
-    <object-name>groundtank</object-name>
-    <object-name>groundtanklarge</object-name>
-    <object-name>groundtanktall</object-name>
-    <object-name>tankstand</object-name>
-    <object-name>pinetrees</object-name>
-    <object-name>dumptruck</object-name>
+    <object-name>cargo</object-name>
+    <object-name>cargoharness</object-name>
   </animation>
   
   <animation>
@@ -5499,14 +5072,8 @@
     <object-name>ropesegment.088</object-name>
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
-    <object-name>shippingcontainerbig</object-name>
-    <object-name>cub</object-name>
-    <object-name>groundtank</object-name>
-    <object-name>groundtanklarge</object-name>
-    <object-name>groundtanktall</object-name>
-    <object-name>tankstand</object-name>
-    <object-name>pinetrees</object-name>
-    <object-name>dumptruck</object-name>
+    <object-name>cargo</object-name>
+    <object-name>cargoharness</object-name>
   </animation>
   
   <animation>
@@ -5516,14 +5083,8 @@
     <object-name>ropesegment.088</object-name>
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
-    <object-name>shippingcontainerbig</object-name>
-    <object-name>cub</object-name>
-    <object-name>groundtank</object-name>
-    <object-name>groundtanklarge</object-name>
-    <object-name>groundtanktall</object-name>
-    <object-name>tankstand</object-name>
-    <object-name>pinetrees</object-name>
-    <object-name>dumptruck</object-name>
+    <object-name>cargo</object-name>
+    <object-name>cargoharness</object-name>
   </animation>
   
   <animation>
@@ -5532,14 +5093,8 @@
     <object-name>ropesegment.088</object-name>
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
-    <object-name>shippingcontainerbig</object-name>
-    <object-name>cub</object-name>
-    <object-name>groundtank</object-name>
-    <object-name>groundtanklarge</object-name>
-    <object-name>groundtanktall</object-name>
-    <object-name>tankstand</object-name>
-    <object-name>pinetrees</object-name>
-    <object-name>dumptruck</object-name>
+    <object-name>cargo</object-name>
+    <object-name>cargoharness</object-name>
   </animation>
   
   <animation>
@@ -5547,41 +5102,23 @@
     <object-name>ropesegment.088</object-name>
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
-    <object-name>shippingcontainerbig</object-name>
-    <object-name>cub</object-name>
-    <object-name>groundtank</object-name>
-    <object-name>groundtanklarge</object-name>
-    <object-name>groundtanktall</object-name>
-    <object-name>tankstand</object-name>
-    <object-name>pinetrees</object-name>
-    <object-name>dumptruck</object-name>
+    <object-name>cargo</object-name>
+    <object-name>cargoharness</object-name>
   </animation>
   
   <animation>
     <name>RopeSegment89</name>
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
-    <object-name>shippingcontainerbig</object-name>
-    <object-name>cub</object-name>
-    <object-name>groundtank</object-name>
-    <object-name>groundtanklarge</object-name>
-    <object-name>groundtanktall</object-name>
-    <object-name>tankstand</object-name>
-    <object-name>pinetrees</object-name>
-    <object-name>dumptruck</object-name>
+    <object-name>cargo</object-name>
+    <object-name>cargoharness</object-name>
   </animation>
   
   <animation>
     <name>RopeSegment90</name>
     <object-name>ropesegment.090</object-name>
-    <object-name>shippingcontainerbig</object-name>
-    <object-name>cub</object-name>
-    <object-name>groundtank</object-name>
-    <object-name>groundtanklarge</object-name>
-    <object-name>groundtanktall</object-name>
-    <object-name>tankstand</object-name>
-    <object-name>pinetrees</object-name>
-    <object-name>dumptruck</object-name>
+    <object-name>cargo</object-name>
+    <object-name>cargoharness</object-name>
   </animation>
 
   <!-- Flex Hose Rotation Pitch -->
@@ -9008,33 +8545,24 @@
     </axis>
   </animation>
 
-  <!-- shippingcontainerbig -->
+  <!-- Cargo and harness translation and rotation -->
   <animation>
     <type>select</type>
-    <object-name>shippingcontainerbig</object-name>
+    <object-name>cargo</object-name>
+    <object-name>cargoharness</object-name>
     <condition>
-      <and>
-        <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
-        <or>
-          <property>sim/model/cargo1-onhook</property>
-          <property>sim/model/cargo2-onhook</property>
-          <property>sim/model/cargo3-onhook</property>
-        </or>
-      </and>
+      <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
     </condition>
   </animation>
   <animation>
     <type>rotate</type>
-    <object-name>shippingcontainerbig</object-name>
+    <object-name>cargo</object-name>
+    <object-name>cargoharness</object-name>
     <property>/sim/model/cargo/currentyaw</property>
     <condition>
       <and>
         <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
-        <or>
-          <property>sim/model/cargo1-onhook</property>
-          <property>sim/model/cargo2-onhook</property>
-          <property>sim/model/cargo3-onhook</property>
-        </or>
+        <property>sim/model/cargo-on-hook</property>
       </and>
     </condition>
     <factor>1</factor>
@@ -9052,60 +8580,12 @@
   </animation>
   <animation>
     <type>translate</type>
-    <object-name>shippingcontainerbig</object-name>
+    <object-name>cargo</object-name>
     <property>sim/model/cargo/cargoalt</property>
     <condition>
       <and>
         <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
-        <or>
-          <property>sim/model/cargo1-onhook</property>
-          <property>sim/model/cargo2-onhook</property>
-          <property>sim/model/cargo3-onhook</property>
-        </or>
-      </and>
-    </condition>
-    <factor>1</factor>
-    <offset-deg>0</offset-deg>
-    <center>
-      <x-m> -1.40464 </x-m>
-      <y-m> -0.0181  </y-m>
-      <z-m> -16.3493 </z-m>
-    </center>
-    <axis>
-      <x>0</x>
-      <y>0</y>
-      <z>1</z>
-    </axis>
-  </animation>
-
-<!-- cub -->
-  <!--animation>
-    <type>noshadow</type>
-    <object-name>cub</object-name>
-    <condition>
-      <not>
-        <property>sim/model/cargo4-onhook</property>
-      </not>
-    </condition>
-  </animation-->
-  <animation>
-    <type>select</type>
-    <object-name>cub</object-name>
-    <condition>
-      <and>
-        <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
-        <property>sim/model/cargo4-onhook</property>
-      </and>
-    </condition>
-  </animation>
-  <animation>
-    <type>rotate</type>
-    <object-name>cub</object-name>
-    <property>/sim/model/cargo/currentyaw</property>
-    <condition>
-      <and>
-        <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
-        <property>sim/model/cargo4-onhook</property>
+        <property>sim/model/cargo-on-hook</property>
       </and>
     </condition>
     <factor>1</factor>
@@ -9123,293 +8603,14 @@
   </animation>
   <animation>
     <type>translate</type>
-    <object-name>cub</object-name>
-    <property>sim/model/cargo/cargoalt</property>
+    <object-name>cargoharness</object-name>
+    <property>sim/model/cargo/harnessalt</property>
     <condition>
-      <and>
-        <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
-        <property>sim/model/cargo4-onhook</property>
-      </and>
-    </condition>
-    <factor>1</factor>
-    <center>
-      <x-m> -1.40464 </x-m>
-      <y-m> -0.0181  </y-m>
-      <z-m> -16.3493 </z-m>
-    </center>
-    <axis>
-      <x>0</x>
-      <y>0</y>
-      <z>1</z>
-    </axis>
-  </animation>
-
-  <!-- groundtanks -->
-  <animation>
-    <type>select</type>
-    <object-name>groundtank</object-name>
-    <condition>
-      <and>
-        <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
-        <property>sim/model/cargo5-onhook</property>
-      </and>
-    </condition>
-  </animation>
-  <animation>
-    <type>select</type>
-    <object-name>groundtanklarge</object-name>
-    <condition>
-      <and>
-        <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
-        <property>sim/model/cargo6-onhook</property>
-      </and>
-    </condition>
-  </animation>
-  <animation>
-    <type>select</type>
-    <object-name>groundtanktall</object-name>
-    <condition>
-      <and>
-        <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
-        <property>sim/model/cargo7-onhook</property>
-      </and>
-    </condition>
-  </animation>
-  <animation>
-    <type>rotate</type>
-    <object-name>groundtank</object-name>
-    <object-name>groundtanklarge</object-name>
-    <object-name>groundtanktall</object-name>
-    <property>/sim/model/cargo/currentyaw</property>
-    <condition>
-      <and>
-        <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
-        <or>
-          <property>sim/model/cargo5-onhook</property>
-          <property>sim/model/cargo6-onhook</property>
-          <property>sim/model/cargo7-onhook</property>
-        </or>
-      </and>
+      <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
+      <property>sim/model/cargo-on-hook</property>
     </condition>
     <factor>1</factor>
     <offset-deg>0</offset-deg>
-    <center>
-      <x-m> -1.40464 </x-m>
-      <y-m> -0.0181  </y-m>
-      <z-m> -16.3493 </z-m>
-    </center>
-    <axis>
-      <x>0</x>
-      <y>0</y>
-      <z>1</z>
-    </axis>
-  </animation>
-  <animation>
-    <type>translate</type>
-    <object-name>groundtank</object-name>
-    <object-name>groundtanklarge</object-name>
-    <object-name>groundtanktall</object-name>
-    <property>sim/model/cargo/cargoalt</property>
-    <condition>
-      <and>
-        <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
-        <or>
-          <property>sim/model/cargo5-onhook</property>
-          <property>sim/model/cargo6-onhook</property>
-          <property>sim/model/cargo7-onhook</property>
-        </or>
-      </and>
-    </condition>
-    <factor>1</factor>
-    <center>
-      <x-m> -1.40464 </x-m>
-      <y-m> -0.0181  </y-m>
-      <z-m> -16.3493 </z-m>
-    </center>
-    <axis>
-      <x>0</x>
-      <y>0</y>
-      <z>1</z>
-    </axis>
-  </animation>
-
-  <!-- tankstand -->
-  <animation>
-    <type>select</type>
-    <object-name>tankstand</object-name>
-    <condition>
-      <and>
-        <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
-        <property>sim/model/cargo8-onhook</property>
-      </and>
-    </condition>
-  </animation>
-  <animation>
-    <type>rotate</type>
-    <object-name>tankstand</object-name>
-    <property>/sim/model/cargo/currentyaw</property>
-    <condition>
-      <and>
-        <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
-        <property>sim/model/cargo8-onhook</property>
-      </and>
-    </condition>
-    <factor>1</factor>
-    <offset-deg>0</offset-deg>
-    <center>
-      <x-m> -1.40464 </x-m>
-      <y-m> -0.0181  </y-m>
-      <z-m> -16.3493 </z-m>
-    </center>
-    <axis>
-      <x>0</x>
-      <y>0</y>
-      <z>1</z>
-    </axis>
-  </animation>
-  <animation>
-    <type>translate</type>
-    <object-name>tankstand</object-name>
-    <property>sim/model/cargo/cargoalt</property>
-    <condition>
-      <and>
-        <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
-        <property>sim/model/cargo8-onhook</property>
-      </and>
-    </condition>
-    <factor>1</factor>
-    <center>
-      <x-m> -1.40464 </x-m>
-      <y-m> -0.0181  </y-m>
-      <z-m> -16.3493 </z-m>
-    </center>
-    <axis>
-      <x>0</x>
-      <y>0</y>
-      <z>1</z>
-    </axis>
-  </animation>
-
-  <!-- pinetrees -->
-  <animation>
-    <type>select</type>
-    <object-name>pinetrees</object-name>
-    <condition>
-      <and>
-        <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
-        <or>
-          <property>sim/model/cargo9-onhook</property>
-          <property>sim/model/cargo10-onhook</property>
-          <property>sim/model/cargo11-onhook</property>
-          <property>sim/model/cargo12-onhook</property>
-          <property>sim/model/cargo13-onhook</property>
-        </or>
-      </and>
-    </condition>
-  </animation>
-  <animation>
-    <type>rotate</type>
-    <object-name>pinetrees</object-name>
-    <property>/sim/model/cargo/currentyaw</property>
-    <condition>
-      <and>
-        <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
-        <or>
-          <property>sim/model/cargo9-onhook</property>
-          <property>sim/model/cargo10-onhook</property>
-          <property>sim/model/cargo11-onhook</property>
-          <property>sim/model/cargo12-onhook</property>
-          <property>sim/model/cargo13-onhook</property>
-        </or>
-      </and>
-    </condition>
-    <factor>1</factor>
-    <offset-deg>0</offset-deg>
-    <center>
-      <x-m> -1.40464 </x-m>
-      <y-m> -0.0181  </y-m>
-      <z-m> -16.3493 </z-m>
-    </center>
-    <axis>
-      <x>0</x>
-      <y>0</y>
-      <z>1</z>
-    </axis>
-  </animation>
-  <animation>
-    <type>translate</type>
-    <object-name>pinetrees</object-name>
-    <property>sim/model/cargo/cargoalt</property>
-    <condition>
-      <and>
-        <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
-        <or>
-          <property>sim/model/cargo9-onhook</property>
-          <property>sim/model/cargo10-onhook</property>
-          <property>sim/model/cargo11-onhook</property>
-          <property>sim/model/cargo12-onhook</property>
-          <property>sim/model/cargo13-onhook</property>
-        </or>
-      </and>
-    </condition>
-    <factor>1</factor>
-    <center>
-      <x-m> -1.40464 </x-m>
-      <y-m> -0.0181  </y-m>
-      <z-m> -16.3493 </z-m>
-    </center>
-    <axis>
-      <x>0</x>
-      <y>0</y>
-      <z>1</z>
-    </axis>
-  </animation>
-
-  <!-- dumptruck -->
-  <animation>
-    <type>select</type>
-    <object-name>dumptruck</object-name>
-    <condition>
-      <and>
-        <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
-        <property>sim/model/cargo14-onhook</property>
-      </and>
-    </condition>
-  </animation>
-  <animation>
-    <type>rotate</type>
-    <object-name>dumptruck</object-name>
-    <property>/sim/model/cargo/currentyaw</property>
-    <condition>
-      <and>
-        <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
-        <property>sim/model/cargo14-onhook</property>
-      </and>
-    </condition>
-    <factor>1</factor>
-    <offset-deg>0</offset-deg>
-    <center>
-      <x-m> -1.40464 </x-m>
-      <y-m> -0.0181  </y-m>
-      <z-m> -16.3493 </z-m>
-    </center>
-    <axis>
-      <x>0</x>
-      <y>0</y>
-      <z>1</z>
-    </axis>
-  </animation>
-  <animation>
-    <type>translate</type>
-    <object-name>dumptruck</object-name>
-    <property>sim/model/cargo/cargoalt</property>
-    <condition>
-      <and>
-        <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
-        <property>sim/model/cargo14-onhook</property>
-      </and>
-    </condition>
-    <factor>1</factor>
     <center>
       <x-m> -1.40464 </x-m>
       <y-m> -0.0181  </y-m>
@@ -9423,23 +8624,3 @@
   </animation>
 
 </PropertyList>
-
-<!--
-ai cargo
-x=2
-y=2
-z=100
-
-aircraft 0 position
-x=4
-y=4
-z=1000
-
-aircraft cargo model 0 position from aircraft pos
-x= -1.40464
-y=  -0.0181
-z= -16.3493
--->
-
-
-
