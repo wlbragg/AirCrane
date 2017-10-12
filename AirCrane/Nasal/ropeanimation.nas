@@ -1,4 +1,4 @@
-#################### rope ####################
+#################### long line ####################
 
 var rope_angle_v_array = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
 var rope_angle_vr_array = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
@@ -12,29 +12,21 @@ var longline_animation = func {
 	var n_segments = 90;
 	var segment_length = getprop("/sim/model/cargo/rope/factor");
   var cargo_on_hook = getprop("sim/model/cargo-on-hook");
-
   var cargo_height = getprop("/sim/model/cargo/cargoheight");
   var cargo_harness = getprop("/sim/model/cargo/cargoharness");
 
   if (overland)
     {
       if (((alt_agl - (n_segments * segment_length)) + cargo_harness + cargo_height) < 0.0)
-        {
-          #onground_flag = 1;
-          setprop("/sim/model/cargo/hitsground", 1);
-        }
-      else 
-        {
-          #onground_flag = 0;
-          setprop("/sim/model/cargo/hitsground", 0);
-        }
+        setprop("/sim/model/cargo/hitsground", 1);
+      else
+        setprop("/sim/model/cargo/hitsground", 0);
+
       if (((alt_agl - (n_segments * segment_length)) + cargo_harness) < 0.0)
-		     {
-			    onground_flag = 1;
-		     }
+			  onground_flag = 1;
 		  else
-			    onground_flag = 0;
-    } 
+			  onground_flag = 0;
+    }
   else
 	  {
       #TODO: decide how to handel this event, slowly allow to sink?
@@ -96,15 +88,13 @@ var longline_animation = func {
       var next_roll =  current_roll + dt * ang_speed;
       setprop("/sim/model/cargo/rope/roll1", next_roll);
 
-      #if (!cargo_on_hook)
-      #  {
-          # kink excitation
-
-      #    var kink =  -(next_roll - rope_angle_r_array[0]);
-
-      #    setprop("/sim/model/cargo/rope/roll2",  kink) ;
-      #    rope_angle_r_array[1] = kink;
-      #  }
+      # kink excitation
+      if (!cargo_on_hook)
+        {
+          var kink =  -(next_roll - rope_angle_r_array[0]);
+          setprop("/sim/model/cargo/rope/roll2",  kink) ;
+          rope_angle_r_array[1] = kink;
+        }
     } 
   else
     #if (!cargo_on_hook) 
@@ -176,7 +166,7 @@ var longline_animation = func {
 		      setprop("/sim/model/cargo/rope/roll"~(i+1), roll_target);
 		    }
       else
-        #if (!cargo_on_hook)
+        if (!cargo_on_hook)
           {
             setprop("/sim/model/cargo/rope/pitch"~(i+1), angle + angle_correction);
             setprop("/sim/model/cargo/rope/roll"~(i+1), 0.0);

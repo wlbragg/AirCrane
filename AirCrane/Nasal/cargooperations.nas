@@ -110,9 +110,9 @@ var cargo_tow = func () {
   var headNode = getprop("/orientation/heading-deg");
   var onGround = getprop("gear/gear/wow") * getprop("gear/gear[1]/wow") * getprop("gear/gear[2]/wow");
   var longline = getprop("/sim/gui/dialogs/aicargo-dialog/connection");
+  #var cable = getprop("/sim/gui/dialogs/aicargo-dialog/longline");
   var cargoOnGround = getprop("/sim/model/cargo/hitsground");
-  
-var harnessPos = getprop("sim/model/cargo/harnessalt");
+  var harnessPos = getprop("sim/model/cargo/harnessalt");
 
   if (longline) {
     hookHeight = 43;
@@ -209,9 +209,10 @@ var harnessPos = getprop("sim/model/cargo/harnessalt");
               setprop("sim/model/cargo/cargoalt", (-groundNode) + ropeLength + cargoHeight);
               #setprop("sim/model/cargo/harnessalt", groundNode + ropeLength + cargoHeight - cargoHarness);
 
-              setprop("sim/model/cargo/rope/damping", 0.6);
               setprop("sim/model/cargo/rope/flex-force", 0.01);
+              setprop("sim/model/cargo/rope/damping", 0.6);
               setprop("/sim/model/cargo/rope/stiffness", 3);
+
             }
 					} 
 				}
@@ -309,14 +310,15 @@ var harnessPos = getprop("sim/model/cargo/harnessalt");
 
       setprop("sim/weight[3]/weight-lb", 0);
 
+      #TODO: needs a listener condition for (stiff) cable VS (flexible) rope 
+      #setprop("/sim/model/cargo/rope/factor", 0.19);
+      #setprop("/sim/model/cargo/rope/offset", -1.1);
+      #setprop("/sim/model/cargo/rope/bendforce", 50);
+      #setprop("/sim/model/cargo/rope/correction", -.01);
       setprop("/sim/model/cargo/rope/flex-force", 0.09);
-      setprop("/sim/model/cargo/rope/factor", 0.19);
-      setprop("/sim/model/cargo/rope/offset", -1.1);
-      setprop("/sim/model/cargo/rope/bendforce", 50);
       setprop("/sim/model/cargo/rope/damping", 0.6);
       setprop("/sim/model/cargo/rope/stiffness", 9);
-      setprop("/sim/model/cargo/rope/correction", -.01);
-
+      
       var x = math.cos((headNode+90)*0.0174533);
       var y = math.sin((headNode+90)*0.0174533);
       y = y * -1;
