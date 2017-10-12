@@ -30,7 +30,7 @@ var tank_operations = func {
 	var sniffer = getprop("sim/model/firetank/deployflexhose/position-norm");
 	var overland = getprop("gear/gear/ground-is-solid");
 	var altitude = getprop("position/altitude-agl-ft");
-	var airspeed = getprop("velocities/airspeed-kt");
+	var groundspeed = getprop("velocities/groundspeed-kt");
 	var particles = getprop("sim/model/aircrane/effects/particles/enabled");
 	var normalized = 1-(altitude-0)/(60-0);
 
@@ -77,7 +77,7 @@ var tank_operations = func {
 		setprop("sim/weight[3]/weight-lb", hopperweight);
     }
 
-	if (!overland and scoopdown == 1 and altitude < 26.5 and airspeed > 25) {
+	if (!overland and scoopdown == 1 and altitude < 26.5 and groundspeed > 25) {
 		#2500 gal * 8.345 weight per gal = 20862.5 / 40 second fill = 521.56 per sec / 4 (.25 seconds timer cycle) = 130.39 capacity per cycle
 		#2500 gal / 40 sec = 62.5 per sec / 4 (.25 seconds timer cycle) = 15.62 * 8.345 weight per gallon = 130.35 capacity per cycle
 		capacity = 130.37;
@@ -85,7 +85,7 @@ var tank_operations = func {
         	hopperweight = hopperweight + capacity;
 		setprop("sim/weight[3]/weight-lb", hopperweight);
 	}
-	if (!overland and !sniffer and altitude < 27.5 and airspeed < 35) {
+	if (!overland and !sniffer and altitude < 27.5 and groundspeed < 35) {
 		#2500 gal * 8.345 weight per gal = 20862.5 / 45 second fill = 463.61 per sec / 4 (.25 seconds timer cycle) = 115.90 capacity per cycle
 		#2500 gal / 45 sec = 55.55 per second / 4 (.25 seconds timer cycle) = 13.89 * 8.345 weight per gallon = 115.91 capacity per cycle
 		capacity = 115.91;
