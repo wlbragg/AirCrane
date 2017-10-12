@@ -383,7 +383,7 @@ var main_loop = func {
 
   rotor_wash_loop();
   rope_operations();
-  #tank_operations();
+  flexhose_operations();
 
   persistent = getprop("/sim/model/aircrane/persistent") * getprop("gear/gear/wow") * getprop("gear/gear[1]/wow") * getprop("gear/gear[2]/wow");
   vsfps = getprop("/velocities/vertical-speed-fps");

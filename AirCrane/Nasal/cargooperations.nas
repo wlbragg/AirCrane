@@ -1,3 +1,5 @@
+#################### cargo hauling ####################
+
 props.Node.new({ "controls/hook-assist":0 });
 props.globals.initNode("controls/hook-assist", 0, "BOOL" );
 props.Node.new({ "controls/cargo-release":0 });

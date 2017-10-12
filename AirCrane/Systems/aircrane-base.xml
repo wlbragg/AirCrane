@@ -449,10 +449,11 @@
       <file>Aircraft/AirCrane/Nasal/liveries.nas</file>
       <file>Aircraft/AirCrane/Nasal/bladevisible.nas</file>
       <file>Aircraft/AirCrane/Nasal/rotorwash.nas</file>
+      <file>Aircraft/AirCrane/Nasal/hoseanimation.nas</file>
+      <file>Aircraft/AirCrane/Nasal/ropeanimation.nas</file>
       <file>Aircraft/AirCrane/Nasal/tankoperations.nas</file>
-      <file>Aircraft/AirCrane/Nasal/ropeoperations.nas</file>
+      <file>Aircraft/AirCrane/Nasal/cargooperations.nas</file>
       <file>Aircraft/AirCrane/Nasal/aircraft-dialog.nas</file>
-      <file>Aircraft/AirCrane/Nasal/cargo.nas</file>
     </aircrane>
     <fcs>
       <file>Aircraft/AirCrane/Nasal/fcs-management.nas</file>
