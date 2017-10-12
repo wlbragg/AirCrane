@@ -6,7 +6,7 @@ var flex_angle_r_array = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 var onground_flag = 0;
 var drop_flag = 0;
 
-var flexhose_operations = func {
+var flexhose_animation = func {
 
 	var overland = getprop("gear/gear/ground-is-solid");
 	var altitude = getprop("position/altitude-agl-ft");
