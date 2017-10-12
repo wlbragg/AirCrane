@@ -8,13 +8,11 @@ var onground_flag = 0;
 var drop_flag = 0;
 
 var tank_operations = func {
-			
 
-	var payload = getprop("sim/model/firetank/enabled");
 	var paused = getprop("sim/freeze/clock");
 	var crashed = getprop("sim/crashed");
 
-  if (!payload or crashed or paused) {
+  if (crashed or paused) {
     setprop("sim/model/firetank/waterdropparticlectrl", 0);
     setprop("sim/model/firetank/waterdropretardantctrl", 0);
     setprop("sim/model/firetank/watercannonparticlectrl", 0);

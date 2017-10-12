@@ -382,8 +382,8 @@ var main_loop = func {
   update_rotor_cone_angle();
 
   rotor_wash_loop();
-  tank_operations();
   rope_operations();
+  #tank_operations();
 
   persistent = getprop("/sim/model/aircrane/persistent") * getprop("gear/gear/wow") * getprop("gear/gear[1]/wow") * getprop("gear/gear[2]/wow");
   vsfps = getprop("/velocities/vertical-speed-fps");
@@ -501,6 +501,21 @@ setlistener("/sim/signals/fdm-initialized", func {
 
   # the attitude indicator needs pressure
   # settimer(func { setprop("engines/engine/rpm", 3000) }, 8);
+
+  var tankop_timer = maketimer(0.25, func{tank_operations()});
+
+  if (getprop("/sim/model/firetank/enabled"))
+      tankop_timer.start();
+    else
+      setlistener("/sim/model/firetank/enabled", func {
+        if (getprop("/sim/model/firetank/enabled"))
+          tankop_timer.start();
+        else {
+          tankop_timer.stop();
+          setprop("sim/model/firetank/opencannonvalve", 0);
+          setprop("sim/model/firetank/opentankdoors", 0);
+        }
+      });
 
   main_loop();
 });
