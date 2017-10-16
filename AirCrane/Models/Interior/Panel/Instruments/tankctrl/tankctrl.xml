@@ -1,0 +1,1470 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+
+  <path>tankctrl.ac</path>
+
+  <animation>
+    <!-- Objets opaques -->
+    <object-name>knob-foam</object-name>
+    <object-name>knob-quantity</object-name>
+    <object-name>knob-salvo</object-name>
+    <object-name>indicate1</object-name>
+    <object-name>indicate2</object-name>
+    <object-name>indicate3</object-name>
+    <object-name>indicate4</object-name>
+    <object-name>indicate5</object-name>
+    <object-name>indicator-foam</object-name>
+    <object-name>indicator-go</object-name>
+    <object-name>indicator-hyd-snorkel</object-name>
+    <object-name>indicat-low-hyd-pres</object-name>
+    <object-name>indicator-test</object-name>
+    <object-name>indicator-foam.001</object-name>
+    <object-name>indicator-go.001</object-name>
+    <object-name>indicator-hyd-snorkel.001</object-name>
+    <object-name>indicat-low-hyd-pres.001</object-name>
+    <object-name>indicator-test.001</object-name>
+    <object-name>toggle1</object-name>
+    <object-name>toggle2</object-name>
+    <object-name>toggle3</object-name>
+    <object-name>toggle4</object-name>
+    <object-name>toggle-arm</object-name>
+    <object-name>toggle-foam</object-name>
+    <object-name>toggle-hyd-snorkel</object-name>
+    <object-name>toggle-sea-snorkel</object-name>
+    <object-name>visses.004</object-name>
+    <object-name>Safe</object-name>
+    <object-name>25p</object-name>
+    <object-name>50p</object-name>
+    <object-name>75p</object-name>
+    <object-name>100p</object-name>
+    <object-name>FCZero</object-name>
+    <object-name>FCPointFive</object-name>
+    <object-name>FCOnePointFive</object-name>
+    <object-name>FCTwo</object-name>
+    <object-name>FCTwoPointFive</object-name>
+    <object-name>FCThree</object-name>
+    <object-name>FCThreePointFive</object-name>
+    <object-name>FCFour</object-name>
+    <object-name>One</object-name>
+    <object-name>Two</object-name>
+    <object-name>Three</object-name>
+    <object-name>Four</object-name>
+    <object-name>Five</object-name>
+    <object-name>Six</object-name>
+    <object-name>Seven</object-name>
+    <object-name>Eight</object-name>
+    <object-name>Salvo</object-name>
+    <object-name>Quantity</object-name>
+    <object-name>Coverage</object-name>
+    <object-name>Level</object-name>
+    <object-name>FoamConcentrate</object-name>
+    <object-name>Go</object-name>
+    <object-name>LowHyd</object-name>
+    <object-name>Pressure</object-name>
+    <object-name>Arm</object-name>
+    <object-name>LowHyd</object-name>
+    <object-name>Hyd</object-name>
+    <object-name>Snorkel</object-name>
+    <object-name>Release</object-name>
+    <object-name>On</object-name>
+    <object-name>Off</object-name>
+    <object-name>Foam</object-name>
+    <object-name>Sea</object-name>
+    <object-name>SSnorkel</object-name>
+    <object-name>Extend</object-name>
+    <object-name>Retract</object-name>
+  </animation>
+
+  <animation>
+    <type>material</type>
+    <object-name>knob-foam</object-name>
+    <object-name>knob-quantity</object-name>
+    <object-name>knob-salvo</object-name>
+    <object-name>indicate1</object-name>
+    <object-name>indicate2</object-name>
+    <object-name>indicate3</object-name>
+    <object-name>indicate4</object-name>
+    <object-name>indicate5</object-name>
+    <object-name>indicator-foam</object-name>
+    <object-name>indicator-go</object-name>
+    <object-name>indicator-hyd-snorkel</object-name>
+    <object-name>indicator-low-hyd-pres</object-name>
+    <object-name>indicator-test</object-name>
+    <object-name>indicator-foam.001</object-name>
+    <object-name>indicator-go.001</object-name>
+    <object-name>indicator-hyd-snorkel.001</object-name>
+    <object-name>indicat-low-hyd-pres.001</object-name>
+    <object-name>indicator-test.001</object-name>
+    <object-name>toggle1</object-name>
+    <object-name>toggle2</object-name>
+    <object-name>toggle3</object-name>
+    <object-name>toggle4</object-name>
+    <object-name>toggle-arm</object-name>
+    <object-name>toggle-foam</object-name>
+    <object-name>toggle-hyd-snorkel</object-name>
+    <object-name>toggle-sea-snorkel</object-name>
+    <object-name>visses.004</object-name>
+    <object-name>Safe</object-name>
+    <object-name>25p</object-name>
+    <object-name>50p</object-name>
+    <object-name>75p</object-name>
+    <object-name>100p</object-name>
+    <object-name>FCZero</object-name>
+    <object-name>FCPointFive</object-name>
+    <object-name>FCOnePointFive</object-name>
+    <object-name>FCTwo</object-name>
+    <object-name>FCTwoPointFive</object-name>
+    <object-name>FCThree</object-name>
+    <object-name>FCThreePointFive</object-name>
+    <object-name>FCFour</object-name>
+    <object-name>One</object-name>
+    <object-name>Two</object-name>
+    <object-name>Three</object-name>
+    <object-name>Four</object-name>
+    <object-name>Five</object-name>
+    <object-name>Six</object-name>
+    <object-name>Seven</object-name>
+    <object-name>Eight</object-name>
+    <object-name>Salvo</object-name>
+    <object-name>Quantity</object-name>
+    <object-name>Coverage</object-name>
+    <object-name>Level</object-name>
+    <object-name>FoamConcentrate</object-name>
+    <object-name>Go</object-name>
+    <object-name>LowHyd</object-name>
+    <object-name>Pressure</object-name>
+    <object-name>Arm</object-name>
+    <object-name>LowHyd</object-name>
+    <object-name>Hyd</object-name>
+    <object-name>Snorkel</object-name>
+    <object-name>Release</object-name>
+    <object-name>On</object-name>
+    <object-name>Off</object-name>
+    <object-name>Foam</object-name>
+    <object-name>Sea</object-name>
+    <object-name>SSnorkel</object-name>
+    <object-name>Extend</object-name>
+    <object-name>Retract</object-name>
+    <emission>
+      <factor-prop>systems/electrical/outputs/instrument-lights</factor-prop>
+      <red>   0.50 </red>
+      <green> 0.25 </green>
+      <blue>  0.25 </blue>
+    </emission>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>indicator-foam.001</object-name>
+    <condition>
+      <not>
+        <property>sim/model/firetank/foam</property>
+      </not>
+    </condition>
+  </animation>
+  <animation>
+    <type>select</type>
+    <object-name>indicator-foam</object-name>
+    <condition>
+      <property>sim/model/firetank/foam</property>
+    </condition>
+  </animation>
+  <animation>
+    <type>select</type>
+    <object-name>indicator-go.001</object-name>
+    <condition>
+      <not>
+        <property>sim/model/firetank/arm</property>
+      </not>
+    </condition>
+  </animation>
+  <animation>
+    <type>select</type>
+    <object-name>indicator-go</object-name>
+    <condition>
+      <property>sim/model/firetank/arm</property>
+    </condition>
+  </animation>
+  <animation>
+    <type>select</type>
+    <object-name>indicator-low-hyd-pres</object-name>
+    <condition>
+      <property>sim/model/firetank/lowhydpres</property>
+    </condition>
+  </animation>
+  <animation>
+    <type>select</type>
+    <object-name>indicator-test</object-name>
+    <condition>
+      <property>sim/model/firetank/test</property>
+    </condition>
+  </animation>
+  <animation>
+    <type>select</type>
+    <object-name>indicator-hyd-snorkel.001</object-name>
+    <condition>
+        <and>
+          <less-than>
+            <property>sim/model/firetank/deployramscoop/position-norm</property>
+            <value>1</value>
+          </less-than>
+          <greater-than>
+            <property>sim/model/firetank/deployflexhose/position-norm</property>
+            <value>0</value>
+          </greater-than>
+        </and>
+    </condition>
+  </animation>
+  <animation>
+    <type>select</type>
+    <object-name>indicator-hyd-snorkel</object-name>
+    <condition>
+      <or>
+        <equals>
+          <property>sim/model/firetank/deployramscoop/position-norm</property>
+          <value>1</value>
+        </equals>
+        <equals>
+          <property>sim/model/firetank/deployflexhose/position-norm</property>
+          <value>0</value>
+        </equals>
+      </or>
+    </condition>
+  </animation>
+ 
+  <text>
+    <name>Safe</name>
+    <type type="string">literal</type>
+    <text type="string">SAFE</text>
+    <draw-text type="bool">true</draw-text>
+    <font>Helvetica.txf</font>
+    <character-size type="double">0.005</character-size>
+    <character-aspect-ratio type="double">1.0</character-aspect-ratio>
+    <max-height>0.2</max-height>
+    <max-width>0.07</max-width>
+    <font-resolution>
+      <width type="int">32</width>
+      <height type="int">32</height>
+    </font-resolution>
+    <alignment>center-center</alignment>
+    <offsets>
+    <pitch-deg>-14</pitch-deg>
+    <heading-deg>180</heading-deg>
+    <roll-deg>0</roll-deg>
+      <x-m> 0.7061</x-m>
+      <y-m>-0.14358</y-m>
+      <z-m>-0.42305</z-m>
+    </offsets>
+  </text>
+  <text>
+    <name>25p</name>
+    <type type="string">literal</type>
+    <text type="string">25%</text>
+    <draw-text type="bool">true</draw-text>
+    <font>Helvetica.txf</font>
+    <character-size type="double">0.005</character-size>
+    <character-aspect-ratio type="double">1.0</character-aspect-ratio>
+    <max-height>0.2</max-height>
+    <max-width>0.07</max-width>
+    <font-resolution>
+      <width type="int">32</width>
+      <height type="int">32</height>
+    </font-resolution>
+    <alignment>center-center</alignment>
+    <offsets>
+    <pitch-deg>-10</pitch-deg>
+    <heading-deg>135</heading-deg>
+    <roll-deg>9</roll-deg>
+      <x-m> 0.69054</x-m>
+      <y-m>-0.13737</y-m>
+      <z-m>-0.41912</z-m>
+    </offsets>
+  </text>
+  <text>
+    <name>50p</name>
+    <type type="string">literal</type>
+    <text type="string">50%</text>
+    <draw-text type="bool">true</draw-text>
+    <font>Helvetica.txf</font>
+    <character-size type="double">0.005</character-size>
+    <character-aspect-ratio type="double">1.0</character-aspect-ratio>
+    <max-height>0.2</max-height>
+    <max-width>0.07</max-width>
+    <font-resolution>
+      <width type="int">32</width>
+      <height type="int">32</height>
+    </font-resolution>
+    <alignment>center-center</alignment>
+    <offsets>
+    <pitch-deg>0</pitch-deg>
+    <heading-deg>90</heading-deg>
+    <roll-deg>15</roll-deg>
+      <x-m> 0.68442</x-m>
+      <y-m>-0.12085</y-m>
+      <z-m>-0.41755</z-m>
+    </offsets>
+  </text>
+  <text>
+    <name>75p</name>
+    <type type="string">literal</type>
+    <text type="string">75%</text>
+    <draw-text type="bool">true</draw-text>
+    <font>Helvetica.txf</font>
+    <character-size type="double">0.005</character-size>
+    <character-aspect-ratio type="double">1.0</character-aspect-ratio>
+    <max-height>0.2</max-height>
+    <max-width>0.07</max-width>
+    <font-resolution>
+      <width type="int">32</width>
+      <height type="int">32</height>
+    </font-resolution>
+    <alignment>center-center</alignment>
+    <offsets>
+    <pitch-deg>10</pitch-deg>
+    <heading-deg>45</heading-deg>
+    <roll-deg>10</roll-deg>
+      <x-m> 0.69089</x-m>
+      <y-m>-0.10442</y-m>
+      <z-m>-0.41922</z-m>
+    </offsets>
+  </text>
+  <text>
+    <name>100p</name>
+    <type type="string">literal</type>
+    <text type="string">100%</text>
+    <draw-text type="bool">true</draw-text>
+    <font>Helvetica.txf</font>
+    <character-size type="double">0.005</character-size>
+    <character-aspect-ratio type="double">1.0</character-aspect-ratio>
+    <max-height>0.2</max-height>
+    <max-width>0.07</max-width>
+    <font-resolution>
+      <width type="int">32</width>
+      <height type="int">32</height>
+    </font-resolution>
+    <alignment>center-center</alignment>
+    <offsets>
+    <pitch-deg>14.3</pitch-deg>
+    <heading-deg>0</heading-deg>
+    <roll-deg>0</roll-deg>
+      <x-m> 0.7072</x-m>
+      <y-m>-0.0981</y-m>
+      <z-m>-0.42337</z-m>
+    </offsets>
+  </text>
+
+  <text>
+    <name>FCZero</name>
+    <type type="string">literal</type>
+    <text type="string">0</text>
+    <draw-text type="bool">true</draw-text>
+    <font>Helvetica.txf</font>
+    <character-size type="double">0.004</character-size>
+    <character-aspect-ratio type="double">1.0</character-aspect-ratio>
+    <max-height>0.2</max-height>
+    <max-width>0.07</max-width>
+    <font-resolution>
+      <width type="int">32</width>
+      <height type="int">32</height>
+    </font-resolution>
+    <alignment>center-center</alignment>
+    <offsets>
+    <pitch-deg>-11</pitch-deg>
+    <heading-deg>210</heading-deg>
+    <roll-deg>-7</roll-deg>
+      <x-m> 0.7371</x-m>
+      <y-m>-0.09321</y-m>
+      <z-m>-0.43094</z-m>
+    </offsets>
+  </text>
+  <text>
+    <name>FCPointFive</name>
+    <type type="string">literal</type>
+    <text type="string">.5</text>
+    <draw-text type="bool">true</draw-text>
+    <font>Helvetica.txf</font>
+    <character-size type="double">0.004</character-size>
+    <character-aspect-ratio type="double">1.0</character-aspect-ratio>
+    <max-height>0.2</max-height>
+    <max-width>0.07</max-width>
+    <font-resolution>
+      <width type="int">32</width>
+      <height type="int">32</height>
+    </font-resolution>
+    <alignment>center-center</alignment>
+    <offsets>
+    <pitch-deg>-14</pitch-deg>
+    <heading-deg>180</heading-deg>
+    <roll-deg>2</roll-deg>
+      <x-m> 0.73005</x-m>
+      <y-m>-0.09369</y-m>
+      <z-m>-0.42913</z-m>
+    </offsets>
+  </text>
+  <text>
+    <name>FCOne</name>
+    <type type="string">literal</type>
+    <text type="string">1</text>
+    <draw-text type="bool">true</draw-text>
+    <font>Helvetica.txf</font>
+    <character-size type="double">0.004</character-size>
+    <character-aspect-ratio type="double">1.0</character-aspect-ratio>
+    <max-height>0.2</max-height>
+    <max-width>0.07</max-width>
+    <font-resolution>
+      <width type="int">32</width>
+      <height type="int">32</height>
+    </font-resolution>
+    <alignment>center-center</alignment>
+    <offsets>
+    <pitch-deg>-19</pitch-deg>
+    <heading-deg>150</heading-deg>
+    <roll-deg>8</roll-deg>
+      <x-m> 0.72504</x-m>
+      <y-m>-0.09228</y-m>
+      <z-m>-0.4278</z-m>
+    </offsets>
+  </text>
+  <text>
+    <name>FCOnePointFive</name>
+    <type type="string">literal</type>
+    <text type="string">1.5</text>
+    <draw-text type="bool">true</draw-text>
+    <font>Helvetica.txf</font>
+    <character-size type="double">0.004</character-size>
+    <character-aspect-ratio type="double">1.0</character-aspect-ratio>
+    <max-height>0.2</max-height>
+    <max-width>0.07</max-width>
+    <font-resolution>
+      <width type="int">32</width>
+      <height type="int">32</height>
+    </font-resolution>
+    <alignment>center-center</alignment>
+    <offsets>
+    <pitch-deg>-14</pitch-deg>
+    <heading-deg>120</heading-deg>
+    <roll-deg>8</roll-deg>
+      <x-m> 0.72086</x-m>
+      <y-m>-0.08756</y-m>
+      <z-m>-0.426</z-m>
+    </offsets>
+  </text>
+  <text>
+    <name>FCTwo</name>
+    <type type="string">literal</type>
+    <text type="string">2</text>
+    <draw-text type="bool">true</draw-text>
+    <font>Helvetica.txf</font>
+    <character-size type="double">0.004</character-size>
+    <character-aspect-ratio type="double">1.0</character-aspect-ratio>
+    <max-height>0.2</max-height>
+    <max-width>0.07</max-width>
+    <font-resolution>
+      <width type="int">32</width>
+      <height type="int">32</height>
+    </font-resolution>
+    <alignment>center-center</alignment>
+    <offsets>
+    <pitch-deg>4.8</pitch-deg>
+    <heading-deg>90</heading-deg>
+    <roll-deg>14</roll-deg>
+      <x-m> 0.71892</x-m>
+      <y-m>-0.08184</y-m>
+      <z-m>-0.42629</z-m>
+    </offsets>
+  </text>
+  <text>
+    <name>FCTwoPointFive</name>
+    <type type="string">literal</type>
+    <text type="string">2.5</text>
+    <draw-text type="bool">true</draw-text>
+    <font>Helvetica.txf</font>
+    <character-size type="double">0.004</character-size>
+    <character-aspect-ratio type="double">1.0</character-aspect-ratio>
+    <max-height>0.2</max-height>
+    <max-width>0.07</max-width>
+    <font-resolution>
+      <width type="int">32</width>
+      <height type="int">32</height>
+    </font-resolution>
+    <alignment>center-center</alignment>
+    <offsets>
+    <pitch-deg>10</pitch-deg>
+    <heading-deg>60</heading-deg>
+    <roll-deg>4</roll-deg>
+      <x-m> 0.72112</x-m>
+      <y-m>-0.07439</y-m>
+      <z-m>-0.426</z-m>
+    </offsets>
+  </text>
+  <text>
+    <name>FCThree</name>
+    <type type="string">literal</type>
+    <text type="string">3</text>
+    <draw-text type="bool">true</draw-text>
+    <font>Helvetica.txf</font>
+    <character-size type="double">0.004</character-size>
+    <character-aspect-ratio type="double">1.0</character-aspect-ratio>
+    <max-height>0.2</max-height>
+    <max-width>0.07</max-width>
+    <font-resolution>
+      <width type="int">32</width>
+      <height type="int">32</height>
+    </font-resolution>
+    <alignment>center-center</alignment>
+    <offsets>
+    <pitch-deg>12</pitch-deg>
+    <heading-deg>20</heading-deg>
+    <roll-deg>5</roll-deg>
+      <x-m> 0.72484</x-m>
+      <y-m>-0.0708</y-m>
+      <z-m>-0.427</z-m>
+    </offsets>
+  </text>
+  <text>
+    <name>FCThreePointFive</name>
+    <type type="string">literal</type>
+    <text type="string">3.5</text>
+    <draw-text type="bool">true</draw-text>
+    <font>Helvetica.txf</font>
+    <character-size type="double">0.004</character-size>
+    <character-aspect-ratio type="double">1.0</character-aspect-ratio>
+    <max-height>0.2</max-height>
+    <max-width>0.07</max-width>
+    <font-resolution>
+      <width type="int">32</width>
+      <height type="int">32</height>
+    </font-resolution>
+    <alignment>center-center</alignment>
+    <offsets>
+    <pitch-deg>14.3</pitch-deg>
+    <heading-deg>0</heading-deg>
+    <roll-deg>0</roll-deg>
+      <x-m> 0.73081</x-m>
+      <y-m>-0.06878</y-m>
+      <z-m>-0.42936</z-m>
+    </offsets>
+  </text>
+  <text>
+    <name>FCFour</name>
+    <type type="string">literal</type>
+    <text type="string">4</text>
+    <draw-text type="bool">true</draw-text>
+    <font>Helvetica.txf</font>
+    <character-size type="double">0.004</character-size>
+    <character-aspect-ratio type="double">1.0</character-aspect-ratio>
+    <max-height>0.2</max-height>
+    <max-width>0.07</max-width>
+    <font-resolution>
+      <width type="int">32</width>
+      <height type="int">32</height>
+    </font-resolution>
+    <alignment>center-center</alignment>
+    <offsets>
+    <pitch-deg>16</pitch-deg>
+    <heading-deg>340</heading-deg>
+    <roll-deg>-4</roll-deg>
+      <x-m> 0.73704</x-m>
+      <y-m>-0.06984</y-m>
+      <z-m>-0.4309 </z-m>
+    </offsets>
+  </text>
+
+  <text>
+    <name>One</name>
+    <type type="string">literal</type>
+    <text type="string">1</text>
+    <draw-text type="bool">true</draw-text>
+    <font>Helvetica.txf</font>
+    <character-size type="double">0.005</character-size>
+    <character-aspect-ratio type="double">1.0</character-aspect-ratio>
+    <max-height>0.2</max-height>
+    <max-width>0.07</max-width>
+    <font-resolution>
+      <width type="int">32</width>
+      <height type="int">32</height>
+    </font-resolution>
+    <alignment>center-center</alignment>
+    <offsets>
+    <pitch-deg>-13.4</pitch-deg>
+    <heading-deg>200</heading-deg>
+    <roll-deg>-5</roll-deg>
+      <x-m> 0.71454</x-m>
+      <y-m>-0.05844</y-m>
+      <z-m>-0.42523</z-m>
+    </offsets>
+  </text>
+  <text>
+    <name>Two</name>
+    <type type="string">literal</type>
+    <text type="string">2</text>
+    <draw-text type="bool">true</draw-text>
+    <font>Helvetica.txf</font>
+    <character-size type="double">0.005</character-size>
+    <character-aspect-ratio type="double">1.0</character-aspect-ratio>
+    <max-height>0.2</max-height>
+    <max-width>0.07</max-width>
+    <font-resolution>
+      <width type="int">32</width>
+      <height type="int">32</height>
+    </font-resolution>
+    <alignment>center-center</alignment>
+    <offsets>
+    <pitch-deg>-14</pitch-deg>
+    <heading-deg>170</heading-deg>
+    <roll-deg>4</roll-deg>
+      <x-m> 0.70116</x-m>
+      <y-m>-0.06032</y-m>
+      <z-m>-0.42181</z-m>
+    </offsets>
+  </text>
+  <text>
+    <name>Three</name>
+    <type type="string">literal</type>
+    <text type="string">3</text>
+    <draw-text type="bool">true</draw-text>
+    <font>Helvetica.txf</font>
+    <character-size type="double">0.005</character-size>
+    <character-aspect-ratio type="double">1.0</character-aspect-ratio>
+    <max-height>0.2</max-height>
+    <max-width>0.07</max-width>
+    <font-resolution>
+      <width type="int">32</width>
+      <height type="int">32</height>
+    </font-resolution>
+    <alignment>center-center</alignment>
+    <offsets>
+    <pitch-deg>-11</pitch-deg>
+    <heading-deg>140</heading-deg>
+    <roll-deg>8</roll-deg>
+      <x-m> 0.6906</x-m>
+      <y-m>-0.0553</y-m>
+      <z-m>-0.41912</z-m>
+    </offsets>
+  </text>
+  <text>
+    <name>Four</name>
+    <type type="string">literal</type>
+    <text type="string">4</text>
+    <draw-text type="bool">true</draw-text>
+    <font>Helvetica.txf</font>
+    <character-size type="double">0.005</character-size>
+    <character-aspect-ratio type="double">1.0</character-aspect-ratio>
+    <max-height>0.2</max-height>
+    <max-width>0.07</max-width>
+    <font-resolution>
+      <width type="int">32</width>
+      <height type="int">32</height>
+    </font-resolution>
+    <alignment>center-center</alignment>
+    <offsets>
+    <pitch-deg>-2.5</pitch-deg>
+    <heading-deg>100</heading-deg>
+    <roll-deg>13</roll-deg>
+      <x-m> 0.68341</x-m>
+      <y-m>-0.04445</y-m>
+      <z-m>-0.41732</z-m>
+    </offsets>
+  </text>
+  <text>
+    <name>Five</name>
+    <type type="string">literal</type>
+    <text type="string">5</text>
+    <draw-text type="bool">true</draw-text>
+    <font>Helvetica.txf</font>
+    <character-size type="double">0.005</character-size>
+    <character-aspect-ratio type="double">1.0</character-aspect-ratio>
+    <max-height>0.2</max-height>
+    <max-width>0.07</max-width>
+    <font-resolution>
+      <width type="int">32</width>
+      <height type="int">32</height>
+    </font-resolution>
+    <alignment>center-center</alignment>
+    <offsets>
+    <pitch-deg>4.8</pitch-deg>
+    <heading-deg>70</heading-deg>
+    <roll-deg>14</roll-deg>
+      <x-m> 0.68337</x-m>
+      <y-m>-0.03008</y-m>
+      <z-m>-0.41732</z-m>
+    </offsets>
+  </text>
+  <text>
+    <name>Six</name>
+    <type type="string">literal</type>
+    <text type="string">6</text>
+    <draw-text type="bool">true</draw-text>
+    <font>Helvetica.txf</font>
+    <character-size type="double">0.005</character-size>
+    <character-aspect-ratio type="double">1.0</character-aspect-ratio>
+    <max-height>0.2</max-height>
+    <max-width>0.07</max-width>
+    <font-resolution>
+      <width type="int">32</width>
+      <height type="int">32</height>
+    </font-resolution>
+    <alignment>center-center</alignment>
+    <offsets>
+    <pitch-deg>11</pitch-deg>
+    <heading-deg>40</heading-deg>
+    <roll-deg>9.5</roll-deg>
+      <x-m> 0.6905</x-m>
+      <y-m>-0.01996</y-m>
+      <z-m>-0.41912</z-m>
+    </offsets>
+  </text>
+  <text>
+    <name>Seven</name>
+    <type type="string">literal</type>
+    <text type="string">7</text>
+    <draw-text type="bool">true</draw-text>
+    <font>Helvetica.txf</font>
+    <character-size type="double">0.005</character-size>
+    <character-aspect-ratio type="double">1.0</character-aspect-ratio>
+    <max-height>0.2</max-height>
+    <max-width>0.07</max-width>
+    <font-resolution>
+      <width type="int">32</width>
+      <height type="int">32</height>
+    </font-resolution>
+    <alignment>center-center</alignment>
+    <offsets>
+    <pitch-deg>14</pitch-deg>
+    <heading-deg>10</heading-deg>
+    <roll-deg>3</roll-deg>
+      <x-m> 0.7018</x-m>
+      <y-m>-0.01526</y-m>
+      <z-m>-0.42195</z-m>
+    </offsets>
+  </text>
+  <text>
+    <name>Eight</name>
+    <type type="string">literal</type>
+    <text type="string">8</text>
+    <draw-text type="bool">true</draw-text>
+    <font>Helvetica.txf</font>
+    <character-size type="double">0.005</character-size>
+    <character-aspect-ratio type="double">1.0</character-aspect-ratio>
+    <max-height>0.2</max-height>
+    <max-width>0.07</max-width>
+    <font-resolution>
+      <width type="int">32</width>
+      <height type="int">32</height>
+    </font-resolution>
+    <alignment>center-center</alignment>
+    <offsets>
+    <pitch-deg>13.3</pitch-deg>
+    <heading-deg>340</heading-deg>
+    <roll-deg>-7</roll-deg>
+      <x-m> 0.71196</x-m>
+      <y-m>-0.0164</y-m>
+      <z-m>-0.42453</z-m>
+    </offsets>
+  </text>
+  <text>
+    <name>Salvo</name>
+    <type type="string">literal</type>
+    <text type="string">SALVO</text>
+    <draw-text type="bool">true</draw-text>
+    <font>Helvetica.txf</font>
+    <character-size type="double">0.005</character-size>
+    <character-aspect-ratio type="double">1.0</character-aspect-ratio>
+    <max-height>0.2</max-height>
+    <max-width>0.07</max-width>
+    <font-resolution>
+      <width type="int">32</width>
+      <height type="int">32</height>
+    </font-resolution>
+    <alignment>center-center</alignment>
+    <offsets>
+    <pitch-deg>0</pitch-deg>
+    <heading-deg>90</heading-deg>
+    <roll-deg>15</roll-deg>
+      <x-m> 0.72232</x-m>
+      <y-m>-0.01733</y-m>
+      <z-m>-0.42719</z-m>
+    </offsets>
+  </text>
+  <text>
+    <name>Test</name>
+    <type type="string">literal</type>
+    <text type="string">TEST</text>
+    <draw-text type="bool">true</draw-text>
+    <font>Helvetica.txf</font>
+    <character-size type="double">0.006</character-size>
+    <character-aspect-ratio type="double">1.0</character-aspect-ratio>
+    <max-height>0.2</max-height>
+    <max-width>0.07</max-width>
+    <font-resolution>
+      <width type="int">32</width>
+      <height type="int">32</height>
+    </font-resolution>
+    <alignment>center-center</alignment>
+    <offsets>
+    <pitch-deg>0</pitch-deg>
+    <heading-deg>90</heading-deg>
+    <roll-deg>15</roll-deg>
+      <x-m> 0.67704</x-m>
+      <y-m>-0.07981</y-m>
+      <z-m>-0.41571</z-m>
+    </offsets>
+  </text>
+  <text>
+    <name>Quantity</name>
+    <type type="string">literal</type>
+    <text type="string">QUANTITY</text>
+    <draw-text type="bool">true</draw-text>
+    <font>Helvetica.txf</font>
+    <character-size type="double">0.006</character-size>
+    <character-aspect-ratio type="double">1.0</character-aspect-ratio>
+    <max-height>0.2</max-height>
+    <max-width>0.07</max-width>
+    <font-resolution>
+      <width type="int">32</width>
+      <height type="int">32</height>
+    </font-resolution>
+    <alignment>center-center</alignment>
+    <offsets>
+    <pitch-deg>0</pitch-deg>
+    <heading-deg>90</heading-deg>
+    <roll-deg>15</roll-deg>
+      <x-m> 0.72914</x-m>
+      <y-m>-0.12113</y-m>
+      <z-m>-0.42889</z-m>
+    </offsets>
+  </text>
+  <text>
+    <name>Coverage</name>
+    <type type="string">literal</type>
+    <text type="string">COVERAGE</text>
+    <draw-text type="bool">true</draw-text>
+    <font>Helvetica.txf</font>
+    <character-size type="double">0.006</character-size>
+    <character-aspect-ratio type="double">1.0</character-aspect-ratio>
+    <max-height>0.2</max-height>
+    <max-width>0.07</max-width>
+    <font-resolution>
+      <width type="int">32</width>
+      <height type="int">32</height>
+    </font-resolution>
+    <alignment>center-center</alignment>
+    <offsets>
+    <pitch-deg>0</pitch-deg>
+    <heading-deg>90</heading-deg>
+    <roll-deg>15</roll-deg>
+      <x-m> 0.72846</x-m>
+      <y-m>-0.03797</y-m>
+      <z-m>-0.42874</z-m>
+    </offsets>
+  </text>
+  <text>
+    <name>Level</name>
+    <type type="string">literal</type>
+    <text type="string">LEVEL</text>
+    <draw-text type="bool">true</draw-text>
+    <font>Helvetica.txf</font>
+    <character-size type="double">0.006</character-size>
+    <character-aspect-ratio type="double">1.0</character-aspect-ratio>
+    <max-height>0.2</max-height>
+    <max-width>0.07</max-width>
+    <font-resolution>
+      <width type="int">32</width>
+      <height type="int">32</height>
+    </font-resolution>
+    <alignment>center-center</alignment>
+    <offsets>
+    <pitch-deg>0</pitch-deg>
+    <heading-deg>90</heading-deg>
+    <roll-deg>15</roll-deg>
+      <x-m> 0.7334</x-m>
+      <y-m>-0.03799</y-m>
+      <z-m>-0.429</z-m>
+    </offsets>
+  </text>
+  <text>
+    <name>FoamConcentrate</name>
+    <type type="string">literal</type>
+    <text type="string">FOAM CONCENTRATE</text>
+    <draw-text type="bool">true</draw-text>
+    <font>Helvetica.txf</font>
+    <character-size type="double">0.006</character-size>
+    <character-aspect-ratio type="double">1.0</character-aspect-ratio>
+    <max-height>0.2</max-height>
+    <max-width>0.07</max-width>
+    <font-resolution>
+      <width type="int">32</width>
+      <height type="int">32</height>
+    </font-resolution>
+    <alignment>center-center</alignment>
+    <offsets>
+    <pitch-deg>0</pitch-deg>
+    <heading-deg>90</heading-deg>
+    <roll-deg>15</roll-deg>
+      <x-m> 0.74663</x-m>
+      <y-m>-0.0815</y-m>
+      <z-m>-0.43334</z-m>
+    </offsets>
+  </text>
+  <text>
+    <name>Go</name>
+    <type type="string">literal</type>
+    <text type="string">GO</text>
+    <draw-text type="bool">true</draw-text>
+    <font>Helvetica.txf</font>
+    <character-size type="double">0.006</character-size>
+    <character-aspect-ratio type="double">1.0</character-aspect-ratio>
+    <max-height>0.2</max-height>
+    <max-width>0.07</max-width>
+    <font-resolution>
+      <width type="int">32</width>
+      <height type="int">32</height>
+    </font-resolution>
+    <alignment>center-center</alignment>
+    <offsets>
+    <pitch-deg>0</pitch-deg>
+    <heading-deg>90</heading-deg>
+    <roll-deg>15</roll-deg>
+      <x-m> 0.75109</x-m>
+      <y-m>-0.13289</y-m>
+      <z-m>-0.4344</z-m>
+    </offsets>
+  </text>
+  <text>
+    <name>LowHyd</name>
+    <type type="string">literal</type>
+    <text type="string">LOW HYD</text>
+    <draw-text type="bool">true</draw-text>
+    <font>Helvetica.txf</font>
+    <character-size type="double">0.006</character-size>
+    <character-aspect-ratio type="double">1.0</character-aspect-ratio>
+    <max-height>0.2</max-height>
+    <max-width>0.07</max-width>
+    <font-resolution>
+      <width type="int">32</width>
+      <height type="int">32</height>
+    </font-resolution>
+    <alignment>center-center</alignment>
+    <offsets>
+    <pitch-deg>0</pitch-deg>
+    <heading-deg>90</heading-deg>
+    <roll-deg>15</roll-deg>
+      <x-m> 0.74872</x-m>
+      <y-m>-0.02727</y-m>
+      <z-m>-0.43387</z-m>
+    </offsets>
+  </text>
+  <text>
+    <name>Pressure</name>
+    <type type="string">literal</type>
+    <text type="string">PRESSURE</text>
+    <draw-text type="bool">true</draw-text>
+    <font>Helvetica.txf</font>
+    <character-size type="double">0.006</character-size>
+    <character-aspect-ratio type="double">1.0</character-aspect-ratio>
+    <max-height>0.2</max-height>
+    <max-width>0.07</max-width>
+    <font-resolution>
+      <width type="int">32</width>
+      <height type="int">32</height>
+    </font-resolution>
+    <alignment>center-center</alignment>
+    <offsets>
+    <pitch-deg>0</pitch-deg>
+    <heading-deg>90</heading-deg>
+    <roll-deg>15</roll-deg>
+      <x-m> 0.75308</x-m>
+      <y-m>-0.02761</y-m>
+      <z-m>-0.43494</z-m>
+    </offsets>
+  </text>
+  <text>
+    <name>Arm</name>
+    <type type="string">literal</type>
+    <text type="string">ARM</text>
+    <draw-text type="bool">true</draw-text>
+    <font>Helvetica.txf</font>
+    <character-size type="double">0.006</character-size>
+    <character-aspect-ratio type="double">1.0</character-aspect-ratio>
+    <max-height>0.2</max-height>
+    <max-width>0.07</max-width>
+    <font-resolution>
+      <width type="int">32</width>
+      <height type="int">32</height>
+    </font-resolution>
+    <alignment>center-center</alignment>
+    <offsets>
+    <pitch-deg>0</pitch-deg>
+    <heading-deg>90</heading-deg>
+    <roll-deg>15</roll-deg>
+      <x-m> 0.79042</x-m>
+      <y-m>-0.13201</y-m>
+      <z-m>-0.44411</z-m>
+    </offsets>
+  </text>
+  <text>
+    <name>Hyd</name>
+    <type type="string">literal</type>
+    <text type="string">HYD</text>
+    <draw-text type="bool">true</draw-text>
+    <font>Helvetica.txf</font>
+    <character-size type="double">0.006</character-size>
+    <character-aspect-ratio type="double">1.0</character-aspect-ratio>
+    <max-height>0.2</max-height>
+    <max-width>0.07</max-width>
+    <font-resolution>
+      <width type="int">32</width>
+      <height type="int">32</height>
+    </font-resolution>
+    <alignment>center-center</alignment>
+    <offsets>
+    <pitch-deg>0</pitch-deg>
+    <heading-deg>90</heading-deg>
+    <roll-deg>15</roll-deg>
+      <x-m> 0.786</x-m>
+      <y-m>-0.10798</y-m>
+      <z-m>-0.4429</z-m>
+    </offsets>
+  </text>
+  <text>
+    <name>Snorkel</name>
+    <type type="string">literal</type>
+    <text type="string">SNORKEL</text>
+    <draw-text type="bool">true</draw-text>
+    <font>Helvetica.txf</font>
+    <character-size type="double">0.006</character-size>
+    <character-aspect-ratio type="double">1.0</character-aspect-ratio>
+    <max-height>0.2</max-height>
+    <max-width>0.07</max-width>
+    <font-resolution>
+      <width type="int">32</width>
+      <height type="int">32</height>
+    </font-resolution>
+    <alignment>center-center</alignment>
+    <offsets>
+    <pitch-deg>0</pitch-deg>
+    <heading-deg>90</heading-deg>
+    <roll-deg>15</roll-deg>
+      <x-m> 0.79021</x-m>
+      <y-m>-0.108</y-m>
+      <z-m>-0.44439</z-m>
+    </offsets>
+  </text>
+  <text>
+    <name>Release</name>
+    <type type="string">literal</type>
+    <text type="string">RELEASE</text>
+    <draw-text type="bool">true</draw-text>
+    <font>Helvetica.txf</font>
+    <character-size type="double">0.0045</character-size>
+    <character-aspect-ratio type="double">1.0</character-aspect-ratio>
+    <max-height>0.2</max-height>
+    <max-width>0.07</max-width>
+    <font-resolution>
+      <width type="int">32</width>
+      <height type="int">32</height>
+    </font-resolution>
+    <alignment>center-center</alignment>
+    <offsets>
+    <pitch-deg>0</pitch-deg>
+    <heading-deg>90</heading-deg>
+    <roll-deg>15</roll-deg>
+      <x-m> 0.8182</x-m>
+      <y-m>-0.10732</y-m>
+      <z-m>-0.45147</z-m>
+    </offsets>
+  </text>
+  <text>
+    <name>On</name>
+    <type type="string">literal</type>
+    <text type="string">ON</text>
+    <draw-text type="bool">true</draw-text>
+    <font>Helvetica.txf</font>
+    <character-size type="double">0.0045</character-size>
+    <character-aspect-ratio type="double">1.0</character-aspect-ratio>
+    <max-height>0.2</max-height>
+    <max-width>0.07</max-width>
+    <font-resolution>
+      <width type="int">32</width>
+      <height type="int">32</height>
+    </font-resolution>
+    <alignment>center-center</alignment>
+    <offsets>
+    <pitch-deg>0</pitch-deg>
+    <heading-deg>90</heading-deg>
+    <roll-deg>15</roll-deg>
+      <x-m> 0.7964</x-m>
+      <y-m>-0.0939</y-m>
+      <z-m>-0.44589</z-m>
+    </offsets>
+  </text>
+  <text>
+    <name>Off</name>
+    <type type="string">literal</type>
+    <text type="string">OFF</text>
+    <draw-text type="bool">true</draw-text>
+    <font>Helvetica.txf</font>
+    <character-size type="double">0.0045</character-size>
+    <character-aspect-ratio type="double">1.0</character-aspect-ratio>
+    <max-height>0.2</max-height>
+    <max-width>0.07</max-width>
+    <font-resolution>
+      <width type="int">32</width>
+      <height type="int">32</height>
+    </font-resolution>
+    <alignment>center-center</alignment>
+    <offsets>
+    <pitch-deg>0</pitch-deg>
+    <heading-deg>90</heading-deg>
+    <roll-deg>15</roll-deg>
+      <x-m> 0.81161</x-m>
+      <y-m>-0.09375</y-m>
+      <z-m>-0.44979</z-m>
+    </offsets>
+  </text>
+  <text>
+    <name>Foam</name>
+    <type type="string">literal</type>
+    <text type="string">FOAM</text>
+    <draw-text type="bool">true</draw-text>
+    <font>Helvetica.txf</font>
+    <character-size type="double">0.006</character-size>
+    <character-aspect-ratio type="double">1.0</character-aspect-ratio>
+    <max-height>0.2</max-height>
+    <max-width>0.07</max-width>
+    <font-resolution>
+      <width type="int">32</width>
+      <height type="int">32</height>
+    </font-resolution>
+    <alignment>center-center</alignment>
+    <offsets>
+    <pitch-deg>0</pitch-deg>
+    <heading-deg>90</heading-deg>
+    <roll-deg>15</roll-deg>
+      <x-m> 0.79122</x-m>
+      <y-m>-0.08412</y-m>
+      <z-m>-0.44461</z-m>
+    </offsets>
+  </text>
+  <text>
+    <name>Sea</name>
+    <type type="string">literal</type>
+    <text type="string">SEA</text>
+    <draw-text type="bool">true</draw-text>
+    <font>Helvetica.txf</font>
+    <character-size type="double">0.006</character-size>
+    <character-aspect-ratio type="double">1.0</character-aspect-ratio>
+    <max-height>0.2</max-height>
+    <max-width>0.07</max-width>
+    <font-resolution>
+      <width type="int">32</width>
+      <height type="int">32</height>
+    </font-resolution>
+    <alignment>center-center</alignment>
+    <offsets>
+    <pitch-deg>0</pitch-deg>
+    <heading-deg>90</heading-deg>
+    <roll-deg>15</roll-deg>
+      <x-m> 0.7825</x-m>
+      <y-m>-0.062</y-m>
+      <z-m>-0.442</z-m>
+    </offsets>
+  </text>
+  <text>
+    <name>SSnorkel</name>
+    <type type="string">literal</type>
+    <text type="string">SNORKEL</text>
+    <draw-text type="bool">true</draw-text>
+    <font>Helvetica.txf</font>
+    <character-size type="double">0.006</character-size>
+    <character-aspect-ratio type="double">1.0</character-aspect-ratio>
+    <max-height>0.2</max-height>
+    <max-width>0.07</max-width>
+    <font-resolution>
+      <width type="int">32</width>
+      <height type="int">32</height>
+    </font-resolution>
+    <alignment>center-center</alignment>
+    <offsets>
+    <pitch-deg>0</pitch-deg>
+    <heading-deg>90</heading-deg>
+    <roll-deg>15</roll-deg>
+      <x-m> 0.7871</x-m>
+      <y-m>-0.06039</y-m>
+      <z-m>-0.4433</z-m>
+    </offsets>
+  </text>
+  <text>
+    <name>Extend</name>
+    <type type="string">literal</type>
+    <text type="string">EXTEND</text>
+    <draw-text type="bool">true</draw-text>
+    <font>Helvetica.txf</font>
+    <character-size type="double">0.0045</character-size>
+    <character-aspect-ratio type="double">1.0</character-aspect-ratio>
+    <max-height>0.2</max-height>
+    <max-width>0.07</max-width>
+    <font-resolution>
+      <width type="int">32</width>
+      <height type="int">32</height>
+    </font-resolution>
+    <alignment>center-center</alignment>
+    <offsets>
+    <pitch-deg>0</pitch-deg>
+    <heading-deg>90</heading-deg>
+    <roll-deg>15</roll-deg>
+      <x-m> 0.793</x-m>
+      <y-m>-0.06033</y-m>
+      <z-m>-0.44474</z-m>
+    </offsets>
+  </text>
+  <text>
+    <name>Retract</name>
+    <type type="string">literal</type>
+    <text type="string">RETRACT</text>
+    <draw-text type="bool">true</draw-text>
+    <font>Helvetica.txf</font>
+    <character-size type="double">0.0045</character-size>
+    <character-aspect-ratio type="double">1.0</character-aspect-ratio>
+    <max-height>0.2</max-height>
+    <max-width>0.07</max-width>
+    <font-resolution>
+      <width type="int">32</width>
+      <height type="int">32</height>
+    </font-resolution>
+    <alignment>center-center</alignment>
+    <offsets>
+    <pitch-deg>0</pitch-deg>
+    <heading-deg>90</heading-deg>
+    <roll-deg>15</roll-deg>
+      <x-m> 0.8156</x-m>
+      <y-m>-0.05977</y-m>
+      <z-m>-0.45083</z-m>
+    </offsets>
+  </text>
+
+  <animation>
+    <type>pick</type>
+    <object-name>toggle-arm</object-name>
+    <visible>true</visible>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>property-toggle</command>
+        <property>sim/model/firetank/arm</property>
+      </binding>
+      <binding>
+        <command>nasal</command>
+        <script>aircrane.click("avionics")</script>
+      </binding>
+    </action>
+    <hovered>
+      <binding>
+        <command>set-tooltip</command>
+        <tooltip-id>toggle-arm</tooltip-id>
+        <label>Arm: %s</label>
+        <property>sim/model/firetank/arm</property>
+        <mapping>nasal</mapping>
+        <script>
+          var modes = ['Off', 'On'];
+          return modes[arg[0]];
+        </script>
+      </binding>
+    </hovered>
+  </animation>
+  <animation>
+    <type>rotate</type>
+    <object-name>toggle-arm</object-name>
+    <property>sim/model/firetank/arm</property>
+    <factor>-45</factor>
+    <axis>
+      <x>0.0</x>
+      <y>1.0</y>
+      <z>0.0</z>
+    </axis>
+    <center>
+      <x-m> 0.8042</x-m>
+      <y-m>-0.13165</y-m>
+      <z-m>-0.44625</z-m>
+    </center>
+  </animation>
+
+  <animation>
+    <type>pick</type>
+    <object-name>toggle-hyd-snorkel</object-name>
+    <visible>true</visible>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>property-toggle</command>
+        <property>sim/model/firetank/deployflexhose</property>
+      </binding>
+      <binding>
+        <command>nasal</command>
+        <script>
+          if (getprop("sim/model/firetank/arm"))
+            {
+              if (getprop("/sim/model/firetank/flexhose/hosehitsground"))
+                screen.log.write("Damage will occur if Snorkel is deployed this low!");
+              else
+                if (getprop("sim/model/firetank/deployflexhose") == 1 and getprop("sim/model/firetank/deployflexhose/position-norm") == 1)
+                  doors.flexhose.toggle();
+                else
+                  if (getprop("sim/model/firetank/deployflexhose") == 0 and getprop("sim/model/firetank/deployflexhose/position-norm") == 0)
+                    screen.log.write("Hose already deployed!");
+            }
+          else
+            screen.log.write("System must be armed first!");
+        </script>
+      </binding>
+      <binding>
+        <command>nasal</command>
+        <script>aircrane.click("avionics")</script>
+      </binding>
+    </action>
+    <hovered>
+      <binding>
+        <command>set-tooltip</command>
+        <tooltip-id>toggle-hyd-snorkel</tooltip-id>
+        <label>Toggle: %s</label>
+        <property>sim/model/firetank/deployflexhose</property>
+        <mapping>nasal</mapping>
+        <script>
+          var modes = ['Release', 'Released'];
+          return modes[arg[0]];
+        </script>
+      </binding>
+    </hovered>
+  </animation>
+  <animation>
+    <type>rotate</type>
+    <object-name>toggle-hyd-snorkel</object-name>
+    <property>sim/model/firetank/deployflexhose</property>
+    <factor>-45</factor>
+    <axis>
+      <x>0.0</x>
+      <y>1.0</y>
+      <z>0.0</z>
+    </axis>
+    <center>
+      <x-m> 0.8042</x-m>
+      <y-m>-0.13165</y-m>
+      <z-m>-0.44625</z-m>
+    </center>
+  </animation>
+
+  <animation>
+    <type>pick</type>
+    <object-name>toggle-foam</object-name>
+    <visible>true</visible>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>property-toggle</command>
+        <property>sim/model/firetank/foam</property>
+      </binding>
+      <binding>
+        <command>nasal</command>
+        <script>aircrane.click("avionics")</script>
+      </binding>
+    </action>
+    <hovered>
+      <binding>
+        <command>set-tooltip</command>
+        <tooltip-id>toggle-foam</tooltip-id>
+        <label>Foam: %s</label>
+        <property>sim/model/firetank/foam</property>
+        <mapping>nasal</mapping>
+        <script>
+          var modes = ['Off', 'On'];
+          return modes[arg[0]];
+        </script>
+      </binding>
+    </hovered>
+  </animation>
+  <animation>
+    <type>rotate</type>
+    <object-name>toggle-foam</object-name>
+    <property>sim/model/firetank/foam</property>
+    <factor>-45</factor>
+    <axis>
+      <x>0.0</x>
+      <y>1.0</y>
+      <z>0.0</z>
+    </axis>
+    <center>
+      <x-m> 0.8042 </x-m>
+      <y-m>-0.08393</y-m>
+      <z-m>-0.44756</z-m>
+    </center>
+  </animation>
+
+  <animation>
+    <type>pick</type>
+    <object-name>toggle-sea-snorkel</object-name>
+    <visible>true</visible>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>property-toggle</command>
+        <property>sim/model/firetank/deployramscoop</property>
+      </binding>
+      <binding>
+        <command>nasal</command>
+        <script>
+          if (getprop("sim/model/firetank/arm"))
+            {
+              if (getprop("/sim/model/firetank/flexhose/hosehitsground"))
+                screen.log.write("Damage will occur if Snorkel is deployed this low!");
+              else
+                if ((getprop("sim/model/firetank/deployramscoop") == 0 and getprop("sim/model/firetank/deployramscoop/position-norm") == 1) or (getprop("sim/model/firetank/deployramscoop") == 1 and getprop("sim/model/firetank/deployramscoop/position-norm") == 0))
+                  doors.ramscoop.toggle();
+            }
+          else
+            screen.log.write("System must be armed first!");
+        </script>
+      </binding>
+      <binding>
+        <command>nasal</command>
+        <script>aircrane.click("avionics")</script>
+      </binding>
+    </action>
+    <hovered>
+      <binding>
+        <command>set-tooltip</command>
+        <tooltip-id>toggle-sea-snorkel</tooltip-id>
+        <label>Sea Snorkel: %s</label>
+        <property>sim/model/firetank/deployramscoop</property>
+        <mapping>nasal</mapping>
+        <script>
+          var modes = ['Retract', 'Extend'];
+          return modes[arg[0]];
+        </script>
+      </binding>
+    </hovered>
+  </animation>
+  <animation>
+    <type>rotate</type>
+    <object-name>toggle-sea-snorkel</object-name>
+    <property>sim/model/firetank/deployramscoop</property>
+    <factor>-45</factor>
+    <axis>
+      <x>0.0</x>
+      <y>1.0</y>
+      <z>0.0</z>
+    </axis>
+    <center>
+      <x-m> 0.8042</x-m>
+      <y-m>-0.06036</y-m>
+      <z-m>-0.44756</z-m>
+    </center>
+  </animation>
+
+  <!--object-name>toggle-foam</object-name-->
+
+</PropertyList>

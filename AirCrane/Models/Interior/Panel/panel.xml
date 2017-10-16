@@ -52,4 +52,27 @@
     </offsets>
   </model>
 
+  <!-- tank -->
+  <model>
+    <path>Aircraft/AirCrane/Models/Interior/Panel/Instruments/tankctrl/tankctrl.xml</path>
+
+  </model>
+  <model>
+    <path>Aircraft/AirCrane/Models/Interior/Panel/Instruments/tankvol/tank_vol.xml</path>
+    <offsets>
+      <x-m> 0.62184 </x-m>
+      <y-m>-0.08299 </y-m>
+      <z-m>-0.40173 </z-m>
+      <pitch-deg>-76</pitch-deg>
+    </offsets>
+  </model>
+  <model>
+    <path>Aircraft/AirCrane/Models/Interior/Panel/Instruments/tankvol/tank_vol.xml</path>
+    <offsets>
+      <x-m>-0.00203</x-m>
+      <y-m> 0.17188</y-m>
+      <z-m> 0.03375</z-m>
+    </offsets>
+  </model>
+
 </PropertyList>

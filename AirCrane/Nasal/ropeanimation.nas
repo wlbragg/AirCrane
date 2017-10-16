@@ -97,12 +97,12 @@ var longline_animation = func {
         }
     } 
   else
-    #if (!cargo_on_hook) 
+    if (!cargo_on_hook) 
       {
+        #lets cargo align with parallel rope if not conditioned as above
         setprop("/sim/model/cargo/rope/pitch1", ref_ang1);
         setprop("/sim/model/cargo/rope/roll1", ref_ang2);
       }
-
 
 	var roll_target = 0.0;
 
@@ -168,6 +168,7 @@ var longline_animation = func {
       else
         if (!cargo_on_hook)
           {
+            #causes rope sections to angle parallel to ground
             setprop("/sim/model/cargo/rope/pitch"~(i+1), angle + angle_correction);
             setprop("/sim/model/cargo/rope/roll"~(i+1), 0.0);
           }

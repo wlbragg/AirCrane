@@ -96,27 +96,42 @@
     
     <key n="106">
       <name>j</name>
-      <desc>Deploy SeaWater Ram Scoop</desc>
+      <desc>Arm and Deploy SeaWater Snorkel</desc>
       <binding>
         <command>nasal</command>
         <script>
-          doors.ramscoop.toggle();
+          if (getprop("sim/model/firetank/deployramscoop/position-norm") == 0)
+          {
+            if (getprop("/sim/model/firetank/flexhose/hosehitsground"))
+              screen.log.write("Damage will occur if SeaSnorkel is deployed this low!");
+            else {
+              setprop("sim/model/firetank/arm", 1);
+              doors.ramscoop.toggle();
+            }
+          }
+          else {
+            if (getprop("sim/model/firetank/deployflexhose/position-norm") == 1)
+              setprop("sim/model/firetank/arm", 0);
+            doors.ramscoop.toggle();
+          }
         </script>
       </binding>
     </key>
     
     <key n="74">
       <name>J</name>
-      <desc>Deploy Flex Hose</desc>
+      <desc>Arm and Deploy Snorkel</desc>
       <binding>
         <command>nasal</command>
         <script>
           if (getprop("sim/model/firetank/deployflexhose/position-norm") == 1)
           {
             if (getprop("/sim/model/firetank/flexhose/hosehitsground"))
-            screen.log.write("Damage will occur if hose is deployed this low!");
-            else
-            doors.flexhose.toggle();
+              screen.log.write("Damage will occur if Snorkel is deployed this low!");
+            else {
+              setprop("sim/model/firetank/arm", 1);
+              doors.flexhose.toggle();
+            }
           }
           else
             screen.log.write("Hose already deployed!");

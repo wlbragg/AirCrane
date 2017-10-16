@@ -61,8 +61,6 @@
     <object-name>cachesfss</object-name>
     <object-name>tankdockpins</object-name>
     <object-name>flexhoserelease</object-name>
-    <object-name>tankframe</object-name>
-    <object-name>groundtank</object-name>
     
     <!-- Transparence -->
   </animation>
@@ -124,8 +122,6 @@
     <object-name>cachesfss</object-name>
     <object-name>tankdockpins</object-name>
     <object-name>flexhoserelease</object-name>
-    <object-name>tankframe</object-name>
-    <object-name>groundtank</object-name>
   </effect>
   
   <animation>
@@ -201,22 +197,6 @@
     </condition>
   </animation>
 
-  <animation>
-    <type>select</type>
-    <object-name>groundtank</object-name>
-    <condition>
-      <property>/sim/model/groundtank/enabled</property>
-    </condition>
-  </animation>
-
-  <animation>
-    <type>select</type>
-    <object-name>tankframe</object-name>
-    <condition>
-      <property>/sim/model/tankframe/enabled</property>
-    </condition>
-  </animation>
-  
   <!-- Water cannon -->
   <model>
     <path>Aircraft/AirCrane/Models/Effects/particles/watercannon.xml</path>

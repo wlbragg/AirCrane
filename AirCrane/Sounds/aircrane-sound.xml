@@ -424,7 +424,97 @@
         <factor>0.1</factor>
       </pitch>
     </crash>
+
+    <switch>
+      <name>click-avionics-switch</name>
+      <mode>once</mode>
+      <path>Aircraft/AirCrane/Sounds/click.wav</path>
+      <condition>
+        <property>/sim/model/aircrane/sound/click-avionics</property>
+      </condition>
+      <position>
+        <x> 0.8072</x>
+        <y>-0.04592</y>
+        <z>-0.45042</z>
+      </position>
+      <reference-dist>10</reference-dist>
+      <max-dist>20.0</max-dist>
+    </switch>
     
+    <left-door-opening>
+      <name>left-door-opening</name>
+      <mode>once</mode>
+      <path>Aircraft/AirCrane/Sounds/door-opening.wav</path>
+      <condition>
+        <greater-than>
+          <property>sim/model/door-positions/crew/position-norm</property>
+          <value>0.01</value>
+        </greater-than>
+      </condition>
+      <position>
+        <x>-8.63632</x>
+        <y> 1.01721</y>
+        <z>-1.20785</z>
+      </position>
+      <reference-dist>0.2</reference-dist>
+      <max-dist>50.0</max-dist>
+    </left-door-opening>
+    <left-door-closing>
+      <name>left-door-closing</name>
+      <mode>once</mode>
+      <path>Aircraft/AirCrane/Sounds/door-closing.wav</path>
+      <condition>
+        <less-than>
+          <property>sim/model/door-positions/crew/position-norm</property>
+          <value>0.02</value>
+        </less-than>
+      </condition>
+      <position>
+        <x>-8.63632</x>
+        <y> 1.01721</y>
+        <z>-1.20785</z>
+      </position>
+      <reference-dist>0.2</reference-dist>
+      <max-dist>50.0</max-dist>
+    </left-door-closing>
+
+    <right-door-opening>
+      <name>right-door-opening</name>
+      <mode>once</mode>
+      <path>Aircraft/AirCrane/Sounds/door-opening.wav</path>
+      <condition>
+        <greater-than>
+          <property>sim/model/door-positions/passenger/position-norm</property>
+          <value>0.01</value>
+        </greater-than>
+      </condition>
+      <position>
+        <x>-8.63632</x>
+        <y>-1.03552</y>
+        <z>-1.31704</z>
+      </position>
+      <reference-dist>0.2</reference-dist>
+      <max-dist>50.0</max-dist>
+    </right-door-opening>
+    <right-door-closing>
+      <name>right-door-closing</name>
+      <mode>once</mode>
+      <path>Aircraft/AirCrane/Sounds/door-closing.wav</path>
+      <condition>
+        <less-than>
+          <property>sim/model/door-positions/passenger/position-norm</property>
+          <value>0.02</value>
+        </less-than>
+      </condition>
+      <position>
+        <x>-8.63632</x>
+        <y>-1.03552</y>
+        <z>-1.31704</z>
+      </position>
+      <reference-dist>0.2</reference-dist>
+      <max-dist>50.0</max-dist>
+    </right-door-closing>
+
   </fx>
   
 </PropertyList>

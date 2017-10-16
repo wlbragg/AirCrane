@@ -267,6 +267,10 @@
         <deployramscoop type="float">0</deployramscoop>
         <opencannonvalve type="bool">0</opencannonvalve>
         <opentankdoors type="bool">0</opentankdoors>
+        <foam type="bool">0</foam>
+        <arm type="bool">0</arm>
+        <lowhydpres type="bool">0</lowhydpres>
+        <test type="bool">0</test>
         <droprate type="int">300</droprate>
         <watercannonparticlectrl type="bool">false</watercannonparticlectrl>
         <watercannonretardantctrl type="bool">false</watercannonretardantctrl>
