@@ -271,7 +271,10 @@
         <arm type="bool">0</arm>
         <lowhydpres type="bool">0</lowhydpres>
         <test type="bool">0</test>
-        <droprate type="int">300</droprate>
+        <quantity type="int">0</quantity>
+        <coverage type="int">0</coverage>
+        <foamconcentrate type="int">0</foamconcentrate>
+        <droprate type="int">300</droprate><!-- for particles only -->
         <watercannonparticlectrl type="bool">false</watercannonparticlectrl>
         <watercannonretardantctrl type="bool">false</watercannonretardantctrl>
         <waterdropparticlectrl type="bool">false</waterdropparticlectrl>

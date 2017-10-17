@@ -8,7 +8,7 @@
     <!-- Objets opaques -->
     <object-name>knob-foam</object-name>
     <object-name>knob-quantity</object-name>
-    <object-name>knob-salvo</object-name>
+    <object-name>knob-coverage</object-name>
     <object-name>indicate1</object-name>
     <object-name>indicate2</object-name>
     <object-name>indicate3</object-name>
@@ -40,6 +40,7 @@
     <object-name>100p</object-name>
     <object-name>FCZero</object-name>
     <object-name>FCPointFive</object-name>
+    <object-name>FCOne</object-name>
     <object-name>FCOnePointFive</object-name>
     <object-name>FCTwo</object-name>
     <object-name>FCTwoPointFive</object-name>
@@ -80,7 +81,7 @@
     <type>material</type>
     <object-name>knob-foam</object-name>
     <object-name>knob-quantity</object-name>
-    <object-name>knob-salvo</object-name>
+    <object-name>knob-coverage</object-name>
     <object-name>indicate1</object-name>
     <object-name>indicate2</object-name>
     <object-name>indicate3</object-name>
@@ -112,6 +113,7 @@
     <object-name>100p</object-name>
     <object-name>FCZero</object-name>
     <object-name>FCPointFive</object-name>
+    <object-name>FCOne</object-name>
     <object-name>FCOnePointFive</object-name>
     <object-name>FCTwo</object-name>
     <object-name>FCTwoPointFive</object-name>
@@ -418,12 +420,12 @@
     </font-resolution>
     <alignment>center-center</alignment>
     <offsets>
-    <pitch-deg>-19</pitch-deg>
+    <pitch-deg>-10</pitch-deg>
     <heading-deg>150</heading-deg>
-    <roll-deg>8</roll-deg>
+    <roll-deg>3</roll-deg>
       <x-m> 0.72504</x-m>
       <y-m>-0.09228</y-m>
-      <z-m>-0.4278</z-m>
+      <z-m>-0.426</z-m>
     </offsets>
   </text>
   <text>
@@ -1244,6 +1246,142 @@
     </offsets>
   </text>
 
+  <!-- Quantity "Knob" -->
+  <animation>
+    <type>knob</type>
+    <object-name>knob-quantity</object-name>
+    <property>sim/model/firetank/quantity</property>
+    <factor>45</factor>
+    <offset-deg>0</offset-deg>
+    <axis>
+            <x1-m> 0.70965</x1-m>
+            <y1-m>-0.12102</y1-m>
+            <z1-m>-0.40783</z1-m>
+            <x2-m> 0.7096 </x2-m>
+            <y2-m>-0.12101</y2-m>
+            <z2-m>-0.40808</z2-m>
+        </axis>
+    <action>
+      <repeatable>true</repeatable>
+      <binding>
+        <command>property-adjust</command>
+          <property>sim/model/firetank/quantity</property>
+        <factor>1</factor>
+        <min>0</min>
+        <max>4</max>
+        <wrap>0</wrap>
+      </binding>
+      <binding>
+        <command>nasal</command>
+        <script>aircrane.click("avionics")</script>
+      </binding>
+    </action>
+    <hovered>
+      <binding>
+        <command>set-tooltip</command>
+        <tooltip-id>knob-quantity</tooltip-id>
+        <label>Quantity: %s</label>
+        <property>sim/model/firetank/quantity</property>
+        <mapping>nasal</mapping>
+        <script>
+          var modes = ['Safe', '25%', '50%', '75%', '100%']; 
+          return modes[arg[0]];
+        </script>
+      </binding>
+    </hovered>
+  </animation>
+
+  <!-- Foam Concentrate "Knob" -->
+  <animation>
+    <type>knob</type>
+    <object-name>knob-foam</object-name>
+    <property>sim/model/firetank/foamconcentrate</property>
+    <factor>28</factor>
+    <offset-deg>5</offset-deg>
+    <axis>
+            <x1-m> 0.73445</x1-m>
+            <y1-m>-0.08144</y1-m>
+            <z1-m>-0.41656</z1-m>
+            <x2-m> 0.73133</x2-m>
+            <y2-m>-0.08141</y2-m>
+            <z2-m>-0.4287 </z2-m>
+        </axis>
+    <action>
+      <repeatable>true</repeatable>
+      <binding>
+        <command>property-adjust</command>
+          <property>sim/model/firetank/foamconcentrate</property>
+        <factor>1</factor>
+        <min>0</min>
+        <max>8</max>
+        <wrap>0</wrap>
+      </binding>
+      <binding>
+        <command>nasal</command>
+        <script>aircrane.click("avionics")</script>
+      </binding>
+    </action>
+    <hovered>
+      <binding>
+        <command>set-tooltip</command>
+        <tooltip-id>knob-foam</tooltip-id>
+        <label>Foam Concentrate: %s</label>
+        <property>sim/model/firetank/foamconcentrate</property>
+        <mapping>nasal</mapping>
+        <script>
+          var modes = ['0', '.5', '1', '1.5', '2', '2.5', '3', '3.5', '4']; 
+          return modes[arg[0]];
+        </script>
+      </binding>
+    </hovered>
+  </animation>
+
+  <!-- Coverage "Knob" -->
+  <animation>
+    <type>knob</type>
+    <object-name>knob-coverage</object-name>
+    <property>sim/model/firetank/coverage</property>
+    <factor>31</factor>
+    <offset-deg>0</offset-deg>
+    <axis>
+            <x1-m> 0.70846</x1-m>
+            <y1-m>-0.03735</y1-m>
+            <z1-m>-0.40778</z1-m>
+            <x2-m> 0.70843</x2-m>
+            <y2-m>-0.03735</y2-m>
+            <z2-m>-0.40791</z2-m>
+        </axis>
+    <action>
+      <repeatable>true</repeatable>
+      <binding>
+        <command>property-adjust</command>
+          <property>sim/model/firetank/coverage</property>
+        <factor>1</factor>
+        <min>0</min>
+        <max>8</max>
+        <wrap>0</wrap>
+      </binding>
+      <binding>
+        <command>nasal</command>
+        <script>aircrane.click("avionics")</script>
+      </binding>
+    </action>
+    <hovered>
+      <binding>
+        <command>set-tooltip</command>
+        <tooltip-id>knob-coverage</tooltip-id>
+        <label>Coverage: %s</label>
+        <property>sim/model/firetank/coverage</property>
+        <mapping>nasal</mapping>
+        <script>
+          var modes = ['1', '2', '3', '4', '5', '6', '7', '8', 'Salvo']; 
+          return modes[arg[0]];
+        </script>
+      </binding>
+    </hovered>
+  </animation>
+
+  <!-- Arm "Toggle" -->
   <animation>
     <type>pick</type>
     <object-name>toggle-arm</object-name>
@@ -1291,6 +1429,7 @@
     </center>
   </animation>
 
+  <!-- Hyd Snorkel "Toggle" -->
   <animation>
     <type>pick</type>
     <object-name>toggle-hyd-snorkel</object-name>
@@ -1356,6 +1495,7 @@
     </center>
   </animation>
 
+  <!-- Foam "Toggle" -->
   <animation>
     <type>pick</type>
     <object-name>toggle-foam</object-name>
@@ -1403,6 +1543,7 @@
     </center>
   </animation>
 
+  <!-- Hyd Sea Snorkel "Toggle" -->
   <animation>
     <type>pick</type>
     <object-name>toggle-sea-snorkel</object-name>
@@ -1464,7 +1605,5 @@
       <z-m>-0.44756</z-m>
     </center>
   </animation>
-
-  <!--object-name>toggle-foam</object-name-->
 
 </PropertyList>
