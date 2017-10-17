@@ -75,4 +75,54 @@
     </offsets>
   </model>
 
+  <!-- ai -->
+  <model>
+    <path>Aircraft/AirCrane/Models/Interior/Panel/Instruments/ai/ai.xml</path>
+    <offsets>
+      <x-m> 0.007 </x-m>
+      <y-m>-0.389 </y-m>
+      <z-m> 0.017 </z-m>
+    </offsets>
+  </model>
+
+  <!-- asi -->
+  <model>
+    <path>Aircraft/AirCrane/Models/Interior/Panel/Instruments/asi/asi.xml</path>
+    <offsets>
+      <x-m> -0.001 </x-m>
+      <y-m> -0.516 </y-m>
+      <z-m>  0.035 </z-m>
+    </offsets>
+  </model>
+
+  <!-- alt -->
+  <model>
+    <path>Aircraft/AirCrane/Models/Interior/Panel/Instruments/alt/alt.xml</path>
+    <offsets>
+      <x-m> -0.001 </x-m>
+      <y-m> -0.259 </y-m>
+      <z-m>  0.035 </z-m>
+    </offsets>
+  </model>
+
+  <!-- torque -->
+  <model>
+    <path>Aircraft/AirCrane/Models/Interior/Panel/Instruments/torque/torque.xml</path>
+    <offsets>
+      <x-m> -0.001 </x-m>
+      <y-m> -0.667 </y-m>
+      <z-m> -0.070 </z-m>
+    </offsets>
+  </model>
+
+  <!-- tank -->
+  <model>
+    <path>Aircraft/AirCrane/Models/Interior/Panel/Instruments/tankvol/tank_vol.xml</path>
+    <offsets>
+      <x-m>-0.002</x-m>
+      <y-m>-0.667</y-m>
+      <z-m> 0.033</z-m>
+    </offsets>
+  </model>
+
 </PropertyList>
