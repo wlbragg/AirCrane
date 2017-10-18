@@ -58,7 +58,7 @@
     <object-name>watercannon</object-name>
     <object-name>watercannonhose</object-name>
     <object-name>watercannonframe</object-name>
-    <object-name>watercannonhydrolic</object-name>
+    <object-name>watercannonhydraulic</object-name>
     <object-name>cablesfss</object-name>
     <object-name>cachesfss</object-name>
     <object-name>tankdockpins</object-name>
@@ -121,7 +121,7 @@
     <object-name>watercannon</object-name>
     <object-name>watercannonhose</object-name>
     <object-name>watercannonframe</object-name>
-    <object-name>watercannonhydrolic</object-name>
+    <object-name>watercannonhydraulic</object-name>
     <object-name>cablesfss</object-name>
     <object-name>cachesfss</object-name>
     <object-name>tankdockpins</object-name>
@@ -182,7 +182,7 @@
     <object-name>watercannon</object-name>
     <object-name>watercannonhose</object-name>
     <object-name>watercannonframe</object-name>
-    <object-name>watercannonhydrolic</object-name>
+    <object-name>watercannonhydraulic</object-name>
     <object-name>cablesfss</object-name>
     <object-name>cachesfss</object-name>
     <object-name>tankdockpins</object-name>
@@ -3298,5 +3298,97 @@
       <z>0</z>
     </axis>
   </animation>
-  
+
+  <!-- water cannon hydraulic translation -->
+  <animation>
+   <type>translate</type>
+   <object-name>watercannonhydraulic</object-name>
+   <property>sim/model/watercannon/position-deg</property>
+   <factor>-0.043</factor>
+   <offset-m>0</offset-m>
+   <axis>
+     <x> 0 </x>
+     <y> 0 </y>
+     <z> 1 </z>
+   </axis>
+ </animation>
+
+  <!-- water cannon boom rotation -->
+  <animation>
+    <type>rotate</type>
+    <object-name>watercannon</object-name>
+    <property>sim/model/watercannon/position-deg</property>
+    <factor>1</factor>
+    <offset-deg>0</offset-deg>   
+    <center>
+      <x-m>-10.0103 </x-m>
+      <y-m>-1.31365</y-m>
+      <z-m>-2.98074</z-m>
+    </center>
+    <axis>
+      <x>0</x>
+      <y>1</y>
+      <z>0</z>
+    </axis>
+  </animation>
+
+  <!-- water cannon hose rotation -->
+  <animation>
+    <type>rotate</type>
+    <object-name>watercannonhose</object-name>
+    <property>sim/model/watercannon/position-deg</property>
+    <factor>-.866</factor>
+    <offset-deg>0</offset-deg>   
+    <center>
+      <x-m>-4.67529</x-m>
+      <y-m> 0.18986</y-m>
+      <z-m>-2.26609</z-m>
+    </center>
+    <axis>
+      <x>0</x>
+      <y>1</y>
+      <z>0</z>
+    </axis>
+  </animation>
+
+  <!-- water cannon hose x translation -->
+  <animation>
+   <type>translate</type>
+   <object-name>watercannonhose</object-name>
+   <property>sim/model/watercannon/position-deg</property>
+   <condition>
+      <less-than-equals>
+        <property>sim/model/watercannon/position-deg</property>
+        <value>0</value>
+      </less-than-equals>
+    </condition>
+   <factor> -0.0133 </factor>
+   <offset-m>0</offset-m>
+   <axis>
+     <x> 1 </x>
+     <y> 0 </y>
+     <z> 0 </z>
+   </axis>
+ </animation>
+
+  <!-- water cannon hose z translation -->
+  <animation>
+   <type>translate</type>
+   <object-name>watercannonhose</object-name>
+   <property>sim/model/watercannon/position-deg</property>
+   <condition>
+      <less-than-equals>
+        <property>sim/model/watercannon/position-deg</property>
+        <value>0</value>
+      </less-than-equals>
+    </condition>
+   <factor> 0.0002 </factor>
+   <offset-m>0</offset-m>
+   <axis>
+     <x> 0 </x>
+     <y> 0 </y>
+     <z> 1 </z>
+   </axis>
+ </animation>
+
 </PropertyList>

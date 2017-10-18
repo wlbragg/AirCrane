@@ -260,6 +260,11 @@
       </cargo>
       <watercannon>
         <enabled type="bool">true</enabled>
+        <tank-volume type="float">0</tank-volume>
+        <tank-weight type="float">0</tank-weight>
+        <position-deg type="float">0</position-deg>
+        <snorkel-depth type="float">0</snorkel-depth>
+        <togglecannonpitch type="int">0</togglecannonpitch>
       </watercannon>
       <firetank>
         <enabled type="bool">false</enabled>
@@ -434,7 +439,7 @@
         <name type="string">Aircrane Flight Recorder</name>
       </config>
     </flight-recorder>
-    
+
   </sim>
   
   <input include="aircrane-keyboard.xml"/>
@@ -467,5 +472,13 @@
       <file>Aircraft/Generic/helicopter-fcs.nas</file>
     </fcs>
   </nasal>
+
+  <systems>
+    <electrical>
+      <outputs>
+        <digital-display type="float">.5</digital-display>
+      </outputs>
+    </electrical>
+  </systems>
 
 </PropertyList>

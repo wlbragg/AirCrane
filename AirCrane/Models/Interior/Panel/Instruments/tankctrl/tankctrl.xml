@@ -75,6 +75,12 @@
     <object-name>SSnorkel</object-name>
     <object-name>Extend</object-name>
     <object-name>Retract</object-name>
+    <object-name>togglecannonpitch</object-name>
+    <object-name>togglecannonpitch1</object-name>
+    <object-name>CannonPitch</object-name>
+    <object-name>TankVolume</object-name>
+    <object-name>FillRange</object-name>
+    <object-name>PayloadWeight</object-name>
   </animation>
 
   <animation>
@@ -148,6 +154,12 @@
     <object-name>SSnorkel</object-name>
     <object-name>Extend</object-name>
     <object-name>Retract</object-name>
+    <object-name>togglecannonpitch</object-name>
+    <object-name>togglecannonpitch1</object-name>
+    <object-name>CannonPitch</object-name>
+    <object-name>TankVolume</object-name>
+    <object-name>FillRange</object-name>
+    <object-name>PayloadWeight</object-name>
     <emission>
       <factor-prop>systems/electrical/outputs/instrument-lights</factor-prop>
       <red>   0.50 </red>
@@ -1605,5 +1617,222 @@
       <z-m>-0.44756</z-m>
     </center>
   </animation>
+
+  <!-- Direct Drive "spring switch" -->
+  <animation>
+    <type>knob</type>
+    <object-name>togglecannonpitch</object-name>
+    <property>sim/model/watercannon/togglecannonpitch</property>
+    <factor>-35</factor>
+    <offset-deg>-10</offset-deg>
+    <center>
+      <x-m>-0.00031</x-m>
+      <y-m> 0.13306</y-m>
+      <z-m> 0.15753</z-m>
+    </center>
+    <axis>
+      <x>0</x>
+      <y>1</y>
+      <z>0</z>
+    </axis>
+    <action>
+      <binding>
+        <command>property-adjust</command>
+        <property>sim/model/watercannon/togglecannonpitch</property>
+        <factor>1</factor>
+        <min>-1</min>
+        <max>1</max>
+        <wrap>false</wrap>
+      </binding>
+      <binding>
+        <command>nasal</command>
+        <script>aircrane.click("avionics")</script>
+      </binding>
+    </action>
+    <release>
+      <binding>
+        <command>property-assign</command>
+        <property>sim/model/watercannon/togglecannonpitch</property>
+        <value>0</value>
+      </binding>
+    </release>
+    <hovered>
+      <binding>
+        <command>set-tooltip</command>
+        <tooltip-id>togglecannonpitch</tooltip-id>
+        <label>Cannon Pitch: %s</label>
+        <property>sim/model/watercannon/togglecannonpitch</property>
+        <mapping>nasal</mapping>
+        <script>
+          var modes = ['Neutral', 'Up', 'Down'];
+          return modes[arg[0]];
+        </script>
+      </binding>
+    </hovered>
+  </animation>
+
+  <!-- water cannon pitch display -->
+  <animation>
+    <object-name>cannon-pitch-glass</object-name>
+    <type>material</type>
+    <condition>
+      <not>
+        <property>/sim/rendering/rembrandt/enabled</property>
+      </not>
+    </condition>
+    <emission>
+      <red>1.0</red>
+      <green>1.0</green>
+      <blue>1.0</blue>
+      <factor-prop>/systems/electrical/outputs/digital-display</factor-prop>
+    </emission>
+  </animation>
+  <text>
+    <name>CannonPitch</name>
+    <type type="string">literal</type>
+    <text type="string">Snorkel Pitch</text>
+    <draw-text type="bool">true</draw-text>
+    <font>Helvetica.txf</font>
+    <character-size type="double">0.006</character-size>
+    <character-aspect-ratio type="double">1.0</character-aspect-ratio>
+    <max-height>0.2</max-height>
+    <max-width>0.07</max-width>
+    <font-resolution>
+      <width type="int">32</width>
+      <height type="int">32</height>
+    </font-resolution>
+    <alignment>center-center</alignment>
+    <offsets>
+    <pitch-deg>0</pitch-deg>
+    <heading-deg>90</heading-deg>
+    <roll-deg>90</roll-deg>
+      <x-m>-0.00206</x-m>
+      <y-m> 0.16963</y-m>
+      <z-m> 0.17342</z-m>
+    </offsets>
+  </text>
+
+  <!-- tank volume display -->
+  <animation>
+    <object-name>tank-volume-glass</object-name>
+    <type>material</type>
+    <condition>
+      <not>
+        <property>/sim/rendering/rembrandt/enabled</property>
+      </not>
+    </condition>
+    <emission>
+      <red>1.0</red>
+      <green>1.0</green>
+      <blue>1.0</blue>
+      <factor-prop>/systems/electrical/outputs/digital-display</factor-prop>
+    </emission>
+  </animation>
+  <text>
+    <name>TankVolume</name>
+    <type type="string">literal</type>
+    <text type="string">Tank Volume</text>
+    <draw-text type="bool">true</draw-text>
+    <font>Helvetica.txf</font>
+    <character-size type="double">0.006</character-size>
+    <character-aspect-ratio type="double">1.0</character-aspect-ratio>
+    <max-height>0.2</max-height>
+    <max-width>0.07</max-width>
+    <font-resolution>
+      <width type="int">32</width>
+      <height type="int">32</height>
+    </font-resolution>
+    <alignment>center-center</alignment>
+    <offsets>
+    <pitch-deg>0</pitch-deg>
+    <heading-deg>90</heading-deg>
+    <roll-deg>90</roll-deg>
+      <x-m>-0.00206</x-m>
+      <y-m> 0.16999</y-m>
+      <z-m> 0.13528</z-m>
+    </offsets>
+  </text>
+
+  <!-- snorkel depth display -->
+  <animation>
+    <object-name>snorkel-depth-glass</object-name>
+    <type>material</type>
+    <condition>
+      <not>
+        <property>/sim/rendering/rembrandt/enabled</property>
+      </not>
+    </condition>
+    <emission>
+      <red>1.0</red>
+      <green>1.0</green>
+      <blue>1.0</blue>
+      <factor-prop>/systems/electrical/outputs/digital-display</factor-prop>
+    </emission>
+  </animation>
+  <text>
+    <name>FillRange</name>
+    <type type="string">literal</type>
+    <text type="string">Fill Range - 7.9</text>
+    <draw-text type="bool">true</draw-text>
+    <font>Helvetica.txf</font>
+    <character-size type="double">0.006</character-size>
+    <character-aspect-ratio type="double">1.0</character-aspect-ratio>
+    <max-height>0.2</max-height>
+    <max-width>0.07</max-width>
+    <font-resolution>
+      <width type="int">32</width>
+      <height type="int">32</height>
+    </font-resolution>
+    <alignment>center-center</alignment>
+    <offsets>
+    <pitch-deg>0</pitch-deg>
+    <heading-deg>90</heading-deg>
+    <roll-deg>90</roll-deg>
+      <x-m>-0.0020</x-m>
+      <y-m> 0.222 </y-m>
+      <z-m> 0.1732</z-m>
+    </offsets>
+  </text>
+
+  <!-- tank weight display -->
+  <animation>
+    <object-name>tank-weight-glass</object-name>
+    <type>material</type>
+    <condition>
+      <not>
+        <property>/sim/rendering/rembrandt/enabled</property>
+      </not>
+    </condition>
+    <emission>
+      <red>1.0</red>
+      <green>1.0</green>
+      <blue>1.0</blue>
+      <factor-prop>/systems/electrical/outputs/digital-display</factor-prop>
+    </emission>
+  </animation>
+  <text>
+    <name>PayloadWeight</name>
+    <type type="string">literal</type>
+    <text type="string">Payload Weight</text>
+    <draw-text type="bool">true</draw-text>
+    <font>Helvetica.txf</font>
+    <character-size type="double">0.006</character-size>
+    <character-aspect-ratio type="double">1.0</character-aspect-ratio>
+    <max-height>0.2</max-height>
+    <max-width>0.07</max-width>
+    <font-resolution>
+      <width type="int">32</width>
+      <height type="int">32</height>
+    </font-resolution>
+    <alignment>center-center</alignment>
+    <offsets>
+    <pitch-deg>0</pitch-deg>
+    <heading-deg>90</heading-deg>
+    <roll-deg>90</roll-deg>
+      <x-m>-0.00206</x-m>
+      <y-m> 0.22205</y-m>
+      <z-m> 0.13512</z-m>
+    </offsets>
+  </text>
 
 </PropertyList>
