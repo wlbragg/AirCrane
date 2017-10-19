@@ -48,6 +48,7 @@
             <greencombined type="float">0</greencombined>
             <bluecombined type="float">0</bluecombined>
           </particles>
+          <shadow type="bool">false</shadow>
         </effects>
         <persistent type="bool">false</persistent>
         <currentlat type="double">0.0</currentlat>
@@ -380,6 +381,8 @@
       <path>/sim/gui/dialogs/aicargo-dialog/connection</path>
       <path>/rotors/main/bladesvisible</path>
       <path>/sim/model/aircrane/effects/particles/enabled</path>
+      <path>/sim/model/aircrane/effects/shadow</path>
+      <!--path>/sim/model/aircrane/effects/als-shadow</path-->
     </aircraft-data> 
 
     <multiplay>

@@ -79,6 +79,24 @@
     <padding>6</padding>
       <checkbox>
         <halign>left</halign>
+        <label>Shadow</label>
+        <property>sim/model/aircrane/effects/shadow</property>
+        <live>true</live>
+        <binding>
+          <command>nasal</command>
+          <script>
+            var p = "sim/model/aircrane/effects/shadow";
+            setprop(p, var i = !getprop(p));
+            gui.popupTip("Aircraft shadow " ~ (i ? "On" : "Off"));
+          </script>
+        </binding>
+      </checkbox>
+  </group>
+  <group>
+    <layout>hbox</layout>
+    <padding>6</padding>
+      <checkbox>
+        <halign>left</halign>
         <label>Show Particle Effects</label>
         <property>sim/model/aircrane/effects/particles/enabled</property>
         <live>true</live>

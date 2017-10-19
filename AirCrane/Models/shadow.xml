@@ -32,8 +32,10 @@
       <and>
         <not><property>sim/freeze/replay-state</property></not>
         <not><property>sim/rendering/shadows/enabled</property></not>
+        <!--not><property>sim/model/aircrane/effects/als-shadow</property></not-->
+        <property>sim/model/aircrane/effects/shadow</property>
         <less-than>
-          <property>sim/multiplay/generic/float[3]</property>
+          <property>sim/multiplay/generic/float[2]</property>
           <value>2000</value>
         </less-than>
         <and>
