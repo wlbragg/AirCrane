@@ -6,19 +6,30 @@
 
   <animation>
     <!-- Objets opaques -->
+    <object-name>panel</object-name>
     <object-name>panel1</object-name>
     <object-name>panel2</object-name>
     <object-name>panel3</object-name>
     <object-name>panel4</object-name>
   </animation>
 
+  <!-- ALS Interior Shadows -->
+  <effect>
+    <inherits-from>Models/Effects/interior/cockpit-interior</inherits-from>
+    <object-name>panel</object-name>
+    <object-name>panel1</object-name>
+    <object-name>panel2</object-name>
+    <object-name>panel3</object-name>
+    <object-name>panel4</object-name>
+  </effect>
+
   <!-- ai -->
   <model>
     <path>Aircraft/AirCrane/Models/Interior/Panel/Instruments/ai/ai.xml</path>
     <offsets>
-      <x-m> 0.007 </x-m>
+      <x-m>-9.39 </x-m>
       <y-m> 0.453 </y-m>
-      <z-m> 0.017 </z-m>
+      <z-m>-1.482 </z-m>
     </offsets>
   </model>
 
@@ -26,9 +37,9 @@
   <model>
     <path>Aircraft/AirCrane/Models/Interior/Panel/Instruments/asi/asi.xml</path>
     <offsets>
-      <x-m> -0.001 </x-m>
+      <x-m> -9.392 </x-m>
       <y-m>  0.323 </y-m>
-      <z-m>  0.035 </z-m>
+      <z-m> -1.464 </z-m>
     </offsets>
   </model>
 
@@ -36,9 +47,9 @@
   <model>
     <path>Aircraft/AirCrane/Models/Interior/Panel/Instruments/alt/alt.xml</path>
     <offsets>
-      <x-m> -0.001 </x-m>
+      <x-m> -9.392 </x-m>
       <y-m>  0.580 </y-m>
-      <z-m>  0.035 </z-m>
+      <z-m> -1.464 </z-m>
     </offsets>
   </model>
 
@@ -46,82 +57,92 @@
   <model>
     <path>Aircraft/AirCrane/Models/Interior/Panel/Instruments/torque/torque.xml</path>
     <offsets>
-      <x-m> -0.001 </x-m>
+      <x-m> -9.382 </x-m>
       <y-m>  0.171 </y-m>
-      <z-m> -0.070 </z-m>
+      <z-m> -1.569 </z-m>
     </offsets>
   </model>
 
   <!-- tank -->
+  <model>
+    <path>Aircraft/AirCrane/Models/Interior/Panel/Instruments/tankvol/tank_vol.xml</path>
+    <condition>
+      <property>sim/model/firetank/enabled</property>
+    </condition>
+    <offsets>
+      <x-m> -9.393 </x-m>
+      <y-m>  0.171 </y-m>
+      <z-m> -1.466 </z-m>
+    </offsets>
+  </model>
+
+  <!-- ai -->
+  <model>
+    <path>Aircraft/AirCrane/Models/Interior/Panel/Instruments/ai/ai.xml</path>
+    <offsets>
+      <x-m>-9.39 </x-m>
+      <y-m>-0.389 </y-m>
+      <z-m>-1.482 </z-m>
+    </offsets>
+  </model>
+
+  <!-- asi -->
+  <model>
+    <path>Aircraft/AirCrane/Models/Interior/Panel/Instruments/asi/asi.xml</path>
+    <offsets>
+      <x-m> -9.392 </x-m>
+      <y-m> -0.516 </y-m>
+      <z-m> -1.464 </z-m>
+    </offsets>
+  </model>
+
+  <!-- alt -->
+  <model>
+    <path>Aircraft/AirCrane/Models/Interior/Panel/Instruments/alt/alt.xml</path>
+    <offsets>
+      <x-m> -9.392 </x-m>
+      <y-m> -0.259 </y-m>
+      <z-m> -1.464 </z-m>
+    </offsets>
+  </model>
+
+  <!-- torque -->
+  <model>
+    <path>Aircraft/AirCrane/Models/Interior/Panel/Instruments/torque/torque.xml</path>
+    <offsets>
+      <x-m> -9.382 </x-m>
+      <y-m> -0.660 </y-m>
+      <z-m> -1.569 </z-m>
+    </offsets>
+  </model>
+
+  <!-- tank -->
+  <model>
+    <path>Aircraft/AirCrane/Models/Interior/Panel/Instruments/tankvol/tank_vol.xml</path>
+    <condition>
+      <property>sim/model/firetank/enabled</property>
+    </condition>
+    <offsets>
+      <x-m> -9.392 </x-m>
+      <y-m> -0.667 </y-m>
+      <z-m> -1.466 </z-m>
+    </offsets>
+  </model>
+
+  <!-- tank (horizontal panel)-->
   <model>
     <path>Aircraft/AirCrane/Models/Interior/Panel/Instruments/tankctrl/tankctrl.xml</path>
-
   </model>
   <model>
     <path>Aircraft/AirCrane/Models/Interior/Panel/Instruments/tankvol/tank_vol.xml</path>
+    <condition>
+      <property>sim/model/firetank/enabled</property>
+    </condition>
     <offsets>
-      <x-m> 0.62184 </x-m>
-      <y-m>-0.08299 </y-m>
-      <z-m>-0.40173 </z-m>
-      <pitch-deg>-76</pitch-deg>
-    </offsets>
-  </model>
-  <model>
-    <path>Aircraft/AirCrane/Models/Interior/Panel/Instruments/tankvol/tank_vol.xml</path>
-    <offsets>
-      <x-m>-0.00203</x-m>
-      <y-m> 0.17188</y-m>
-      <z-m> 0.03375</z-m>
-    </offsets>
-  </model>
-
-  <!-- ai -->
-  <model>
-    <path>Aircraft/AirCrane/Models/Interior/Panel/Instruments/ai/ai.xml</path>
-    <offsets>
-      <x-m> 0.007 </x-m>
-      <y-m>-0.389 </y-m>
-      <z-m> 0.017 </z-m>
-    </offsets>
-  </model>
-
-  <!-- asi -->
-  <model>
-    <path>Aircraft/AirCrane/Models/Interior/Panel/Instruments/asi/asi.xml</path>
-    <offsets>
-      <x-m> -0.001 </x-m>
-      <y-m> -0.516 </y-m>
-      <z-m>  0.035 </z-m>
-    </offsets>
-  </model>
-
-  <!-- alt -->
-  <model>
-    <path>Aircraft/AirCrane/Models/Interior/Panel/Instruments/alt/alt.xml</path>
-    <offsets>
-      <x-m> -0.001 </x-m>
-      <y-m> -0.259 </y-m>
-      <z-m>  0.035 </z-m>
-    </offsets>
-  </model>
-
-  <!-- torque -->
-  <model>
-    <path>Aircraft/AirCrane/Models/Interior/Panel/Instruments/torque/torque.xml</path>
-    <offsets>
-      <x-m> -0.001 </x-m>
-      <y-m> -0.667 </y-m>
-      <z-m> -0.070 </z-m>
-    </offsets>
-  </model>
-
-  <!-- tank -->
-  <model>
-    <path>Aircraft/AirCrane/Models/Interior/Panel/Instruments/tankvol/tank_vol.xml</path>
-    <offsets>
-      <x-m>-0.002</x-m>
-      <y-m>-0.667</y-m>
-      <z-m> 0.033</z-m>
+      <x-m> -8.737 </x-m>
+      <y-m> -0.082 </y-m>
+      <z-m> -1.832 </z-m>
+      <pitch-deg>-82</pitch-deg>
     </offsets>
   </model>
 

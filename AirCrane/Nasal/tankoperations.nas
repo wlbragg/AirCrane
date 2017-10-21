@@ -1,12 +1,13 @@
 var digital_display =
   {
 
-    new : func(designation, model_element, parameter, num_display)
+    new : func(designation, model_element, parameter, num_display, num_format)
       {
         var obj = {parents : [digital_display] };
         obj.designation = designation;
         obj.model_element = model_element;
         obj.parameter = parameter;
+        obj.num_format = num_format;
 
         var dev_canvas= canvas.new({
           "name": designation,
@@ -36,16 +37,16 @@ var digital_display =
         return obj;
       },
 
-  display : func(num_format)
+  display : func()
     {
-      var string =  sprintf(num_format, getprop("sim/model/watercannon/"~me.parameter));
+      var string =  sprintf(me.num_format, getprop("sim/model/watercannon/"~me.parameter));
       me.string.updateText(string);
     },
 
-  update: func(num_format)
+  update: func()
     {
-      me.display(num_format);
-      settimer (func me.update(num_format), 0.1);
+      me.display();
+      settimer (func me.update(), 0.1);
     },
 
 #7 caution
@@ -53,15 +54,15 @@ var digital_display =
 #20 snorkel
 };
 
-var pitch_indicator = digital_display.new("Cannon_Pitch", "cannon-pitch-glass", "position-deg", "0.00");
-var snorkel_depth_indicator = digital_display.new("Snorkel_Depth", "snorkel-depth-glass", "snorkel-depth", "0.00");
-var tank_volume_indicator = digital_display.new("Tank_Volume", "tank-volume-glass", "tank-volume", "000.00");
-var tank_weight_indicator = digital_display.new("Tank_Weight", "tank-weight-glass", "tank-weight", "00000");
+var pitch_indicator = digital_display.new("Cannon_Pitch", "cannon-pitch-glass", "position-deg", "0.00", "%1.2f");
+var snorkel_depth_indicator = digital_display.new("Snorkel_Depth", "snorkel-depth-glass", "snorkel-depth", "0.00", "%1.2f");
+var tank_volume_indicator = digital_display.new("Tank_Volume", "tank-volume-glass", "tank-volume", "000.00", "%3.2f");
+var tank_weight_indicator = digital_display.new("Tank_Weight", "tank-weight-glass", "tank-weight", "00000", "%5.0f");
 
-pitch_indicator.update("%1.2f");
-snorkel_depth_indicator.update("%1.2f");
-tank_volume_indicator.update("%3.2f");
-tank_weight_indicator.update("%5.0f");
+pitch_indicator.update();
+snorkel_depth_indicator.update();
+tank_volume_indicator.update();
+tank_weight_indicator.update();
 
 #################### watertank ####################
 

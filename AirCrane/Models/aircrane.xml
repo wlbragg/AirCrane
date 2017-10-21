@@ -211,12 +211,11 @@
     <object-name>structure</object-name>
     <object-name>supportaileron</object-name>
     <object-name>lampetail</object-name>
-
   </effect>
   
   <!-- working for Rembrandt -->
   <effect>
-    <inherits-from>Aircraft/AirCrane/Models/Effects/Glass/glass</inherits-from>
+    <inherits-from>Aircraft/AirCrane/Models/Effects/glass/glass</inherits-from>
     <object-name>vitres</object-name>
     <object-name>vitresporteG</object-name>
     <object-name>vitresporteD</object-name>
@@ -224,7 +223,7 @@
   
   <!-- Une ombre pour OSG -->
   <model>
-    <path>Aircraft/AirCrane/Models/shadow.xml</path>
+    <path>Aircraft/AirCrane/Models/Effects/shadows/shadow.xml</path>
     <offsets>
       <x-m>  0.0 </x-m>
       <y-m>  0.0 </y-m>
