@@ -23,6 +23,7 @@
     <signals include="/Aircraft/Generic/flightrecorder/components/position.xml"/>
     <signals include="/Aircraft/Generic/flightrecorder/components/controls.xml"/>
     <signals include="/Aircraft/Generic/flightrecorder/components/environment.xml"/>
+    <signals include="/Aircraft/Generic/flightrecorder/components/rotor.xml"/>
     <signals include="components/surfaces.xml"/>
 
     <!-- Gear -->

@@ -22,7 +22,7 @@
         </aicargo-dialog>
       </dialogs>
     </gui>
-    
+
     <model>
       <path archive="y">Aircraft/AirCrane/Models/aircrane.xml</path>
       <livery>
