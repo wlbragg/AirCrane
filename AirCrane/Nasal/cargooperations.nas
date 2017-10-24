@@ -1,3 +1,5 @@
+#################### inject cargo models into the scene ####################
+
 setlistener("/sim/signals/fdm-initialized", func (n) {
 
   #set initial position of the cargo models
@@ -27,7 +29,7 @@ setlistener("/sim/signals/fdm-initialized", func (n) {
   cargo_init();
 });
 
-#################### inject model into scene helper ####################
+#################### inject cargo models into the scene (helper) ####################
 
 var place_model = func(string, offset, desc, path, lat, lon, alt, heading, pitch, roll) {
 
