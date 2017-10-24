@@ -3,7 +3,7 @@
 <!--
   This is the Hard Docked portion of the cargo hauling capability.
   Any new cargo must be included here and organized like the current cargo is.
-  It also needs to be defined in Cargo-Hauling/long-line.xml and aircrane_cargo.xml in the fgdata AI system.
+  It also needs to be defined in Cargo-Hauling/long-line.xml and have an appropriate definition file - see cargo1.xml.
 -->
 
 <PropertyList>
@@ -14,9 +14,9 @@
     <condition>
       <and>
         <or>
-          <property>sim/model/cargo1-onhook</property>
-          <property>sim/model/cargo2-onhook</property>
-          <property>sim/model/cargo3-onhook</property>
+          <property>sim/cargo/cargo1-onhook</property>
+          <property>sim/cargo/cargo2-onhook</property>
+          <property>sim/cargo/cargo3-onhook</property>
         </or>
         <not>
           <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
@@ -36,7 +36,7 @@
     <name>cub-ground</name>
     <condition>
       <and>
-        <property>sim/model/cargo4-onhook</property>
+        <property>sim/cargo/cargo4-onhook</property>
         <not>
           <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
         </not>
@@ -55,7 +55,7 @@
     <name>ground-tank</name>
     <condition>
       <and>
-        <property>sim/model/cargo5-onhook</property>
+        <property>sim/cargo/cargo5-onhook</property>
         <not>
           <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
         </not>
@@ -74,7 +74,7 @@
     <name>ground-tank-large</name>
     <condition>
       <and>
-        <property>sim/model/cargo6-onhook</property>
+        <property>sim/cargo/cargo6-onhook</property>
         <not>
           <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
         </not>
@@ -93,7 +93,7 @@
     <name>ground-tank-tall</name>
     <condition>
       <and>
-        <property>sim/model/cargo7-onhook</property>
+        <property>sim/cargo/cargo7-onhook</property>
         <not>
           <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
         </not>
@@ -112,7 +112,7 @@
     <name>tank-stand</name>
     <condition>
       <and>
-        <property>sim/model/cargo8-onhook</property>
+        <property>sim/cargo/cargo8-onhook</property>
         <not>
           <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
         </not>
@@ -132,11 +132,11 @@
     <condition>
       <and>
         <or>
-          <property>sim/model/cargo9-onhook</property>
-          <property>sim/model/cargo10-onhook</property>
-          <property>sim/model/cargo11-onhook</property>
-          <property>sim/model/cargo12-onhook</property>
-          <property>sim/model/cargo13-onhook</property>
+          <property>sim/cargo/cargo9-onhook</property>
+          <property>sim/cargo/cargo10-onhook</property>
+          <property>sim/cargo/cargo11-onhook</property>
+          <property>sim/cargo/cargo12-onhook</property>
+          <property>sim/cargo/cargo13-onhook</property>
         </or>
         <not>
           <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
@@ -156,7 +156,7 @@
     <name>dump-truck</name>
     <condition>
       <and>
-        <property>sim/model/cargo14-onhook</property>
+        <property>sim/cargo/cargo14-onhook</property>
         <not>
           <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
         </not>

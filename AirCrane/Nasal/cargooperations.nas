@@ -1,14 +1,86 @@
+setlistener("/sim/signals/fdm-initialized", func (n) {
+
+  #set initial position of the cargo models
+  var lat = getprop("/position/latitude-deg");
+  var lon = getprop("/position/longitude-deg");  
+  var alt = 0;
+
+  #property tree location of cargo models
+  var model_path = "Aircraft/AirCrane/Models/Cargo-Hauling/";
+
+  #inject new cargo models into the scene
+  cargo1 =  place_model( "1",  0, "container-big", model_path~"cargo1.xml", lat, lon, alt, 0, 0, 0);
+  cargo2 =  place_model( "2",  1, "container-big", model_path~"cargo1.xml", lat, lon, alt, 0, 0, 0);
+  cargo3 =  place_model( "3",  2, "container-big", model_path~"cargo1.xml", lat, lon, alt, 0, 0, 0);
+  cargo4 =  place_model( "4",  3, "cub",           model_path~"cargo2.xml", lat, lon, alt, 0, 0, 0);
+  cargo5 =  place_model( "5",  4, "tank",          model_path~"cargo3.xml", lat, lon, alt, 0, 0, 0);
+  cargo6 =  place_model( "6",  5, "tank-large",    model_path~"cargo4.xml", lat, lon, alt, 0, 0, 0);
+  cargo7 =  place_model( "7",  6, "tank-tall",     model_path~"cargo5.xml", lat, lon, alt, 0, 0, 0);
+  cargo8 =  place_model( "8",  7, "tank-stand",    model_path~"cargo6.xml", lat, lon, alt, 0, 0, 0);
+  cargo9 =  place_model( "9",  8, "pine-tree",     model_path~"cargo7.xml", lat, lon, alt, 0, 0, 0);
+  cargo10 = place_model("10",  9, "pine-tree",     model_path~"cargo7.xml", lat, lon, alt, 0, 0, 0);
+  cargo11 = place_model("11", 10, "pine-tree",     model_path~"cargo7.xml", lat, lon, alt, 0, 0, 0);
+  cargo12 = place_model("12", 11, "pine-tree",     model_path~"cargo7.xml", lat, lon, alt, 0, 0, 0);
+  cargo13 = place_model("13", 12, "pine-tree",     model_path~"cargo7.xml", lat, lon, alt, 0, 0, 0);
+  cargo14 = place_model("14", 13, "dump-truck",    model_path~"cargo8.xml", lat, lon, alt, 0, 0, 0);
+
+  cargo_init();
+});
+
+#################### inject model into scene helper ####################
+
+var place_model = func(string, offset, desc, path, lat, lon, alt, heading, pitch, roll) {
+
+  var m = props.globals.getNode("models", 1);
+		  for (var i = 0; 1; i += 1)
+			  if (m.getChild("model", i, 0) == nil)
+				  break;
+  var model = m.getChild("model", i, 1);
+
+  setprop("/models/cargo/cargo["~offset~"]/latitude-deg", lat);
+  setprop("/models/cargo/cargo["~offset~"]/longitude-deg", lon);
+  setprop("/models/cargo/cargo["~offset~"]/elevation-ft", alt);
+  setprop("/models/cargo/cargo["~offset~"]/heading-deg", heading);
+  setprop("/models/cargo/cargo["~offset~"]/pitch-deg", pitch);
+  setprop("/models/cargo/cargo["~offset~"]/roll-deg", roll);
+  setprop("/models/cargo/cargo["~offset~"]/callsign", "cargo"~string);
+  setprop("/models/cargo/cargo["~offset~"]/description", desc);
+
+  var cargomodel = props.globals.getNode("/models/cargo/cargo["~offset~"]", 1);
+  var latN = cargomodel.getNode("latitude-deg",1);
+  var lonN = cargomodel.getNode("longitude-deg",1);
+  var altN = cargomodel.getNode("elevation-ft",1);
+  var headN = cargomodel.getNode("heading-deg",1);
+  var pitchN = cargomodel.getNode("pitch-deg",1);
+  var rollN = cargomodel.getNode("roll-deg",1);
+  var callsignN = cargomodel.getNode("callsign",1);
+  var descriptionN = cargomodel.getNode("description",1);
+
+  model.getNode("path", 1).setValue(path);
+  model.getNode("latitude-deg-prop", 1).setValue(latN.getPath());
+  model.getNode("longitude-deg-prop", 1).setValue(lonN.getPath());
+  model.getNode("elevation-ft-prop", 1).setValue(altN.getPath());
+  model.getNode("heading-deg-prop", 1).setValue(headN.getPath());
+  model.getNode("pitch-deg-prop", 1).setValue(pitchN.getPath());
+  model.getNode("roll-deg-prop", 1).setValue(rollN.getPath());
+  model.getNode("callsign-prop", 1).setValue(callsignN.getPath());
+  model.getNode("description-prop", 1).setValue(descriptionN.getPath());
+  model.getNode("load", 1).remove();
+
+  return model;
+}
+
 #################### cargo hauling ####################
 
 props.Node.new({ "controls/hook-assist":0 });
 props.globals.initNode("controls/hook-assist", 0, "BOOL" );
 props.Node.new({ "controls/cargo-release":0 });
 props.globals.initNode("controls/cargo-release", 0, "BOOL" );
-props.Node.new({ "sim/model/cargo-hook":0, "sim/model/cargo-auto-hook":0, "sim/model/cargo-on-hook":0, "sim/model/cargo-offset":0 });
-props.globals.initNode("sim/model/cargo-hook", 0, "BOOL" );
-props.globals.initNode("sim/model/cargo-auto-hook", 0, "BOOL" );
-props.globals.initNode("sim/model/cargo-on-hook", 0, "BOOL" );
-props.globals.initNode("sim/model/cargo-offset", 0, "DOUBLE" );
+props.Node.new({ "sim/cargo/cargo-hook":0, "sim/cargo/cargo-auto-hook":0, "sim/cargo/cargo-on-hook":0, "sim/cargo/cargo-offset":0 });
+props.globals.initNode("sim/cargo/cargo-hook", 0, "BOOL" );
+props.globals.initNode("sim/cargo/cargo-auto-hook", 0, "BOOL" );
+props.globals.initNode("sim/cargo/cargo-on-hook", 0, "BOOL" );
+props.globals.initNode("sim/cargo/cargo-offset", 0, "DOUBLE" );
 
 var AircraftCargo = {};
 var parents = [AircraftCargo];
@@ -32,21 +104,21 @@ var cargoWeight = 0;
 var cargoHarness = 0;
 var haulable = 0;
 
-var cargo_create = func () {
+var cargo_init = func () {
 
   var ct=0;
-	foreach(var cargoN; props.globals.getNode("/ai/models", 1).getChildren("aircraft")){
+  foreach(var cargoN; props.globals.getNode("/models/cargo", 1).getChildren("cargo")){
 		if (string.match(cargoN.getNode("callsign").getValue(), "cargo*")){
 			ct+=.001;
 			
-			setprop("sim/model/"~cargoN.getNode("callsign").getValue()~"-onhook", 0);
+			setprop("sim/cargo/"~cargoN.getNode("callsign").getValue()~"-onhook", 0);
 			setprop("controls/release-"~cargoN.getNode("callsign").getValue(), 0);
 
       if (getprop("/sim/model/aircrane/"~cargoN.getNode("callsign").getValue()~"/saved") == 1) {
-        cargoN.getNode("position/latitude-deg").setDoubleValue(getprop("/sim/model/aircrane/"~cargoN.getNode("callsign").getValue()~"/position/latitude-deg"));
-		    cargoN.getNode("position/longitude-deg").setDoubleValue(getprop("/sim/model/aircrane/"~cargoN.getNode("callsign").getValue()~"/position/longitude-deg"));	
-	      cargoN.getNode("position/altitude-ft").setDoubleValue(getprop("/sim/model/aircrane/"~cargoN.getNode("callsign").getValue()~"/position/altitude-ft"));
-        cargoN.getNode("orientation/true-heading-deg").setDoubleValue(getprop("/sim/model/aircrane/"~cargoN.getNode("callsign").getValue()~"/orientation/true-heading-deg"));
+        cargoN.getNode("latitude-deg").setDoubleValue(getprop("/sim/model/aircrane/"~cargoN.getNode("callsign").getValue()~"/position/latitude-deg"));
+        cargoN.getNode("longitude-deg").setDoubleValue(getprop("/sim/model/aircrane/"~cargoN.getNode("callsign").getValue()~"/position/longitude-deg"));	
+        cargoN.getNode("elevation-ft").setDoubleValue(getprop("/sim/model/aircrane/"~cargoN.getNode("callsign").getValue()~"/position/altitude-ft"));
+        cargoN.getNode("heading-deg").setDoubleValue(getprop("/sim/model/aircrane/"~cargoN.getNode("callsign").getValue()~"/orientation/true-heading-deg"));
         aircraft.data.add("/sim/model/aircrane/"~cargoN.getNode("callsign").getValue()~"/position/latitude-deg",
           "/sim/model/aircrane/"~cargoN.getNode("callsign").getValue()~"/position/longitude-deg",
           "/sim/model/aircrane/"~cargoN.getNode("callsign").getValue()~"/position/altitude-ft",
@@ -62,19 +134,19 @@ var cargo_create = func () {
 		      y = y * -1;
 		      x = x * factor;
 		      y = y * factor;
-		      cargoN.getNode("position/latitude-deg").setDoubleValue(getprop("position/latitude-deg")+y);
-		      cargoN.getNode("position/longitude-deg").setDoubleValue(getprop("position/longitude-deg")+x);
-		      cargoN.getNode("orientation/true-heading-deg").setDoubleValue(rand()*360);
-		      var elev_m = geo.elevation(cargoN.getNode("position/latitude-deg").getValue(), cargoN.getNode("position/longitude-deg").getValue());
-	        cargoN.getNode("position/altitude-ft").setDoubleValue(elev_m * 3.2808);
+          cargoN.getNode("latitude-deg").setDoubleValue(getprop("position/latitude-deg")+y);
+          cargoN.getNode("longitude-deg").setDoubleValue(getprop("position/longitude-deg")+x);
+          cargoN.getNode("heading-deg").setDoubleValue(rand()*360);
+          var elev_m = geo.elevation(cargoN.getNode("latitude-deg").getValue(), cargoN.getNode("longitude-deg").getValue());
+          cargoN.getNode("elevation-ft").setDoubleValue(elev_m * 3.2808);
         }
 
 	    print( "Cargo Created:" ~ 
-	        cargoN.getNode("callsign").getValue() ~ "\n" ~ 
-	        cargoN.getNode("position/latitude-deg").getValue() ~ "/" ~ 
-	        cargoN.getNode("position/longitude-deg").getValue() ~ "\nElev-ft:" ~ 
-	        cargoN.getNode("position/altitude-ft").getValue() ~ "\nHead:" ~ 
-	        cargoN.getNode("orientation/true-heading-deg").getValue() ~ "\n");
+        cargoN.getNode("callsign").getValue() ~ "\n" ~
+        cargoN.getNode("latitude-deg").getValue() ~ "/" ~ 
+        cargoN.getNode("longitude-deg").getValue() ~ "\nElev-ft:" ~ 
+        cargoN.getNode("elevation-ft").getValue() ~ "\nHead:" ~ 
+        cargoN.getNode("heading-deg").getValue() ~ "\n");
 		}
 	}
 
@@ -98,9 +170,9 @@ var rope_distance = func (dlat, dlon) {
 
 var cargo_tow = func () {
 
-  var hookNode = getprop("sim/model/cargo-hook");
-  var autoHookNode = getprop("sim/model/cargo-auto-hook");
-  var onHookNode = getprop("sim/model/cargo-on-hook");
+  var hookNode = getprop("sim/cargo/cargo-hook");
+  var autoHookNode = getprop("sim/cargo/cargo-auto-hook");
+  var onHookNode = getprop("sim/cargo/cargo-on-hook");
   var releaseNode = getprop("controls/cargo-release");
   var lonNode = getprop("/position/longitude-deg");
   var latNode = getprop("/position/latitude-deg");
@@ -111,8 +183,8 @@ var cargo_tow = func () {
   var onGround = getprop("gear/gear/wow") * getprop("gear/gear[1]/wow") * getprop("gear/gear[2]/wow");
   var longline = getprop("/sim/gui/dialogs/aicargo-dialog/connection");
   #var cable = getprop("/sim/gui/dialogs/aicargo-dialog/longline");
-  var cargoOnGround = getprop("/sim/model/cargo/hitsground");
-  var harnessPos = getprop("sim/model/cargo/harnessalt");
+  var cargoOnGround = getprop("/sim/cargo/hitsground");
+  var harnessPos = getprop("sim/cargo/harnessalt");
 
   if (longline) {
     hookHeight = 43;
@@ -124,10 +196,9 @@ var cargo_tow = func () {
 
 	if(onHookNode == 0 and (altNode < hookHeight) and cargoReleased == 0) {
     #gui.popupTip("In ranging", 1);
-		foreach(var cargoN; props.globals.getNode("/ai/models", 1).getChildren("aircraft")) {
+    foreach(var cargoN; props.globals.getNode("/models/cargo", 1).getChildren("cargo")) {
 			if (string.match(cargoN.getNode("callsign").getValue(), "cargo*")){
-        dist = rope_distance(cargoN.getNode("position/latitude-deg").getValue() - latNode, cargoN.getNode("position/longitude-deg").getValue() - lonNode);
-
+        dist = rope_distance(cargoN.getNode("latitude-deg").getValue() - latNode, cargoN.getNode("longitude-deg").getValue() - lonNode);
         if(dist <= hookDistance) {
 					gui.popupTip(cargoN.getNode("callsign").getValue()~" in range", 1);
 					if (hookNode == 1 or autoHookNode == 1) {
@@ -135,15 +206,15 @@ var cargo_tow = func () {
 						cargoParent = cargoN.getNode("callsign").getParent().getName() ~ "[" ~ cargoN.getNode("callsign").getParent().getIndex() ~ "]";
 						cargoName = cargoN.getNode("callsign").getValue();
 
-            setprop("sim/model/cargo-on-hook", 1);
-						setprop("sim/model/"~cargoName~"-onhook", 1);
+            setprop("sim/cargo/cargo-on-hook", 1);
+						setprop("sim/cargo/"~cargoName~"-onhook", 1);
 
             #maybe condition to only if longline
-            currentYaw = (headNode+(headNode-cargoN.getNode("orientation/true-heading-deg").getValue()))-headNode;
-            originalYaw = cargoN.getNode("orientation/true-heading-deg").getValue();
+            currentYaw = (headNode+(headNode-cargoN.getNode("heading-deg").getValue()))-headNode;
+            originalYaw = cargoN.getNode("heading-deg").getValue();
             if (currentYaw > 360) currentYaw = currentYaw - 360;
             if (currentYaw < 0) currentYaw = currentYaw + 360;
-            setprop("/sim/model/cargo/currentyaw", currentYaw);
+            setprop("/sim/cargo/currentyaw", currentYaw);
 
             if (cargoName == "cargo1") {
               cargoWeight = 5000;
@@ -203,15 +274,15 @@ var cargo_tow = func () {
 
             if (longline or haulable) {
 
-              setprop("sim/model/cargo/cargoharness", -cargoHarness);
-              setprop("sim/model/cargo/cargoheight", -cargoHeight);
-              setprop("ai/models/" ~ cargoParent ~ "/position/altitude-ft", -999);
-              setprop("sim/model/cargo/cargoalt", (-groundNode) + ropeLength + cargoHeight);
-              #setprop("sim/model/cargo/harnessalt", groundNode + ropeLength + cargoHeight - cargoHarness);
+              setprop("sim/cargo/cargoharness", -cargoHarness);
+              setprop("sim/cargo/cargoheight", -cargoHeight);
+              setprop("models/cargo/" ~ cargoParent ~ "/elevation-ft", -999);
+              setprop("sim/cargo/cargoalt", (-groundNode) + ropeLength + cargoHeight);
+              #setprop("sim/cargo/harnessalt", groundNode + ropeLength + cargoHeight - cargoHarness);
 
-              setprop("sim/model/cargo/rope/flex-force", 0.01);
-              setprop("sim/model/cargo/rope/damping", 0.6);
-              setprop("/sim/model/cargo/rope/stiffness", 3);
+              setprop("sim/cargo/rope/flex-force", 0.01);
+              setprop("sim/cargo/rope/damping", 0.6);
+              setprop("/sim/cargo/rope/stiffness", 3);
 
             }
 					} 
@@ -227,40 +298,41 @@ var cargo_tow = func () {
         currentYaw = (headNode+(headNode-originalYaw))-headNode;
         if (currentYaw > 360) currentYaw = currentYaw - 360;
         if (currentYaw < 0) currentYaw = currentYaw + 360;
-        setprop("/sim/model/cargo/currentyaw", currentYaw);
+        setprop("/sim/cargo/currentyaw", currentYaw);
 
-        setprop("sim/model/cargo/cargoalt", 0);
+        setprop("sim/cargo/cargoalt", 0);
 
         setprop("sim/weight[3]/weight-lb", cargoWeight);
       } else {
         gui.popupTip("Cargo too tall", 3);
         hooked = 0;
-        setprop("sim/model/cargo-hook", 0);
-        setprop("sim/model/cargo-on-hook", 0);
-			  setprop("sim/model/"~cargoName~"-onhook", 0);
+        setprop("sim/cargo/cargo-hook", 0);
+        setprop("sim/cargo/cargo-on-hook", 0);
+			  setprop("sim/cargo/"~cargoName~"-onhook", 0);
       }
     } else
       if (longline and !cargoOnGround) {
         currentYaw = (headNode+(headNode-originalYaw))-headNode;
         if (currentYaw > 360) currentYaw = currentYaw - 360;
         if (currentYaw < 0) currentYaw = currentYaw + 360;
-        setprop("/sim/model/cargo/currentyaw", currentYaw);
+        setprop("/sim/cargo/currentyaw", currentYaw);
 
-        setprop("sim/model/cargo/cargoalt", -cargoHarness);
-        setprop("sim/model/cargo/harnessalt", -cargoHarness - .1);
+        setprop("sim/cargo/cargoalt", -cargoHarness);
+        setprop("sim/cargo/harnessalt", -cargoHarness - .1);
 
         setprop("sim/weight[3]/weight-lb", cargoWeight);
       } else {
-        dist = rope_distance(getprop("/ai/models/" ~ cargoParent ~ "/position/latitude-deg") - latNode, getprop("/ai/models/" ~ cargoParent ~ "/position/longitude-deg") - lonNode);
+        dist = rope_distance(getprop("/models/cargo/" ~ cargoParent ~ "/latitude-deg") - latNode, getprop("/models/cargo/" ~ cargoParent ~ "/longitude-deg") - lonNode);
+        #dist = rope_distance(getprop("/ai/models/" ~ cargoParent ~ "/position/latitude-deg") - latNode, getprop("/ai/models/" ~ cargoParent ~ "/position/longitude-deg") - lonNode);
         if(dist <= hookDistance and cargoOnGround) {
           #TODO: add x and y transformation to move cargo (incrementally) as to appear to not move
           currentYaw = (headNode+(headNode-originalYaw))-headNode;
           if (currentYaw > 360) currentYaw = currentYaw - 360;
           if (currentYaw < 0) currentYaw = currentYaw + 360;
-          setprop("/sim/model/cargo/currentyaw", currentYaw);
+          setprop("/sim/cargo/currentyaw", currentYaw);
 
-          setprop("sim/model/cargo/cargoalt", (-groundNode) + ropeLength + cargoHeight);
-          #setprop("sim/model/cargo/harnessalt", ropeLength + cargoHeight - cargoHarness);
+          setprop("sim/cargo/cargoalt", (-groundNode) + ropeLength + cargoHeight);
+          #setprop("sim/cargo/harnessalt", ropeLength + cargoHeight - cargoHarness);
 
           setprop("sim/weight[3]/weight-lb", 0);
         } else {
@@ -269,10 +341,10 @@ var cargo_tow = func () {
           currentYaw = (headNode+(headNode-originalYaw))-headNode;
           if (currentYaw > 359) currentYaw = currentYaw - 360;
           if (currentYaw < 0) currentYaw = currentYaw + 360;
-          setprop("/sim/model/cargo/currentyaw", currentYaw);
+          setprop("/sim/cargo/currentyaw", currentYaw);
 
-          setprop("sim/model/cargo/cargoalt", (-groundNode) + ropeLength + cargoHeight);
-          setprop("sim/model/cargo/harnessalt", -cargoHarness - .1);
+          setprop("sim/cargo/cargoalt", (-groundNode) + ropeLength + cargoHeight);
+          setprop("sim/cargo/harnessalt", -cargoHarness - .1);
 
           setprop("sim/weight[3]/weight-lb", cargoWeight);
         }
@@ -281,13 +353,13 @@ var cargo_tow = func () {
     #gui.popupTip(cargoName~" in tow", 1);
 		if (releaseNode == 1 and onHookNode == 1) {
       if (onGround or (longline and cargoOnGround)) {
-        setprop("sim/model/cargo-on-hook", 0);
+        setprop("sim/cargo/cargo-on-hook", 0);
         setprop("controls/cargo-release", 0);
 			  hooked = 0;
-        setprop("sim/model/cargo-hook", 0);
+        setprop("sim/cargo/cargo-hook", 0);
 			  cargoReleased = 1;
 			  gui.popupTip("Cargo released", 3);
-			  setprop("sim/model/"~cargoName~"-onhook", 0);
+			  setprop("sim/cargo/"~cargoName~"-onhook", 0);
 			  setprop("controls/release-"~cargoName, 1);
       } else {
         gui.popupTip("Cargo not on ground", 1);
@@ -300,8 +372,8 @@ var cargo_tow = func () {
 	  }
 	  #release auto.hook by pressing hook
 	  if (hookNode == 1 and autoHookNode == 1) {
-      setprop("sim/model/cargo-auto-hook", 0);
-      setprop("sim/model/cargo-hook", 0);
+      setprop("sim/cargo/cargo-auto-hook", 0);
+      setprop("sim/cargo/cargo-hook", 0);
 	  }
   }
 
@@ -311,13 +383,13 @@ var cargo_tow = func () {
       setprop("sim/weight[3]/weight-lb", 0);
 
       #TODO: needs a listener condition for (stiff) cable VS (flexible) rope 
-      #setprop("/sim/model/cargo/rope/factor", 0.19);
-      #setprop("/sim/model/cargo/rope/offset", -1.1);
-      #setprop("/sim/model/cargo/rope/bendforce", 50);
-      #setprop("/sim/model/cargo/rope/correction", -.01);
-      setprop("/sim/model/cargo/rope/flex-force", 0.09);
-      setprop("/sim/model/cargo/rope/damping", 0.6);
-      setprop("/sim/model/cargo/rope/stiffness", 9);
+      #setprop("/sim/cargo/rope/factor", 0.19);
+      #setprop("/sim/cargo/rope/offset", -1.1);
+      #setprop("/sim/cargo/rope/bendforce", 50);
+      #setprop("/sim/cargo/rope/correction", -.01);
+      setprop("/sim/cargo/rope/flex-force", 0.09);
+      setprop("/sim/cargo/rope/damping", 0.6);
+      setprop("/sim/cargo/rope/stiffness", 9);
       
       var x = math.cos((headNode+90)*0.0174533);
       var y = math.sin((headNode+90)*0.0174533);
@@ -325,22 +397,20 @@ var cargo_tow = func () {
       x = x * .0000239;
       y = y * .0000239;
 
-      #setprop("/ai/models/" ~ cargoParent ~ "/position/altitude-ft", groundElevFt);
-      setprop("/ai/models/" ~ cargoParent ~ "/position/altitude-ft", geo.elevation(latNode-y, lonNode-x) * 3.2808);
+      setprop("/models/cargo/" ~ cargoParent ~ "/elevation-ft", geo.elevation(latNode-y, lonNode-x) * 3.2808);
       if (!longline)
-        setprop("/ai/models/" ~ cargoParent ~ "/orientation/true-heading-deg", headNode);
+        setprop("/models/cargo/" ~ cargoParent ~ "/heading-deg", headNode);
       else
-        setprop("/ai/models/" ~ cargoParent ~ "/orientation/true-heading-deg", originalYaw);
-      setprop("/ai/models/" ~ cargoParent ~ "/position/latitude-deg", latNode-y);
-      setprop("/ai/models/" ~ cargoParent ~ "/position/longitude-deg", lonNode-x);
-
+        setprop("/models/cargo/" ~ cargoParent ~ "/heading-deg", originalYaw);
+        setprop("/models/cargo/" ~ cargoParent ~ "/latitude-deg", latNode-y);
+        setprop("/models/cargo/" ~ cargoParent ~ "/longitude-deg", lonNode-x);
 
       if (getprop("/sim/model/aircrane/"~cargoName~"/saved")) {
         gui.popupTip(cargoName~" position saved", 1);
-        setprop("/sim/model/aircrane/"~cargoName~"/position/latitude-deg", getprop("/ai/models/" ~ cargoParent ~ "/position/latitude-deg"));
-        setprop("/sim/model/aircrane/"~cargoName~"/position/longitude-deg", getprop("/ai/models/" ~ cargoParent ~ "/position/longitude-deg"));
-        setprop("/sim/model/aircrane/"~cargoName~"/position/altitude-ft", getprop("/ai/models/" ~ cargoParent ~ "/position/altitude-ft"));
-        setprop("/sim/model/aircrane/"~cargoName~"/orientation/true-heading-deg", getprop("/ai/models/" ~ cargoParent ~ "/orientation/true-heading-deg"));
+        setprop("/sim/model/aircrane/"~cargoName~"/position/latitude-deg", getprop("/models/cargo/" ~ cargoParent ~ "/latitude-deg"));
+        setprop("/sim/model/aircrane/"~cargoName~"/position/longitude-deg", getprop("/models/cargo/" ~ cargoParent ~ "/longitude-deg"));
+        setprop("/sim/model/aircrane/"~cargoName~"/position/altitude-ft", getprop("/models/cargo/" ~ cargoParent ~ "/elevation-ft"));
+        setprop("/sim/model/aircrane/"~cargoName~"/orientation/true-heading-deg", getprop("/models/cargo/" ~ cargoParent ~ "/heading-deg"));
         aircraft.data.add("/sim/model/aircrane/"~cargoName~"/position/latitude-deg",
                           "/sim/model/aircrane/"~cargoName~"/position/longitude-deg",
                           "/sim/model/aircrane/"~cargoName~"/position/altitude-ft",
@@ -353,7 +423,7 @@ var cargo_tow = func () {
       #TODO: Make this to update GUI correctly 
       #var aic = getprop("/sim/gui/dialogs/aicargo-dialog/ai-path");
       #if (aic != nil and aic == cargoParent) {
-      #  setprop("/sim/gui/dialogs/aicargo-dialog/selected_cargo_lat", getprop("/ai/models/" ~ cargoParent ~ "/position/latitude-deg"));
+      #  setprop("/sim/gui/dialogs/aicargo-dialog/selected_cargo_lat", getprop("/models/cargo" ~ cargoParent ~ "/position/latitude-deg"));#new location not AI
       #  setprop("/sim/gui/dialogs/aicargo-dialog/selected_cargo_lon", getprop("/ai/models/" ~ cargoParent ~ "/position/longitude-deg"));
       #  setprop("/sim/gui/dialogs/aicargo-dialog/selected_cargo_alt", getprop("/ai/models/" ~ cargoParent ~ "/position/altitude-ft"));
       #  setprop("/sim/gui/dialogs/aicargo-dialog/selected_cargo_head", getprop("/ai/models/" ~ cargoParent ~ "/orientation/true-heading-deg"));
@@ -363,5 +433,3 @@ var cargo_tow = func () {
 	settimer(cargo_tow, interval);
 
 }
-
-setlistener("/sim/signals/fdm-initialized", cargo_create);

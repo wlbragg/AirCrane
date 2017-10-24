@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<!--
+  This is the model injected into the scene for the cargo hauling capability.
+  Any new cargo must be have a file like this one.
+  It also needs to be defined in Cargo-Hauling/long-line.xml and in Cargo-Hauling/hard-docked.xml.
+-->
+
+<PropertyList>
+
+  <model>
+    <path>shipping-container-big.ac</path>
+    <name>container-big</name>
+  </model>
+
+</PropertyList>

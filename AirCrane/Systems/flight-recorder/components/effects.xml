@@ -61,59 +61,59 @@
 
   <signal>
     <type>bool</type>
-    <property type="string">/sim/model/cargo1-onhook</property>
+    <property type="string">/sim/cargo/cargo1-onhook</property>
   </signal>
   <signal>
     <type>bool</type>
-    <property type="string">/sim/model/cargo2-onhook</property>
+    <property type="string">/sim/cargo/cargo2-onhook</property>
   </signal>
   <signal>
     <type>bool</type>
-    <property type="string">/sim/model/cargo3-onhook</property>
+    <property type="string">/sim/cargo/cargo3-onhook</property>
   </signal>
   <signal>
     <type>bool</type>
-    <property type="string">/sim/model/cargo4-onhook</property>
+    <property type="string">/sim/cargo/cargo4-onhook</property>
   </signal>
   <signal>
     <type>bool</type>
-    <property type="string">/sim/model/cargo5-onhook</property>
+    <property type="string">/sim/cargo/cargo5-onhook</property>
   </signal>
   <signal>
     <type>bool</type>
-    <property type="string">/sim/model/cargo6-onhook</property>
+    <property type="string">/sim/cargo/cargo6-onhook</property>
   </signal>
   <signal>
     <type>bool</type>
-    <property type="string">/sim/model/cargo7-onhook</property>
+    <property type="string">/sim/cargo/cargo7-onhook</property>
   </signal>
   <signal>
     <type>bool</type>
-    <property type="string">/sim/model/cargo8-onhook</property>
+    <property type="string">/sim/cargo/cargo8-onhook</property>
   </signal>
   <signal>
     <type>bool</type>
-    <property type="string">/sim/model/cargo9-onhook</property>
+    <property type="string">/sim/cargo/cargo9-onhook</property>
   </signal>
   <signal>
     <type>bool</type>
-    <property type="string">/sim/model/cargo10-onhook</property>
+    <property type="string">/sim/cargo/cargo10-onhook</property>
   </signal>
   <signal>
     <type>bool</type>
-    <property type="string">/sim/model/cargo11-onhook</property>
+    <property type="string">/sim/cargo/cargo11-onhook</property>
   </signal>
   <signal>
     <type>bool</type>
-    <property type="string">/sim/model/cargo12-onhook</property>
+    <property type="string">/sim/cargo/cargo12-onhook</property>
   </signal>
   <signal>
     <type>bool</type>
-    <property type="string">/sim/model/cargo13-onhook</property>
+    <property type="string">/sim/cargo/cargo13-onhook</property>
   </signal>
   <signal>
     <type>bool</type>
-    <property type="string">/sim/model/cargo14-onhook</property>
+    <property type="string">/sim/cargo/cargo14-onhook</property>
   </signal>
 
   <signal>
@@ -145,15 +145,15 @@
     <!-- Sprayer - Water Drop - Cargo -->
   <signal>
     <type>bool</type>
-    <property type="string">/sim/model/cargo-hook</property>
+    <property type="string">/sim/cargo/cargo-hook</property>
   </signal>
   <signal>
     <type>bool</type>
-    <property type="string">/sim/model/cargo-auto-hook</property>
+    <property type="string">/sim/cargo/cargo-auto-hook</property>
   </signal>
   <signal>
     <type>bool</type>
-    <property type="string">/sim/model/cargo-on-hook</property>
+    <property type="string">/sim/cargo/cargo-on-hook</property>
   </signal>
   <signal>
     <type>float</type>
@@ -165,7 +165,7 @@
   </signal>
   <signal>
     <type>bool</type>
-    <property type="string">/sim/model/cargo/rope/ropehitsground</property>
+    <property type="string">/sim/cargo/rope/ropehitsground</property>
   </signal>
   <signal>
     <type>bool</type>
@@ -224,11 +224,11 @@
   </signal>
   <signal>
     <type>int8</type>
-    <property type="string">/sim/model/cargo/hitsground</property>
+    <property type="string">/sim/cargo/hitsground</property>
   </signal>
   <signal>
     <type>double</type>
-    <property type="string">/sim/model/cargo/harnessalt</property>
+    <property type="string">/sim/cargo/harnessalt</property>
   </signal>
 
   <signal>

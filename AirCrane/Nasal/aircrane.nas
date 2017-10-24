@@ -473,9 +473,9 @@ setlistener("/sim/signals/fdm-initialized", func {
           var pos_lat = click_pos.lat();
           var pos_lon = click_pos.lon();
           var click_alt = geo.elevation(click_pos.lat(), click_pos.lon()) * 3.28;
-          setprop("/ai/models/"~aic~"/position/latitude-deg", pos_lat);
-          setprop("/ai/models/"~aic~"/position/longitude-deg", pos_lon);
-          setprop("/ai/models/"~aic~"/position/altitude-ft", click_alt);
+          setprop("/models/cargo/"~aic~"/latitude-deg", pos_lat);
+          setprop("/models/cargo/"~aic~"/longitude-deg", pos_lon);
+          setprop("/models/cargo/"~aic~"/elevation-ft", click_alt);
           setprop("/sim/gui/dialogs/aicargo-dialog/selected_cargo_lat", pos_lat);
           setprop("/sim/gui/dialogs/aicargo-dialog/selected_cargo_lon", pos_lon);
           setprop("/sim/gui/dialogs/aicargo-dialog/selected_cargo_alt", click_alt);
@@ -514,9 +514,6 @@ setlistener("/sim/signals/fdm-initialized", func {
     #wildfire.resolve_retardant_drop(pos, 10, 0);
  });
 
-  # the attitude indicator needs pressure
-  # settimer(func { setprop("engines/engine/rpm", 3000) }, 8);
-
   var tankop_timer = maketimer(0.25, func{tank_operations()});
 
   if (getprop("/sim/model/firetank/enabled"))
@@ -531,6 +528,9 @@ setlistener("/sim/signals/fdm-initialized", func {
           setprop("sim/model/firetank/opentankdoors", 0);
         }
       });
+
+  # the attitude indicator needs pressure
+  # settimer(func { setprop("engines/engine/rpm", 3000) }, 8);
 
   main_loop();
 });

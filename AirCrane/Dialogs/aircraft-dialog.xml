@@ -250,7 +250,7 @@
             <script>
               var p = "sim/gui/dialogs/aicargo-dialog/longline";
               setprop(p, var i = 0);
-              gui.popupTip("Line type " ~ (i ? "Rope" : "Cable"));
+              gui.popupTip("Line type " ~ (i ? "Cable" : "Rope"));
               setprop("sim/model/aircrane/longline_flag_0",1);
 							setprop("sim/model/aircrane/longline_flag_1",0);
             </script>
@@ -274,7 +274,7 @@
             <script>
               var p = "sim/gui/dialogs/aicargo-dialog/longline";
               setprop(p, var i = 1);
-              gui.popupTip("Line type " ~ (i ? "Rope" : "Cable"));
+              gui.popupTip("Line type " ~ (i ? "Cable" : "Rope"));
               setprop("sim/model/aircrane/longline_flag_0",0);
 							setprop("sim/model/aircrane/longline_flag_1",1);
             </script>

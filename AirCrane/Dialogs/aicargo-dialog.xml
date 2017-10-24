@@ -8,7 +8,7 @@
       #var DIALOG_ROOT  = "/sim/gui/dialogs/aicargo-dialog";
 
       # Fill in the cargo names combo box.
-      var cargo = props.globals.getNode("/ai/models", 1).getChildren("aircraft");
+      var cargo = props.globals.getNode("/models/cargo", 1).getChildren("cargo");
 
       #if (size(cargo) == 0) {
       #  # No cargo found - no point filling in rest of dialog
@@ -117,10 +117,24 @@
 	    <halign>left</halign>
 	    <label>Cargo</label>
     </text>
-    <checkbox>
+    <text>
       <col>1</col>
       <row>0</row>
       <halign>left</halign>
+      <property>/sim/gui/dialogs/aicargo-dialog/selected_cargo_desc</property>
+      <format>%s</format>
+      <live>true</live>
+      <color>
+        <red>0.9</red>
+        <green>0.4</green>
+        <blue>0.2</blue>
+        <alpha>1</alpha>
+      </color>
+    </text>
+    <checkbox>
+      <col>2</col>
+      <row>0</row>
+      <halign>right</halign>
       <label>Persistent</label>
       <property>/sim/gui/dialogs/aicargo-dialog/save</property>
       <live>true</live>
@@ -159,7 +173,7 @@
       </binding>
     </checkbox>
     <checkbox>
-      <col>2</col>
+      <col>3</col>
       <row>0</row>
       <halign>right</halign>
       <label>Random</label>
@@ -188,16 +202,17 @@
 		        x = x * factor;
 		        y = y * factor;
 
-            setprop("/ai/models/"~aic~"/position/latitude-deg", getprop("position/latitude-deg")+y);
-            setprop("/ai/models/"~aic~"/position/longitude-deg", getprop("position/longitude-deg")+x);
-		        setprop("/ai/models/"~aic~"/orientation/true-heading-deg", rand()*360);
-		        var elev_m = geo.elevation(getprop("/ai/models/"~aic~"/position/latitude-deg"), getprop("/ai/models/"~aic~"/position/longitude-deg"));
-            setprop("/ai/models/"~aic~"/position/altitude-ft", elev_m * 3.2808);
+            setprop("/models/cargo/"~aic~"/latitude-deg", getprop("position/latitude-deg")+y);
+            setprop("/models/cargo/"~aic~"/longitude-deg", getprop("position/longitude-deg")+x);
+            setprop("/models/cargo/"~aic~"/heading-deg", rand()*360);
+            var elev_m = geo.elevation(getprop("/models/cargo/"~aic~"/latitude-deg"), getprop("/models/cargo/"~aic~"/longitude-deg"));
+            setprop("/models/cargo/"~aic~"/elevation-ft", elev_m * 3.2808);
 
-            setprop("/sim/gui/dialogs/aicargo-dialog/selected_cargo_lat", getprop("/ai/models/"~aic~"/position/latitude-deg"));
-            setprop("/sim/gui/dialogs/aicargo-dialog/selected_cargo_lon", getprop("/ai/models/"~aic~"/position/longitude-deg"));
-            setprop("/sim/gui/dialogs/aicargo-dialog/selected_cargo_alt", getprop("/ai/models/"~aic~"/position/altitude-ft"));
-            setprop("/sim/gui/dialogs/aicargo-dialog/selected_cargo_head",getprop("/ai/models/"~aic~"/orientation/true-heading-deg"));
+            setprop("/sim/gui/dialogs/aicargo-dialog/selected_cargo_lat", getprop("/models/cargo/"~aic~"/latitude-deg"));
+            setprop("/sim/gui/dialogs/aicargo-dialog/selected_cargo_lon", getprop("/models/cargo/"~aic~"/longitude-deg"));
+            setprop("/sim/gui/dialogs/aicargo-dialog/selected_cargo_alt", getprop("/models/cargo/"~aic~"/elevation-ft"));
+            setprop("/sim/gui/dialogs/aicargo-dialog/selected_cargo_head",getprop("/models/cargo/"~aic~"/heading-deg"));
+            setprop("/sim/gui/dialogs/aicargo-dialog/selected_cargo_desc",getprop("/models/cargo/"~aic~"/description"));
           }
 
           aircraft.data.add("/sim/model/aircrane/"~cargo~"/saved",
@@ -228,7 +243,7 @@
         <command>nasal</command>
         <script>
           var aic_id = "none";
-          var cargo = props.globals.getNode( "/ai/models", 1 ).getChildren( "aircraft" );
+          var cargo = props.globals.getNode( "/models/cargo", 1 ).getChildren( "cargo" );
           var cargo_choice = getprop("/sim/gui/dialogs/aicargo-dialog/selected-cargo");
           forindex (var cargo_index; cargo) {
             var cg = cargo[cargo_index];
@@ -237,10 +252,12 @@
               setprop("/sim/gui/dialogs/aicargo-dialog/ai-path", aic_id);
             }
           }
-          setprop("/sim/gui/dialogs/aicargo-dialog/selected_cargo_lat",  getprop("/ai/models/"~aic_id~"/position/latitude-deg"));
-          setprop("/sim/gui/dialogs/aicargo-dialog/selected_cargo_lon",  getprop("/ai/models/"~aic_id~"/position/longitude-deg"));
-          setprop("/sim/gui/dialogs/aicargo-dialog/selected_cargo_alt",  getprop("/ai/models/"~aic_id~"/position/altitude-ft"));
-          setprop("/sim/gui/dialogs/aicargo-dialog/selected_cargo_head", getprop("/ai/models/"~aic_id~"/orientation/true-heading-deg"));
+
+          setprop("/sim/gui/dialogs/aicargo-dialog/selected_cargo_lat",  getprop("/models/cargo/"~aic_id~"/latitude-deg"));
+          setprop("/sim/gui/dialogs/aicargo-dialog/selected_cargo_lon",  getprop("/models/cargo/"~aic_id~"/longitude-deg"));
+          setprop("/sim/gui/dialogs/aicargo-dialog/selected_cargo_alt",  getprop("/models/cargo/"~aic_id~"/elevation-ft"));
+          setprop("/sim/gui/dialogs/aicargo-dialog/selected_cargo_head", getprop("/models/cargo/"~aic_id~"/heading-deg"));
+          setprop("/sim/gui/dialogs/aicargo-dialog/selected_cargo_desc", getprop("/models/cargo/"~aic_id~"/description"));
 
           var cargo = getprop("/sim/gui/dialogs/aicargo-dialog/selected-cargo");
           if (getprop("/sim/model/aircrane/"~cargo~"/saved") == 1) {
@@ -279,7 +296,7 @@
           var aic = getprop("/sim/gui/dialogs/aicargo-dialog/ai-path");
           if (reset_cargo){
             setprop("/sim/model/aircrane/"~cargo~"/saved", 0);
-            setprop("/ai/models/"~aic~"/position/altitude-ft", -1000);
+            setprop("/models/cargo/"~aic~"/elevation-ft", -1000);
             setprop("/sim/gui/dialogs/aicargo-dialog/selected_cargo_alt",  0);
             setprop("/sim/gui/dialogs/aicargo-dialog/save", 0);
             setprop("/sim/gui/dialogs/aicargo-dialog/random", 0);
@@ -301,7 +318,7 @@
       <layout>vbox</layout>
       <text>
         <halign>left</halign>
-        <label>AI Object:</label>
+        <label>Model Object:</label>
         <enable>
           <not>
             <property>/sim/rendering/rembrandt/enabled</property>

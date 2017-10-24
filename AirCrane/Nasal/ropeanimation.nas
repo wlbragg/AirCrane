@@ -8,19 +8,19 @@ var longline_animation = func {
 
 	var overland = getprop("gear/gear/ground-is-solid");
 	var altitude = getprop("position/altitude-agl-ft");
-	var alt_agl = altitude * 0.3048 + getprop("/sim/model/cargo/rope/offset");
+	var alt_agl = altitude * 0.3048 + getprop("/sim/cargo/rope/offset");
 	var n_segments = 90;
-	var segment_length = getprop("/sim/model/cargo/rope/factor");
-  var cargo_on_hook = getprop("sim/model/cargo-on-hook");
-  var cargo_height = getprop("/sim/model/cargo/cargoheight");
-  var cargo_harness = getprop("/sim/model/cargo/cargoharness");
+	var segment_length = getprop("/sim/cargo/rope/factor");
+  var cargo_on_hook = getprop("sim/cargo/cargo-on-hook");
+  var cargo_height = getprop("/sim/cargo/cargoheight");
+  var cargo_harness = getprop("/sim/cargo/cargoharness");
 
   if (overland)
     {
       if (((alt_agl - (n_segments * segment_length)) + cargo_harness + cargo_height) < 0.0)
-        setprop("/sim/model/cargo/hitsground", 1);
+        setprop("/sim/cargo/hitsground", 1);
       else
-        setprop("/sim/model/cargo/hitsground", 0);
+        setprop("/sim/cargo/hitsground", 0);
 
       if (((alt_agl - (n_segments * segment_length)) + cargo_harness) < 0.0)
 			  onground_flag = 1;
@@ -31,16 +31,16 @@ var longline_animation = func {
 	  {
       #TODO: decide how to handel this event, slowly allow to sink?
 	    onground_flag = 0;
-      setprop("/sim/model/cargo/hitsground", 0);
+      setprop("/sim/cargo/hitsground", 0);
 	  }
 
-	var flex_force = getprop("/sim/model/cargo/rope/flex-force");
-	var damping = getprop("/sim/model/cargo/rope/damping");
-	var stiffness = getprop("/sim/model/cargo/rope/stiffness");
+	var flex_force = getprop("/sim/cargo/rope/flex-force");
+	var damping = getprop("/sim/cargo/rope/damping");
+	var stiffness = getprop("/sim/cargo/rope/stiffness");
 	var sum_angle = 0.0;
 	var dt = getprop("/sim/time/delta-sec");
-  var bend_force = getprop("/sim/model/cargo/rope/bendforce");
-	var angle_correction = getprop("/sim/model/cargo/rope/correction");
+  var bend_force = getprop("/sim/cargo/rope/bendforce");
+	var angle_correction = getprop("/sim/cargo/rope/correction");
 
 	if (onground_flag == 0)
 		{
@@ -66,7 +66,7 @@ var longline_animation = func {
 
 	if (onground_flag == 0)
 	  {
-      var current_angle = getprop("/sim/model/cargo/rope/pitch1");
+      var current_angle = getprop("/sim/cargo/rope/pitch1");
       var ang_error = ref_ang1 - current_angle;
 
       rope_angle_v_array[0] += ang_error * stiffness * dt;
@@ -74,9 +74,9 @@ var longline_animation = func {
 
       var ang_speed = rope_angle_v_array[0];
 
-      setprop("/sim/model/cargo/rope/pitch1", current_angle + dt * ang_speed);
+      setprop("/sim/cargo/rope/pitch1", current_angle + dt * ang_speed);
 
-      var current_roll = getprop("/sim/model/cargo/rope/roll1");
+      var current_roll = getprop("/sim/cargo/rope/roll1");
       ang_error = ref_ang2 - current_roll;
 
 
@@ -86,13 +86,13 @@ var longline_animation = func {
       ang_speed = rope_angle_vr_array[0];
 
       var next_roll =  current_roll + dt * ang_speed;
-      setprop("/sim/model/cargo/rope/roll1", next_roll);
+      setprop("/sim/cargo/rope/roll1", next_roll);
 
       # kink excitation
       if (!cargo_on_hook)
         {
           var kink =  -(next_roll - rope_angle_r_array[0]);
-          setprop("/sim/model/cargo/rope/roll2",  kink) ;
+          setprop("/sim/cargo/rope/roll2",  kink) ;
           rope_angle_r_array[1] = kink;
         }
     } 
@@ -100,8 +100,8 @@ var longline_animation = func {
     if (!cargo_on_hook) 
       {
         #lets cargo align with parallel rope if not conditioned as above
-        setprop("/sim/model/cargo/rope/pitch1", ref_ang1);
-        setprop("/sim/model/cargo/rope/roll1", ref_ang2);
+        setprop("/sim/cargo/rope/pitch1", ref_ang1);
+        setprop("/sim/cargo/rope/roll1", ref_ang2);
       }
 
 	var roll_target = 0.0;
@@ -134,7 +134,7 @@ var longline_animation = func {
 
 		  if (onground_flag == 0)
 		    {
-		      current_angle = getprop("/sim/model/cargo/rope/pitch"~(i+1));
+		      current_angle = getprop("/sim/cargo/rope/pitch"~(i+1));
 		      ang_error = angle - current_angle;
 
 
@@ -143,7 +143,7 @@ var longline_animation = func {
 
 		      ang_speed = rope_angle_v_array[i];
 
-		      setprop("/sim/model/cargo/rope/pitch"~(i+1), current_angle + dt * ang_speed);
+		      setprop("/sim/cargo/rope/pitch"~(i+1), current_angle + dt * ang_speed);
 
 		      # the transverse dynamics is largely waves excited by the helicopter
 
@@ -163,14 +163,14 @@ var longline_animation = func {
 
 		      ang_speed = rope_angle_vr_array[i];
 
-		      setprop("/sim/model/cargo/rope/roll"~(i+1), roll_target);
+		      setprop("/sim/cargo/rope/roll"~(i+1), roll_target);
 		    }
       else
         if (!cargo_on_hook)
           {
             #causes rope sections to angle parallel to ground
-            setprop("/sim/model/cargo/rope/pitch"~(i+1), angle + angle_correction);
-            setprop("/sim/model/cargo/rope/roll"~(i+1), 0.0);
+            setprop("/sim/cargo/rope/pitch"~(i+1), angle + angle_correction);
+            setprop("/sim/cargo/rope/roll"~(i+1), 0.0);
           }
   }
 
@@ -178,7 +178,7 @@ var longline_animation = func {
 
   for (var i = 0; i< n_segments; i=i+1)
     {
-      rope_angle_r_array[i] = getprop("/sim/model/cargo/rope/roll"~(i+1));
+      rope_angle_r_array[i] = getprop("/sim/cargo/rope/roll"~(i+1));
     }
 
 }

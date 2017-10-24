@@ -174,7 +174,7 @@
       <desc>Auto Attach Cargo</desc>
       <binding>
         <command>property-toggle</command>
-        <property>/sim/model/cargo-auto-hook</property>
+        <property>/sim/cargo/cargo-auto-hook</property>
       </binding>
     </key>
 
@@ -183,7 +183,7 @@
       <desc>Attach Cargo</desc>
       <binding>
         <command>property-assign</command>
-        <property>sim/model/cargo-hook</property>
+        <property>sim/cargo/cargo-hook</property>
         <value type="bool">true</value>
       </binding>
     </key>
