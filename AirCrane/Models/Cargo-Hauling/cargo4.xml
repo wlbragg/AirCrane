@@ -9,8 +9,29 @@
 <PropertyList>
 
   <model>
-    <path>ground-tank-large.ac</path>
-    <name>tank-large</name>
+    <path>cub-ground.ac</path>
+    <name>cub-ground</name>
+    <condition>
+      <and>
+        <property>sim/cargo/enabled</property>
+        <or>
+          <not>
+            <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
+          </not>
+          <and>
+            <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
+            <not>        
+              <property>sim/cargo/cargo4-onhook</property>
+            </not>
+          </and>
+        </or>
+      </and>
+    </condition>
   </model>
+
+  <!--animation>
+    <object-name>cub-ground</object-name>
+    <enable-hot type="bool">false</enable-hot>
+  </animation-->
 
 </PropertyList>

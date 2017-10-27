@@ -232,11 +232,6 @@
     </offsets>
   </model>
 
-  <!-- Hard Docked Cargo -->
-  <model>
-    <path>Aircraft/AirCrane/Models/Cargo-Hauling/hard-dock.xml</path>
-  </model>
-
   <!-- Long Line Cargo -->
   <model>
     <path>Aircraft/AirCrane/Models/Cargo-Hauling/long-line.xml</path>
@@ -301,7 +296,7 @@
     <offsets>
       <x-m> -2.900 </x-m>
       <y-m>  0.000 </y-m>
-      <z-m>  1.100 </z-m>
+      <z-m> -3.101 </z-m>
       <roll-deg> 90 </roll-deg>
     </offsets>
   </model>
@@ -311,7 +306,7 @@
     <offsets>
       <x-m> -2.606 </x-m>
       <y-m>  0.000 </y-m>
-      <z-m> -3.500 </z-m>
+      <z-m> -7.701 </z-m>
    </offsets>
   </model>
   

@@ -24,8 +24,8 @@
         <property>/sim/crashed</property>
       </not>
       <less-than>
-        <property>position/altitude-agl-ft</property>
-        <value>70</value>
+        <property>position/true-agl-ft</property>
+        <value>40</value>
       </less-than>
       <greater-than>
         <property>rotors/main/rpm</property>
@@ -55,8 +55,8 @@
 
     <counter>
       <particles-per-sec>
-        <property>position/altitude-agl-ft</property>
-        <factor>-40</factor>
+        <property>position/true-agl-ft</property>
+        <factor>40</factor>
         <offset-m>2000</offset-m>
       </particles-per-sec>
     </counter>
@@ -163,7 +163,7 @@
   <animation>
     <type>translate</type>
     <object-name>rotorwashidle</object-name>
-    <property>/position/altitude-agl-ft</property>
+    <property>position/true-agl-ft</property>
     <factor>-0.3048</factor>
     <center>
       <x-m>0</x-m>

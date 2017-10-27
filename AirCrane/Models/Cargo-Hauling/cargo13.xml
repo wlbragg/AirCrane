@@ -9,8 +9,8 @@
 <PropertyList>
 
   <model>
-    <path>shipping-container-big.ac</path>
-    <name>shipping-container-big</name>
+    <path>pine-tree.ac</path>
+    <name>pine-tree</name>
     <condition>
       <and>
         <property>sim/cargo/enabled</property>
@@ -21,7 +21,7 @@
           <and>
             <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
             <not>        
-              <property>sim/cargo/cargo2-onhook</property>
+              <property>sim/cargo/cargo13-onhook</property>
             </not>
           </and>
         </or>
@@ -30,7 +30,7 @@
   </model>
 
   <!--animation>
-    <object-name>shipping-container-big</object-name>
+    <object-name>pine-tree</object-name>
     <enable-hot type="bool">false</enable-hot>
   </animation-->
 

@@ -29,8 +29,8 @@
 				<property>/sim/crashed</property>
 			</not>
 			<less-than>
-				<property>/position/altitude-agl-ft</property>
-				<value>50</value>
+        <property>position/true-agl-ft</property>
+				<value>40</value>
 			</less-than>
 			<greater-than>
 				<property>/rotors/main/rpm</property>
@@ -170,7 +170,7 @@
   <animation>
     <type>translate</type>
     <object-name>rotorwashpower</object-name>
-    <property>/position/altitude-agl-ft</property>
+    <property>position/true-agl-ft</property>
     <factor>-0.3048</factor>
     <center>
       <x-m>0</x-m>

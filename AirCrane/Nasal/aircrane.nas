@@ -473,12 +473,15 @@ setlistener("/sim/signals/fdm-initialized", func {
           var pos_lat = click_pos.lat();
           var pos_lon = click_pos.lon();
           var click_alt = geo.elevation(click_pos.lat(), click_pos.lon()) * 3.28;
+          var alt_offset = getprop("/models/cargo/"~aic~"/elev-offset");
           setprop("/models/cargo/"~aic~"/latitude-deg", pos_lat);
           setprop("/models/cargo/"~aic~"/longitude-deg", pos_lon);
-          setprop("/models/cargo/"~aic~"/elevation-ft", click_alt);
+          #setprop("/models/cargo/"~aic~"/elevation-ft", click_alt);
+setprop("/models/cargo/"~aic~"/elevation-ft/", click_alt + alt_offset);
           setprop("/sim/gui/dialogs/aicargo-dialog/selected_cargo_lat", pos_lat);
           setprop("/sim/gui/dialogs/aicargo-dialog/selected_cargo_lon", pos_lon);
-          setprop("/sim/gui/dialogs/aicargo-dialog/selected_cargo_alt", click_alt);
+          #setprop("/sim/gui/dialogs/aicargo-dialog/selected_cargo_alt", click_alt);
+setprop("/sim/gui/dialogs/aicargo-dialog/selected_cargo_alt", click_alt + alt_offset);
           setprop("/sim/gui/dialogs/aicargo-dialog/selected_cargo_head", getprop("/sim/gui/dialogs/aicargo-dialog/selected_cargo_head"));
 
           if (getprop("/sim/gui/dialogs/aicargo-dialog/save")) {

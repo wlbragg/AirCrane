@@ -8,6 +8,26 @@
 
 <PropertyList>
 
+  <!--model>
+    <path>shipping-container-big.ac</path>
+    <name>cargo</name>
+    <condition>
+      <and>
+        <or>
+          <property>sim/cargo/cargo1-onhook</property>
+          <property>sim/cargo/cargo2-onhook</property>
+          <property>sim/cargo/cargo3-onhook</property>
+        </or>
+        <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
+      </and>
+    </condition>
+    <offsets>
+      <x-m> -1.362 </x-m>
+      <y-m> -0.055 </y-m>
+      <z-m> -17.883 </z-m>
+    </offsets>
+  </model-->
+
   <model>
     <path>shippingcontainerbig.ac</path>
     <condition>
@@ -131,7 +151,7 @@
   </model>
 
   <model>
-    <path>pinetrees.ac</path>
+    <path>pinetree.ac</path>
     <condition>
       <and>
         <or>
@@ -146,7 +166,7 @@
     </condition>
   </model>
   <model>
-    <path>pinetreesharness.ac</path>
+    <path>pinetreeharness.ac</path>
     <condition>
       <and>
         <or>
