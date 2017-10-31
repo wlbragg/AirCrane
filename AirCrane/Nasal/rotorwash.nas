@@ -29,12 +29,12 @@ var rotor_wash_loop = func {
   var red_diffuse = getprop("/rendering/scene/diffuse/red");
 
 	if (land) {
-		setprop("/sim/model/aircrane/effects/particles/rotorwash/redcombinedstart", red_diffuse*.4);
-		setprop("/sim/model/aircrane/effects/particles/rotorwash/greencombinedstart", red_diffuse*.4);
-		setprop("/sim/model/aircrane/effects/particles/rotorwash/bluecombinedstart", red_diffuse*.4);
-		setprop("/sim/model/aircrane/effects/particles/rotorwash/redcombinedend", red_diffuse*.7);
-		setprop("/sim/model/aircrane/effects/particles/rotorwash/greencombinedend", red_diffuse*.7);
-		setprop("/sim/model/aircrane/effects/particles/rotorwash/bluecombinedend", red_diffuse*.7);
+		setprop("/sim/model/aircrane/effects/particles/rotorwash/redcombinedstart", red_diffuse*.49);
+		setprop("/sim/model/aircrane/effects/particles/rotorwash/greencombinedstart", red_diffuse*.36);
+		setprop("/sim/model/aircrane/effects/particles/rotorwash/bluecombinedstart", red_diffuse*.17);
+		setprop("/sim/model/aircrane/effects/particles/rotorwash/redcombinedend", red_diffuse*.79);
+		setprop("/sim/model/aircrane/effects/particles/rotorwash/greencombinedend", red_diffuse*.66);
+		setprop("/sim/model/aircrane/effects/particles/rotorwash/bluecombinedend", red_diffuse*.47);
 	} else {
 		setprop("/sim/model/aircrane/effects/particles/rotorwash/redcombinedstart", red_diffuse*.65);
 		setprop("/sim/model/aircrane/effects/particles/rotorwash/greencombinedstart", red_diffuse*.80);
