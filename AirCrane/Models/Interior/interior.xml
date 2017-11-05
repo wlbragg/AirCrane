@@ -73,6 +73,9 @@
   <!-- Pilote -->
   <model>
     <path>Aircraft/AirCrane/Models/Pilot/pilot.xml</path>
+    <condition> 
+      <property>/sim/model/occupants</property>
+    </condition>
     <offsets>
       <x-m> -8.892 </x-m>
       <y-m>  0.521 </y-m>

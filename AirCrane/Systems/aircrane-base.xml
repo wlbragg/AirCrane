@@ -16,6 +16,7 @@
    
     <model>
       <path archive="y">Aircraft/AirCrane/Models/aircrane.xml</path>
+      <occupants type="bool">true</occupants>
       <livery>
         <file type="string">default</file>
         <index type="int">0</index>
@@ -161,8 +162,6 @@
       <harnessalt type="double">0.0</harnessalt>
       <cargoheight type="double">0.0</cargoheight>
       <cargoharness type="double">6.0</cargoharness>
-      <currentposx type="double">0.0</currentposx>
-      <currentposy type="double">0.0</currentposy>
       <rope>
         <flex-force type="double">0.09</flex-force>
         <factor type="double">0.19</factor>
@@ -171,7 +170,6 @@
         <damping type="double">0.6</damping>
         <stiffness type="double">9.0</stiffness>
         <correction type="double">-.01</correction>
-        <ropehitsground type="bool">true</ropehitsground>
         <pitch1  type="double">0.0</pitch1>
         <pitch2  type="double">0.0</pitch2>
         <pitch3  type="double">0.0</pitch3>
@@ -385,6 +383,7 @@
       <path>/rotors/main/bladesvisible</path>
       <path>/sim/model/aircrane/effects/particles/enabled</path>
       <path>/sim/model/aircrane/effects/shadow</path>
+      <path>/sim/model/occupants</path>
       <!--path>/sim/model/aircrane/effects/als-shadow</path-->
       <!-- cargo hauling feature -->
       <path>/sim/gui/dialogs/aicargo-dialog/longline</path>
