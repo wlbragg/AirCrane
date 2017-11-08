@@ -23,7 +23,6 @@ var cargo20 = {};
 var cargo21 = {};
 var cargo22 = {};
 var cargo23 = {};
-var cargo24 = {};
 
 setlistener("/sim/signals/fdm-initialized", func (n) {
 
@@ -80,7 +79,6 @@ setlistener("/sim/signals/fdm-initialized", func (n) {
   cargo21 = place_model("21", 20, "tower-sec-five",   model_path, 19, 1000,13.05,16.49, lat, lon, alt-90,   0, 0, 0, 0);
   cargo22 = place_model("22", 21, "tower-sec-six",    model_path, 20,  950,12.25,16.49, lat, lon, alt-90,   0, 0, 0, 0);
   cargo23 = place_model("23", 22, "tower-sec-seven",  model_path, 21,  900,12.82,16.49, lat, lon, alt-90,   0, 0, 0, 0);
-  cargo24 = place_model("24", 23, "tower-radio",      model_path,  0, 3000,161.21,16.49,lat, lon, alt-90,   0, 0, 0, 0);
 
   cargo_init();
 });
