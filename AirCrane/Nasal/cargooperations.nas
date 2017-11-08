@@ -171,9 +171,11 @@ var cargoHeight = 0;
 var cargoWeight = 0;
 var cargoHarness = 0;
 var haulable = 0;
-
+var stack = 0;
+var stackConnected = 0;
 var currentLat = 0;
 var currentLon = 0;
+var elevoffset = 0;
 
 var cargo_init = func () {
 
@@ -276,7 +278,7 @@ var cargo_tow = func () {
 			  if (string.match(cargoN.getNode("callsign").getValue(), "cargo*")){
           dist = checkDistance(latNode, lonNode, cargoN.getNode("latitude-deg").getValue(), cargoN.getNode("longitude-deg").getValue());
 
-setprop("a-dist", dist);
+setprop("a-dist-capture", dist);
 
           #0.022 needs to be variable for either hard docked distance or long line distance, 0.022 = long line
           if(dist <= 0.022) {
@@ -288,7 +290,7 @@ setprop("a-dist", dist);
 						    hooked = 1;
 
 						    cargoParent = cargoN.getNode("callsign").getParent().getName() ~ "[" ~ cargoN.getNode("callsign").getParent().getIndex() ~ "]";
-						    cargoName = cargoN.getNode("callsign").getValue();
+                cargoName = cargoN.getNode("callsign").getValue();
 
                 setprop("sim/cargo/cargo-on-hook", 1);
 						    setprop("sim/cargo/"~cargoName~"-onhook", 1);
@@ -302,6 +304,10 @@ setprop("a-dist", dist);
 
                 cargoWeight = props.globals.getNode("/models/cargo/" ~ cargoParent ~ "/weight").getValue();
                 cargoHarness = props.globals.getNode("/models/cargo/" ~ cargoParent ~ "/harness").getValue();
+                elevoffset = props.globals.getNode("/models/cargo/" ~ cargoParent ~ "/elev-offset").getValue();
+                stack = props.globals.getNode("/models/cargo/" ~ cargoParent ~ "/stack").getValue();
+
+setprop("a-stack-inhook", stack);
 
                 if (cargoHeight < 3.0)
                   haulable = 1;
@@ -311,6 +317,8 @@ setprop("a-dist", dist);
                 if (longline or haulable) {
                   
                   longline_animation(1);
+                  currentLat = props.globals.getNode("/models/cargo/" ~ cargoParent ~ "/latitude-deg").getValue();
+                  currentLon = props.globals.getNode("/models/cargo/" ~ cargoParent ~ "/longitude-deg").getValue();
 
                   setprop("sim/cargo/cargoharness", -cargoHarness);
                   setprop("sim/cargo/cargoheight", -cargoHeight);
@@ -335,12 +343,13 @@ setprop("A-altNode", altNode);
 setprop("A-cargoHeight", cargoHeight);
 setprop("A-hookHeight", hookHeight);
 setprop("A-hookHeight-cargoHeight", hookHeight + (cargoHeight * 3.28));
+setprop("A-cargoOnGround", cargoOnGround);
+setprop("A-currentLat", currentLat);
+setprop("A-currentLon", currentLon);
 
                 }
               }
-
 					  }
-
 				  }
 			  }
       }
@@ -396,10 +405,20 @@ setprop("A-hookHeight-cargoHeight", hookHeight + (cargoHeight * 3.28));
         setprop("/models/cargo/" ~ cargoParent ~ "/latitude-deg", currentLat);
         setprop("/models/cargo/" ~ cargoParent ~ "/longitude-deg", currentLon);
 
-        var stack = getprop("/models/cargo/"~cargoParent~"/stack");
-        if (stack) {
+setprop("a-stackinoffground", stack);
+
+        if (stack > 0) {
+setprop("a-instack", "yes");      
+          #get elevation of top of stack object
+          #get elevation at bottom of cargo object
+          #if difference between the two elevations are less than a small amount "Connect"
           dist = checkDistance(currentLat, currentLon, getprop("/models/cargo/cargo[" ~ stack ~ "]/latitude-deg"), getprop("/models/cargo/cargo[" ~ stack ~ "]/longitude-deg"));
-          if (dist <= 0.002) gui.popupTip(cargoName~" Connected", 1);
+setprop("a-dist-stack", dist);          
+          if (dist <= 0.002) {
+            gui.popupTip(cargoName~" Connection in range", 1);
+            stackConnected = 1;
+          } else
+            stackConnected = 0;
         }
 
       } else {
@@ -410,7 +429,7 @@ setprop("A-hookHeight-cargoHeight", hookHeight + (cargoHeight * 3.28));
         #TODO calculate distance from aircraft hitch to cargo hitch (including rope length + harness and height)
 
         dist = checkDistance(latNode, lonNode, getprop("/models/cargo/" ~ cargoParent ~ "/latitude-deg"), getprop("/models/cargo/" ~ cargoParent ~ "/longitude-deg"));
-setprop("a-dist", dist);
+setprop("a-dist-pull", dist);
         if (dist <= .016) {
 
           #gui.popupTip("in on ground not moving", 1);
@@ -420,7 +439,6 @@ setprop("a-dist", dist);
           if (currentYaw < 0) currentYaw = currentYaw + 360;
           setprop("/sim/cargo/currentyaw", currentYaw);
 
-          var elevoffset = getprop("/models/cargo/"~cargoParent~"/elev-offset");
           setprop("/models/cargo/"~cargoParent~"/elevation-ft", geo.elevation(latNode, lonNode) * 3.2808 + elevoffset);
           
           setprop("sim/weight[3]/weight-lb", 0);
@@ -441,13 +459,12 @@ setprop("a-dist", dist);
           #TODO: 
           #add x and y transformation to move cargo (incrementally) towards aircrane as rope is taut and pulling cargo
           #this needs to be calculated precisely
-          currentLat = currentLat - ((currentLat-latNode)*.011);
-          currentLon = currentLon - ((currentLon-lonNode)*.011);
+          currentLat = currentLat - ((currentLat-latNode)*.02);
+          currentLon = currentLon - ((currentLon-lonNode)*.02);
 
           #θ=arctan(11)=45˚
           #ϕ=arctan(2–√1)≈55˚
 
-          var elevoffset = getprop("/models/cargo/"~cargoParent~"/elev-offset");
           setprop("/models/cargo/"~cargoParent~"/elevation-ft", geo.elevation(currentLat, currentLon) * 3.2808 + elevoffset);
           setprop("/models/cargo/" ~ cargoParent ~ "/latitude-deg", currentLat);
           setprop("/models/cargo/" ~ cargoParent ~ "/longitude-deg", currentLon);
@@ -455,13 +472,13 @@ setprop("a-dist", dist);
           #add pitch and roll to rope and cargo to match dirction of pulling transformation
           var bearing = bearing(currentLat, currentLon, latNode, lonNode);
 setprop("a-bearing", bearing);
-
+          
         }
       }
 
     #gui.popupTip(cargoName~" in tow", 1);
 		if (releaseNode == 1 and onHookNode == 1) {
-      if (onGround or (longline and cargoOnGround)) {
+      if (onGround or (longline and cargoOnGround) or (stack and stackConnected)) {
         setprop("sim/cargo/cargo-on-hook", 0);
         setprop("controls/cargo-release", 0);
 			  hooked = 0;
@@ -470,9 +487,11 @@ setprop("a-bearing", bearing);
 			  gui.popupTip("Cargo released", 3);
 			  setprop("sim/cargo/"~cargoName~"-onhook", 0);
 			  setprop("controls/release-"~cargoName, 1);
+        if (stackConnected)
+          gui.popupTip(cargoName~" Connected", 1);
       } else {
-        gui.popupTip("Cargo not on ground", 1);
-        setprop("controls/cargo-release", cargoReleased = 0);
+          gui.popupTip("Cargo not on ground", 1);
+          setprop("controls/cargo-release", cargoReleased = 0);
       }
 		}
 	} else {
@@ -508,13 +527,18 @@ setprop("a-bearing", bearing);
       #y = y * .0000239;
 
       if (!longline) {
-        var elevoffset = getprop("/models/cargo/"~cargoParent~"/elev-offset");
         setprop("/models/cargo/"~cargoParent~"/elevation-ft", geo.elevation(latNode, lonNode) * 3.2808 + elevoffset);
         setprop("/models/cargo/"~cargoParent~"/heading-deg", headNode);
         setprop("/models/cargo/"~cargoParent~"/latitude-deg", latNode);
         setprop("/models/cargo/"~cargoParent~"/longitude-deg", lonNode);
-      } else
+      } else {
         setprop("/models/cargo/"~cargoParent~"/heading-deg", originalYaw);
+        if (stack and stackConnected) {
+          setprop("/models/cargo/"~cargoParent~"/elevation-ft", getprop("/models/cargo/cargo[" ~ stack ~ "]/elevation-ft") + (getprop("/models/cargo/cargo[" ~ stack ~ "]/height")*3.28));
+          setprop("/models/cargo/"~cargoParent~"/latitude-deg", getprop("/models/cargo/cargo[" ~ stack ~ "]/latitude-deg"));
+          setprop("/models/cargo/"~cargoParent~"/longitude-deg", getprop("/models/cargo/cargo[" ~ stack ~ "]/longitude-deg"));
+        }
+      }
 
       if (getprop("/sim/model/aircrane/"~cargoName~"/saved")) {
         gui.popupTip(cargoName~" position saved", 1);
