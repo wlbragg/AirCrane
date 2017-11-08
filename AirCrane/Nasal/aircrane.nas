@@ -397,7 +397,6 @@ var main_loop = func {
   update_rotor_cone_angle();
 
   rotor_wash_loop();
-  longline_animation();
   flexhose_animation();
 
   persistent = getprop("/sim/model/aircrane/persistent") * getprop("gear/gear/wow") * getprop("gear/gear[1]/wow") * getprop("gear/gear[2]/wow");
@@ -476,12 +475,10 @@ setlistener("/sim/signals/fdm-initialized", func {
           var alt_offset = getprop("/models/cargo/"~aic~"/elev-offset");
           setprop("/models/cargo/"~aic~"/latitude-deg", pos_lat);
           setprop("/models/cargo/"~aic~"/longitude-deg", pos_lon);
-          #setprop("/models/cargo/"~aic~"/elevation-ft", click_alt);
-setprop("/models/cargo/"~aic~"/elevation-ft/", click_alt + alt_offset);
+          setprop("/models/cargo/"~aic~"/elevation-ft/", click_alt + alt_offset);
           setprop("/sim/gui/dialogs/aicargo-dialog/selected_cargo_lat", pos_lat);
           setprop("/sim/gui/dialogs/aicargo-dialog/selected_cargo_lon", pos_lon);
-          #setprop("/sim/gui/dialogs/aicargo-dialog/selected_cargo_alt", click_alt);
-setprop("/sim/gui/dialogs/aicargo-dialog/selected_cargo_alt", click_alt + alt_offset);
+          setprop("/sim/gui/dialogs/aicargo-dialog/selected_cargo_alt", click_alt + alt_offset);
           setprop("/sim/gui/dialogs/aicargo-dialog/selected_cargo_head", getprop("/sim/gui/dialogs/aicargo-dialog/selected_cargo_head"));
 
           if (getprop("/sim/gui/dialogs/aicargo-dialog/save")) {

@@ -95,8 +95,7 @@
    <type>translate</type>
    <object-name>AllShadow</object-name>
    <property>sim/multiplay/generic/float[2]</property>
-   <factor> -1 </factor>
-   <offset-m>0</offset-m>
+   <factor>-0.3048</factor>
    <axis>
      <x> 0 </x>
      <y> 0 </y>

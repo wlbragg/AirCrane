@@ -2,8 +2,7 @@
 
 <!--
   This is the model injected into the scene for the cargo hauling capability.
-  Any new cargo must be have a file like this one.
-  It also needs to be defined in Cargo-Hauling/long-line.xml and in Cargo-Hauling/hard-docked.xml.
+  Any new cargo must be have a file like this one and a definition in Cargo-Hauling/long-line.xml.
 -->
 
 <PropertyList>
@@ -18,6 +17,11 @@
           <not>
             <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
           </not>
+          <and>
+            <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
+            <property>/sim/cargo/hitsground</property>
+            <property>sim/cargo/cargo9-onhook</property>
+          </and>
           <and>
             <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
             <not>        

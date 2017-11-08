@@ -3,7 +3,7 @@
 <!--
   This is the Long Line portion of the cargo hauling capability.
   Any new cargo must be included here and organized like the current cargo is.
-  It also needs to be defined in Cargo-Hauling/hard-docked.xml and have an appropriate definition file - see cargo1.xml.
+  It also needs to have its own definition file - see cargo1.xml.
 -->
 
 <PropertyList>
@@ -21,12 +21,19 @@
         <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
       </and>
     </condition>
-    <offsets>
-      <x-m> -1.362 </x-m>
-      <y-m> -0.055 </y-m>
-      <z-m> -17.883 </z-m>
-    </offsets>
   </model-->
+#-2.3872
+#-0.07038
+#-2.73697
+
+#-1.362
+#-0.055
+#-17.883
+
+#=
+#-3.749
+#-0.125
+#-20.619
 
   <model>
     <path>shippingcontainerbig.ac</path>
@@ -195,6 +202,196 @@
     <condition>
       <and>
         <property>sim/cargo/cargo14-onhook</property>
+        <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
+      </and>
+    </condition>
+  </model>
+
+  <model>
+    <path>microrelay.ac</path>
+    <condition>
+      <and>
+        <property>sim/cargo/cargo15-onhook</property>
+        <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
+      </and>
+    </condition>
+  </model>
+  <model>
+    <path>microrelayharness.ac</path>
+    <condition>
+      <and>
+        <property>sim/cargo/cargo15-onhook</property>
+        <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
+      </and>
+    </condition>
+  </model>
+
+  <model>
+    <path>microwave.ac</path>
+    <condition>
+      <and>
+        <property>sim/cargo/cargo16-onhook</property>
+        <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
+      </and>
+    </condition>
+  </model>
+  <model>
+    <path>microwaveharness.ac</path>
+    <condition>
+      <and>
+        <property>sim/cargo/cargo16-onhook</property>
+        <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
+      </and>
+    </condition>
+  </model>
+
+  <model>
+    <path>towersectionone.ac</path>
+    <condition>
+      <and>
+        <property>sim/cargo/cargo17-onhook</property>
+        <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
+      </and>
+    </condition>
+  </model>
+  <model>
+    <path>towersectiononeharness.ac</path>
+    <condition>
+      <and>
+        <property>sim/cargo/cargo17-onhook</property>
+        <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
+      </and>
+    </condition>
+  </model>
+
+  <model>
+    <path>towersectiontwo.ac</path>
+    <condition>
+      <and>
+        <property>sim/cargo/cargo18-onhook</property>
+        <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
+      </and>
+    </condition>
+  </model>
+  <model>
+    <path>towersectiontwoharness.ac</path>
+    <condition>
+      <and>
+        <property>sim/cargo/cargo18-onhook</property>
+        <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
+      </and>
+    </condition>
+  </model>
+
+  <model>
+    <path>towersectionthree.ac</path>
+    <condition>
+      <and>
+        <property>sim/cargo/cargo19-onhook</property>
+        <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
+      </and>
+    </condition>
+  </model>
+  <model>
+    <path>towersectionthreeharness.ac</path>
+    <condition>
+      <and>
+        <property>sim/cargo/cargo19-onhook</property>
+        <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
+      </and>
+    </condition>
+  </model>
+
+  <model>
+    <path>towersectionfour.ac</path>
+    <condition>
+      <and>
+        <property>sim/cargo/cargo20-onhook</property>
+        <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
+      </and>
+    </condition>
+  </model>
+  <model>
+    <path>towersectionfourharness.ac</path>
+    <condition>
+      <and>
+        <property>sim/cargo/cargo20-onhook</property>
+        <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
+      </and>
+    </condition>
+  </model>
+
+  <model>
+    <path>towersectionfive.ac</path>
+    <condition>
+      <and>
+        <property>sim/cargo/cargo21-onhook</property>
+        <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
+      </and>
+    </condition>
+  </model>
+  <model>
+    <path>towersectionfiveharness.ac</path>
+    <condition>
+      <and>
+        <property>sim/cargo/cargo21-onhook</property>
+        <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
+      </and>
+    </condition>
+  </model>
+
+  <model>
+    <path>towersectionsix.ac</path>
+    <condition>
+      <and>
+        <property>sim/cargo/cargo22-onhook</property>
+        <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
+      </and>
+    </condition>
+  </model>
+  <model>
+    <path>towersectionsixharness.ac</path>
+    <condition>
+      <and>
+        <property>sim/cargo/cargo22-onhook</property>
+        <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
+      </and>
+    </condition>
+  </model>
+
+  <model>
+    <path>towersectionseven.ac</path>
+    <condition>
+      <and>
+        <property>sim/cargo/cargo23-onhook</property>
+        <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
+      </and>
+    </condition>
+  </model>
+  <model>
+    <path>towersectionsevenharness.ac</path>
+    <condition>
+      <and>
+        <property>sim/cargo/cargo23-onhook</property>
+        <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
+      </and>
+    </condition>
+  </model>
+
+  <model>
+    <path>towerradio.ac</path>
+    <condition>
+      <and>
+        <property>sim/cargo/cargo24-onhook</property>
+        <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
+      </and>
+    </condition>
+  </model>
+  <model>
+    <path>towerradioharness.ac</path>
+    <condition>
+      <and>
+        <property>sim/cargo/cargo24-onhook</property>
         <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
       </and>
     </condition>
@@ -8572,8 +8769,19 @@
     <object-name>cargoharness</object-name>
     <condition>
       <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
+      <not>
+        <property>/sim/cargo/hitsground</property>
+      </not>
     </condition>
   </animation>
+  <!--animation>
+    <type>select</type>
+    <object-name>cargo</object-name>
+    <object-name>cargoharness</object-name>
+    <condition>
+      <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
+    </condition>
+  </animation-->
   <animation>
     <type>rotate</type>
     <object-name>cargo</object-name>
@@ -8642,5 +8850,80 @@
       <z>1</z>
     </axis>
   </animation>
+
+  <!-- roll connection on ground -->
+  <animation>
+    <type>rotate</type>
+    <object-name>RopeSegment01</object-name>
+    <property>sim/cargo/roll-deg</property>
+    <factor>.50</factor>
+    <offset-deg>0</offset-deg>   
+    <center>
+      <x-m>-1.38048</x-m>
+      <y-m> 0.00551</y-m>
+      <z-m>-1.10667</z-m>
+    </center>
+    <axis>
+      <x>1</x>
+      <y>0</y>
+      <z>0</z>
+    </axis>
+  </animation>
+  
+  <animation>
+    <type>rotate</type>
+    <object-name>RopeSegment02</object-name>
+    <property>sim/cargo/roll-deg</property>
+    <factor>.50</factor>
+    <offset-deg>0</offset-deg>   
+    <center>
+      <x-m>-1.38048</x-m>
+      <y-m> 0.00551</y-m>
+      <z-m>-1.27142</z-m>
+    </center>
+    <axis>
+      <x>1</x>
+      <y>0</y>
+      <z>0</z>
+    </axis>
+  </animation>
+  <!-- pitch connection on ground -->
+  <animation>
+    <type>rotate</type>
+    <object-name>RopeSegment01</object-name>
+    <property>sim/cargo/pitch-deg</property>
+    <factor>-.50</factor>
+    <offset-deg>0</offset-deg>   
+    <center>
+      <x-m>-1.38048</x-m>
+      <y-m> 0.00551</y-m>
+      <z-m>-1.10667</z-m>
+    </center>
+    <axis>
+      <x>0</x>
+      <y>1</y>
+      <z>0</z>
+    </axis>
+  </animation>
+  
+  <animation>
+    <type>rotate</type>
+    <object-name>RopeSegment02</object-name>
+    <property>sim/cargo/pitch-deg</property>
+    <factor>-.50</factor>
+    <offset-deg>0</offset-deg>   
+    <center>
+      <x-m>-1.38048</x-m>
+      <y-m> 0.00551</y-m>
+      <z-m>-1.27142</z-m>
+    </center>
+    <axis>
+      <x>0</x>
+      <y>1</y>
+      <z>0</z>
+    </axis>
+  </animation>
+
+
 
 </PropertyList>

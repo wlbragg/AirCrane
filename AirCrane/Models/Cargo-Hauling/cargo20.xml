@@ -8,8 +8,8 @@
 <PropertyList>
 
   <model>
-    <path>ground-tank.ac</path>
-    <name>ground-tank</name>
+    <path>tower-section-four.ac</path>
+    <name>tower-section-four</name>
     <condition>
       <and>
         <property>sim/cargo/enabled</property>
@@ -20,12 +20,12 @@
           <and>
             <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
             <property>/sim/cargo/hitsground</property>
-            <property>sim/cargo/cargo5-onhook</property>
+            <property>sim/cargo/cargo20-onhook</property>
           </and>
           <and>
             <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
             <not>        
-              <property>sim/cargo/cargo5-onhook</property>
+              <property>sim/cargo/cargo20-onhook</property>
             </not>
           </and>
         </or>
@@ -34,7 +34,7 @@
   </model>
 
   <!--animation>
-    <object-name>ground-tank</object-name>
+    <object-name>shipping-container-big</object-name>
     <enable-hot type="bool">false</enable-hot>
   </animation-->
 

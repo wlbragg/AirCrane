@@ -61,6 +61,7 @@
     <control-setting axis="/controls/engines/engine[0]/throttle" value="1"/>
   </cruise>
 
+<!--airfoil-lift-coefficient="3.65" airfoil-drag-coefficient0="0.0025" airfoil-drag-coefficient1="0.030"-->
   <rotor name="main" 
          x="2.606" y="0.00" z="1.383"
          nx="0.087" ny="0" nz="1."
@@ -91,7 +92,7 @@
          number-of-parts="8"
          rel-len-where-incidence-is-measured="0.7"
          rel-len-blade-start="0.29"
-         airfoil-lift-coefficient="3.65" airfoil-drag-coefficient0="0.0025" airfoil-drag-coefficient1="0.030"
+         airfoil-lift-coefficient="5.15" airfoil-drag-coefficient0="0.0025" airfoil-drag-coefficient1="0.030"
          incidence-stall-zero-speed="31" incidence-stall-half-sonic-speed="19"
          lift-factor-stall="0.18"
          stall-change-over="3"
@@ -145,13 +146,17 @@
   </rotor>
 
   <!-- only the engine power below is a known good value -->
-  <rotorgear max-power-engine="4200"
+  <!--
+    max-power-engine="4200"
+    yasimliftfactor="110"
+  -->
+  <rotorgear max-power-engine="7100"
              max-power-rotor-brake="185"
              rotorgear-friction="3.7"
              engine-prop-factor="0.01"
              engine-accel-limit="4"
              yasimdragfactor="60"
-             yasimliftfactor="110">
+             yasimliftfactor="140">
              <control-input control="ROTORGEARENGINEON"       axis="/controls/engines/engine[0]/magnetos"/>
              <control-input control="ROTORBRAKE"              axis="/controls/rotor/brake"        src0="0.0" src1="1.0" dst0="0.0" dst1="1.0"/>
              <control-input control="ROTORRELTARGET"          axis="/controls/rotor/reltarget"    src0="0.0" src1="2.0" dst0="0.0" dst1="2.0"/>

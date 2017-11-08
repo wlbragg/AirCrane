@@ -4,25 +4,52 @@ var rope_angle_v_array = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 var rope_angle_vr_array = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
 var rope_angle_r_array = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
 
-var longline_animation = func {
+
+
+
+var longline_animation = func (reset) {
 
 	var overland = getprop("gear/gear/ground-is-solid");
-	var altitude = getprop("position/altitude-agl-ft");
+
+	#var altitude = getprop("position/altitude-agl-ft");
+  var altitude = getprop("position/true-agl-ft");
+
 	var alt_agl = altitude * 0.3048 + getprop("/sim/cargo/rope/offset");
+
 	var n_segments = 90;
 	var segment_length = getprop("/sim/cargo/rope/factor");
   var cargo_on_hook = getprop("sim/cargo/cargo-on-hook");
   var cargo_height = getprop("/sim/cargo/cargoheight");
   var cargo_harness = getprop("/sim/cargo/cargoharness");
+  var hitch_offset = getprop("/sim/cargo/hitchoffset");
+
+  var lonNode = getprop("/position/longitude-deg");
+  var latNode = getprop("/position/latitude-deg");
+
+  if (reset)
+    {
+      rope_angle_v_array = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
+      rope_angle_vr_array = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
+      rope_angle_r_array = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
+      var ax = 0;
+			var ay = 0;
+			var az = 0;
+      for (var i = 0; i < n_segments; i+=1)
+        {
+          setprop("/sim/cargo/rope/pitch"~i, 0);
+          setprop("/sim/cargo/rope/roll"~i, 0);
+        }
+      reset = 0;
+    }
 
   if (overland)
     {
-      if (((alt_agl - (n_segments * segment_length)) + cargo_harness + cargo_height) < 0.0)
+      if ((((alt_agl + hitch_offset) - (n_segments * segment_length)) + cargo_harness + cargo_height) < 0.0)
         setprop("/sim/cargo/hitsground", 1);
       else
         setprop("/sim/cargo/hitsground", 0);
 
-      if (((alt_agl - (n_segments * segment_length)) + cargo_harness) < 0.0)
+      if ((alt_agl + hitch_offset) - (n_segments * segment_length) < 0.0)
 			  onground_flag = 1;
 		  else
 			  onground_flag = 0;
