@@ -6,7 +6,7 @@ name "Blender_export__micro-wave.ac"
 kids 1
 OBJECT poly
 name "micro-wave"
-loc 2.3359160 3.0985851 0.0642256
+loc 1.2232814 3.0985851 0.0642256
 texture "cargo.png"
 texrep 1 1
 numvert 30
