@@ -117,6 +117,79 @@
   </signal>
 
   <signal>
+    <type>bool</type>
+    <property type="string">/sim/cargo/cargo15-onhook</property>
+  </signal>
+  <signal>
+    <type>bool</type>
+    <property type="string">/sim/cargo/cargo16-onhook</property>
+  </signal>
+  <signal>
+    <type>bool</type>
+    <property type="string">/sim/cargo/cargo17-onhook</property>
+  </signal>
+  <signal>
+    <type>bool</type>
+    <property type="string">/sim/cargo/cargo18-onhook</property>
+  </signal>
+  <signal>
+    <type>bool</type>
+    <property type="string">/sim/cargo/cargo19-onhook</property>
+  </signal>
+  <signal>
+    <type>bool</type>
+    <property type="string">/sim/cargo/cargo20-onhook</property>
+  </signal>
+  <signal>
+    <type>bool</type>
+    <property type="string">/sim/cargo/cargo21-onhook</property>
+  </signal>
+  <signal>
+    <type>bool</type>
+    <property type="string">/sim/cargo/cargo22-onhook</property>
+  </signal>
+  <signal>
+    <type>bool</type>
+    <property type="string">/sim/cargo/cargo23-onhook</property>
+  </signal>
+  <signal>
+    <type>bool</type>
+    <property type="string">/sim/cargo/cargo24-onhook</property>
+  </signal>
+  <signal>
+    <type>bool</type>
+    <property type="string">/sim/cargo/cargo25-onhook</property>
+  </signal>
+  <signal>
+    <type>bool</type>
+    <property type="string">/sim/cargo/cargo26-onhook</property>
+  </signal>
+  <signal>
+    <type>bool</type>
+    <property type="string">/sim/cargo/cargo27-onhook</property>
+  </signal>
+  <signal>
+    <type>bool</type>
+    <property type="string">/sim/cargo/cargo28-onhook</property>
+  </signal>
+  <signal>
+    <type>bool</type>
+    <property type="string">/sim/cargo/cargo29-onhook</property>
+  </signal>
+  <signal>
+    <type>bool</type>
+    <property type="string">/sim/cargo/cargo30-onhook</property>
+  </signal>
+  <signal>
+    <type>bool</type>
+    <property type="string">/sim/cargo/cargo31-onhook</property>
+  </signal>
+  <signal>
+    <type>bool</type>
+    <property type="string">/sim/cargo/cargo32-onhook</property>
+  </signal>
+
+  <signal>
     <type>float</type>
     <property type="string">/velocities/groundspeed-kt</property>
   </signal>
@@ -140,6 +213,11 @@
   <signal>
     <type>bool</type>
     <property type="string">/sim/crashed</property>
+  </signal>
+
+  <signal>
+    <type>int8</type>
+    <property type="string">sim/cargo/rope/pulling</property>
   </signal>
 
     <!-- Sprayer - Water Drop - Cargo -->

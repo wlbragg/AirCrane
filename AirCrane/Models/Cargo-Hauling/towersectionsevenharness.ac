@@ -7,7 +7,7 @@ name "Blender_export__towersectionsevenharness.ac"
 kids 1
 OBJECT poly
 name "cargoharness"
-loc -1.3956715 -15.0511684 0.0609165
+loc -2.0652611 -14.6824713 0.0104457
 texture "cargo.png"
 texrep 1 1
 numvert 600

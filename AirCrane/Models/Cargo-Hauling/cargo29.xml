@@ -8,8 +8,8 @@
 <PropertyList>
 
   <model>
-    <path>cub-ground.ac</path>
-    <name>cub-ground</name>
+    <path>radio-tower-sec.ac</path>
+    <name>radio-tower-sec-5</name>
     <condition>
       <and>
         <property>sim/cargo/enabled</property>
@@ -20,12 +20,12 @@
           <and>
             <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
             <property>/sim/cargo/hitsground</property>
-            <property>sim/cargo/cargo1-onhook</property>
+            <property>sim/cargo/cargo29-onhook</property>
           </and>
           <and>
             <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
             <not>        
-              <property>sim/cargo/cargo1-onhook</property>
+              <property>sim/cargo/cargo29-onhook</property>
             </not>
           </and>
         </or>
@@ -33,8 +33,8 @@
     </condition>
   </model>
 
-    <!--animation>
-    <object-name>cub-ground</object-name>
+  <!--animation>
+    <object-name>shipping-container-big</object-name>
     <enable-hot type="bool">false</enable-hot>
   </animation-->
 

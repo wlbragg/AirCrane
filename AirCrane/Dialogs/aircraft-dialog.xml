@@ -297,22 +297,6 @@
 
   <hrule/>
 
-  <group>
-    <layout>hbox</layout>
-    <padding>6</padding>
-    <button>
-      <halign>left</halign>
-      <legend>Cargo Settings</legend>
-      <equal>true</equal>
-      <binding>
-          <command>dialog-show</command>
-          <dialog-name>aicargo-dialog</dialog-name>
-      </binding>
-    </button>
-  </group>
-
-  <hrule/>
-
   <!-- Button bar -->
   <group>
     <layout>hbox</layout>

@@ -23,6 +23,15 @@ var cargo20 = {};
 var cargo21 = {};
 var cargo22 = {};
 var cargo23 = {};
+var cargo24 = {};
+var cargo25 = {};
+var cargo26 = {};
+var cargo27 = {};
+var cargo28 = {};
+var cargo29 = {};
+var cargo30 = {};
+var cargo31 = {};
+var cargo32 = {};
 
 setlistener("/sim/signals/fdm-initialized", func (n) {
 
@@ -34,51 +43,71 @@ setlistener("/sim/signals/fdm-initialized", func (n) {
   #property tree location of cargo models
   var model_path = "Aircraft/AirCrane/Models/Cargo-Hauling/";
 
-  #                             offset ft   cargoheight m     harnessheight m
+  #                            offset ft    cargoheight m     harnessheight m
   #container-big    -3.879 m = 12.72        2.66              6.10
-  #cub-ground       -3.231 m = 10.60        1.83              5.98
+  #cub-ground       -3.209 m = 10.53        1.83              5.98
   #ground-tank      -3.737 m = 12.26        2.42              6.44
-  #ground-tank-lg                           4.18              6.02
-  #ground-tank-tall                         3.69              6.02
+  #ground-tank-lg   -5.884 m = 18.58        4.18              6.02
+  #ground-tank-tall -4.976 m = 16.32        3.69              6.02
   #tank-stand       -3.562 m = 11.68        2.12              6.08
   #pine-tree        -3.334 m = 10.93        2.08              6.12
-  #dump-truck                               9.3              10.59
-  #micro-relay                              5.98              6.06
-  #micro-wave                               5.99              6.99
-  #tower-sec-one                           12.64             16.49
-  #tower-sec-two                           12.70             16.49
-  #tower-sec-three                         13.05             16.49
-  #tower-sec-four                          13.11             16.49
-  #tower-sec-five                          13.05             16.49
-  #tower-sec-six                           12.25             16.49
-  #tower-sec-seven                         12.82             16.49
-  #tower-radio                            161.21             16.49
+  #dump-truck       -6.937 m = 22.76        9.3              10.59
+  #micro-relay      -7.257 m = 23.81        5.98              6.06
+  #micro-wave       -8.101 m = 26.58        5.99              6.99
+  #tower-sec-one   -14.066 m = 46.14       12.64             16.49
+  #tower-sec-two   -14.184 m = 46.53       12.70             16.49
+  #tower-sec-three -14.496 m = 47.56       13.05             16.49
+  #tower-sec-four  -14.474 m = 47.48       13.11             16.49
+  #tower-sec-five  -14.485 m = 47.52       13.05             16.49
+  #tower-sec-six   -14.034 m = 46.04       12.25             16.49
+  #tower-sec-seven -14.270 m = 46.91       12.82             16.49
+  #tower-radio    -162.331 m =532.58      173.63             16.49
+  #radio-tower-sec -26.058 m = 85.49       24.84             16.75
+  #mobile-pod       -4.059 m = 13.32        2.86             14.39
 
+  # there are three types of cargo depending on connection capability
+  # 1) long line only
+  #     (stack = 0, offset = distance from blender 0 z to cargo bottom z), alt = alt-90)
+  # 2) long line and hard docked
+  #     (stack = 0, offset = distance from blender 0 z to cargo bottom z), alt = def of -999
+  # 3) stackable
+  #     (stack = position of object it can stack on)
+  #     (can be either 1 or 2 connection type, but is implemented only when in long line) 
+  #     TODO: limit stackable to on long line only
 
   #inject new cargo models into the scene
-  cargo1 =  place_model( "1",  0, "container-big",    model_path,  0, 5000, 2.66, 6.10, lat, lon, alt,  12.72, 0, 0, 0);
-  cargo2 =  place_model( "2",  1, "container-big",    model_path,  0, 1500, 2.66, 6.10, lat, lon, alt,  12.72, 0, 0, 0);
-  cargo3 =  place_model( "3",  2, "container-big",    model_path,  0, 1000, 2.66, 6.10, lat, lon, alt,  12.72, 0, 0, 0);
-  cargo4 =  place_model( "4",  3, "cub-ground",       model_path,  0, 1200, 1.83, 5.98, lat, lon, alt,  10.60, 0, 0, 0);
-  cargo5 =  place_model( "5",  4, "ground-tank",      model_path,  0, 2000, 2.42, 6.44, lat, lon, alt,  12.26, 0, 0, 0);
-  cargo6 =  place_model( "6",  5, "ground-tank-lg",   model_path,  0, 4200, 4.18, 6.02, lat, lon, alt-90,   0, 0, 0, 0);
-  cargo7 =  place_model( "7",  6, "ground-tank-tall", model_path,  0, 3000, 3.69, 6.02, lat, lon, alt-90,   0, 0, 0, 0);
-  cargo8 =  place_model( "8",  7, "tank-stand",       model_path,  0,  600, 2.12, 6.08, lat, lon, alt,  11.68, 0, 0, 0);
-  cargo9 =  place_model( "9",  8, "pine-tree",        model_path,  0,  350, 2.08, 6.12, lat, lon, alt,  10.93, 0, 0, 0);
-  cargo10 = place_model("10",  9, "pine-tree",        model_path,  0,  350, 2.08, 6.12, lat, lon, alt,  10.93, 0, 0, 0);
-  cargo11 = place_model("11", 10, "pine-tree",        model_path,  0,  350, 2.08, 6.12, lat, lon, alt,  10.93, 0, 0, 0);
-  cargo12 = place_model("12", 11, "pine-tree",        model_path,  0,  350, 2.08, 6.12, lat, lon, alt,  10.93, 0, 0, 0);
-  cargo13 = place_model("13", 12, "pine-tree",        model_path,  0,  350, 2.08, 6.12, lat, lon, alt,  10.93, 0, 0, 0);
-  cargo14 = place_model("14", 13, "dump-truck",       model_path,  0,18000,  9.3,10.59, lat, lon, alt-90,   0, 0, 0, 0);
-  cargo15 = place_model("15", 14, "micro-relay",      model_path, 22,  400, 5.98, 6.06, lat, lon, alt-90,   0, 0, 0, 0);
-  cargo16 = place_model("16", 15, "micro-wave",       model_path, 21,  400, 5.99, 6.99, lat, lon, alt-90,   0, 0, 0, 0);
-  cargo17 = place_model("17", 16, "tower-sec-one",    model_path,  0, 1400,12.64,16.49, lat, lon, alt-90,   0, 0, 0, 0);
-  cargo18 = place_model("18", 17, "tower-sec-two",    model_path, 16, 1300,12.70,16.49, lat, lon, alt-90,   0, 0, 0, 0);
-  cargo19 = place_model("19", 18, "tower-sec-three",  model_path, 17, 1200,13.05,16.49, lat, lon, alt-90,   0, 0, 0, 0);
-  cargo20 = place_model("20", 19, "tower-sec-four",   model_path, 18, 1100,13.11,16.49, lat, lon, alt-90,   0, 0, 0, 0);
-  cargo21 = place_model("21", 20, "tower-sec-five",   model_path, 19, 1000,13.05,16.49, lat, lon, alt-90,   0, 0, 0, 0);
-  cargo22 = place_model("22", 21, "tower-sec-six",    model_path, 20,  950,12.25,16.49, lat, lon, alt-90,   0, 0, 0, 0);
-  cargo23 = place_model("23", 22, "tower-sec-seven",  model_path, 21,  900,12.82,16.49, lat, lon, alt-90,   0, 0, 0, 0);
+  cargo1 =  place_model( "1",  0, "cub-ground",       model_path,  0, 1200, 1.83, 5.98, lat, lon, alt,    10.53, 0, 0, 0);
+  cargo2 =  place_model( "2",  1, "container-big",    model_path,  3, 1500, 2.66, 6.10, lat, lon, alt,    12.72, 0, 0, 0);
+  cargo3 =  place_model( "3",  2, "container-big",    model_path,  1, 1000, 2.66, 6.10, lat, lon, alt,    12.72, 0, 0, 0);
+  cargo4 =  place_model( "4",  3, "container-big",    model_path,  2, 5000, 2.66, 6.10, lat, lon, alt,    12.72, 0, 0, 0);
+  cargo5 =  place_model( "5",  4, "ground-tank",      model_path,  0, 2000, 2.42, 6.44, lat, lon, alt,    12.26, 0, 0, 0);
+  cargo6 =  place_model( "6",  5, "ground-tank-lg",   model_path,  0, 4200, 4.18, 6.02, lat, lon, alt-90, 18.58, 0, 0, 0);
+  cargo7 =  place_model( "7",  6, "ground-tank-tall", model_path,  0, 3000, 3.69, 6.02, lat, lon, alt-90, 16.32, 0, 0, 0);
+  cargo8 =  place_model( "8",  7, "tank-stand",       model_path,  0,  600, 2.12, 6.08, lat, lon, alt,    11.68, 0, 0, 0);
+  cargo9 =  place_model( "9",  8, "pine-tree",        model_path,  0,  350, 2.08, 6.12, lat, lon, alt,    10.93, 0, 0, 0);
+  cargo10 = place_model("10",  9, "pine-tree",        model_path,  0,  350, 2.08, 6.12, lat, lon, alt,    10.93, 0, 0, 0);
+  cargo11 = place_model("11", 10, "pine-tree",        model_path,  0,  350, 2.08, 6.12, lat, lon, alt,    10.93, 0, 0, 0);
+  cargo12 = place_model("12", 11, "pine-tree",        model_path,  0,  350, 2.08, 6.12, lat, lon, alt,    10.93, 0, 0, 0);
+  cargo13 = place_model("13", 12, "pine-tree",        model_path,  0,  350, 2.08, 6.12, lat, lon, alt,    10.93, 0, 0, 0);
+  cargo14 = place_model("14", 13, "dump-truck",       model_path,  0,10000, 5.69,15.45, lat, lon, alt-90, 22.76, 0, 0, 0);
+  cargo15 = place_model("15", 14, "micro-relay",      model_path, 22,  400, 5.98, 6.06, lat, lon, alt-90, 23.81, 0, 0, 0);
+  cargo16 = place_model("16", 15, "micro-wave",       model_path, 21,  400, 5.99, 6.99, lat, lon, alt-90, 26.58, 0, 0, 0);
+  cargo17 = place_model("17", 16, "tower-sec-one",    model_path,  0, 1400,12.64,16.49, lat, lon, alt-90, 46.14, 0, 0, 0);
+  cargo18 = place_model("18", 17, "tower-sec-two",    model_path, 16, 1300,12.70,16.49, lat, lon, alt-90, 46.53, 0, 0, 0);
+  cargo19 = place_model("19", 18, "tower-sec-three",  model_path, 17, 1200,13.05,16.49, lat, lon, alt-90, 47.56, 0, 0, 0);
+  cargo20 = place_model("20", 19, "tower-sec-four",   model_path, 18, 1100,13.11,16.49, lat, lon, alt-90, 47.48, 0, 0, 0);
+  cargo21 = place_model("21", 20, "tower-sec-five",   model_path, 19, 1000,13.05,16.49, lat, lon, alt-90, 47.52, 0, 0, 0);
+  cargo22 = place_model("22", 21, "tower-sec-six",    model_path, 20,  950,12.25,16.49, lat, lon, alt-90, 46.04, 0, 0, 0);
+  cargo23 = place_model("23", 22, "tower-sec-seven",  model_path, 21,  900,12.82,16.49, lat, lon, alt-90, 46.81, 0, 0, 0);
+  cargo24 = place_model("24", 23, "tower-radio",      model_path,  0,  500,173.63,16.49,lat, lon, alt-90,532.58, 0, 0, 0);
+  cargo25 = place_model("25", 24, "radio-tower-sec",  model_path,  30, 500,24.84,16.75, lat, lon, alt-90, 85.49, 0, 0, 0);
+  cargo26 = place_model("26", 25, "radio-tower-sec",  model_path,  24, 500,24.84,16.75, lat, lon, alt-90, 85.49, 0, 0, 0);
+  cargo27 = place_model("27", 26, "radio-tower-sec",  model_path,  25, 500,24.84,16.75, lat, lon, alt-90, 85.49, 0, 0, 0);
+  cargo28 = place_model("28", 27, "radio-tower-sec",  model_path,  26, 500,24.84,16.75, lat, lon, alt-90, 85.49, 0, 0, 0);
+  cargo29 = place_model("29", 28, "radio-tower-sec",  model_path,  27, 500,24.84,16.75, lat, lon, alt-90, 85.49, 0, 0, 0);
+  cargo30 = place_model("30", 29, "radio-tower-sec",  model_path,  28, 500,24.84,16.75, lat, lon, alt-90, 85.49, 0, 0, 0);
+  cargo31 = place_model("31", 30, "radio-tower-sec",  model_path,  29, 500,24.84,16.75, lat, lon, alt-90, 85.49, 0, 0, 0);
+  cargo32 = place_model("32", 31, "mobile-pod",       model_path,   0,1200, 2.86,14.39, lat, lon, alt,    13.32, 0, 0, 0);
 
   cargo_init();
 });
@@ -166,7 +195,7 @@ var interval = 0;
 var currentYaw = 0;
 var originalYaw = 0;
 var dist = 0;
-var ropeLength = 12.2;
+var ropeLength = 15.73;
 var cargoHeight = 0;
 var cargoWeight = 0;
 var cargoHarness = 0;
@@ -252,13 +281,13 @@ var cargo_tow = func () {
   var longline = getprop("/sim/gui/dialogs/aicargo-dialog/connection");
   #var cable = getprop("/sim/gui/dialogs/aicargo-dialog/longline");
   var cargoOnGround = getprop("/sim/cargo/hitsground");
-  var harnessPos = getprop("sim/cargo/harnessalt");
   var aircraft_alt_ft = getprop("/position/altitude-ft") -13.8;
   var true_grnd_elev_ft = geo.elevation(latNode, lonNode) * 3.28;           
   var true_agl_ft =  aircraft_alt_ft - true_grnd_elev_ft;
   setprop("position/true-agl-ft", true_agl_ft);
   var altNode = true_agl_ft;
   var elvPos = groundElevFt + getprop("/position/altitude-agl-ft");
+  var hitchOffset = getprop("/sim/cargo/hitchoffset");
 
   if (longline) {
     hookHeight = 55;
@@ -268,22 +297,20 @@ var cargo_tow = func () {
   
   #needs work to make this check account for the height of the cargo to the hitch height 
   #of the connection point be it longline or harddocked
-	if(onHookNode == 0 and cargoReleased == 0) {
+	if(onHookNode == 0 and cargoReleased == 0 and hooked == 0) {
     #gui.popupTip("In ranging", 1);
     foreach(var cargoN; props.globals.getNode("/models/cargo", 1).getChildren("cargo")) {
 
+#cargoHeight would need to have elevation above ground added to work for stacked cargo
       cargoHeight = cargoN.getNode("height").getValue();
 
       if (altNode < (hookHeight + (cargoHeight * 3.28))) {
 			  if (string.match(cargoN.getNode("callsign").getValue(), "cargo*")){
           dist = checkDistance(latNode, lonNode, cargoN.getNode("latitude-deg").getValue(), cargoN.getNode("longitude-deg").getValue());
 
-setprop("a-dist-capture", dist);
-
           #0.022 needs to be variable for either hard docked distance or long line distance, 0.022 = long line
           if(dist <= 0.022) {
-            #also needs a distance check between multiple visible cargos and connect only the one that is closest
-            if (cargoN.getNode("elevation-ft").getValue() > -999 ) {
+            if (cargoN.getNode("elevation-ft").getValue() > -999) {
               gui.popupTip(cargoN.getNode("callsign").getValue()~" in range", 1);
 					    if (hookNode == 1 or autoHookNode == 1) {
 
@@ -307,9 +334,7 @@ setprop("a-dist-capture", dist);
                 elevoffset = props.globals.getNode("/models/cargo/" ~ cargoParent ~ "/elev-offset").getValue();
                 stack = props.globals.getNode("/models/cargo/" ~ cargoParent ~ "/stack").getValue();
 
-setprop("a-stack-inhook", stack);
-
-                if (cargoHeight < 3.0)
+                if (cargoHeight < 3.12)
                   haulable = 1;
                 else
                   haulable = 0;
@@ -333,19 +358,9 @@ setprop("a-stack-inhook", stack);
                       props.globals.getNode("/models/cargo/" ~ cargoParent ~ "/roll-deg").setDoubleValue(rollNode);
                     }
 
-                  setprop("sim/cargo/cargoalt", (-groundNode) + ropeLength + cargoHeight);
-
-                  setprop("sim/cargo/rope/flex-force", 0.01);
-                  setprop("sim/cargo/rope/damping", 0.6);
-                  setprop("/sim/cargo/rope/stiffness", 3);
-
-setprop("A-altNode", altNode);
-setprop("A-cargoHeight", cargoHeight);
-setprop("A-hookHeight", hookHeight);
-setprop("A-hookHeight-cargoHeight", hookHeight + (cargoHeight * 3.28));
-setprop("A-cargoOnGround", cargoOnGround);
-setprop("A-currentLat", currentLat);
-setprop("A-currentLon", currentLon);
+                  #setprop("sim/cargo/rope/flex-force", 0.01);
+                  #setprop("sim/cargo/rope/damping", 0.6);
+                  #setprop("/sim/cargo/rope/stiffness", 3);
 
                 }
               }
@@ -386,6 +401,12 @@ setprop("A-currentLon", currentLon);
     } else
       if (longline and !cargoOnGround) {
 
+        setprop("sim/cargo/rope/flex-force", 0.01);
+        setprop("sim/cargo/rope/damping", 0.6);
+        setprop("/sim/cargo/rope/stiffness", 3);
+
+        setprop("sim/cargo/rope/pulling", 0); 
+
         setprop("sim/cargo/roll-deg", 0);
         setprop("sim/cargo/pitch-deg", 0);
 
@@ -394,8 +415,8 @@ setprop("A-currentLon", currentLon);
         if (currentYaw < 0) currentYaw = currentYaw + 360;
         setprop("/sim/cargo/currentyaw", currentYaw);
 
-        setprop("sim/cargo/cargoalt", -cargoHarness);
-        setprop("sim/cargo/harnessalt", -cargoHarness);
+        setprop("sim/cargo/cargoalt", -ropeLength + -cargoHarness + hitchOffset);
+        setprop("sim/cargo/harnessalt", -hitchOffset + -ropeLength);
 
         setprop("sim/weight[3]/weight-lb", cargoWeight);
 
@@ -405,15 +426,15 @@ setprop("A-currentLon", currentLon);
         setprop("/models/cargo/" ~ cargoParent ~ "/latitude-deg", currentLat);
         setprop("/models/cargo/" ~ cargoParent ~ "/longitude-deg", currentLon);
 
-setprop("a-stackinoffground", stack);
-
         if (stack > 0) {
-setprop("a-instack", "yes");      
-          #get elevation of top of stack object
-          #get elevation at bottom of cargo object
-          #if difference between the two elevations are less than a small amount "Connect"
-          dist = checkDistance(currentLat, currentLon, getprop("/models/cargo/cargo[" ~ stack ~ "]/latitude-deg"), getprop("/models/cargo/cargo[" ~ stack ~ "]/longitude-deg"));
-setprop("a-dist-stack", dist);          
+     
+          #get elevation of top of stack base object
+          #get elevation at bottom of stack cargo object
+          #if difference between the two elevations are less than a small amount "stackConnected = 1"
+
+          var stackBaseHeight = props.globals.getNode("/models/cargo/cargo[" ~ stack ~ "]/height").getValue();
+
+          dist = checkDistance(currentLat, currentLon, getprop("/models/cargo/cargo[" ~ stack ~ "]/latitude-deg"), getprop("/models/cargo/cargo[" ~ stack ~ "]/longitude-deg"));        
           if (dist <= 0.002) {
             gui.popupTip(cargoName~" Connection in range", 1);
             stackConnected = 1;
@@ -423,35 +444,29 @@ setprop("a-dist-stack", dist);
 
       } else {
 
+        var bearing = bearing(latNode, lonNode, currentLat, currentLon) - getprop("orientation/heading-deg");
+        #var bearing = bearing(latNode, lonNode, currentLat, currentLon);
+        setprop("sim/cargo/rope/bearing", bearing);
+
         setprop("sim/cargo/roll-deg", 0);
         setprop("sim/cargo/pitch-deg", 0);
 
         #TODO calculate distance from aircraft hitch to cargo hitch (including rope length + harness and height)
 
         dist = checkDistance(latNode, lonNode, getprop("/models/cargo/" ~ cargoParent ~ "/latitude-deg"), getprop("/models/cargo/" ~ cargoParent ~ "/longitude-deg"));
-setprop("a-dist-pull", dist);
-        if (dist <= .016) {
 
-          #gui.popupTip("in on ground not moving", 1);
+        setprop("sim/cargo/rope/pulling", 1);
 
-          currentYaw = (headNode+(headNode-originalYaw))-headNode;
-          if (currentYaw > 360) currentYaw = currentYaw - 360;
-          if (currentYaw < 0) currentYaw = currentYaw + 360;
-          setprop("/sim/cargo/currentyaw", currentYaw);
+        #gui.popupTip("in on ground not moving", 1);
 
-          setprop("/models/cargo/"~cargoParent~"/elevation-ft", geo.elevation(latNode, lonNode) * 3.2808 + elevoffset);
-          
-          setprop("sim/weight[3]/weight-lb", 0);
+        currentYaw = (headNode+(headNode-originalYaw))-headNode;
+        if (currentYaw > 360) currentYaw = currentYaw - 360;
+        if (currentYaw < 0) currentYaw = currentYaw + 360;
+        setprop("/sim/cargo/currentyaw", currentYaw);
+       
+        setprop("sim/weight[3]/weight-lb", 0);
 
-        } else {
-
-          #gui.popupTip("on ground moving", 1);
-
-          currentYaw = (headNode+(headNode-originalYaw))-headNode;
-          if (currentYaw > 359) currentYaw = currentYaw - 360;
-          if (currentYaw < 0) currentYaw = currentYaw + 360;
-          setprop("/sim/cargo/currentyaw", currentYaw);
-
+        if (dist > .007) {
           setprop("sim/cargo/harnessalt", -cargoHarness - .1);
 
           setprop("sim/weight[3]/weight-lb", cargoWeight);
@@ -459,22 +474,20 @@ setprop("a-dist-pull", dist);
           #TODO: 
           #add x and y transformation to move cargo (incrementally) towards aircrane as rope is taut and pulling cargo
           #this needs to be calculated precisely
-          currentLat = currentLat - ((currentLat-latNode)*.02);
-          currentLon = currentLon - ((currentLon-lonNode)*.02);
-
-          #θ=arctan(11)=45˚
-          #ϕ=arctan(2–√1)≈55˚
-
-          setprop("/models/cargo/"~cargoParent~"/elevation-ft", geo.elevation(currentLat, currentLon) * 3.2808 + elevoffset);
-          setprop("/models/cargo/" ~ cargoParent ~ "/latitude-deg", currentLat);
-          setprop("/models/cargo/" ~ cargoParent ~ "/longitude-deg", currentLon);
-           
-          #add pitch and roll to rope and cargo to match dirction of pulling transformation
-          var bearing = bearing(currentLat, currentLon, latNode, lonNode);
-setprop("a-bearing", bearing);
-          
+          currentLat = currentLat - ((currentLat-latNode)*.03);
+          currentLon = currentLon - ((currentLon-lonNode)*.03);
+          #setprop("sim/cargo/rope/pulling", 1);
+          #currentLat = currentLat + getprop("sim/cargo/delta_lat");
+          #currentLon = currentLon + getprop("sim/cargo/delta_lon");
         }
-      }
+       
+        setprop("/models/cargo/" ~ cargoParent ~ "/latitude-deg", currentLat);
+        setprop("/models/cargo/" ~ cargoParent ~ "/longitude-deg", currentLon);
+        setprop("/models/cargo/"~cargoParent~"/elevation-ft", (geo.elevation(currentLat, currentLon) * 3.2808 + elevoffset));
+           
+        #TODO: add pitch and roll to rope and cargo to match dirction of pulling transformation
+
+    }
 
     #gui.popupTip(cargoName~" in tow", 1);
 		if (releaseNode == 1 and onHookNode == 1) {
@@ -566,6 +579,7 @@ setprop("a-bearing", bearing);
 	}	
 
   longline_animation(0);
+  #drag_cargo(latNode, lonNode);
 	settimer(cargo_tow, interval);
 
 }
@@ -614,4 +628,22 @@ var deg2rad = func (deg) {
 #round
 var round = func (pos) {
 	return math.round(pos * 1000) / 1000;
+}
+
+var drag_cargo = func (lat_last, lon_last) {
+
+  var lat_now = getprop("/position/latitude-deg");
+  var lon_now = getprop("/position/longitude-deg");
+
+  var delta_lat = lat_now - lat_last;
+  var delta_lon = lon_now - lon_last;
+
+  #(we do something with the delta's here)
+  setprop("sim/cargo/delta_lat", delta_lat);
+  setprop("sim/cargo/delta_lon", delta_lon);
+ 
+  lat_last = lat_now;
+  lon_last = lon_now;
+
+  settimer( func {drag_cargo (lat_last, lon_last); }, 0.0);
 }

@@ -8,8 +8,8 @@
 <PropertyList>
 
   <model>
-    <path>cub-ground.ac</path>
-    <name>cub-ground</name>
+    <path>shipping-container-big.ac</path>
+    <name>shipping-container-big</name>
     <condition>
       <and>
         <property>sim/cargo/enabled</property>
@@ -34,7 +34,7 @@
   </model>
 
   <!--animation>
-    <object-name>cub-ground</object-name>
+    <object-name>shipping-container-big</object-name>
     <enable-hot type="bool">false</enable-hot>
   </animation-->
 

@@ -14,39 +14,6 @@
           <script>aircraft.livery.dialog.toggle()</script>
         </binding>
       </item>
-      <!--item>
-        <label>Blades Visible</label>
-        <binding>
-          <command>nasal</command>
-          <script>
-            var p = "rotors/main/bladesvisible";
-            setprop(p, var i = !getprop(p));
-            gui.popupTip("Blades visible " ~ (i ? "On" : "Off"));
-          </script>
-        </binding>
-      </item>
-      <item>
-        <label>Show Particle Effects</label>
-        <binding>
-          <command>nasal</command>
-          <script>
-            var p = "sim/model/aircrane/effects/particles/enabled";
-            setprop(p, var i = !getprop(p));
-            gui.popupTip("Particle effects " ~ (i ? "On" : "Off"));
-          </script>
-        </binding>
-      </item>
-      <item>
-        <label>Persistent Position</label>
-        <binding>
-          <command>nasal</command>
-          <script>
-            var p = "sim/model/aircrane/persistent";
-            setprop(p, var i = !getprop(p));
-            gui.popupTip("Persistent Position " ~ (i ? "On" : "Off"));
-          </script>
-        </binding>
-      </item-->
       <item>
         <label>Immatriculation</label>
         <binding>
@@ -59,6 +26,13 @@
           <binding>
             <command>dialog-show</command>
             <dialog-name>aircraft-dialog</dialog-name>
+          </binding>
+      </item>
+      <item>
+          <label>Cargo Settings</label>
+          <binding>
+            <command>dialog-show</command>
+            <dialog-name>aicargo-dialog</dialog-name>
           </binding>
       </item>
     </menu>

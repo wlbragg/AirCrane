@@ -1,13 +1,13 @@
 AC3Db
 MATERIAL "DefaultWhite" rgb 1.0000 1.0000 1.0000  amb 0.2000 0.2000 0.2000  emis 0.0000 0.0000 0.0000  spec 0.5000 0.5000 0.5000  shi 10 trans 0.0000
-MATERIAL "Material.001" rgb 0.8000 0.8000 0.8000  amb 1.0000 1.0000 1.0000  emis 0.0000 0.0000 0.0000  spec 0.1250 0.1250 0.1250  shi 50 trans 0.0000
-MATERIAL "WhitePaint.003" rgb 0.9000 0.9000 0.9000  amb 0.9000 0.9000 0.9000  emis 0.0000 0.0000 0.0000  spec 0.3200 0.3200 0.3200  shi 50 trans 0.0000
+MATERIAL "Material.018" rgb 0.8000 0.8000 0.8000  amb 1.0000 1.0000 1.0000  emis 0.0000 0.0000 0.0000  spec 0.1250 0.1250 0.1250  shi 50 trans 0.0000
+MATERIAL "WhitePaint.008" rgb 0.9000 0.9000 0.9000  amb 0.9000 0.9000 0.9000  emis 0.0000 0.0000 0.0000  spec 0.3200 0.3200 0.3200  shi 50 trans 0.0000
 OBJECT world
 name "Blender_export__groundtanktallharness.ac"
 kids 1
 OBJECT poly
 name "cargoharness"
-loc -1.3956715 -15.0511684 0.0609165
+loc -2.0672169 -4.4936471 0.0102027
 texture "cargo.png"
 texrep 1 1
 numvert 594

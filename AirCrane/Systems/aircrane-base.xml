@@ -162,8 +162,12 @@
       <harnessalt type="double">0.0</harnessalt>
       <cargoheight type="double">0.0</cargoheight>
       <cargoharness type="double">0.0</cargoharness>
-      <hitchoffset type="double">1.9</hitchoffset>
+      <hitchoffset type="double">1.07</hitchoffset>
       <rope>
+        <bearing type="double">1.0</bearing>
+        <pull-factor-pitch type="double">0.0</pull-factor-pitch>
+        <pull-factor-roll type="double">0.0</pull-factor-roll>
+        <pull-force type="double">9</pull-force>
         <flex-force type="double">0.09</flex-force>
         <factor type="double">0.19</factor>
         <offset type="double">2.8</offset>
@@ -404,8 +408,8 @@
         <int type="int" n="10" alias="/controls/armament/trigger">0</int>          <!-- 10 reserved for bombable mode -->
         <float n="0" alias="/sim/model/door-positions/crew/position-norm"/>
         <float n="1" alias="/sim/model/door-positions/passenger/position-norm"/>
-        <!--float n="2" alias="/position/gear-agl-m"> 0 </float-->                      <!--  2 altitude for MP shadow -->
-        <float n="2" alias="/position/true-agl-ft"/>                      <!--  2 altitude for MP shadow -->
+        <!--float n="2" alias="/position/gear-agl-m"> 0 </float-->                 <!--  2 altitude for MP shadow -->
+        <float n="2" alias="/position/true-agl-ft"/>                               <!--  2 altitude for MP shadow -->
         <float n="3" alias="/position/altitude-ft"> 0 </float>                     <!--  3 altitude for smoke -->
         <float n="4" alias="/engines/engine[0]/rpm"/>
         <float n="5" alias="/sim/model/firetank/deployramscoop/position-norm"/>
@@ -493,5 +497,7 @@
       </outputs>
     </electrical>
   </systems>
+
+<a-bearing type="float">0</a-bearing>
 
 </PropertyList>
