@@ -7,7 +7,7 @@ name "Blender_export__tower-section-three.ac"
 kids 1
 OBJECT poly
 name "cargo"
-loc -2.1357107 -7.8199358 -0.0953174
+loc -2.0876119 -7.7384601 -0.0112813
 texture "cargo.png"
 texrep 1 1
 numvert 96
