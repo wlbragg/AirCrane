@@ -56,7 +56,7 @@
     <counter>
       <particles-per-sec>
         <property>position/true-agl-ft</property>
-        <factor>10</factor>
+        <factor>5</factor>
         <offset-m>500</offset-m>
       </particles-per-sec>
     </counter>
@@ -79,7 +79,7 @@
             <property>/controls/engines/engine/throttle</property>
             <interpolation>
              <entry>
-              <ind>0.0</ind><dep>0.2</dep>
+              <ind>0.0</ind><dep>0.17</dep>
              </entry>
              <entry>
               <ind>0.5</ind><dep>0.15</dep>
@@ -111,7 +111,7 @@
             <property>/controls/engines/engine/throttle</property>
             <interpolation>
              <entry>
-              <ind>0.0</ind><dep>0.2</dep>
+              <ind>0.0</ind><dep>0.17</dep>
              </entry>
              <entry>
               <ind>0.5</ind><dep>0.15</dep>
