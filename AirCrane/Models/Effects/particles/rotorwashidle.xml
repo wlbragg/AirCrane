@@ -56,7 +56,7 @@
     <counter>
       <particles-per-sec>
         <property>position/true-agl-ft</property>
-        <factor>40</factor>
+        <factor>20</factor>
         <offset-m>2000</offset-m>
       </particles-per-sec>
     </counter>
@@ -76,13 +76,23 @@
             <property>/sim/model/aircrane/effects/particles/rotorwash/bluecombinedstart</property>
           </blue>
           <alpha>
-            <property>rotors/main/rpm</property>
-            <factor>0.00009</factor>
+            <property>/controls/engines/engine/throttle</property>
+            <interpolation>
+             <entry>
+              <ind>0.0</ind><dep>0.05</dep>
+             </entry>
+             <entry>
+              <ind>0.5</ind><dep>0.0125</dep>
+             </entry>
+             <entry>
+              <ind>1.0</ind><dep>0.005</dep>
+             </entry>
+            </interpolation>
           </alpha>
         </color>
         <size>
-          <value> 1</value>
-          <spread>0.5</spread>
+          <value> 1.5</value>
+          <spread>1.5</spread>
         </size>
       </start>
 
@@ -98,13 +108,23 @@
             <property>/sim/model/aircrane/effects/particles/rotorwash/bluecombinedend</property>
           </blue>
           <alpha>
-            <property>/rotors/main/rpm</property>
-            <factor>0.0007</factor>
+            <property>/controls/engines/engine/throttle</property>
+            <interpolation>
+             <entry>
+              <ind>0.0</ind><dep>0.005</dep>
+             </entry>
+             <entry>
+              <ind>0.5</ind><dep>0.0025</dep>
+             </entry>
+             <entry>
+              <ind>1.0</ind><dep>0.001</dep>
+             </entry>
+            </interpolation>
           </alpha>
         </color>
         <size>
-          <value> 0.4</value>
-          <spread>0.4</spread>
+          <value> 2.5</value>
+          <spread>2</spread>
         </size>
       </end>
 

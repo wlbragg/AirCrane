@@ -28,19 +28,36 @@ var rotor_wash_loop = func {
 
   var red_diffuse = getprop("/rendering/scene/diffuse/red");
 
-	if (land) {
-    setprop("/sim/model/aircrane/effects/particles/rotorwash/redcombinedstart", red_diffuse*.69);
-		setprop("/sim/model/aircrane/effects/particles/rotorwash/greencombinedstart", red_diffuse*.56);
-		setprop("/sim/model/aircrane/effects/particles/rotorwash/bluecombinedstart", red_diffuse*.37);
-		setprop("/sim/model/aircrane/effects/particles/rotorwash/redcombinedend", red_diffuse*.89);
-		setprop("/sim/model/aircrane/effects/particles/rotorwash/greencombinedend", red_diffuse*.76);
-		setprop("/sim/model/aircrane/effects/particles/rotorwash/bluecombinedend", red_diffuse*.57);
-	} else {
-		setprop("/sim/model/aircrane/effects/particles/rotorwash/redcombinedstart", red_diffuse*.65);
-		setprop("/sim/model/aircrane/effects/particles/rotorwash/greencombinedstart", red_diffuse*.80);
-		setprop("/sim/model/aircrane/effects/particles/rotorwash/bluecombinedstart", red_diffuse*.75);
-		setprop("/sim/model/aircrane/effects/particles/rotorwash/redcombinedend", red_diffuse*.85);
-		setprop("/sim/model/aircrane/effects/particles/rotorwash/greencombinedend", red_diffuse*1);
-		setprop("/sim/model/aircrane/effects/particles/rotorwash/bluecombinedend", red_diffuse*.90);
-	}
+  var snowlevel = getprop("/environment/snow-level-m");
+   
+	if (land)
+    {
+      if (alt > snowlevel)
+        {
+          setprop("/sim/model/aircrane/effects/particles/rotorwash/redcombinedstart",   red_diffuse*.8);
+	        setprop("/sim/model/aircrane/effects/particles/rotorwash/greencombinedstart", red_diffuse*.8);
+	        setprop("/sim/model/aircrane/effects/particles/rotorwash/bluecombinedstart",  red_diffuse*.8);
+	        setprop("/sim/model/aircrane/effects/particles/rotorwash/redcombinedend",     red_diffuse*.9);
+	        setprop("/sim/model/aircrane/effects/particles/rotorwash/greencombinedend",   red_diffuse*.9);
+	        setprop("/sim/model/aircrane/effects/particles/rotorwash/bluecombinedend",    red_diffuse*.9);
+        }
+      else
+        {
+          setprop("/sim/model/aircrane/effects/particles/rotorwash/redcombinedstart",   red_diffuse*.79);
+		      setprop("/sim/model/aircrane/effects/particles/rotorwash/greencombinedstart", red_diffuse*.66);
+		      setprop("/sim/model/aircrane/effects/particles/rotorwash/bluecombinedstart",  red_diffuse*.47);
+		      setprop("/sim/model/aircrane/effects/particles/rotorwash/redcombinedend",     red_diffuse*.99);
+		      setprop("/sim/model/aircrane/effects/particles/rotorwash/greencombinedend",   red_diffuse*.86);
+		      setprop("/sim/model/aircrane/effects/particles/rotorwash/bluecombinedend",    red_diffuse*.67);
+        }
+	  }
+  else
+    {
+		  setprop("/sim/model/aircrane/effects/particles/rotorwash/redcombinedstart",   red_diffuse*.90);
+		  setprop("/sim/model/aircrane/effects/particles/rotorwash/greencombinedstart", red_diffuse*.95);
+		  setprop("/sim/model/aircrane/effects/particles/rotorwash/bluecombinedstart",  red_diffuse*.93);
+		  setprop("/sim/model/aircrane/effects/particles/rotorwash/redcombinedend",     red_diffuse*.92);
+		  setprop("/sim/model/aircrane/effects/particles/rotorwash/greencombinedend",   red_diffuse*.98);
+		  setprop("/sim/model/aircrane/effects/particles/rotorwash/bluecombinedend",    red_diffuse*.95);
+	  }
 }

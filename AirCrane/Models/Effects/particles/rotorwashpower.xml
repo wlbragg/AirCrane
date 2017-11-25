@@ -34,12 +34,8 @@
 			</less-than>
 			<greater-than>
 				<property>/rotors/main/rpm</property>
-				<value>189</value>
+				<value>65</value>
 			</greater-than>
-			<less-than>
-				<property>/controls/engines/engine/throttle</property>
-				<value>.60</value>
-			</less-than>
 		</and>
 	</condition>
 
@@ -68,23 +64,33 @@
         <spread>  5 </spread>
       </particles-per-sec>
     </counter>
-      
+
     <particle>
       <start>
         <color>
-		 <red>
-			<property>/sim/model/aircrane/effects/particles/rotorwash/redcombinedstart</property>
-		 </red>
-		 <green>
-			<property>/sim/model/aircrane/effects/particles/rotorwash/greencombinedstart</property>
-		 </green>
-		 <blue>
-			<property>/sim/model/aircrane/effects/particles/rotorwash/bluecombinedstart</property>
-		 </blue>
-		  <alpha>
-		    <property>/rotors/main/rpm</property>
-			<factor>0.0004</factor>
-		  </alpha>
+          <red>
+            <property>/sim/model/aircrane/effects/particles/rotorwash/redcombinedstart</property>
+          </red>
+          <green>
+            <property>/sim/model/aircrane/effects/particles/rotorwash/greencombinedstart</property>
+          </green>
+          <blue>
+            <property>/sim/model/aircrane/effects/particles/rotorwash/bluecombinedstart</property>
+          </blue>
+          <alpha>
+            <property>/controls/engines/engine/throttle</property>
+            <interpolation>
+             <entry>
+              <ind>0.0</ind><dep>1.0</dep>
+             </entry>
+             <entry>
+              <ind>0.5</ind><dep>0.5</dep>
+             </entry>
+             <entry>
+              <ind>1.0</ind><dep>0.05</dep>
+             </entry>
+            </interpolation>
+          </alpha>
         </color>
         <size>
           <value>  4 </value>
@@ -94,19 +100,29 @@
 
       <end>
         <color>
-		 <red>
-			<property>/sim/model/aircrane/effects/particles/rotorwash/redcombinedend</property>
-		 </red>
-		 <green>
-			<property>/sim/model/aircrane/effects/particles/rotorwash/greencombinedend</property>
-		 </green>
-		 <blue>
-			<property>/sim/model/aircrane/effects/particles/rotorwash/bluecombinedend</property>
-		 </blue>
+          <red>
+            <property>/sim/model/aircrane/effects/particles/rotorwash/redcombinedend</property>
+          </red>
+          <green>
+            <property>/sim/model/aircrane/effects/particles/rotorwash/greencombinedend</property>
+          </green>
+          <blue>
+            <property>/sim/model/aircrane/effects/particles/rotorwash/bluecombinedend</property>
+          </blue>
           <alpha>
-			<property>/rotors/main/rpm</property>
-			<factor>0.002</factor>
-		  </alpha>
+            <property>/controls/engines/engine/throttle</property>
+            <interpolation>
+             <entry>
+              <ind>0.0</ind><dep>0.5</dep>
+             </entry>
+             <entry>
+              <ind>0.5</ind><dep>0.25</dep>
+             </entry>
+             <entry>
+              <ind>1.0</ind><dep>0.005</dep>
+             </entry>
+            </interpolation>
+          </alpha>
         </color>
         <size>
           <value>  40 </value>
