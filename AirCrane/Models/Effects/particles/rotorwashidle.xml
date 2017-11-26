@@ -79,13 +79,13 @@
             <property>/controls/engines/engine/throttle</property>
             <interpolation>
              <entry>
-              <ind>0.0</ind><dep>0.17</dep>
+              <ind>0.0</ind><dep>0.15</dep>
              </entry>
              <entry>
-              <ind>0.5</ind><dep>0.15</dep>
+              <ind>0.5</ind><dep>0.1</dep>
              </entry>
              <entry>
-              <ind>1.0</ind><dep>0.001</dep>
+              <ind>1.0</ind><dep>0.04</dep>
              </entry>
             </interpolation>
           </alpha>
@@ -111,13 +111,13 @@
             <property>/controls/engines/engine/throttle</property>
             <interpolation>
              <entry>
-              <ind>0.0</ind><dep>0.17</dep>
+              <ind>0.0</ind><dep>0.15</dep>
              </entry>
              <entry>
-              <ind>0.5</ind><dep>0.15</dep>
+              <ind>0.5</ind><dep>0.1</dep>
              </entry>
              <entry>
-              <ind>1.0</ind><dep>0.001</dep>
+              <ind>1.0</ind><dep>0.04</dep>
              </entry>
             </interpolation>
           </alpha>
