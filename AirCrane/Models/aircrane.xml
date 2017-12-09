@@ -180,6 +180,7 @@
   
   <effect>
     <inherits-from>Aircraft/Generic/Effects/Fuselagereflect</inherits-from>
+    <!--inherits-from>Aircraft/AirCrane/Models/Effects/exterior/bumpspec</inherits-from-->
     <object-name>fuselage</object-name>
     <object-name>porteG</object-name>
     <object-name>porteD</object-name>
@@ -232,9 +233,14 @@
     </offsets>
   </model>
 
-  <!-- Long Line Cargo -->
+  <!-- Long Line Cargo
   <model>
     <path>Aircraft/AirCrane/Models/Cargo-Hauling/long-line.xml</path>
+  </model> -->
+
+  <!-- Long Line Cargo Unchained -->
+  <model>
+    <path>Aircraft/AirCrane/Models/Cargo-Hauling/long-line-uc.xml</path>
   </model>
   
   <!-- Water System -->
@@ -562,9 +568,9 @@
     <property>gear/gear[0]/rollspeed-ms</property>
     <factor> 30 </factor>
     <center>
-      <x-m> -8.539 </x-m>
+      <x-m> -8.548 </x-m>
       <y-m>  0.000 </y-m>
-      <z-m> -3.680 </z-m>
+      <z-m> -3.663 </z-m>
     </center>
     <axis>
       <x>  0 </x>
@@ -580,8 +586,8 @@
     <factor> 30 </factor>
     <center>
       <x-m> -1.144 </x-m>
-      <y-m> -3.013 </y-m>
-      <z-m> -3.530 </z-m>
+      <y-m> -3.012 </y-m>
+      <z-m> -3.496 </z-m>
     </center>
     <axis>
       <x>  0 </x>
@@ -598,7 +604,7 @@
     <center>
       <x-m> -1.144 </x-m>
       <y-m>  3.013 </y-m>
-      <z-m> -3.530 </z-m>
+      <z-m> -3.496 </z-m>
     </center>
     <axis>
       <x>  0 </x>

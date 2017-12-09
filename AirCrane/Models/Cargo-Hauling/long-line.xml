@@ -513,14 +513,213 @@
     </condition>
   </model>
 
+  <model>
+    <path>hitch.ac</path>
+    <condition>
+      <property>/sim/gui/dialogs/aicargo-dialog/hitch</property>
+    </condition>
+  </model>
+
+  <animation>
+    <object-name>hitch</object-name>
+    <type>select</type>
+    <condition>
+      <property>/sim/gui/dialogs/aicargo-dialog/hitch</property>
+    </condition>
+  </animation>
+
   <animation>
     <!-- Objets opaques -->
-    <object-name>ropesegment.001</object-name>
+        <object-name>ropesegment.001</object-name>
+    <object-name>ropesegment.002</object-name>
+    <object-name>ropesegment.003</object-name>
+    <object-name>ropesegment.004</object-name>
+    <object-name>ropesegment.005</object-name>
+    <object-name>ropesegment.006</object-name>
+    <object-name>ropesegment.007</object-name>
+    <object-name>ropesegment.008</object-name>
+    <object-name>ropesegment.009</object-name>
+    <object-name>ropesegment.010</object-name>
+    <object-name>ropesegment.011</object-name>
+    <object-name>ropesegment.012</object-name>
+    <object-name>ropesegment.013</object-name>
+    <object-name>ropesegment.014</object-name>
+    <object-name>ropesegment.015</object-name>
+    <object-name>ropesegment.016</object-name>
+    <object-name>ropesegment.017</object-name>
+    <object-name>ropesegment.018</object-name>
+    <object-name>ropesegment.019</object-name>
+    <object-name>ropesegment.020</object-name>
+    <object-name>ropesegment.021</object-name>
+    <object-name>ropesegment.022</object-name>
+    <object-name>ropesegment.023</object-name>
+    <object-name>ropesegment.024</object-name>
+    <object-name>ropesegment.025</object-name>
+    <object-name>ropesegment.026</object-name>
+    <object-name>ropesegment.027</object-name>
+    <object-name>ropesegment.028</object-name>
+    <object-name>ropesegment.029</object-name>
+    <object-name>ropesegment.030</object-name>
+    <object-name>ropesegment.031</object-name>
+    <object-name>ropesegment.032</object-name>
+    <object-name>ropesegment.033</object-name>
+    <object-name>ropesegment.034</object-name>
+    <object-name>ropesegment.035</object-name>
+    <object-name>ropesegment.036</object-name>
+    <object-name>ropesegment.037</object-name>
+    <object-name>ropesegment.038</object-name>
+    <object-name>ropesegment.039</object-name>
+    <object-name>ropesegment.040</object-name>
+    <object-name>ropesegment.041</object-name>
+    <object-name>ropesegment.042</object-name>
+    <object-name>ropesegment.043</object-name>
+    <object-name>ropesegment.044</object-name>
+    <object-name>ropesegment.045</object-name>
+    <object-name>ropesegment.046</object-name>
+    <object-name>ropesegment.047</object-name>
+    <object-name>ropesegment.048</object-name>
+    <object-name>ropesegment.049</object-name>
+    <object-name>ropesegment.050</object-name>
+    <object-name>ropesegment.051</object-name>
+    <object-name>ropesegment.052</object-name>
+    <object-name>ropesegment.053</object-name>
+    <object-name>ropesegment.054</object-name>
+    <object-name>ropesegment.055</object-name>
+    <object-name>ropesegment.056</object-name>
+    <object-name>ropesegment.057</object-name>
+    <object-name>ropesegment.058</object-name>
+    <object-name>ropesegment.059</object-name>
+    <object-name>ropesegment.060</object-name>
+    <object-name>ropesegment.061</object-name>
+    <object-name>ropesegment.062</object-name>
+    <object-name>ropesegment.063</object-name>
+    <object-name>ropesegment.064</object-name>
+    <object-name>ropesegment.065</object-name>
+    <object-name>ropesegment.066</object-name>
+    <object-name>ropesegment.067</object-name>
+    <object-name>ropesegment.068</object-name>
+    <object-name>ropesegment.069</object-name>
+    <object-name>ropesegment.070</object-name>
+    <object-name>ropesegment.071</object-name>
+    <object-name>ropesegment.072</object-name>
+    <object-name>ropesegment.073</object-name>
+    <object-name>ropesegment.074</object-name>
+    <object-name>ropesegment.075</object-name>
+    <object-name>ropesegment.076</object-name>
+    <object-name>ropesegment.077</object-name>
+    <object-name>ropesegment.078</object-name>
+    <object-name>ropesegment.079</object-name>
+    <object-name>ropesegment.080</object-name>
+    <object-name>ropesegment.081</object-name>
+    <object-name>ropesegment.082</object-name>
+    <object-name>ropesegment.083</object-name>
+    <object-name>ropesegment.084</object-name>
+    <object-name>ropesegment.085</object-name>
+    <object-name>ropesegment.086</object-name>
+    <object-name>ropesegment.087</object-name>
+    <object-name>ropesegment.088</object-name>
+    <object-name>ropesegment.089</object-name>
+    <object-name>ropesegment.090</object-name>
+    <object-name>cargo</object-name>
+    <object-name>cargoharness</object-name>
+    <object-name>hitch</object-name>
   </animation>
 
   <effect>
     <inherits-from>Aircraft/Generic/Effects/Fuselagereflect</inherits-from>
-    <object-name>ropesegment.001</object-name>
+        <object-name>ropesegment.001</object-name>
+    <object-name>ropesegment.002</object-name>
+    <object-name>ropesegment.003</object-name>
+    <object-name>ropesegment.004</object-name>
+    <object-name>ropesegment.005</object-name>
+    <object-name>ropesegment.006</object-name>
+    <object-name>ropesegment.007</object-name>
+    <object-name>ropesegment.008</object-name>
+    <object-name>ropesegment.009</object-name>
+    <object-name>ropesegment.010</object-name>
+    <object-name>ropesegment.011</object-name>
+    <object-name>ropesegment.012</object-name>
+    <object-name>ropesegment.013</object-name>
+    <object-name>ropesegment.014</object-name>
+    <object-name>ropesegment.015</object-name>
+    <object-name>ropesegment.016</object-name>
+    <object-name>ropesegment.017</object-name>
+    <object-name>ropesegment.018</object-name>
+    <object-name>ropesegment.019</object-name>
+    <object-name>ropesegment.020</object-name>
+    <object-name>ropesegment.021</object-name>
+    <object-name>ropesegment.022</object-name>
+    <object-name>ropesegment.023</object-name>
+    <object-name>ropesegment.024</object-name>
+    <object-name>ropesegment.025</object-name>
+    <object-name>ropesegment.026</object-name>
+    <object-name>ropesegment.027</object-name>
+    <object-name>ropesegment.028</object-name>
+    <object-name>ropesegment.029</object-name>
+    <object-name>ropesegment.030</object-name>
+    <object-name>ropesegment.031</object-name>
+    <object-name>ropesegment.032</object-name>
+    <object-name>ropesegment.033</object-name>
+    <object-name>ropesegment.034</object-name>
+    <object-name>ropesegment.035</object-name>
+    <object-name>ropesegment.036</object-name>
+    <object-name>ropesegment.037</object-name>
+    <object-name>ropesegment.038</object-name>
+    <object-name>ropesegment.039</object-name>
+    <object-name>ropesegment.040</object-name>
+    <object-name>ropesegment.041</object-name>
+    <object-name>ropesegment.042</object-name>
+    <object-name>ropesegment.043</object-name>
+    <object-name>ropesegment.044</object-name>
+    <object-name>ropesegment.045</object-name>
+    <object-name>ropesegment.046</object-name>
+    <object-name>ropesegment.047</object-name>
+    <object-name>ropesegment.048</object-name>
+    <object-name>ropesegment.049</object-name>
+    <object-name>ropesegment.050</object-name>
+    <object-name>ropesegment.051</object-name>
+    <object-name>ropesegment.052</object-name>
+    <object-name>ropesegment.053</object-name>
+    <object-name>ropesegment.054</object-name>
+    <object-name>ropesegment.055</object-name>
+    <object-name>ropesegment.056</object-name>
+    <object-name>ropesegment.057</object-name>
+    <object-name>ropesegment.058</object-name>
+    <object-name>ropesegment.059</object-name>
+    <object-name>ropesegment.060</object-name>
+    <object-name>ropesegment.061</object-name>
+    <object-name>ropesegment.062</object-name>
+    <object-name>ropesegment.063</object-name>
+    <object-name>ropesegment.064</object-name>
+    <object-name>ropesegment.065</object-name>
+    <object-name>ropesegment.066</object-name>
+    <object-name>ropesegment.067</object-name>
+    <object-name>ropesegment.068</object-name>
+    <object-name>ropesegment.069</object-name>
+    <object-name>ropesegment.070</object-name>
+    <object-name>ropesegment.071</object-name>
+    <object-name>ropesegment.072</object-name>
+    <object-name>ropesegment.073</object-name>
+    <object-name>ropesegment.074</object-name>
+    <object-name>ropesegment.075</object-name>
+    <object-name>ropesegment.076</object-name>
+    <object-name>ropesegment.077</object-name>
+    <object-name>ropesegment.078</object-name>
+    <object-name>ropesegment.079</object-name>
+    <object-name>ropesegment.080</object-name>
+    <object-name>ropesegment.081</object-name>
+    <object-name>ropesegment.082</object-name>
+    <object-name>ropesegment.083</object-name>
+    <object-name>ropesegment.084</object-name>
+    <object-name>ropesegment.085</object-name>
+    <object-name>ropesegment.086</object-name>
+    <object-name>ropesegment.087</object-name>
+    <object-name>ropesegment.088</object-name>
+    <object-name>ropesegment.089</object-name>
+    <object-name>ropesegment.090</object-name>
+    <object-name>cargo</object-name>
+    <object-name>cargoharness</object-name>
+    <object-name>hitch</object-name>
   </effect>
   
   <animation>
@@ -529,6 +728,25 @@
     <condition>
       <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
     </condition>
+  </animation>
+
+  <!-- Flex Rope Rotation Yaw -->
+  <animation>
+    <type>rotate</type>
+    <object-name>ropesegment.001</object-name>
+    <property>/sim/cargo/rope/yaw1</property>
+    <factor>1</factor>
+    <offset-deg>0</offset-deg>   
+    <center>
+      <x-m>-2.08048</x-m>
+      <y-m> 0.00551</y-m>
+      <z-m>-1.10667</z-m>
+    </center>
+    <axis>
+      <x>0</x>
+      <y>0</y>
+      <z>1</z>
+    </axis>
   </animation>
 
   <!-- Flex Hose Rotation Pitch -->
@@ -1257,7 +1475,7 @@
     <object-name>ropesegment.037</object-name>
     <object-name>cargoharness</object-name>
     <object-name>cargo</object-name>
-    <property>/sim/cargo/rope/pitch36</property>
+    <property>/sim/cargo/rope/pitch37</property>
     <factor>1</factor>
     <offset-deg>0</offset-deg>   
     <center>
@@ -3058,7 +3276,7 @@
     <object-name>ropesegment.037</object-name>
     <object-name>cargoharness</object-name>
     <object-name>cargo</object-name>
-    <property>/sim/cargo/rope/roll36</property>
+    <property>/sim/cargo/rope/roll37</property>
     <factor>1</factor>
     <offset-deg>0</offset-deg>   
     <center>
@@ -4133,13 +4351,14 @@
     </axis>
   </animation>
 
-  <!-- roll
+  <!-- roll -->
   <animation>
     <type>rotate</type>
     <object-name>ropesegment.001</object-name>
     <object-name>cargoharness</object-name>
     <object-name>cargo</object-name>
-    <property>/orientation/roll-deg</property>
+    <!--property>/orientation/roll-deg</property-->
+    <property>sim/cargo/delta_roll</property>
     <factor>1</factor>
     <offset-deg>0</offset-deg>   
     <center>
@@ -4152,15 +4371,16 @@
       <y>0</y>
       <z>0</z>
     </axis>
-  </animation> -->
+  </animation>
 
-  <!-- pitch
+  <!-- pitch -->
   <animation>
     <type>rotate</type>
     <object-name>ropesegment.001</object-name>
     <object-name>cargoharness</object-name>
     <object-name>cargo</object-name>
-    <property>/orientation/pitch-deg</property>
+    <!--property>/orientation/pitch-deg</property-->
+    <property>sim/cargo/delta_pitch</property>
     <factor>-1</factor>
     <offset-deg>0</offset-deg>   
     <center>
@@ -4173,7 +4393,7 @@
       <y>1</y>
       <z>0</z>
     </axis>
-  </animation> -->
+  </animation>
 
   <!-- Cargo and harness translation and rotation -->
 
@@ -4331,7 +4551,9 @@
   </animation>
   
   <animation>
-    <type>rotate</type>
+    <type>rotate</type><x-m>-2.08048</x-m>
+      <y-m> 0.00551</y-m>
+      <z-m>-1.10667</z-m>
     <object-name>RopeSegment02</object-name>
     <property>sim/cargo/pitch-deg</property>
     <factor>-.50</factor>
@@ -4347,7 +4569,5 @@
       <z>0</z>
     </axis>
   </animation> -->
-
-
 
 </PropertyList>

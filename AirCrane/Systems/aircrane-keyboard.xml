@@ -197,7 +197,47 @@
         <value type="bool">true</value>
       </binding>
     </key>
-    
+
+    <key n="87"> 
+      <name>W</name>
+      <desc>Winch down</desc>
+      <repeatable type="bool">true</repeatable>
+      <binding>
+        <command>nasal</command>
+        <script>
+          var connector = getprop("/sim/gui/dialogs/aicargo-dialog/connector");
+          if (connector == 1)
+            {
+              var segments = getprop("/sim/cargo/rope/segments-reeled-in");
+              if (segments > 0)
+                setprop("/sim/cargo/rope/segments-reeled-in", segments - 1);
+            }
+          else
+            screen.log.write("Winch required!");
+        </script>
+      </binding>
+    </key>
+
+    <key n="119"> 
+      <name>w</name>
+      <desc>Winch up</desc>
+      <repeatable type="bool">true</repeatable>
+      <binding>
+        <command>nasal</command>
+        <script>
+          var connector = getprop("/sim/gui/dialogs/aicargo-dialog/connector");
+          if (connector == 1)
+            {
+              var segments = getprop("/sim/cargo/rope/segments-reeled-in");
+              if (87 > segments)
+                setprop("/sim/cargo/rope/segments-reeled-in", segments + 1);
+            }
+          else
+            screen.log.write("Winch required!");
+        </script>
+      </binding>
+      </key>
+
   </keyboard>
   
 </PropertyList>

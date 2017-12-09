@@ -111,26 +111,6 @@
 	<!-- Cargo selector -->
 	<group>
 	  <layout>table</layout>
-	  <text>
-      <col>0</col>
-      <row>0</row>
-	    <halign>left</halign>
-	    <label>Cargo</label>
-    </text>
-    <text>
-      <col>1</col>
-      <row>0</row>
-      <halign>left</halign>
-      <property>/sim/gui/dialogs/aicargo-dialog/selected_cargo_desc</property>
-      <format>%s</format>
-      <live>true</live>
-      <color>
-        <red>0.9</red>
-        <green>0.4</green>
-        <blue>0.2</blue>
-        <alpha>1</alpha>
-      </color>
-    </text>
     <checkbox>
       <col>2</col>
       <row>0</row>
@@ -224,7 +204,26 @@
         </script>
       </binding>
     </checkbox>
-
+    <text>
+      <col>0</col>
+      <row>1</row>
+	    <halign>left</halign>
+	    <label>Cargo</label>
+    </text>
+    <text>
+      <col>1</col>
+      <row>1</row>
+      <halign>left</halign>
+      <property>/sim/gui/dialogs/aicargo-dialog/selected_cargo_desc</property>
+      <format>%s</format>
+      <live>true</live>
+      <color>
+        <red>0.9</red>
+        <green>0.4</green>
+        <blue>0.2</blue>
+        <alpha>1</alpha>
+      </color>
+    </text>
   </group>
 
   <group>
