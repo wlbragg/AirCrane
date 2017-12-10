@@ -6,7 +6,7 @@ name "Blender_export__micro-relay.ac"
 kids 1
 OBJECT poly
 name "cargo"
-loc -6.3474274 -4.2422152 0.0641016
+loc -2.3058884 -4.2422152 0.0641016
 texture "cargo.png"
 texrep 1 1
 numvert 16
