@@ -48,5 +48,25 @@
     <name>K</name>
     <desc>Toggle Tank Doors</desc>
   </key>
+  <key>
+    <name>O</name>
+    <desc>Attach cargo/auto attach off</desc>
+  </key>
+  <key>
+    <name>o</name>
+    <desc>Release cargo</desc>
+  </key>
+    <key>
+    <name>Ctrl o</name>
+    <desc>Toggle Auto attach cargo</desc>
+  </key>
+  <key>
+    <name>w</name>
+    <desc>Winch retract</desc>
+  </key>
+  <key>
+    <name>W</name>
+    <desc>Winch extend</desc>
+  </key>
   
 </PropertyList>

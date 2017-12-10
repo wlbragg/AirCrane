@@ -211,9 +211,14 @@
 				<property>sim/model/aircrane/cargo_connection_flag_0</property>
 				<live>true</live>
 				<enable>
-					<not>
-						<property>/sim/freeze/replay-state</property>
-					</not>
+          <and>
+					  <not>
+						  <property>/sim/freeze/replay-state</property>
+					  </not>
+            <not>
+						  <property>/sim/cargo/cargo-on-hook</property>
+					  </not>
+          </and>
 				</enable>
         <binding>
           <command>nasal</command>
@@ -232,9 +237,14 @@
 				<property>sim/model/aircrane/cargo_connection_flag_1</property>
 				<live>true</live>
 				<enable>
-				  <not>
-					  <property>/sim/freeze/replay-state</property>
-				  </not>
+          <and>
+					  <not>
+						  <property>/sim/freeze/replay-state</property>
+					  </not>
+            <not>
+						  <property>/sim/cargo/cargo-on-hook</property>
+					  </not>
+          </and>
 				</enable>
         <binding>
           <command>nasal</command>

@@ -297,8 +297,6 @@ var cargo_tow = func () {
   var n_seg_reeled = getprop("/sim/cargo/rope/segments-reeled-in");
   ropeLength = (90 - n_seg_reeled) * seg_length;
 
-setprop("Aa-ropelength", ropeLength);
-
   if (longline)
     {
       hookHeight = 55;
@@ -307,7 +305,7 @@ setprop("Aa-ropelength", ropeLength);
     {
       hookHeight = 15;
     }
-  
+
   #needs work to make this check account for the height of the cargo to the hitch height 
   #of the connection point be it longline or harddocked
 	if(onHookNode == 0 and cargoReleased == 0 and hooked == 0)
@@ -520,7 +518,7 @@ setprop("Aa-ropelength", ropeLength);
         if (stackConnected)
           gui.popupTip(cargoName~" Connected", 1);
       } else {
-          gui.popupTip("Cargo not on ground", 1);
+          gui.popupTip("Cargo not on ground or out of position", 1);
           setprop("controls/cargo-release", cargoReleased = 0);
       }
 		}
@@ -577,6 +575,7 @@ setprop("Aa-ropelength", ropeLength);
       }
       cargoName="";
       cargoReleased=0;
+      setprop("sim/cargo/cargo-auto-hook", 0);
 
       #TODO: Make this to update GUI correctly 
       #var aic = getprop("/sim/gui/dialogs/aicargo-dialog/ai-path");
@@ -586,7 +585,12 @@ setprop("Aa-ropelength", ropeLength);
       #  setprop("/sim/gui/dialogs/aicargo-dialog/selected_cargo_alt", getprop("/ai/models/" ~ cargoParent ~ "/position/altitude-ft"));
       #  setprop("/sim/gui/dialogs/aicargo-dialog/selected_cargo_head", getprop("/ai/models/" ~ cargoParent ~ "/orientation/true-heading-deg"));
       #}
-	}	
+	}
+
+  if (hookNode)
+    setprop("/sim/cargo/cargo-hook", 0);
+  if (releaseNode)
+    setprop("/controls/cargo-release", 0);
 
   longline_animation(0);
 
