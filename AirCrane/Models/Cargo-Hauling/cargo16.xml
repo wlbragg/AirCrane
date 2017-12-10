@@ -8,7 +8,7 @@
 <PropertyList>
 
   <model>
-    <path>micro-wave.ac</path>
+    <path>micro-wave-g.ac</path>
     <name>micro-wave</name>
     <condition>
       <and>

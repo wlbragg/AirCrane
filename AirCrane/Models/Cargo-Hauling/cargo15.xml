@@ -8,7 +8,7 @@
 <PropertyList>
 
   <model>
-    <path>micro-relay.ac</path>
+    <path>micro-relay-g.ac</path>
     <name>micro-relay</name>
     <condition>
       <and>
