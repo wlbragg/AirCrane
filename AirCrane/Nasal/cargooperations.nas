@@ -90,7 +90,7 @@ setlistener("/sim/signals/fdm-initialized", func (n) {
   cargo12 = place_model("12", 11, "pine-tree",        model_path,  0,  350, 2.08, 6.12, lat, lon, alt,    10.93, 0, 0, 0);
   cargo13 = place_model("13", 12, "pine-tree",        model_path,  0,  350, 2.08, 6.12, lat, lon, alt,    10.93, 0, 0, 0);
   cargo14 = place_model("14", 13, "dump-truck",       model_path,  0,10000, 5.69,15.45, lat, lon, alt-90, 22.76, 0, 0, 0);
-  cargo15 = place_model("15", 14, "micro-relay",      model_path, 21,  400, 5.98, 6.06, lat, lon, alt-90, 23.81, 0, 0, 0);
+  cargo15 = place_model("15", 14, "micro-relay",      model_path, 20,  400, 5.98, 6.06, lat, lon, alt-90, 23.81, 0, 0, 0);
   cargo16 = place_model("16", 15, "micro-wave",       model_path, 21,  400, 5.99, 6.99, lat, lon, alt-90, 26.58, 0, 0, 0);
   cargo17 = place_model("17", 16, "tower-sec-one",    model_path,  0, 1400,12.81,16.49, lat, lon, alt-90, 46.10, 0, 0, 0);
   cargo18 = place_model("18", 17, "tower-sec-two",    model_path, 16, 1300,12.94,16.49, lat, lon, alt-90, 46.35, 0, 0, 0);
