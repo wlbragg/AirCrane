@@ -155,6 +155,23 @@
     <padding>6</padding>
     <checkbox>
       <halign>left</halign>
+      <label>Equip Garmin 196 GPS</label>
+      <property>/sim/model/garmin196-visible</property>
+      <live>true</live>
+      <live>true</live>
+      <binding>
+          <command>dialog-apply</command>
+      </binding>
+    </checkbox>
+  </group>
+
+  <hrule/>
+
+  <group>
+    <layout>hbox</layout>
+    <padding>6</padding>
+    <checkbox>
+      <halign>left</halign>
       <label>Fluid Pumping System</label>
       <property>sim/model/firetank/enabled</property>
       <live>true</live>
