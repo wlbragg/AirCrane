@@ -46,9 +46,9 @@
     <object-name>nav-yaw-steering-bar</object-name>
     <emission>
       <factor-prop>systems/electrical/outputs/instrument-lights</factor-prop>
-      <red>   0.50 </red>
-      <green> 0.25 </green>
-      <blue>  0.25 </blue>
+      <red>   0.04 </red>
+      <green> 0.05 </green>
+      <blue>  0.04 </blue>
     </emission>
   </animation>    
 

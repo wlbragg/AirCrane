@@ -6,7 +6,6 @@
 
   <animation>
     <!-- Objets opaques -->
-    <object-name>panel</object-name>
     <object-name>panel1</object-name>
     <object-name>panel2</object-name>
     <object-name>panel3</object-name>
@@ -16,7 +15,6 @@
   <!-- ALS Interior Shadows -->
   <effect>
     <inherits-from>Models/Effects/interior/cockpit-interior</inherits-from>
-    <object-name>panel</object-name>
     <object-name>panel1</object-name>
     <object-name>panel2</object-name>
     <object-name>panel3</object-name>
@@ -145,5 +143,15 @@
       <pitch-deg>-82</pitch-deg>
     </offsets>
   </model>
+
+	<model>	
+		<path>Aircraft/AirCrane/Models/Interior/Panel/Instruments/compass/compass.xml</path>
+		<offsets>
+			<x-m>-9.330</x-m>
+			<y-m> 0.000</y-m>
+			<z-m>-1.220</z-m>
+			<pitch-deg>0</pitch-deg>
+		</offsets>
+	</model>
 
 </PropertyList>
