@@ -30,7 +30,7 @@
 			</not>
 			<less-than>
         <property>position/true-agl-ft</property>
-				<value>40</value>
+				<value>80</value>
 			</less-than>
 			<greater-than>
 				<property>/rotors/main/rpm</property>
