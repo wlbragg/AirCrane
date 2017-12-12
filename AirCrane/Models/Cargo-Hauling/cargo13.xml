@@ -4,10 +4,11 @@
   This is the model injected into the scene for the cargo hauling capability.
   Any new cargo must be have a file like this one and a definition in Cargo-Hauling/long-line.xml.
 -->
+
 <PropertyList>
 
   <model>
-    <path>pine-tree.ac</path>
+    <path>pine-tree5.ac</path>
     <name>pine-tree</name>
     <condition>
       <and>

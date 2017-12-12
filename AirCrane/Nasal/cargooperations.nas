@@ -76,45 +76,45 @@ setlistener("/sim/signals/fdm-initialized", func (n) {
   #     TODO: limit stackable to on long line only
 
   #inject new cargo models into the scene
-  cargo1 =  place_model( "1",  0, "cub-ground",       model_path,  0, 1200, 1.83, 5.98, lat, lon, alt,    10.53, 0, 0, 0);
-  cargo2 =  place_model( "2",  1, "container-big",    model_path,  3, 1500, 2.66, 6.10, lat, lon, alt,    12.72, 0, 0, 0);
-  cargo3 =  place_model( "3",  2, "container-big",    model_path,  1, 1000, 2.66, 6.10, lat, lon, alt,    12.72, 0, 0, 0);
-  cargo4 =  place_model( "4",  3, "container-big",    model_path,  2, 5000, 2.66, 6.10, lat, lon, alt,    12.72, 0, 0, 0);
-  cargo5 =  place_model( "5",  4, "ground-tank",      model_path,  0, 2000, 2.42, 6.44, lat, lon, alt,    12.26, 0, 0, 0);
-  cargo6 =  place_model( "6",  5, "ground-tank-lg",   model_path,  0, 4200, 4.18, 6.02, lat, lon, alt-90, 18.58, 0, 0, 0);
-  cargo7 =  place_model( "7",  6, "ground-tank-tall", model_path,  0, 3000, 3.69, 6.02, lat, lon, alt-90, 16.32, 0, 0, 0);
-  cargo8 =  place_model( "8",  7, "tank-stand",       model_path,  0,  600, 2.12, 6.08, lat, lon, alt,    11.68, 0, 0, 0);
-  cargo9 =  place_model( "9",  8, "pine-tree",        model_path,  0,  350, 2.08, 6.12, lat, lon, alt,    10.93, 0, 0, 0);
-  cargo10 = place_model("10",  9, "pine-tree",        model_path,  0,  350, 2.08, 6.12, lat, lon, alt,    10.93, 0, 0, 0);
-  cargo11 = place_model("11", 10, "pine-tree",        model_path,  0,  350, 2.08, 6.12, lat, lon, alt,    10.93, 0, 0, 0);
-  cargo12 = place_model("12", 11, "pine-tree",        model_path,  0,  350, 2.08, 6.12, lat, lon, alt,    10.93, 0, 0, 0);
-  cargo13 = place_model("13", 12, "pine-tree",        model_path,  0,  350, 2.08, 6.12, lat, lon, alt,    10.93, 0, 0, 0);
-  cargo14 = place_model("14", 13, "dump-truck",       model_path,  0,10000, 5.69,15.45, lat, lon, alt-90, 22.76, 0, 0, 0);
-  cargo15 = place_model("15", 14, "micro-relay",      model_path, 20,  400, 5.98, 6.06, lat, lon, alt-90, 23.81, 0, 0, 0);
-  cargo16 = place_model("16", 15, "micro-wave",       model_path, 21,  400, 5.99, 6.99, lat, lon, alt-90, 26.58, 0, 0, 0);
-  cargo17 = place_model("17", 16, "tower-sec-one",    model_path,  0, 1400,12.81,16.49, lat, lon, alt-90, 46.10, 0, 0, 0);
-  cargo18 = place_model("18", 17, "tower-sec-two",    model_path, 16, 1300,12.94,16.49, lat, lon, alt-90, 46.35, 0, 0, 0);
-  cargo19 = place_model("19", 18, "tower-sec-three",  model_path, 17, 1200,13.06,16.49, lat, lon, alt-90, 46.99, 0, 0, 0);
-  cargo20 = place_model("20", 19, "tower-sec-four",   model_path, 18, 1100,13.24,16.49, lat, lon, alt-90, 47.29, 0, 0, 0);
-  cargo21 = place_model("21", 20, "tower-sec-five",   model_path, 19, 1000,13.22,16.49, lat, lon, alt-90, 47.36, 0, 0, 0);
-  cargo22 = place_model("22", 21, "tower-sec-six",    model_path, 20,  950,13.22,16.49, lat, lon, alt-90, 47.35, 0, 0, 0);
-  cargo23 = place_model("23", 22, "tower-sec-seven",  model_path, 21,  900,13.25,16.49, lat, lon, alt-90, 47.47, 0, 0, 0);
-  cargo24 = place_model("24", 23, "tower-radio",      model_path,  0,  500,173.63,16.49,lat, lon, alt-90,532.58, 0, 0, 0);
-  cargo25 = place_model("25", 24, "radio-tower-sec",  model_path,  30, 500,24.84,16.75, lat, lon, alt-90, 85.49, 0, 0, 0);
-  cargo26 = place_model("26", 25, "radio-tower-sec",  model_path,  24, 500,24.84,16.75, lat, lon, alt-90, 85.49, 0, 0, 0);
-  cargo27 = place_model("27", 26, "radio-tower-sec",  model_path,  25, 500,24.84,16.75, lat, lon, alt-90, 85.49, 0, 0, 0);
-  cargo28 = place_model("28", 27, "radio-tower-sec",  model_path,  26, 500,24.84,16.75, lat, lon, alt-90, 85.49, 0, 0, 0);
-  cargo29 = place_model("29", 28, "radio-tower-sec",  model_path,  27, 500,24.84,16.75, lat, lon, alt-90, 85.49, 0, 0, 0);
-  cargo30 = place_model("30", 29, "radio-tower-sec",  model_path,  28, 500,24.84,16.75, lat, lon, alt-90, 85.49, 0, 0, 0);
-  cargo31 = place_model("31", 30, "radio-tower-sec",  model_path,  29, 500,24.84,16.75, lat, lon, alt-90, 85.49, 0, 0, 0);
-  cargo32 = place_model("32", 31, "mobile-pod",       model_path,   0,1200, 2.86,14.39, lat, lon, alt,    13.32, 0, 0, 0);
+  cargo1 =  place_model( "1",  0, "cub-ground",       model_path,  0,  0.0, 1200, 1.83, 5.98, lat, lon, alt,    10.53, 0, 0, 0);
+  cargo2 =  place_model( "2",  1, "container-big",    model_path,  3, 2.66, 1500, 2.66, 6.10, lat, lon, alt,    12.72, 0, 0, 0);
+  cargo3 =  place_model( "3",  2, "container-big",    model_path,  1, 2.66, 1000, 2.66, 6.10, lat, lon, alt,    12.72, 0, 0, 0);
+  cargo4 =  place_model( "4",  3, "container-big",    model_path,  2, 2.66, 5000, 2.66, 6.10, lat, lon, alt,    12.72, 0, 0, 0);
+  cargo5 =  place_model( "5",  4, "ground-tank",      model_path,  0,  0.0, 2000, 2.42, 6.44, lat, lon, alt,    12.26, 0, 0, 0);
+  cargo6 =  place_model( "6",  5, "ground-tank-lg",   model_path,  0,  0.0, 4200, 4.18, 6.02, lat, lon, alt-90, 18.58, 0, 0, 0);
+  cargo7 =  place_model( "7",  6, "ground-tank-tall", model_path,  0,  0.0, 3000, 3.69, 6.02, lat, lon, alt-90, 16.32, 0, 0, 0);
+  cargo8 =  place_model( "8",  7, "tank-stand",       model_path,  0,  0.0,  250, 2.12, 6.08, lat, lon, alt,    11.68, 0, 0, 0);
+  cargo9 =  place_model( "9",  8, "pine-tree",        model_path, 13,  0.0,  150, 2.08, 6.12, lat, lon, alt,    13.79, 0, 0, 0);
+  cargo10 = place_model("10",  9, "pine-tree",        model_path, 13,  0.0,  150, 2.08, 6.12, lat, lon, alt,    13.79, 0, 0, 0);
+  cargo11 = place_model("11", 10, "pine-tree",        model_path, 13,  0.0,  150, 2.08, 6.12, lat, lon, alt,    13.79, 0, 0, 0);
+  cargo12 = place_model("12", 11, "pine-tree",        model_path, 13,  0.0,  150, 2.08, 6.12, lat, lon, alt,     8.85, 0, 0, 0);
+  cargo13 = place_model("13", 12, "pine-tree",        model_path, 13,  0.0,  150, 2.08, 6.12, lat, lon, alt,     8.85, 0, 0, 0);
+  cargo14 = place_model("14", 13, "dump-truck",       model_path,  0,   .5,10000, 5.69,15.45, lat, lon, alt-90, 22.76, 0, 0, 0);
+  cargo15 = place_model("15", 14, "micro-relay",      model_path, 20,  0.0,  400, 5.98, 6.06, lat, lon, alt-90, 23.81, 0, 0, 0);
+  cargo16 = place_model("16", 15, "micro-wave",       model_path, 21,  0.0,  400, 5.99, 6.99, lat, lon, alt-90, 26.58, 0, 0, 0);
+  cargo17 = place_model("17", 16, "tower-sec-one",    model_path,  0,12.81, 1400,12.81,16.49, lat, lon, alt-90, 46.10, 0, 0, 0);
+  cargo18 = place_model("18", 17, "tower-sec-two",    model_path, 16,12.94, 1300,12.94,16.49, lat, lon, alt-90, 46.35, 0, 0, 0);
+  cargo19 = place_model("19", 18, "tower-sec-three",  model_path, 17,13.06, 1200,13.06,16.49, lat, lon, alt-90, 46.99, 0, 0, 0);
+  cargo20 = place_model("20", 19, "tower-sec-four",   model_path, 18,13.24, 1100,13.24,16.49, lat, lon, alt-90, 47.29, 0, 0, 0);
+  cargo21 = place_model("21", 20, "tower-sec-five",   model_path, 19,13.22, 1000,13.22,16.49, lat, lon, alt-90, 47.36, 0, 0, 0);
+  cargo22 = place_model("22", 21, "tower-sec-six",    model_path, 20,13.22,  950,13.22,16.49, lat, lon, alt-90, 47.35, 0, 0, 0);
+  cargo23 = place_model("23", 22, "tower-sec-seven",  model_path, 21,16.49,  900,13.25,16.49, lat, lon, alt-90, 47.47, 0, 0, 0);
+  cargo24 = place_model("24", 23, "tower-radio",      model_path,  0,  0.0,  500,173.63,16.49,lat, lon, alt-90,532.58, 0, 0, 0);
+  cargo25 = place_model("25", 24, "radio-tower-sec",  model_path, 30,24.84,  500,24.84,16.75, lat, lon, alt-90, 85.49, 0, 0, 0);
+  cargo26 = place_model("26", 25, "radio-tower-sec",  model_path, 24,24.84,  500,24.84,16.75, lat, lon, alt-90, 85.49, 0, 0, 0);
+  cargo27 = place_model("27", 26, "radio-tower-sec",  model_path, 25,24.84,  500,24.84,16.75, lat, lon, alt-90, 85.49, 0, 0, 0);
+  cargo28 = place_model("28", 27, "radio-tower-sec",  model_path, 26,24.84,  500,24.84,16.75, lat, lon, alt-90, 85.49, 0, 0, 0);
+  cargo29 = place_model("29", 28, "radio-tower-sec",  model_path, 27,24.84,  500,24.84,16.75, lat, lon, alt-90, 85.49, 0, 0, 0);
+  cargo30 = place_model("30", 29, "radio-tower-sec",  model_path, 28,24.84,  500,24.84,16.75, lat, lon, alt-90, 85.49, 0, 0, 0);
+  cargo31 = place_model("31", 30, "radio-tower-sec",  model_path, 29,24.84,  500,24.84,16.75, lat, lon, alt-90, 85.49, 0, 0, 0);
+  cargo32 = place_model("32", 31, "mobile-pod",       model_path,  0,  0.0, 1200, 2.86,14.39, lat, lon, alt,    13.32, 0, 0, 0);
 
   cargo_init();
 });
 
 #################### inject cargo models into the scene (helper) ####################
 
-var place_model = func(number, position, desc, path, stack, weight, height, harness, lat, lon, alt, offset, heading, pitch, roll) {
+var place_model = func(number, position, desc, path, stack, drop, weight, height, harness, lat, lon, alt, offset, heading, pitch, roll) {
 
   var m = props.globals.getNode("models", 1);
 		  for (var i = 0; 1; i += 1)
@@ -135,6 +135,7 @@ var place_model = func(number, position, desc, path, stack, weight, height, harn
   setprop("/models/cargo/cargo["~position~"]/height", height);
   setprop("/models/cargo/cargo["~position~"]/harness", harness);
   setprop("/models/cargo/cargo["~position~"]/stack", stack);
+  setprop("/models/cargo/cargo["~position~"]/drop", drop);
 
   var cargomodel = props.globals.getNode("/models/cargo/cargo["~position~"]", 1);
   var latN = cargomodel.getNode("latitude-deg",1);
@@ -150,6 +151,7 @@ var place_model = func(number, position, desc, path, stack, weight, height, harn
   var heightN = cargomodel.getNode("height",1);
   var harnessN = cargomodel.getNode("harness",1);
   var stackN = cargomodel.getNode("stack",1);
+  var dropN = cargomodel.getNode("drop",1);
 
   model.getNode("path", 1).setValue(path~"cargo"~number~".xml");
   model.getNode("latitude-deg-prop", 1).setValue(latN.getPath());
@@ -165,6 +167,7 @@ var place_model = func(number, position, desc, path, stack, weight, height, harn
   model.getNode("height-prop", 1).setValue(heightN.getPath());
   model.getNode("harness-prop", 1).setValue(harnessN.getPath());
   model.getNode("stack-prop", 1).setValue(stackN.getPath());
+  model.getNode("drop-prop", 1).setValue(dropN.getPath());
   model.getNode("load", 1).remove();
 
   return model;
@@ -554,7 +557,9 @@ var cargo_tow = func () {
       } else {
         setprop("/models/cargo/"~cargoParent~"/heading-deg", originalYaw);
         if (stack and stackConnected) {
-          setprop("/models/cargo/"~cargoParent~"/elevation-ft", getprop("/models/cargo/cargo[" ~ stack ~ "]/elevation-ft") + (getprop("/models/cargo/cargo[" ~ stack ~ "]/height")*3.28));
+#getprop("/models/cargo/cargo[" ~ stack ~ "]/elevation-ft") + (getprop("/models/cargo/cargo[" ~ stack ~ "]/height") * 3.28) - getprop("/models/cargo/cargo[" ~ stack ~ "]/elev-offset");
+          #setprop("/models/cargo/"~cargoParent~"/elevation-ft", getprop("/models/cargo/cargo[" ~ stack ~ "]/elevation-ft") + (getprop("/models/cargo/cargo[" ~ stack ~ "]/height")*3.28));
+          setprop("/models/cargo/"~cargoParent~"/elevation-ft", getprop("/models/cargo/cargo[" ~ stack ~ "]/elevation-ft") + (getprop("/models/cargo/cargo[" ~ stack ~ "]/drop")*3.28));
           setprop("/models/cargo/"~cargoParent~"/latitude-deg", getprop("/models/cargo/cargo[" ~ stack ~ "]/latitude-deg"));
           setprop("/models/cargo/"~cargoParent~"/longitude-deg", getprop("/models/cargo/cargo[" ~ stack ~ "]/longitude-deg"));
         } else
