@@ -162,9 +162,9 @@ var longline_animation = func (reset) {
     } 
   else
     ############################
-    if (!pulling)  
+    #if (!pulling)
       {
-        #lets cargo align with parallel rope if not conditioned as above
+        #allows cargo align with parallel rope if not conditioned as above
         setprop("/sim/cargo/rope/pitch"~(1+n_segments_reeled), ref_ang1);
         setprop("/sim/cargo/rope/roll"~(1+n_segments_reeled), ref_ang2);
       }
@@ -195,7 +195,8 @@ var longline_animation = func (reset) {
       var force = flex_force * math.cos(sum_angle * math.pi/180.0) * pull_force * velocity;
 
       ##################
-      if (overland and !pulling)
+      #if (overland and !pulling)
+      if (overland)
         {
           if (dist_above_ground < 0.0)
             {
@@ -228,7 +229,7 @@ var longline_animation = func (reset) {
 	            var aircraft_heading = getprop("/orientation/heading-deg");
 	            var aircraft_pos = geo.aircraft_position();
 
-	            var bearing = aircraft_pos.course_to(rope_pos);
+              var bearing = aircraft_pos.course_to(rope_pos);
 	            var dist = aircraft_pos.distance_to (rope_pos);
 	            var rel_bearing =  (aircraft_heading - 180.0) - bearing;
 
@@ -272,8 +273,9 @@ var longline_animation = func (reset) {
 
 		  sum_angle += angle;
 
-      #######################
-      if (onground_flag == 0 and !pulling)
+      #####################################
+      #if (onground_flag == 0 and !pulling)
+      if (onground_flag == 0)
 		    {
 		      current_angle = getprop("/sim/cargo/rope/pitch"~(i+1));
 
@@ -309,7 +311,7 @@ var longline_animation = func (reset) {
 		    }
       else
         ###############
-        if (pulling != 2)
+        #if (pulling != 2)
           {
             #rope sections to angle parallel to ground
             setprop("/sim/cargo/rope/pitch"~(i+1), angle);
@@ -349,7 +351,7 @@ var longline_animation = func (reset) {
     {
       rope_angle_r_array[i] = getprop("/sim/cargo/rope/roll"~(i+1));
     }
- }
+  } ########if pulling
 }
 
 var normalize = func (x, min, max) {

@@ -453,6 +453,7 @@ var cargo_tow = func () {
       } else {
         setprop("/sim/cargo/rope/damping", .6);
         setprop("/sim/cargo/rope/load-damping", 1);
+
         longline_animation(1);
         setprop("sim/cargo/rope/pulling", 1);
 
@@ -479,9 +480,6 @@ var cargo_tow = func () {
         setprop("/sim/cargo/rope/yaw1", rel_bearing);       
         
         if (cargo_dist > (ropeLength + 3)) {
-          setprop("/sim/cargo/rope/damping", .6);
-          setprop("/sim/cargo/rope/load-damping", 1);
-
           setprop("sim/cargo/rope/pulling", 2);
 
           setprop("sim/weight[3]/weight-lb", cargoWeight);
@@ -493,7 +491,6 @@ var cargo_tow = func () {
 
           setprop("/models/cargo/" ~ cargoParent ~ "/latitude-deg", currentLat);
           setprop("/models/cargo/" ~ cargoParent ~ "/longitude-deg", currentLon);
-          #setprop("/models/cargo/" ~ cargoParent ~ "/elevation-ft", (geo.elevation(currentLat, currentLon) * 3.2808 + elevoffset));
         }
         
         if (cargo_dist > (ropeLength + 6)) {
@@ -557,8 +554,6 @@ var cargo_tow = func () {
       } else {
         setprop("/models/cargo/"~cargoParent~"/heading-deg", originalYaw);
         if (stack and stackConnected) {
-#getprop("/models/cargo/cargo[" ~ stack ~ "]/elevation-ft") + (getprop("/models/cargo/cargo[" ~ stack ~ "]/height") * 3.28) - getprop("/models/cargo/cargo[" ~ stack ~ "]/elev-offset");
-          #setprop("/models/cargo/"~cargoParent~"/elevation-ft", getprop("/models/cargo/cargo[" ~ stack ~ "]/elevation-ft") + (getprop("/models/cargo/cargo[" ~ stack ~ "]/height")*3.28));
           setprop("/models/cargo/"~cargoParent~"/elevation-ft", getprop("/models/cargo/cargo[" ~ stack ~ "]/elevation-ft") + (getprop("/models/cargo/cargo[" ~ stack ~ "]/drop")*3.28));
           setprop("/models/cargo/"~cargoParent~"/latitude-deg", getprop("/models/cargo/cargo[" ~ stack ~ "]/latitude-deg"));
           setprop("/models/cargo/"~cargoParent~"/longitude-deg", getprop("/models/cargo/cargo[" ~ stack ~ "]/longitude-deg"));
