@@ -373,6 +373,7 @@
           <longline type="bool">false</longline>
           <connection type="bool">false</connection>
           <connector type="bool">false</connector>
+          <alt-origin type="bool">false</alt-origin>
         </aicargo-dialog>
       </dialogs>
     </gui>

@@ -158,7 +158,6 @@
       <label>Equip Garmin 196 GPS</label>
       <property>/sim/model/garmin196-visible</property>
       <live>true</live>
-      <live>true</live>
       <binding>
           <command>dialog-apply</command>
       </binding>
@@ -378,6 +377,27 @@
         </binding>
 			</radio>
 		</group>
+    <group>
+    <layout>hbox</layout>
+    <padding>6</padding>
+    <checkbox>
+      <halign>left</halign>
+      <label>Cargo Effects Rope</label>
+      <property>/sim/gui/dialogs/aicargo-dialog/alt-origin</property>
+      <live>true</live>
+      <enable>
+          <and>
+					  <not>
+						  <property>/sim/freeze/replay-state</property>
+					  </not>
+            <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
+          </and>
+				</enable>
+      <binding>
+        <command>dialog-apply</command>
+      </binding>
+    </checkbox>
+  </group>
 
   <hrule/>
 

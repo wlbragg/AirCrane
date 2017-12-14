@@ -22,7 +22,10 @@ var segment_length = getprop("/sim/cargo/rope/factor");
 var longline_animation = func (reset) {
 
 	var overland = getprop("gear/gear/ground-is-solid");
-  var altitude = getprop("position/true-agl-ft");
+  if (getprop("sim/gui/dialogs/aicargo-dialog/alt-origin"))
+    var altitude = getprop("/position/altitude-agl-ft") - 13.3;
+  else
+    var altitude = getprop("position/true-agl-ft");
 	var alt_agl = altitude * 0.3048 + getprop("/sim/cargo/rope/offset");
   var cargo_on_hook = getprop("sim/cargo/cargo-on-hook");
   var cargo_height = getprop("/sim/cargo/cargoheight");
