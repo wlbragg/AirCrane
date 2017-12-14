@@ -468,7 +468,13 @@
     </flight-recorder>
 
   </sim>
-  
+
+  <environment>
+    <aircraft-effects>
+      <splash-vector-z type="float">-1</splash-vector-z>
+    </aircraft-effects>
+  </environment>
+
   <input include="aircrane-keyboard.xml"/>
   
   <controls include="controls.xml"/>

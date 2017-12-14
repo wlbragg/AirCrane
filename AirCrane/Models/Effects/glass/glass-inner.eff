@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PropertyList>
+
+    <name>glass-inner</name>
+    <inherits-from>Effects/glass</inherits-from>
+
+    <!--<splash-x>0</splash-x>
+    <splash-y>0</splash-y>
+    <splash-z>-1</splash-z>-->
+
+</PropertyList>

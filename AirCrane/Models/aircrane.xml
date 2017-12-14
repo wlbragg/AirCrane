@@ -96,6 +96,9 @@
     <object-name>vitres</object-name>
     <object-name>vitresporteG</object-name>
     <object-name>vitresporteD</object-name>
+    <object-name>vitresInt</object-name>
+    <object-name>vitresporteGInt</object-name>
+    <object-name>vitresporteDInt</object-name>
     <object-name>lampeG</object-name>
     <object-name>lampeD</object-name>
     <object-name>lampetailtrs</object-name>
@@ -214,14 +217,22 @@
     <object-name>lampetail</object-name>
   </effect>
   
-  <!-- working for Rembrandt -->
+  <!-- exterior glass reflection (working for Rembrandt) -->
   <effect>
     <inherits-from>Aircraft/AirCrane/Models/Effects/glass/glass</inherits-from>
     <object-name>vitres</object-name>
     <object-name>vitresporteG</object-name>
     <object-name>vitresporteD</object-name>
   </effect>
-  
+
+  <!-- interior glass effects -->
+  <effect>
+    <inherits-from>Aircraft/AirCrane/Models/Effects/glass/glass-inner</inherits-from>
+    <object-name>vitresInt</object-name>
+    <object-name>vitresporteGInt</object-name>
+    <object-name>vitresporteDInt</object-name>
+  </effect>
+
   <!-- Une ombre pour OSG -->
   <model>
     <path>Aircraft/AirCrane/Models/Effects/shadows/shadow.xml</path>
@@ -696,6 +707,7 @@
     <name>LaPorteGauche</name>
     <object-name>porteG</object-name>
     <object-name>vitresporteG</object-name>
+    <object-name>vitresporteGInt</object-name>
   </animation>
   
   <animation>
@@ -715,6 +727,7 @@
   <animation>
     <type>rotate</type>
     <object-name>LaPorteGauche</object-name>
+
     <property>sim/model/door-positions/crew/position-norm</property>
     <factor> -100 </factor>
     <axis>
@@ -731,6 +744,7 @@
     <name>LaPorteDroite</name>
     <object-name>porteD</object-name>
     <object-name>vitresporteD</object-name>
+    <object-name>vitresporteDInt</object-name>
   </animation>
   
   <animation>
