@@ -474,6 +474,7 @@
     <aircraft-effects>
       <splash-vector-z type="float">-1</splash-vector-z>
     </aircraft-effects>
+    <terrain-dust-factor type="double">0.0</terrain-dust-factor>
   </environment>
 
   <input include="aircrane-keyboard.xml"/>

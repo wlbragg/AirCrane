@@ -55,7 +55,7 @@
 
     <counter>
       <particles-per-sec>
-        <property>position/true-agl-ft</property>
+        <property>/position/true-agl-ft</property>
         <factor>5</factor>
         <offset-m>500</offset-m>
       </particles-per-sec>
@@ -76,9 +76,10 @@
             <property>/sim/model/aircrane/effects/particles/rotorwash/bluecombinedstart</property>
           </blue>
           <alpha>
-            <property>/controls/engines/engine/throttle</property>
+            <property>/environment/terrain-dust-factor</property>
+            <!--property>/controls/engines/engine/throttle</property-->
             <interpolation>
-             <entry>
+             <!--entry>
               <ind>0.0</ind><dep>0.15</dep>
              </entry>
              <entry>
@@ -86,6 +87,18 @@
              </entry>
              <entry>
               <ind>1.0</ind><dep>0.04</dep>
+             </entry-->
+             <entry>
+              <ind>1.0</ind><dep>0.075</dep>
+             </entry>
+             <entry>
+              <ind>0.5</ind><dep>0.05</dep>
+             </entry>
+             <entry>
+              <ind>0.0</ind><dep>0.02</dep>
+             </entry>
+             <entry>
+              <ind>-0.9</ind><dep>0.0</dep>
              </entry>
             </interpolation>
           </alpha>
@@ -108,9 +121,10 @@
             <property>/sim/model/aircrane/effects/particles/rotorwash/bluecombinedend</property>
           </blue>
           <alpha>
-            <property>/controls/engines/engine/throttle</property>
+            <property>/environment/terrain-dust-factor</property>
+            <!--property>/controls/engines/engine/throttle</property-->
             <interpolation>
-             <entry>
+             <!--entry>
               <ind>0.0</ind><dep>0.15</dep>
              </entry>
              <entry>
@@ -118,6 +132,18 @@
              </entry>
              <entry>
               <ind>1.0</ind><dep>0.04</dep>
+             </entry-->
+             <entry>
+              <ind>1.0</ind><dep>0.075</dep>
+             </entry>
+             <entry>
+              <ind>0.5</ind><dep>0.05</dep>
+             </entry>
+             <entry>
+              <ind>0.0</ind><dep>0.02</dep>
+             </entry>
+             <entry>
+              <ind>-0.9</ind><dep>0.0</dep>
              </entry>
             </interpolation>
           </alpha>

@@ -103,10 +103,11 @@ var tank_operations = func {
   var quantity = getprop("sim/model/firetank/quantity");
   var coverage = getprop("sim/model/firetank/coverage");
   var cannontoggle = getprop("sim/model/watercannon/togglecannonpitch");
+  var red_diffuse = getprop("/rendering/scene/diffuse/red");
 
-	setprop("/sim/model/aircrane/effects/particles/redcombined", getprop("/rendering/scene/diffuse/red")*.95);
-	setprop("/sim/model/aircrane/effects/particles/greencombined", getprop("/rendering/scene/diffuse/red")*.98);
-	setprop("/sim/model/aircrane/effects/particles/bluecombined", getprop("/rendering/scene/diffuse/red")*1);
+	setprop("/sim/model/aircrane/effects/particles/redcombined",    red_diffuse*.95);
+	setprop("/sim/model/aircrane/effects/particles/greencombined",  red_diffuse*.98);
+	setprop("/sim/model/aircrane/effects/particles/bluecombined",   red_diffuse*1);
 
 	setprop("sim/model/firetank/waterdropparticlectrl", tankdooropen*hopperweight*particles);
 	setprop("sim/model/firetank/watercannonparticlectrl", cannonvalveopen*hopperweight*particles);
