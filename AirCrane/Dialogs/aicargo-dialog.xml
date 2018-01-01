@@ -91,7 +91,11 @@
   </text>
 	<text>
 	  <halign>left</halign>
-	  <label>    2) Shift+left-click on ground to position cargo.</label>
+	  <label>    2) Shift+left-click on ground to position cargo or</label>
+  </text>
+  <text>
+	  <halign>left</halign>
+    <label>        check "Random" to randomly position cargo behind the aircraft.</label>
   </text>
 	<text>
 	  <halign>left</halign>
@@ -99,11 +103,7 @@
   </text>
   <text>
 	  <halign>left</halign>
-	  <label>    4) Check "Random" to randomly position cargo behind the aircraft.</label>
-  </text>
-  <text>
-	  <halign>left</halign>
-	  <label>    5) Click "Reset" to hide cargo.</label>
+	  <label>    4) Click "Reset" to hide cargo.</label>
   </text>
 
   <hrule/>
@@ -186,7 +186,8 @@
             setprop("/models/cargo/"~aic~"/longitude-deg", getprop("position/longitude-deg")+x);
             setprop("/models/cargo/"~aic~"/heading-deg", rand()*360);
             var elev_m = geo.elevation(getprop("/models/cargo/"~aic~"/latitude-deg"), getprop("/models/cargo/"~aic~"/longitude-deg"));
-            setprop("/models/cargo/"~aic~"/elevation-ft", elev_m * 3.2808);
+            var alt_offset = getprop("/models/cargo/"~aic~"/elev-offset");
+            setprop("/models/cargo/"~aic~"/elevation-ft", elev_m * 3.2808 + alt_offset);
 
             setprop("/sim/gui/dialogs/aicargo-dialog/selected_cargo_lat", getprop("/models/cargo/"~aic~"/latitude-deg"));
             setprop("/sim/gui/dialogs/aicargo-dialog/selected_cargo_lon", getprop("/models/cargo/"~aic~"/longitude-deg"));
