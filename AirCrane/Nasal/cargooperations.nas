@@ -277,25 +277,28 @@ var cargo_tow = func () {
   var autoHookNode = getprop("sim/cargo/cargo-auto-hook");
   var onHookNode = getprop("sim/cargo/cargo-on-hook");
   var releaseNode = getprop("controls/cargo-release");
-  #use geo?
+
+  #use only geo?
   var lonNode = getprop("/position/longitude-deg");
   var latNode = getprop("/position/latitude-deg");
-  #can't use because of collision
-  #var altNode = getprop("/position/altitude-agl-ft");
-  var groundNode = getprop("/position/gear-agl-m");
-  var groundElevFt = getprop("/position/ground-elev-ft");
+  var aircraft_pos = geo.aircraft_position();
+
   var headNode = getprop("/orientation/heading-deg");
   var pitchNode = getprop("/orientation/pitch-deg");
   var rollNode = getprop("/orientation/roll-deg");
+
   var onGround = getprop("gear/gear/wow") * getprop("gear/gear[1]/wow") * getprop("gear/gear[2]/wow");
-  var longline = getprop("/sim/gui/dialogs/aicargo-dialog/connection");
   var cargoOnGround = getprop("/sim/cargo/hitsground");
+
+  var longline = getprop("/sim/gui/dialogs/aicargo-dialog/connection");
+
   var aircraft_alt_ft = getprop("/position/altitude-ft") - 13.8;
-  var true_grnd_elev_ft = geo.elevation(latNode, lonNode) * 3.28;           
+  var true_grnd_elev_ft = geo.elevation(latNode, lonNode) * 3.28;
+  #can't use because of collision
+  #var altNode = getprop("/position/altitude-agl-ft");
   var altNode =  aircraft_alt_ft - true_grnd_elev_ft;
   setprop("position/true-agl-ft", altNode);
-  var elvPos = groundElevFt + getprop("/position/altitude-agl-ft");
-  var aircraft_pos = geo.aircraft_position();
+  var elvPos = getprop("/position/ground-elev-ft") + getprop("/position/altitude-agl-ft");
 
   var n_seg_reeled = getprop("/sim/cargo/rope/segments-reeled-in");
   ropeLength = (90 - n_seg_reeled) * seg_length;
@@ -470,6 +473,7 @@ var cargo_tow = func () {
         var lMin = -(cargoHeight*3.28)/((ropeLength + (cargoHarness * .5))*3.28);
         var lMax = ((ropeLength + (cargoHarness * .5) + cargoHeight) * 3.28)/((ropeLength + (cargoHarness * .5))*3.28);
         var iput = (altNode-(cargoHeight*3.28))/((ropeLength + (cargoHarness * .5))*3.28);
+
         if (iput > lMax) iput = lMax;
         if (iput < lMin) iput = lMin;
         asinInput = normalize_h(iput, lMax, lMin);
