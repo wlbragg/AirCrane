@@ -126,9 +126,10 @@ var longline_animation = func (reset) {
 	var damping_factor = math.pow(damping, dt);
 
   #########################
+
   if (cargo_on_hook and pulling) {
     pull_factor_pitch = getprop("/sim/cargo/rope/pull-factor-pitch");
-    setprop("/sim/cargo/rope/pitch1", pull_factor_pitch);
+    setprop("/sim/cargo/rope/pitch"~(1+n_segments_reeled), pull_factor_pitch);
   } else {
 	if (onground_flag == 0)
 	  {
