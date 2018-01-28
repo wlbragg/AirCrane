@@ -70,6 +70,16 @@
     </offsets>
   </model>
 
+  <!-- Pedals -->
+  <model>
+    <path>Aircraft/AirCrane/Models/Interior/pedals.xml</path>
+    <offsets>
+      <x-m> 0.000 </x-m>
+      <y-m> 0.000 </y-m>
+      <z-m> 0.000 </z-m>
+    </offsets>
+  </model>
+
   <!-- Pilote -->
   <model>
     <path>Aircraft/AirCrane/Models/Pilot/pilot.xml</path>
