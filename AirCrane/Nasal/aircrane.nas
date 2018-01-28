@@ -38,6 +38,15 @@ var cone2 = props.globals.getNode("rotors/main/cone2-deg", 1);
 var cone3 = props.globals.getNode("rotors/main/cone3-deg", 1);
 var cone4 = props.globals.getNode("rotors/main/cone4-deg", 1);
 
+var autostart = func (msg=1) {
+    if (getprop("/engines/active-engine/running")) {
+      #if (msg)
+        gui.popupTip("Engine already running", 5);
+        return;
+    }
+    engines(1);
+};
+
 # state:
 # 0 off
 # 1 engine startup

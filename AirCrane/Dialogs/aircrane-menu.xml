@@ -8,6 +8,13 @@
       <enabled type="bool">true</enabled>
 
       <item>
+        <label>Autostart</label>
+        <binding>
+          <command>nasal</command>
+          <script>aircrane.autostart()</script>
+        </binding>
+      </item>
+      <item>
         <label>Select Livery</label>
         <binding>
           <command>nasal</command>

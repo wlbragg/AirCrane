@@ -405,6 +405,7 @@
       <path>/sim/gui/dialogs/aicargo-dialog/longline</path>
       <path>/sim/gui/dialogs/aicargo-dialog/connection</path>
       <path>/sim/gui/dialogs/aicargo-dialog/connector</path>
+      <path>sim/gui/dialogs/aicargo-dialog/alt-origin</path>
       <path>/sim/model/garmin196-visible</path>
       <!-- end cargo hauling feature -->
     </aircraft-data> 
