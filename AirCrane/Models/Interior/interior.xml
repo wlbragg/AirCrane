@@ -19,6 +19,8 @@
     <object-name>cranejoystick</object-name>
     <object-name>intporteG</object-name>
     <object-name>intporteD</object-name>
+    <object-name>intreardoor</object-name>
+    <object-name>intstarboarddoor</object-name>
     <object-name>siegegrue1</object-name>
     <object-name>siegegrue2</object-name>
     
@@ -26,6 +28,8 @@
     <object-name>intvitres</object-name>
     <object-name>intvitresporteG</object-name>
     <object-name>intvitresporteD</object-name>
+    <object-name>intvitresreardoor</object-name>
+    <object-name>intvitresstarboard</object-name>
   </animation>
 
   <!-- working for Rembrandt -->
@@ -34,6 +38,8 @@
     <object-name>intvitres</object-name>
     <object-name>intvitresporteG</object-name>
     <object-name>intvitresporteD</object-name>
+    <object-name>intvitresreardoor</object-name>
+    <object-name>intvitresstarboard</object-name>
   </effect>
 
   <!-- ALS Interior Shadows -->
@@ -52,6 +58,8 @@
     <object-name>cranejoystick</object-name>
     <object-name>intporteG</object-name>
     <object-name>intporteD</object-name>
+    <object-name>intreardoor</object-name>
+    <object-name>intstarboarddoor</object-name>
     <object-name>siegegrue1</object-name>
     <object-name>siegegrue2</object-name>
   </effect>
@@ -163,5 +171,77 @@
       <z2-m> -0.79338 </z2-m>
     </axis>
   </animation>
+
+  <!-- Starboard Door -->
+  <animation>
+    <name>IntStarboardDoor</name>
+    <object-name>intvitresstarboard</object-name>
+    <object-name>intstarboarddoor</object-name>
+  </animation>
   
+  <animation>
+    <type>pick</type>
+    <object-name>IntStarboardDoor</object-name>
+    <visible>true</visible>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>nasal</command>
+        <script>doors.starboard.toggle();</script>
+      </binding>
+    </action>
+  </animation>
+  
+  <animation>
+    <type>rotate</type>
+    <object-name>IntStarboardDoor</object-name>
+    <property>sim/model/door-positions/starboard/position-norm</property>
+    <factor> -110 </factor>
+    <axis>
+      <x1-m> -7.63431 </x1-m>
+      <y1-m>  1.10955 </y1-m> 
+      <z1-m> -1.79148 </z1-m>
+      <x2-m> -7.63414 </x2-m>
+      <y2-m>  1.11068 </y2-m>
+      <z2-m> -1.80944 </z2-m>
+    </axis>
+  </animation>
+
+  <!-- Rear Door -->
+  <animation>
+    <name>IntEngineer</name>
+    <object-name>intreardoor</object-name>
+    <object-name>intvitresreardoor</object-name>
+  </animation>
+  
+  <animation>
+    <type>pick</type>
+    <object-name>IntEngineer</object-name>
+    <visible>true</visible>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>nasal</command>
+        <script>doors.engineer.toggle();</script>
+      </binding>
+    </action>
+  </animation>
+  
+  <animation>
+    <type>rotate</type>
+    <object-name>IntEngineer</object-name>
+    <property>sim/model/door-positions/engineer/position-norm</property>
+    <factor> -170 </factor>
+    <axis>
+      <x1-m> -7.01647 </x1-m>
+      <y1-m>  0.665   </y1-m> 
+      <z1-m> -1.11658 </z1-m>
+      <x2-m> -7.01653 </x2-m>
+      <y2-m>  0.66501 </y2-m>
+      <z2-m> -2.37967 </z2-m>
+    </axis>
+  </animation>
+
 </PropertyList>

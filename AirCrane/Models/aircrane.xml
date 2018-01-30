@@ -16,9 +16,13 @@
       var float_1 = self.getNode("sim/multiplay/generic/float[1]", 1);
       var float_2 = self.getNode("sim/multiplay/generic/float[5]", 1);
       var float_3 = self.getNode("sim/multiplay/generic/float[6]", 1);
+      var float_7 = self.getNode("sim/multiplay/generic/float[7]", 1);
+      var float_8 = self.getNode("sim/multiplay/generic/float[8]", 1);
       
       var crew_door = self.getNode("sim/model/door-positions/crew/position-norm", 1);
       var passenger_door = self.getNode("sim/model/door-positions/passenger/position-norm", 1);
+      var engineer_door = self.getNode("sim/model/door-positions/engineer/position-norm", 1);
+      var starboard_door = self.getNode("sim/model/door-positions/starboard/position-norm", 1);
       var ram_scoop = self.getNode("sim/model/firetank/deployramscoop/position-norm", 1);
       var flex_hose = self.getNode("sim/model/firetank/deployflexhose/position-norm", 1);
       
@@ -26,6 +30,8 @@
       passenger_door.alias(float_1);
       ram_scoop.alias(float_2);
       flex_hose.alias(float_3);
+      engineer_door.alias(float_7);
+      starboard_door.alias(float_8);
     </load>
     
     <unload>
@@ -36,6 +42,9 @@
       passenger_door.unalias(float_1);
       ram_scoop.unalias(float_2);
       flex_hose.unalias(float_3);
+      engineer_door.unalias(float_7);
+      starboard_door.unalias(float_8);
+
     </unload>
   </nasal>
   
@@ -44,6 +53,8 @@
     <object-name>fuselage</object-name>
     <object-name>porteG</object-name>
     <object-name>porteD</object-name>
+    <object-name>reardoor</object-name>
+    <object-name>startboarddoor</object-name>
     <object-name>antennes</object-name>
     <object-name>rebords</object-name>
     <object-name>supportlight</object-name>
@@ -103,6 +114,10 @@
     <object-name>lampeD</object-name>
     <object-name>lampetailtrs</object-name>
     <object-name>lampeneztrs</object-name>
+    <object-name>vitresreardoor</object-name>
+    <object-name>vitresreardoorInt</object-name>
+    <object-name>vitresstarboard</object-name>
+    <object-name>vitresstarboardInt</object-name>
   </animation>
   
   <animation>
@@ -110,6 +125,8 @@
     <object-name>fuselage</object-name>
     <object-name>porteG</object-name>
     <object-name>porteD</object-name>
+    <object-name>reardoor</object-name>
+    <object-name>startboarddoor</object-name>
     <object-name>antennes</object-name>
     <object-name>rebords</object-name>
     <object-name>supportlight</object-name>
@@ -187,6 +204,8 @@
     <object-name>fuselage</object-name>
     <object-name>porteG</object-name>
     <object-name>porteD</object-name>
+    <object-name>reardoor</object-name>
+    <object-name>startboarddoor</object-name>
     <object-name>antennes</object-name>
     <object-name>rebords</object-name>
     <object-name>supportlight</object-name>
@@ -223,6 +242,10 @@
     <object-name>vitres</object-name>
     <object-name>vitresporteG</object-name>
     <object-name>vitresporteD</object-name>
+    <object-name>vitresreardoor</object-name>
+    <object-name>vitresreardoorInt</object-name>
+    <object-name>vitresstarboard</object-name>
+    <object-name>vitresstarboardInt</object-name>
   </effect>
 
   <!-- interior glass effects -->
@@ -231,6 +254,10 @@
     <object-name>vitresInt</object-name>
     <object-name>vitresporteGInt</object-name>
     <object-name>vitresporteDInt</object-name>
+    <object-name>vitresreardoor</object-name>
+    <object-name>vitresreardoorInt</object-name>
+    <object-name>vitresstarboard</object-name>
+    <object-name>vitresstarboardInt</object-name>
   </effect>
 
   <!-- Une ombre pour OSG -->
@@ -297,7 +324,7 @@
     </emission>
   </animation>
   
-  <!-- Intérieur -->
+  <!-- Interior -->
   <model>
     <path>Aircraft/AirCrane/Models/Interior/interior.xml</path>
   </model>
@@ -773,6 +800,80 @@
       <x2-m> -8.87113 </x2-m>
       <y2-m>  0.92431 </y2-m>
       <z2-m> -0.79338 </z2-m>
+    </axis>
+  </animation>
+
+  <!-- Starboard Door -->
+  <animation>
+    <name>StarboardDoor</name>
+    <object-name>vitresstarboard</object-name>
+    <object-name>vitresstarboardInt</object-name>
+    <object-name>startboarddoor</object-name>
+  </animation>
+  
+  <animation>
+    <type>pick</type>
+    <object-name>StarboardDoor</object-name>
+    <visible>true</visible>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>nasal</command>
+        <script>doors.starboard.toggle();</script>
+      </binding>
+    </action>
+  </animation>
+  
+  <animation>
+    <type>rotate</type>
+    <object-name>StarboardDoor</object-name>
+    <property>sim/model/door-positions/starboard/position-norm</property>
+    <factor> -110 </factor>
+    <axis>
+      <x1-m> -7.63431 </x1-m>
+      <y1-m>  1.10955 </y1-m> 
+      <z1-m> -1.79148 </z1-m>
+      <x2-m> -7.63414 </x2-m>
+      <y2-m>  1.11068 </y2-m>
+      <z2-m> -1.80944 </z2-m>
+    </axis>
+  </animation>
+
+  <!-- Rear Door -->
+  <animation>
+    <name>EngineerDoor</name>
+    <object-name>vitresreardoor</object-name>
+    <object-name>vitresreardoorInt</object-name>
+    <object-name>reardoor</object-name>
+  </animation>
+  
+  <animation>
+    <type>pick</type>
+    <object-name>EngineerDoor</object-name>
+    <visible>true</visible>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>nasal</command>
+        <script>doors.engineer.toggle();</script>
+      </binding>
+    </action>
+  </animation>
+  
+  <animation>
+    <type>rotate</type>
+    <object-name>EngineerDoor</object-name>
+    <property>sim/model/door-positions/engineer/position-norm</property>
+    <factor> -170 </factor>
+    <axis>
+      <x1-m> -7.01647 </x1-m>
+      <y1-m>  0.665   </y1-m> 
+      <z1-m> -1.11658 </z1-m>
+      <x2-m> -7.01653 </x2-m>
+      <y2-m>  0.66501 </y2-m>
+      <z2-m> -2.37967 </z2-m>
     </axis>
   </animation>
   

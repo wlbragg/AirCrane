@@ -428,6 +428,8 @@
         <float n="4" alias="/engines/engine[0]/rpm"/>
         <float n="5" alias="/sim/model/firetank/deployramscoop/position-norm"/>
         <float n="6" alias="/sim/model/firetank/deployflexhose/position-norm"/>
+        <float n="7" alias="/sim/model/door-positions/engineer/position-norm"/>
+        <float n="8" alias="/sim/model/door-positions/starboard/position-norm"/>
         <!-- For Bombable -->
         <int type="int" n="10" alias="controls/armament/trigger">0</int>
         <string n="9" type="string" />
