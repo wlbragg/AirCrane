@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+
+  <path>seats.ac</path>
+  <texture-path>../../Models</texture-path>
+
+  <animation>
+    <!-- Objets opaques -->
+     <object-name>seatframeplt</object-name>
+    <object-name>seathdwrplt</object-name>
+    <object-name>seatcushplt</object-name>
+    <object-name>seatframecoplt</object-name>
+    <object-name>seathdwrcoplt</object-name>
+    <object-name>seatcushcoplt</object-name>
+  </animation>
+
+  <!-- ALS Interior Shadows -->
+  <effect>
+    <inherits-from>Models/Effects/interior/cockpit-interior-shadows</inherits-from>
+    <object-name>seatframeplt</object-name>
+    <object-name>seathdwrplt</object-name>
+    <object-name>seatcushplt</object-name>
+    <object-name>seatframecoplt</object-name>
+    <object-name>seathdwrcoplt</object-name>
+    <object-name>seatcushcoplt</object-name>
+  </effect>
+
+</PropertyList>
