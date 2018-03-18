@@ -2148,6 +2148,7 @@
     <object-name>SSnorkel</object-name>
     <object-name>Extend</object-name>
     <object-name>Retract</object-name>
+    <object-name>Text</object-name>
     <type>select</type>
     <condition>
       <property>sim/model/firetank/enabled</property>
