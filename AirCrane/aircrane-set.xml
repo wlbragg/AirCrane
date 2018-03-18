@@ -5,7 +5,7 @@
   <sim>
 
     <description>AirCrane (Yasim)</description>
-    <author>BARANGER Emmanuel (3D), Heiko Schulz (FDM)</author>
+    <author>BARANGER Emmanuel (3D), Heiko Schulz (FDM), Wayne Bragg (Utility 3D and Systems, Effects)</author>
     
     <status>alpha</status>
     <license>GPL v2</license>

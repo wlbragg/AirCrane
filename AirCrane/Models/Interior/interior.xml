@@ -3,10 +3,11 @@
 <PropertyList>
 
   <path>interior.ac</path>
+  <texture-path>../../Models</texture-path>
 
-  <animation>
+  <!--animation-->
     <!-- Objets opaques -->
-    <object-name>interieur</object-name>
+    <!--object-name>interieur</object-name>
     <object-name>tour</object-name>
     <object-name>planchet</object-name>
     <object-name>reposepieds</object-name>
@@ -23,14 +24,28 @@
     <object-name>intstarboarddoor</object-name>
     <object-name>siegegrue1</object-name>
     <object-name>siegegrue2</object-name>
+    <object-name>winchcompartment</object-name>
+    <object-name>winch</object-name>
+    <object-name>winchhead</object-name-->
     
     <!-- Objets transparents -->
-    <object-name>intvitres</object-name>
+    <!--object-name>intvitres</object-name>
     <object-name>intvitresporteG</object-name>
     <object-name>intvitresporteD</object-name>
     <object-name>intvitresreardoor</object-name>
     <object-name>intvitresstarboard</object-name>
-  </animation>
+  </animation-->
+
+  <!--effect>
+    <inherits-from>Models/Effects/interior/sealtexture</inherits-from>
+    <object-name>tour</object-name>
+  </effect-->
+
+  <effect>
+    <inherits-from>Models/Effects/interior/walltexture</inherits-from>
+    <object-name>interieur</object-name>
+    <object-name>planchet</object-name>
+  </effect>
 
   <!-- working for Rembrandt -->
   <effect>
@@ -44,10 +59,11 @@
 
   <!-- ALS Interior Shadows -->
   <effect>
-    <inherits-from>Models/Effects/interior/cockpit-interior</inherits-from>
-    <object-name>interieur</object-name>
+    <inherits-from>Models/Effects/interior/cockpit-interior-shadows</inherits-from>
     <object-name>tour</object-name>
-    <object-name>planchet</object-name>
+    <!--object-name>interieur</object-name>
+    <object-name>planchet</object-name-->
+    <object-name>floor</object-name>
     <object-name>reposepieds</object-name>
     <object-name>accoudoir</object-name>
     <object-name>barre</object-name>
@@ -88,6 +104,26 @@
     </offsets>
   </model>
 
+  <!-- Seatss -->
+  <model>
+    <path>Aircraft/AirCrane/Models/Interior/seats.xml</path>
+    <offsets>
+      <x-m> 0.000 </x-m>
+      <y-m> 0.000 </y-m>
+      <z-m> 0.000 </z-m>
+    </offsets>
+  </model>
+
+  <!-- Winch -->
+  <model>
+    <path>Aircraft/AirCrane/Models/Interior/winch.xml</path>
+    <offsets>
+      <x-m> 0.000 </x-m>
+      <y-m> 0.000 </y-m>
+      <z-m> 0.000 </z-m>
+    </offsets>
+  </model>
+
   <!-- Pilote -->
   <model>
     <path>Aircraft/AirCrane/Models/Pilot/pilot.xml</path>
@@ -96,7 +132,7 @@
     </condition>
     <offsets>
       <x-m> -8.892 </x-m>
-      <y-m>  0.521 </y-m>
+      <y-m>  0.66314 </y-m>
       <z-m> -1.625 </z-m>
     </offsets>
   </model>

@@ -2,21 +2,4 @@
 <PropertyList>
   <name>cockpit-interior</name>
   <inherits-from>Effects/model-interior</inherits-from>
-  <parameters>
-    <texture n="4">
-      <type>cubemap</type>
-      <images>
-        <positive-x>Models/Effects/interior/0004m.png</positive-x>
-        <negative-x>Models/Effects/interior/0002m.png</negative-x>
-        <positive-y>Models/Effects/interior/0001m.png</positive-y>
-        <negative-y>Models/Effects/interior/0003m.png</negative-y>
-        <positive-z>Models/Effects/interior/0006m.png</positive-z>
-        <negative-z>Models/Effects/interior/0005m.png</negative-z>
-      </images>
-    </texture>
-    <!-- the cube center must be the same as the camera x,y,z in blend -->
-    <opacity-cube-center type="vec3d" n="0"> -8.62744 0.0 -1.08545</opacity-cube-center>
-    <opacity-cube-scale type="vec3d" n="0"> 1 1 1</opacity-cube-scale>
-    <opacity-cube-angle type="float">0.0</opacity-cube-angle>
-  </parameters>
 </PropertyList>

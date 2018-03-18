@@ -84,7 +84,10 @@
     <object-name>supportaileron</object-name>
     <object-name>lampetail</object-name>
     <object-name>tankpins</object-name>
-    
+    <object-name>screws</object-name>
+    <object-name>steppanel</object-name>
+    <object-name>winchcover</object-name>
+
     <object-name>axetail</object-name>
     <object-name>supports</object-name>
     <object-name>tampons</object-name>
@@ -156,7 +159,10 @@
     <object-name>supportaileron</object-name>
     <object-name>lampetail</object-name>
     <object-name>tankpins</object-name>
-    
+    <object-name>screws</object-name>
+    <object-name>steppanel</object-name>
+    <object-name>winchcover</object-name>
+
     <object-name>axetail</object-name>
     <object-name>supports</object-name>
     <object-name>tampons</object-name>
@@ -234,6 +240,19 @@
     <object-name>structure</object-name>
     <object-name>supportaileron</object-name>
     <object-name>lampetail</object-name>
+    <object-name>tankpins</object-name>
+    <object-name>steppanel</object-name>
+    <object-name>winchcover</object-name>
+
+    <object-name>cabelgaurdmount</object-name>
+    <object-name>cableguardbottom</object-name>
+    <object-name>cableguardlowerconnectoraft</object-name>
+    <object-name>cableguardlowerconnectorfor</object-name>
+    <object-name>cableguardtop</object-name>
+    <object-name>cableguardupperconnectoraft</object-name>
+    <object-name>cableguardupperconnectorfor</object-name>
+    <object-name>cableguidebearing</object-name>
+    <object-name>cableguidepin</object-name>
   </effect>
   
   <!-- exterior glass reflection (working for Rembrandt) -->
@@ -279,6 +298,11 @@
   <!-- Long Line Cargo Unchained -->
   <model>
     <path>Aircraft/AirCrane/Models/Cargo-Hauling/long-line-uc.xml</path>
+  </model>
+
+  <!-- Cable Guard -->
+  <model>
+    <path>Aircraft/AirCrane/Models/Cargo-Hauling/cableguard.xml</path>
   </model>
   
   <!-- Water System -->
@@ -875,6 +899,54 @@
       <y2-m>  0.66501 </y2-m>
       <z2-m> -2.37967 </z2-m>
     </axis>
+  </animation>
+
+  <animation>
+    <type>pick</type>
+    <object-name>screws</object-name>
+    <object-name>steppanel</object-name>
+    <visible>true</visible>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>nasal</command>
+        <script>setprop("/sim/model/steppanel/enabled", 0);</script>
+      </binding>
+    </action>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>screws</object-name>
+    <object-name>steppanel</object-name>
+    <condition>
+      <property>/sim/model/steppanel/enabled</property>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>pick</type>
+    <object-name>winchcover</object-name>
+    <visible>true</visible>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>nasal</command>
+        <script>
+          setprop("/sim/model/winchcover/enabled", !getprop("/sim/model/winchcover/enabled"));
+        </script>
+      </binding>
+    </action>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>winchcover</object-name>
+    <condition>
+      <property>/sim/model/winchcover/enabled</property>
+    </condition>
   </animation>
   
   <!-- Effets lumineux -->

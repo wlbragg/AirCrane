@@ -10,6 +10,11 @@
  
   <model>
     <path>pullharness.ac</path>
+     <offsets>
+      <x-m>-0.175 </x-m>
+      <y-m>-0.1 </y-m>
+      <z-m> 1.5 </z-m>
+     </offsets>
     <condition>
       <and>
         <property>sim/cargo/rope/pulling</property>
@@ -20,6 +25,11 @@
 
   <model>
     <path>cub-ground.ac</path>
+     <offsets>
+      <x-m>-0.175 </x-m>
+      <y-m>-0.1 </y-m>
+      <z-m> 2.0 </z-m>
+     </offsets>
     <condition>
       <and>
         <property>sim/cargo/cargo1-onhook</property>
@@ -29,6 +39,11 @@
   </model>
   <model>
     <path>cubharness.ac</path>
+     <offsets>
+      <x-m>-0.175 </x-m>
+      <y-m>-0.1 </y-m>
+      <z-m> 1.5 </z-m>
+     </offsets>
     <condition>
       <and>
         <property>sim/cargo/cargo1-onhook</property>
@@ -42,6 +57,11 @@
 
   <model>
     <path>shipping-container-big.ac</path>
+     <offsets>
+      <x-m>-0.175 </x-m>
+      <y-m>-0.1 </y-m>
+      <z-m> 2.0 </z-m>
+     </offsets>
     <condition>
       <and>
         <or>
@@ -55,6 +75,11 @@
   </model>
   <model>
     <path>shippingcontainerbigharness.ac</path>
+     <offsets>
+      <x-m>-0.175 </x-m>
+      <y-m>-0.1 </y-m>
+      <z-m> 1.5 </z-m>
+    </offsets>
     <condition>
       <and>
         <or>
@@ -72,6 +97,11 @@
 
   <model>
     <path>ground-tank.ac</path>
+     <offsets>
+      <x-m>-0.175 </x-m>
+      <y-m>-0.1 </y-m>
+      <z-m> 2.0 </z-m>
+     </offsets>
     <condition>
       <and>
         <property>sim/cargo/cargo5-onhook</property>
@@ -81,6 +111,11 @@
   </model>
   <model>
     <path>groundtankharness.ac</path>
+     <offsets>
+      <x-m>-0.175 </x-m>
+      <y-m>-0.1 </y-m>
+      <z-m> 1.5 </z-m>
+    </offsets>
     <condition>
       <and>
         <property>sim/cargo/cargo5-onhook</property>
@@ -94,6 +129,11 @@
 
   <model>
     <path>ground-tank-large.ac</path>
+     <offsets>
+      <x-m>-0.175 </x-m>
+      <y-m>-0.1 </y-m>
+      <z-m> 2.0 </z-m>
+     </offsets>
     <condition>
       <and>
         <property>sim/cargo/cargo6-onhook</property>
@@ -103,6 +143,11 @@
   </model>
   <model>
     <path>groundtanklargeharness.ac</path>
+     <offsets>
+      <x-m>-0.175 </x-m>
+      <y-m>-0.1 </y-m>
+      <z-m> 1.5 </z-m>
+    </offsets>
     <condition>
       <and>
         <property>sim/cargo/cargo6-onhook</property>
@@ -116,6 +161,11 @@
 
   <model>
     <path>ground-tank-tall.ac</path>
+     <offsets>
+      <x-m>-0.175 </x-m>
+      <y-m>-0.1 </y-m>
+      <z-m> 2.0 </z-m>
+     </offsets>
     <condition>
       <and>
         <property>sim/cargo/cargo7-onhook</property>
@@ -125,6 +175,11 @@
   </model>
   <model>
     <path>groundtanktallharness.ac</path>
+     <offsets>
+      <x-m>-0.175 </x-m>
+      <y-m>-0.1 </y-m>
+      <z-m> 1.5 </z-m>
+    </offsets>
     <condition>
       <and>
         <property>sim/cargo/cargo7-onhook</property>
@@ -138,6 +193,11 @@
 
   <model>
     <path>tank-stand.ac</path>
+     <offsets>
+      <x-m>-0.175 </x-m>
+      <y-m>-0.1 </y-m>
+      <z-m> 2.0 </z-m>
+     </offsets>
     <condition>
       <and>
         <property>sim/cargo/cargo8-onhook</property>
@@ -147,6 +207,11 @@
   </model>
   <model>
     <path>tankstandharness.ac</path>
+     <offsets>
+      <x-m>-0.175 </x-m>
+      <y-m>-0.1 </y-m>
+      <z-m> 1.5 </z-m>
+    </offsets>
     <condition>
       <and>
         <property>sim/cargo/cargo8-onhook</property>
@@ -160,6 +225,11 @@
 
   <model>
     <path>pine-tree.ac</path>
+     <offsets>
+      <x-m>-0.175 </x-m>
+      <y-m>-0.1 </y-m>
+      <z-m> 2.0 </z-m>
+     </offsets>
     <condition>
       <and>
         <or>
@@ -178,6 +248,11 @@
   </model>
   <model>
     <path>pinetreeharness.ac</path>
+     <offsets>
+      <x-m>-0.175 </x-m>
+      <y-m>-0.1 </y-m>
+      <z-m> 1.5 </z-m>
+    </offsets>
     <condition>
       <and>
         <or>
@@ -197,6 +272,11 @@
 
   <model>
     <path>dump-truck.ac</path>
+     <offsets>
+      <x-m>-0.175 </x-m>
+      <y-m>-0.1 </y-m>
+      <z-m> 2.0 </z-m>
+     </offsets>
     <condition>
       <and>
         <property>sim/cargo/cargo14-onhook</property>
@@ -206,6 +286,11 @@
   </model>
   <model>
     <path>dumptruckharness.ac</path>
+     <offsets>
+      <x-m>-0.175 </x-m>
+      <y-m>-0.1 </y-m>
+      <z-m> 1.5 </z-m>
+    </offsets>
     <condition>
       <and>
         <property>sim/cargo/cargo14-onhook</property>
@@ -219,6 +304,11 @@
 
   <model>
     <path>micro-relay.ac</path>
+     <offsets>
+      <x-m>-0.175 </x-m>
+      <y-m>-0.1 </y-m>
+      <z-m> 2.0 </z-m>
+     </offsets>
     <condition>
       <and>
         <property>sim/cargo/cargo15-onhook</property>
@@ -228,6 +318,11 @@
   </model>
   <model>
     <path>microrelayharness.ac</path>
+     <offsets>
+      <x-m>-0.175 </x-m>
+      <y-m>-0.1 </y-m>
+      <z-m> 1.5 </z-m>
+    </offsets>
     <condition>
       <and>
         <property>sim/cargo/cargo15-onhook</property>
@@ -241,6 +336,11 @@
 
   <model>
     <path>micro-wave.ac</path>
+     <offsets>
+      <x-m>-0.175 </x-m>
+      <y-m>-0.1 </y-m>
+      <z-m> 2.0 </z-m>
+     </offsets>
     <condition>
       <and>
         <property>sim/cargo/cargo16-onhook</property>
@@ -250,6 +350,11 @@
   </model>
   <model>
     <path>microwaveharness.ac</path>
+     <offsets>
+      <x-m>-0.175 </x-m>
+      <y-m>-0.1 </y-m>
+      <z-m> 1.5 </z-m>
+    </offsets>
     <condition>
       <and>
         <property>sim/cargo/cargo16-onhook</property>
@@ -263,6 +368,11 @@
 
   <model>
     <path>tower-section-one.ac</path>
+     <offsets>
+      <x-m>-0.175 </x-m>
+      <y-m>-0.1 </y-m>
+      <z-m> 2.0 </z-m>
+     </offsets>
     <condition>
       <and>
         <property>sim/cargo/cargo17-onhook</property>
@@ -272,6 +382,11 @@
   </model>
   <model>
     <path>towersectiononeharness.ac</path>
+     <offsets>
+      <x-m>-0.175 </x-m>
+      <y-m>-0.1 </y-m>
+      <z-m> 1.5 </z-m>
+    </offsets>
     <condition>
       <and>
         <property>sim/cargo/cargo17-onhook</property>
@@ -285,6 +400,11 @@
 
   <model>
     <path>tower-section-two.ac</path>
+     <offsets>
+      <x-m>-0.175 </x-m>
+      <y-m>-0.1 </y-m>
+      <z-m> 2.0 </z-m>
+     </offsets>
     <condition>
       <and>
         <property>sim/cargo/cargo18-onhook</property>
@@ -294,6 +414,11 @@
   </model>
   <model>
     <path>towersectiontwoharness.ac</path>
+     <offsets>
+      <x-m>-0.175 </x-m>
+      <y-m>-0.1 </y-m>
+      <z-m> 1.5 </z-m>
+    </offsets>
     <condition>
       <and>
         <property>sim/cargo/cargo18-onhook</property>
@@ -307,6 +432,11 @@
 
   <model>
     <path>tower-section-three.ac</path>
+     <offsets>
+      <x-m>-0.175 </x-m>
+      <y-m>-0.1 </y-m>
+      <z-m> 2.0 </z-m>
+     </offsets>
     <condition>
       <and>
         <property>sim/cargo/cargo19-onhook</property>
@@ -316,6 +446,11 @@
   </model>
   <model>
     <path>towersectionthreeharness.ac</path>
+     <offsets>
+      <x-m>-0.175 </x-m>
+      <y-m>-0.1 </y-m>
+      <z-m> 1.5 </z-m>
+    </offsets>
     <condition>
       <and>
         <property>sim/cargo/cargo19-onhook</property>
@@ -329,6 +464,11 @@
 
   <model>
     <path>tower-section-four.ac</path>
+     <offsets>
+      <x-m>-0.175 </x-m>
+      <y-m>-0.1 </y-m>
+      <z-m> 2.0 </z-m>
+     </offsets>
     <condition>
       <and>
         <property>sim/cargo/cargo20-onhook</property>
@@ -338,6 +478,11 @@
   </model>
   <model>
     <path>towersectionfourharness.ac</path>
+     <offsets>
+      <x-m>-0.175 </x-m>
+      <y-m>-0.1 </y-m>
+      <z-m> 1.5 </z-m>
+     </offsets>
     <condition>
       <and>
         <property>sim/cargo/cargo20-onhook</property>
@@ -351,6 +496,11 @@
 
   <model>
     <path>tower-section-five.ac</path>
+     <offsets>
+      <x-m>-0.175 </x-m>
+      <y-m>-0.1 </y-m>
+      <z-m> 2.0 </z-m>
+     </offsets>
     <condition>
       <and>
         <property>sim/cargo/cargo21-onhook</property>
@@ -360,6 +510,11 @@
   </model>
   <model>
     <path>towersectionfiveharness.ac</path>
+     <offsets>
+      <x-m>-0.175 </x-m>
+      <y-m>-0.1 </y-m>
+      <z-m> 1.5 </z-m>
+     </offsets>
     <condition>
       <and>
         <property>sim/cargo/cargo21-onhook</property>
@@ -373,6 +528,11 @@
 
   <model>
     <path>tower-section-six.ac</path>
+     <offsets>
+      <x-m>-0.175 </x-m>
+      <y-m>-0.1 </y-m>
+      <z-m> 2.0 </z-m>
+     </offsets>
     <condition>
       <and>
         <property>sim/cargo/cargo22-onhook</property>
@@ -382,6 +542,11 @@
   </model>
   <model>
     <path>towersectionsixharness.ac</path>
+     <offsets>
+      <x-m>-0.175 </x-m>
+      <y-m>-0.1 </y-m>
+      <z-m> 1.5 </z-m>
+     </offsets>
     <condition>
       <and>
         <property>sim/cargo/cargo22-onhook</property>
@@ -395,6 +560,11 @@
 
   <model>
     <path>tower-section-seven.ac</path>
+     <offsets>
+      <x-m>-0.175 </x-m>
+      <y-m>-0.1 </y-m>
+      <z-m> 2.0 </z-m>
+     </offsets>
     <condition>
       <and>
         <property>sim/cargo/cargo23-onhook</property>
@@ -404,6 +574,11 @@
   </model>
   <model>
     <path>towersectionsevenharness.ac</path>
+     <offsets>
+      <x-m>-0.175 </x-m>
+      <y-m>-0.1 </y-m>
+      <z-m> 1.5 </z-m>
+     </offsets>
     <condition>
       <and>
         <property>sim/cargo/cargo23-onhook</property>
@@ -417,6 +592,11 @@
 
   <model>
     <path>tower-radio.ac</path>
+     <offsets>
+      <x-m>-0.175 </x-m>
+      <y-m>-0.1 </y-m>
+      <z-m> 2.0 </z-m>
+     </offsets>
     <condition>
       <and>
         <property>sim/cargo/cargo24-onhook</property>
@@ -426,6 +606,11 @@
   </model>
   <model>
     <path>towerradioharness.ac</path>
+     <offsets>
+      <x-m>-0.175 </x-m>
+      <y-m>-0.1 </y-m>
+      <z-m> 1.5 </z-m>
+     </offsets>
     <condition>
       <and>
         <property>sim/cargo/cargo24-onhook</property>
@@ -439,6 +624,11 @@
 
   <model>
     <path>radio-tower-sec.ac</path>
+     <offsets>
+      <x-m>-0.175 </x-m>
+      <y-m>-0.1 </y-m>
+      <z-m> 2.0 </z-m>
+     </offsets>
     <condition>
       <and>
         <or>
@@ -456,6 +646,11 @@
   </model>
   <model>
     <path>radiotowersecharness.ac</path>
+     <offsets>
+      <x-m>-0.175 </x-m>
+      <y-m>-0.1 </y-m>
+      <z-m> 1.5 </z-m>
+     </offsets>
     <condition>
       <and>
         <or>
@@ -477,6 +672,11 @@
 
   <model>
     <path>mobile-pod.ac</path>
+     <offsets>
+      <x-m>-0.175 </x-m>
+      <y-m>-0.1 </y-m>
+      <z-m> 2.0 </z-m>
+     </offsets>
     <condition>
       <and>
         <property>sim/cargo/cargo32-onhook</property>
@@ -486,6 +686,11 @@
   </model>
   <model>
     <path>mobilepodharness.ac</path>
+     <offsets>
+      <x-m>-0.175 </x-m>
+      <y-m>-0.1 </y-m>
+      <z-m> 1.5 </z-m>
+     </offsets>
     <condition>
       <and>
         <property>sim/cargo/cargo32-onhook</property>
@@ -500,60 +705,68 @@
   <model>
     <path>rope-uc.ac</path>
     <offsets>
-      <x-m>  0.0 </x-m>
-      <y-m>  0.0 </y-m>
-      <z-m>-1.379</z-m>
+      <x-m>-0.3 </x-m>
+      <y-m> 0.0 </y-m>
+      <z-m> 0.0 </z-m>
     </offsets>
     <condition>
       <not>
         <property>/sim/gui/dialogs/aicargo-dialog/longline</property>
       </not>
+      <not>
+			  <property>/sim/model/winchcover/enabled</property>
+		  </not>
     </condition>
   </model>
 
   <model>
     <path>cable-uc.ac</path>
     <offsets>
-      <x-m>  0.0 </x-m>
-      <y-m>  0.0 </y-m>
-      <z-m>-1.379</z-m>
+      <x-m>-0.3 </x-m>
+      <y-m> 0.0 </y-m>
+      <z-m> 0.0</z-m>
     </offsets>
     <condition>
       <property>/sim/gui/dialogs/aicargo-dialog/longline</property>
+      <not>
+			  <property>/sim/model/winchcover/enabled</property>
+		  </not>
     </condition>
   </model>
 
-  <model>
-    <path>hitch.ac</path>
-  </model>
-
-  <model>
-    <path>winch.ac</path>
-  </model>
-
   <animation>
-    <object-name>hitch</object-name>
+    <object-name>hook</object-name>
+    <object-name>hookstop</object-name>
     <type>select</type>
     <condition>
       <and>
+        <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
         <not>
-          <property>/sim/gui/dialogs/aicargo-dialog/connector</property>
-        </not>
-        <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
+				  <property>/sim/model/winchcover/enabled</property>
+			  </not>
       </and>
     </condition>
   </animation>
 
-  <animation>
-    <object-name>winch</object-name>
-    <type>select</type>
-    <condition>
-      <and>
-        <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
-        <property>/sim/gui/dialogs/aicargo-dialog/connector</property>
-      </and>
-    </condition>
-  </animation>
+<nasal>
+    <load>
+      var self = cmdarg();
+      
+      var float_9 = self.getNode("sim/multiplay/generic/float[9]", 1);
+      var float_10 = self.getNode("sim/multiplay/generic/float[10]", 1);
+      
+      var hitchhook_door = self.getNode("sim/model/hitch/hitchhook/position-norm", 1);
+      var hitchstop_door = self.getNode("sim/model/hitch/hitchstop/position-norm", 1);
+      
+      hitchook_door.alias(float_9);
+      hitchstop_door.alias(float_10);
+    </load>
+    
+    <unload>
+      hitchook_door.unalias(float_9);
+      hitchstop_door.unalias(float_10);
+    </unload>
+  </nasal>
     
   <animation>
     <!-- Objets opaques -->
@@ -615,42 +828,13 @@
     <object-name>ropesegment.056</object-name>
     <object-name>ropesegment.057</object-name>
     <object-name>ropesegment.058</object-name>
-    <object-name>ropesegment.059</object-name>
-    <object-name>ropesegment.060</object-name>
-    <object-name>ropesegment.061</object-name>
-    <object-name>ropesegment.062</object-name>
-    <object-name>ropesegment.063</object-name>
-    <object-name>ropesegment.064</object-name>
-    <object-name>ropesegment.065</object-name>
-    <object-name>ropesegment.066</object-name>
-    <object-name>ropesegment.067</object-name>
-    <object-name>ropesegment.068</object-name>
-    <object-name>ropesegment.069</object-name>
-    <object-name>ropesegment.070</object-name>
-    <object-name>ropesegment.071</object-name>
-    <object-name>ropesegment.072</object-name>
-    <object-name>ropesegment.073</object-name>
-    <object-name>ropesegment.074</object-name>
-    <object-name>ropesegment.075</object-name>
-    <object-name>ropesegment.076</object-name>
-    <object-name>ropesegment.077</object-name>
-    <object-name>ropesegment.078</object-name>
-    <object-name>ropesegment.079</object-name>
-    <object-name>ropesegment.080</object-name>
-    <object-name>ropesegment.081</object-name>
-    <object-name>ropesegment.082</object-name>
-    <object-name>ropesegment.083</object-name>
-    <object-name>ropesegment.084</object-name>
-    <object-name>ropesegment.085</object-name>
-    <object-name>ropesegment.086</object-name>
-    <object-name>ropesegment.087</object-name>
     <object-name>ropesegment.088</object-name>
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
+    <object-name>hook</object-name>
+    <object-name>hookstop</object-name>
     <object-name>cargo</object-name>
     <object-name>cargoharness</object-name>
-    <object-name>hitch</object-name>
-    <object-name>winch</object-name>
   </animation>
 
   <effect>
@@ -745,10 +929,10 @@
     <object-name>ropesegment.088</object-name>
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
+    <object-name>hook</object-name>
+    <object-name>hookstop</object-name>
     <object-name>cargo</object-name>
     <object-name>cargoharness</object-name>
-    <object-name>hitch</object-name>
-    <object-name>winch</object-name>
   </effect>
 
   <!-- Rope Segment Animation -->
@@ -844,13 +1028,14 @@
     <object-name>ropesegment.088</object-name>
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
+    <object-name>hook</object-name>
+    <object-name>hookstop</object-name>
     <object-name>cargo</object-name>
     <object-name>cargoharness</object-name>
   </animation>
   
   <animation>
     <name>RopeSegment02</name>
-
     <object-name>ropesegment.002</object-name>
     <object-name>ropesegment.003</object-name>
     <object-name>ropesegment.004</object-name>
@@ -940,6 +1125,8 @@
     <object-name>ropesegment.088</object-name>
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
+    <object-name>hook</object-name>
+    <object-name>hookstop</object-name>
     <object-name>cargo</object-name>
     <object-name>cargoharness</object-name>
   </animation>
@@ -1034,6 +1221,8 @@
     <object-name>ropesegment.088</object-name>
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
+    <object-name>hook</object-name>
+    <object-name>hookstop</object-name>
     <object-name>cargo</object-name>
     <object-name>cargoharness</object-name>
   </animation>
@@ -1127,6 +1316,8 @@
     <object-name>ropesegment.088</object-name>
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
+    <object-name>hook</object-name>
+    <object-name>hookstop</object-name>
     <object-name>cargo</object-name>
     <object-name>cargoharness</object-name>
   </animation>
@@ -1219,6 +1410,8 @@
     <object-name>ropesegment.088</object-name>
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
+    <object-name>hook</object-name>
+    <object-name>hookstop</object-name>
     <object-name>cargo</object-name>
     <object-name>cargoharness</object-name>
   </animation>
@@ -1310,6 +1503,8 @@
     <object-name>ropesegment.088</object-name>
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
+    <object-name>hook</object-name>
+    <object-name>hookstop</object-name>
     <object-name>cargo</object-name>
     <object-name>cargoharness</object-name>
   </animation>
@@ -1400,6 +1595,8 @@
     <object-name>ropesegment.088</object-name>
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
+    <object-name>hook</object-name>
+    <object-name>hookstop</object-name>
     <object-name>cargo</object-name>
     <object-name>cargoharness</object-name>
   </animation>
@@ -1489,6 +1686,8 @@
     <object-name>ropesegment.088</object-name>
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
+    <object-name>hook</object-name>
+    <object-name>hookstop</object-name>
     <object-name>cargo</object-name>
     <object-name>cargoharness</object-name>
   </animation>
@@ -1577,6 +1776,8 @@
     <object-name>ropesegment.088</object-name>
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
+    <object-name>hook</object-name>
+    <object-name>hookstop</object-name>
     <object-name>cargo</object-name>
     <object-name>cargoharness</object-name>
   </animation>
@@ -1664,6 +1865,8 @@
     <object-name>ropesegment.088</object-name>
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
+    <object-name>hook</object-name>
+    <object-name>hookstop</object-name>
     <object-name>cargo</object-name>
     <object-name>cargoharness</object-name>   
   </animation>
@@ -1750,6 +1953,8 @@
     <object-name>ropesegment.088</object-name>
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
+    <object-name>hook</object-name>
+    <object-name>hookstop</object-name>
     <object-name>cargo</object-name>
     <object-name>cargoharness</object-name>
   </animation>
@@ -1835,6 +2040,8 @@
     <object-name>ropesegment.088</object-name>
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
+    <object-name>hook</object-name>
+    <object-name>hookstop</object-name>
     <object-name>cargo</object-name>
     <object-name>cargoharness</object-name>
   </animation>
@@ -1919,6 +2126,8 @@
     <object-name>ropesegment.088</object-name>
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
+    <object-name>hook</object-name>
+    <object-name>hookstop</object-name>
     <object-name>cargo</object-name>
     <object-name>cargoharness</object-name>
   </animation>
@@ -2002,6 +2211,8 @@
     <object-name>ropesegment.088</object-name>
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
+    <object-name>hook</object-name>
+    <object-name>hookstop</object-name>
     <object-name>cargo</object-name>
     <object-name>cargoharness</object-name>
   </animation>
@@ -2084,6 +2295,8 @@
     <object-name>ropesegment.088</object-name>
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
+    <object-name>hook</object-name>
+    <object-name>hookstop</object-name>
     <object-name>cargo</object-name>
     <object-name>cargoharness</object-name>
   </animation>
@@ -2165,6 +2378,8 @@
     <object-name>ropesegment.088</object-name>
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
+    <object-name>hook</object-name>
+    <object-name>hookstop</object-name>
     <object-name>cargo</object-name>
     <object-name>cargoharness</object-name>
   </animation>
@@ -2245,6 +2460,8 @@
     <object-name>ropesegment.088</object-name>
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
+    <object-name>hook</object-name>
+    <object-name>hookstop</object-name>
     <object-name>cargo</object-name>
     <object-name>cargoharness</object-name>
   </animation>
@@ -2324,6 +2541,8 @@
     <object-name>ropesegment.088</object-name>
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
+    <object-name>hook</object-name>
+    <object-name>hookstop</object-name>
     <object-name>cargo</object-name>
     <object-name>cargoharness</object-name>
   </animation>
@@ -2402,6 +2621,8 @@
     <object-name>ropesegment.088</object-name>
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
+    <object-name>hook</object-name>
+    <object-name>hookstop</object-name>
     <object-name>cargo</object-name>
     <object-name>cargoharness</object-name>
   </animation>
@@ -2479,6 +2700,8 @@
     <object-name>ropesegment.088</object-name>
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
+    <object-name>hook</object-name>
+    <object-name>hookstop</object-name>
     <object-name>cargo</object-name>
     <object-name>cargoharness</object-name>
   </animation>
@@ -2555,6 +2778,8 @@
     <object-name>ropesegment.088</object-name>
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
+    <object-name>hook</object-name>
+    <object-name>hookstop</object-name>
     <object-name>cargo</object-name>
     <object-name>cargoharness</object-name>
   </animation>
@@ -2630,6 +2855,8 @@
     <object-name>ropesegment.088</object-name>
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
+    <object-name>hook</object-name>
+    <object-name>hookstop</object-name>
     <object-name>cargo</object-name>
     <object-name>cargoharness</object-name>
   </animation>
@@ -2704,6 +2931,8 @@
     <object-name>ropesegment.088</object-name>
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
+    <object-name>hook</object-name>
+    <object-name>hookstop</object-name>
     <object-name>cargo</object-name>
     <object-name>cargoharness</object-name>
   </animation>
@@ -2777,6 +3006,8 @@
     <object-name>ropesegment.088</object-name>
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
+    <object-name>hook</object-name>
+    <object-name>hookstop</object-name>
     <object-name>cargo</object-name>
     <object-name>cargoharness</object-name>
   </animation>
@@ -2849,6 +3080,8 @@
     <object-name>ropesegment.088</object-name>
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
+    <object-name>hook</object-name>
+    <object-name>hookstop</object-name>
     <object-name>cargo</object-name>
     <object-name>cargoharness</object-name>
   </animation>
@@ -2920,6 +3153,8 @@
     <object-name>ropesegment.088</object-name>
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
+    <object-name>hook</object-name>
+    <object-name>hookstop</object-name>
     <object-name>cargo</object-name>
     <object-name>cargoharness</object-name>
   </animation>
@@ -2990,6 +3225,8 @@
     <object-name>ropesegment.088</object-name>
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
+    <object-name>hook</object-name>
+    <object-name>hookstop</object-name>
     <object-name>cargo</object-name>
     <object-name>cargoharness</object-name>
   </animation>
@@ -3059,6 +3296,8 @@
     <object-name>ropesegment.088</object-name>
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
+    <object-name>hook</object-name>
+    <object-name>hookstop</object-name>
     <object-name>cargo</object-name>
     <object-name>cargoharness</object-name>
   </animation>
@@ -3127,6 +3366,8 @@
     <object-name>ropesegment.088</object-name>
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
+    <object-name>hook</object-name>
+    <object-name>hookstop</object-name>
     <object-name>cargo</object-name>
     <object-name>cargoharness</object-name>
   </animation>
@@ -3194,6 +3435,8 @@
     <object-name>ropesegment.088</object-name>
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
+    <object-name>hook</object-name>
+    <object-name>hookstop</object-name>
     <object-name>cargo</object-name>
     <object-name>cargoharness</object-name>
   </animation>
@@ -3260,6 +3503,8 @@
     <object-name>ropesegment.088</object-name>
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
+    <object-name>hook</object-name>
+    <object-name>hookstop</object-name>
     <object-name>cargo</object-name>
     <object-name>cargoharness</object-name>  
   </animation>
@@ -3325,6 +3570,8 @@
     <object-name>ropesegment.088</object-name>
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
+    <object-name>hook</object-name>
+    <object-name>hookstop</object-name>
     <object-name>cargo</object-name>
     <object-name>cargoharness</object-name>
   </animation>
@@ -3389,6 +3636,8 @@
     <object-name>ropesegment.088</object-name>
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
+    <object-name>hook</object-name>
+    <object-name>hookstop</object-name>
     <object-name>cargo</object-name>
     <object-name>cargoharness</object-name>
   </animation>
@@ -3452,6 +3701,8 @@
     <object-name>ropesegment.088</object-name>
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
+    <object-name>hook</object-name>
+    <object-name>hookstop</object-name>
     <object-name>cargo</object-name>
     <object-name>cargoharness</object-name>
   </animation>
@@ -3514,6 +3765,8 @@
     <object-name>ropesegment.088</object-name>
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
+    <object-name>hook</object-name>
+    <object-name>hookstop</object-name>
     <object-name>cargo</object-name>
     <object-name>cargoharness</object-name>
   </animation>
@@ -3575,6 +3828,8 @@
     <object-name>ropesegment.088</object-name>
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
+    <object-name>hook</object-name>
+    <object-name>hookstop</object-name>
     <object-name>cargo</object-name>
     <object-name>cargoharness</object-name>
   </animation>
@@ -3635,6 +3890,8 @@
     <object-name>ropesegment.088</object-name>
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
+    <object-name>hook</object-name>
+    <object-name>hookstop</object-name>
     <object-name>cargo</object-name>
     <object-name>cargoharness</object-name>
   </animation>
@@ -3694,6 +3951,8 @@
     <object-name>ropesegment.088</object-name>
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
+    <object-name>hook</object-name>
+    <object-name>hookstop</object-name>
     <object-name>cargo</object-name>
     <object-name>cargoharness</object-name>
   </animation>
@@ -3752,6 +4011,8 @@
     <object-name>ropesegment.088</object-name>
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
+    <object-name>hook</object-name>
+    <object-name>hookstop</object-name>
     <object-name>cargo</object-name>
     <object-name>cargoharness</object-name>
   </animation>
@@ -3809,6 +4070,8 @@
     <object-name>ropesegment.088</object-name>
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
+    <object-name>hook</object-name>
+    <object-name>hookstop</object-name>
     <object-name>cargo</object-name>
     <object-name>cargoharness</object-name>   
   </animation>
@@ -3865,6 +4128,8 @@
     <object-name>ropesegment.088</object-name>
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
+    <object-name>hook</object-name>
+    <object-name>hookstop</object-name>
     <object-name>cargo</object-name>
     <object-name>cargoharness</object-name>
   </animation>
@@ -3920,6 +4185,8 @@
     <object-name>ropesegment.088</object-name>
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
+    <object-name>hook</object-name>
+    <object-name>hookstop</object-name>
     <object-name>cargo</object-name>
     <object-name>cargoharness</object-name>
   </animation>
@@ -3974,6 +4241,8 @@
     <object-name>ropesegment.088</object-name>
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
+    <object-name>hook</object-name>
+    <object-name>hookstop</object-name>
     <object-name>cargo</object-name>
     <object-name>cargoharness</object-name>
   </animation>
@@ -4027,6 +4296,8 @@
     <object-name>ropesegment.088</object-name>
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
+    <object-name>hook</object-name>
+    <object-name>hookstop</object-name>
     <object-name>cargo</object-name>
     <object-name>cargoharness</object-name>
   </animation>
@@ -4079,6 +4350,8 @@
     <object-name>ropesegment.088</object-name>
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
+    <object-name>hook</object-name>
+    <object-name>hookstop</object-name>
     <object-name>cargo</object-name>
     <object-name>cargoharness</object-name>
   </animation>
@@ -4130,6 +4403,8 @@
     <object-name>ropesegment.088</object-name>
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
+    <object-name>hook</object-name>
+    <object-name>hookstop</object-name>
     <object-name>cargo</object-name>
     <object-name>cargoharness</object-name>
   </animation>
@@ -4180,6 +4455,8 @@
     <object-name>ropesegment.088</object-name>
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
+    <object-name>hook</object-name>
+    <object-name>hookstop</object-name>
     <object-name>cargo</object-name>
     <object-name>cargoharness</object-name>
   </animation>
@@ -4229,6 +4506,8 @@
     <object-name>ropesegment.088</object-name>
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
+    <object-name>hook</object-name>
+    <object-name>hookstop</object-name>
     <object-name>cargo</object-name>
     <object-name>cargoharness</object-name>
   </animation>
@@ -4277,6 +4556,8 @@
     <object-name>ropesegment.088</object-name>
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
+    <object-name>hook</object-name>
+    <object-name>hookstop</object-name>
     <object-name>cargo</object-name>
     <object-name>cargoharness</object-name>
   </animation>
@@ -4324,6 +4605,8 @@
     <object-name>ropesegment.088</object-name>
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
+    <object-name>hook</object-name>
+    <object-name>hookstop</object-name>
     <object-name>cargo</object-name>
     <object-name>cargoharness</object-name>
   </animation>
@@ -4370,6 +4653,8 @@
     <object-name>ropesegment.088</object-name>
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
+    <object-name>hook</object-name>
+    <object-name>hookstop</object-name>
     <object-name>cargo</object-name>
     <object-name>cargoharness</object-name>
   </animation>
@@ -4415,6 +4700,8 @@
     <object-name>ropesegment.088</object-name>
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
+    <object-name>hook</object-name>
+    <object-name>hookstop</object-name>
     <object-name>cargo</object-name>
     <object-name>cargoharness</object-name>
   </animation>
@@ -4459,6 +4746,8 @@
     <object-name>ropesegment.088</object-name>
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
+    <object-name>hook</object-name>
+    <object-name>hookstop</object-name>
     <object-name>cargo</object-name>
     <object-name>cargoharness</object-name>
   </animation>
@@ -4502,6 +4791,8 @@
     <object-name>ropesegment.088</object-name>
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
+    <object-name>hook</object-name>
+    <object-name>hookstop</object-name>
     <object-name>cargo</object-name>
     <object-name>cargoharness</object-name>
   </animation>
@@ -4544,6 +4835,8 @@
     <object-name>ropesegment.088</object-name>
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
+    <object-name>hook</object-name>
+    <object-name>hookstop</object-name>
     <object-name>cargo</object-name>
     <object-name>cargoharness</object-name>
   </animation>
@@ -4585,6 +4878,8 @@
     <object-name>ropesegment.088</object-name>
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
+    <object-name>hook</object-name>
+    <object-name>hookstop</object-name>
     <object-name>cargo</object-name>
     <object-name>cargoharness</object-name>
   </animation>
@@ -4625,6 +4920,8 @@
     <object-name>ropesegment.088</object-name>
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
+    <object-name>hook</object-name>
+    <object-name>hookstop</object-name>
     <object-name>cargo</object-name>
     <object-name>cargoharness</object-name>
   </animation>
@@ -4664,6 +4961,8 @@
     <object-name>ropesegment.088</object-name>
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
+    <object-name>hook</object-name>
+    <object-name>hookstop</object-name>
     <object-name>cargo</object-name>
     <object-name>cargoharness</object-name>
   </animation>
@@ -4702,6 +5001,8 @@
     <object-name>ropesegment.088</object-name>
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
+    <object-name>hook</object-name>
+    <object-name>hookstop</object-name>
     <object-name>cargo</object-name>
     <object-name>cargoharness</object-name>
   </animation>
@@ -4739,6 +5040,8 @@
     <object-name>ropesegment.088</object-name>
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
+    <object-name>hook</object-name>
+    <object-name>hookstop</object-name>
     <object-name>cargo</object-name>
     <object-name>cargoharness</object-name>
   </animation>
@@ -4775,6 +5078,8 @@
     <object-name>ropesegment.088</object-name>
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
+    <object-name>hook</object-name>
+    <object-name>hookstop</object-name>
     <object-name>cargo</object-name>
     <object-name>cargoharness</object-name>  
   </animation>
@@ -4810,6 +5115,8 @@
     <object-name>ropesegment.088</object-name>
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
+    <object-name>hook</object-name>
+    <object-name>hookstop</object-name>
     <object-name>cargo</object-name>
     <object-name>cargoharness</object-name>
   </animation>
@@ -4844,6 +5151,8 @@
     <object-name>ropesegment.088</object-name>
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
+    <object-name>hook</object-name>
+    <object-name>hookstop</object-name>
     <object-name>cargo</object-name>
     <object-name>cargoharness</object-name>
   </animation>
@@ -4877,6 +5186,8 @@
     <object-name>ropesegment.088</object-name>
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
+    <object-name>hook</object-name>
+    <object-name>hookstop</object-name>
     <object-name>cargo</object-name>
     <object-name>cargoharness</object-name>
   </animation>
@@ -4909,6 +5220,8 @@
     <object-name>ropesegment.088</object-name>
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
+    <object-name>hook</object-name>
+    <object-name>hookstop</object-name>
     <object-name>cargo</object-name>
     <object-name>cargoharness</object-name>
   </animation>
@@ -4940,6 +5253,8 @@
     <object-name>ropesegment.088</object-name>
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
+    <object-name>hook</object-name>
+    <object-name>hookstop</object-name>
     <object-name>cargo</object-name>
     <object-name>cargoharness</object-name>
   </animation>
@@ -4970,6 +5285,8 @@
     <object-name>ropesegment.088</object-name>
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
+    <object-name>hook</object-name>
+    <object-name>hookstop</object-name>
     <object-name>cargo</object-name>
     <object-name>cargoharness</object-name>
   </animation>
@@ -4999,6 +5316,8 @@
     <object-name>ropesegment.088</object-name>
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
+    <object-name>hook</object-name>
+    <object-name>hookstop</object-name>
     <object-name>cargo</object-name>
     <object-name>cargoharness</object-name>
   </animation>
@@ -5027,6 +5346,8 @@
     <object-name>ropesegment.088</object-name>
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
+    <object-name>hook</object-name>
+    <object-name>hookstop</object-name>
     <object-name>cargo</object-name>
     <object-name>cargoharness</object-name>
   </animation>
@@ -5054,6 +5375,8 @@
     <object-name>ropesegment.088</object-name>
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
+    <object-name>hook</object-name>
+    <object-name>hookstop</object-name>
     <object-name>cargo</object-name>
     <object-name>cargoharness</object-name>   
   </animation>
@@ -5080,6 +5403,8 @@
     <object-name>ropesegment.088</object-name>
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
+    <object-name>hook</object-name>
+    <object-name>hookstop</object-name>
     <object-name>cargo</object-name>
     <object-name>cargoharness</object-name>
   </animation>
@@ -5105,6 +5430,8 @@
     <object-name>ropesegment.088</object-name>
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
+    <object-name>hook</object-name>
+    <object-name>hookstop</object-name>
     <object-name>cargo</object-name>
     <object-name>cargoharness</object-name>
   </animation>
@@ -5129,6 +5456,8 @@
     <object-name>ropesegment.088</object-name>
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
+    <object-name>hook</object-name>
+    <object-name>hookstop</object-name>
     <object-name>cargo</object-name>
     <object-name>cargoharness</object-name>
   </animation>
@@ -5152,6 +5481,8 @@
     <object-name>ropesegment.088</object-name>
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
+    <object-name>hook</object-name>
+    <object-name>hookstop</object-name>
     <object-name>cargo</object-name>
     <object-name>cargoharness</object-name>
   </animation>
@@ -5174,6 +5505,8 @@
     <object-name>ropesegment.088</object-name>
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
+    <object-name>hook</object-name>
+    <object-name>hookstop</object-name>
     <object-name>cargo</object-name>
     <object-name>cargoharness</object-name>
   </animation>
@@ -5195,6 +5528,8 @@
     <object-name>ropesegment.088</object-name>
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
+    <object-name>hook</object-name>
+    <object-name>hookstop</object-name>
     <object-name>cargo</object-name>
     <object-name>cargoharness</object-name>
   </animation>
@@ -5215,6 +5550,8 @@
     <object-name>ropesegment.088</object-name>
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
+    <object-name>hook</object-name>
+    <object-name>hookstop</object-name>
     <object-name>cargo</object-name>
     <object-name>cargoharness</object-name>
   </animation>
@@ -5234,6 +5571,8 @@
     <object-name>ropesegment.088</object-name>
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
+    <object-name>hook</object-name>
+    <object-name>hookstop</object-name>
     <object-name>cargo</object-name>
     <object-name>cargoharness</object-name>
   </animation>
@@ -5252,6 +5591,8 @@
     <object-name>ropesegment.088</object-name>
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
+    <object-name>hook</object-name>
+    <object-name>hookstop</object-name>
     <object-name>cargo</object-name>
     <object-name>cargoharness</object-name>
   </animation>
@@ -5269,6 +5610,8 @@
     <object-name>ropesegment.088</object-name>
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
+    <object-name>hook</object-name>
+    <object-name>hookstop</object-name>
     <object-name>cargo</object-name>
     <object-name>cargoharness</object-name>
   </animation>
@@ -5285,6 +5628,8 @@
     <object-name>ropesegment.088</object-name>
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
+    <object-name>hook</object-name>
+    <object-name>hookstop</object-name>
     <object-name>cargo</object-name>
     <object-name>cargoharness</object-name>
   </animation>
@@ -5300,6 +5645,8 @@
     <object-name>ropesegment.088</object-name>
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
+    <object-name>hook</object-name>
+    <object-name>hookstop</object-name>
     <object-name>cargo</object-name>
     <object-name>cargoharness</object-name>
   </animation>
@@ -5314,6 +5661,8 @@
     <object-name>ropesegment.088</object-name>
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
+    <object-name>hook</object-name>
+    <object-name>hookstop</object-name>
     <object-name>cargo</object-name>
     <object-name>cargoharness</object-name>
   </animation>
@@ -5327,6 +5676,8 @@
     <object-name>ropesegment.088</object-name>
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
+    <object-name>hook</object-name>
+    <object-name>hookstop</object-name>
     <object-name>cargo</object-name>
     <object-name>cargoharness</object-name>
   </animation>
@@ -5339,6 +5690,8 @@
     <object-name>ropesegment.088</object-name>
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
+    <object-name>hook</object-name>
+    <object-name>hookstop</object-name>
     <object-name>cargo</object-name>
     <object-name>cargoharness</object-name>
   </animation>
@@ -5350,6 +5703,8 @@
     <object-name>ropesegment.088</object-name>
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
+    <object-name>hook</object-name>
+    <object-name>hookstop</object-name>
     <object-name>cargo</object-name>
     <object-name>cargoharness</object-name>
   </animation>
@@ -5360,6 +5715,8 @@
     <object-name>ropesegment.088</object-name>
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
+    <object-name>hook</object-name>
+    <object-name>hookstop</object-name>
     <object-name>cargo</object-name>
     <object-name>cargoharness</object-name>
   </animation>
@@ -5369,6 +5726,8 @@
     <object-name>ropesegment.088</object-name>
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
+    <object-name>hook</object-name>
+    <object-name>hookstop</object-name>
     <object-name>cargo</object-name>
     <object-name>cargoharness</object-name>
   </animation>
@@ -5377,6 +5736,8 @@
     <name>RopeSegment89</name>
     <object-name>ropesegment.089</object-name>
     <object-name>ropesegment.090</object-name>
+    <object-name>hook</object-name>
+    <object-name>hookstop</object-name>
     <object-name>cargo</object-name>
     <object-name>cargoharness</object-name>
   </animation>
@@ -5384,6 +5745,8 @@
   <animation>
     <name>RopeSegment90</name>
     <object-name>ropesegment.090</object-name>
+    <object-name>hook</object-name>
+    <object-name>hookstop</object-name>
     <object-name>cargo</object-name>
     <object-name>cargoharness</object-name>
   </animation>
@@ -9909,6 +10272,8 @@
   <animation>
     <type>rotate</type>
     <object-name>RopeSegment90</object-name>
+    <object-name>hook</object-name>
+    <object-name>hookstop</object-name>
     <property>/sim/cargo/rope/roll90</property>
     <factor>1</factor>
     <offset-deg>0</offset-deg>   
@@ -10063,6 +10428,64 @@
       <x>0</x>
       <y>0</y>
       <z>1</z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>pick</type>
+    <object-name>hook</object-name>
+    <visible>true</visible>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>nasal</command>
+        <script>doors.hitchhook.toggle();</script>
+      </binding>
+    </action>
+  </animation>
+
+  <animation>
+    <type>pick</type>
+    <object-name>hookstop</object-name>
+    <visible>true</visible>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>nasal</command>
+        <script>doors.hitchstop.toggle();</script>
+      </binding>
+    </action>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>hook</object-name>
+    <property>sim/model/hitch/hitchhook/position-norm</property>
+    <factor> -45 </factor>
+    <axis>
+      <x1-m> -2.23609 </x1-m>
+      <y1-m>  0.04955 </y1-m> 
+      <z1-m>-16.71377 </z1-m>
+      <x2-m> -2.23609 </x2-m>
+      <y2-m> -0.01714 </y2-m>
+      <z2-m>-16.71377 </z2-m>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>hookstop</object-name>
+    <property>sim/model/hitch/hitchstop/position-norm</property>
+    <factor> 45 </factor>
+    <axis>
+      <x1-m> -1.91628 </x1-m>
+      <y1-m> -0.01542 </y1-m> 
+      <z1-m>-16.69472 </z1-m>
+      <x2-m> -1.91628 </x2-m>
+      <y2-m>  0.03832 </y2-m>
+      <z2-m>-16.69472 </z2-m>
     </axis>
   </animation>
 

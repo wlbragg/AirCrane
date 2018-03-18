@@ -26,12 +26,6 @@
             setprop("/sim/model/aircrane/longline_flag_0",0);
 						setprop("/sim/model/aircrane/longline_flag_1",0);
             setprop("/sim/model/aircrane/longline_flag_" ~ p, 1);
-
-            # Hitch/Winch option
-            p = getprop("sim/gui/dialogs/aicargo-dialog/connector");
-            setprop("/sim/model/aircrane/connector_flag_0",0);
-						setprop("/sim/model/aircrane/connector_flag_1",0);
-            setprop("/sim/model/aircrane/connector_flag_" ~ p, 1);
         </open>
     </nasal>
 
@@ -64,7 +58,6 @@
 
   <group>
     <layout>hbox</layout>
-    <padding>6</padding>
     <checkbox>
       <halign>left</halign>
       <label>Blades Visible</label>
@@ -82,7 +75,6 @@
   </group>
   <group>
     <layout>hbox</layout>
-    <padding>6</padding>
     <checkbox>
       <halign>left</halign>
       <label>Shadow</label>
@@ -100,7 +92,6 @@
   </group>
   <group>
     <layout>hbox</layout>
-    <padding>6</padding>
     <checkbox>
       <halign>left</halign>
       <label>Show Particle Effects</label>
@@ -118,7 +109,6 @@
   </group>
   <group>
     <layout>hbox</layout>
-    <padding>6</padding>
     <checkbox>
       <halign>left</halign>
       <label>Human models</label>
@@ -131,7 +121,6 @@
   </group>
   <group>
     <layout>hbox</layout>
-    <padding>6</padding>
     <checkbox>
       <halign>left</halign>
       <label>Persistent Position</label>
@@ -152,7 +141,6 @@
 
   <group>
     <layout>hbox</layout>
-    <padding>6</padding>
     <checkbox>
       <halign>left</halign>
       <label>Equip Garmin 196 GPS</label>
@@ -163,12 +151,25 @@
       </binding>
     </checkbox>
   </group>
+  <group>
+    <layout>hbox</layout>
+    <checkbox>
+      <halign>left</halign>
+      <label>Step Cover</label>
+      <property>/sim/model/steppanel/enabled</property>
+      <live>true</live>
+      <binding>
+          <command>dialog-apply</command>
+      </binding>
+    </checkbox>
+  </group>
 
   <hrule/>
 
   <group>
+  <layout>vbox</layout>
+  <group>
     <layout>hbox</layout>
-    <padding>6</padding>
     <checkbox>
       <halign>left</halign>
       <label>Fluid Pumping System</label>
@@ -183,13 +184,13 @@
           setprop("sim/gui/dialogs/aicargo-dialog/connection", 0);
           setprop("sim/model/aircrane/cargo_connection_flag_0",1);
 				  setprop("sim/model/aircrane/cargo_connection_flag_1",0);
+          setprop("sim/model/cableguard/enabled",0);
         </script>
       </binding>
     </checkbox>
   </group>
   <group>
     <layout>hbox</layout>
-    <padding>6</padding>
     <checkbox>
       <halign>left</halign>
       <label>Water Cannon</label>
@@ -207,6 +208,7 @@
         </script>
       </binding>
     </checkbox>
+  </group>
   </group>
 
   <hrule/>
@@ -287,7 +289,9 @@
 					  <not>
 						  <property>/sim/freeze/replay-state</property>
 					  </not>
-            <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
+            <not>
+						  <property>/sim/model/winchcover/enabled</property>
+					  </not>
           </and>
 				</enable>
         <binding>
@@ -311,7 +315,9 @@
 					  <not>
 						  <property>/sim/freeze/replay-state</property>
 					  </not>
-            <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
+            <not>
+						  <property>/sim/model/winchcover/enabled</property>
+					  </not>
           </and>
 				</enable>
         <binding>
@@ -326,37 +332,25 @@
         </binding>
 			</radio>
 		</group>
-		<group>
-			<layout>hbox</layout>
-			<radio>
-				<halign>left</halign>
-				<label>Hitch</label>
-				<property>sim/model/aircrane/connector_flag_0</property>
-				<live>true</live>
-				<enable>
-          <and>
-					  <not>
-						  <property>/sim/freeze/replay-state</property>
-					  </not>
-            <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
-          </and>
-				</enable>
+    <group>
+      <layout>hbox</layout>
+      <checkbox>
+        <halign>left</halign>
+        <label>Winch Cover </label>
+        <property>/sim/model/winchcover/enabled</property>
+        <live>true</live>
         <binding>
-          <command>nasal</command>
-          <script>
-            var p = "sim/gui/dialogs/aicargo-dialog/connector";
-            setprop(p, var i = 0);
-            gui.popupTip("Connector type " ~ (i ? "Winch" : "Hitch"));
-            setprop("sim/model/aircrane/connector_flag_0",1);
-						setprop("sim/model/aircrane/connector_flag_1",0);
-          </script>
+            <command>dialog-apply</command>
         </binding>
-			</radio>
-			<radio>
-				<halign>left</halign>
-				<label>Winch</label>Hitch
-				<property>sim/model/aircrane/connector_flag_1</property>
-				<live>true</live>
+      </checkbox>
+    </group>
+    <group>
+      <layout>hbox</layout>
+      <checkbox>
+        <halign>left</halign>
+        <label>Cable Guard</label>
+        <property>sim/model/cableguard/enabled</property>
+        <live>true</live>
         <enable>
           <and>
 					  <not>
@@ -368,54 +362,53 @@
         <binding>
           <command>nasal</command>
           <script>
-            var p = "sim/gui/dialogs/aicargo-dialog/connector";
-            setprop(p, var i = 1);
-            gui.popupTip("Connector type " ~ (i ? "Winch" : "Hitch"));
-            setprop("sim/model/aircrane/connector_flag_0",0);
-						setprop("sim/model/aircrane/connector_flag_1",1);
+            var p = "sim/model/cableguard/enabled";
+            setprop(p, var i = !getprop(p));
+            gui.popupTip("Cable guard " ~ (i ? "On" : "Off"));
           </script>
         </binding>
-			</radio>
-		</group>
+      </checkbox>
+    </group>
     <group>
-    <layout>hbox</layout>
-    <padding>6</padding>
-    <checkbox>
-      <halign>left</halign>
-      <label>Cargo Effects Rope</label>
-      <property>/sim/gui/dialogs/aicargo-dialog/alt-origin</property>
-      <live>true</live>
-      <enable>
-          <and>
-					  <not>
-						  <property>/sim/freeze/replay-state</property>
-					  </not>
-            <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
-          </and>
-				</enable>
-      <binding>
-        <command>dialog-apply</command>
-      </binding>
-    </checkbox>
-  </group>
+      <layout>hbox</layout>
+      <checkbox>
+        <halign>left</halign>
+        <label>Cargo Effects Rope</label>
+        <property>/sim/gui/dialogs/aicargo-dialog/alt-origin</property>
+        <live>true</live>
+        <enable>
+            <and>
+					    <not>
+						    <property>/sim/freeze/replay-state</property>
+					    </not>
+              <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
+            </and>
+				  </enable>
+          <binding>
+            <command>dialog-apply</command>
+          </binding>
+        </checkbox>
+    </group>
 
-  <hrule/>
+    <hrule/>
 
-  <!-- Button bar -->
-  <group>
-    <layout>hbox</layout>
-    <default-padding>6</default-padding>
-    <empty><stretch>true</stretch></empty>
-    <button>
-      <legend>Close</legend>
-      <equal>true</equal>
-      <key>Esc</key>
-      <default>true</default>
-      <binding>
-        <command>dialog-close</command>
-      </binding>
-    </button>
-    <empty><stretch>true</stretch></empty>
+    <!-- Button bar -->
+    <group>
+      <layout>hbox</layout>
+      <default-padding>6</default-padding>
+      <empty><stretch>true</stretch></empty>
+      <button>
+        <legend>Close</legend>
+        <equal>true</equal>
+        <key>Esc</key>
+        <default>true</default>
+        <binding>
+          <command>dialog-close</command>
+        </binding>
+      </button>
+      <empty><stretch>true</stretch></empty>
+    </group>
+
   </group>
 
 </PropertyList>

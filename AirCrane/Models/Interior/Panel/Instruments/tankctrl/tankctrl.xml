@@ -87,6 +87,13 @@
     <object-name>TankVolume</object-name>
     <object-name>FillRange</object-name>
     <object-name>PayloadWeight</object-name>
+    <object-name>screws</object-name>
+    <object-name>panel-tnkctrl</object-name>
+    <object-name>Text</object-name>
+    <object-name>screws.001</object-name>
+    <object-name>panel-tnkctrl.001</object-name>
+    <object-name>screws.002</object-name>
+    <object-name>panel-tnkctrl.002</object-name>
   </animation>
 
   <animation>
@@ -172,6 +179,13 @@
     <object-name>TankVolume</object-name>
     <object-name>FillRange</object-name>
     <object-name>PayloadWeight</object-name>
+    <object-name>screws</object-name>
+    <object-name>panel-tnkctrl</object-name>
+    <object-name>Text</object-name>
+    <object-name>screws.001</object-name>
+    <object-name>panel-tnkctrl.001</object-name>
+    <object-name>screws.002</object-name>
+    <object-name>panel-tnkctrl.002</object-name>
     <emission>
       <factor-prop>systems/electrical/outputs/instrument-lights</factor-prop>
       <red>   0.50 </red>
@@ -182,7 +196,7 @@
 
   <!-- ALS Interior Shadows -->
   <effect>
-    <inherits-from>Models/Effects/interior/cockpit-interior</inherits-from>
+    <inherits-from>Models/Effects/interior/cockpit-interior-shadows</inherits-from>
     <object-name>knob-foam</object-name>
     <object-name>knob-quantity</object-name>
     <object-name>knob-coverage</object-name>
@@ -266,6 +280,13 @@
     <object-name>TankVolume</object-name>
     <object-name>FillRange</object-name>
     <object-name>PayloadWeight</object-name>
+    <object-name>screws</object-name>
+    <object-name>panel-tnkctrl</object-name>
+    <object-name>Text</object-name>
+    <object-name>screws.001</object-name>
+    <object-name>panel-tnkctrl.001</object-name>
+    <object-name>screws.002</object-name>
+    <object-name>panel-tnkctrl.002</object-name>
   </effect>
 
   <animation>
@@ -393,7 +414,7 @@
     </condition>
   </animation>
  
-  <text>
+  <!--text>
     <name>Safe</name>
     <type type="string">literal</type>
     <text type="string">SAFE</text>
@@ -1280,7 +1301,7 @@
     <roll-deg>15</roll-deg>
       <x-m>-8.54902</x-m>
       <y-m>-0.09586</y-m>
-      <z-m>-1.855  </z-m>
+      <z-m>-1.86  </z-m>
     </offsets>
   </text>
   <text>
@@ -1450,7 +1471,7 @@
       <y-m>-0.06199</y-m>
       <z-m>-1.8621 </z-m>
     </offsets>
-  </text>
+  </text-->
 
   <!-- Quantity "Knob" -->
   <animation>
@@ -1460,12 +1481,12 @@
     <factor>45</factor>
     <offset-deg>0</offset-deg>
     <axis>
-            <x1-m>-8.64213</x1-m>
-            <y1-m>-0.12438</y1-m>
-            <z1-m>-1.8439 </z1-m>
-            <x2-m>-8.64241</x2-m>
-            <y2-m>-0.12439</y2-m>
-            <z2-m>-1.84582</z2-m>
+            <x1-m>-8.87255</x1-m>
+            <y1-m>-0.26219</y1-m>
+            <z1-m>-1.7919</z1-m>
+            <x2-m>-8.87411</x2-m>
+            <y2-m>-0.26214</y2-m>
+            <z2-m>-1.80244</z2-m>
         </axis>
     <action>
       <repeatable>true</repeatable>
@@ -1505,12 +1526,12 @@
     <factor>28</factor>
     <offset-deg>5</offset-deg>
     <axis>
-            <x1-m>-8.61514</x1-m>
-            <y1-m>-0.08439</y1-m>
-            <z1-m>-1.83739</z1-m>
-            <x2-m>-8.617  </x2-m>
-            <y2-m>-0.08441</y2-m>
-            <z2-m>-1.84978</z2-m>
+            <x1-m>-8.84748</x1-m>
+            <y1-m>-0.22277</y1-m>
+            <z1-m>-1.79797</z1-m>
+            <x2-m>-8.84841</x2-m>
+            <y2-m>-0.22276</y2-m>
+            <z2-m>-1.80416</z2-m>
         </axis>
     <action>
       <repeatable>true</repeatable>
@@ -1550,12 +1571,12 @@
     <factor>31</factor>
     <offset-deg>0</offset-deg>
     <axis>
-            <x1-m>-8.64445</x1-m>
-            <y1-m>-0.04068</y1-m>
-            <z1-m>-1.8441 </z1-m>
-            <x2-m>-8.64471</x2-m>
-            <y2-m>-0.04068</y2-m>
-            <z2-m>-1.84602</z2-m>
+            <x1-m>-8.87514</x1-m>
+            <y1-m>-0.17861</y1-m>
+            <z1-m>-1.79158</z1-m>
+            <x2-m>-8.87663</x2-m>
+            <y2-m>-0.17848</y2-m>
+            <z2-m>-1.80214</z2-m>
         </axis>
     <action>
       <repeatable>true</repeatable>
@@ -1629,9 +1650,9 @@
       <z>0.0</z>
     </axis>
     <center>
-      <x-m>-8.54199</x-m>
-      <y-m>-0.13355</y-m>
-      <z-m>-1.85975</z-m>
+      <x-m>-8.7743 </x-m>
+      <y-m>-0.27188</y-m>
+      <z-m>-1.82089</z-m>
     </center>
   </animation>
 
@@ -1695,9 +1716,9 @@
       <z>0.0</z>
     </axis>
     <center>
-      <x-m>-8.54221</x-m>
-      <y-m>-0.1094 </y-m>
-      <z-m>-1.86108</z-m>
+      <x-m>-8.77464</x-m>
+      <y-m>-0.24773</y-m>
+      <z-m>-1.82098</z-m>
     </center>
   </animation>
 
@@ -1743,9 +1764,9 @@
       <z>0.0</z>
     </axis>
     <center>
-      <x-m>-8.54256</x-m>
-      <y-m>-0.08583</y-m>
-      <z-m>-1.86111</z-m>
+      <x-m>-8.77498</x-m>
+      <y-m>-0.22416</y-m>
+      <z-m>-1.82095</z-m>
     </center>
   </animation>
 
@@ -1806,9 +1827,9 @@
       <z>0.0</z>
     </axis>
     <center>
-      <x-m>-8.54291</x-m>
-      <y-m>-0.06227</y-m>
-      <z-m>-1.86114</z-m>
+      <x-m>-8.77533</x-m>
+      <y-m>-0.2006 </y-m>
+      <z-m>-1.82091</z-m>
     </center>
   </animation>
 

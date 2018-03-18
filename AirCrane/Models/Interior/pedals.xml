@@ -3,6 +3,7 @@
 <PropertyList>
 
   <path>pedals.ac</path>
+  <texture-path>../../Models</texture-path>
 
   <animation>
     <!-- Objets opaques -->
@@ -44,7 +45,7 @@
 
   <!-- ALS Interior Shadows -->
   <effect>
-    <inherits-from>Models/Effects/interior/cockpit-interior</inherits-from>
+    <inherits-from>Models/Effects/interior/cockpit-interior-shadows</inherits-from>
     <object-name>copltLpedal</object-name>
     <object-name>copltLpedalRod</object-name>
     <object-name>copltLboot1</object-name>
