@@ -51,7 +51,7 @@ var longline_animation = func (reset) {
   var i_segment_firstground = -1;
   var n_segments_reeled = getprop("/sim/cargo/rope/segments-reeled-in");
 
-  var winch = getprop("sim/gui/dialogs/aicargo-dialog/connector");
+  var winch = getprop("sim/gui/dialogs/aicargo-dialog/connection");
 
   #var lonNode = getprop("/position/longitude-deg");
   #var latNode = getprop("/position/latitude-deg");

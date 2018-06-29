@@ -205,7 +205,7 @@
       <binding>
         <command>nasal</command>
         <script>
-          var connector = getprop("/sim/gui/dialogs/aicargo-dialog/connector");
+          var connector = getprop("/sim/gui/dialogs/aicargo-dialog/connection");
           if (connector == 1)
             {
               var segments = getprop("/sim/cargo/rope/segments-reeled-in");
@@ -225,7 +225,7 @@
       <binding>
         <command>nasal</command>
         <script>
-          var connector = getprop("/sim/gui/dialogs/aicargo-dialog/connector");
+          var connector = getprop("/sim/gui/dialogs/aicargo-dialog/connection");
           if (connector == 1)
             {
               var segments = getprop("/sim/cargo/rope/segments-reeled-in");
