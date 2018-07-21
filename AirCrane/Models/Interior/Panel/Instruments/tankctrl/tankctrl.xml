@@ -1187,7 +1187,7 @@
   <text>
     <name>HydSnorkelPtr</name>
     <type type="string">literal</type>
-    <text type="string">/</text>
+    <text type="string"></text>
     <draw-text type="bool">true</draw-text>
     <font>Helvetica.txf</font>
     <character-size type="double">0.016</character-size>
@@ -1331,7 +1331,7 @@
   <text>
     <name>FoamPtr</name>
     <type type="string">literal</type>
-    <text type="string">/</text>
+    <text type="string"></text>
     <draw-text type="bool">true</draw-text>
     <font>Helvetica.txf</font>
     <character-size type="double">0.016</character-size>
@@ -1895,7 +1895,7 @@
         <property>sim/model/firetank/enabled</property>
         <property>sim/model/watercannon/enabled</property>
         <not>
-          <property>/sim/rendering/rembrandt/enabled</property>
+          <property>sim/rendering/rembrandt/enabled</property>
         </not>
       </and>
     </condition>
@@ -1903,7 +1903,7 @@
       <red>1.0</red>
       <green>1.0</green>
       <blue>1.0</blue>
-      <factor-prop>/systems/electrical/outputs/digital-display</factor-prop>
+      <factor-prop>systems/electrical/outputs/digital-display</factor-prop>
     </emission>
   </animation>
   <text>
@@ -1939,7 +1939,7 @@
       <and>
         <property>sim/model/firetank/enabled</property>
         <not>
-          <property>/sim/rendering/rembrandt/enabled</property>
+          <property>sim/rendering/rembrandt/enabled</property>
         </not>
       </and>
     </condition>
@@ -1947,7 +1947,7 @@
       <red>1.0</red>
       <green>1.0</green>
       <blue>1.0</blue>
-      <factor-prop>/systems/electrical/outputs/digital-display</factor-prop>
+      <factor-prop>systems/electrical/outputs/digital-display</factor-prop>
     </emission>
   </animation>
   <text>
@@ -1983,7 +1983,7 @@
       <and>
         <property>sim/model/firetank/enabled</property>
         <not>
-          <property>/sim/rendering/rembrandt/enabled</property>
+          <property>sim/rendering/rembrandt/enabled</property>
         </not>
       </and>
     </condition>
@@ -1991,7 +1991,7 @@
       <red>1.0</red>
       <green>1.0</green>
       <blue>1.0</blue>
-      <factor-prop>/systems/electrical/outputs/digital-display</factor-prop>
+      <factor-prop>systems/electrical/outputs/digital-display</factor-prop>
     </emission>
   </animation>
   <text>
@@ -2027,7 +2027,7 @@
       <and>
         <property>sim/model/firetank/enabled</property>
         <not>
-          <property>/sim/rendering/rembrandt/enabled</property>
+          <property>sim/rendering/rembrandt/enabled</property>
         </not>
       </and>
     </condition>
@@ -2035,7 +2035,7 @@
       <red>1.0</red>
       <green>1.0</green>
       <blue>1.0</blue>
-      <factor-prop>/systems/electrical/outputs/digital-display</factor-prop>
+      <factor-prop>systems/electrical/outputs/digital-display</factor-prop>
     </emission>
   </animation>
   <text>

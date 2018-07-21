@@ -89,7 +89,7 @@
       <type>rotate</type>
       <object-name>copltLpedalRod</object-name>
       <object-name>copltLpedal</object-name>
-      <property>/controls/flight/rudder</property>
+      <property>controls/flight/rudder</property>
       <factor>-27</factor>
       <center>
           <x-m>-9.41675</x-m>
@@ -105,7 +105,7 @@
   <animation>
       <type>rotate</type>
       <object-name>copltLpedal</object-name>
-      <property>/controls/flight/rudder</property>
+      <property>controls/flight/rudder</property>
       <factor>27</factor>
       <center>
           <x-m>-9.44589</x-m>
@@ -125,7 +125,7 @@
       <type>rotate</type>
       <object-name>copltRpedal</object-name>
       <object-name>copltRpedalRod</object-name>
-      <property>/controls/flight/rudder</property>
+      <property>controls/flight/rudder</property>
       <factor>27</factor>
       <center>
           <x-m>-9.40587</x-m>
@@ -141,7 +141,7 @@
   <animation>
       <type>rotate</type>
       <object-name>copltRpedal</object-name>
-      <property>/controls/flight/rudder</property>
+      <property>controls/flight/rudder</property>
       <factor>-27</factor>
       <center>
           <x-m>-9.44131</x-m>
@@ -160,7 +160,7 @@
 	<animation>
       <type>rotate</type>
       <object-name>copltLboot6</object-name>
-      <property>/controls/flight/rudder</property>
+      <property>controls/flight/rudder</property>
       <factor>-27</factor>
       <center>
           <x-m>-9.41675</x-m>
@@ -176,7 +176,7 @@
 	<animation>
       <type>rotate</type>
       <object-name>copltLboot6</object-name>
-      <property>/controls/flight/rudder</property>
+      <property>controls/flight/rudder</property>
 	    <offset-deg>5</offset-deg>
       <factor>27</factor>
       <center>
@@ -193,7 +193,7 @@
 	<animation>
       <type>rotate</type>
       <object-name>copltLboot5</object-name>
-      <property>/controls/flight/rudder</property>
+      <property>controls/flight/rudder</property>
       <factor>-27</factor>
       <center>
           <x-m>-9.41675</x-m>
@@ -209,7 +209,7 @@
 	<animation>
       <type>rotate</type>
       <object-name>copltLboot5</object-name>
-      <property>/controls/flight/rudder</property>
+      <property>controls/flight/rudder</property>
 	    <offset-deg>0</offset-deg>
       <factor>20</factor>
       <center>
@@ -226,7 +226,7 @@
 	<animation>
       <type>rotate</type>
       <object-name>copltLboot4</object-name>
-      <property>/controls/flight/rudder</property>
+      <property>controls/flight/rudder</property>
       <factor>-27</factor>
       <center>
           <x-m>-9.41675</x-m>
@@ -242,7 +242,7 @@
 	<animation>
       <type>rotate</type>
       <object-name>copltLboot4</object-name>
-      <property>/controls/flight/rudder</property>
+      <property>controls/flight/rudder</property>
 	    <offset-deg>0</offset-deg>
       <factor>8</factor>
       <center>
@@ -259,7 +259,7 @@
 	<animation>
       <type>rotate</type>
       <object-name>copltLboot3</object-name>
-      <property>/controls/flight/rudder</property>
+      <property>controls/flight/rudder</property>
       <factor>-27</factor>
       <center>
           <x-m>-9.41675</x-m>
@@ -275,7 +275,7 @@
 	<animation>
       <type>rotate</type>
       <object-name>copltLboot3</object-name>
-      <property>/controls/flight/rudder</property>
+      <property>controls/flight/rudder</property>
       <offset-deg>0</offset-deg>
       <factor>4</factor>
       <center>
@@ -292,7 +292,7 @@
 	<animation>
       <type>rotate</type>
       <object-name>copltLboot2</object-name>
-      <property>/controls/flight/rudder</property>
+      <property>controls/flight/rudder</property>
       <factor>-27</factor>
       <center>
           <x-m>-9.41675</x-m>
@@ -308,7 +308,7 @@
   <animation>
       <type>rotate</type>
       <object-name>copltLboot1</object-name>
-      <property>/controls/flight/rudder</property>
+      <property>controls/flight/rudder</property>
       <factor>-27</factor>
       <center>
           <x-m>-9.41675</x-m>
@@ -327,7 +327,7 @@
 	<animation>
       <type>rotate</type>
       <object-name>copltRboot6</object-name>
-      <property>/controls/flight/rudder</property>
+      <property>controls/flight/rudder</property>
       <factor>27</factor>
       <center>
           <x-m>-9.40587</x-m>
@@ -343,7 +343,7 @@
 	<animation>
       <type>rotate</type>
       <object-name>copltRboot6</object-name>
-      <property>/controls/flight/rudder</property>
+      <property>controls/flight/rudder</property>
 	    <offset-deg>-5</offset-deg>
       <factor>-27</factor>
       <center>
@@ -360,7 +360,7 @@
 	<animation>
       <type>rotate</type>
       <object-name>copltRboot5</object-name>
-      <property>/controls/flight/rudder</property>
+      <property>controls/flight/rudder</property>
       <factor>27</factor>
       <center>
           <x-m>-9.40587</x-m>
@@ -376,7 +376,7 @@
 	<animation>
       <type>rotate</type>
       <object-name>copltRboot5</object-name>
-      <property>/controls/flight/rudder</property>
+      <property>controls/flight/rudder</property>
 	    <offset-deg>0</offset-deg>
       <factor>-20</factor>
       <center>
@@ -393,7 +393,7 @@
 	<animation>
       <type>rotate</type>
       <object-name>copltRboot4</object-name>
-      <property>/controls/flight/rudder</property>
+      <property>controls/flight/rudder</property>
       <factor>27</factor>
       <center>
           <x-m>-9.40587</x-m>
@@ -409,7 +409,7 @@
 	<animation>
       <type>rotate</type>
       <object-name>copltRboot4</object-name>
-      <property>/controls/flight/rudder</property>
+      <property>controls/flight/rudder</property>
 	    <offset-deg>0</offset-deg>
       <factor>-8</factor>
       <center>
@@ -426,7 +426,7 @@
 	<animation>
       <type>rotate</type>
       <object-name>copltRboot3</object-name>
-      <property>/controls/flight/rudder</property>
+      <property>controls/flight/rudder</property>
       <factor>27</factor>
       <center>
           <x-m>-9.40587</x-m>
@@ -442,7 +442,7 @@
 	<animation>
       <type>rotate</type>
       <object-name>copltRboot3</object-name>
-      <property>/controls/flight/rudder</property>
+      <property>controls/flight/rudder</property>
 	    <offset-deg>0</offset-deg>
       <factor>-4</factor>
       <center>
@@ -459,7 +459,7 @@
 	<animation>
       <type>rotate</type>
       <object-name>copltRboot2</object-name>
-      <property>/controls/flight/rudder</property>
+      <property>controls/flight/rudder</property>
       <factor>27</factor>
       <center>
           <x-m>-9.40587</x-m>
@@ -475,7 +475,7 @@
 	<animation>
       <type>rotate</type>
       <object-name>copltRboot1</object-name>
-      <property>/controls/flight/rudder</property>
+      <property>controls/flight/rudder</property>
       <factor>27</factor>
       <center>
           <x-m>-9.40587</x-m>
@@ -495,7 +495,7 @@
       <type>rotate</type>
       <object-name>pltLpedal</object-name>
       <object-name>pltLpedalRod</object-name>
-      <property>/controls/flight/rudder</property>
+      <property>controls/flight/rudder</property>
       <factor>-27</factor>
       <center>
           <x-m>-9.40945</x-m>
@@ -511,7 +511,7 @@
 	<animation>
       <type>rotate</type>
       <object-name>pltLpedal</object-name>
-      <property>/controls/flight/rudder</property>
+      <property>controls/flight/rudder</property>
       <factor>27</factor>
       <center>
           <x-m>-9.44605</x-m>
@@ -532,7 +532,7 @@
       <object-name>pltRpedal</object-name>
       <object-name>pltRpedalRod</object-name>
       <object-name>sikorsky</object-name>
-      <property>/controls/flight/rudder</property>
+      <property>controls/flight/rudder</property>
       <factor>27</factor>
       <center>
           <x-m>-9.40587</x-m>
@@ -549,7 +549,7 @@
       <type>rotate</type>
       <object-name>pltRpedal</object-name>
       <object-name>sikorsky</object-name>
-      <property>/controls/flight/rudder</property>
+      <property>controls/flight/rudder</property>
       <factor>-27</factor>
       <center>
           <x-m>-9.44131</x-m>
@@ -568,7 +568,7 @@
 	<animation>
       <type>rotate</type>
       <object-name>pltLboot6</object-name>
-      <property>/controls/flight/rudder</property>
+      <property>controls/flight/rudder</property>
       <factor>-27</factor>
       <center>
           <x-m>-9.40945</x-m>
@@ -584,7 +584,7 @@
 	<animation>
       <type>rotate</type>
       <object-name>pltLboot6</object-name>
-      <property>/controls/flight/rudder</property>
+      <property>controls/flight/rudder</property>
 	    <offset-deg>5</offset-deg>
       <factor>27</factor>
       <center>
@@ -601,7 +601,7 @@
 	<animation>
       <type>rotate</type>
       <object-name>pltLboot5</object-name>
-      <property>/controls/flight/rudder</property>
+      <property>controls/flight/rudder</property>
       <factor>-27</factor>
       <center>
           <x-m>-9.40945</x-m>
@@ -617,7 +617,7 @@
 	<animation>
       <type>rotate</type>
       <object-name>pltLboot5</object-name>
-      <property>/controls/flight/rudder</property>
+      <property>controls/flight/rudder</property>
 	    <offset-deg>0</offset-deg>
       <factor>20</factor>
       <center>
@@ -634,7 +634,7 @@
 	<animation>
       <type>rotate</type>
       <object-name>pltLboot4</object-name>
-      <property>/controls/flight/rudder</property>
+      <property>controls/flight/rudder</property>
       <factor>-27</factor>
       <center>
           <x-m>-9.40945</x-m>
@@ -650,7 +650,7 @@
 	<animation>
       <type>rotate</type>
       <object-name>pltLboot4</object-name>
-      <property>/controls/flight/rudder</property>
+      <property>controls/flight/rudder</property>
 	    <offset-deg>0</offset-deg>
       <factor>8</factor>
       <center>
@@ -667,7 +667,7 @@
 	<animation>
       <type>rotate</type>
       <object-name>pltLboot3</object-name>
-      <property>/controls/flight/rudder</property>
+      <property>controls/flight/rudder</property>
       <factor>-27</factor>
       <center>
           <x-m>-9.40945</x-m>
@@ -683,7 +683,7 @@
 	<animation>
       <type>rotate</type>
       <object-name>pltLboot3</object-name>
-      <property>/controls/flight/rudder</property>
+      <property>controls/flight/rudder</property>
       <offset-deg>0</offset-deg>
       <factor>4</factor>
       <center>
@@ -700,7 +700,7 @@
 	<animation>
       <type>rotate</type>
       <object-name>pltLboot2</object-name>
-      <property>/controls/flight/rudder</property>
+      <property>controls/flight/rudder</property>
       <factor>-27</factor>
       <center>
           <x-m>-9.40945</x-m>
@@ -716,7 +716,7 @@
   <animation>
       <type>rotate</type>
       <object-name>pltLboot1</object-name>
-      <property>/controls/flight/rudder</property>
+      <property>controls/flight/rudder</property>
       <factor>-27</factor>
       <center>
           <x-m>-9.40945</x-m>
@@ -736,7 +736,7 @@
 	<animation>
       <type>rotate</type>
       <object-name>pltRboot6</object-name>
-      <property>/controls/flight/rudder</property>
+      <property>controls/flight/rudder</property>
       <factor>27</factor>
       <center>
           <x-m>-9.40587</x-m>
@@ -752,7 +752,7 @@
 	<animation>
       <type>rotate</type>
       <object-name>pltRboot6</object-name>
-      <property>/controls/flight/rudder</property>
+      <property>controls/flight/rudder</property>
 	    <offset-deg>-5</offset-deg>
       <factor>-27</factor>
       <center>
@@ -769,7 +769,7 @@
 	<animation>
       <type>rotate</type>
       <object-name>pltRboot5</object-name>
-      <property>/controls/flight/rudder</property>
+      <property>controls/flight/rudder</property>
       <factor>27</factor>
       <center>
           <x-m>-9.40587</x-m>
@@ -785,7 +785,7 @@
 	<animation>
       <type>rotate</type>
       <object-name>pltRboot5</object-name>
-      <property>/controls/flight/rudder</property>
+      <property>controls/flight/rudder</property>
 	    <offset-deg>0</offset-deg>
       <factor>-20</factor>
       <center>
@@ -802,7 +802,7 @@
 	<animation>
       <type>rotate</type>
       <object-name>pltRboot4</object-name>
-      <property>/controls/flight/rudder</property>
+      <property>controls/flight/rudder</property>
       <factor>27</factor>
       <center>
           <x-m>-9.40587</x-m>
@@ -818,7 +818,7 @@
 	<animation>
       <type>rotate</type>
       <object-name>pltRboot4</object-name>
-      <property>/controls/flight/rudder</property>
+      <property>controls/flight/rudder</property>
 	    <offset-deg>0</offset-deg>
       <factor>-8</factor>
       <center>
@@ -835,7 +835,7 @@
 	<animation>
       <type>rotate</type>
       <object-name>pltRboot3</object-name>
-      <property>/controls/flight/rudder</property>
+      <property>controls/flight/rudder</property>
       <factor>27</factor>
       <center>
           <x-m>-9.40587</x-m>
@@ -851,7 +851,7 @@
 	<animation>
       <type>rotate</type>
       <object-name>pltRboot3</object-name>
-      <property>/controls/flight/rudder</property>
+      <property>controls/flight/rudder</property>
 	    <offset-deg>0</offset-deg>
       <factor>-4</factor>
       <center>
@@ -868,7 +868,7 @@
 	<animation>
       <type>rotate</type>
       <object-name>pltRboot2</object-name>
-      <property>/controls/flight/rudder</property>
+      <property>controls/flight/rudder</property>
       <factor>27</factor>
       <center>
           <x-m>-9.40587</x-m>
@@ -884,7 +884,7 @@
 	<animation>
       <type>rotate</type>
       <object-name>pltRboot1</object-name>
-      <property>/controls/flight/rudder</property>
+      <property>controls/flight/rudder</property>
       <factor>27</factor>
       <center>
           <x-m>-9.40587</x-m>

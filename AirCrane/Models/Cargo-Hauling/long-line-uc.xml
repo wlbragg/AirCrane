@@ -18,7 +18,7 @@
     <condition>
       <and>
         <property>sim/cargo/rope/pulling</property>
-        <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
+        <property>sim/gui/dialogs/aicargo-dialog/connection</property>
       </and>
     </condition>
   </model>
@@ -33,7 +33,7 @@
     <condition>
       <and>
         <property>sim/cargo/cargo1-onhook</property>
-        <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
+        <property>sim/gui/dialogs/aicargo-dialog/connection</property>
       </and>
     </condition>
   </model>
@@ -47,7 +47,7 @@
     <condition>
       <and>
         <property>sim/cargo/cargo1-onhook</property>
-        <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
+        <property>sim/gui/dialogs/aicargo-dialog/connection</property>
         <not>
           <property>sim/cargo/rope/pulling</property>
         </not>
@@ -69,7 +69,7 @@
           <property>sim/cargo/cargo3-onhook</property>
           <property>sim/cargo/cargo4-onhook</property>
         </or>
-        <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
+        <property>sim/gui/dialogs/aicargo-dialog/connection</property>
       </and>
     </condition>
   </model>
@@ -87,7 +87,7 @@
           <property>sim/cargo/cargo3-onhook</property>
           <property>sim/cargo/cargo4-onhook</property>
         </or>
-        <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
+        <property>sim/gui/dialogs/aicargo-dialog/connection</property>
         <not>
           <property>sim/cargo/rope/pulling</property>
         </not>
@@ -105,7 +105,7 @@
     <condition>
       <and>
         <property>sim/cargo/cargo5-onhook</property>
-        <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
+        <property>sim/gui/dialogs/aicargo-dialog/connection</property>
       </and>
     </condition>
   </model>
@@ -119,7 +119,7 @@
     <condition>
       <and>
         <property>sim/cargo/cargo5-onhook</property>
-        <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
+        <property>sim/gui/dialogs/aicargo-dialog/connection</property>
         <not>
           <property>sim/cargo/rope/pulling</property>
         </not>
@@ -137,7 +137,7 @@
     <condition>
       <and>
         <property>sim/cargo/cargo6-onhook</property>
-        <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
+        <property>sim/gui/dialogs/aicargo-dialog/connection</property>
       </and>
     </condition>
   </model>
@@ -151,7 +151,7 @@
     <condition>
       <and>
         <property>sim/cargo/cargo6-onhook</property>
-        <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
+        <property>sim/gui/dialogs/aicargo-dialog/connection</property>
         <not>
           <property>sim/cargo/rope/pulling</property>
         </not>
@@ -169,7 +169,7 @@
     <condition>
       <and>
         <property>sim/cargo/cargo7-onhook</property>
-        <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
+        <property>sim/gui/dialogs/aicargo-dialog/connection</property>
       </and>
     </condition>
   </model>
@@ -183,7 +183,7 @@
     <condition>
       <and>
         <property>sim/cargo/cargo7-onhook</property>
-        <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
+        <property>sim/gui/dialogs/aicargo-dialog/connection</property>
         <not>
           <property>sim/cargo/rope/pulling</property>
         </not>
@@ -201,7 +201,7 @@
     <condition>
       <and>
         <property>sim/cargo/cargo8-onhook</property>
-        <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
+        <property>sim/gui/dialogs/aicargo-dialog/connection</property>
       </and>
     </condition>
   </model>
@@ -215,7 +215,7 @@
     <condition>
       <and>
         <property>sim/cargo/cargo8-onhook</property>
-        <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
+        <property>sim/gui/dialogs/aicargo-dialog/connection</property>
         <not>
           <property>sim/cargo/rope/pulling</property>
         </not>
@@ -239,7 +239,7 @@
           <property>sim/cargo/cargo12-onhook</property>
           <property>sim/cargo/cargo13-onhook</property>
         </or>
-        <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
+        <property>sim/gui/dialogs/aicargo-dialog/connection</property>
         <not>
           <property>sim/cargo/rope/pulling</property>
         </not>
@@ -262,7 +262,7 @@
           <property>sim/cargo/cargo12-onhook</property>
           <property>sim/cargo/cargo13-onhook</property>
         </or>
-        <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
+        <property>sim/gui/dialogs/aicargo-dialog/connection</property>
         <not>
           <property>sim/cargo/rope/pulling</property>
         </not>
@@ -280,7 +280,7 @@
     <condition>
       <and>
         <property>sim/cargo/cargo14-onhook</property>
-        <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
+        <property>sim/gui/dialogs/aicargo-dialog/connection</property>
       </and>
     </condition>
   </model>
@@ -294,7 +294,7 @@
     <condition>
       <and>
         <property>sim/cargo/cargo14-onhook</property>
-        <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
+        <property>sim/gui/dialogs/aicargo-dialog/connection</property>
         <not>
           <property>sim/cargo/rope/pulling</property>
         </not>
@@ -312,7 +312,7 @@
     <condition>
       <and>
         <property>sim/cargo/cargo15-onhook</property>
-        <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
+        <property>sim/gui/dialogs/aicargo-dialog/connection</property>
       </and>
     </condition>
   </model>
@@ -326,7 +326,7 @@
     <condition>
       <and>
         <property>sim/cargo/cargo15-onhook</property>
-        <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
+        <property>sim/gui/dialogs/aicargo-dialog/connection</property>
         <not>
           <property>sim/cargo/rope/pulling</property>
         </not>
@@ -344,7 +344,7 @@
     <condition>
       <and>
         <property>sim/cargo/cargo16-onhook</property>
-        <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
+        <property>sim/gui/dialogs/aicargo-dialog/connection</property>
       </and>
     </condition>
   </model>
@@ -358,7 +358,7 @@
     <condition>
       <and>
         <property>sim/cargo/cargo16-onhook</property>
-        <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
+        <property>sim/gui/dialogs/aicargo-dialog/connection</property>
         <not>
           <property>sim/cargo/rope/pulling</property>
         </not>
@@ -376,7 +376,7 @@
     <condition>
       <and>
         <property>sim/cargo/cargo17-onhook</property>
-        <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
+        <property>sim/gui/dialogs/aicargo-dialog/connection</property>
       </and>
     </condition>
   </model>
@@ -390,7 +390,7 @@
     <condition>
       <and>
         <property>sim/cargo/cargo17-onhook</property>
-        <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
+        <property>sim/gui/dialogs/aicargo-dialog/connection</property>
         <not>
           <property>sim/cargo/rope/pulling</property>
         </not>
@@ -408,7 +408,7 @@
     <condition>
       <and>
         <property>sim/cargo/cargo18-onhook</property>
-        <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
+        <property>sim/gui/dialogs/aicargo-dialog/connection</property>
       </and>
     </condition>
   </model>
@@ -422,7 +422,7 @@
     <condition>
       <and>
         <property>sim/cargo/cargo18-onhook</property>
-        <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
+        <property>sim/gui/dialogs/aicargo-dialog/connection</property>
         <not>
           <property>sim/cargo/rope/pulling</property>
         </not>
@@ -440,7 +440,7 @@
     <condition>
       <and>
         <property>sim/cargo/cargo19-onhook</property>
-        <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
+        <property>sim/gui/dialogs/aicargo-dialog/connection</property>
       </and>
     </condition>
   </model>
@@ -454,7 +454,7 @@
     <condition>
       <and>
         <property>sim/cargo/cargo19-onhook</property>
-        <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
+        <property>sim/gui/dialogs/aicargo-dialog/connection</property>
         <not>
           <property>sim/cargo/rope/pulling</property>
         </not>
@@ -472,7 +472,7 @@
     <condition>
       <and>
         <property>sim/cargo/cargo20-onhook</property>
-        <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
+        <property>sim/gui/dialogs/aicargo-dialog/connection</property>
       </and>
     </condition>
   </model>
@@ -486,7 +486,7 @@
     <condition>
       <and>
         <property>sim/cargo/cargo20-onhook</property>
-        <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
+        <property>sim/gui/dialogs/aicargo-dialog/connection</property>
         <not>
           <property>sim/cargo/rope/pulling</property>
         </not>
@@ -504,7 +504,7 @@
     <condition>
       <and>
         <property>sim/cargo/cargo21-onhook</property>
-        <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
+        <property>sim/gui/dialogs/aicargo-dialog/connection</property>
       </and>
     </condition>
   </model>
@@ -518,7 +518,7 @@
     <condition>
       <and>
         <property>sim/cargo/cargo21-onhook</property>
-        <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
+        <property>sim/gui/dialogs/aicargo-dialog/connection</property>
         <not>
           <property>sim/cargo/rope/pulling</property>
         </not>
@@ -536,7 +536,7 @@
     <condition>
       <and>
         <property>sim/cargo/cargo22-onhook</property>
-        <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
+        <property>sim/gui/dialogs/aicargo-dialog/connection</property>
       </and>
     </condition>
   </model>
@@ -550,7 +550,7 @@
     <condition>
       <and>
         <property>sim/cargo/cargo22-onhook</property>
-        <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
+        <property>sim/gui/dialogs/aicargo-dialog/connection</property>
         <not>
           <property>sim/cargo/rope/pulling</property>
         </not>
@@ -568,7 +568,7 @@
     <condition>
       <and>
         <property>sim/cargo/cargo23-onhook</property>
-        <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
+        <property>sim/gui/dialogs/aicargo-dialog/connection</property>
       </and>
     </condition>
   </model>
@@ -582,7 +582,7 @@
     <condition>
       <and>
         <property>sim/cargo/cargo23-onhook</property>
-        <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
+        <property>sim/gui/dialogs/aicargo-dialog/connection</property>
         <not>
           <property>sim/cargo/rope/pulling</property>
         </not>
@@ -600,7 +600,7 @@
     <condition>
       <and>
         <property>sim/cargo/cargo24-onhook</property>
-        <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
+        <property>sim/gui/dialogs/aicargo-dialog/connection</property>
       </and>
     </condition>
   </model>
@@ -614,7 +614,7 @@
     <condition>
       <and>
         <property>sim/cargo/cargo24-onhook</property>
-        <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
+        <property>sim/gui/dialogs/aicargo-dialog/connection</property>
         <not>
           <property>sim/cargo/rope/pulling</property>
         </not>
@@ -640,7 +640,7 @@
           <property>sim/cargo/cargo30-onhook</property>
           <property>sim/cargo/cargo31-onhook</property>
         </or>
-        <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
+        <property>sim/gui/dialogs/aicargo-dialog/connection</property>
       </and>
     </condition>
   </model>
@@ -662,7 +662,7 @@
           <property>sim/cargo/cargo30-onhook</property>
           <property>sim/cargo/cargo31-onhook</property>
         </or>
-        <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
+        <property>sim/gui/dialogs/aicargo-dialog/connection</property>
         <not>
           <property>sim/cargo/rope/pulling</property>
         </not>
@@ -680,7 +680,7 @@
     <condition>
       <and>
         <property>sim/cargo/cargo32-onhook</property>
-        <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
+        <property>sim/gui/dialogs/aicargo-dialog/connection</property>
       </and>
     </condition>
   </model>
@@ -694,7 +694,7 @@
     <condition>
       <and>
         <property>sim/cargo/cargo32-onhook</property>
-        <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
+        <property>sim/gui/dialogs/aicargo-dialog/connection</property>
         <not>
           <property>sim/cargo/rope/pulling</property>
         </not>
@@ -711,10 +711,10 @@
     </offsets>
     <condition>
       <not>
-        <property>/sim/gui/dialogs/aicargo-dialog/longline</property>
+        <property>sim/gui/dialogs/aicargo-dialog/longline</property>
       </not>
       <not>
-			  <property>/sim/model/winchcover/enabled</property>
+			  <property>sim/model/winchcover/enabled</property>
 		  </not>
     </condition>
   </model>
@@ -727,9 +727,9 @@
       <z-m> 0.0</z-m>
     </offsets>
     <condition>
-      <property>/sim/gui/dialogs/aicargo-dialog/longline</property>
+      <property>sim/gui/dialogs/aicargo-dialog/longline</property>
       <not>
-			  <property>/sim/model/winchcover/enabled</property>
+			  <property>sim/model/winchcover/enabled</property>
 		  </not>
     </condition>
   </model>
@@ -740,9 +740,9 @@
     <type>select</type>
     <condition>
       <and>
-        <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
+        <property>sim/gui/dialogs/aicargo-dialog/connection</property>
         <not>
-				  <property>/sim/model/winchcover/enabled</property>
+				  <property>sim/model/winchcover/enabled</property>
 			  </not>
       </and>
     </condition>
@@ -5754,7 +5754,7 @@
   <animation>
     <type>translate</type>
     <object-name>RopeSegment01</object-name>
-    <property>/sim/cargo/rope/segments-reeled-in</property>
+    <property>sim/cargo/rope/segments-reeled-in</property>
     <factor>0.1704</factor>
     <offset-m>0.0</offset-m>
     <axis>
@@ -5771,9 +5771,9 @@
   <type>select</type>
   <condition>
    <and>
-    <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
+    <property>sim/gui/dialogs/aicargo-dialog/connection</property>
     <less-than-equals>
-      <property>/sim/cargo/rope/segments-reeled-in</property>
+      <property>sim/cargo/rope/segments-reeled-in</property>
       <value>0</value>
     </less-than-equals>
     </and>
@@ -5785,9 +5785,9 @@
   <type>select</type>
   <condition>
    <and>
-    <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
+    <property>sim/gui/dialogs/aicargo-dialog/connection</property>
     <less-than-equals>
-    <property>/sim/cargo/rope/segments-reeled-in</property>
+    <property>sim/cargo/rope/segments-reeled-in</property>
     <value>1</value>
     </less-than-equals>
     </and>
@@ -5799,9 +5799,9 @@
   <type>select</type>
   <condition>
    <and>
-    <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
+    <property>sim/gui/dialogs/aicargo-dialog/connection</property>
     <less-than-equals>
-    <property>/sim/cargo/rope/segments-reeled-in</property>
+    <property>sim/cargo/rope/segments-reeled-in</property>
     <value>2</value>
     </less-than-equals>
     </and>
@@ -5813,9 +5813,9 @@
   <type>select</type>
   <condition>
    <and>
-    <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
+    <property>sim/gui/dialogs/aicargo-dialog/connection</property>
     <less-than-equals>
-    <property>/sim/cargo/rope/segments-reeled-in</property>
+    <property>sim/cargo/rope/segments-reeled-in</property>
     <value>3</value>
     </less-than-equals>
     </and>
@@ -5827,9 +5827,9 @@
   <type>select</type>
   <condition>
    <and>
-    <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
+    <property>sim/gui/dialogs/aicargo-dialog/connection</property>
     <less-than-equals>
-    <property>/sim/cargo/rope/segments-reeled-in</property>
+    <property>sim/cargo/rope/segments-reeled-in</property>
     <value>4</value>
     </less-than-equals>
     </and>
@@ -5841,9 +5841,9 @@
   <type>select</type>
   <condition>
    <and>
-    <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
+    <property>sim/gui/dialogs/aicargo-dialog/connection</property>
     <less-than-equals>
-    <property>/sim/cargo/rope/segments-reeled-in</property>
+    <property>sim/cargo/rope/segments-reeled-in</property>
     <value>5</value>
     </less-than-equals>
     </and>
@@ -5855,9 +5855,9 @@
   <type>select</type>
   <condition>
    <and>
-    <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
+    <property>sim/gui/dialogs/aicargo-dialog/connection</property>
     <less-than-equals>
-    <property>/sim/cargo/rope/segments-reeled-in</property>
+    <property>sim/cargo/rope/segments-reeled-in</property>
     <value>6</value>
     </less-than-equals>
     </and>
@@ -5869,9 +5869,9 @@
   <type>select</type>
   <condition>
    <and>
-    <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
+    <property>sim/gui/dialogs/aicargo-dialog/connection</property>
     <less-than-equals>
-    <property>/sim/cargo/rope/segments-reeled-in</property>
+    <property>sim/cargo/rope/segments-reeled-in</property>
     <value>7</value>
     </less-than-equals>
     </and>
@@ -5883,9 +5883,9 @@
   <type>select</type>
   <condition>
    <and>
-    <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
+    <property>sim/gui/dialogs/aicargo-dialog/connection</property>
     <less-than-equals>
-    <property>/sim/cargo/rope/segments-reeled-in</property>
+    <property>sim/cargo/rope/segments-reeled-in</property>
     <value>8</value>
     </less-than-equals>
     </and>
@@ -5897,9 +5897,9 @@
   <type>select</type>
   <condition>
    <and>
-    <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
+    <property>sim/gui/dialogs/aicargo-dialog/connection</property>
     <less-than-equals>
-    <property>/sim/cargo/rope/segments-reeled-in</property>
+    <property>sim/cargo/rope/segments-reeled-in</property>
     <value>9</value>
     </less-than-equals>
     </and>
@@ -5911,9 +5911,9 @@
   <type>select</type>
   <condition>
    <and>
-    <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
+    <property>sim/gui/dialogs/aicargo-dialog/connection</property>
     <less-than-equals>
-    <property>/sim/cargo/rope/segments-reeled-in</property>
+    <property>sim/cargo/rope/segments-reeled-in</property>
     <value>10</value>
     </less-than-equals>
     </and>
@@ -5925,9 +5925,9 @@
   <type>select</type>
   <condition>
    <and>
-    <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
+    <property>sim/gui/dialogs/aicargo-dialog/connection</property>
     <less-than-equals>
-    <property>/sim/cargo/rope/segments-reeled-in</property>
+    <property>sim/cargo/rope/segments-reeled-in</property>
     <value>11</value>
     </less-than-equals>
     </and>
@@ -5939,9 +5939,9 @@
   <type>select</type>
   <condition>
    <and>
-    <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
+    <property>sim/gui/dialogs/aicargo-dialog/connection</property>
     <less-than-equals>
-    <property>/sim/cargo/rope/segments-reeled-in</property>
+    <property>sim/cargo/rope/segments-reeled-in</property>
     <value>12</value>
     </less-than-equals>
     </and>
@@ -5953,9 +5953,9 @@
   <type>select</type>
   <condition>
    <and>
-    <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
+    <property>sim/gui/dialogs/aicargo-dialog/connection</property>
     <less-than-equals>
-    <property>/sim/cargo/rope/segments-reeled-in</property>
+    <property>sim/cargo/rope/segments-reeled-in</property>
     <value>13</value>
     </less-than-equals>
     </and>
@@ -5967,9 +5967,9 @@
   <type>select</type>
   <condition>
    <and>
-    <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
+    <property>sim/gui/dialogs/aicargo-dialog/connection</property>
     <less-than-equals>
-    <property>/sim/cargo/rope/segments-reeled-in</property>
+    <property>sim/cargo/rope/segments-reeled-in</property>
     <value>14</value>
     </less-than-equals>
     </and>
@@ -5981,9 +5981,9 @@
   <type>select</type>
   <condition>
    <and>
-    <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
+    <property>sim/gui/dialogs/aicargo-dialog/connection</property>
     <less-than-equals>
-    <property>/sim/cargo/rope/segments-reeled-in</property>
+    <property>sim/cargo/rope/segments-reeled-in</property>
     <value>15</value>
     </less-than-equals>
     </and>
@@ -5995,9 +5995,9 @@
   <type>select</type>
   <condition>
    <and>
-    <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
+    <property>sim/gui/dialogs/aicargo-dialog/connection</property>
     <less-than-equals>
-    <property>/sim/cargo/rope/segments-reeled-in</property>
+    <property>sim/cargo/rope/segments-reeled-in</property>
     <value>16</value>
     </less-than-equals>
     </and>
@@ -6009,9 +6009,9 @@
   <type>select</type>
   <condition>
    <and>
-    <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
+    <property>sim/gui/dialogs/aicargo-dialog/connection</property>
     <less-than-equals>
-    <property>/sim/cargo/rope/segments-reeled-in</property>
+    <property>sim/cargo/rope/segments-reeled-in</property>
     <value>17</value>
     </less-than-equals>
     </and>
@@ -6023,9 +6023,9 @@
   <type>select</type>
   <condition>
    <and>
-    <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
+    <property>sim/gui/dialogs/aicargo-dialog/connection</property>
     <less-than-equals>
-    <property>/sim/cargo/rope/segments-reeled-in</property>
+    <property>sim/cargo/rope/segments-reeled-in</property>
     <value>18</value>
     </less-than-equals>
     </and>
@@ -6037,9 +6037,9 @@
   <type>select</type>
   <condition>
    <and>
-    <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
+    <property>sim/gui/dialogs/aicargo-dialog/connection</property>
     <less-than-equals>
-    <property>/sim/cargo/rope/segments-reeled-in</property>
+    <property>sim/cargo/rope/segments-reeled-in</property>
     <value>19</value>
     </less-than-equals>
     </and>
@@ -6051,9 +6051,9 @@
   <type>select</type>
   <condition>
    <and>
-    <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
+    <property>sim/gui/dialogs/aicargo-dialog/connection</property>
     <less-than-equals>
-    <property>/sim/cargo/rope/segments-reeled-in</property>
+    <property>sim/cargo/rope/segments-reeled-in</property>
     <value>20</value>
     </less-than-equals>
     </and>
@@ -6065,9 +6065,9 @@
   <type>select</type>
   <condition>
    <and>
-    <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
+    <property>sim/gui/dialogs/aicargo-dialog/connection</property>
     <less-than-equals>
-    <property>/sim/cargo/rope/segments-reeled-in</property>
+    <property>sim/cargo/rope/segments-reeled-in</property>
     <value>21</value>
     </less-than-equals>
     </and>
@@ -6079,9 +6079,9 @@
   <type>select</type>
   <condition>
    <and>
-    <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
+    <property>sim/gui/dialogs/aicargo-dialog/connection</property>
     <less-than-equals>
-    <property>/sim/cargo/rope/segments-reeled-in</property>
+    <property>sim/cargo/rope/segments-reeled-in</property>
     <value>22</value>
     </less-than-equals>
     </and>
@@ -6093,9 +6093,9 @@
   <type>select</type>
   <condition>
    <and>
-    <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
+    <property>sim/gui/dialogs/aicargo-dialog/connection</property>
     <less-than-equals>
-    <property>/sim/cargo/rope/segments-reeled-in</property>
+    <property>sim/cargo/rope/segments-reeled-in</property>
     <value>23</value>
     </less-than-equals>
     </and>
@@ -6107,9 +6107,9 @@
   <type>select</type>
   <condition>
    <and>
-    <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
+    <property>sim/gui/dialogs/aicargo-dialog/connection</property>
     <less-than-equals>
-    <property>/sim/cargo/rope/segments-reeled-in</property>
+    <property>sim/cargo/rope/segments-reeled-in</property>
     <value>24</value>
     </less-than-equals>
     </and>
@@ -6121,9 +6121,9 @@
   <type>select</type>
   <condition>
    <and>
-    <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
+    <property>sim/gui/dialogs/aicargo-dialog/connection</property>
     <less-than-equals>
-    <property>/sim/cargo/rope/segments-reeled-in</property>
+    <property>sim/cargo/rope/segments-reeled-in</property>
     <value>25</value>
     </less-than-equals>
     </and>
@@ -6135,9 +6135,9 @@
   <type>select</type>
   <condition>
    <and>
-    <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
+    <property>sim/gui/dialogs/aicargo-dialog/connection</property>
     <less-than-equals>
-    <property>/sim/cargo/rope/segments-reeled-in</property>
+    <property>sim/cargo/rope/segments-reeled-in</property>
     <value>26</value>
     </less-than-equals>
     </and>
@@ -6149,9 +6149,9 @@
   <type>select</type>
   <condition>
    <and>
-    <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
+    <property>sim/gui/dialogs/aicargo-dialog/connection</property>
     <less-than-equals>
-    <property>/sim/cargo/rope/segments-reeled-in</property>
+    <property>sim/cargo/rope/segments-reeled-in</property>
     <value>27</value>
     </less-than-equals>
     </and>
@@ -6163,9 +6163,9 @@
   <type>select</type>
   <condition>
    <and>
-    <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
+    <property>sim/gui/dialogs/aicargo-dialog/connection</property>
     <less-than-equals>
-    <property>/sim/cargo/rope/segments-reeled-in</property>
+    <property>sim/cargo/rope/segments-reeled-in</property>
     <value>28</value>
     </less-than-equals>
     </and>
@@ -6177,9 +6177,9 @@
   <type>select</type>
   <condition>
    <and>
-    <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
+    <property>sim/gui/dialogs/aicargo-dialog/connection</property>
     <less-than-equals>
-    <property>/sim/cargo/rope/segments-reeled-in</property>
+    <property>sim/cargo/rope/segments-reeled-in</property>
     <value>29</value>
     </less-than-equals>
     </and>
@@ -6191,9 +6191,9 @@
   <type>select</type>
   <condition>
    <and>
-    <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
+    <property>sim/gui/dialogs/aicargo-dialog/connection</property>
     <less-than-equals>
-    <property>/sim/cargo/rope/segments-reeled-in</property>
+    <property>sim/cargo/rope/segments-reeled-in</property>
     <value>30</value>
     </less-than-equals>
     </and>
@@ -6205,9 +6205,9 @@
   <type>select</type>
   <condition>
    <and>
-    <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
+    <property>sim/gui/dialogs/aicargo-dialog/connection</property>
     <less-than-equals>
-    <property>/sim/cargo/rope/segments-reeled-in</property>
+    <property>sim/cargo/rope/segments-reeled-in</property>
     <value>31</value>
     </less-than-equals>
     </and>
@@ -6219,9 +6219,9 @@
   <type>select</type>
   <condition>
    <and>
-    <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
+    <property>sim/gui/dialogs/aicargo-dialog/connection</property>
     <less-than-equals>
-    <property>/sim/cargo/rope/segments-reeled-in</property>
+    <property>sim/cargo/rope/segments-reeled-in</property>
     <value>32</value>
     </less-than-equals>
     </and>
@@ -6233,9 +6233,9 @@
   <type>select</type>
   <condition>
    <and>
-    <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
+    <property>sim/gui/dialogs/aicargo-dialog/connection</property>
     <less-than-equals>
-    <property>/sim/cargo/rope/segments-reeled-in</property>
+    <property>sim/cargo/rope/segments-reeled-in</property>
     <value>33</value>
     </less-than-equals>
     </and>
@@ -6247,9 +6247,9 @@
   <type>select</type>
   <condition>
    <and>
-    <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
+    <property>sim/gui/dialogs/aicargo-dialog/connection</property>
     <less-than-equals>
-    <property>/sim/cargo/rope/segments-reeled-in</property>
+    <property>sim/cargo/rope/segments-reeled-in</property>
     <value>34</value>
     </less-than-equals>
     </and>
@@ -6261,9 +6261,9 @@
   <type>select</type>
   <condition>
    <and>
-    <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
+    <property>sim/gui/dialogs/aicargo-dialog/connection</property>
     <less-than-equals>
-    <property>/sim/cargo/rope/segments-reeled-in</property>
+    <property>sim/cargo/rope/segments-reeled-in</property>
     <value>35</value>
     </less-than-equals>
     </and>
@@ -6275,9 +6275,9 @@
   <type>select</type>
   <condition>
    <and>
-    <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
+    <property>sim/gui/dialogs/aicargo-dialog/connection</property>
     <less-than-equals>
-    <property>/sim/cargo/rope/segments-reeled-in</property>
+    <property>sim/cargo/rope/segments-reeled-in</property>
     <value>36</value>
     </less-than-equals>
     </and>
@@ -6289,9 +6289,9 @@
   <type>select</type>
   <condition>
    <and>
-    <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
+    <property>sim/gui/dialogs/aicargo-dialog/connection</property>
     <less-than-equals>
-    <property>/sim/cargo/rope/segments-reeled-in</property>
+    <property>sim/cargo/rope/segments-reeled-in</property>
     <value>37</value>
     </less-than-equals>
     </and>
@@ -6303,9 +6303,9 @@
   <type>select</type>
   <condition>
    <and>
-    <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
+    <property>sim/gui/dialogs/aicargo-dialog/connection</property>
     <less-than-equals>
-    <property>/sim/cargo/rope/segments-reeled-in</property>
+    <property>sim/cargo/rope/segments-reeled-in</property>
     <value>38</value>
     </less-than-equals>
     </and>
@@ -6317,9 +6317,9 @@
   <type>select</type>
   <condition>
    <and>
-    <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
+    <property>sim/gui/dialogs/aicargo-dialog/connection</property>
     <less-than-equals>
-    <property>/sim/cargo/rope/segments-reeled-in</property>
+    <property>sim/cargo/rope/segments-reeled-in</property>
     <value>39</value>
     </less-than-equals>
     </and>
@@ -6331,9 +6331,9 @@
   <type>select</type>
   <condition>
    <and>
-    <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
+    <property>sim/gui/dialogs/aicargo-dialog/connection</property>
     <less-than-equals>
-    <property>/sim/cargo/rope/segments-reeled-in</property>
+    <property>sim/cargo/rope/segments-reeled-in</property>
     <value>40</value>
     </less-than-equals>
     </and>
@@ -6345,9 +6345,9 @@
   <type>select</type>
   <condition>
    <and>
-    <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
+    <property>sim/gui/dialogs/aicargo-dialog/connection</property>
     <less-than-equals>
-    <property>/sim/cargo/rope/segments-reeled-in</property>
+    <property>sim/cargo/rope/segments-reeled-in</property>
     <value>41</value>
     </less-than-equals>
     </and>
@@ -6359,9 +6359,9 @@
   <type>select</type>
   <condition>
    <and>
-    <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
+    <property>sim/gui/dialogs/aicargo-dialog/connection</property>
     <less-than-equals>
-    <property>/sim/cargo/rope/segments-reeled-in</property>
+    <property>sim/cargo/rope/segments-reeled-in</property>
     <value>42</value>
     </less-than-equals>
     </and>
@@ -6373,9 +6373,9 @@
   <type>select</type>
   <condition>
    <and>
-    <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
+    <property>sim/gui/dialogs/aicargo-dialog/connection</property>
     <less-than-equals>
-    <property>/sim/cargo/rope/segments-reeled-in</property>
+    <property>sim/cargo/rope/segments-reeled-in</property>
     <value>43</value>
     </less-than-equals>
     </and>
@@ -6387,9 +6387,9 @@
   <type>select</type>
   <condition>
    <and>
-    <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
+    <property>sim/gui/dialogs/aicargo-dialog/connection</property>
     <less-than-equals>
-    <property>/sim/cargo/rope/segments-reeled-in</property>
+    <property>sim/cargo/rope/segments-reeled-in</property>
     <value>44</value>
     </less-than-equals>
     </and>
@@ -6401,9 +6401,9 @@
   <type>select</type>
   <condition>
    <and>
-    <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
+    <property>sim/gui/dialogs/aicargo-dialog/connection</property>
     <less-than-equals>
-    <property>/sim/cargo/rope/segments-reeled-in</property>
+    <property>sim/cargo/rope/segments-reeled-in</property>
     <value>45</value>
     </less-than-equals>
     </and>
@@ -6415,9 +6415,9 @@
   <type>select</type>
   <condition>
    <and>
-    <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
+    <property>sim/gui/dialogs/aicargo-dialog/connection</property>
     <less-than-equals>
-    <property>/sim/cargo/rope/segments-reeled-in</property>
+    <property>sim/cargo/rope/segments-reeled-in</property>
     <value>46</value>
     </less-than-equals>
     </and>
@@ -6429,9 +6429,9 @@
   <type>select</type>
   <condition>
    <and>
-    <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
+    <property>sim/gui/dialogs/aicargo-dialog/connection</property>
     <less-than-equals>
-    <property>/sim/cargo/rope/segments-reeled-in</property>
+    <property>sim/cargo/rope/segments-reeled-in</property>
     <value>47</value>
     </less-than-equals>
     </and>
@@ -6443,9 +6443,9 @@
   <type>select</type>
   <condition>
    <and>
-    <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
+    <property>sim/gui/dialogs/aicargo-dialog/connection</property>
     <less-than-equals>
-    <property>/sim/cargo/rope/segments-reeled-in</property>
+    <property>sim/cargo/rope/segments-reeled-in</property>
     <value>48</value>
     </less-than-equals>
     </and>
@@ -6457,9 +6457,9 @@
   <type>select</type>
   <condition>
    <and>
-    <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
+    <property>sim/gui/dialogs/aicargo-dialog/connection</property>
     <less-than-equals>
-    <property>/sim/cargo/rope/segments-reeled-in</property>
+    <property>sim/cargo/rope/segments-reeled-in</property>
     <value>49</value>
     </less-than-equals>
     </and>
@@ -6471,9 +6471,9 @@
   <type>select</type>
   <condition>
    <and>
-    <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
+    <property>sim/gui/dialogs/aicargo-dialog/connection</property>
     <less-than-equals>
-    <property>/sim/cargo/rope/segments-reeled-in</property>
+    <property>sim/cargo/rope/segments-reeled-in</property>
     <value>50</value>
     </less-than-equals>
     </and>
@@ -6485,9 +6485,9 @@
   <type>select</type>
   <condition>
    <and>
-    <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
+    <property>sim/gui/dialogs/aicargo-dialog/connection</property>
     <less-than-equals>
-    <property>/sim/cargo/rope/segments-reeled-in</property>
+    <property>sim/cargo/rope/segments-reeled-in</property>
     <value>51</value>
     </less-than-equals>
     </and>
@@ -6499,9 +6499,9 @@
   <type>select</type>
   <condition>
    <and>
-    <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
+    <property>sim/gui/dialogs/aicargo-dialog/connection</property>
     <less-than-equals>
-    <property>/sim/cargo/rope/segments-reeled-in</property>
+    <property>sim/cargo/rope/segments-reeled-in</property>
     <value>52</value>
     </less-than-equals>
     </and>
@@ -6513,9 +6513,9 @@
   <type>select</type>
   <condition>
    <and>
-    <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
+    <property>sim/gui/dialogs/aicargo-dialog/connection</property>
     <less-than-equals>
-    <property>/sim/cargo/rope/segments-reeled-in</property>
+    <property>sim/cargo/rope/segments-reeled-in</property>
     <value>53</value>
     </less-than-equals>
     </and>
@@ -6527,9 +6527,9 @@
   <type>select</type>
   <condition>
    <and>
-    <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
+    <property>sim/gui/dialogs/aicargo-dialog/connection</property>
     <less-than-equals>
-    <property>/sim/cargo/rope/segments-reeled-in</property>
+    <property>sim/cargo/rope/segments-reeled-in</property>
     <value>54</value>
     </less-than-equals>
     </and>
@@ -6541,9 +6541,9 @@
   <type>select</type>
   <condition>
    <and>
-    <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
+    <property>sim/gui/dialogs/aicargo-dialog/connection</property>
     <less-than-equals>
-    <property>/sim/cargo/rope/segments-reeled-in</property>
+    <property>sim/cargo/rope/segments-reeled-in</property>
     <value>55</value>
     </less-than-equals>
     </and>
@@ -6555,9 +6555,9 @@
   <type>select</type>
   <condition>
    <and>
-    <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
+    <property>sim/gui/dialogs/aicargo-dialog/connection</property>
     <less-than-equals>
-    <property>/sim/cargo/rope/segments-reeled-in</property>
+    <property>sim/cargo/rope/segments-reeled-in</property>
     <value>56</value>
     </less-than-equals>
     </and>
@@ -6569,9 +6569,9 @@
   <type>select</type>
   <condition>
    <and>
-    <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
+    <property>sim/gui/dialogs/aicargo-dialog/connection</property>
     <less-than-equals>
-    <property>/sim/cargo/rope/segments-reeled-in</property>
+    <property>sim/cargo/rope/segments-reeled-in</property>
     <value>57</value>
     </less-than-equals>
     </and>
@@ -6583,9 +6583,9 @@
   <type>select</type>
   <condition>
    <and>
-    <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
+    <property>sim/gui/dialogs/aicargo-dialog/connection</property>
     <less-than-equals>
-    <property>/sim/cargo/rope/segments-reeled-in</property>
+    <property>sim/cargo/rope/segments-reeled-in</property>
     <value>58</value>
     </less-than-equals>
     </and>
@@ -6597,9 +6597,9 @@
   <type>select</type>
   <condition>
    <and>
-    <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
+    <property>sim/gui/dialogs/aicargo-dialog/connection</property>
     <less-than-equals>
-    <property>/sim/cargo/rope/segments-reeled-in</property>
+    <property>sim/cargo/rope/segments-reeled-in</property>
     <value>59</value>
     </less-than-equals>
     </and>
@@ -6611,9 +6611,9 @@
   <type>select</type>
   <condition>
    <and>
-    <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
+    <property>sim/gui/dialogs/aicargo-dialog/connection</property>
     <less-than-equals>
-    <property>/sim/cargo/rope/segments-reeled-in</property>
+    <property>sim/cargo/rope/segments-reeled-in</property>
     <value>60</value>
     </less-than-equals>
     </and>
@@ -6625,9 +6625,9 @@
   <type>select</type>
   <condition>
    <and>
-    <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
+    <property>sim/gui/dialogs/aicargo-dialog/connection</property>
     <less-than-equals>
-    <property>/sim/cargo/rope/segments-reeled-in</property>
+    <property>sim/cargo/rope/segments-reeled-in</property>
     <value>61</value>
     </less-than-equals>
     </and>
@@ -6639,9 +6639,9 @@
   <type>select</type>
   <condition>
    <and>
-    <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
+    <property>sim/gui/dialogs/aicargo-dialog/connection</property>
     <less-than-equals>
-    <property>/sim/cargo/rope/segments-reeled-in</property>
+    <property>sim/cargo/rope/segments-reeled-in</property>
     <value>62</value>
     </less-than-equals>
     </and>
@@ -6653,9 +6653,9 @@
   <type>select</type>
   <condition>
    <and>
-    <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
+    <property>sim/gui/dialogs/aicargo-dialog/connection</property>
     <less-than-equals>
-    <property>/sim/cargo/rope/segments-reeled-in</property>
+    <property>sim/cargo/rope/segments-reeled-in</property>
     <value>63</value>
     </less-than-equals>
     </and>
@@ -6667,9 +6667,9 @@
   <type>select</type>
   <condition>
    <and>
-    <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
+    <property>sim/gui/dialogs/aicargo-dialog/connection</property>
     <less-than-equals>
-    <property>/sim/cargo/rope/segments-reeled-in</property>
+    <property>sim/cargo/rope/segments-reeled-in</property>
     <value>64</value>
     </less-than-equals>
     </and>
@@ -6681,9 +6681,9 @@
   <type>select</type>
   <condition>
    <and>
-    <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
+    <property>sim/gui/dialogs/aicargo-dialog/connection</property>
     <less-than-equals>
-    <property>/sim/cargo/rope/segments-reeled-in</property>
+    <property>sim/cargo/rope/segments-reeled-in</property>
     <value>65</value>
     </less-than-equals>
     </and>
@@ -6695,9 +6695,9 @@
   <type>select</type>
   <condition>
    <and>
-    <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
+    <property>sim/gui/dialogs/aicargo-dialog/connection</property>
     <less-than-equals>
-    <property>/sim/cargo/rope/segments-reeled-in</property>
+    <property>sim/cargo/rope/segments-reeled-in</property>
     <value>66</value>
     </less-than-equals>
     </and>
@@ -6709,9 +6709,9 @@
   <type>select</type>
   <condition>
    <and>
-    <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
+    <property>sim/gui/dialogs/aicargo-dialog/connection</property>
     <less-than-equals>
-    <property>/sim/cargo/rope/segments-reeled-in</property>
+    <property>sim/cargo/rope/segments-reeled-in</property>
     <value>67</value>
     </less-than-equals>
     </and>
@@ -6723,9 +6723,9 @@
   <type>select</type>
   <condition>
    <and>
-    <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
+    <property>sim/gui/dialogs/aicargo-dialog/connection</property>
     <less-than-equals>
-    <property>/sim/cargo/rope/segments-reeled-in</property>
+    <property>sim/cargo/rope/segments-reeled-in</property>
     <value>68</value>
     </less-than-equals>
     </and>
@@ -6737,9 +6737,9 @@
   <type>select</type>
   <condition>
    <and>
-    <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
+    <property>sim/gui/dialogs/aicargo-dialog/connection</property>
     <less-than-equals>
-    <property>/sim/cargo/rope/segments-reeled-in</property>
+    <property>sim/cargo/rope/segments-reeled-in</property>
     <value>69</value>
     </less-than-equals>
     </and>
@@ -6751,9 +6751,9 @@
   <type>select</type>
   <condition>
    <and>
-    <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
+    <property>sim/gui/dialogs/aicargo-dialog/connection</property>
     <less-than-equals>
-    <property>/sim/cargo/rope/segments-reeled-in</property>
+    <property>sim/cargo/rope/segments-reeled-in</property>
     <value>70</value>
     </less-than-equals>
     </and>
@@ -6765,9 +6765,9 @@
   <type>select</type>
   <condition>
    <and>
-    <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
+    <property>sim/gui/dialogs/aicargo-dialog/connection</property>
     <less-than-equals>
-    <property>/sim/cargo/rope/segments-reeled-in</property>
+    <property>sim/cargo/rope/segments-reeled-in</property>
     <value>71</value>
     </less-than-equals>
     </and>
@@ -6779,9 +6779,9 @@
   <type>select</type>
   <condition>
    <and>
-    <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
+    <property>sim/gui/dialogs/aicargo-dialog/connection</property>
     <less-than-equals>
-    <property>/sim/cargo/rope/segments-reeled-in</property>
+    <property>sim/cargo/rope/segments-reeled-in</property>
     <value>72</value>
     </less-than-equals>
     </and>
@@ -6793,9 +6793,9 @@
   <type>select</type>
   <condition>
    <and>
-    <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
+    <property>sim/gui/dialogs/aicargo-dialog/connection</property>
     <less-than-equals>
-    <property>/sim/cargo/rope/segments-reeled-in</property>
+    <property>sim/cargo/rope/segments-reeled-in</property>
     <value>73</value>
     </less-than-equals>
     </and>
@@ -6807,9 +6807,9 @@
   <type>select</type>
   <condition>
    <and>
-    <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
+    <property>sim/gui/dialogs/aicargo-dialog/connection</property>
     <less-than-equals>
-    <property>/sim/cargo/rope/segments-reeled-in</property>
+    <property>sim/cargo/rope/segments-reeled-in</property>
     <value>74</value>
     </less-than-equals>
     </and>
@@ -6821,9 +6821,9 @@
   <type>select</type>
   <condition>
    <and>
-    <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
+    <property>sim/gui/dialogs/aicargo-dialog/connection</property>
     <less-than-equals>
-    <property>/sim/cargo/rope/segments-reeled-in</property>
+    <property>sim/cargo/rope/segments-reeled-in</property>
     <value>75</value>
     </less-than-equals>
     </and>
@@ -6835,9 +6835,9 @@
   <type>select</type>
   <condition>
    <and>
-    <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
+    <property>sim/gui/dialogs/aicargo-dialog/connection</property>
     <less-than-equals>
-    <property>/sim/cargo/rope/segments-reeled-in</property>
+    <property>sim/cargo/rope/segments-reeled-in</property>
     <value>76</value>
     </less-than-equals>
     </and>
@@ -6849,9 +6849,9 @@
   <type>select</type>
   <condition>
    <and>
-    <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
+    <property>sim/gui/dialogs/aicargo-dialog/connection</property>
     <less-than-equals>
-    <property>/sim/cargo/rope/segments-reeled-in</property>
+    <property>sim/cargo/rope/segments-reeled-in</property>
     <value>77</value>
     </less-than-equals>
     </and>
@@ -6863,9 +6863,9 @@
   <type>select</type>
   <condition>
    <and>
-    <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
+    <property>sim/gui/dialogs/aicargo-dialog/connection</property>
     <less-than-equals>
-    <property>/sim/cargo/rope/segments-reeled-in</property>
+    <property>sim/cargo/rope/segments-reeled-in</property>
     <value>78</value>
     </less-than-equals>
     </and>
@@ -6877,9 +6877,9 @@
   <type>select</type>
   <condition>
    <and>
-    <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
+    <property>sim/gui/dialogs/aicargo-dialog/connection</property>
     <less-than-equals>
-    <property>/sim/cargo/rope/segments-reeled-in</property>
+    <property>sim/cargo/rope/segments-reeled-in</property>
     <value>79</value>
     </less-than-equals>
     </and>
@@ -6891,9 +6891,9 @@
   <type>select</type>
   <condition>
    <and>
-    <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
+    <property>sim/gui/dialogs/aicargo-dialog/connection</property>
     <less-than-equals>
-    <property>/sim/cargo/rope/segments-reeled-in</property>
+    <property>sim/cargo/rope/segments-reeled-in</property>
     <value>80</value>
     </less-than-equals>
     </and>
@@ -6905,9 +6905,9 @@
   <type>select</type>
   <condition>
    <and>
-    <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
+    <property>sim/gui/dialogs/aicargo-dialog/connection</property>
     <less-than-equals>
-    <property>/sim/cargo/rope/segments-reeled-in</property>
+    <property>sim/cargo/rope/segments-reeled-in</property>
     <value>81</value>
     </less-than-equals>
     </and>
@@ -6919,9 +6919,9 @@
   <type>select</type>
   <condition>
    <and>
-    <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
+    <property>sim/gui/dialogs/aicargo-dialog/connection</property>
     <less-than-equals>
-    <property>/sim/cargo/rope/segments-reeled-in</property>
+    <property>sim/cargo/rope/segments-reeled-in</property>
     <value>82</value>
     </less-than-equals>
     </and>
@@ -6933,9 +6933,9 @@
   <type>select</type>
   <condition>
    <and>
-    <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
+    <property>sim/gui/dialogs/aicargo-dialog/connection</property>
     <less-than-equals>
-    <property>/sim/cargo/rope/segments-reeled-in</property>
+    <property>sim/cargo/rope/segments-reeled-in</property>
     <value>83</value>
     </less-than-equals>
     </and>
@@ -6947,9 +6947,9 @@
   <type>select</type>
   <condition>
    <and>
-    <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
+    <property>sim/gui/dialogs/aicargo-dialog/connection</property>
     <less-than-equals>
-    <property>/sim/cargo/rope/segments-reeled-in</property>
+    <property>sim/cargo/rope/segments-reeled-in</property>
     <value>84</value>
     </less-than-equals>
     </and>
@@ -6961,9 +6961,9 @@
   <type>select</type>
   <condition>
    <and>
-    <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
+    <property>sim/gui/dialogs/aicargo-dialog/connection</property>
     <less-than-equals>
-    <property>/sim/cargo/rope/segments-reeled-in</property>
+    <property>sim/cargo/rope/segments-reeled-in</property>
     <value>85</value>
     </less-than-equals>
     </and>
@@ -6975,9 +6975,9 @@
   <type>select</type>
   <condition>
    <and>
-    <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
+    <property>sim/gui/dialogs/aicargo-dialog/connection</property>
     <less-than-equals>
-    <property>/sim/cargo/rope/segments-reeled-in</property>
+    <property>sim/cargo/rope/segments-reeled-in</property>
     <value>86</value>
     </less-than-equals>
     </and>
@@ -6989,9 +6989,9 @@
   <type>select</type>
   <condition>
    <and>
-    <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
+    <property>sim/gui/dialogs/aicargo-dialog/connection</property>
     <less-than-equals>
-    <property>/sim/cargo/rope/segments-reeled-in</property>
+    <property>sim/cargo/rope/segments-reeled-in</property>
     <value>87</value>
     </less-than-equals>
     </and>
@@ -7003,9 +7003,9 @@
   <type>select</type>
   <condition>
    <and>
-    <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
+    <property>sim/gui/dialogs/aicargo-dialog/connection</property>
     <less-than-equals>
-    <property>/sim/cargo/rope/segments-reeled-in</property>
+    <property>sim/cargo/rope/segments-reeled-in</property>
     <value>88</value>
     </less-than-equals>
     </and>
@@ -7017,9 +7017,9 @@
   <type>select</type>
   <condition>
    <and>
-    <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
+    <property>sim/gui/dialogs/aicargo-dialog/connection</property>
     <less-than-equals>
-    <property>/sim/cargo/rope/segments-reeled-in</property>
+    <property>sim/cargo/rope/segments-reeled-in</property>
     <value>89</value>
     </less-than-equals>
     </and>
@@ -7030,7 +7030,7 @@
   <animation>
     <type>rotate</type>
     <object-name>RopeSegment01</object-name>
-    <property>/sim/cargo/rope/yaw1</property>
+    <property>sim/cargo/rope/yaw1</property>
     <factor>1</factor>
     <offset-deg>0</offset-deg>   
     <center>
@@ -7049,7 +7049,7 @@
   <animation>
     <type>rotate</type>
     <object-name>RopeSegment01</object-name>
-    <property>/sim/cargo/rope/pitch1</property>
+    <property>sim/cargo/rope/pitch1</property>
     <factor>1</factor>
     <offset-deg>0</offset-deg>   
     <center>
@@ -7067,7 +7067,7 @@
   <animation>
     <type>rotate</type>
     <object-name>RopeSegment02</object-name>
-    <property>/sim/cargo/rope/pitch2</property>
+    <property>sim/cargo/rope/pitch2</property>
     <factor>1</factor>
     <offset-deg>0</offset-deg>   
     <center>
@@ -7085,7 +7085,7 @@
   <animation>
     <type>rotate</type>
     <object-name>RopeSegment03</object-name>
-    <property>/sim/cargo/rope/pitch3</property>
+    <property>sim/cargo/rope/pitch3</property>
     <factor>1</factor>
     <offset-deg>0</offset-deg>   
     <center>
@@ -7103,7 +7103,7 @@
   <animation>
     <type>rotate</type>
     <object-name>RopeSegment04</object-name>
-    <property>/sim/cargo/rope/pitch4</property>
+    <property>sim/cargo/rope/pitch4</property>
     <factor>1</factor>
     <offset-deg>0</offset-deg>   
     <center>
@@ -7121,7 +7121,7 @@
   <animation>
     <type>rotate</type>
     <object-name>RopeSegment05</object-name>
-    <property>/sim/cargo/rope/pitch5</property>
+    <property>sim/cargo/rope/pitch5</property>
     <factor>1</factor>
     <offset-deg>0</offset-deg>   
     <center>
@@ -7139,7 +7139,7 @@
   <animation>
     <type>rotate</type>
     <object-name>RopeSegment06</object-name>
-    <property>/sim/cargo/rope/pitch6</property>
+    <property>sim/cargo/rope/pitch6</property>
     <factor>1</factor>
     <offset-deg>0</offset-deg>   
     <center>
@@ -7157,7 +7157,7 @@
   <animation>
     <type>rotate</type>
     <object-name>RopeSegment07</object-name>
-    <property>/sim/cargo/rope/pitch7</property>
+    <property>sim/cargo/rope/pitch7</property>
     <factor>1</factor>
     <offset-deg>0</offset-deg>   
     <center>
@@ -7175,7 +7175,7 @@
   <animation>
     <type>rotate</type>
     <object-name>RopeSegment08</object-name>
-    <property>/sim/cargo/rope/pitch8</property>
+    <property>sim/cargo/rope/pitch8</property>
     <factor>1</factor>
     <offset-deg>0</offset-deg>   
     <center>
@@ -7193,7 +7193,7 @@
   <animation>
     <type>rotate</type>
     <object-name>RopeSegment09</object-name>
-    <property>/sim/cargo/rope/pitch9</property>
+    <property>sim/cargo/rope/pitch9</property>
     <factor>1</factor>
     <offset-deg>0</offset-deg>   
     <center>
@@ -7211,7 +7211,7 @@
   <animation>
     <type>rotate</type>
     <object-name>RopeSegment10</object-name>
-    <property>/sim/cargo/rope/pitch10</property>
+    <property>sim/cargo/rope/pitch10</property>
     <factor>1</factor>
     <offset-deg>0</offset-deg>   
     <center>
@@ -7229,7 +7229,7 @@
   <animation>
     <type>rotate</type>
     <object-name>RopeSegment11</object-name>
-    <property>/sim/cargo/rope/pitch11</property>
+    <property>sim/cargo/rope/pitch11</property>
     <factor>1</factor>
     <offset-deg>0</offset-deg>   
     <center>
@@ -7247,7 +7247,7 @@
   <animation>
     <type>rotate</type>
     <object-name>RopeSegment12</object-name>
-    <property>/sim/cargo/rope/pitch12</property>
+    <property>sim/cargo/rope/pitch12</property>
     <factor>1</factor>
     <offset-deg>0</offset-deg>   
     <center>
@@ -7265,7 +7265,7 @@
   <animation>
     <type>rotate</type>
     <object-name>RopeSegment13</object-name>
-    <property>/sim/cargo/rope/pitch13</property>
+    <property>sim/cargo/rope/pitch13</property>
     <factor>1</factor>
     <offset-deg>0</offset-deg>   
     <center>
@@ -7283,7 +7283,7 @@
   <animation>
     <type>rotate</type>
     <object-name>RopeSegment14</object-name>
-    <property>/sim/cargo/rope/pitch14</property>
+    <property>sim/cargo/rope/pitch14</property>
     <factor>1</factor>
     <offset-deg>0</offset-deg>   
     <center>
@@ -7301,7 +7301,7 @@
   <animation>
     <type>rotate</type>
     <object-name>RopeSegment15</object-name>
-    <property>/sim/cargo/rope/pitch15</property>
+    <property>sim/cargo/rope/pitch15</property>
     <factor>1</factor>
     <offset-deg>0</offset-deg>   
     <center>
@@ -7319,7 +7319,7 @@
   <animation>
     <type>rotate</type>
     <object-name>RopeSegment16</object-name>
-    <property>/sim/cargo/rope/pitch16</property>
+    <property>sim/cargo/rope/pitch16</property>
     <factor>1</factor>
     <offset-deg>0</offset-deg>   
     <center>
@@ -7337,7 +7337,7 @@
   <animation>
     <type>rotate</type>
     <object-name>RopeSegment17</object-name>
-    <property>/sim/cargo/rope/pitch17</property>
+    <property>sim/cargo/rope/pitch17</property>
     <factor>1</factor>
     <offset-deg>0</offset-deg>   
     <center>
@@ -7355,7 +7355,7 @@
   <animation>
     <type>rotate</type>
     <object-name>RopeSegment18</object-name>
-    <property>/sim/cargo/rope/pitch18</property>
+    <property>sim/cargo/rope/pitch18</property>
     <factor>1</factor>
     <offset-deg>0</offset-deg>   
     <center>
@@ -7373,7 +7373,7 @@
   <animation>
     <type>rotate</type>
     <object-name>RopeSegment19</object-name>
-    <property>/sim/cargo/rope/pitch19</property>
+    <property>sim/cargo/rope/pitch19</property>
     <factor>1</factor>
     <offset-deg>0</offset-deg>   
     <center>
@@ -7391,7 +7391,7 @@
   <animation>
     <type>rotate</type>
     <object-name>RopeSegment20</object-name>
-    <property>/sim/cargo/rope/pitch20</property>
+    <property>sim/cargo/rope/pitch20</property>
     <factor>1</factor>
     <offset-deg>0</offset-deg>   
     <center>
@@ -7409,7 +7409,7 @@
   <animation>
     <type>rotate</type>
     <object-name>RopeSegment21</object-name>
-    <property>/sim/cargo/rope/pitch21</property>
+    <property>sim/cargo/rope/pitch21</property>
     <factor>1</factor>
     <offset-deg>0</offset-deg>   
     <center>
@@ -7427,7 +7427,7 @@
   <animation>
     <type>rotate</type>
     <object-name>RopeSegment22</object-name>
-    <property>/sim/cargo/rope/pitch22</property>
+    <property>sim/cargo/rope/pitch22</property>
     <factor>1</factor>
     <offset-deg>0</offset-deg>   
     <center>
@@ -7445,7 +7445,7 @@
   <animation>
     <type>rotate</type>
     <object-name>RopeSegment23</object-name>
-    <property>/sim/cargo/rope/pitch23</property>
+    <property>sim/cargo/rope/pitch23</property>
     <factor>1</factor>
     <offset-deg>0</offset-deg>   
     <center>
@@ -7463,7 +7463,7 @@
   <animation>
     <type>rotate</type>
     <object-name>RopeSegment24</object-name>
-    <property>/sim/cargo/rope/pitch24</property>
+    <property>sim/cargo/rope/pitch24</property>
     <factor>1</factor>
     <offset-deg>0</offset-deg>   
     <center>
@@ -7481,7 +7481,7 @@
   <animation>
     <type>rotate</type>
     <object-name>RopeSegment25</object-name>
-    <property>/sim/cargo/rope/pitch25</property>
+    <property>sim/cargo/rope/pitch25</property>
     <factor>1</factor>
     <offset-deg>0</offset-deg>   
     <center>
@@ -7499,7 +7499,7 @@
   <animation>
     <type>rotate</type>
     <object-name>RopeSegment26</object-name>
-    <property>/sim/cargo/rope/pitch26</property>
+    <property>sim/cargo/rope/pitch26</property>
     <factor>1</factor>
     <offset-deg>0</offset-deg>   
     <center>
@@ -7517,7 +7517,7 @@
   <animation>
     <type>rotate</type>
     <object-name>RopeSegment27</object-name>
-    <property>/sim/cargo/rope/pitch27</property>
+    <property>sim/cargo/rope/pitch27</property>
     <factor>1</factor>
     <offset-deg>0</offset-deg>   
     <center>
@@ -7535,7 +7535,7 @@
   <animation>
     <type>rotate</type>
     <object-name>RopeSegment28</object-name>
-    <property>/sim/cargo/rope/pitch28</property>
+    <property>sim/cargo/rope/pitch28</property>
     <factor>1</factor>
     <offset-deg>0</offset-deg>   
     <center>
@@ -7553,7 +7553,7 @@
   <animation>
     <type>rotate</type>
     <object-name>RopeSegment29</object-name>
-    <property>/sim/cargo/rope/pitch29</property>
+    <property>sim/cargo/rope/pitch29</property>
     <factor>1</factor>
     <offset-deg>0</offset-deg>   
     <center>
@@ -7571,7 +7571,7 @@
   <animation>
     <type>rotate</type>
     <object-name>RopeSegment30</object-name>
-    <property>/sim/cargo/rope/pitch30</property>
+    <property>sim/cargo/rope/pitch30</property>
     <factor>1</factor>
     <offset-deg>0</offset-deg>   
     <center>
@@ -7589,7 +7589,7 @@
   <animation>
     <type>rotate</type>
     <object-name>RopeSegment31</object-name>
-    <property>/sim/cargo/rope/pitch31</property>
+    <property>sim/cargo/rope/pitch31</property>
     <factor>1</factor>
     <offset-deg>0</offset-deg>   
     <center>
@@ -7607,7 +7607,7 @@
   <animation>
     <type>rotate</type>
     <object-name>RopeSegment32</object-name>
-    <property>/sim/cargo/rope/pitch32</property>
+    <property>sim/cargo/rope/pitch32</property>
     <factor>1</factor>
     <offset-deg>0</offset-deg>   
     <center>
@@ -7625,7 +7625,7 @@
   <animation>
     <type>rotate</type>
     <object-name>RopeSegment33</object-name>
-    <property>/sim/cargo/rope/pitch33</property>
+    <property>sim/cargo/rope/pitch33</property>
     <factor>1</factor>
     <offset-deg>0</offset-deg>   
     <center>
@@ -7643,7 +7643,7 @@
   <animation>
     <type>rotate</type>
     <object-name>RopeSegment34</object-name>
-    <property>/sim/cargo/rope/pitch34</property>
+    <property>sim/cargo/rope/pitch34</property>
     <factor>1</factor>
     <offset-deg>0</offset-deg>   
     <center>
@@ -7661,7 +7661,7 @@
   <animation>
     <type>rotate</type>
     <object-name>RopeSegment35</object-name>
-    <property>/sim/cargo/rope/pitch35</property>
+    <property>sim/cargo/rope/pitch35</property>
     <factor>1</factor>
     <offset-deg>0</offset-deg>   
     <center>
@@ -7679,7 +7679,7 @@
   <animation>
     <type>rotate</type>
     <object-name>RopeSegment36</object-name>
-    <property>/sim/cargo/rope/pitch36</property>
+    <property>sim/cargo/rope/pitch36</property>
     <factor>1</factor>
     <offset-deg>0</offset-deg>   
     <center>
@@ -7697,7 +7697,7 @@
   <animation>
     <type>rotate</type>
     <object-name>RopeSegment37</object-name>
-    <property>/sim/cargo/rope/pitch37</property>
+    <property>sim/cargo/rope/pitch37</property>
     <factor>1</factor>
     <offset-deg>0</offset-deg>   
     <center>
@@ -7715,7 +7715,7 @@
   <animation>
     <type>rotate</type>
     <object-name>RopeSegment38</object-name>
-    <property>/sim/cargo/rope/pitch38</property>
+    <property>sim/cargo/rope/pitch38</property>
     <factor>1</factor>
     <offset-deg>0</offset-deg>   
     <center>
@@ -7733,7 +7733,7 @@
   <animation>
     <type>rotate</type>
     <object-name>RopeSegment39</object-name>
-    <property>/sim/cargo/rope/pitch39</property>
+    <property>sim/cargo/rope/pitch39</property>
     <factor>1</factor>
     <offset-deg>0</offset-deg>   
     <center>
@@ -7751,7 +7751,7 @@
   <animation>
     <type>rotate</type>
     <object-name>RopeSegment40</object-name>
-    <property>/sim/cargo/rope/pitch40</property>
+    <property>sim/cargo/rope/pitch40</property>
     <factor>1</factor>
     <offset-deg>0</offset-deg>   
     <center>
@@ -7769,7 +7769,7 @@
   <animation>
     <type>rotate</type>
     <object-name>RopeSegment41</object-name>
-    <property>/sim/cargo/rope/pitch41</property>
+    <property>sim/cargo/rope/pitch41</property>
     <factor>1</factor>
     <offset-deg>0</offset-deg>   
     <center>
@@ -7787,7 +7787,7 @@
   <animation>
     <type>rotate</type>
     <object-name>RopeSegment42</object-name>
-    <property>/sim/cargo/rope/pitch42</property>
+    <property>sim/cargo/rope/pitch42</property>
     <factor>1</factor>
     <offset-deg>0</offset-deg>   
     <center>
@@ -7805,7 +7805,7 @@
   <animation>
     <type>rotate</type>
     <object-name>RopeSegment43</object-name>
-    <property>/sim/cargo/rope/pitch43</property>
+    <property>sim/cargo/rope/pitch43</property>
     <factor>1</factor>
     <offset-deg>0</offset-deg>   
     <center>
@@ -7823,7 +7823,7 @@
   <animation>
     <type>rotate</type>
     <object-name>RopeSegment44</object-name>
-    <property>/sim/cargo/rope/pitch44</property>
+    <property>sim/cargo/rope/pitch44</property>
     <factor>1</factor>
     <offset-deg>0</offset-deg>   
     <center>
@@ -7841,7 +7841,7 @@
   <animation>
     <type>rotate</type>
     <object-name>RopeSegment45</object-name>
-    <property>/sim/cargo/rope/pitch45</property>
+    <property>sim/cargo/rope/pitch45</property>
     <factor>1</factor>
     <offset-deg>0</offset-deg>   
     <center>
@@ -7859,7 +7859,7 @@
   <animation>
     <type>rotate</type>
     <object-name>RopeSegment46</object-name>
-    <property>/sim/cargo/rope/pitch46</property>
+    <property>sim/cargo/rope/pitch46</property>
     <factor>1</factor>
     <offset-deg>0</offset-deg>   
     <center>
@@ -7877,7 +7877,7 @@
   <animation>
     <type>rotate</type>
     <object-name>RopeSegment47</object-name>
-    <property>/sim/cargo/rope/pitch47</property>
+    <property>sim/cargo/rope/pitch47</property>
     <factor>1</factor>
     <offset-deg>0</offset-deg>   
     <center>
@@ -7895,7 +7895,7 @@
   <animation>
     <type>rotate</type>
     <object-name>RopeSegment48</object-name>
-    <property>/sim/cargo/rope/pitch48</property>
+    <property>sim/cargo/rope/pitch48</property>
     <factor>1</factor>
     <offset-deg>0</offset-deg>   
     <center>
@@ -7913,7 +7913,7 @@
   <animation>
     <type>rotate</type>
     <object-name>RopeSegment49</object-name>
-    <property>/sim/cargo/rope/pitch49</property>
+    <property>sim/cargo/rope/pitch49</property>
     <factor>1</factor>
     <offset-deg>0</offset-deg>   
     <center>
@@ -7931,7 +7931,7 @@
   <animation>
     <type>rotate</type>
     <object-name>RopeSegment50</object-name>
-    <property>/sim/cargo/rope/pitch50</property>
+    <property>sim/cargo/rope/pitch50</property>
     <factor>1</factor>
     <offset-deg>0</offset-deg>   
     <center>
@@ -7949,7 +7949,7 @@
   <animation>
     <type>rotate</type>
     <object-name>RopeSegment51</object-name>
-    <property>/sim/cargo/rope/pitch51</property>
+    <property>sim/cargo/rope/pitch51</property>
     <factor>1</factor>
     <offset-deg>0</offset-deg>   
     <center>
@@ -7967,7 +7967,7 @@
   <animation>
     <type>rotate</type>
     <object-name>RopeSegment52</object-name>
-    <property>/sim/cargo/rope/pitch52</property>
+    <property>sim/cargo/rope/pitch52</property>
     <factor>1</factor>
     <offset-deg>0</offset-deg>   
     <center>
@@ -7985,7 +7985,7 @@
   <animation>
     <type>rotate</type>
     <object-name>RopeSegment53</object-name>
-    <property>/sim/cargo/rope/pitch53</property>
+    <property>sim/cargo/rope/pitch53</property>
     <factor>1</factor>
     <offset-deg>0</offset-deg>   
     <center>
@@ -8003,7 +8003,7 @@
   <animation>
     <type>rotate</type>
     <object-name>RopeSegment54</object-name>
-    <property>/sim/cargo/rope/pitch54</property>
+    <property>sim/cargo/rope/pitch54</property>
     <factor>1</factor>
     <offset-deg>0</offset-deg>   
     <center>
@@ -8021,7 +8021,7 @@
   <animation>
     <type>rotate</type>
     <object-name>RopeSegment55</object-name>
-    <property>/sim/cargo/rope/pitch55</property>
+    <property>sim/cargo/rope/pitch55</property>
     <factor>1</factor>
     <offset-deg>0</offset-deg>   
     <center>
@@ -8039,7 +8039,7 @@
   <animation>
     <type>rotate</type>
     <object-name>RopeSegment56</object-name>
-    <property>/sim/cargo/rope/pitch56</property>
+    <property>sim/cargo/rope/pitch56</property>
     <factor>1</factor>
     <offset-deg>0</offset-deg>   
     <center>
@@ -8057,7 +8057,7 @@
   <animation>
     <type>rotate</type>
     <object-name>RopeSegment57</object-name>
-    <property>/sim/cargo/rope/pitch57</property>
+    <property>sim/cargo/rope/pitch57</property>
     <factor>1</factor>
     <offset-deg>0</offset-deg>   
     <center>
@@ -8075,7 +8075,7 @@
   <animation>
     <type>rotate</type>
     <object-name>RopeSegment58</object-name>
-    <property>/sim/cargo/rope/pitch58</property>
+    <property>sim/cargo/rope/pitch58</property>
     <factor>1</factor>
     <offset-deg>0</offset-deg>   
     <center>
@@ -8093,7 +8093,7 @@
   <animation>
     <type>rotate</type>
     <object-name>RopeSegment59</object-name>
-    <property>/sim/cargo/rope/pitch59</property>
+    <property>sim/cargo/rope/pitch59</property>
     <factor>1</factor>
     <offset-deg>0</offset-deg>   
     <center>
@@ -8111,7 +8111,7 @@
   <animation>
     <type>rotate</type>
     <object-name>RopeSegment60</object-name>
-    <property>/sim/cargo/rope/pitch60</property>
+    <property>sim/cargo/rope/pitch60</property>
     <factor>1</factor>
     <offset-deg>0</offset-deg>   
     <center>
@@ -8129,7 +8129,7 @@
   <animation>
     <type>rotate</type>
     <object-name>RopeSegment61</object-name>
-    <property>/sim/cargo/rope/pitch61</property>
+    <property>sim/cargo/rope/pitch61</property>
     <factor>1</factor>
     <offset-deg>0</offset-deg>   
     <center>
@@ -8147,7 +8147,7 @@
   <animation>
     <type>rotate</type>
     <object-name>RopeSegment62</object-name>
-    <property>/sim/cargo/rope/pitch62</property>
+    <property>sim/cargo/rope/pitch62</property>
     <factor>1</factor>
     <offset-deg>0</offset-deg>   
     <center>
@@ -8165,7 +8165,7 @@
   <animation>
     <type>rotate</type>
     <object-name>RopeSegment63</object-name>
-    <property>/sim/cargo/rope/pitch63</property>
+    <property>sim/cargo/rope/pitch63</property>
     <factor>1</factor>
     <offset-deg>0</offset-deg>   
     <center>
@@ -8183,7 +8183,7 @@
   <animation>
     <type>rotate</type>
     <object-name>RopeSegment64</object-name>
-    <property>/sim/cargo/rope/pitch64</property>
+    <property>sim/cargo/rope/pitch64</property>
     <factor>1</factor>
     <offset-deg>0</offset-deg>   
     <center>
@@ -8201,7 +8201,7 @@
   <animation>
     <type>rotate</type>
     <object-name>RopeSegment65</object-name>
-    <property>/sim/cargo/rope/pitch65</property>
+    <property>sim/cargo/rope/pitch65</property>
     <factor>1</factor>
     <offset-deg>0</offset-deg>   
     <center>
@@ -8219,7 +8219,7 @@
   <animation>
     <type>rotate</type>
     <object-name>RopeSegment66</object-name>
-    <property>/sim/cargo/rope/pitch66</property>
+    <property>sim/cargo/rope/pitch66</property>
     <factor>1</factor>
     <offset-deg>0</offset-deg>   
     <center>
@@ -8237,7 +8237,7 @@
   <animation>
     <type>rotate</type>
     <object-name>RopeSegment67</object-name>
-    <property>/sim/cargo/rope/pitch67</property>
+    <property>sim/cargo/rope/pitch67</property>
     <factor>1</factor>
     <offset-deg>0</offset-deg>   
     <center>
@@ -8255,7 +8255,7 @@
   <animation>
     <type>rotate</type>
     <object-name>RopeSegment68</object-name>
-    <property>/sim/cargo/rope/pitch68</property>
+    <property>sim/cargo/rope/pitch68</property>
     <factor>1</factor>
     <offset-deg>0</offset-deg>   
     <center>
@@ -8273,7 +8273,7 @@
   <animation>
     <type>rotate</type>
     <object-name>RopeSegment69</object-name>
-    <property>/sim/cargo/rope/pitch69</property>
+    <property>sim/cargo/rope/pitch69</property>
     <factor>1</factor>
     <offset-deg>0</offset-deg>   
     <center>
@@ -8291,7 +8291,7 @@
   <animation>
     <type>rotate</type>
     <object-name>RopeSegment70</object-name>
-    <property>/sim/cargo/rope/pitch70</property>
+    <property>sim/cargo/rope/pitch70</property>
     <factor>1</factor>
     <offset-deg>0</offset-deg>   
     <center>
@@ -8309,7 +8309,7 @@
   <animation>
     <type>rotate</type>
     <object-name>RopeSegment71</object-name>
-    <property>/sim/cargo/rope/pitch71</property>
+    <property>sim/cargo/rope/pitch71</property>
     <factor>1</factor>
     <offset-deg>0</offset-deg>   
     <center>
@@ -8327,7 +8327,7 @@
   <animation>
     <type>rotate</type>
     <object-name>RopeSegment72</object-name>
-    <property>/sim/cargo/rope/pitch72</property>
+    <property>sim/cargo/rope/pitch72</property>
     <factor>1</factor>
     <offset-deg>0</offset-deg>   
     <center>
@@ -8345,7 +8345,7 @@
   <animation>
     <type>rotate</type>
     <object-name>RopeSegment73</object-name>
-    <property>/sim/cargo/rope/pitch73</property>
+    <property>sim/cargo/rope/pitch73</property>
     <factor>1</factor>
     <offset-deg>0</offset-deg>   
     <center>
@@ -8363,7 +8363,7 @@
   <animation>
     <type>rotate</type>
     <object-name>RopeSegment74</object-name>
-    <property>/sim/cargo/rope/pitch74</property>
+    <property>sim/cargo/rope/pitch74</property>
     <factor>1</factor>
     <offset-deg>0</offset-deg>   
     <center>
@@ -8381,7 +8381,7 @@
   <animation>
     <type>rotate</type>
     <object-name>RopeSegment75</object-name>
-    <property>/sim/cargo/rope/pitch75</property>
+    <property>sim/cargo/rope/pitch75</property>
     <factor>1</factor>
     <offset-deg>0</offset-deg>   
     <center>
@@ -8399,7 +8399,7 @@
   <animation>
     <type>rotate</type>
     <object-name>RopeSegment76</object-name>
-    <property>/sim/cargo/rope/pitch76</property>
+    <property>sim/cargo/rope/pitch76</property>
     <factor>1</factor>
     <offset-deg>0</offset-deg>   
     <center>
@@ -8417,7 +8417,7 @@
   <animation>
     <type>rotate</type>
     <object-name>RopeSegment77</object-name>
-    <property>/sim/cargo/rope/pitch77</property>
+    <property>sim/cargo/rope/pitch77</property>
     <factor>1</factor>
     <offset-deg>0</offset-deg>   
     <center>
@@ -8435,7 +8435,7 @@
   <animation>
     <type>rotate</type>
     <object-name>RopeSegment78</object-name>
-    <property>/sim/cargo/rope/pitch78</property>
+    <property>sim/cargo/rope/pitch78</property>
     <factor>1</factor>
     <offset-deg>0</offset-deg>   
     <center>
@@ -8453,7 +8453,7 @@
   <animation>
     <type>rotate</type>
     <object-name>RopeSegment79</object-name>
-    <property>/sim/cargo/rope/pitch79</property>
+    <property>sim/cargo/rope/pitch79</property>
     <factor>1</factor>
     <offset-deg>0</offset-deg>   
     <center>
@@ -8471,7 +8471,7 @@
   <animation>
     <type>rotate</type>
     <object-name>RopeSegment80</object-name>
-    <property>/sim/cargo/rope/pitch80</property>
+    <property>sim/cargo/rope/pitch80</property>
     <factor>1</factor>
     <offset-deg>0</offset-deg>   
     <center>
@@ -8489,7 +8489,7 @@
   <animation>
     <type>rotate</type>
     <object-name>RopeSegment81</object-name>
-    <property>/sim/cargo/rope/pitch81</property>
+    <property>sim/cargo/rope/pitch81</property>
     <factor>1</factor>
     <offset-deg>0</offset-deg>   
     <center>
@@ -8507,7 +8507,7 @@
   <animation>
     <type>rotate</type>
     <object-name>RopeSegment82</object-name>
-    <property>/sim/cargo/rope/pitch82</property>
+    <property>sim/cargo/rope/pitch82</property>
     <factor>1</factor>
     <offset-deg>0</offset-deg>   
     <center>
@@ -8525,7 +8525,7 @@
   <animation>
     <type>rotate</type>
     <object-name>RopeSegment83</object-name>
-    <property>/sim/cargo/rope/pitch83</property>
+    <property>sim/cargo/rope/pitch83</property>
     <factor>1</factor>
     <offset-deg>0</offset-deg>   
     <center>
@@ -8543,7 +8543,7 @@
   <animation>
     <type>rotate</type>
     <object-name>RopeSegment84</object-name>
-    <property>/sim/cargo/rope/pitch84</property>
+    <property>sim/cargo/rope/pitch84</property>
     <factor>1</factor>
     <offset-deg>0</offset-deg>   
     <center>
@@ -8561,7 +8561,7 @@
   <animation>
     <type>rotate</type>
     <object-name>RopeSegment85</object-name>
-    <property>/sim/cargo/rope/pitch85</property>
+    <property>sim/cargo/rope/pitch85</property>
     <factor>1</factor>
     <offset-deg>0</offset-deg>   
     <center>
@@ -8579,7 +8579,7 @@
   <animation>
     <type>rotate</type>
     <object-name>RopeSegment86</object-name>
-    <property>/sim/cargo/rope/pitch86</property>
+    <property>sim/cargo/rope/pitch86</property>
     <factor>1</factor>
     <offset-deg>0</offset-deg>   
     <center>
@@ -8597,7 +8597,7 @@
   <animation>
     <type>rotate</type>
     <object-name>RopeSegment87</object-name>
-    <property>/sim/cargo/rope/pitch87</property>
+    <property>sim/cargo/rope/pitch87</property>
     <factor>1</factor>
     <offset-deg>0</offset-deg>   
     <center>
@@ -8615,7 +8615,7 @@
   <animation>
     <type>rotate</type>
     <object-name>RopeSegment88</object-name>
-    <property>/sim/cargo/rope/pitch88</property>
+    <property>sim/cargo/rope/pitch88</property>
     <factor>1</factor>
     <offset-deg>0</offset-deg>   
     <center>
@@ -8633,7 +8633,7 @@
   <animation>
     <type>rotate</type>
     <object-name>RopeSegment89</object-name>
-    <property>/sim/cargo/rope/pitch89</property>
+    <property>sim/cargo/rope/pitch89</property>
     <factor>1</factor>
     <offset-deg>0</offset-deg>   
     <center>
@@ -8651,7 +8651,7 @@
   <animation>
     <type>rotate</type>
     <object-name>RopeSegment90</object-name>
-    <property>/sim/cargo/rope/pitch90</property>
+    <property>sim/cargo/rope/pitch90</property>
     <factor>1</factor>
     <offset-deg>0</offset-deg>   
     <center>
@@ -8670,7 +8670,7 @@
   <animation>
     <type>rotate</type>
     <object-name>RopeSegment01</object-name>
-    <property>/sim/cargo/rope/roll1</property>
+    <property>sim/cargo/rope/roll1</property>
     <factor>1</factor>
     <offset-deg>0</offset-deg>   
     <center>
@@ -8688,7 +8688,7 @@
   <animation>
     <type>rotate</type>
     <object-name>RopeSegment02</object-name>
-    <property>/sim/cargo/rope/roll2</property>
+    <property>sim/cargo/rope/roll2</property>
     <factor>1</factor>
     <offset-deg>0</offset-deg>   
     <center>
@@ -8706,7 +8706,7 @@
   <animation>
     <type>rotate</type>
     <object-name>RopeSegment03</object-name>
-    <property>/sim/cargo/rope/roll3</property>
+    <property>sim/cargo/rope/roll3</property>
     <factor>1</factor>
     <offset-deg>0</offset-deg>   
     <center>
@@ -8724,7 +8724,7 @@
   <animation>
     <type>rotate</type>
     <object-name>RopeSegment04</object-name>
-    <property>/sim/cargo/rope/roll4</property>
+    <property>sim/cargo/rope/roll4</property>
     <factor>1</factor>
     <offset-deg>0</offset-deg>   
     <center>
@@ -8742,7 +8742,7 @@
   <animation>
     <type>rotate</type>
     <object-name>RopeSegment05</object-name>
-    <property>/sim/cargo/rope/roll5</property>
+    <property>sim/cargo/rope/roll5</property>
     <factor>1</factor>
     <offset-deg>0</offset-deg>   
     <center>
@@ -8760,7 +8760,7 @@
   <animation>
     <type>rotate</type>
     <object-name>RopeSegment06</object-name>
-    <property>/sim/cargo/rope/roll6</property>
+    <property>sim/cargo/rope/roll6</property>
     <factor>1</factor>
     <offset-deg>0</offset-deg>   
     <center>
@@ -8778,7 +8778,7 @@
   <animation>
     <type>rotate</type>
     <object-name>RopeSegment07</object-name>
-    <property>/sim/cargo/rope/roll7</property>
+    <property>sim/cargo/rope/roll7</property>
     <factor>1</factor>
     <offset-deg>0</offset-deg>   
     <center>
@@ -8796,7 +8796,7 @@
   <animation>
     <type>rotate</type>
     <object-name>RopeSegment08</object-name>
-    <property>/sim/cargo/rope/roll8</property>
+    <property>sim/cargo/rope/roll8</property>
     <factor>1</factor>
     <offset-deg>0</offset-deg>   
     <center>
@@ -8814,7 +8814,7 @@
   <animation>
     <type>rotate</type>
     <object-name>RopeSegment09</object-name>
-    <property>/sim/cargo/rope/roll9</property>
+    <property>sim/cargo/rope/roll9</property>
     <factor>1</factor>
     <offset-deg>0</offset-deg>   
     <center>
@@ -8832,7 +8832,7 @@
   <animation>
     <type>rotate</type>
     <object-name>RopeSegment10</object-name>
-    <property>/sim/cargo/rope/roll10</property>
+    <property>sim/cargo/rope/roll10</property>
     <factor>1</factor>
     <offset-deg>0</offset-deg>   
     <center>
@@ -8850,7 +8850,7 @@
   <animation>
     <type>rotate</type>
     <object-name>RopeSegment11</object-name>
-    <property>/sim/cargo/rope/roll11</property>
+    <property>sim/cargo/rope/roll11</property>
     <factor>1</factor>
     <offset-deg>0</offset-deg>   
     <center>
@@ -8868,7 +8868,7 @@
   <animation>
     <type>rotate</type>
     <object-name>RopeSegment12</object-name>
-    <property>/sim/cargo/rope/roll12</property>
+    <property>sim/cargo/rope/roll12</property>
     <factor>1</factor>
     <offset-deg>0</offset-deg>   
     <center>
@@ -8886,7 +8886,7 @@
   <animation>
     <type>rotate</type>
     <object-name>RopeSegment13</object-name>
-    <property>/sim/cargo/rope/roll13</property>
+    <property>sim/cargo/rope/roll13</property>
     <factor>1</factor>
     <offset-deg>0</offset-deg>   
     <center>
@@ -8904,7 +8904,7 @@
   <animation>
     <type>rotate</type>
     <object-name>RopeSegment14</object-name>
-    <property>/sim/cargo/rope/roll14</property>
+    <property>sim/cargo/rope/roll14</property>
     <factor>1</factor>
     <offset-deg>0</offset-deg>   
     <center>
@@ -8922,7 +8922,7 @@
   <animation>
     <type>rotate</type>
     <object-name>RopeSegment15</object-name>
-    <property>/sim/cargo/rope/roll15</property>
+    <property>sim/cargo/rope/roll15</property>
     <factor>1</factor>
     <offset-deg>0</offset-deg>   
     <center>
@@ -8940,7 +8940,7 @@
   <animation>
     <type>rotate</type>
     <object-name>RopeSegment16</object-name>
-    <property>/sim/cargo/rope/roll16</property>
+    <property>sim/cargo/rope/roll16</property>
     <factor>1</factor>
     <offset-deg>0</offset-deg>   
     <center>
@@ -8958,7 +8958,7 @@
   <animation>
     <type>rotate</type>
     <object-name>RopeSegment17</object-name>
-    <property>/sim/cargo/rope/roll17</property>
+    <property>sim/cargo/rope/roll17</property>
     <factor>1</factor>
     <offset-deg>0</offset-deg>   
     <center>
@@ -8976,7 +8976,7 @@
   <animation>
     <type>rotate</type>
     <object-name>RopeSegment18</object-name>
-    <property>/sim/cargo/rope/roll18</property>
+    <property>sim/cargo/rope/roll18</property>
     <factor>1</factor>
     <offset-deg>0</offset-deg>   
     <center>
@@ -8994,7 +8994,7 @@
   <animation>
     <type>rotate</type>
     <object-name>RopeSegment19</object-name>
-    <property>/sim/cargo/rope/roll19</property>
+    <property>sim/cargo/rope/roll19</property>
     <factor>1</factor>
     <offset-deg>0</offset-deg>   
     <center>
@@ -9012,7 +9012,7 @@
   <animation>
     <type>rotate</type>
     <object-name>RopeSegment20</object-name>
-    <property>/sim/cargo/rope/roll20</property>
+    <property>sim/cargo/rope/roll20</property>
     <factor>1</factor>
     <offset-deg>0</offset-deg>   
     <center>
@@ -9030,7 +9030,7 @@
   <animation>
     <type>rotate</type>
     <object-name>RopeSegment21</object-name>
-    <property>/sim/cargo/rope/roll21</property>
+    <property>sim/cargo/rope/roll21</property>
     <factor>1</factor>
     <offset-deg>0</offset-deg>   
     <center>
@@ -9048,7 +9048,7 @@
   <animation>
     <type>rotate</type>
     <object-name>RopeSegment22</object-name>
-    <property>/sim/cargo/rope/roll22</property>
+    <property>sim/cargo/rope/roll22</property>
     <factor>1</factor>
     <offset-deg>0</offset-deg>   
     <center>
@@ -9066,7 +9066,7 @@
   <animation>
     <type>rotate</type>
     <object-name>RopeSegment23</object-name>
-    <property>/sim/cargo/rope/roll23</property>
+    <property>sim/cargo/rope/roll23</property>
     <factor>1</factor>
     <offset-deg>0</offset-deg>   
     <center>
@@ -9084,7 +9084,7 @@
   <animation>
     <type>rotate</type>
     <object-name>RopeSegment24</object-name>
-    <property>/sim/cargo/rope/roll24</property>
+    <property>sim/cargo/rope/roll24</property>
     <factor>1</factor>
     <offset-deg>0</offset-deg>   
     <center>
@@ -9102,7 +9102,7 @@
   <animation>
     <type>rotate</type>
     <object-name>RopeSegment25</object-name>
-    <property>/sim/cargo/rope/roll25</property>
+    <property>sim/cargo/rope/roll25</property>
     <factor>1</factor>
     <offset-deg>0</offset-deg>   
     <center>
@@ -9120,7 +9120,7 @@
   <animation>
     <type>rotate</type>
     <object-name>RopeSegment26</object-name>
-    <property>/sim/cargo/rope/roll26</property>
+    <property>sim/cargo/rope/roll26</property>
     <factor>1</factor>
     <offset-deg>0</offset-deg>   
     <center>
@@ -9138,7 +9138,7 @@
   <animation>
     <type>rotate</type>
     <object-name>RopeSegment27</object-name>
-    <property>/sim/cargo/rope/roll27</property>
+    <property>sim/cargo/rope/roll27</property>
     <factor>1</factor>
     <offset-deg>0</offset-deg>   
     <center>
@@ -9156,7 +9156,7 @@
   <animation>
     <type>rotate</type>
     <object-name>RopeSegment28</object-name>
-    <property>/sim/cargo/rope/roll28</property>
+    <property>sim/cargo/rope/roll28</property>
     <factor>1</factor>
     <offset-deg>0</offset-deg>   
     <center>
@@ -9174,7 +9174,7 @@
   <animation>
     <type>rotate</type>
     <object-name>RopeSegment29</object-name>
-    <property>/sim/cargo/rope/roll29</property>
+    <property>sim/cargo/rope/roll29</property>
     <factor>1</factor>
     <offset-deg>0</offset-deg>   
     <center>
@@ -9192,7 +9192,7 @@
   <animation>
     <type>rotate</type>
     <object-name>RopeSegment30</object-name>
-    <property>/sim/cargo/rope/roll30</property>
+    <property>sim/cargo/rope/roll30</property>
     <factor>1</factor>
     <offset-deg>0</offset-deg>   
     <center>
@@ -9210,7 +9210,7 @@
   <animation>
     <type>rotate</type>
     <object-name>RopeSegment31</object-name>
-    <property>/sim/cargo/rope/roll31</property>
+    <property>sim/cargo/rope/roll31</property>
     <factor>1</factor>
     <offset-deg>0</offset-deg>   
     <center>
@@ -9228,7 +9228,7 @@
   <animation>
     <type>rotate</type>
     <object-name>RopeSegment32</object-name>
-    <property>/sim/cargo/rope/roll32</property>
+    <property>sim/cargo/rope/roll32</property>
     <factor>1</factor>
     <offset-deg>0</offset-deg>   
     <center>
@@ -9246,7 +9246,7 @@
   <animation>
     <type>rotate</type>
     <object-name>RopeSegment33</object-name>
-    <property>/sim/cargo/rope/roll33</property>
+    <property>sim/cargo/rope/roll33</property>
     <factor>1</factor>
     <offset-deg>0</offset-deg>   
     <center>
@@ -9264,7 +9264,7 @@
   <animation>
     <type>rotate</type>
     <object-name>RopeSegment34</object-name>
-    <property>/sim/cargo/rope/roll34</property>
+    <property>sim/cargo/rope/roll34</property>
     <factor>1</factor>
     <offset-deg>0</offset-deg>   
     <center>
@@ -9282,7 +9282,7 @@
   <animation>
     <type>rotate</type>
     <object-name>RopeSegment35</object-name>
-    <property>/sim/cargo/rope/roll35</property>
+    <property>sim/cargo/rope/roll35</property>
     <factor>1</factor>
     <offset-deg>0</offset-deg>   
     <center>
@@ -9300,7 +9300,7 @@
   <animation>
     <type>rotate</type>
     <object-name>RopeSegment36</object-name>
-    <property>/sim/cargo/rope/roll36</property>
+    <property>sim/cargo/rope/roll36</property>
     <factor>1</factor>
     <offset-deg>0</offset-deg>   
     <center>
@@ -9318,7 +9318,7 @@
   <animation>
     <type>rotate</type>
     <object-name>RopeSegment37</object-name>
-    <property>/sim/cargo/rope/roll37</property>
+    <property>sim/cargo/rope/roll37</property>
     <factor>1</factor>
     <offset-deg>0</offset-deg>   
     <center>
@@ -9336,7 +9336,7 @@
   <animation>
     <type>rotate</type>
     <object-name>RopeSegment38</object-name>
-    <property>/sim/cargo/rope/roll38</property>
+    <property>sim/cargo/rope/roll38</property>
     <factor>1</factor>
     <offset-deg>0</offset-deg>   
     <center>
@@ -9354,7 +9354,7 @@
   <animation>
     <type>rotate</type>
     <object-name>RopeSegment39</object-name>
-    <property>/sim/cargo/rope/roll39</property>
+    <property>sim/cargo/rope/roll39</property>
     <factor>1</factor>
     <offset-deg>0</offset-deg>   
     <center>
@@ -9372,7 +9372,7 @@
   <animation>
     <type>rotate</type>
     <object-name>RopeSegment40</object-name>
-    <property>/sim/cargo/rope/roll40</property>
+    <property>sim/cargo/rope/roll40</property>
     <factor>1</factor>
     <offset-deg>0</offset-deg>   
     <center>
@@ -9390,7 +9390,7 @@
   <animation>
     <type>rotate</type>
     <object-name>RopeSegment41</object-name>
-    <property>/sim/cargo/rope/roll41</property>
+    <property>sim/cargo/rope/roll41</property>
     <factor>1</factor>
     <offset-deg>0</offset-deg>   
     <center>
@@ -9408,7 +9408,7 @@
   <animation>
     <type>rotate</type>
     <object-name>RopeSegment42</object-name>
-    <property>/sim/cargo/rope/roll42</property>
+    <property>sim/cargo/rope/roll42</property>
     <factor>1</factor>
     <offset-deg>0</offset-deg>   
     <center>
@@ -9426,7 +9426,7 @@
   <animation>
     <type>rotate</type>
     <object-name>RopeSegment43</object-name>
-    <property>/sim/cargo/rope/roll43</property>
+    <property>sim/cargo/rope/roll43</property>
     <factor>1</factor>
     <offset-deg>0</offset-deg>   
     <center>
@@ -9444,7 +9444,7 @@
   <animation>
     <type>rotate</type>
     <object-name>RopeSegment44</object-name>
-    <property>/sim/cargo/rope/roll44</property>
+    <property>sim/cargo/rope/roll44</property>
     <factor>1</factor>
     <offset-deg>0</offset-deg>   
     <center>
@@ -9462,7 +9462,7 @@
   <animation>
     <type>rotate</type>
     <object-name>RopeSegment45</object-name>
-    <property>/sim/cargo/rope/roll45</property>
+    <property>sim/cargo/rope/roll45</property>
     <factor>1</factor>
     <offset-deg>0</offset-deg>   
     <center>
@@ -9480,7 +9480,7 @@
   <animation>
     <type>rotate</type>
     <object-name>RopeSegment46</object-name>
-    <property>/sim/cargo/rope/roll46</property>
+    <property>sim/cargo/rope/roll46</property>
     <factor>1</factor>
     <offset-deg>0</offset-deg>   
     <center>
@@ -9498,7 +9498,7 @@
   <animation>
     <type>rotate</type>
     <object-name>RopeSegment47</object-name>
-    <property>/sim/cargo/rope/roll47</property>
+    <property>sim/cargo/rope/roll47</property>
     <factor>1</factor>
     <offset-deg>0</offset-deg>   
     <center>
@@ -9516,7 +9516,7 @@
   <animation>
     <type>rotate</type>
     <object-name>RopeSegment48</object-name>
-    <property>/sim/cargo/rope/roll48</property>
+    <property>sim/cargo/rope/roll48</property>
     <factor>1</factor>
     <offset-deg>0</offset-deg>   
     <center>
@@ -9534,7 +9534,7 @@
   <animation>
     <type>rotate</type>
     <object-name>RopeSegment49</object-name>
-    <property>/sim/cargo/rope/roll49</property>
+    <property>sim/cargo/rope/roll49</property>
     <factor>1</factor>
     <offset-deg>0</offset-deg>   
     <center>
@@ -9552,7 +9552,7 @@
   <animation>
     <type>rotate</type>
     <object-name>RopeSegment50</object-name>
-    <property>/sim/cargo/rope/roll50</property>
+    <property>sim/cargo/rope/roll50</property>
     <factor>1</factor>
     <offset-deg>0</offset-deg>   
     <center>
@@ -9570,7 +9570,7 @@
   <animation>
     <type>rotate</type>
     <object-name>RopeSegment51</object-name>
-    <property>/sim/cargo/rope/roll51</property>
+    <property>sim/cargo/rope/roll51</property>
     <factor>1</factor>
     <offset-deg>0</offset-deg>   
     <center>
@@ -9588,7 +9588,7 @@
   <animation>
     <type>rotate</type>
     <object-name>RopeSegment52</object-name>
-    <property>/sim/cargo/rope/roll52</property>
+    <property>sim/cargo/rope/roll52</property>
     <factor>1</factor>
     <offset-deg>0</offset-deg>   
     <center>
@@ -9606,7 +9606,7 @@
   <animation>
     <type>rotate</type>
     <object-name>RopeSegment53</object-name>
-    <property>/sim/cargo/rope/roll53</property>
+    <property>sim/cargo/rope/roll53</property>
     <factor>1</factor>
     <offset-deg>0</offset-deg>   
     <center>
@@ -9624,7 +9624,7 @@
   <animation>
     <type>rotate</type>
     <object-name>RopeSegment54</object-name>
-    <property>/sim/cargo/rope/roll54</property>
+    <property>sim/cargo/rope/roll54</property>
     <factor>1</factor>
     <offset-deg>0</offset-deg>   
     <center>
@@ -9642,7 +9642,7 @@
   <animation>
     <type>rotate</type>
     <object-name>RopeSegment55</object-name>
-    <property>/sim/cargo/rope/roll55</property>
+    <property>sim/cargo/rope/roll55</property>
     <factor>1</factor>
     <offset-deg>0</offset-deg>   
     <center>
@@ -9660,7 +9660,7 @@
   <animation>
     <type>rotate</type>
     <object-name>RopeSegment56</object-name>
-    <property>/sim/cargo/rope/roll56</property>
+    <property>sim/cargo/rope/roll56</property>
     <factor>1</factor>
     <offset-deg>0</offset-deg>   
     <center>
@@ -9678,7 +9678,7 @@
   <animation>
     <type>rotate</type>
     <object-name>RopeSegment57</object-name>
-    <property>/sim/cargo/rope/roll57</property>
+    <property>sim/cargo/rope/roll57</property>
     <factor>1</factor>
     <offset-deg>0</offset-deg>   
     <center>
@@ -9696,7 +9696,7 @@
   <animation>
     <type>rotate</type>
     <object-name>RopeSegment58</object-name>
-    <property>/sim/cargo/rope/roll58</property>
+    <property>sim/cargo/rope/roll58</property>
     <factor>1</factor>
     <offset-deg>0</offset-deg>   
     <center>
@@ -9714,7 +9714,7 @@
   <animation>
     <type>rotate</type>
     <object-name>RopeSegment59</object-name>
-    <property>/sim/cargo/rope/roll59</property>
+    <property>sim/cargo/rope/roll59</property>
     <factor>1</factor>
     <offset-deg>0</offset-deg>   
     <center>
@@ -9732,7 +9732,7 @@
   <animation>
     <type>rotate</type>
     <object-name>RopeSegment60</object-name>
-    <property>/sim/cargo/rope/roll60</property>
+    <property>sim/cargo/rope/roll60</property>
     <factor>1</factor>
     <offset-deg>0</offset-deg>   
     <center>
@@ -9750,7 +9750,7 @@
   <animation>
     <type>rotate</type>
     <object-name>RopeSegment61</object-name>
-    <property>/sim/cargo/rope/roll61</property>
+    <property>sim/cargo/rope/roll61</property>
     <factor>1</factor>
     <offset-deg>0</offset-deg>   
     <center>
@@ -9768,7 +9768,7 @@
   <animation>
     <type>rotate</type>
     <object-name>RopeSegment62</object-name>
-    <property>/sim/cargo/rope/roll62</property>
+    <property>sim/cargo/rope/roll62</property>
     <factor>1</factor>
     <offset-deg>0</offset-deg>   
     <center>
@@ -9786,7 +9786,7 @@
   <animation>
     <type>rotate</type>
     <object-name>RopeSegment63</object-name>
-    <property>/sim/cargo/rope/roll63</property>
+    <property>sim/cargo/rope/roll63</property>
     <factor>1</factor>
     <offset-deg>0</offset-deg>   
     <center>
@@ -9804,7 +9804,7 @@
   <animation>
     <type>rotate</type>
     <object-name>RopeSegment64</object-name>
-    <property>/sim/cargo/rope/roll64</property>
+    <property>sim/cargo/rope/roll64</property>
     <factor>1</factor>
     <offset-deg>0</offset-deg>   
     <center>
@@ -9822,7 +9822,7 @@
   <animation>
     <type>rotate</type>
     <object-name>RopeSegment65</object-name>
-    <property>/sim/cargo/rope/roll65</property>
+    <property>sim/cargo/rope/roll65</property>
     <factor>1</factor>
     <offset-deg>0</offset-deg>   
     <center>
@@ -9840,7 +9840,7 @@
   <animation>
     <type>rotate</type>
     <object-name>RopeSegment66</object-name>
-    <property>/sim/cargo/rope/roll66</property>
+    <property>sim/cargo/rope/roll66</property>
     <factor>1</factor>
     <offset-deg>0</offset-deg>   
     <center>
@@ -9858,7 +9858,7 @@
   <animation>
     <type>rotate</type>
     <object-name>RopeSegment67</object-name>
-    <property>/sim/cargo/rope/roll67</property>
+    <property>sim/cargo/rope/roll67</property>
     <factor>1</factor>
     <offset-deg>0</offset-deg>   
     <center>
@@ -9876,7 +9876,7 @@
   <animation>
     <type>rotate</type>
     <object-name>RopeSegment68</object-name>
-    <property>/sim/cargo/rope/roll68</property>
+    <property>sim/cargo/rope/roll68</property>
     <factor>1</factor>
     <offset-deg>0</offset-deg>   
     <center>
@@ -9894,7 +9894,7 @@
   <animation>
     <type>rotate</type>
     <object-name>RopeSegment69</object-name>
-    <property>/sim/cargo/rope/roll69</property>
+    <property>sim/cargo/rope/roll69</property>
     <factor>1</factor>
     <offset-deg>0</offset-deg>   
     <center>
@@ -9912,7 +9912,7 @@
   <animation>
     <type>rotate</type>
     <object-name>RopeSegment70</object-name>
-    <property>/sim/cargo/rope/roll70</property>
+    <property>sim/cargo/rope/roll70</property>
     <factor>1</factor>
     <offset-deg>0</offset-deg>   
     <center>
@@ -9930,7 +9930,7 @@
   <animation>
     <type>rotate</type>
     <object-name>RopeSegment71</object-name>
-    <property>/sim/cargo/rope/roll71</property>
+    <property>sim/cargo/rope/roll71</property>
     <factor>1</factor>
     <offset-deg>0</offset-deg>   
     <center>
@@ -9948,7 +9948,7 @@
   <animation>
     <type>rotate</type>
     <object-name>RopeSegment72</object-name>
-    <property>/sim/cargo/rope/roll72</property>
+    <property>sim/cargo/rope/roll72</property>
     <factor>1</factor>
     <offset-deg>0</offset-deg>   
     <center>
@@ -9966,7 +9966,7 @@
   <animation>
     <type>rotate</type>
     <object-name>RopeSegment73</object-name>
-    <property>/sim/cargo/rope/roll73</property>
+    <property>sim/cargo/rope/roll73</property>
     <factor>1</factor>
     <offset-deg>0</offset-deg>   
     <center>
@@ -9984,7 +9984,7 @@
   <animation>
     <type>rotate</type>
     <object-name>RopeSegment74</object-name>
-    <property>/sim/cargo/rope/roll74</property>
+    <property>sim/cargo/rope/roll74</property>
     <factor>1</factor>
     <offset-deg>0</offset-deg>   
     <center>
@@ -10002,7 +10002,7 @@
   <animation>
     <type>rotate</type>
     <object-name>RopeSegment75</object-name>
-    <property>/sim/cargo/rope/roll75</property>
+    <property>sim/cargo/rope/roll75</property>
     <factor>1</factor>
     <offset-deg>0</offset-deg>   
     <center>
@@ -10020,7 +10020,7 @@
   <animation>
     <type>rotate</type>
     <object-name>RopeSegment76</object-name>
-    <property>/sim/cargo/rope/roll76</property>
+    <property>sim/cargo/rope/roll76</property>
     <factor>1</factor>
     <offset-deg>0</offset-deg>   
     <center>
@@ -10038,7 +10038,7 @@
   <animation>
     <type>rotate</type>
     <object-name>RopeSegment77</object-name>
-    <property>/sim/cargo/rope/roll77</property>
+    <property>sim/cargo/rope/roll77</property>
     <factor>1</factor>
     <offset-deg>0</offset-deg>   
     <center>
@@ -10056,7 +10056,7 @@
   <animation>
     <type>rotate</type>
     <object-name>RopeSegment78</object-name>
-    <property>/sim/cargo/rope/roll78</property>
+    <property>sim/cargo/rope/roll78</property>
     <factor>1</factor>
     <offset-deg>0</offset-deg>   
     <center>
@@ -10074,7 +10074,7 @@
   <animation>
     <type>rotate</type>
     <object-name>RopeSegment79</object-name>
-    <property>/sim/cargo/rope/roll79</property>
+    <property>sim/cargo/rope/roll79</property>
     <factor>1</factor>
     <offset-deg>0</offset-deg>   
     <center>
@@ -10092,7 +10092,7 @@
   <animation>
     <type>rotate</type>
     <object-name>RopeSegment80</object-name>
-    <property>/sim/cargo/rope/roll80</property>
+    <property>sim/cargo/rope/roll80</property>
     <factor>1</factor>
     <offset-deg>0</offset-deg>   
     <center>
@@ -10110,7 +10110,7 @@
   <animation>
     <type>rotate</type>
     <object-name>RopeSegment81</object-name>
-    <property>/sim/cargo/rope/roll81</property>
+    <property>sim/cargo/rope/roll81</property>
     <factor>1</factor>
     <offset-deg>0</offset-deg>   
     <center>
@@ -10128,7 +10128,7 @@
   <animation>
     <type>rotate</type>
     <object-name>RopeSegment82</object-name>
-    <property>/sim/cargo/rope/roll82</property>
+    <property>sim/cargo/rope/roll82</property>
     <factor>1</factor>
     <offset-deg>0</offset-deg>   
     <center>
@@ -10146,7 +10146,7 @@
   <animation>
     <type>rotate</type>
     <object-name>RopeSegment83</object-name>
-    <property>/sim/cargo/rope/roll83</property>
+    <property>sim/cargo/rope/roll83</property>
     <factor>1</factor>
     <offset-deg>0</offset-deg>   
     <center>
@@ -10164,7 +10164,7 @@
   <animation>
     <type>rotate</type>
     <object-name>RopeSegment84</object-name>
-    <property>/sim/cargo/rope/roll84</property>
+    <property>sim/cargo/rope/roll84</property>
     <factor>1</factor>
     <offset-deg>0</offset-deg>   
     <center>
@@ -10182,7 +10182,7 @@
   <animation>
     <type>rotate</type>
     <object-name>RopeSegment85</object-name>
-    <property>/sim/cargo/rope/roll85</property>
+    <property>sim/cargo/rope/roll85</property>
     <factor>1</factor>
     <offset-deg>0</offset-deg>   
     <center>
@@ -10200,7 +10200,7 @@
   <animation>
     <type>rotate</type>
     <object-name>RopeSegment86</object-name>
-    <property>/sim/cargo/rope/roll86</property>
+    <property>sim/cargo/rope/roll86</property>
     <factor>1</factor>
     <offset-deg>0</offset-deg>   
     <center>
@@ -10218,7 +10218,7 @@
   <animation>
     <type>rotate</type>
     <object-name>RopeSegment87</object-name>
-    <property>/sim/cargo/rope/roll87</property>
+    <property>sim/cargo/rope/roll87</property>
     <factor>1</factor>
     <offset-deg>0</offset-deg>   
     <center>
@@ -10236,7 +10236,7 @@
   <animation>
     <type>rotate</type>
     <object-name>RopeSegment88</object-name>
-    <property>/sim/cargo/rope/roll88</property>
+    <property>sim/cargo/rope/roll88</property>
     <factor>1</factor>
     <offset-deg>0</offset-deg>   
     <center>
@@ -10254,7 +10254,7 @@
   <animation>
     <type>rotate</type>
     <object-name>RopeSegment89</object-name>
-    <property>/sim/cargo/rope/roll89</property>
+    <property>sim/cargo/rope/roll89</property>
     <factor>1</factor>
     <offset-deg>0</offset-deg>   
     <center>
@@ -10274,7 +10274,7 @@
     <object-name>RopeSegment90</object-name>
     <object-name>hook</object-name>
     <object-name>hookstop</object-name>
-    <property>/sim/cargo/rope/roll90</property>
+    <property>sim/cargo/rope/roll90</property>
     <factor>1</factor>
     <offset-deg>0</offset-deg>   
     <center>
@@ -10338,13 +10338,13 @@
     <object-name>cargoharness</object-name>
     <condition>
       <and>
-        <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
+        <property>sim/gui/dialogs/aicargo-dialog/connection</property>
         <or>
           <property>sim/cargo/rope/pulling</property>
           <and>
             <property>sim/cargo/cargo-on-hook</property>
             <not>
-              <property>/sim/cargo/hitsground</property>
+              <property>sim/cargo/hitsground</property>
             </not>
           </and>
         </or>
@@ -10356,9 +10356,9 @@
     <type>select</type>
     <object-name>cargo</object-name>
     <condition>
-      <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
+      <property>sim/gui/dialogs/aicargo-dialog/connection</property>
       <not>
-        <property>/sim/cargo/hitsground</property>
+        <property>sim/cargo/hitsground</property>
       </not>
     </condition>
   </animation>
@@ -10366,10 +10366,10 @@
     <type>rotate</type>
     <object-name>cargo</object-name>
     <object-name>cargoharness</object-name>
-    <property>/sim/cargo/currentyaw</property>
+    <property>sim/cargo/currentyaw</property>
     <condition>
       <and>
-        <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
+        <property>sim/gui/dialogs/aicargo-dialog/connection</property>
         <property>sim/cargo/cargo-on-hook</property>
       </and>
     </condition>
@@ -10392,7 +10392,7 @@
     <property>sim/cargo/cargoalt</property>
     <condition>
       <and>
-        <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
+        <property>sim/gui/dialogs/aicargo-dialog/connection</property>
         <property>sim/cargo/cargo-on-hook</property>
       </and>
     </condition>
@@ -10414,7 +10414,7 @@
     <object-name>cargoharness</object-name>
     <property>sim/cargo/harnessalt</property>
     <condition>
-      <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
+      <property>sim/gui/dialogs/aicargo-dialog/connection</property>
       <property>sim/cargo/cargo-on-hook</property>
     </condition>
     <factor>1</factor>

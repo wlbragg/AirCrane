@@ -72,13 +72,13 @@
       <start>
         <color>
           <red>
-            <property>/sim/model/aircrane/effects/particles/redcombined</property>
+            <property>sim/model/aircrane/effects/particles/redcombined</property>
           </red>
           <green>
-            <property>/sim/model/aircrane/effects/particles/greencombined</property>
+            <property>sim/model/aircrane/effects/particles/greencombined</property>
           </green>
           <blue>
-            <property>/sim/model/aircrane/effects/particles/bluecombined</property>
+            <property>sim/model/aircrane/effects/particles/bluecombined</property>
           </blue>
           <alpha>
             <value>.1</value>
@@ -91,13 +91,13 @@
       <end>
         <color>
           <red>
-            <property>/sim/model/aircrane/effects/particles/redcombined</property>
+            <property>sim/model/aircrane/effects/particles/redcombined</property>
           </red>
           <green>
-            <property>/sim/model/aircrane/effects/particles/greencombined</property>
+            <property>sim/model/aircrane/effects/particles/greencombined</property>
           </green>
           <blue>
-            <property>/sim/model/aircrane/effects/particles/bluecombined</property>
+            <property>sim/model/aircrane/effects/particles/bluecombined</property>
           </blue>
           <alpha>
             <value>.01</value>

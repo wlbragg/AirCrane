@@ -32,7 +32,7 @@
       <red>   0 </red>
       <green> 2 </green>
       <blue>  0 </blue>
-      <factor-prop>/systems/electrical/outputs/instrument-lights</factor-prop>
+      <factor-prop>systems/electrical/outputs/instrument-lights</factor-prop>
     </emission>
   </animation>
 

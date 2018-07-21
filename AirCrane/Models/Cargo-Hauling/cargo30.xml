@@ -15,15 +15,15 @@
         <property>sim/cargo/enabled</property>
         <or>
           <not>
-            <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
+            <property>sim/gui/dialogs/aicargo-dialog/connection</property>
           </not>
           <and>
-            <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
-            <property>/sim/cargo/hitsground</property>
+            <property>sim/gui/dialogs/aicargo-dialog/connection</property>
+            <property>sim/cargo/hitsground</property>
             <property>sim/cargo/cargo30-onhook</property>
           </and>
           <and>
-            <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
+            <property>sim/gui/dialogs/aicargo-dialog/connection</property>
             <not>        
               <property>sim/cargo/cargo30-onhook</property>
             </not>

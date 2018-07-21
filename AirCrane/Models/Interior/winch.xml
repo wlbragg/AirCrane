@@ -23,7 +23,7 @@
     <object-name>winchhead</object-name>
     <condition>
       <not>
-        <property>/sim/model/winchcover/enabled</property>
+        <property>sim/model/winchcover/enabled</property>
       </not>
     </condition>
   </animation>

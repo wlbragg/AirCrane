@@ -128,7 +128,7 @@
   <model>
     <path>Aircraft/AirCrane/Models/Pilot/pilot.xml</path>
     <condition> 
-      <property>/sim/model/occupants</property>
+      <property>sim/model/occupants</property>
     </condition>
     <offsets>
       <x-m> -8.892 </x-m>

@@ -360,14 +360,14 @@
     <path>Aircraft/Instruments-3d/garmin196/garmin196.xml</path>
     <condition>
       <and>
-        <property>/sim/model/garmin196-visible</property>
+        <property>sim/model/garmin196-visible</property>
         <or>
           <equals>
-            <property>/sim/current-view/name</property>
+            <property>sim/current-view/name</property>
             <value>Passanger Seat View</value>
           </equals>
           <equals>
-            <property>/sim/current-view/name</property>
+            <property>sim/current-view/name</property>
             <value>Crane Seat View</value>
           </equals>
         </or>
@@ -386,9 +386,9 @@
     <path>Aircraft/Instruments-3d/garmin196/garmin196.xml</path>
     <condition>
       <and>
-        <property>/sim/model/garmin196-visible</property>
+        <property>sim/model/garmin196-visible</property>
         <equals>
-          <property>/sim/current-view/name</property>
+          <property>sim/current-view/name</property>
           <value>Cockpit View</value>
         </equals>
       </and>
@@ -427,7 +427,7 @@
     <object-name>Garmin196-GPS</object-name>
     <object-name>Garmin196-GPS-support</object-name>
     <condition>
-      <property>/sim/model/j3cub/garmin196-visible</property>
+      <property>sim/model/j3cub/garmin196-visible</property>
     </condition>
   </animation>-->
 
@@ -921,7 +921,7 @@
     <object-name>screws</object-name>
     <object-name>steppanel</object-name>
     <condition>
-      <property>/sim/model/steppanel/enabled</property>
+      <property>sim/model/steppanel/enabled</property>
     </condition>
   </animation>
 
@@ -945,7 +945,7 @@
     <type>select</type>
     <object-name>winchcover</object-name>
     <condition>
-      <property>/sim/model/winchcover/enabled</property>
+      <property>sim/model/winchcover/enabled</property>
     </condition>
   </animation>
   

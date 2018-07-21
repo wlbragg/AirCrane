@@ -21,19 +21,19 @@
 
 	<condition>
 		<and>
-			<property>/sim/model/aircrane/effects/particles/enabled</property>
+			<property>sim/model/aircrane/effects/particles/enabled</property>
 			<not>
-				<property>/sim/freeze/clock</property>
+				<property>sim/freeze/clock</property>
 			</not>
 			<not>
-				<property>/sim/crashed</property>
+				<property>sim/crashed</property>
 			</not>
 			<less-than>
         <property>position/true-agl-ft</property>
 				<value>80</value>
 			</less-than>
 			<greater-than>
-				<property>/rotors/main/rpm</property>
+				<property>rotors/main/rpm</property>
 				<value>65</value>
 			</greater-than>
 		</and>
@@ -69,17 +69,17 @@
       <start>
         <color>
           <red>
-            <property>/sim/model/aircrane/effects/particles/rotorwash/redcombinedstart</property>
+            <property>sim/model/aircrane/effects/particles/rotorwash/redcombinedstart</property>
           </red>
           <green>
-            <property>/sim/model/aircrane/effects/particles/rotorwash/greencombinedstart</property>
+            <property>sim/model/aircrane/effects/particles/rotorwash/greencombinedstart</property>
           </green>
           <blue>
-            <property>/sim/model/aircrane/effects/particles/rotorwash/bluecombinedstart</property>
+            <property>sim/model/aircrane/effects/particles/rotorwash/bluecombinedstart</property>
           </blue>
           <alpha>
-            <property>/environment/terrain-dust-factor</property>
-            <!--property>/controls/engines/engine/throttle</property-->
+            <property>environment/terrain-dust-factor</property>
+            <!--property>controls/engines/engine/throttle</property-->
             <interpolation>
              <!--entry>
               <ind>0.0</ind><dep>0.7</dep>
@@ -114,17 +114,17 @@
       <end>
         <color>
           <red>
-            <property>/sim/model/aircrane/effects/particles/rotorwash/redcombinedend</property>
+            <property>sim/model/aircrane/effects/particles/rotorwash/redcombinedend</property>
           </red>
           <green>
-            <property>/sim/model/aircrane/effects/particles/rotorwash/greencombinedend</property>
+            <property>sim/model/aircrane/effects/particles/rotorwash/greencombinedend</property>
           </green>
           <blue>
-            <property>/sim/model/aircrane/effects/particles/rotorwash/bluecombinedend</property>
+            <property>sim/model/aircrane/effects/particles/rotorwash/bluecombinedend</property>
           </blue>
           <alpha>
-            <property>/environment/terrain-dust-factor</property>
-            <!--property>/controls/engines/engine/throttle</property-->
+            <property>environment/terrain-dust-factor</property>
+            <!--property>controls/engines/engine/throttle</property-->
             <interpolation>
              <!--entry>
               <ind>0.0</ind><dep>0.3</dep>
@@ -176,7 +176,7 @@
   <animation>
     <type>rotate</type>
     <object-name>rotorwashpower</object-name>
-    <property>/orientation/pitch-deg</property>
+    <property>orientation/pitch-deg</property>
     <factor>-1.0</factor>
     <center>
       <x-m>0</x-m>
@@ -194,7 +194,7 @@
   <animation>
     <type>rotate</type>
     <object-name>rotorwashpower</object-name>
-    <property>/orientation/roll-deg</property>
+    <property>orientation/roll-deg</property>
     <factor>1.0</factor>
     <center>
       <x-m>0</x-m>

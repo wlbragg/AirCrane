@@ -83,7 +83,7 @@ submodel normal to the airflow.
     <cd>0.05</cd>
     <impact>true</impact>
     <impact-reports>sim/ai/aircraft/impact/retardant</impact-reports>
-    <!--impact-reports>/sim/ai/aircraft/impact/foam</impact-reports-->
+    <!--impact-reports>sim/ai/aircraft/impact/foam</impact-reports-->
   </submodel>
 
   <!-- Fire retardant marker for water drop -->
