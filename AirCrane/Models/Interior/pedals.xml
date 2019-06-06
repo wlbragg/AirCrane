@@ -39,8 +39,7 @@
     <object-name>pltRboot5</object-name>
     <object-name>pltRboot6</object-name>
     <object-name>pltPlates</object-name>
-    <object-name>screws</object-name>
-
+    <object-name>platescrews</object-name>
   </animation>
 
   <!-- ALS Interior Shadows -->
@@ -80,8 +79,38 @@
     <object-name>pltRboot5</object-name>
     <object-name>pltRboot6</object-name>
     <object-name>pltPlates</object-name>
-    <object-name>screws</object-name>
+    <object-name>platescrews</object-name>
   </effect>
+
+    <!-- Specularity fix -->
+    <animation>
+        <type>material</type>
+        <object-name>copltLboot1</object-name>
+        <object-name>copltLboot2</object-name>
+        <object-name>copltLboot3</object-name>
+        <object-name>copltLboot4</object-name>
+        <object-name>copltLboot5</object-name>
+        <object-name>copltLboot6</object-name>
+        <object-name>copltRboot1</object-name>
+        <object-name>copltRboot2</object-name>
+        <object-name>copltRboot3</object-name>
+        <object-name>copltRboot4</object-name>
+        <object-name>copltRboot5</object-name>
+        <object-name>copltRboot6</object-name>
+        <object-name>pltLboot1</object-name>
+        <object-name>pltLboot2</object-name>
+        <object-name>pltLboot3</object-name>
+        <object-name>pltLboot4</object-name>
+        <object-name>pltLboot5</object-name>
+        <object-name>pltLboot6</object-name>
+        <object-name>pltRboot1</object-name>
+        <object-name>pltRboot2</object-name>
+        <object-name>pltRboot3</object-name>
+        <object-name>pltRboot4</object-name>
+        <object-name>pltRboot5</object-name>
+        <object-name>pltRboot6</object-name>
+        <shininess>128</shininess>
+    </animation>
 
 	<!--===== Left Co-Pilot Pedals =====-->
 

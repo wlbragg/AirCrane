@@ -81,6 +81,23 @@
 
 	<hrule/>
 
+	<group>
+		<layout>hbox</layout>
+		<default-padding>1</default-padding>
+		<empty><stretch>true</stretch></empty>
+    <checkbox>
+        <halign>left</halign>
+        <label>Ranging On/Off</label>
+        <property>/sim/gui/show-range</property>
+        <binding>
+            <command>property-toggle</command>
+            <property>/sim/gui/show-range</property>
+        </binding>
+    </checkbox>
+	</group>
+
+	<hrule/>
+
 	<text>
 	  <halign>left</halign>
 	  <label>  To process cargo:</label>

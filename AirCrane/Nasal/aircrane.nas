@@ -444,85 +444,6 @@ setlistener("/sim/signals/fdm-initialized", func {
   init_rotoranim();
   collective.setDoubleValue(1);
 
-  setlistener("/sim/signals/reinit", func {
-    cmdarg().getBoolValue() and return;
-    cprint("32;1", "reinit");
-    turbine_timer.stop();
-    collective.setDoubleValue(1);
-    variant.scan();
-    crashed = 0;
-  });
-
-  setlistener("sim/crashed", func {
-    cprint("31;1", "crashed ", cmdarg().getValue());
-    turbine_timer.stop();
-    if (cmdarg().getBoolValue()) {
-      crash(crashed = 1);
-    }
-  });
-
-  setlistener("/sim/freeze/replay-state", func {
-    cprint("33;1", cmdarg().getValue() ? "replay" : "pause");
-    if (crashed) {
-      crash(!cmdarg().getBoolValue())
-    }
-  });
-
-  # firebug fire starter ctrl+shift+leftmouseclick
-  setlistener("/sim/signals/click", func {
-	  if (__kbd.shift.getBoolValue()) {
-		  var click_pos = geo.click_position();
-		  if (__kbd.ctrl.getBoolValue()) {
-			  wildfire.ignite(click_pos);
-		  } else {
-			  #wildfire.resolve_foam_drop(click_pos, 50, 1);
-        var aic = getprop("/sim/gui/dialogs/aicargo-dialog/ai-path");
-        if (aic != nil) {
-          var pos_lat = click_pos.lat();
-          var pos_lon = click_pos.lon();
-          var click_alt = geo.elevation(click_pos.lat(), click_pos.lon()) * 3.28;
-          var alt_offset = getprop("/models/cargo/"~aic~"/elev-offset");
-          setprop("/models/cargo/"~aic~"/latitude-deg", pos_lat);
-          setprop("/models/cargo/"~aic~"/longitude-deg", pos_lon);
-          setprop("/models/cargo/"~aic~"/elevation-ft/", click_alt + alt_offset);
-          setprop("/sim/gui/dialogs/aicargo-dialog/selected_cargo_lat", pos_lat);
-          setprop("/sim/gui/dialogs/aicargo-dialog/selected_cargo_lon", pos_lon);
-          setprop("/sim/gui/dialogs/aicargo-dialog/selected_cargo_alt", click_alt + alt_offset);
-          setprop("/sim/gui/dialogs/aicargo-dialog/selected_cargo_head", getprop("/sim/gui/dialogs/aicargo-dialog/selected_cargo_head"));
-
-          if (getprop("/sim/gui/dialogs/aicargo-dialog/save")) {
-            var cargo = getprop("/sim/gui/dialogs/aicargo-dialog/selected-cargo");
-            setprop("/sim/model/aircrane/"~cargo~"/saved", 1);
-            setprop("/sim/model/aircrane/"~cargo~"/position/latitude-deg", getprop("/sim/gui/dialogs/aicargo-dialog/selected_cargo_lat"));
-            setprop("/sim/model/aircrane/"~cargo~"/position/longitude-deg", getprop("/sim/gui/dialogs/aicargo-dialog/selected_cargo_lon"));
-            setprop("/sim/model/aircrane/"~cargo~"/position/altitude-ft", getprop("/sim/gui/dialogs/aicargo-dialog/selected_cargo_alt"));
-            setprop("/sim/model/aircrane/"~cargo~"/orientation/true-heading-deg", getprop("/sim/gui/dialogs/aicargo-dialog/selected_cargo_head"));
-            aircraft.data.add("/sim/model/aircrane/"~cargo~"/position/latitude-deg",
-                              "/sim/model/aircrane/"~cargo~"/position/longitude-deg",
-                              "/sim/model/aircrane/"~cargo~"/position/altitude-ft",
-                              "/sim/model/aircrane/"~cargo~"/orientation/true-heading-deg");
-            aircraft.data.save();
-          }
-        } else {
-          gui.popupTip("No Cargo Selected, first select cargo to move in the AirCrane's Cargo Menu", 3);
-        }
-		  }
-	  }
-  });
-
-  # Listen for impact of released payload
-  setlistener("/sim/ai/aircraft/impact/retardant", func (n) {
-    #print("Retardant impact!");
-    var node = props.globals.getNode(n.getValue());
-    var pos  = geo.Coord.new().set_latlon
-                   (node.getNode("impact/latitude-deg").getValue(),
-                    node.getNode("impact/longitude-deg").getValue(),
-                    node.getNode("impact/elevation-m").getValue());
-    # The arguments are: position, radius and volume (currently unused).
-    wildfire.resolve_foam_drop(pos, 10, 0);
-    #wildfire.resolve_retardant_drop(pos, 10, 0);
- });
-
   var tankop_timer = maketimer(0.25, func{tank_operations()});
 
   if (getprop("/sim/model/firetank/enabled"))
@@ -541,5 +462,99 @@ setlistener("/sim/signals/fdm-initialized", func {
   # the attitude indicator needs pressure
   # settimer(func { setprop("engines/engine/rpm", 3000) }, 8);
 
+  if (getprop("/sim/gui/show-range")) {
+        fgcommand("dialog-show", props.Node.new({"dialog-name": "range-dialog"}));
+  } else {
+      fgcommand("dialog-close", props.Node.new({"dialog-name": "range-dialog"}));
+  }
+
+
   main_loop();
 });
+
+setlistener("/sim/signals/reinit", func {
+  cmdarg().getBoolValue() and return;
+  cprint("32;1", "reinit");
+  turbine_timer.stop();
+  collective.setDoubleValue(1);
+  variant.scan();
+  crashed = 0;
+});
+
+setlistener("sim/crashed", func {
+  cprint("31;1", "crashed ", cmdarg().getValue());
+  turbine_timer.stop();
+  if (cmdarg().getBoolValue()) {
+    crash(crashed = 1);
+  }
+});
+
+setlistener("/sim/freeze/replay-state", func {
+  cprint("33;1", cmdarg().getValue() ? "replay" : "pause");
+  if (crashed) {
+    crash(!cmdarg().getBoolValue())
+  }
+});
+
+# firebug fire starter ctrl+shift+leftmouseclick
+setlistener("/sim/signals/click", func {
+  if (__kbd.shift.getBoolValue()) {
+	  var click_pos = geo.click_position();
+	  if (__kbd.ctrl.getBoolValue()) {
+		  wildfire.ignite(click_pos);
+	  } else {
+		  #wildfire.resolve_foam_drop(click_pos, 50, 1);
+      var aic = getprop("/sim/gui/dialogs/aicargo-dialog/ai-path");
+      if (aic != nil) {
+        var pos_lat = click_pos.lat();
+        var pos_lon = click_pos.lon();
+        var click_alt = geo.elevation(click_pos.lat(), click_pos.lon());
+        var alt_offset = getprop("/models/cargo/"~aic~"/height");
+        setprop("/models/cargo/"~aic~"/latitude-deg", pos_lat);
+        setprop("/models/cargo/"~aic~"/longitude-deg", pos_lon);
+        setprop("/models/cargo/"~aic~"/elevation-ft/", (click_alt + alt_offset) * 3.28);
+        setprop("/sim/gui/dialogs/aicargo-dialog/selected_cargo_lat", pos_lat);
+        setprop("/sim/gui/dialogs/aicargo-dialog/selected_cargo_lon", pos_lon);
+        setprop("/sim/gui/dialogs/aicargo-dialog/selected_cargo_alt", (click_alt + alt_offset) * 3.28);
+        setprop("/sim/gui/dialogs/aicargo-dialog/selected_cargo_head", getprop("/sim/gui/dialogs/aicargo-dialog/selected_cargo_head"));
+
+        if (getprop("/sim/gui/dialogs/aicargo-dialog/save")) {
+          var cargo = getprop("/sim/gui/dialogs/aicargo-dialog/selected-cargo");
+          setprop("/sim/model/aircrane/"~cargo~"/saved", 1);
+          setprop("/sim/model/aircrane/"~cargo~"/position/latitude-deg", getprop("/sim/gui/dialogs/aicargo-dialog/selected_cargo_lat"));
+          setprop("/sim/model/aircrane/"~cargo~"/position/longitude-deg", getprop("/sim/gui/dialogs/aicargo-dialog/selected_cargo_lon"));
+          setprop("/sim/model/aircrane/"~cargo~"/position/altitude-ft", getprop("/sim/gui/dialogs/aicargo-dialog/selected_cargo_alt"));
+          setprop("/sim/model/aircrane/"~cargo~"/orientation/true-heading-deg", getprop("/sim/gui/dialogs/aicargo-dialog/selected_cargo_head"));
+          aircraft.data.add("/sim/model/aircrane/"~cargo~"/position/latitude-deg",
+                            "/sim/model/aircrane/"~cargo~"/position/longitude-deg",
+                            "/sim/model/aircrane/"~cargo~"/position/altitude-ft",
+                            "/sim/model/aircrane/"~cargo~"/orientation/true-heading-deg");
+          aircraft.data.save();
+        }
+      } else {
+        gui.popupTip("No Cargo Selected, first select cargo to move in the AirCrane's Cargo Menu", 3);
+      }
+	  }
+  }
+});
+
+# Listen for impact of released payload
+setlistener("/sim/ai/aircraft/impact/retardant", func (n) {
+  #print("Retardant impact!");
+  var node = props.globals.getNode(n.getValue());
+  var pos  = geo.Coord.new().set_latlon
+                 (node.getNode("impact/latitude-deg").getValue(),
+                  node.getNode("impact/longitude-deg").getValue(),
+                  node.getNode("impact/elevation-m").getValue());
+  # The arguments are: position, radius and volume (currently unused).
+  wildfire.resolve_foam_drop(pos, 10, 0);
+  #wildfire.resolve_retardant_drop(pos, 10, 0);
+});
+
+setlistener("/sim/gui/show-range", func (node) {      
+    if (node.getBoolValue()) {
+        fgcommand("dialog-show", props.Node.new({"dialog-name": "range-dialog"}));
+    } else {
+        fgcommand("dialog-close", props.Node.new({"dialog-name": "range-dialog"}));
+    }
+}, 0, 0);

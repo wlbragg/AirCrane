@@ -703,6 +703,85 @@
   </model>
 
   <model>
+    <path>wind-tower-base.ac</path>
+     <offsets>
+      <x-m>-0.175 </x-m>
+      <y-m>-0.1 </y-m>
+      <z-m> 2.0 </z-m>
+     </offsets>
+    <condition>
+      <and>
+        <property>sim/cargo/cargo33-onhook</property>
+        <property>sim/gui/dialogs/aicargo-dialog/connection</property>
+      </and>
+    </condition>
+  </model>
+  <model>
+    <path>wind-tower.ac</path>
+     <offsets>
+      <x-m>-0.175 </x-m>
+      <y-m>-0.1 </y-m>
+      <z-m> 2.0 </z-m>
+     </offsets>
+    <condition>
+      <and>
+        <property>sim/cargo/cargo34-onhook</property>
+        <property>sim/gui/dialogs/aicargo-dialog/connection</property>
+      </and>
+    </condition>
+  </model>
+  <model>
+    <path>wind-tower-gen.ac</path>
+     <offsets>
+      <x-m>-0.175 </x-m>
+      <y-m>-0.1 </y-m>
+      <z-m> 2.0 </z-m>
+     </offsets>
+    <condition>
+      <and>
+        <property>sim/cargo/cargo35-onhook</property>
+        <property>sim/gui/dialogs/aicargo-dialog/connection</property>
+      </and>
+    </condition>
+  </model>
+  <model>
+    <path>wind-tower-hub.ac</path>
+     <offsets>
+      <x-m>-0.175 </x-m>
+      <y-m>-0.1 </y-m>
+      <z-m> 2.0 </z-m>
+     </offsets>
+    <condition>
+      <and>
+        <property>sim/cargo/cargo36-onhook</property>
+        <property>sim/gui/dialogs/aicargo-dialog/connection</property>
+      </and>
+    </condition>
+  </model>
+  <model>
+    <path>windtowerharness.ac</path>
+     <offsets>
+      <x-m>-0.175 </x-m>
+      <y-m>-0.1 </y-m>
+      <z-m> 1.5 </z-m>
+     </offsets>
+    <condition>
+      <and>
+        <or>
+          <property>sim/cargo/cargo33-onhook</property>
+          <property>sim/cargo/cargo34-onhook</property>
+          <property>sim/cargo/cargo35-onhook</property>
+          <property>sim/cargo/cargo36-onhook</property>
+        </or>
+        <property>sim/gui/dialogs/aicargo-dialog/connection</property>
+        <not>
+          <property>sim/cargo/rope/pulling</property>
+        </not>
+      </and>
+    </condition>
+  </model>
+
+  <model>
     <path>rope-uc.ac</path>
     <offsets>
       <x-m>-0.3 </x-m>

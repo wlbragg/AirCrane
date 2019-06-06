@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 
-<PropertyList>
+<PropertyList include="load-unload.xml">
   
   <path>aircrane.ac</path>
 
@@ -994,5 +994,607 @@
       <z-m> -1.496 </z-m>
     </offsets>
   </model>
+
+  <!-- Disintegration -->
+
+  <animation>
+    <name>wheelL</name>
+    <object-name>roueG</object-name>
+  </animation>
+
+  <animation>
+    <name>gearL</name>
+    <object-name>axeGB</object-name>
+    <object-name>axeGH</object-name>
+    <object-name>articuleGH</object-name>
+    <object-name>articuleGB</object-name>
+  </animation>
+  <!-- X translate -->
+  <animation>
+    <type>translate</type>
+    <object-name>gearL</object-name>
+    <condition>
+      <property>disintegration/parts/gearL/falling</property>
+    </condition>
+    <expression>
+      <prod>
+        <property>sim/multiplay/generic/int[7]</property>
+        <sum>
+          <prod>
+            <!-- standard freefall -->
+            <value>-4.905</value> <!-- -1/2*(g=9.81) -->
+            <sqr>
+              <dif>
+                <property>/sim/time/elapsed-sec</property>
+                <property>disintegration/crashTime</property>
+              </dif>
+            </sqr>
+            <sin>
+              <deg2rad>
+                <property>orientation/pitch-deg</property>
+              </deg2rad>
+            </sin>
+          </prod>
+          <prod>
+            <!-- custom initial speed -->
+            <property>disintegration/parts/gearL/vX</property> 
+            <dif>
+              <property>/sim/time/elapsed-sec</property>
+              <property>disintegration/crashTime</property>
+            </dif>
+          </prod>
+        </sum>
+      </prod>
+    </expression>
+    <axis>
+      <x>-1</x>
+      <y>0</y>
+      <z>0</z>
+    </axis>
+  </animation>
+  <!-- Y translate -->
+  <animation>
+    <type>translate</type>
+    <object-name>gearL</object-name>
+    <condition>
+      <property>disintegration/parts/gearL/falling</property>
+    </condition>
+    <expression>
+      <prod>
+        <property>sim/multiplay/generic/int[7]</property>
+        <sum>
+          <prod>
+            <!-- standard freefall -->
+            <value>-4.905</value> <!-- -1/2*(g=9.81) -->
+            <sqr>
+              <dif>
+                <property>/sim/time/elapsed-sec</property>
+                <property>disintegration/crashTime</property>
+              </dif>
+            </sqr>
+            <sin>
+              <deg2rad>
+                <property>orientation/roll-deg</property>
+              </deg2rad>
+            </sin>
+            <cos>
+              <deg2rad>
+                <property>orientation/pitch-deg</property>
+              </deg2rad>
+            </cos>
+          </prod>
+          <prod>
+            <!-- custom initial speed -->
+            <property>disintegration/parts/gearL/vY</property> 
+            <dif>
+              <property>/sim/time/elapsed-sec</property>
+              <property>disintegration/crashTime</property>
+            </dif>
+          </prod>
+        </sum>
+      </prod>
+    </expression>
+    <axis>
+      <x></x>
+      <y>-1</y>
+      <z>0</z>
+    </axis>
+  </animation>
+  <!-- Z translate -->
+  <animation>
+    <type>translate</type>
+    <object-name>gearL</object-name>
+    <condition>
+      <property>disintegration/parts/gearL/falling</property>
+    </condition>
+    <expression>
+      <prod>
+        <property>sim/multiplay/generic/int[7]</property>
+        <sum>
+          <prod>
+            <!-- standard freefall -->
+            <value>-4.905</value> <!-- -1/2*(g=9.81) -->
+            <sqr>
+              <dif>
+                <property>/sim/time/elapsed-sec</property>
+                <property>disintegration/crashTime</property>
+              </dif>
+            </sqr>
+            <cos>
+              <deg2rad>
+                <property>orientation/roll-deg</property>
+              </deg2rad>
+            </cos>
+            <cos>
+              <deg2rad>
+                <property>orientation/pitch-deg</property>
+              </deg2rad>
+            </cos>
+          </prod>
+          <prod>
+            <!-- custom initial speed -->
+            <property>disintegration/parts/gearL/vZ</property> 
+            <dif>
+              <property>/sim/time/elapsed-sec</property>
+              <property>disintegration/crashTime</property>
+            </dif>
+          </prod>
+        </sum>
+      </prod>
+    </expression>
+    <axis>
+      <x>0</x>
+      <y>0</y>
+      <z>1</z>
+    </axis>
+  </animation>
+  <animation> <!-- X spin -->
+    <type>spin</type>
+    <object-name>gearL</object-name>
+    <condition>
+      <property>disintegration/parts/gearL/dropped</property>
+    </condition>
+    <expression>
+      <prod>
+        <property>disintegration/parts/gearL/falling</property>
+        <value>4.58</value>
+        <property>disintegration/spinSpeed</property>
+      </prod>
+    </expression>
+    <center> <!-- Must correspond with geometrical center of object -->
+      <x-m>-1.05087</x-m>
+      <y-m>-3.0711</y-m>
+      <z-m>-2.3245</z-m>
+    </center>
+    <axis>
+      <x>1</x>
+      <y>0</y>
+      <z>0</z>
+    </axis>
+  </animation>
+  <animation> <!-- Y spin -->
+    <type>spin</type>
+    <object-name>gearL</object-name>
+    <condition>
+      <property>disintegration/parts/gearL/dropped</property>
+    </condition>
+    <expression>
+      <prod>
+        <property>disintegration/parts/gearL/falling</property>
+        <value>3.87</value>
+        <property>disintegration/spinSpeed</property>
+      </prod>
+    </expression>
+    <center> <!-- Must correspond with geometrical center of object -->
+      <x-m>-1.05087</x-m>
+      <y-m>-3.0711</y-m>
+      <z-m>-2.3245</z-m>
+    </center>
+    <axis>
+      <x>0</x>
+      <y>1</y>
+      <z>0</z>
+    </axis>
+  </animation>
+
+  <animation>
+    <name>wheelR</name>
+    <object-name>roueD</object-name>
+  </animation>
+
+  <animation>
+    <name>gearR</name>
+    <object-name>axeDB</object-name>
+    <object-name>axeDH</object-name>
+    <object-name>articuleDH</object-name>
+    <object-name>articuleDB</object-name>
+  </animation>
+  <!-- X translate -->
+  <animation>
+    <type>translate</type>
+    <object-name>gearR</object-name>
+    <condition>
+      <property>disintegration/parts/gearR/falling</property>
+    </condition>
+    <expression>
+      <prod>
+        <property>sim/multiplay/generic/int[7]</property>
+        <sum>
+          <prod>
+            <!-- standard freefall -->
+            <value>-4.905</value> <!-- -1/2*(g=9.81) -->
+            <sqr>
+              <dif>
+                <property>/sim/time/elapsed-sec</property>
+                <property>disintegration/crashTime</property>
+              </dif>
+            </sqr>
+            <sin>
+              <deg2rad>
+                <property>orientation/pitch-deg</property>
+              </deg2rad>
+            </sin>
+          </prod>
+          <prod>
+            <!-- custom initial speed -->
+            <property>disintegration/parts/gearR/vX</property> 
+            <dif>
+              <property>/sim/time/elapsed-sec</property>
+              <property>disintegration/crashTime</property>
+            </dif>
+          </prod>
+        </sum>
+      </prod>
+    </expression>
+    <axis>
+      <x>-1</x>
+      <y>0</y>
+      <z>0</z>
+    </axis>
+  </animation>
+  <!-- Y translate -->
+  <animation>
+    <type>translate</type>
+    <object-name>gearR</object-name>
+    <condition>
+      <property>disintegration/parts/gearR/falling</property>
+    </condition>
+    <expression>
+      <prod>
+        <property>sim/multiplay/generic/int[7]</property>
+        <sum>
+          <prod>
+            <!-- standard freefall -->
+            <value>-4.905</value> <!-- -1/2*(g=9.81) -->
+            <sqr>
+              <dif>
+                <property>/sim/time/elapsed-sec</property>
+                <property>disintegration/crashTime</property>
+              </dif>
+            </sqr>
+            <sin>
+              <deg2rad>
+                <property>orientation/roll-deg</property>
+              </deg2rad>
+            </sin>
+            <cos>
+              <deg2rad>
+                <property>orientation/pitch-deg</property>
+              </deg2rad>
+            </cos>
+          </prod>
+          <prod>
+            <!-- custom initial speed -->
+            <property>disintegration/parts/gearR/vY</property> 
+            <dif>
+              <property>/sim/time/elapsed-sec</property>
+              <property>disintegration/crashTime</property>
+            </dif>
+          </prod>
+        </sum>
+      </prod>
+    </expression>
+    <axis>
+      <x></x>
+      <y>-1</y>
+      <z>0</z>
+    </axis>
+  </animation>
+  <!-- Z translate -->
+  <animation>
+    <type>translate</type>
+    <object-name>gearR</object-name>
+    <condition>
+      <property>disintegration/parts/gearR/falling</property>
+    </condition>
+    <expression>
+      <prod>
+        <property>sim/multiplay/generic/int[7]</property>
+        <sum>
+          <prod>
+            <!-- standard freefall -->
+            <value>-4.905</value> <!-- -1/2*(g=9.81) -->
+            <sqr>
+              <dif>
+                <property>/sim/time/elapsed-sec</property>
+                <property>disintegration/crashTime</property>
+              </dif>
+            </sqr>
+            <cos>
+              <deg2rad>
+                <property>orientation/roll-deg</property>
+              </deg2rad>
+            </cos>
+            <cos>
+              <deg2rad>
+                <property>orientation/pitch-deg</property>
+              </deg2rad>
+            </cos>
+          </prod>
+          <prod>
+            <!-- custom initial speed -->
+            <property>disintegration/parts/gearR/vZ</property> 
+            <dif>
+              <property>/sim/time/elapsed-sec</property>
+              <property>disintegration/crashTime</property>
+            </dif>
+          </prod>
+        </sum>
+      </prod>
+    </expression>
+    <axis>
+      <x>0</x>
+      <y>0</y>
+      <z>1</z>
+    </axis>
+  </animation>
+  <animation> <!-- X spin -->
+    <type>spin</type>
+    <object-name>gearR</object-name>
+    <condition>
+      <property>disintegration/parts/gearR/dropped</property>
+    </condition>
+    <expression>
+      <prod>
+        <property>disintegration/parts/gearR/falling</property>
+        <value>4.58</value>
+        <property>disintegration/spinSpeed</property>
+      </prod>
+    </expression>
+    <center> <!-- Must correspond with geometrical center of object -->
+      <x-m>-1.05268</x-m>
+      <y-m> 3.07897</y-m>
+      <z-m>-2.56335</z-m>
+    </center>
+    <axis>
+      <x>1</x>
+      <y>0</y>
+      <z>0</z>
+    </axis>
+  </animation>
+  <animation> <!-- Y spin -->
+    <type>spin</type>
+    <object-name>gearR</object-name>
+    <condition>
+      <property>disintegration/parts/gearR/dropped</property>
+    </condition>
+    <expression>
+      <prod>
+        <property>disintegration/parts/gearR/falling</property>
+        <value>3.87</value>
+        <property>disintegration/spinSpeed</property>
+      </prod>
+    </expression>
+    <center> <!-- Must correspond with geometrical center of object -->
+      <x-m>-1.05268</x-m>
+      <y-m> 3.07898</y-m>
+      <z-m>-2.56335</z-m>
+    </center>
+    <axis>
+      <x>0</x>
+      <y>1</y>
+      <z>0</z>
+    </axis>
+  </animation>
+
+  <animation>
+    <name>wheelN</name>
+    <object-name>roueA</object-name>
+  </animation>
+
+  <animation>
+    <name>gearN</name>
+    <object-name>axeAB</object-name>
+    <object-name>axeAH</object-name>
+    <object-name>articuleAH</object-name>
+    <object-name>articuleAB</object-name>
+  </animation>
+ <!-- X translate -->
+  <animation>
+    <type>translate</type>
+    <object-name>gearN</object-name>
+    <condition>
+      <property>disintegration/parts/gearN/falling</property>
+    </condition>
+    <expression>
+      <prod>
+        <property>sim/multiplay/generic/int[7]</property>
+        <sum>
+          <prod>
+            <!-- standard freefall -->
+            <value>-4.905</value> <!-- -1/2*(g=9.81) -->
+            <sqr>
+              <dif>
+                <property>/sim/time/elapsed-sec</property>
+                <property>disintegration/crashTime</property>
+              </dif>
+            </sqr>
+            <sin>
+              <deg2rad>
+                <property>orientation/pitch-deg</property>
+              </deg2rad>
+            </sin>
+          </prod>
+          <prod>
+            <!-- custom initial speed -->
+            <property>disintegration/parts/gearN/vX</property> 
+            <dif>
+              <property>/sim/time/elapsed-sec</property>
+              <property>disintegration/crashTime</property>
+            </dif>
+          </prod>
+        </sum>
+      </prod>
+    </expression>
+    <axis>
+      <x>-1</x>
+      <y>0</y>
+      <z>0</z>
+    </axis>
+  </animation>
+  <!-- Y translate -->
+  <animation>
+    <type>translate</type>
+    <object-name>gearN</object-name>
+    <condition>
+      <property>disintegration/parts/gearN/falling</property>
+    </condition>
+    <expression>
+      <prod>
+        <property>sim/multiplay/generic/int[7]</property>
+        <sum>
+          <prod>
+            <!-- standard freefall -->
+            <value>-4.905</value> <!-- -1/2*(g=9.81) -->
+            <sqr>
+              <dif>
+                <property>/sim/time/elapsed-sec</property>
+                <property>disintegration/crashTime</property>
+              </dif>
+            </sqr>
+            <sin>
+              <deg2rad>
+                <property>orientation/roll-deg</property>
+              </deg2rad>
+            </sin>
+            <cos>
+              <deg2rad>
+                <property>orientation/pitch-deg</property>
+              </deg2rad>
+            </cos>
+          </prod>
+          <prod>
+            <!-- custom initial speed -->
+            <property>disintegration/parts/gearN/vY</property> 
+            <dif>
+              <property>/sim/time/elapsed-sec</property>
+              <property>disintegration/crashTime</property>
+            </dif>
+          </prod>
+        </sum>
+      </prod>
+    </expression>
+    <axis>
+      <x></x>
+      <y>-1</y>
+      <z>0</z>
+    </axis>
+  </animation>
+  <!-- Z translate -->
+  <animation>
+    <type>translate</type>
+    <object-name>gearN</object-name>
+    <condition>
+      <property>disintegration/parts/gearN/falling</property>
+    </condition>
+    <expression>
+      <prod>
+        <property>sim/multiplay/generic/int[7]</property>
+        <sum>
+          <prod>
+            <!-- standard freefall -->
+            <value>-4.905</value> <!-- -1/2*(g=9.81) -->
+            <sqr>
+              <dif>
+                <property>/sim/time/elapsed-sec</property>
+                <property>disintegration/crashTime</property>
+              </dif>
+            </sqr>
+            <cos>
+              <deg2rad>
+                <property>orientation/roll-deg</property>
+              </deg2rad>
+            </cos>
+            <cos>
+              <deg2rad>
+                <property>orientation/pitch-deg</property>
+              </deg2rad>
+            </cos>
+          </prod>
+          <prod>
+            <!-- custom initial speed -->
+            <property>disintegration/parts/gearN/vZ</property> 
+            <dif>
+              <property>/sim/time/elapsed-sec</property>
+              <property>disintegration/crashTime</property>
+            </dif>
+          </prod>
+        </sum>
+      </prod>
+    </expression>
+    <axis>
+      <x>0</x>
+      <y>0</y>
+      <z>1</z>
+    </axis>
+  </animation>
+  <animation> <!-- X spin -->
+    <type>spin</type>
+    <object-name>gearN</object-name>
+    <condition>
+      <property>disintegration/parts/gearN/dropped</property>
+    </condition>
+    <expression>
+      <prod>
+        <property>disintegration/parts/gearN/falling</property>
+        <value>4.58</value>
+        <property>disintegration/spinSpeed</property>
+      </prod>
+    </expression>
+    <center> <!-- Must correspond with geometrical center of object -->
+      <x-m>-8.67077</x-m>
+      <y-m> 3.07897</y-m>
+      <z-m>-3.27622</z-m>
+    </center>
+    <axis>
+      <x>1</x>
+      <y>0</y>
+      <z>0</z>
+    </axis>
+  </animation>
+  <animation> <!-- Y spin -->
+    <type>spin</type>
+    <object-name>gearN</object-name>
+    <condition>
+      <property>disintegration/parts/gearN/dropped</property>
+    </condition>
+    <expression>
+      <prod>
+        <property>disintegration/parts/gearN/falling</property>
+        <value>3.87</value>
+        <property>disintegration/spinSpeed</property>
+      </prod>
+    </expression>
+    <center> <!-- Must correspond with geometrical center of object -->
+      <x-m>-8.67077</x-m>
+      <y-m> 3.07897</y-m>
+      <z-m>-3.27622</z-m>
+    </center>
+    <axis>
+      <x>0</x>
+      <y>1</y>
+      <z>0</z>
+    </axis>
+  </animation>
 
 </PropertyList>
