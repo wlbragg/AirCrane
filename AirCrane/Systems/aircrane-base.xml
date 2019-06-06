@@ -192,7 +192,7 @@
         <flex-force type="double">0.09</flex-force>
         <!-- factor = rope segment length in M -->
         <factor type="double">0.19</factor>
-        <!-- offset from ground to top of rope in M -->
+        <!-- offset from wheelbase to top of rope in M -->
         <offset type="double">2.87</offset>
         <bendforce type="int">29</bendforce>
         <damping type="double">0.1</damping>
@@ -202,7 +202,7 @@
 
         <coil-flag type="int">1</coil-flag>
         <coil-factor type="int">20.0</coil-factor>
-        <!-- coil-angle type="double">13.3</coil-angle -->
+        <!-- offset from wheelbase to blender 0-Z in ft ? -->
         <coil-angle type="double">13.8</coil-angle>
         <yaw1  type="double">0.0</yaw1>
         <segments-reeled-in type="int">0</segments-reeled-in>
