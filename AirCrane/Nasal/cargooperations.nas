@@ -304,7 +304,7 @@ var cargo_init = func () {
     #var altNode = getprop("/position/altitude-agl-ft");
     var altNode =  aircraft_alt_ft - true_grnd_elev_ft;
     setprop("position/true-agl-ft", altNode);
-    var elvPos = getprop("/position/ground-elev-ft") + getprop("/position/altitude-agl-ft");
+    var elvPos = getprop("/position/ground-elev-ft") + (getprop("/position/altitude-agl-ft")-4.5);
 
     var n_seg_reeled = getprop("/sim/cargo/rope/segments-reeled-in");
     ropeLength = (90 - n_seg_reeled) * seg_length;
@@ -325,7 +325,7 @@ var cargo_closest=0;
         #gui.popupTip("In ranging", 1);
         foreach(var cargoN; props.globals.getNode("/models/cargo", 1).getChildren("cargo")) {
 
-            if (hooked) return;
+            #if (hooked) return;
 
             cargoElevation = cargoN.getNode("elevation-ft").getValue();
             cargoGroundElevFt = geo.elevation(cargoN.getNode("latitude-deg").getValue(), cargoN.getNode("longitude-deg").getValue()) * 3.28;
