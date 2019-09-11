@@ -504,7 +504,7 @@
 
     <flight-recorder>
       <replay-config type="int">0</replay-config>
-      <config n="0" include="Systems/flight-recorder/flight-recorder.xml">
+      <config n="0" include="flight-recorder/flight-recorder.xml">
         <name type="string">Aircrane Flight Recorder</name>
       </config>
     </flight-recorder>
