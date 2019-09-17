@@ -481,13 +481,13 @@ setlistener("/sim/signals/reinit", func {
   crashed = 0;
 });
 
-setlistener("sim/crashed", func {
-  cprint("31;1", "crashed ", cmdarg().getValue());
-  turbine_timer.stop();
-  if (cmdarg().getBoolValue()) {
-    crash(crashed = 1);
-  }
-});
+#setlistener("sim/crashed", func {
+#  cprint("31;1", "crashed ", cmdarg().getValue());
+#  turbine_timer.stop();
+#  if (cmdarg().getBoolValue()) {
+#    crash(crashed = 1);
+#  }
+#});
 
 setlistener("/sim/freeze/replay-state", func {
   cprint("33;1", cmdarg().getValue() ? "replay" : "pause");

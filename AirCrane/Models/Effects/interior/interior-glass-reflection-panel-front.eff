@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<PropertyList>
+    <name>interior-glass-reflection-panel-front</name>
+    <inherits-from>Effects/glass</inherits-from>
+    <parameters>
+        <frost-level>0</frost-level>
+        <fog-level>0</fog-level>
+        <texture n="3">
+	        <type>cubemap</type>
+          <images>
+	            <positive-x>Models/Effects/interior/0004m.png</positive-x>
+              <negative-x>Models/Effects/interior/0002m.png</negative-x>
+              <positive-y>Models/Effects/interior/0001m.png</positive-y>
+              <negative-y>Models/Effects/interior/0003m.png</negative-y>
+              <positive-z>Models/Effects/interior/0006m.png</positive-z>
+              <negative-z>Models/Effects/interior/0005m.png</negative-z>
+          </images>
+	      </texture>
+        <use-reflection type="int">1</use-reflection>
+        <reflection-strength type="float"><use>/environment/aircraft-effects/panel-glass-reflection</use></reflection-strength>
+        <rnorm>0</rnorm>
+        <gsnorm>0</gsnorm>
+      </parameters>
+</PropertyList>

@@ -4,37 +4,27 @@
 
   <path>torque.ac</path>
 
-  <animation>
-    <object-name>fond</object-name>
-    <object-name>face</object-name>
-    <object-name>Lneedle</object-name>
-    <object-name>Rneedle</object-name>
-
-    <object-name>vitre</object-name>
-  </animation>
-
-  <!-- working for Rembrandt -->
   <effect>
-    <inherits-from>Effects/model-transparent</inherits-from>
-    <object-name>vitre</object-name>
+      <inherits-from>Models/Effects/interior/cockpit-interior-shadows</inherits-from>
+      <object-name>face</object-name>
+      <object-name>Case</object-name>
+      <object-name>fasteners</object-name>
   </effect>
-  
-  <animation>
-    <type>material</type>
-    <object-name>face</object-name>
-    <object-name>Lneedle</object-name>
-    <object-name>Rneedle</object-name>
-    <emission>
-      <factor-prop>systems/electrical/outputs/instrument-lights</factor-prop>
-      <red>   0.04 </red>
-      <green> 0.05 </green>
-      <blue>  0.04 </blue>
-    </emission>
-  </animation>
+  <effect>
+      <inherits-from>Models/Effects/interior/cockpit-flashlight</inherits-from>
+      <object-name>Lneedle-c</object-name>
+      <object-name>Rneedle-c</object-name>
+      <object-name>Lneedle-p</object-name>
+      <object-name>Rneedle-p</object-name>
+  </effect>
+  <effect>
+      <inherits-from>Models/Effects/interior/interior-glass-reflection-panel-front</inherits-from>
+      <object-name>glass</object-name>
+  </effect>
 
   <animation>
     <type>rotate</type>
-    <object-name>Lneedle</object-name>
+    <object-name>Lneedle-c</object-name>
     <property>sim/model/aircrane/torque-pct</property>
     <interpolation>
       <entry><ind>   0 </ind><dep> -205 </dep></entry>
@@ -42,15 +32,18 @@
       <entry><ind> 440 </ind><dep>   25 </dep></entry>
     </interpolation>
     <axis>
-      <x> -1 </x>
-      <y>  0 </y>
-      <z>  0 </z>
+        <x1-m>-9.3778</x1-m>
+        <y1-m>0.204602</y1-m> 
+        <z1-m>-1.5697</z1-m>
+        <x2-m>-9.376</x2-m>
+        <y2-m>0.204593</y2-m>
+        <z2-m>-1.56948</z2-m>
     </axis>
   </animation>
 
   <animation>
     <type>rotate</type>
-    <object-name>Rneedle</object-name>
+    <object-name>Rneedle-c</object-name>
     <property>sim/model/aircrane/torque-pct</property>
     <interpolation>
       <entry><ind>   0 </ind><dep> -205 </dep></entry>
@@ -58,9 +51,50 @@
       <entry><ind> 440 </ind><dep>   25 </dep></entry>
     </interpolation>
     <axis>
-      <x> -1 </x>
-      <y>  0 </y>
-      <z>  0 </z>
+        <x1-m>-9.3778</x1-m>
+        <y1-m>0.204602</y1-m> 
+        <z1-m>-1.5697</z1-m>
+        <x2-m>-9.376</x2-m>
+        <y2-m>0.204593</y2-m>
+        <z2-m>-1.56948</z2-m>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>Lneedle-p</object-name>
+    <property>sim/model/aircrane/torque-pct</property>
+    <interpolation>
+      <entry><ind>   0 </ind><dep>-205 </dep></entry>
+      <entry><ind> 220 </ind><dep> -90 </dep></entry>
+      <entry><ind> 440 </ind><dep>  25 </dep></entry>
+    </interpolation>
+    <axis>
+        <x1-m>-9.36232</x1-m>
+        <y1-m>-0.723031</y1-m> 
+        <z1-m>-1.65017</z1-m>
+        <x2-m>-9.36233</x2-m>
+        <y2-m>-0.723031</y2-m>
+        <z2-m>-1.65017</z2-m>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>Rneedle-p</object-name>
+    <property>sim/model/aircrane/torque-pct</property>
+    <interpolation>
+      <entry><ind>   0 </ind><dep>-205 </dep></entry>
+      <entry><ind> 220 </ind><dep> -90 </dep></entry>
+      <entry><ind> 440 </ind><dep>  25 </dep></entry>
+    </interpolation>
+    <axis>
+        <x1-m>-9.36232</x1-m>
+        <y1-m>-0.723031</y1-m> 
+        <z1-m>-1.65017</z1-m>
+        <x2-m>-9.36233</x2-m>
+        <y2-m>-0.723031</y2-m>
+        <z2-m>-1.65017</z2-m>
     </axis>
   </animation>
 

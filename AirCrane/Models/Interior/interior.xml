@@ -5,37 +5,6 @@
   <path>interior.ac</path>
   <texture-path>../../Models</texture-path>
 
-  <!--animation-->
-    <!-- Objets opaques -->
-    <!--object-name>interieur</object-name>
-    <object-name>tour</object-name>
-    <object-name>planchet</object-name>
-    <object-name>reposepieds</object-name>
-    <object-name>accoudoir</object-name>
-    <object-name>barre</object-name>
-    <object-name>gruesiege1</object-name>
-    <object-name>gruesiege2</object-name>
-    <object-name>grueinstr</object-name>
-    <object-name>plaque</object-name>
-    <object-name>cranejoystick</object-name>
-    <object-name>intporteG</object-name>
-    <object-name>intporteD</object-name>
-    <object-name>intreardoor</object-name>
-    <object-name>intstarboarddoor</object-name>
-    <object-name>siegegrue1</object-name>
-    <object-name>siegegrue2</object-name>
-    <object-name>winchcompartment</object-name>
-    <object-name>winch</object-name>
-    <object-name>winchhead</object-name-->
-    
-    <!-- Objets transparents -->
-    <!--object-name>intvitres</object-name>
-    <object-name>intvitresporteG</object-name>
-    <object-name>intvitresporteD</object-name>
-    <object-name>intvitresreardoor</object-name>
-    <object-name>intvitresstarboard</object-name>
-  </animation-->
-
   <!--effect>
     <inherits-from>Models/Effects/interior/sealtexture</inherits-from>
     <object-name>tour</object-name>
@@ -84,13 +53,9 @@
   <model>
     <path>Aircraft/AirCrane/Models/Interior/Panel/panel.xml</path>
     <offsets>
-      <!--x-m> -9.391 </x-m>
-      <y-m>  0.000 </y-m>
-      <z-m> -1.499 </z-m>
-      <pitch-deg> -6 </pitch-deg-->
-      <x-m> 0.000 </x-m>
-      <y-m> 0.000 </y-m>
-      <z-m> 0.000 </z-m>
+      <x-m> 0.0 </x-m>
+      <y-m> 0.0 </y-m>
+      <z-m> 0.0 </z-m>
     </offsets>
   </model>
 
@@ -98,19 +63,19 @@
   <model>
     <path>Aircraft/AirCrane/Models/Interior/pedals.xml</path>
     <offsets>
-      <x-m> 0.000 </x-m>
-      <y-m> 0.000 </y-m>
-      <z-m> 0.000 </z-m>
+      <x-m> 0.0 </x-m>
+      <y-m> 0.0 </y-m>
+      <z-m> 0.0 </z-m>
     </offsets>
   </model>
 
-  <!-- Seatss -->
+  <!-- Seats -->
   <model>
     <path>Aircraft/AirCrane/Models/Interior/seats.xml</path>
     <offsets>
-      <x-m> 0.000 </x-m>
-      <y-m> 0.000 </y-m>
-      <z-m> 0.000 </z-m>
+      <x-m> 0.0 </x-m>
+      <y-m> 0.0 </y-m>
+      <z-m> 0.0 </z-m>
     </offsets>
   </model>
 
@@ -118,9 +83,9 @@
   <model>
     <path>Aircraft/AirCrane/Models/Interior/winch.xml</path>
     <offsets>
-      <x-m> 0.000 </x-m>
-      <y-m> 0.000 </y-m>
-      <z-m> 0.000 </z-m>
+      <x-m> 0.0 </x-m>
+      <y-m> 0.0 </y-m>
+      <z-m> 0.0 </z-m>
     </offsets>
   </model>
 

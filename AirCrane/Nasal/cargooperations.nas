@@ -32,6 +32,11 @@ var cargo29 = {};
 var cargo30 = {};
 var cargo31 = {};
 var cargo32 = {};
+var cargo33 = {};
+var cargo34 = {};
+var cargo35 = {};
+var cargo36 = {};
+var cargo37 = {};
 
 setlistener("/sim/signals/fdm-initialized", func (n) {
 
@@ -116,6 +121,7 @@ setlistener("/sim/signals/fdm-initialized", func (n) {
   cargo34 = place_model("34",   33, "wind-tower",       model_path, 32,    44.04,   1200,44.04, 8.52, lat, lon, alt-90, 0, 0, 0);
   cargo35 = place_model("35",   34, "wind-tower-gen",   model_path, 33,     4.90,   1200, 4.90, 8.52, lat, lon, alt-90, 0, 0, 0);
   cargo36 = place_model("36",   35, "wind-tower-hub",   model_path, 34,    37.83,   1200,60.91, 8.52, lat, lon, alt-90, 0, 0, 0);
+  cargo37 = place_model("37",   36, "ball",             model_path, -1,    0.564,   1200, 0.56,   -1, lat, lon, alt-90, 0, 0, 0);
 
   cargo_init();
 });
@@ -425,6 +431,11 @@ if(cargo_comp == 0) {
                 props.globals.getNode("/models/cargo/" ~ cargoParent ~ "/pitch-deg").setDoubleValue(pitchNode);
                 props.globals.getNode("/models/cargo/" ~ cargoParent ~ "/roll-deg").setDoubleValue(rollNode);
 
+if (stack == -1) {
+    gui.popupTip(cargoName~" ready to drop", 1);
+    stackConnected = 1;
+}
+
             } else {
                 gui.popupTip("Cargo too tall use rope", 3);
                 hooked = 0;
@@ -546,7 +557,23 @@ setprop("/sim/cargo/current-cargo-name", cargoName);
 	              setprop("controls/release-"~cargoName, 1);
                 if (stackConnected)
                     gui.popupTip(cargoName~" Connected", 1);
-            } else {
+            }
+
+
+
+if (stack == -1) {
+    setprop("sim/cargo/cargo-on-hook", 0);
+    setprop("controls/cargo-release", 0);
+    hooked = 0;
+    setprop("sim/cargo/cargo-hook", 0);
+    cargoReleased = 1;
+    setprop("sim/cargo/rope/pulling", 0);
+    setprop("sim/cargo/"~cargoName~"-onhook", 0);
+    setprop("controls/release-"~cargoName, 1);
+}
+
+
+        else {
                 gui.popupTip("Cargo not on ground or out of position", 1);
                 setprop("controls/cargo-release", cargoReleased = 0);
             }
@@ -576,10 +603,18 @@ setprop("/sim/cargo/current-cargo-name", cargoName);
         #y = y * .0000239;
 
         if (!longline) {
+
+if (stack == -1) {
+    setprop("/models/cargo/"~cargoParent~"/elevation-ft", (getprop("/position/altitude-ft") + 13.8) - (cargoHeight * 3.28));
+    setprop("/models/cargo/"~cargoParent~"/heading-deg", headNode);
+    setprop("/models/cargo/"~cargoParent~"/latitude-deg", latNode);
+    setprop("/models/cargo/"~cargoParent~"/longitude-deg", lonNode);
+} else {
             setprop("/models/cargo/"~cargoParent~"/elevation-ft", (geo.elevation(latNode, lonNode) + cargoHeight) * 3.2808);
             setprop("/models/cargo/"~cargoParent~"/heading-deg", headNode);
             setprop("/models/cargo/"~cargoParent~"/latitude-deg", latNode);
             setprop("/models/cargo/"~cargoParent~"/longitude-deg", lonNode);
+}
         } else {
             setprop("/models/cargo/"~cargoParent~"/heading-deg", originalYaw);
             if (stack and stackConnected) {

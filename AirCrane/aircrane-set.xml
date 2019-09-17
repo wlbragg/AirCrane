@@ -6,13 +6,13 @@
 
     <description>AirCrane (Yasim)</description>
     <author>BARANGER Emmanuel (3D), Heiko Schulz (FDM), Wayne Bragg (Utility 3D and Systems, Effects)</author>
-    
     <status>alpha</status>
+    <aircraft-version>2019.2-git</aircraft-version>
+    <minimum-fg-version>2019.2.0</minimum-fg-version>
     <license>GPL v2</license>
-    
     <flight-model>yasim</flight-model>
     <aero>Systems/aircrane-yasim</aero>
-    
+
     <tags>
       <tag>Sikorsky</tag>
       <tag>helicopter</tag>
@@ -23,14 +23,14 @@
       <tag>1990s</tag>
       <tag>2000s</tag>
     </tags>
-    
+
     <rating>
       <FDM type="int">     4 </FDM>
       <systems type="int"> 1 </systems>
       <cockpit type="int"> 1 </cockpit>
       <model type="int">   4 </model>
     </rating>
-    
+
   </sim>
 
 </PropertyList>

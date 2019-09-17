@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+
+  <path>turn.ac</path>
+
+  <effect>
+      <inherits-from>Models/Effects/interior/cockpit-interior-shadows</inherits-from>
+      <object-name>face</object-name>
+      <object-name>case</object-name>
+      <object-name>ballcase</object-name>
+      <object-name>fasteners</object-name>
+      <object-name>center</object-name>
+  </effect>
+  <effect>
+      <inherits-from>Models/Effects/interior/cockpit-flashlight</inherits-from>
+      <object-name>ball-p</object-name>
+      <object-name>ball-c</object-name>
+      <object-name>needle-p</object-name>
+      <object-name>needle-c</object-name>
+  </effect>
+  <effect>
+      <inherits-from>Models/Effects/interior/interior-glass-reflection-panel-front</inherits-from>
+      <object-name>glass</object-name>
+      <object-name>ballglass</object-name>
+  </effect>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>needle-c</object-name>
+    <property>instrumentation/turn-indicator/indicated-turn-rate</property>
+    <factor> 20 </factor>
+    <axis>
+        <x1-m>-9.3737</x1-m>
+        <y1-m> 0.731011</y1-m> 
+        <z1-m>-1.66254</z1-m>
+        <x2-m>-9.37491</x2-m>
+        <y2-m> 0.731009</y2-m>
+        <z2-m>-1.66267</z2-m>
+    </axis>
+  </animation>
+  <animation>
+    <type>rotate</type>
+    <object-name>needle-p</object-name>
+    <property>instrumentation/turn-indicator/indicated-turn-rate</property>
+    <factor> 20 </factor>
+    <axis>
+        <x1-m>-9.37466</x1-m>
+        <y1-m>-0.459751</y1-m> 
+        <z1-m>-1.64946</z1-m>
+        <x2-m>-9.37588</x2-m>
+        <y2-m>-0.459753</y2-m>
+        <z2-m>-1.64959</z2-m>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>ball-c</object-name>
+    <property>instrumentation/slip-skid-ball/indicated-slip-skid</property>
+    <factor>16</factor>
+    <min-deg> -19 </min-deg>
+    <max-deg>  19 </max-deg>
+    <axis>
+        <x1-m>-9.38156</x1-m>
+        <y1-m> 0.731011</y1-m> 
+        <z1-m>-1.58795</z1-m>
+        <x2-m>-9.37762</x2-m>
+        <y2-m> 0.731011</y2-m>
+        <z2-m>-1.58753</z2-m>
+    </axis>
+  </animation>
+  <animation>
+    <type>rotate</type>
+    <object-name>ball-p</object-name>
+    <property>instrumentation/slip-skid-ball/indicated-slip-skid</property>
+    <factor>16</factor>
+    <min-deg> -19 </min-deg>
+    <max-deg>  19 </max-deg>
+    <axis>
+        <x1-m>-9.38301</x1-m>
+        <y1-m>-0.459764</y1-m> 
+        <z1-m>-1.57455</z1-m>
+        <x2-m>-9.37818</x2-m>
+        <y2-m>-0.459764</y2-m>
+        <z2-m>-1.57403</z2-m>
+    </axis>
+  </animation>
+
+</PropertyList>
+

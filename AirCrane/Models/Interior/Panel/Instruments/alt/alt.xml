@@ -4,177 +4,300 @@
 
   <path>alt.ac</path>
 
-  <animation>
-    <object-name>fond</object-name>
-    <object-name>face</object-name>
-    <object-name>visses</object-name>
-    <object-name>needle100</object-name>
-    <object-name>needle1000</object-name>
-    <object-name>needle10000</object-name>
-    <object-name>inhg</object-name>
-    <object-name>inhg.up</object-name>
-    <object-name>inhg.dn</object-name>
-    <object-name>onhgknob</object-name>
-
-    <object-name>vitre</object-name>
-  </animation>
-
-  <!-- working for Rembrandt -->
   <effect>
-    <inherits-from>Effects/model-transparent</inherits-from>
-    <object-name>vitre</object-name>
+      <inherits-from>Models/Effects/interior/cockpit-interior-shadows</inherits-from>
+      <object-name>Face</object-name>
+      <object-name>Case</object-name>
+      <object-name>fasteners</object-name>
   </effect>
-  
-  <animation>
-    <type>material</type>
-    <object-name>face</object-name>
-    <object-name>needle100</object-name>
-    <object-name>needle1000</object-name>
-    <object-name>needle10000</object-name>
-    <object-name>inhg</object-name>
-    <object-name>onhgknob</object-name>
-    <emission>
-      <factor-prop>systems/electrical/outputs/instrument-lights</factor-prop>
-      <red>   0.04 </red>
-      <green> 0.05 </green>
-      <blue>  0.04 </blue>
-    </emission>
-  </animation>
+  <effect>
+      <inherits-from>Models/Effects/interior/cockpit-flashlight</inherits-from>
+      <object-name>inhg-p</object-name>
+      <object-name>Needle10000-p</object-name>
+      <object-name>Needle1000-p</object-name>
+      <object-name>Needle100-p</object-name>
+      <object-name>disk-p</object-name>
+      <object-name>inhg-c</object-name>
+      <object-name>Needle10000-c</object-name>
+      <object-name>Needle1000-c</object-name>
+      <object-name>Needle100-c</object-name>
+      <object-name>disk-c</object-name>
+  </effect>
+  <effect>
+      <inherits-from>Models/Effects/interior/interior-glass-reflection-panel-front</inherits-from>
+      <object-name>glass</object-name>
+  </effect>
 
-  <animation>
-    <type>rotate</type>
-    <object-name>needle100</object-name>
-    <property>instrumentation/altimeter/indicated-altitude-ft</property>
-    <factor> 0.36 </factor>
-    <axis>
-      <x> -1 </x>
-      <y>  0 </y>
-      <z>  0 </z>
-    </axis>
-  </animation>
+    <animation>
+        <type>rotate</type>
+        <object-name>Needle100-c</object-name>
+        <property>/instrumentation/altimeter/indicated-altitude-ft</property>
+        <factor>0.36</factor>
+        <axis>
+            <x1-m> -9.39495 </x1-m>
+            <y1-m>  0.726943 </y1-m> 
+            <z1-m> -1.45299 </z1-m>
+            <x2-m> -9.39519 </x2-m>
+            <y2-m>  0.726945 </y2-m>
+            <z2-m> -1.45301 </z2-m>
+        </axis>
+    </animation>
 
-  <animation>
-    <type>rotate</type>
-    <object-name>needle1000</object-name>
-    <property>instrumentation/altimeter/indicated-altitude-ft</property>
-    <factor> 0.036 </factor>
-    <axis>
-      <x> -1 </x>
-      <y>  0 </y>
-      <z>  0 </z>
-    </axis>
-  </animation>
+    <animation>
+        <type>rotate</type>
+        <object-name>Needle1000-c</object-name>
+        <property>/instrumentation/altimeter/indicated-altitude-ft</property>
+        <factor>0.036</factor>
+        <axis>
+            <x1-m> -9.39495 </x1-m>
+            <y1-m>  0.726943 </y1-m> 
+            <z1-m> -1.45299 </z1-m>
+            <x2-m> -9.39519 </x2-m>
+            <y2-m>  0.726945 </y2-m>
+            <z2-m> -1.45301 </z2-m>
+        </axis>
+    </animation>
 
-  <animation>
-    <type>rotate</type>
-    <object-name>needle10000</object-name>
-    <property>instrumentation/altimeter/indicated-altitude-ft</property>
-    <factor> 0.0036 </factor>
-    <axis>
-      <x> -1 </x>
-      <y>  0 </y>
-      <z>  0 </z>
-    </axis>
-  </animation>
+    <animation>
+        <type>rotate</type>
+        <object-name>Needle10000-c</object-name>
+        <property>/instrumentation/altimeter/indicated-altitude-ft</property>
+        <factor>0.0036</factor>
+        <axis>
+            <x1-m> -9.39495 </x1-m>
+            <y1-m>  0.726943 </y1-m> 
+            <z1-m> -1.45299 </z1-m>
+            <x2-m> -9.39519 </x2-m>
+            <y2-m>  0.726945 </y2-m>
+            <z2-m> -1.45301 </z2-m>
+        </axis>
+    </animation>
 
-  <animation>
-    <type>texrotate</type>
-    <object-name>inhg</object-name>
-    <property>instrumentation/altimeter/setting-inhg</property>
-    <interpolation>
-      <entry><ind>27.90</ind><dep>0.0</dep></entry>
-      <entry><ind>28.0</ind><dep>9.35</dep></entry>
-      <entry><ind>28.5</ind><dep>59.0</dep></entry>
-      <entry><ind>29.0</ind><dep>109.0</dep></entry>
-      <entry><ind>29.5</ind><dep>159.5</dep></entry>
-      <entry><ind>29.9</ind><dep>200.0</dep></entry>
-      <entry><ind>30.0</ind><dep>210.0</dep></entry>
-      <entry><ind>30.5</ind><dep>261.0</dep></entry>
-      <entry><ind>31.0</ind><dep>310.0</dep></entry>
-      <entry><ind>31.4</ind><dep>350.0</dep></entry>
-    </interpolation>
-    <center>
-      <x> 0.25 </x>
-      <y> 0.25 </y>
-      <z> 0.25 </z>
-    </center>
-    <axis>
-      <x>  0 </x>
-      <y>  0 </y>
-      <z> -1 </z>
-    </axis>
-  </animation>
+    <animation>
+        <type>texrotate</type>
+        <object-name>inhg-c</object-name>
+        <property>/instrumentation/altimeter/setting-inhg</property>
+        <interpolation>
+            <entry>
+                <ind>27.90</ind>
+                <dep>0.0</dep>
+            </entry>
+            <entry>
+                <ind>28.0</ind>
+                <dep>9.35</dep>
+            </entry>
+            <entry>
+                <ind>28.5</ind>
+                <dep>59.0</dep>
+            </entry>
+            <entry>
+                <ind>29.0</ind>
+                <dep>109.0</dep>
+            </entry>
+            <entry>
+                <ind>29.5</ind>
+                <dep>159.5</dep>
+            </entry>
+            <entry>
+                <ind>29.9</ind>
+                <dep>200.0</dep>
+            </entry>
+            <entry>
+                <ind>30.0</ind>
+                <dep>210.0</dep>
+            </entry>
+            <entry>
+                <ind>30.5</ind>
+                <dep>261.0</dep>
+            </entry>
+            <entry>
+                <ind>31.0</ind>
+                <dep>310.0</dep>
+            </entry>
+            <entry>
+                <ind>31.4</ind>
+                <dep>350.0</dep>
+            </entry>
+        </interpolation>
+        <center>
+            <x>0.25</x>`
+            <y>0.25</y>
+        </center>
+        <axis>
+            <x>0</x>
+            <y>0</y>
+            <z>-1</z>
+        </axis>
+    </animation>
 
-  <animation>
-    <type>pick</type>
-    <object-name>inhg.dn</object-name>
-    <visible>0</visible>
-    <action>
-      <button>0</button>
-      <repeatable>true</repeatable>
-      <binding>
-      <command>property-adjust</command>
-      <property>instrumentation/altimeter/setting-inhg</property>
-      <step>-0.01</step>
-      <min>27.90</min>
-      <max>31.40</max>
-      <wrap>0</wrap>
-    </binding>
-    </action>
-  </animation>
+    <!-- Altimeter -->
+    <animation>
+        <type>knob</type>
+        <object-name>disk-c</object-name>
+        <property>/instrumentation/altimeter/setting-inhg</property>
+        <factor>-800</factor>
+        <axis>
+            <x1-m>-9.3709  </x1-m>
+            <y1-m> 0.687839</y1-m> 
+            <z1-m>-1.48741 </z1-m>
+            <x2-m>-9.39793 </x2-m>
+            <y2-m> 0.688034</y2-m>
+            <z2-m>-1.49041 </z2-m>
+        </axis>
+        <action>
+            <binding>
+                <command>property-adjust</command>
+                <property>/instrumentation/altimeter/setting-inhg</property>
+                <factor>0.01</factor>
+                <min>26.0</min>
+                <max>33.0</max>
+                <wrap>false</wrap>
+            </binding>
+        </action>
+        <hovered>
+            <binding>
+                <command>set-tooltip</command>
+                <tooltip-id>alt-setting</tooltip-id>
+                <label>Altimeter In Hg: %5.2f</label>
+                <property>instrumentation/altimeter/setting-inhg</property>
+            </binding>
+        </hovered>
+    </animation>
 
-  <animation>
-    <type>pick</type>
-    <object-name>inhg.dn</object-name>
-    <visible>0</visible>
-    <action>
-      <button>1</button>
-      <repeatable>true</repeatable>
-      <binding>
-      <command>property-adjust</command>
-      <property>instrumentation/altimeter/setting-inhg</property>
-      <step>-0.1</step>
-      <min>27.90</min>
-      <max>31.40</max>
-      <wrap>0</wrap>
-    </binding>
-    </action>
-  </animation>
+    <animation>
+        <type>rotate</type>
+        <object-name>Needle100-p</object-name>
+        <property>/instrumentation/altimeter/indicated-altitude-ft</property>
+        <factor>-0.36</factor>
+        <axis>
+            <x1-m>-9.39516</x1-m>
+            <y1-m>-0.460086</y1-m> 
+            <z1-m>-1.43622</z1-m>
+            <x2-m>-9.39266</x2-m>
+            <y2-m>-0.460104</y2-m>
+            <z2-m>-1.43594</z2-m>
+        </axis>
+    </animation>
 
-  <animation>
-    <type>pick</type>
-    <object-name>inhg.up</object-name>
-    <visible>0</visible>
-    <action>
-      <button>0</button>
-      <repeatable>true</repeatable>
-      <binding>
-      <command>property-adjust</command>
-      <property>instrumentation/altimeter/setting-inhg</property>
-      <step>0.01</step>
-      <min>27.90</min>
-      <max>31.40</max>
-      <wrap>0</wrap>
-    </binding>
-    </action>
-  </animation>
+    <animation>
+        <type>rotate</type>
+        <object-name>Needle1000-p</object-name>
+        <property>/instrumentation/altimeter/indicated-altitude-ft</property>
+        <factor>-0.036</factor>
+        <axis>
+            <x1-m>-9.39516</x1-m>
+            <y1-m>-0.460086</y1-m> 
+            <z1-m>-1.43622</z1-m>
+            <x2-m>-9.39266</x2-m>
+            <y2-m>-0.460104</y2-m>
+            <z2-m>-1.43594</z2-m>
+        </axis>
+    </animation>
 
-  <animation>
-    <type>pick</type>
-    <object-name>inhg.up</object-name>
-    <visible>0</visible>
-    <action>
-      <button>1</button>
-      <repeatable>true</repeatable>
-      <binding>
-      <command>property-adjust</command>
-      <property>instrumentation/altimeter/setting-inhg</property>
-      <step>0.1</step>
-      <min>27.90</min>
-      <max>31.40</max>
-      <wrap>0</wrap>
-    </binding>
-    </action>
-  </animation>
+    <animation>
+        <type>rotate</type>
+        <object-name>Needle10000-p</object-name>
+        <property>/instrumentation/altimeter/indicated-altitude-ft</property>
+        <factor>-0.0036</factor>
+        <axis>
+            <x1-m>-9.39516</x1-m>
+            <y1-m>-0.460086</y1-m> 
+            <z1-m>-1.43622</z1-m>
+            <x2-m>-9.39266</x2-m>
+            <y2-m>-0.460104</y2-m>
+            <z2-m>-1.43594</z2-m>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>texrotate</type>
+        <object-name>inhg-p</object-name>
+        <property>/instrumentation/altimeter/setting-inhg</property>
+        <interpolation>
+            <entry>
+                <ind>27.90</ind>
+                <dep>0.0</dep>
+            </entry>
+            <entry>
+                <ind>28.0</ind>
+                <dep>9.35</dep>
+            </entry>
+            <entry>
+                <ind>28.5</ind>
+                <dep>59.0</dep>
+            </entry>
+            <entry>
+                <ind>29.0</ind>
+                <dep>109.0</dep>
+            </entry>
+            <entry>
+                <ind>29.5</ind>
+                <dep>159.5</dep>
+            </entry>
+            <entry>
+                <ind>29.9</ind>
+                <dep>200.0</dep>
+            </entry>
+            <entry>
+                <ind>30.0</ind>
+                <dep>210.0</dep>
+            </entry>
+            <entry>
+                <ind>30.5</ind>
+                <dep>261.0</dep>
+            </entry>
+            <entry>
+                <ind>31.0</ind>
+                <dep>310.0</dep>
+            </entry>
+            <entry>
+                <ind>31.4</ind>
+                <dep>350.0</dep>
+            </entry>
+        </interpolation>
+        <center>
+            <x>0.25</x>`
+            <y>0.25</y>
+        </center>
+        <axis>
+            <x>0</x>
+            <y>0</y>
+            <z>-1</z>
+        </axis>
+    </animation>
+
+    <!-- Altimeter -->
+    <animation>
+        <type>knob</type>
+        <object-name>disk-p</object-name>
+        <property>/instrumentation/altimeter/setting-inhg</property>
+        <factor>800</factor>
+        <axis>
+            <x1-m>-9.3955</x1-m>
+            <y1-m>-0.498309</y1-m> 
+            <z1-m>-1.47541</z1-m>
+            <x2-m>-9.36847</x2-m>
+            <y2-m>-0.498504</y2-m>
+            <z2-m>-1.47242</z2-m>
+        </axis>
+        <action>
+            <binding>
+                <command>property-adjust</command>
+                <property>/instrumentation/altimeter/setting-inhg</property>
+                <factor>0.01</factor>
+                <min>26.0</min>
+                <max>33.0</max>
+                <wrap>false</wrap>
+            </binding>
+        </action>
+        <hovered>
+            <binding>
+                <command>set-tooltip</command>
+                <tooltip-id>alt-setting</tooltip-id>
+                <label>Altimeter In Hg: %5.2f</label>
+                <property>instrumentation/altimeter/setting-inhg</property>
+            </binding>
+        </hovered>
+    </animation>
 
 </PropertyList>
