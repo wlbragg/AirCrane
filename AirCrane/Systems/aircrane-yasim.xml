@@ -150,7 +150,8 @@
     max-power-engine="4200"
     yasimliftfactor="110"
   -->
-  <rotorgear max-power-engine="7100"
+
+  <rotorgear max-power-engine="8400"
              max-power-rotor-brake="185"
              rotorgear-friction="3.7"
              engine-prop-factor="0.01"
@@ -201,7 +202,8 @@
         spring="3"
         damp="1.0"
         sfric="1.5"
-        dfric="0.8">
+        dfric="0.8"
+        stiction="1">
         <control-input  control="STEER" axis="/controls/flight/rudder" square="true" src0="-1" dst0="-1.0" src1="1" dst1="1.0"/>
         <control-output control="STEER" prop="controls/gear/steering"/>
   </gear>
@@ -225,6 +227,7 @@
         damp="1.0"
         sfric="1.5"
         dfric="0.8"
+        stiction="1"
         initial-load="1">
         <control-input control="BRAKE" axis="/controls/gear/brake-right"/>
         <control-input control="BRAKE" axis="/controls/gear/brake-parking"/>
@@ -236,13 +239,16 @@
         compression="0.01"
         spring="0.1"
         sfric="1"
-        dfric="1">
+        dfric="1"
+        stiction="1">
   </gear>
 
-  <tank x=" 2.6" y=" 0.7" z="-0.31" capacity="1351"/>
-  <tank x="-2.6" y="-0.7" z="-0.31" capacity="734"/>
-  <tank x=" 2.6" y=" 0.0" z="-0.31" capacity="851"/>
-  <tank x="-2.6" y=" 0.0" z="-0.31" capacity="904"/>
+
+  <tank x="-2.3" y=" 0.0" z="-0.89" capacity="431"/>
+  <tank x="-3.0" y=" 0.0" z="-0.89" capacity="431"/>
+  <tank x=" 0.0" y=" 0.0" z="-0.89" capacity="431"/>
+  <tank x="-0.7" y=" 0.0" z="-0.89" capacity="431"/>
+  <tank x=" 0.7" y=" 0.0" z="-0.89" capacity="431"/>
 
   <!-- <ballast x="-0.7" y="0.0" z="-1.0" mass="450"/> -->
 

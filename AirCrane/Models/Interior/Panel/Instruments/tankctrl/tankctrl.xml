@@ -4,196 +4,6 @@
 
   <path>tankctrl.ac</path>
 
-  <animation>
-    <!-- Objets opaques -->
-    <object-name>knob-foam</object-name>
-    <object-name>knob-quantity</object-name>
-    <object-name>knob-coverage</object-name>
-    <object-name>indicate1</object-name>
-    <object-name>indicate2</object-name>
-    <object-name>indicate3</object-name>
-    <object-name>indicate4</object-name>
-    <object-name>indicate5</object-name>
-    <object-name>indicator-foam</object-name>
-    <object-name>indicator-go</object-name>
-    <object-name>indicator-hyd-snorkel</object-name>
-    <object-name>indicat-low-hyd-pres</object-name>
-    <object-name>indicator-test</object-name>
-    <object-name>indicator-foam.001</object-name>
-    <object-name>indicator-go.001</object-name>
-    <object-name>indicator-hyd-snorkel.001</object-name>
-    <object-name>indicat-low-hyd-pres.001</object-name>
-    <object-name>indicator-test.001</object-name>
-    <object-name>toggle1</object-name>
-    <object-name>toggle2</object-name>
-    <object-name>toggle3</object-name>
-    <object-name>toggle4</object-name>
-    <object-name>toggle-arm</object-name>
-    <object-name>toggle-foam</object-name>
-    <object-name>toggle-hyd-snorkel</object-name>
-    <object-name>toggle-sea-snorkel</object-name>
-    <object-name>visses.004</object-name>
-    <object-name>cannon-pitch-glass-bg</object-name>
-    <object-name>snorkel-depth-glass-bg</object-name>
-    <object-name>tank-volume-glass-bg</object-name>
-    <object-name>tank-weight-glass-bg</object-name>
-    <object-name>Safe</object-name>
-    <object-name>25p</object-name>
-    <object-name>50p</object-name>
-    <object-name>75p</object-name>
-    <object-name>100p</object-name>
-    <object-name>FCZero</object-name>
-    <object-name>FCPointFive</object-name>
-    <object-name>FCOne</object-name>
-    <object-name>FCOnePointFive</object-name>
-    <object-name>FCTwo</object-name>
-    <object-name>FCTwoPointFive</object-name>
-    <object-name>FCThree</object-name>
-    <object-name>FCThreePointFive</object-name>
-    <object-name>FCFour</object-name>
-    <object-name>One</object-name>
-    <object-name>Two</object-name>
-    <object-name>Three</object-name>
-    <object-name>Four</object-name>
-    <object-name>Five</object-name>
-    <object-name>Six</object-name>
-    <object-name>Seven</object-name>
-    <object-name>Eight</object-name>
-    <object-name>Salvo</object-name>
-    <object-name>Test</object-name>
-    <object-name>Quantity</object-name>
-    <object-name>Coverage</object-name>
-    <object-name>Level</object-name>
-    <object-name>FoamConcentrate</object-name>
-    <object-name>Go</object-name>
-    <object-name>LowHyd</object-name>
-    <object-name>Pressure</object-name>
-    <object-name>Arm</object-name>
-    <object-name>HydSnorkelPtr</object-name>
-    <object-name>Hyd</object-name>
-    <object-name>Snorkel</object-name>
-    <object-name>Release</object-name>
-    <object-name>On</object-name>
-    <object-name>Off</object-name>
-    <object-name>FoamPtr</object-name>
-    <object-name>Foam</object-name>
-    <object-name>Sea</object-name>
-    <object-name>SSnorkel</object-name>
-    <object-name>Extend</object-name>
-    <object-name>Retract</object-name>
-    <object-name>togglecannonpitch</object-name>
-    <object-name>toggle-hyd-snorkel</object-name>
-    <object-name>CannonPitch</object-name>
-    <object-name>TankVolume</object-name>
-    <object-name>FillRange</object-name>
-    <object-name>PayloadWeight</object-name>
-    <object-name>screws</object-name>
-    <object-name>panel-tnkctrl</object-name>
-    <object-name>Text</object-name>
-    <object-name>screws.001</object-name>
-    <object-name>panel-tnkctrl.001</object-name>
-    <object-name>screws.002</object-name>
-    <object-name>panel-tnkctrl.002</object-name>
-  </animation>
-
-  <animation>
-    <type>material</type>
-    <object-name>knob-foam</object-name>
-    <object-name>knob-quantity</object-name>
-    <object-name>knob-coverage</object-name>
-    <object-name>indicate1</object-name>
-    <object-name>indicate2</object-name>
-    <object-name>indicate3</object-name>
-    <object-name>indicate4</object-name>
-    <object-name>indicate5</object-name>
-    <object-name>indicator-foam</object-name>
-    <object-name>indicator-go</object-name>
-    <object-name>indicator-hyd-snorkel</object-name>
-    <object-name>indicator-low-hyd-pres</object-name>
-    <object-name>indicator-test</object-name>
-    <object-name>indicator-foam.001</object-name>
-    <object-name>indicator-go.001</object-name>
-    <object-name>indicator-hyd-snorkel.001</object-name>
-    <object-name>indicat-low-hyd-pres.001</object-name>
-    <object-name>indicator-test.001</object-name>
-    <object-name>toggle1</object-name>
-    <object-name>toggle2</object-name>
-    <object-name>toggle3</object-name>
-    <object-name>toggle4</object-name>
-    <object-name>toggle-arm</object-name>
-    <object-name>toggle-foam</object-name>
-    <object-name>toggle-hyd-snorkel</object-name>
-    <object-name>toggle-sea-snorkel</object-name>
-    <object-name>visses.004</object-name>
-    <object-name>cannon-pitch-glass-bg</object-name>
-    <object-name>snorkel-depth-glass-bg</object-name>
-    <object-name>tank-volume-glass-bg</object-name>
-    <object-name>tank-weight-glass-bg</object-name>
-    <object-name>Safe</object-name>
-    <object-name>25p</object-name>
-    <object-name>50p</object-name>
-    <object-name>75p</object-name>
-    <object-name>100p</object-name>
-    <object-name>FCZero</object-name>
-    <object-name>FCPointFive</object-name>
-    <object-name>FCOne</object-name>
-    <object-name>FCOnePointFive</object-name>
-    <object-name>FCTwo</object-name>
-    <object-name>FCTwoPointFive</object-name>
-    <object-name>FCThree</object-name>
-    <object-name>FCThreePointFive</object-name>
-    <object-name>FCFour</object-name>
-    <object-name>One</object-name>
-    <object-name>Two</object-name>
-    <object-name>Three</object-name>
-    <object-name>Four</object-name>
-    <object-name>Five</object-name>
-    <object-name>Six</object-name>
-    <object-name>Seven</object-name>
-    <object-name>Eight</object-name>
-    <object-name>Salvo</object-name>
-    <object-name>Test</object-name>
-    <object-name>Quantity</object-name>
-    <object-name>Coverage</object-name>
-    <object-name>Level</object-name>
-    <object-name>FoamConcentrate</object-name>
-    <object-name>Go</object-name>
-    <object-name>LowHyd</object-name>
-    <object-name>Pressure</object-name>
-    <object-name>Arm</object-name>
-    <object-name>HydSnorkelPtr</object-name>
-    <object-name>Hyd</object-name>
-    <object-name>Snorkel</object-name>
-    <object-name>Release</object-name>
-    <object-name>On</object-name>
-    <object-name>Off</object-name>
-    <object-name>FoamPtr</object-name>
-    <object-name>Foam</object-name>
-    <object-name>Sea</object-name>
-    <object-name>SSnorkel</object-name>
-    <object-name>Extend</object-name>
-    <object-name>Retract</object-name>
-    <object-name>togglecannonpitch</object-name>
-    <object-name>togglecannonpitch1</object-name>
-    <object-name>CannonPitch</object-name>
-    <object-name>TankVolume</object-name>
-    <object-name>FillRange</object-name>
-    <object-name>PayloadWeight</object-name>
-    <object-name>screws</object-name>
-    <object-name>panel-tnkctrl</object-name>
-    <object-name>Text</object-name>
-    <object-name>screws.001</object-name>
-    <object-name>panel-tnkctrl.001</object-name>
-    <object-name>screws.002</object-name>
-    <object-name>panel-tnkctrl.002</object-name>
-    <emission>
-      <factor-prop>systems/electrical/outputs/instrument-lights</factor-prop>
-      <red>   0.50 </red>
-      <green> 0.25 </green>
-      <blue>  0.25 </blue>
-    </emission>
-  </animation>
-
   <!-- ALS Interior Shadows -->
   <effect>
     <inherits-from>Models/Effects/interior/cockpit-interior-shadows</inherits-from>
@@ -215,6 +25,12 @@
     <object-name>indicator-hyd-snorkel.001</object-name>
     <object-name>indicat-low-hyd-pres.001</object-name>
     <object-name>indicator-test.001</object-name>
+    <object-name>sysready</object-name>
+    <object-name>sysready.001</object-name>
+    <object-name>sysreadybase</object-name>
+    <object-name>tankpumpot</object-name>
+    <object-name>tankpumpot.001</object-name>
+    <object-name>tankpumpotbase</object-name>
     <object-name>toggle1</object-name>
     <object-name>toggle2</object-name>
     <object-name>toggle3</object-name>
@@ -223,71 +39,64 @@
     <object-name>toggle-foam</object-name>
     <object-name>toggle-hyd-snorkel</object-name>
     <object-name>toggle-sea-snorkel</object-name>
-    <object-name>visses.004</object-name>
     <object-name>togglecannonpitch</object-name>
-    <object-name>togglecannonpitch1</object-name>
+    <object-name>togglecannonpitchbase</object-name>
     <object-name>cannon-pitch-glass-bg</object-name>
     <object-name>snorkel-depth-glass-bg</object-name>
     <object-name>tank-volume-glass-bg</object-name>
     <object-name>tank-weight-glass-bg</object-name>
-    <!--object-name>Safe</object-name>
-    <object-name>25p</object-name>
-    <object-name>50p</object-name>
-    <object-name>75p</object-name>
-    <object-name>100p</object-name>
-    <object-name>FCZero</object-name>
-    <object-name>FCPointFive</object-name>
-    <object-name>FCOne</object-name>
-    <object-name>FCOnePointFive</object-name>
-    <object-name>FCTwo</object-name>
-    <object-name>FCTwoPointFive</object-name>
-    <object-name>FCThree</object-name>
-    <object-name>FCThreePointFive</object-name>
-    <object-name>FCFour</object-name>
-    <object-name>One</object-name>
-    <object-name>Two</object-name>
-    <object-name>Three</object-name>
-    <object-name>Four</object-name>
-    <object-name>Five</object-name>
-    <object-name>Six</object-name>
-    <object-name>Seven</object-name>
-    <object-name>Eight</object-name>
-    <object-name>Salvo</object-name>
-    <object-name>Test</object-name>
-    <object-name>Quantity</object-name>
-    <object-name>Coverage</object-name>
-    <object-name>Level</object-name>
-    <object-name>FoamConcentrate</object-name>
-    <object-name>Go</object-name>
-    <object-name>LowHyd</object-name>
-    <object-name>Pressure</object-name>
-    <object-name>Arm</object-name>
-    <object-name>HydSnorkelPtr</object-name>
-    <object-name>Hyd</object-name>
-    <object-name>Snorkel</object-name>
-    <object-name>Release</object-name>
-    <object-name>On</object-name>
-    <object-name>Off</object-name>
-    <object-name>FoamPtr</object-name>
-    <object-name>Foam</object-name>
-    <object-name>Sea</object-name>
-    <object-name>SSnorkel</object-name>
-    <object-name>Extend</object-name>
-    <object-name>Retract</object-name-->
-    <object-name>togglecannonpitch</object-name>
-    <object-name>togglecannonpitch1</object-name>
     <object-name>CannonPitch</object-name>
     <object-name>TankVolume</object-name>
     <object-name>FillRange</object-name>
     <object-name>PayloadWeight</object-name>
-    <object-name>screws</object-name>
-    <object-name>panel-tnkctrl</object-name>
     <object-name>Text</object-name>
-    <object-name>screws.001</object-name>
-    <object-name>panel-tnkctrl.001</object-name>
-    <object-name>screws.002</object-name>
-    <object-name>panel-tnkctrl.002</object-name>
+    <object-name>plate</object-name>
+    <object-name>case</object-name>
   </effect>
+
+  <effect>
+      <inherits-from>Models/Effects/interior/interior-glass-reflection-panel-front</inherits-from>
+      <object-name>glass</object-name>
+  </effect>
+
+  <animation>
+    <type>select</type>
+    <object-name>sysready</object-name>
+    <condition>
+      <greater-than>
+        <property>sim/weight[3]/weight-lb</property>
+        <value>0</value>
+      </greater-than>
+    </condition>
+  </animation>
+  <animation>
+    <type>select</type>
+    <object-name>sysready.001</object-name>
+    <condition>
+      <less-than>
+        <property>sim/weight[3]/weight-lb</property>
+        <value>1</value>
+      </less-than>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>tankpumpot</object-name>
+    <condition>
+        <property>sim/model/aircrane/tank/pump/overtemp</property>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>tankpumpot.001</object-name>
+    <condition>
+        <not>
+            <property>sim/model/aircrane/tank/pump/overtemp</property>
+        </not>
+    </condition>
+  </animation>
 
   <animation>
     <type>select</type>
@@ -413,1065 +222,6 @@
       </and>
     </condition>
   </animation>
- 
-  <!--text>
-    <name>Safe</name>
-    <type type="string">literal</type>
-    <text type="string">SAFE</text>
-    <draw-text type="bool">true</draw-text>
-    <font>Helvetica.txf</font>
-    <character-size type="double">0.005</character-size>
-    <character-aspect-ratio type="double">1.0</character-aspect-ratio>
-    <max-height>0.2</max-height>
-    <max-width>0.07</max-width>
-    <font-resolution>
-      <width type="int">32</width>
-      <height type="int">32</height>
-    </font-resolution>
-    <alignment>center-center</alignment>
-    <offsets>
-    <pitch-deg>-8</pitch-deg>
-    <heading-deg>180</heading-deg>
-    <roll-deg>0</roll-deg>
-      <x-m>-8.64114</x-m>
-      <y-m>-0.14621</y-m>
-      <z-m>-1.84642</z-m>
-    </offsets>
-  </text>
-  <text>
-    <name>25p</name>
-    <type type="string">literal</type>
-    <text type="string">25%</text>
-    <draw-text type="bool">true</draw-text>
-    <font>Helvetica.txf</font>
-    <character-size type="double">0.005</character-size>
-    <character-aspect-ratio type="double">1.0</character-aspect-ratio>
-    <max-height>0.2</max-height>
-    <max-width>0.07</max-width>
-    <font-resolution>
-      <width type="int">32</width>
-      <height type="int">32</height>
-    </font-resolution>
-    <alignment>center-center</alignment>
-    <offsets>
-    <pitch-deg>-5</pitch-deg>
-    <heading-deg>135</heading-deg>
-    <roll-deg>4</roll-deg>
-      <x-m>-8.65801</x-m>
-      <y-m>-0.13938</y-m>
-      <z-m>-1.843</z-m>
-    </offsets>
-  </text>
-  <text>
-    <name>50p</name>
-    <type type="string">literal</type>
-    <text type="string">50%</text>
-    <draw-text type="bool">true</draw-text>
-    <font>Helvetica.txf</font>
-    <character-size type="double">0.005</character-size>
-    <character-aspect-ratio type="double">1.0</character-aspect-ratio>
-    <max-height>0.2</max-height>
-    <max-width>0.07</max-width>
-    <font-resolution>
-      <width type="int">32</width>
-      <height type="int">32</height>
-    </font-resolution>
-    <alignment>center-center</alignment>
-    <offsets>
-    <pitch-deg>0</pitch-deg>
-    <heading-deg>90</heading-deg>
-    <roll-deg>8</roll-deg>
-      <x-m>-8.66395</x-m>
-      <y-m>-0.12454</y-m>
-      <z-m>-1.842</z-m>
-    </offsets>
-  </text>
-  <text>
-    <name>75p</name>
-    <type type="string">literal</type>
-    <text type="string">75%</text>
-    <draw-text type="bool">true</draw-text>
-    <font>Helvetica.txf</font>
-    <character-size type="double">0.005</character-size>
-    <character-aspect-ratio type="double">1.0</character-aspect-ratio>
-    <max-height>0.2</max-height>
-    <max-width>0.07</max-width>
-    <font-resolution>
-      <width type="int">32</width>
-      <height type="int">32</height>
-    </font-resolution>
-    <alignment>center-center</alignment>
-    <offsets>
-    <pitch-deg>8</pitch-deg>
-    <heading-deg>45</heading-deg>
-    <roll-deg>11</roll-deg>
-      <x-m>-8.65751</x-m>
-      <y-m>-0.10827</y-m>
-      <z-m>-1.843</z-m>
-    </offsets>
-  </text>
-  <text>
-    <name>100p</name>
-    <type type="string">literal</type>
-    <text type="string">100%</text>
-    <draw-text type="bool">true</draw-text>
-    <font>Helvetica.txf</font>
-    <character-size type="double">0.005</character-size>
-    <character-aspect-ratio type="double">1.0</character-aspect-ratio>
-    <max-height>0.2</max-height>
-    <max-width>0.07</max-width>
-    <font-resolution>
-      <width type="int">32</width>
-      <height type="int">32</height>
-    </font-resolution>
-    <alignment>center-center</alignment>
-    <offsets>
-    <pitch-deg>8</pitch-deg>
-    <heading-deg>0</heading-deg>
-    <roll-deg>0</roll-deg>
-      <x-m>-8.64306</x-m>
-      <y-m>-0.1024</y-m>
-      <z-m>-1.846</z-m>
-    </offsets>
-  </text>
-
-  <text>
-    <name>FCZero</name>
-    <type type="string">literal</type>
-    <text type="string">0</text>
-    <draw-text type="bool">true</draw-text>
-    <font>Helvetica.txf</font>
-    <character-size type="double">0.004</character-size>
-    <character-aspect-ratio type="double">1.0</character-aspect-ratio>
-    <max-height>0.2</max-height>
-    <max-width>0.07</max-width>
-    <font-resolution>
-      <width type="int">32</width>
-      <height type="int">32</height>
-    </font-resolution>
-    <alignment>center-center</alignment>
-    <offsets>
-    <pitch-deg>-11</pitch-deg>
-    <heading-deg>210</heading-deg>
-    <roll-deg>-7</roll-deg>
-      <x-m>-8.61004</x-m>
-      <y-m>-0.09548</y-m>
-      <z-m>-1.8504 </z-m>
-    </offsets>
-  </text>
-  <text>
-    <name>FCPointFive</name>
-    <type type="string">literal</type>
-    <text type="string">.5</text>
-    <draw-text type="bool">true</draw-text>
-    <font>Helvetica.txf</font>
-    <character-size type="double">0.004</character-size>
-    <character-aspect-ratio type="double">1.0</character-aspect-ratio>
-    <max-height>0.2</max-height>
-    <max-width>0.07</max-width>
-    <font-resolution>
-      <width type="int">32</width>
-      <height type="int">32</height>
-    </font-resolution>
-    <alignment>center-center</alignment>
-    <offsets>
-    <pitch-deg>-14</pitch-deg>
-    <heading-deg>180</heading-deg>
-    <roll-deg>2</roll-deg>
-      <x-m>-8.61596</x-m>
-      <y-m>-0.0972 </y-m>
-      <z-m>-1.8494 </z-m>
-    </offsets>
-  </text>
-  <text>
-    <name>FCOne</name>
-    <type type="string">literal</type>
-    <text type="string">1</text>
-    <draw-text type="bool">true</draw-text>
-    <font>Helvetica.txf</font>
-    <character-size type="double">0.004</character-size>
-    <character-aspect-ratio type="double">1.0</character-aspect-ratio>
-    <max-height>0.2</max-height>
-    <max-width>0.07</max-width>
-    <font-resolution>
-      <width type="int">32</width>
-      <height type="int">32</height>
-    </font-resolution>
-    <alignment>center-center</alignment>
-    <offsets>
-    <pitch-deg>-10</pitch-deg>
-    <heading-deg>150</heading-deg>
-    <roll-deg>3</roll-deg>
-      <x-m>-8.62223</x-m>
-      <y-m>-0.09565</y-m>
-      <z-m>-1.8491 </z-m>
-    </offsets>
-  </text>
-  <text>
-    <name>FCOnePointFive</name>
-    <type type="string">literal</type>
-    <text type="string">1.5</text>
-    <draw-text type="bool">true</draw-text>
-    <font>Helvetica.txf</font>
-    <character-size type="double">0.004</character-size>
-    <character-aspect-ratio type="double">1.0</character-aspect-ratio>
-    <max-height>0.2</max-height>
-    <max-width>0.07</max-width>
-    <font-resolution>
-      <width type="int">32</width>
-      <height type="int">32</height>
-    </font-resolution>
-    <alignment>center-center</alignment>
-    <offsets>
-    <pitch-deg>-14</pitch-deg>
-    <heading-deg>120</heading-deg>
-    <roll-deg>8</roll-deg>
-      <x-m>-8.62734</x-m>
-      <y-m>-0.09206</y-m>
-      <z-m>-1.848</z-m>
-    </offsets>
-  </text>
-  <text>
-    <name>FCTwo</name>
-    <type type="string">literal</type>
-    <text type="string">2</text>
-    <draw-text type="bool">true</draw-text>
-    <font>Helvetica.txf</font>
-    <character-size type="double">0.004</character-size>
-    <character-aspect-ratio type="double">1.0</character-aspect-ratio>
-    <max-height>0.2</max-height>
-    <max-width>0.07</max-width>
-    <font-resolution>
-      <width type="int">32</width>
-      <height type="int">32</height>
-    </font-resolution>
-    <alignment>center-center</alignment>
-    <offsets>
-    <pitch-deg>0</pitch-deg>
-    <heading-deg>90</heading-deg>
-    <roll-deg>10</roll-deg>
-      <x-m>-8.63008</x-m>
-      <y-m>-0.08461</y-m>
-      <z-m>-1.84801</z-m>
-    </offsets>
-  </text>
-  <text>
-    <name>FCTwoPointFive</name>
-    <type type="string">literal</type>
-    <text type="string">2.5</text>
-    <draw-text type="bool">true</draw-text>
-    <font>Helvetica.txf</font>
-    <character-size type="double">0.004</character-size>
-    <character-aspect-ratio type="double">1.0</character-aspect-ratio>
-    <max-height>0.2</max-height>
-    <max-width>0.07</max-width>
-    <font-resolution>
-      <width type="int">32</width>
-      <height type="int">32</height>
-    </font-resolution>
-    <alignment>center-center</alignment>
-    <offsets>
-    <pitch-deg>10</pitch-deg>
-    <heading-deg>60</heading-deg>
-    <roll-deg>4</roll-deg>
-      <x-m>-8.62809</x-m>
-      <y-m>-0.0775 </y-m>
-      <z-m>-1.848  </z-m>
-    </offsets>
-  </text>
-  <text>
-    <name>FCThree</name>
-    <type type="string">literal</type>
-    <text type="string">3</text>
-    <draw-text type="bool">true</draw-text>
-    <font>Helvetica.txf</font>
-    <character-size type="double">0.004</character-size>
-    <character-aspect-ratio type="double">1.0</character-aspect-ratio>
-    <max-height>0.2</max-height>
-    <max-width>0.07</max-width>
-    <font-resolution>
-      <width type="int">32</width>
-      <height type="int">32</height>
-    </font-resolution>
-    <alignment>center-center</alignment>
-    <offsets>
-    <pitch-deg>11.5</pitch-deg>
-    <heading-deg>20</heading-deg>
-    <roll-deg>4.5</roll-deg>
-      <x-m>-8.62228</x-m>
-      <y-m>-0.07252</y-m>
-      <z-m>-1.849</z-m>
-    </offsets>
-  </text>
-  <text>
-    <name>FCThreePointFive</name>
-    <type type="string">literal</type>
-    <text type="string">3.5</text>
-    <draw-text type="bool">true</draw-text>
-    <font>Helvetica.txf</font>
-    <character-size type="double">0.004</character-size>
-    <character-aspect-ratio type="double">1.0</character-aspect-ratio>
-    <max-height>0.2</max-height>
-    <max-width>0.07</max-width>
-    <font-resolution>
-      <width type="int">32</width>
-      <height type="int">32</height>
-    </font-resolution>
-    <alignment>center-center</alignment>
-    <offsets>
-    <pitch-deg>14.3</pitch-deg>
-    <heading-deg>0</heading-deg>
-    <roll-deg>0</roll-deg>
-      <x-m>-8.61609</x-m>
-      <y-m>-0.07155</y-m>
-      <z-m>-1.8495 </z-m>
-    </offsets>
-  </text>
-  <text>
-    <name>FCFour</name>
-    <type type="string">literal</type>
-    <text type="string">4</text>
-    <draw-text type="bool">true</draw-text>
-    <font>Helvetica.txf</font>
-    <character-size type="double">0.004</character-size>
-    <character-aspect-ratio type="double">1.0</character-aspect-ratio>
-    <max-height>0.2</max-height>
-    <max-width>0.07</max-width>
-    <font-resolution>
-      <width type="int">32</width>
-      <height type="int">32</height>
-    </font-resolution>
-    <alignment>center-center</alignment>
-    <offsets>
-    <pitch-deg>16</pitch-deg>
-    <heading-deg>340</heading-deg>
-    <roll-deg>-4</roll-deg>
-      <x-m>-8.60981 </x-m>
-      <y-m>-0.07309</y-m>
-      <z-m>-1.85093</z-m>
-    </offsets>
-  </text>
-
-  <text>
-    <name>One</name>
-    <type type="string">literal</type>
-    <text type="string">1</text>
-    <draw-text type="bool">true</draw-text>
-    <font>Helvetica.txf</font>
-    <character-size type="double">0.005</character-size>
-    <character-aspect-ratio type="double">1.0</character-aspect-ratio>
-    <max-height>0.2</max-height>
-    <max-width>0.07</max-width>
-    <font-resolution>
-      <width type="int">32</width>
-      <height type="int">32</height>
-    </font-resolution>
-    <alignment>center-center</alignment>
-    <offsets>
-    <pitch-deg>-13.4</pitch-deg>
-    <heading-deg>200</heading-deg>
-    <roll-deg>-5</roll-deg>
-      <x-m>-8.6359</x-m>
-      <y-m>-0.06042</y-m>
-      <z-m>-1.847  </z-m>
-    </offsets>
-  </text>
-  <text>
-    <name>Two</name>
-    <type type="string">literal</type>
-    <text type="string">2</text>
-    <draw-text type="bool">true</draw-text>
-    <font>Helvetica.txf</font>
-    <character-size type="double">0.005</character-size>
-    <character-aspect-ratio type="double">1.0</character-aspect-ratio>
-    <max-height>0.2</max-height>
-    <max-width>0.07</max-width>
-    <font-resolution>
-      <width type="int">32</width>
-      <height type="int">32</height>
-    </font-resolution>
-    <alignment>center-center</alignment>
-    <offsets>
-    <pitch-deg>-14</pitch-deg>
-    <heading-deg>170</heading-deg>
-    <roll-deg>4</roll-deg>
-      <x-m>-8.6463 </x-m>
-      <y-m>-0.06205</y-m>
-      <z-m>-1.8456 </z-m>
-    </offsets>
-  </text>
-  <text>
-    <name>Three</name>
-    <type type="string">literal</type>
-    <text type="string">3</text>
-    <draw-text type="bool">true</draw-text>
-    <font>Helvetica.txf</font>
-    <character-size type="double">0.005</character-size>
-    <character-aspect-ratio type="double">1.0</character-aspect-ratio>
-    <max-height>0.2</max-height>
-    <max-width>0.07</max-width>
-    <font-resolution>
-      <width type="int">32</width>
-      <height type="int">32</height>
-    </font-resolution>
-    <alignment>center-center</alignment>
-    <offsets>
-    <pitch-deg>-11</pitch-deg>
-    <heading-deg>140</heading-deg>
-    <roll-deg>8</roll-deg>
-      <x-m>-8.65792</x-m>
-      <y-m>-0.05717</y-m>
-      <z-m>-1.8436 </z-m>
-    </offsets>
-  </text>
-  <text>
-    <name>Four</name>
-    <type type="string">literal</type>
-    <text type="string">4</text>
-    <draw-text type="bool">true</draw-text>
-    <font>Helvetica.txf</font>
-    <character-size type="double">0.005</character-size>
-    <character-aspect-ratio type="double">1.0</character-aspect-ratio>
-    <max-height>0.2</max-height>
-    <max-width>0.07</max-width>
-    <font-resolution>
-      <width type="int">32</width>
-      <height type="int">32</height>
-    </font-resolution>
-    <alignment>center-center</alignment>
-    <offsets>
-    <pitch-deg>-2.5</pitch-deg>
-    <heading-deg>100</heading-deg>
-    <roll-deg>13</roll-deg>
-      <x-m>-8.66447</x-m>
-      <y-m>-0.0476 </y-m>
-      <z-m>-1.843  </z-m>
-    </offsets>
-  </text>
-  <text>
-    <name>Five</name>
-    <type type="string">literal</type>
-    <text type="string">5</text>
-    <draw-text type="bool">true</draw-text>
-    <font>Helvetica.txf</font>
-    <character-size type="double">0.005</character-size>
-    <character-aspect-ratio type="double">1.0</character-aspect-ratio>
-    <max-height>0.2</max-height>
-    <max-width>0.07</max-width>
-    <font-resolution>
-      <width type="int">32</width>
-      <height type="int">32</height>
-    </font-resolution>
-    <alignment>center-center</alignment>
-    <offsets>
-    <pitch-deg>4.8</pitch-deg>
-    <heading-deg>70</heading-deg>
-    <roll-deg>14</roll-deg>
-      <x-m>-8.66561</x-m>
-      <y-m>-0.03607</y-m>
-      <z-m>-1.8426 </z-m>
-    </offsets>
-  </text>
-  <text>
-    <name>Six</name>
-    <type type="string">literal</type>
-    <text type="string">6</text>
-    <draw-text type="bool">true</draw-text>
-    <font>Helvetica.txf</font>
-    <character-size type="double">0.005</character-size>
-    <character-aspect-ratio type="double">1.0</character-aspect-ratio>
-    <max-height>0.2</max-height>
-    <max-width>0.07</max-width>
-    <font-resolution>
-      <width type="int">32</width>
-      <height type="int">32</height>
-    </font-resolution>
-    <alignment>center-center</alignment>
-    <offsets>
-    <pitch-deg>11</pitch-deg>
-    <heading-deg>40</heading-deg>
-    <roll-deg>9.5</roll-deg>
-      <x-m>-8.66073</x-m>
-      <y-m>-0.02609</y-m>
-      <z-m>-1.8434 </z-m>
-    </offsets>
-  </text>
-  <text>
-    <name>Seven</name>
-    <type type="string">literal</type>
-    <text type="string">7</text>
-    <draw-text type="bool">true</draw-text>
-    <font>Helvetica.txf</font>
-    <character-size type="double">0.005</character-size>
-    <character-aspect-ratio type="double">1.0</character-aspect-ratio>
-    <max-height>0.2</max-height>
-    <max-width>0.07</max-width>
-    <font-resolution>
-      <width type="int">32</width>
-      <height type="int">32</height>
-    </font-resolution>
-    <alignment>center-center</alignment>
-    <offsets>
-    <pitch-deg>14</pitch-deg>
-    <heading-deg>10</heading-deg>
-    <roll-deg>3</roll-deg>
-      <x-m>-8.65099</x-m>
-      <y-m>-0.01996</y-m>
-      <z-m>-1.8446 </z-m>
-    </offsets>
-  </text>
-  <text>
-    <name>Eight</name>
-    <type type="string">literal</type>
-    <text type="string">8</text>
-    <draw-text type="bool">true</draw-text>
-    <font>Helvetica.txf</font>
-    <character-size type="double">0.005</character-size>
-    <character-aspect-ratio type="double">1.0</character-aspect-ratio>
-    <max-height>0.2</max-height>
-    <max-width>0.07</max-width>
-    <font-resolution>
-      <width type="int">32</width>
-      <height type="int">32</height>
-    </font-resolution>
-    <alignment>center-center</alignment>
-    <offsets>
-    <pitch-deg>13.3</pitch-deg>
-    <heading-deg>340</heading-deg>
-    <roll-deg>-7</roll-deg>
-      <x-m>-8.64004</x-m>
-      <y-m>-0.01958</y-m>
-      <z-m>-1.8464 </z-m>
-    </offsets>
-  </text>
-  <text>
-    <name>Salvo</name>
-    <type type="string">literal</type>
-    <text type="string">SALVO</text>
-    <draw-text type="bool">true</draw-text>
-    <font>Helvetica.txf</font>
-    <character-size type="double">0.005</character-size>
-    <character-aspect-ratio type="double">1.0</character-aspect-ratio>
-    <max-height>0.2</max-height>
-    <max-width>0.07</max-width>
-    <font-resolution>
-      <width type="int">32</width>
-      <height type="int">32</height>
-    </font-resolution>
-    <alignment>center-center</alignment>
-    <offsets>
-    <pitch-deg>0</pitch-deg>
-    <heading-deg>90</heading-deg>
-    <roll-deg>15</roll-deg>
-      <x-m>-8.62976</x-m>
-      <y-m>-0.02173</y-m>
-      <z-m>-1.8474 </z-m>
-    </offsets>
-  </text>
-  <text>
-    <name>Test</name>
-    <type type="string">literal</type>
-    <text type="string">TEST</text>
-    <draw-text type="bool">true</draw-text>
-    <font>Helvetica.txf</font>
-    <character-size type="double">0.006</character-size>
-    <character-aspect-ratio type="double">1.0</character-aspect-ratio>
-    <max-height>0.2</max-height>
-    <max-width>0.07</max-width>
-    <font-resolution>
-      <width type="int">32</width>
-      <height type="int">32</height>
-    </font-resolution>
-    <alignment>center-center</alignment>
-    <offsets>
-    <pitch-deg>0</pitch-deg>
-    <heading-deg>90</heading-deg>
-    <roll-deg>15</roll-deg>
-      <x-m>-8.67217</x-m>
-      <y-m>-0.08433</y-m>
-      <z-m>-1.8415 </z-m>
-    </offsets>
-  </text>
-  <text>
-    <name>Quantity</name>
-    <type type="string">literal</type>
-    <text type="string">QUANTITY</text>
-    <draw-text type="bool">true</draw-text>
-    <font>Helvetica.txf</font>
-    <character-size type="double">0.006</character-size>
-    <character-aspect-ratio type="double">1.0</character-aspect-ratio>
-    <max-height>0.2</max-height>
-    <max-width>0.07</max-width>
-    <font-resolution>
-      <width type="int">32</width>
-      <height type="int">32</height>
-    </font-resolution>
-    <alignment>center-center</alignment>
-    <offsets>
-    <pitch-deg>0</pitch-deg>
-    <heading-deg>90</heading-deg>
-    <roll-deg>15</roll-deg>
-      <x-m>-8.61927</x-m>
-      <y-m>-0.12372</y-m>
-      <z-m>-1.849 </z-m>
-    </offsets>
-  </text>
-  <text>
-    <name>Coverage</name>
-    <type type="string">literal</type>
-    <text type="string">COVERAGE</text>
-    <draw-text type="bool">true</draw-text>
-    <font>Helvetica.txf</font>
-    <character-size type="double">0.006</character-size>
-    <character-aspect-ratio type="double">1.0</character-aspect-ratio>
-    <max-height>0.2</max-height>
-    <max-width>0.07</max-width>
-    <font-resolution>
-      <width type="int">32</width>
-      <height type="int">32</height>
-    </font-resolution>
-    <alignment>center-center</alignment>
-    <offsets>
-    <pitch-deg>0</pitch-deg>
-    <heading-deg>90</heading-deg>
-    <roll-deg>15</roll-deg>
-      <x-m>-8.62165</x-m>
-      <y-m>-0.04031</y-m>
-      <z-m>-1.8487 </z-m>
-    </offsets>
-  </text>
-  <text>
-    <name>Level</name>
-    <type type="string">literal</type>
-    <text type="string">LEVEL</text>
-    <draw-text type="bool">true</draw-text>
-    <font>Helvetica.txf</font>
-    <character-size type="double">0.006</character-size>
-    <character-aspect-ratio type="double">1.0</character-aspect-ratio>
-    <max-height>0.2</max-height>
-    <max-width>0.07</max-width>
-    <font-resolution>
-      <width type="int">32</width>
-      <height type="int">32</height>
-    </font-resolution>
-    <alignment>center-center</alignment>
-    <offsets>
-    <pitch-deg>0</pitch-deg>
-    <heading-deg>90</heading-deg>
-    <roll-deg>15</roll-deg>
-      <x-m>-8.61718</x-m>
-      <y-m>-0.0399 </y-m>
-      <z-m>-1.8494 </z-m>
-    </offsets>
-  </text>
-  <text>
-    <name>FoamConcentrate</name>
-    <type type="string">literal</type>
-    <text type="string">FOAM CONCENTRATE</text>
-    <draw-text type="bool">true</draw-text>
-    <font>Helvetica.txf</font>
-    <character-size type="double">0.006</character-size>
-    <character-aspect-ratio type="double">1.0</character-aspect-ratio>
-    <max-height>0.2</max-height>
-    <max-width>0.07</max-width>
-    <font-resolution>
-      <width type="int">32</width>
-      <height type="int">32</height>
-    </font-resolution>
-    <alignment>center-center</alignment>
-    <offsets>
-    <pitch-deg>0</pitch-deg>
-    <heading-deg>90</heading-deg>
-    <roll-deg>15</roll-deg>
-      <x-m>-8.60073</x-m>
-      <y-m>-0.08384</y-m>
-      <z-m>-1.852  </z-m>
-    </offsets>
-  </text>
-  <text>
-    <name>Go</name>
-    <type type="string">literal</type>
-    <text type="string">GO</text>
-    <draw-text type="bool">true</draw-text>
-    <font>Helvetica.txf</font>
-    <character-size type="double">0.006</character-size>
-    <character-aspect-ratio type="double">1.0</character-aspect-ratio>
-    <max-height>0.2</max-height>
-    <max-width>0.07</max-width>
-    <font-resolution>
-      <width type="int">32</width>
-      <height type="int">32</height>
-    </font-resolution>
-    <alignment>center-center</alignment>
-    <offsets>
-    <pitch-deg>0</pitch-deg>
-    <heading-deg>90</heading-deg>
-    <roll-deg>15</roll-deg>
-      <x-m>-8.59595</x-m>
-      <y-m>-0.13572</y-m>
-      <z-m>-1.8525 </z-m>
-    </offsets>
-  </text>
-  <text>
-    <name>LowHyd</name>
-    <type type="string">literal</type>
-    <text type="string">LOW HYD</text>
-    <draw-text type="bool">true</draw-text>
-    <font>Helvetica.txf</font>
-    <character-size type="double">0.006</character-size>
-    <character-aspect-ratio type="double">1.0</character-aspect-ratio>
-    <max-height>0.2</max-height>
-    <max-width>0.07</max-width>
-    <font-resolution>
-      <width type="int">32</width>
-      <height type="int">32</height>
-    </font-resolution>
-    <alignment>center-center</alignment>
-    <offsets>
-    <pitch-deg>0</pitch-deg>
-    <heading-deg>90</heading-deg>
-    <roll-deg>15</roll-deg>
-      <x-m>-8.60179</x-m>
-      <y-m>-0.03132</y-m>
-      <z-m>-1.8515 </z-m>
-    </offsets>
-  </text>
-  <text>
-    <name>Pressure</name>
-    <type type="string">literal</type>
-    <text type="string">PRESSURE</text>
-    <draw-text type="bool">true</draw-text>
-    <font>Helvetica.txf</font>
-    <character-size type="double">0.006</character-size>
-    <character-aspect-ratio type="double">1.0</character-aspect-ratio>
-    <max-height>0.2</max-height>
-    <max-width>0.07</max-width>
-    <font-resolution>
-      <width type="int">32</width>
-      <height type="int">32</height>
-    </font-resolution>
-    <alignment>center-center</alignment>
-    <offsets>
-    <pitch-deg>0</pitch-deg>
-    <heading-deg>90</heading-deg>
-    <roll-deg>15</roll-deg>
-      <x-m>-8.59683</x-m>
-      <y-m>-0.03089</y-m>
-      <z-m>-1.8524 </z-m>
-    </offsets>
-  </text>
-  <text>
-    <name>Arm</name>
-    <type type="string">literal</type>
-    <text type="string">ARM</text>
-    <draw-text type="bool">true</draw-text>
-    <font>Helvetica.txf</font>
-    <character-size type="double">0.006</character-size>
-    <character-aspect-ratio type="double">1.0</character-aspect-ratio>
-    <max-height>0.2</max-height>
-    <max-width>0.07</max-width>
-    <font-resolution>
-      <width type="int">32</width>
-      <height type="int">32</height>
-    </font-resolution>
-    <alignment>center-center</alignment>
-    <offsets>
-    <pitch-deg>0</pitch-deg>
-    <heading-deg>90</heading-deg>
-    <roll-deg>15</roll-deg>
-      <x-m>-8.55592</x-m>
-      <y-m>-0.13432</y-m>
-      <z-m>-1.8583 </z-m>
-    </offsets>
-  </text>
-  <text>
-    <name>HydSnorkelPtr</name>
-    <type type="string">literal</type>
-    <text type="string"></text>
-    <draw-text type="bool">true</draw-text>
-    <font>Helvetica.txf</font>
-    <character-size type="double">0.016</character-size>
-    <character-aspect-ratio type="double">1.0</character-aspect-ratio>
-    <max-height>0.2</max-height>
-    <max-width>0.07</max-width>
-    <font-resolution>
-      <width type="int">32</width>
-      <height type="int">32</height>
-    </font-resolution>
-    <alignment>center-center</alignment>
-    <offsets>
-    <pitch-deg>0</pitch-deg>
-    <heading-deg>70</heading-deg>
-    <roll-deg>15</roll-deg>
-      <x-m>-8.56952</x-m>
-      <y-m>-0.10789</y-m>
-      <z-m>-1.8563 </z-m>
-    </offsets>
-  </text>
-  <text>
-    <name>Hyd</name>
-    <type type="string">literal</type>
-    <text type="string">HYD</text>
-    <draw-text type="bool">true</draw-text>
-    <font>Helvetica.txf</font>
-    <character-size type="double">0.006</character-size>
-    <character-aspect-ratio type="double">1.0</character-aspect-ratio>
-    <max-height>0.2</max-height>
-    <max-width>0.07</max-width>
-    <font-resolution>
-      <width type="int">32</width>
-      <height type="int">32</height>
-    </font-resolution>
-    <alignment>center-center</alignment>
-    <offsets>
-    <pitch-deg>0</pitch-deg>
-    <heading-deg>90</heading-deg>
-    <roll-deg>15</roll-deg>
-      <x-m>-8.56047</x-m>
-      <y-m>-0.11059</y-m>
-      <z-m>-1.8575 </z-m>
-    </offsets>
-  </text>
-  <text>
-    <name>Snorkel</name>
-    <type type="string">literal</type>
-    <text type="string">SNORKEL</text>
-    <draw-text type="bool">true</draw-text>
-    <font>Helvetica.txf</font>
-    <character-size type="double">0.006</character-size>
-    <character-aspect-ratio type="double">1.0</character-aspect-ratio>
-    <max-height>0.2</max-height>
-    <max-width>0.07</max-width>
-    <font-resolution>
-      <width type="int">32</width>
-      <height type="int">32</height>
-    </font-resolution>
-    <alignment>center-center</alignment>
-    <offsets>
-    <pitch-deg>0</pitch-deg>
-    <heading-deg>90</heading-deg>
-    <roll-deg>15</roll-deg>
-      <x-m>-8.5555</x-m>
-      <y-m>-0.11017</y-m>
-      <z-m>-1.8583 </z-m>
-    </offsets>
-  </text>
-  <text>
-    <name>Release</name>
-    <type type="string">literal</type>
-    <text type="string">RELEASE</text>
-    <draw-text type="bool">true</draw-text>
-    <font>Helvetica.txf</font>
-    <character-size type="double">0.0045</character-size>
-    <character-aspect-ratio type="double">1.0</character-aspect-ratio>
-    <max-height>0.2</max-height>
-    <max-width>0.07</max-width>
-    <font-resolution>
-      <width type="int">32</width>
-      <height type="int">32</height>
-    </font-resolution>
-    <alignment>center-center</alignment>
-    <offsets>
-    <pitch-deg>0</pitch-deg>
-    <heading-deg>90</heading-deg>
-    <roll-deg>15</roll-deg>
-      <x-m>-8.52741</x-m>
-      <y-m>-0.10893</y-m>
-      <z-m>-1.8624 </z-m>
-    </offsets>
-  </text>
-  <text>
-    <name>On</name>
-    <type type="string">literal</type>
-    <text type="string">ON</text>
-    <draw-text type="bool">true</draw-text>
-    <font>Helvetica.txf</font>
-    <character-size type="double">0.0045</character-size>
-    <character-aspect-ratio type="double">1.0</character-aspect-ratio>
-    <max-height>0.2</max-height>
-    <max-width>0.07</max-width>
-    <font-resolution>
-      <width type="int">32</width>
-      <height type="int">32</height>
-    </font-resolution>
-    <alignment>center-center</alignment>
-    <offsets>
-    <pitch-deg>0</pitch-deg>
-    <heading-deg>90</heading-deg>
-    <roll-deg>15</roll-deg>
-      <x-m>-8.54902</x-m>
-      <y-m>-0.09586</y-m>
-      <z-m>-1.86  </z-m>
-    </offsets>
-  </text>
-  <text>
-    <name>Off</name>
-    <type type="string">literal</type>
-    <text type="string">OFF</text>
-    <draw-text type="bool">true</draw-text>
-    <font>Helvetica.txf</font>
-    <character-size type="double">0.0045</character-size>
-    <character-aspect-ratio type="double">1.0</character-aspect-ratio>
-    <max-height>0.2</max-height>
-    <max-width>0.07</max-width>
-    <font-resolution>
-      <width type="int">32</width>
-      <height type="int">32</height>
-    </font-resolution>
-    <alignment>center-center</alignment>
-    <offsets>
-    <pitch-deg>0</pitch-deg>
-    <heading-deg>90</heading-deg>
-    <roll-deg>15</roll-deg>
-      <x-m>-8.53536</x-m>
-      <y-m>-0.09487</y-m>
-      <z-m>-1.8612 </z-m>
-    </offsets>
-  </text>
-  <text>
-    <name>FoamPtr</name>
-    <type type="string">literal</type>
-    <text type="string"></text>
-    <draw-text type="bool">true</draw-text>
-    <font>Helvetica.txf</font>
-    <character-size type="double">0.016</character-size>
-    <character-aspect-ratio type="double">1.0</character-aspect-ratio>
-    <max-height>0.2</max-height>
-    <max-width>0.07</max-width>
-    <font-resolution>
-      <width type="int">32</width>
-      <height type="int">32</height>
-    </font-resolution>
-    <alignment>center-center</alignment>
-    <offsets>
-    <pitch-deg>0</pitch-deg>
-    <heading-deg>70</heading-deg>
-    <roll-deg>15</roll-deg>
-      <x-m>-8.56732</x-m>
-      <y-m>-0.0778 </y-m>
-      <z-m>-1.8566 </z-m>
-    </offsets>
-  </text>
-  <text>
-    <name>Foam</name>
-    <type type="string">literal</type>
-    <text type="string">FOAM</text>
-    <draw-text type="bool">true</draw-text>
-    <font>Helvetica.txf</font>
-    <character-size type="double">0.006</character-size>
-    <character-aspect-ratio type="double">1.0</character-aspect-ratio>
-    <max-height>0.2</max-height>
-    <max-width>0.07</max-width>
-    <font-resolution>
-      <width type="int">32</width>
-      <height type="int">32</height>
-    </font-resolution>
-    <alignment>center-center</alignment>
-    <offsets>
-    <pitch-deg>0</pitch-deg>
-    <heading-deg>90</heading-deg>
-    <roll-deg>15</roll-deg>
-      <x-m>-8.55607</x-m>
-      <y-m>-0.08655</y-m>
-      <z-m>-1.8583 </z-m>
-    </offsets>
-  </text>
-  <text>
-    <name>Sea</name>
-    <type type="string">literal</type>
-    <text type="string">SEA</text>
-    <draw-text type="bool">true</draw-text>
-    <font>Helvetica.txf</font>
-    <character-size type="double">0.006</character-size>
-    <character-aspect-ratio type="double">1.0</character-aspect-ratio>
-    <max-height>0.2</max-height>
-    <max-width>0.07</max-width>
-    <font-resolution>
-      <width type="int">32</width>
-      <height type="int">32</height>
-    </font-resolution>
-    <alignment>center-center</alignment>
-    <offsets>
-    <pitch-deg>0</pitch-deg>
-    <heading-deg>90</heading-deg>
-    <roll-deg>15</roll-deg>
-      <x-m>-8.56385</x-m>
-      <y-m>-0.06293</y-m>
-      <z-m>-1.8571 </z-m>
-    </offsets>
-  </text>
-  <text>
-    <name>SSnorkel</name>
-    <type type="string">literal</type>
-    <text type="string">SNORKEL</text>
-    <draw-text type="bool">true</draw-text>
-    <font>Helvetica.txf</font>
-    <character-size type="double">0.006</character-size>
-    <character-aspect-ratio type="double">1.0</character-aspect-ratio>
-    <max-height>0.2</max-height>
-    <max-width>0.07</max-width>
-    <font-resolution>
-      <width type="int">32</width>
-      <height type="int">32</height>
-    </font-resolution>
-    <alignment>center-center</alignment>
-    <offsets>
-    <pitch-deg>0</pitch-deg>
-    <heading-deg>90</heading-deg>
-    <roll-deg>15</roll-deg>
-      <x-m>-8.55962</x-m>
-      <y-m>-0.06278</y-m>
-      <z-m>-1.8578 </z-m>
-    </offsets>
-  </text>
-  <text>
-    <name>Extend</name>
-    <type type="string">literal</type>
-    <text type="string">EXTEND</text>
-    <draw-text type="bool">true</draw-text>
-    <font>Helvetica.txf</font>
-    <character-size type="double">0.0045</character-size>
-    <character-aspect-ratio type="double">1.0</character-aspect-ratio>
-    <max-height>0.2</max-height>
-    <max-width>0.07</max-width>
-    <font-resolution>
-      <width type="int">32</width>
-      <height type="int">32</height>
-    </font-resolution>
-    <alignment>center-center</alignment>
-    <offsets>
-    <pitch-deg>0</pitch-deg>
-    <heading-deg>90</heading-deg>
-    <roll-deg>15</roll-deg>
-      <x-m>-8.5549 </x-m>
-      <y-m>-0.06262</y-m>
-      <z-m>-1.8584 </z-m>
-    </offsets>
-  </text>
-  <text>
-    <name>Retract</name>
-    <type type="string">literal</type>
-    <text type="string">RETRACT</text>
-    <draw-text type="bool">true</draw-text>
-    <font>Helvetica.txf</font>
-    <character-size type="double">0.0045</character-size>
-    <character-aspect-ratio type="double">1.0</character-aspect-ratio>
-    <max-height>0.2</max-height>
-    <max-width>0.07</max-width>
-    <font-resolution>
-      <width type="int">32</width>
-      <height type="int">32</height>
-    </font-resolution>
-    <alignment>center-center</alignment>
-    <offsets>
-    <pitch-deg>0</pitch-deg>
-    <heading-deg>90</heading-deg>
-    <roll-deg>15</roll-deg>
-      <x-m>-8.52978</x-m>
-      <y-m>-0.06199</y-m>
-      <z-m>-1.8621 </z-m>
-    </offsets>
-  </text-->
 
   <!-- Quantity "Knob" -->
   <animation>
@@ -1841,9 +591,9 @@
     <factor>-35</factor>
     <offset-deg>-10</offset-deg>
     <center>
-      <x-m>-9.39184</x-m>
-      <y-m>-0.643266</y-m>
-      <z-m>-1.45357</z-m>
+      <x-m>-9.38563</x-m>
+      <y-m>-0.642812</y-m>
+      <z-m>-1.52767</z-m>
     </center>
     <axis>
       <x>0</x>
@@ -1925,67 +675,20 @@
     <pitch-deg>0</pitch-deg>
     <heading-deg>90</heading-deg>
     <roll-deg>84</roll-deg>
-      <x-m>-9.391</x-m>
-      <y-m>-0.622238</y-m>
-      <z-m>-1.43527</z-m>
+      <x-m>-9.37813</x-m>
+      <y-m>-0.605402</y-m>
+      <z-m>-1.543</z-m>
     </offsets>
   </text>
 
-  <!-- tank volume display -->
-  <animation>
-    <object-name>tank-volume-glass</object-name>
-    <type>material</type>
-    <condition>
-      <and>
-        <property>sim/model/firetank/enabled</property>
-        <not>
-          <property>sim/rendering/rembrandt/enabled</property>
-        </not>
-      </and>
-    </condition>
-    <emission>
-      <red>1.0</red>
-      <green>1.0</green>
-      <blue>1.0</blue>
-      <factor-prop>systems/electrical/outputs/digital-display</factor-prop>
-    </emission>
-  </animation>
-  <text>
-    <name>TankVolume</name>
-    <type type="string">literal</type>
-    <text type="string">Tank Volume</text>
-    <draw-text type="bool">true</draw-text>
-    <font>Helvetica.txf</font>
-    <character-size type="double">0.006</character-size>
-    <character-aspect-ratio type="double">1.0</character-aspect-ratio>
-    <max-height>0.2</max-height>
-    <max-width>0.07</max-width>
-    <font-resolution>
-      <width type="int">32</width>
-      <height type="int">32</height>
-    </font-resolution>
-    <alignment>center-center</alignment>
-    <offsets>
-    <pitch-deg>0</pitch-deg>
-    <heading-deg>90</heading-deg>
-    <roll-deg>84</roll-deg>
-      <x-m>-9.391</x-m>
-      <y-m>-0.622238</y-m>
-      <z-m>-1.43507</z-m>
-    </offsets>
-  </text>
-
-  <!-- snorkel depth display -->
+  <!-- snorkel depth display
   <animation>
     <object-name>snorkel-depth-glass</object-name>
     <type>material</type>
     <condition>
-      <and>
-        <property>sim/model/firetank/enabled</property>
         <not>
           <property>sim/rendering/rembrandt/enabled</property>
         </not>
-      </and>
     </condition>
     <emission>
       <red>1.0</red>
@@ -2013,23 +716,20 @@
     <pitch-deg>0</pitch-deg>
     <heading-deg>90</heading-deg>
     <roll-deg>84</roll-deg>
-      <x-m>-9.391</x-m>
-      <y-m>-0.572555</y-m>
-      <z-m>-1.43527</z-m>
+      <x-m>-9.37813</x-m>
+      <y-m>-0.553325</y-m>
+      <z-m>-1.543</z-m>
     </offsets>
-  </text>
+  </text> -->
 
-  <!-- tank weight display -->
+  <!-- tank volume display -->
   <animation>
-    <object-name>tank-weight-glass</object-name>
+    <object-name>tank-volume-glass</object-name>
     <type>material</type>
     <condition>
-      <and>
-        <property>sim/model/firetank/enabled</property>
-        <not>
-          <property>sim/rendering/rembrandt/enabled</property>
-        </not>
-      </and>
+      <not>
+        <property>sim/rendering/rembrandt/enabled</property>
+      </not>
     </condition>
     <emission>
       <red>1.0</red>
@@ -2038,34 +738,10 @@
       <factor-prop>systems/electrical/outputs/digital-display</factor-prop>
     </emission>
   </animation>
-  <text>
-    <name>PayloadWeight</name>
-    <type type="string">literal</type>
-    <text type="string">Payload Weight</text>
-    <draw-text type="bool">true</draw-text>
-    <font>Helvetica.txf</font>
-    <character-size type="double">0.006</character-size>
-    <character-aspect-ratio type="double">1.0</character-aspect-ratio>
-    <max-height>0.2</max-height>
-    <max-width>0.07</max-width>
-    <font-resolution>
-      <width type="int">32</width>
-      <height type="int">32</height>
-    </font-resolution>
-    <alignment>center-center</alignment>
-    <offsets>
-    <pitch-deg>0</pitch-deg>
-    <heading-deg>90</heading-deg>
-    <roll-deg>84</roll-deg>
-      <x-m>-9.391</x-m>
-      <y-m>-0.572555</y-m>
-      <z-m>-1.43507</z-m>
-    </offsets>
-  </text>
 
-  <animation>
+  <!--animation>
     <object-name>togglecannonpitch</object-name>
-    <object-name>togglecannonpitch1</object-name>
+    <object-name>togglecannonpitchbase</object-name>
     <object-name>cannon-pitch-glass</object-name>
     <object-name>cannon-pitch-glass-bg</object-name>
     <object-name>CannonPitch</object-name>
@@ -2103,56 +779,11 @@
     <object-name>toggle-foam</object-name>
     <object-name>toggle-hyd-snorkel</object-name>
     <object-name>toggle-sea-snorkel</object-name>
-    <object-name>visses.004</object-name>
-    <object-name>Safe</object-name>
-    <object-name>25p</object-name>
-    <object-name>50p</object-name>
-    <object-name>75p</object-name>
-    <object-name>100p</object-name>
-    <object-name>FCZero</object-name>
-    <object-name>FCPointFive</object-name>
-    <object-name>FCOne</object-name>
-    <object-name>FCOnePointFive</object-name>
-    <object-name>FCTwo</object-name>
-    <object-name>FCTwoPointFive</object-name>
-    <object-name>FCThree</object-name>
-    <object-name>FCThreePointFive</object-name>
-    <object-name>FCFour</object-name>
-    <object-name>One</object-name>
-    <object-name>Two</object-name>
-    <object-name>Three</object-name>
-    <object-name>Four</object-name>
-    <object-name>Five</object-name>
-    <object-name>Six</object-name>
-    <object-name>Seven</object-name>
-    <object-name>Eight</object-name>
-    <object-name>Salvo</object-name>
-    <object-name>Test</object-name>
-    <object-name>Quantity</object-name>
-    <object-name>Coverage</object-name>
-    <object-name>Level</object-name>
-    <object-name>FoamConcentrate</object-name>
-    <object-name>Go</object-name>
-    <object-name>LowHyd</object-name>
-    <object-name>Pressure</object-name>
-    <object-name>Arm</object-name>
-    <object-name>HydSnorkelPtr</object-name>
-    <object-name>Hyd</object-name>
-    <object-name>Snorkel</object-name>
-    <object-name>Release</object-name>
-    <object-name>On</object-name>
-    <object-name>Off</object-name>
-    <object-name>FoamPtr</object-name>
-    <object-name>Foam</object-name>
-    <object-name>Sea</object-name>
-    <object-name>SSnorkel</object-name>
-    <object-name>Extend</object-name>
-    <object-name>Retract</object-name>
     <object-name>Text</object-name>
     <type>select</type>
     <condition>
       <property>sim/model/firetank/enabled</property>
     </condition>
-  </animation>
+  </animation-->
 
 </PropertyList>

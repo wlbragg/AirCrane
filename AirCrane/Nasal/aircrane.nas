@@ -23,6 +23,7 @@ var state = props.globals.getNode("sim/model/aircrane/state");
 var engine = props.globals.getNode("sim/model/aircrane/engine");
 var rotor = props.globals.getNode("controls/engines/engine/magnetos");
 var rotor_rpm = props.globals.getNode("rotors/main/rpm");
+var tail_rpm = props.globals.getNode("rotors/tail/rpm");
 var torque = props.globals.getNode("rotors/gear/total-torque", 1);
 var collective = props.globals.getNode("controls/engines/engine[0]/throttle");
 var turbine = props.globals.getNode("sim/model/aircrane/turbine-rpm-pct", 1);
@@ -37,6 +38,28 @@ var cone1 = props.globals.getNode("rotors/main/cone1-deg", 1);
 var cone2 = props.globals.getNode("rotors/main/cone2-deg", 1);
 var cone3 = props.globals.getNode("rotors/main/cone3-deg", 1);
 var cone4 = props.globals.getNode("rotors/main/cone4-deg", 1);
+var main_rpm_pct = props.globals.getNode("sim/model/aircrane/main-rpm-pct", 1);
+var tail_rpm_pct = props.globals.getNode("sim/model/aircrane/tail-rpm-pct", 1);
+var tank1_level_lbs = props.globals.getNode("consumables/fuel/tank[0]/level-lbs", 1);
+var tank2_level_lbs = props.globals.getNode("consumables/fuel/tank[1]/level-lbs", 1);
+var tank3_level_lbs = props.globals.getNode("consumables/fuel/tank[2]/level-lbs", 1);
+var tank4_level_lbs = props.globals.getNode("consumables/fuel/tank[3]/level-lbs", 1);
+var fwd_level_lbs = props.globals.getNode("consumables/fuel/fwd/level-lbs", 1);
+var aft_level_lbs = props.globals.getNode("consumables/fuel/aft/level-lbs", 1);
+
+var update_rpm_percents = func {
+    #185
+    #750
+    main_rpm_pct.setValue(196/rotor_rpm.getValue());
+    tail_rpm_pct.setValue(787/tail_rpm.getValue());
+    #setprop("sim/model/aircrane/main-rpm-pct", 196/getprop("rotors/main/rpm"));
+    #setprop("sim/model/aircrane/tail-rpm-pct", 787/getprop("rotors/tail/rpm"));
+}
+
+var update_fuel_lbs = func {
+    fwd_level_lbs.setValue(tank1_level_lbs.getValue()+tank2_level_lbs.getValue());
+    aft_level_lbs.setValue(tank3_level_lbs.getValue()+tank4_level_lbs.getValue());
+}
 
 var autostart = func (msg=1) {
     if (getprop("/engines/active-engine/running")) {
@@ -404,6 +427,9 @@ var main_loop = func {
   update_slide();
   update_engine();
   update_rotor_cone_angle();
+
+  update_rpm_percents();
+  update_fuel_lbs();
 
   rotor_wash_loop();
   flexhose_animation();

@@ -2,9 +2,86 @@
 
 <PropertyList>
 
-  <gsdi>
-    <serviceable type="bool">true</serviceable>
-    <enabled type="bool">true</enabled>
-  </gsdi>
+    <adf>
+        <name>adf</name>
+        <number>0</number>
+    </adf>
+
+    <airspeed-indicator>
+        <name>airspeed-indicator</name>
+        <number>0</number>
+        <total-pressure>/systems/pitot/total-pressure-inhg</total-pressure>
+        <static-pressure>/systems/static/pressure-inhg</static-pressure>
+    </airspeed-indicator>
+
+    <altimeter>
+        <name>altimeter</name>
+        <number>0</number>
+        <static-pressure>/systems/static/pressure-inhg</static-pressure>
+    </altimeter>
+
+    <attitude-indicator>
+        <name>attitude-indicator</name>
+        <number>0</number>
+        <suction>/systems/vacuum[1]/suction-inhg</suction>
+    </attitude-indicator>
+
+    <clock>
+        <name>clock</name>
+        <number>0</number>
+    </clock>
+
+    <dme>
+        <name>dme</name>
+        <number>0</number>
+    </dme>
+
+    <encoder>
+        <name>encoder</name>
+        <number>0</number>
+        <static-pressure>/systems/static/pressure-inhg</static-pressure>
+    </encoder>
+   
+    <marker-beacon>
+        <name>marker-beacon</name>
+        <number>0</number>
+    </marker-beacon>
+
+    <heading-indicator>
+        <name>heading-indicator</name>
+        <number>0</number>
+        <suction>/systems/vacuum[1]/suction-inhg</suction>
+    </heading-indicator>
+
+    <magnetic-compass>
+        <name>magnetic-compass</name>
+        <number>0</number>
+    </magnetic-compass>
+
+    <nav-radio>
+        <name>nav</name>
+        <number>0</number>
+    </nav-radio>
+
+    <slip-skid-ball>
+        <name>slip-skid-ball</name>
+        <number>0</number>
+    </slip-skid-ball>
+
+    <turn-indicator>
+        <name>turn-indicator</name>
+        <number>0</number>
+    </turn-indicator>
+
+    <vertical-speed-indicator>
+        <name>vertical-speed-indicator</name>
+        <number>0</number>
+        <static-pressure>/systems/static/pressure-inhg</static-pressure>
+    </vertical-speed-indicator>
+    
+    <gsdi>
+        <name>gsdi</name>
+        <number>0</number>
+    </gsdi>
   
 </PropertyList>

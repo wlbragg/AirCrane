@@ -1,7 +1,7 @@
 var digital_display =
   {
 
-    new : func(designation, model_element, parameter, num_display, num_format)
+    new : func(designation, model_element, parameter, num_display, num_format, font_size, clr_r, clr_g, clr_b)
       {
         var obj = {parents : [digital_display] };
         obj.designation = designation;
@@ -25,12 +25,12 @@ var digital_display =
 
         obj.string = root.createChild("text")
         .setText(num_display)
-        .setColor(.2,1,0.2)
-        .setFontSize(30)
+        .setColor(clr_r, clr_g, clr_b)
+        .setFontSize(font_size)
         .setScale(1,3)
         .setFont("DSEG/DSEG7/Classic-MINI/DSEG7ClassicMini-Bold.ttf")
-        .setAlignment("center-bottom")
-        .setTranslation(65, 105);
+        .setAlignment("right-bottom")
+        .setTranslation(110, 110);
 
         obj.string.enableUpdate();
 
@@ -54,10 +54,10 @@ var digital_display =
 #20 snorkel
 };
 
-var pitch_indicator = digital_display.new("Cannon_Pitch", "cannon-pitch-glass", "position-deg", "0.00", "%1.2f");
-var snorkel_depth_indicator = digital_display.new("Snorkel_Depth", "snorkel-depth-glass", "snorkel-depth", "0.00", "%1.2f");
-var tank_volume_indicator = digital_display.new("Tank_Volume", "tank-volume-glass", "tank-volume", "000.00", "%3.2f");
-var tank_weight_indicator = digital_display.new("Tank_Weight", "tank-weight-glass", "tank-weight", "00000", "%5.0f");
+var pitch_indicator = digital_display.new("Cannon_Pitch", "cannon-pitch-glass", "position-deg", "0.00", "%1.2f", "30", "0.2", "1.0", "0.2");
+var snorkel_depth_indicator = digital_display.new("Snorkel_Depth", "snorkel-depth-glass", "snorkel-depth", "0.00", "%1.2f", "30", "0.2", "1.0", "0.2");
+var tank_volume_indicator = digital_display.new("Tank_Volume", "tank-volume-glass", "tank-volume", "0000", "%4.0f", "30", "1.0", "0.2", "0.2");
+var tank_weight_indicator = digital_display.new("Tank_Weight", "tank-weight-glass", "tank-weight", "00000", "%5.0f", "30", "0.2", "1.0", "0.2");
 
 pitch_indicator.update();
 snorkel_depth_indicator.update();
@@ -264,7 +264,8 @@ var tank_operations = func {
   else
     setprop("sim/model/firetank/watercannonretardantctrl", 0);
 
-  setprop("sim/model/watercannon/tank-volume", hopperweight/20000);
+  #hopperweight/2500=8.345 per gallon
+  setprop("sim/model/watercannon/tank-volume", hopperweight/8.345);
   setprop("sim/model/watercannon/tank-weight", hopperweight);
   setprop("sim/model/watercannon/snorkel-depth", getprop("position/gear-agl-ft"));
 

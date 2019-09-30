@@ -10,5 +10,7 @@
     <cone3-deg type="double">0</cone3-deg>
     <cone4-deg type="double">0</cone4-deg>
   </main>
-  
+  <tail>
+    <rpm type="double">0</rpm>
+  </tail>
 </PropertyList>

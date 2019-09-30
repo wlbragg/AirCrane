@@ -206,7 +206,7 @@ var cargoReleased = 0;
 var interval = 0;
 var currentYaw = 0;
 var originalYaw = 0;
-var ropeLength = 0;
+var ropeSegments = 90;
 var hitchOffset = 1.1;
 var cargoHeight = 0;
 var cargoWeight = 0;
@@ -313,11 +313,13 @@ var cargo_init = func () {
     var elvPos = getprop("/position/ground-elev-ft") + (getprop("/position/altitude-agl-ft") - 3.9);
 
     var n_seg_reeled = getprop("/sim/cargo/rope/segments-reeled-in");
-    ropeLength = (90 - n_seg_reeled) * seg_length;
+    var rope_length = (ropeSegments - n_seg_reeled) * seg_length;
+
+    setprop("/sim/cargo/rope/length", rope_length* 3.28);
 
     if (longline){
         #hookHeight = 55;
-        hookHeight = ropeLength * 3.28;
+        hookHeight = rope_length * 3.28;
       }else{
         hookHeight = 15;
       }
@@ -337,7 +339,7 @@ var cargo_closest=0;
             if (altNode - (hookHeight + offset) < cargoElevation - cargoGroundElevFt) {
 
 setprop("/sim/cargo/current-cargo-elevation", cargoElevation - cargoGroundElevFt);
-setprop("/sim/cargo/current-cargo-elevation-two", altNode - ropeLength);
+setprop("/sim/cargo/current-cargo-elevation-two", altNode - rope_length);
 
 			          if (string.match(cargoN.getNode("callsign").getValue(), "cargo*")){
                     cargo_pos.set_latlon(cargoN.getNode("latitude-deg").getValue(), cargoN.getNode("longitude-deg").getValue());
@@ -455,9 +457,9 @@ if (stack == -1) {
                 if (currentYaw < 0) currentYaw = currentYaw + 360;
                 setprop("/sim/cargo/currentyaw", currentYaw);
 
-                setprop("sim/cargo/cargoalt", -ropeLength + -cargoHarness + -hitchOffset);
+                setprop("sim/cargo/cargoalt", -rope_length + -cargoHarness + -hitchOffset);
 
-                setprop("sim/cargo/harnessalt", -hitchOffset + -ropeLength);
+                setprop("sim/cargo/harnessalt", -hitchOffset + -rope_length);
 
                 setprop("sim/weight[3]/weight-lb", cargoWeight);
 
@@ -467,8 +469,8 @@ if (stack == -1) {
                 setprop("/models/cargo/" ~ cargoParent ~ "/longitude-deg", currentLon);
 
                 if (stack > 0) {
-                    #var cargoBaseHeight = (aircraft_alt_ft + 13.8) - ((ropeLength + cargoHarness + cargoHeight) * 3.28);
-                    var cargoBaseHeight = (aircraft_alt_ft + offset) - ((ropeLength + cargoHarness + cargoHeight) * 3.28);
+                    #var cargoBaseHeight = (aircraft_alt_ft + 13.8) - ((rope_length + cargoHarness + cargoHeight) * 3.28);
+                    var cargoBaseHeight = (aircraft_alt_ft + offset) - ((rope_length + cargoHarness + cargoHeight) * 3.28);
                     var stackTopHeight = getprop("/models/cargo/cargo[" ~ stack ~ "]/elevation-ft");
 
 setprop("/sim/cargo/current-cargo-elevation", stackTopHeight);
@@ -505,9 +507,9 @@ setprop("/sim/cargo/current-connection-distance", cargo_dist);
                 cargo_pos.set_latlon(currentLat, currentLon);
                 cargo_dist = aircraft_pos.distance_to(cargo_pos);
 
-                var lMin = -(cargoHeight*3.28)/((ropeLength + (cargoHarness * .5))*3.28);
-                var lMax = ((ropeLength + (cargoHarness * .5) + cargoHeight) * 3.28)/((ropeLength + (cargoHarness * .5))*3.28);
-                var iput = (altNode-(cargoHeight*3.28))/((ropeLength + (cargoHarness * .5))*3.28);
+                var lMin = -(cargoHeight*3.28)/((rope_length + (cargoHarness * .5))*3.28);
+                var lMax = ((rope_length + (cargoHarness * .5) + cargoHeight) * 3.28)/((rope_length + (cargoHarness * .5))*3.28);
+                var iput = (altNode-(cargoHeight*3.28))/((rope_length + (cargoHarness * .5))*3.28);
 
                 if (iput > lMax) iput = lMax;
                 if (iput < lMin) iput = lMin;
@@ -518,7 +520,7 @@ setprop("/sim/cargo/current-connection-distance", cargo_dist);
                 var rel_bearing =  (headNode - 180.0) - bearing;
                 setprop("/sim/cargo/rope/yaw1", rel_bearing);       
                 
-                if (cargo_dist > (ropeLength + 3)) {
+                if (cargo_dist > (rope_length + 3)) {
                     setprop("sim/cargo/rope/pulling", 2);
 
                     setprop("sim/weight[3]/weight-lb", cargoWeight);
@@ -532,7 +534,7 @@ setprop("/sim/cargo/current-connection-distance", cargo_dist);
                     setprop("/models/cargo/" ~ cargoParent ~ "/longitude-deg", currentLon);
                 }
                 
-                if (cargo_dist > (ropeLength + 6)) {
+                if (cargo_dist > (rope_length + 6)) {
                     setprop("controls/cargo-release", 1);
                 }
 

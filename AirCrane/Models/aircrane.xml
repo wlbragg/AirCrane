@@ -207,7 +207,6 @@
   
   <effect>
     <inherits-from>Aircraft/Generic/Effects/Fuselagereflect</inherits-from>
-    <!--inherits-from>Aircraft/AirCrane/Models/Effects/exterior/bumpspec</inherits-from-->
     <object-name>fuselage</object-name>
     <object-name>porteG</object-name>
     <object-name>porteD</object-name>
@@ -254,30 +253,6 @@
     <object-name>cableguardupperconnectorfor</object-name>
     <object-name>cableguidebearing</object-name>
     <object-name>cableguidepin</object-name>
-  </effect>
-  
-  <!-- exterior glass reflection (working for Rembrandt) -->
-  <effect>
-    <inherits-from>Aircraft/AirCrane/Models/Effects/glass/glass</inherits-from>
-    <object-name>vitres</object-name>
-    <object-name>vitresporteG</object-name>
-    <object-name>vitresporteD</object-name>
-    <object-name>vitresreardoor</object-name>
-    <object-name>vitresreardoorInt</object-name>
-    <object-name>vitresstarboard</object-name>
-    <object-name>vitresstarboardInt</object-name>
-  </effect>
-
-  <!-- interior glass effects -->
-  <effect>
-    <inherits-from>Aircraft/AirCrane/Models/Effects/glass/glass-inner</inherits-from>
-    <object-name>vitresInt</object-name>
-    <object-name>vitresporteGInt</object-name>
-    <object-name>vitresporteDInt</object-name>
-    <object-name>vitresreardoor</object-name>
-    <object-name>vitresreardoorInt</object-name>
-    <object-name>vitresstarboard</object-name>
-    <object-name>vitresstarboardInt</object-name>
   </effect>
 
   <!-- Une ombre pour OSG -->
@@ -353,9 +328,8 @@
   <model>
     <path>Aircraft/AirCrane/Models/Interior/interior.xml</path>
   </model>
-  
+
   <!-- non-Canvas remote Garmin 196 GPS (FGDATA) -->
-  <!-- TODO Remove this old version, unhide and implement the Canvas version below -->
   <model>
     <name>Garmin196-GPS-non-Canvas-Passenger-View</name>
     <path>Aircraft/Instruments-3d/garmin196/garmin196.xml</path>
@@ -365,7 +339,7 @@
         <or>
           <equals>
             <property>sim/current-view/name</property>
-            <value>Passanger Seat View</value>
+            <value>Cockpit View</value>
           </equals>
           <equals>
             <property>sim/current-view/name</property>
@@ -375,13 +349,12 @@
       </and>
     </condition>
     <offsets>
-      <x-m>-9.36025</x-m>
-      <y-m>-0.20100</y-m>
-      <z-m>-1.21999</z-m>
-      <heading-deg>0.0</heading-deg>
+      <x-m>-9.37908</x-m>
+      <y-m> 0.476044</y-m>
+      <z-m>-1.255300</z-m>
+      <heading-deg>-13.0</heading-deg>
     </offsets>
   </model>
-
   <model>
     <name>Garmin196-GPS-non-Canvas-Pilot-View</name>
     <path>Aircraft/Instruments-3d/garmin196/garmin196.xml</path>
@@ -390,7 +363,7 @@
         <property>sim/model/garmin196-visible</property>
         <equals>
           <property>sim/current-view/name</property>
-          <value>Cockpit View</value>
+          <value>Passanger Seat View</value>
         </equals>
       </and>
     </condition>
@@ -398,39 +371,9 @@
       <x-m>-9.36025</x-m>
       <y-m>-0.20100</y-m>
       <z-m>-1.21999</z-m>
-      <heading-deg>30.0</heading-deg>
+      <heading-deg>-3.0</heading-deg>
     </offsets>
   </model>
-
-  <!-- Canvas local Garmin 196 GPS -->
-  <!--<model>
-    <name>Garmin196-GPS</name>
-    <path>Interior/Panel/garmin196/garmin196.xml</path>
-    <offsets>        
-      <x-m>-0.21</x-m>
-      <y-m> 0.19</y-m>
-      <z-m>-.30</z-m>
-      <heading-deg>-12.0</heading-deg>
-    </offsets>
-  </model>
-  <model>
-    <name>Garmin196-GPS-support</name>
-    <path>Interior/Panel/garmin196/garmin196_support.xml</path>
-    <offsets>
-      <x-m>-0.21</x-m>
-      <y-m> 0.19</y-m>
-      <z-m>-.30</z-m>
-      <heading-deg>-17.0</heading-deg>
-    </offsets>
-  </model>
-  <animation>
-    <type>select</type>
-    <object-name>Garmin196-GPS</object-name>
-    <object-name>Garmin196-GPS-support</object-name>
-    <condition>
-      <property>sim/model/j3cub/garmin196-visible</property>
-    </condition>
-  </animation>-->
 
   <!-- Immatriculatoin -->
   <model>

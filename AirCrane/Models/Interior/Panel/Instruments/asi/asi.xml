@@ -6,9 +6,8 @@
 
   <effect>
       <inherits-from>Models/Effects/interior/cockpit-interior-shadows</inherits-from>
-      <object-name>Case</object-name>
+      <object-name>case</object-name>
       <object-name>face</object-name>
-      <object-name>Needle</object-name>
       <object-name>fasteners</object-name>
   </effect>
   <effect>

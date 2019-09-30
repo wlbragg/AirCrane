@@ -11,25 +11,32 @@
     <object-name>panel2</object-name>
     <object-name>panel3</object-name>
     <object-name>panel4</object-name>
+
   </effect>
 
-  <!-- ALS Interior Shadows
   <effect>
     <inherits-from>Models/Effects/interior/cockpit-interior-shadows</inherits-from>
-    <object-name>panel1</object-name>
-    <object-name>panel2</object-name>
-    <object-name>panel3</object-name>
-    <object-name>panel4</object-name>
-  </effect> -->
-
-  <model>
-    <path>Aircraft/AirCrane/Models/Interior/Panel/Instruments/case/cases.xml</path>
-    <offsets>
-      <x-m>0</x-m>
-      <y-m>0</y-m>
-      <z-m>0</z-m>
-    </offsets>
-  </model>
+    <object-name>fire</object-name>
+    <object-name>caution</object-name>
+    <object-name>fuelpumpplate</object-name>
+    <object-name>cpplate</object-name>
+    <object-name>afpn1</object-name>
+    <object-name>afpn1base</object-name>
+    <object-name>afpn2</object-name>
+    <object-name>afpn2base</object-name>
+    <object-name>cpswitch</object-name>
+    <object-name>cpswitchbase</object-name>
+    <object-name>panelhori</object-name>
+    <object-name>panelscrews</object-name>
+    <object-name>t5switch</object-name>
+    <object-name>t5plate</object-name>
+    <object-name>t5switchbase</object-name>
+    <object-name>hydplate</object-name>
+    <object-name>oilplate</object-name>
+    <object-name>xoilplate</object-name>
+    <object-name>infoplate1</object-name>
+    <object-name>cws</object-name>
+  </effect>
 
   <!-- ai -->
   <model>
@@ -71,6 +78,16 @@
     </offsets>
   </model>
 
+  <!-- chcl -->
+  <model>
+    <path>Aircraft/AirCrane/Models/Interior/Panel/Instruments/chcl/chcl.xml</path>
+    <offsets>
+      <x-m> 0.0 </x-m>
+      <y-m> 0.0 </y-m>
+      <z-m> 0.0 </z-m>
+    </offsets>
+  </model>
+
   <!-- digital-clock-left -->
   <model>
     <path>Aircraft/AirCrane/Models/Interior/Panel/Instruments/digitalclock/digital-clock-left.xml</path>
@@ -91,6 +108,146 @@
     </offsets>
   </model>
 
+  <!-- fuel -->
+  <model>
+    <path>Aircraft/AirCrane/Models/Interior/Panel/Instruments/fuel/fuel.xml</path>
+    <offsets>
+      <x-m> 0.0 </x-m>
+      <y-m> 0.0 </y-m>
+      <z-m> 0.0 </z-m>
+    </offsets>
+  </model>
+
+  <!-- engtemp -->
+  <model>
+    <path>Aircraft/AirCrane/Models/Interior/Panel/Instruments/engtemp/engtemp.xml</path>
+    <offsets>
+      <x-m> 0.0 </x-m>
+      <y-m> 0.0 </y-m>
+      <z-m> 0.0 </z-m>
+    </offsets>
+  </model>
+
+  <!-- fuelflow -->
+  <model>
+    <path>Aircraft/AirCrane/Models/Interior/Panel/Instruments/fuel/fuelflow.xml</path>
+    <offsets>
+      <x-m> 0.0 </x-m>
+      <y-m> 0.0 </y-m>
+      <z-m> 0.0 </z-m>
+    </offsets>
+  </model>
+
+  <!-- fuelpress -->
+  <model>
+    <path>Aircraft/AirCrane/Models/Interior/Panel/Instruments/fuel/fuelpress.xml</path>
+    <offsets>
+      <x-m> 0.0 </x-m>
+      <y-m> 0.0 </y-m>
+      <z-m> 0.0 </z-m>
+    </offsets>
+  </model>
+
+  <!-- gdsi -->
+  <model>
+    <path>Aircraft/AirCrane/Models/Interior/Panel/Instruments/gdsi/gdsi.xml</path>
+    <offsets>
+      <x-m> 0.0 </x-m>
+      <y-m> 0.0 </y-m>
+      <z-m> 0.0 </z-m>
+    </offsets>
+  </model>
+
+  <!-- ggt -->
+  <model>
+    <path>Aircraft/AirCrane/Models/Interior/Panel/Instruments/ggt/ggt.xml</path>
+    <offsets>
+      <x-m> 0.0 </x-m>
+      <y-m> 0.0 </y-m>
+      <z-m> 0.0 </z-m>
+    </offsets>
+  </model>
+
+  <!-- hydrfst-->
+  <model>
+    <path>Aircraft/AirCrane/Models/Interior/Panel/Instruments/hydrfst/hydrfst.xml</path>
+    <offsets>
+      <x-m> 0.0 </x-m>
+      <y-m> 0.0 </y-m>
+      <z-m> 0.0 </z-m>
+    </offsets>
+  </model>
+
+  <!-- hydrsnd -->
+  <model>
+    <path>Aircraft/AirCrane/Models/Interior/Panel/Instruments/hydrsnd/hydrsnd.xml</path>
+    <offsets>
+      <x-m> 0.0 </x-m>
+      <y-m> 0.0 </y-m>
+      <z-m> 0.0 </z-m>
+    </offsets>
+  </model>
+
+  <!-- hydrutil -->
+  <model>
+    <path>Aircraft/AirCrane/Models/Interior/Panel/Instruments/hydrutil/hydrutil.xml</path>
+    <offsets>
+      <x-m> 0.0 </x-m>
+      <y-m> 0.0 </y-m>
+      <z-m> 0.0 </z-m>
+    </offsets>
+  </model>
+
+  <!-- oilpressure -->
+  <model>
+    <path>Aircraft/AirCrane/Models/Interior/Panel/Instruments/oil/oilpressure.xml</path>
+    <offsets>
+      <x-m> 0.0 </x-m>
+      <y-m> 0.0 </y-m>
+      <z-m> 0.0 </z-m>
+    </offsets>
+  </model>
+
+  <!-- oiltemp -->
+  <model>
+    <path>Aircraft/AirCrane/Models/Interior/Panel/Instruments/oil/oiltemp.xml</path>
+    <offsets>
+      <x-m> 0.0 </x-m>
+      <y-m> 0.0 </y-m>
+      <z-m> 0.0 </z-m>
+    </offsets>
+  </model>
+
+  <!-- xmsnoilpressure -->
+  <model>
+    <path>Aircraft/AirCrane/Models/Interior/Panel/Instruments/oil/xoilpressure.xml</path>
+    <offsets>
+      <x-m> 0.0 </x-m>
+      <y-m> 0.0 </y-m>
+      <z-m> 0.0 </z-m>
+    </offsets>
+  </model>
+
+  <!-- xmsnoiltemp -->
+  <model>
+    <path>Aircraft/AirCrane/Models/Interior/Panel/Instruments/oil/xoiltemp.xml</path>
+    <offsets>
+      <x-m> 0.0 </x-m>
+      <y-m> 0.0 </y-m>
+      <z-m> 0.0 </z-m>
+    </offsets>
+  </model>
+
+  <!-- pi -->
+  <model>
+    <path>Aircraft/AirCrane/Models/Interior/Panel/Instruments/pi/pi.xml</path>
+    <offsets>
+      <x-m> 0.0 </x-m>
+      <y-m> 0.0 </y-m>
+      <z-m> 0.0 </z-m>
+    </offsets>
+  </model>
+
   <!-- rmi -->
   <model>
     <path>Aircraft/AirCrane/Models/Interior/Panel/Instruments/rmi/rmi.xml</path>
@@ -101,9 +258,19 @@
     </offsets>
   </model>
 
-  <!-- torque -->
+  <!-- rotorpcnt -->
   <model>
-    <path>Aircraft/AirCrane/Models/Interior/Panel/Instruments/torque/torque.xml</path>
+    <path>Aircraft/AirCrane/Models/Interior/Panel/Instruments/rotorpcnt/rotorpcnt.xml</path>
+    <offsets>
+      <x-m>0</x-m>
+      <y-m>0</y-m>
+      <z-m>0</z-m>
+    </offsets>
+  </model>
+
+  <!-- torque percent -->
+  <model>
+    <path>Aircraft/AirCrane/Models/Interior/Panel/Instruments/torquepcnt/torquepcnt.xml</path>
     <offsets>
       <x-m>0</x-m>
       <y-m>0</y-m>
@@ -134,6 +301,26 @@
   <!-- vsi -->
   <model>
     <path>Aircraft/AirCrane/Models/Interior/Panel/Instruments/vsi/vsi.xml</path>
+    <offsets>
+      <x-m> 0.0 </x-m>
+      <y-m> 0.0 </y-m>
+      <z-m> 0.0 </z-m>
+    </offsets>
+  </model>
+
+  <!-- wl -->
+  <model>
+    <path>Aircraft/AirCrane/Models/Interior/Panel/Instruments/wl/wl.xml</path>
+    <offsets>
+      <x-m> 0.0 </x-m>
+      <y-m> 0.0 </y-m>
+      <z-m> 0.0 </z-m>
+    </offsets>
+  </model>
+
+  <!-- wt -->
+  <model>
+    <path>Aircraft/AirCrane/Models/Interior/Panel/Instruments/wt/wt.xml</path>
     <offsets>
       <x-m> 0.0 </x-m>
       <y-m> 0.0 </y-m>

@@ -16,14 +16,26 @@
     <object-name>planchet</object-name>
   </effect>
 
-  <!-- working for Rembrandt -->
   <effect>
-    <inherits-from>Effects/model-transparent</inherits-from>
+    <inherits-from>Aircraft/AirCrane/Models/Effects/exterior/exterior-glass-reflection</inherits-from>
     <object-name>intvitres</object-name>
     <object-name>intvitresporteG</object-name>
     <object-name>intvitresporteD</object-name>
     <object-name>intvitresreardoor</object-name>
     <object-name>intvitresstarboard</object-name>
+  </effect>
+
+  <effect>
+    <inherits-from>Models/Effects/interior/interior-glass-reflection-front</inherits-from>
+    <object-name>intvitresint</object-name>
+    <object-name>intvitresreardoorint</object-name>
+  </effect>
+
+  <effect>
+    <inherits-from>Models/Effects/interior/interior-glass-reflection-side</inherits-from>
+    <object-name>intvitresporteGint</object-name>
+    <object-name>intvitresporteDint</object-name>
+    <object-name>intvitresstarboardint</object-name>
   </effect>
 
   <!-- ALS Interior Shadows -->

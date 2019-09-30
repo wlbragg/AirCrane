@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+    Copyright (c) 2019 Wayne Bragg
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 2 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+-->
+
+<PropertyList>
+    <!--filter>
+        <name>Interior Glass Glare Factor Flood</name>
+        <type>gain</type>
+        <gain>1</gain>
+        <input>
+            <expression>
+                <sum>
+                    <table>
+                        <property>/controls/lighting/instruments-norm</property>
+                        <entry><ind>0.0</ind><dep>0.0</dep></entry>
+                        <entry><ind>0.7</ind><dep>0.025</dep></entry>
+                        <entry><ind>1.0</ind><dep>0.05</dep></entry>
+                    </table>
+                    <property>/rendering/scene/diffuse/red</property>
+                </sum>
+            </expression>
+            <min>0.0</min>
+            <max>0.3</max>
+        </input>
+        <output>/sim/model/lightmap/flood/factor-glassglare</output>
+    </filter-->
+    <filter>
+        <name>Interior Glass Glare Factor Combined</name>
+        <type>gain</type>
+        <gain>1</gain>
+        <input>
+            <!--expression>
+                <sum>
+                   <property>/sim/model/lightmap/dome/factor-glassglare</property>
+                   <property>/sim/model/lightmap/post/factor-glassglare</property>
+                   <property>/sim/model/lightmap/flood/factor-glassglare</property>
+                </sum>
+            </expression-->
+            <property>/rendering/scene/diffuse/red</property>
+            <min>0.1</min>
+            <max>0.9</max>
+        </input>
+        <output>/environment/aircraft-effects/panel-glass-reflection</output>
+    </filter>
+
+</PropertyList>

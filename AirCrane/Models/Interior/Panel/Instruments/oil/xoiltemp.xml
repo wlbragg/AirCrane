@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+<path>xoiltemp.ac</path>
+
+  <effect>
+      <inherits-from>Models/Effects/interior/cockpit-interior-shadows</inherits-from>
+      <object-name>case</object-name>
+      <object-name>face</object-name>
+      <object-name>fasteners</object-name>
+  </effect>
+  <effect>
+      <inherits-from>Models/Effects/interior/cockpit-flashlight</inherits-from>
+      <object-name>needle</object-name>
+  </effect>
+  <effect>
+      <inherits-from>Models/Effects/interior/interior-glass-reflection-panel-front</inherits-from>
+      <object-name>glass</object-name>
+  </effect>
+
+	<animation>
+		<type>rotate</type>
+    <object-name>needle</object-name>
+    <property>sim/model/aircrane/xmsn-oil-temp</property>
+		<interpolation>
+			<entry><ind>-999</ind><dep>  58</dep></entry>
+			<entry><ind> -50</ind><dep>  57</dep></entry>
+      <entry><ind>   0</ind><dep>   0</dep></entry>
+      <entry><ind>  50</ind><dep> -56</dep></entry>
+			<entry><ind> 100</ind><dep>-113</dep></entry>
+			<entry><ind> 150</ind><dep>-162</dep></entry>
+			<entry><ind> 999</ind><dep>-163</dep></entry>
+		</interpolation>
+		<axis>
+			  <x1-m>-9.37556</x1-m>
+        <y1-m> 0.174425</y1-m> 
+        <z1-m>-1.66156</z1-m>
+        <x2-m>-9.37469</x2-m>
+        <y2-m> 0.17442</y2-m>
+        <z2-m>-1.66147</z2-m>
+    </axis>
+	</animation>
+
+</PropertyList>

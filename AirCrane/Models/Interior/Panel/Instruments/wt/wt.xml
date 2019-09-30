@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+<path>wt.ac</path>
+
+  <effect>
+      <inherits-from>Models/Effects/interior/cockpit-interior-shadows</inherits-from>
+      <object-name>case</object-name>
+      <object-name>face</object-name>
+      <object-name>fasteners</object-name>
+  </effect>
+  <effect>
+      <inherits-from>Models/Effects/interior/cockpit-flashlight</inherits-from>
+      <object-name>needle</object-name>
+  </effect>
+  <effect>
+      <inherits-from>Models/Effects/interior/interior-glass-reflection-panel-front</inherits-from>
+      <object-name>glass</object-name>
+  </effect>
+
+	<animation>
+		<type>rotate</type>
+    <object-name>needle</object-name>
+    <property>/sim/weight[3]/weight-lb</property>
+		<interpolation>
+			<entry><ind>-999</ind><dep>  37</dep></entry>
+			<entry><ind> -50</ind><dep>  36</dep></entry>
+      <entry><ind>   0</ind><dep>   0</dep></entry>
+      <entry><ind>  50</ind><dep> -35</dep></entry>
+			<entry><ind> 100</ind><dep> -71</dep></entry>
+			<entry><ind> 150</ind><dep>-109</dep></entry>
+			<entry><ind> 999</ind><dep>-110</dep></entry>
+		</interpolation>
+		<axis>
+			  <x1-m>-9.38752</x1-m>
+        <y1-m> 0.368991</y1-m> 
+        <z1-m>-1.59596</z1-m>
+        <x2-m>-9.38665</x2-m>
+        <y2-m> 0.36903</y2-m>
+        <z2-m>-1.59585</z2-m>
+    </axis>
+	</animation>
+
+</PropertyList>

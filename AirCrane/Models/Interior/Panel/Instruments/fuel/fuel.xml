@@ -1,0 +1,102 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+<path>fuel.ac</path>
+
+  <effect>
+      <inherits-from>Models/Effects/interior/cockpit-interior-shadows</inherits-from>
+      <object-name>case</object-name>
+      <object-name>face</object-name>
+      <object-name>fasteners</object-name>
+  </effect>
+  <effect>
+      <inherits-from>Models/Effects/interior/cockpit-flashlight</inherits-from>
+      <object-name>needle-aux</object-name>
+      <object-name>needle-fwd</object-name>
+      <object-name>needle-aft</object-name>
+  </effect>
+  <effect>
+      <inherits-from>Models/Effects/interior/interior-glass-reflection-panel-front</inherits-from>
+      <object-name>glass</object-name>
+  </effect>
+
+	<animation>
+		<type>rotate</type>
+    <object-name>needle-fwd</object-name>
+    <property>consumables/fuel/fwd/level-lbs</property>
+		<interpolation>
+			<entry><ind>-999</ind><dep>  1</dep></entry>
+			<entry><ind>   0</ind><dep>  0</dep></entry>
+      <entry><ind> 500</ind><dep> -47</dep></entry>
+      <entry><ind>1000</ind><dep> -93</dep></entry>
+			<entry><ind>1500</ind><dep>-141</dep></entry>
+			<entry><ind>2000</ind><dep>-187</dep></entry>
+			<entry><ind>2500</ind><dep>-233</dep></entry>
+			<entry><ind>3000</ind><dep>-279</dep></entry>
+      <entry><ind>3300</ind><dep>-307</dep></entry>
+			<entry><ind>4000</ind><dep>-308</dep></entry>
+		</interpolation>
+		<axis>
+			  <x1-m>-9.39163</x1-m>
+        <y1-m>-0.116423</y1-m> 
+        <z1-m>-1.49829</z1-m>
+        <x2-m>-9.39074</x2-m>
+        <y2-m>-0.116423</y2-m>
+        <z2-m>-1.49819</z2-m>
+    </axis>
+	</animation>
+
+	<animation>
+		<type>rotate</type>
+    <object-name>needle-aft</object-name>
+    <property>consumables/fuel/aft/level-lbs</property>
+		<interpolation>
+			<entry><ind>-999</ind><dep>  1</dep></entry>
+			<entry><ind>   0</ind><dep>  0</dep></entry>
+      <entry><ind> 500</ind><dep> -47</dep></entry>
+      <entry><ind>1000</ind><dep> -93</dep></entry>
+			<entry><ind>1500</ind><dep>-141</dep></entry>
+			<entry><ind>2000</ind><dep>-187</dep></entry>
+			<entry><ind>2500</ind><dep>-233</dep></entry>
+			<entry><ind>3000</ind><dep>-279</dep></entry>
+      <entry><ind>3300</ind><dep>-307</dep></entry>
+			<entry><ind>4000</ind><dep>-308</dep></entry>
+		</interpolation>
+		<axis>
+			  <x1-m>-9.38381</x1-m>
+        <y1-m>-0.11636</y1-m> 
+        <z1-m>-1.57543</z1-m>
+        <x2-m>-9.38292</x2-m>
+        <y2-m>-0.11636</y2-m>
+        <z2-m>-1.57533</z2-m>
+    </axis>
+	</animation>
+
+	<animation>
+		<type>rotate</type>
+    <object-name>needle-aux</object-name>
+    <property>consumables/fuel/tank[4]/level-lbs</property>
+		<interpolation>
+			<entry><ind>-999</ind><dep>  1</dep></entry>
+			<entry><ind>   0</ind><dep>  0</dep></entry>
+      <entry><ind> 500</ind><dep> -47</dep></entry>
+      <entry><ind>1000</ind><dep> -93</dep></entry>
+			<entry><ind>1500</ind><dep>-141</dep></entry>
+			<entry><ind>2000</ind><dep>-187</dep></entry>
+			<entry><ind>2500</ind><dep>-233</dep></entry>
+			<entry><ind>3000</ind><dep>-279</dep></entry>
+      <entry><ind>3300</ind><dep>-307</dep></entry>
+			<entry><ind>4000</ind><dep>-308</dep></entry>
+		</interpolation>
+		<axis>
+			  <x1-m>-9.3754</x1-m>
+        <y1-m>-0.116291</y1-m> 
+        <z1-m>-1.6528</z1-m>
+        <x2-m>-9.37452</x2-m>
+        <y2-m>-0.116291</y2-m>
+        <z2-m>-1.6527</z2-m>
+    </axis>
+	</animation>
+
+</PropertyList>
