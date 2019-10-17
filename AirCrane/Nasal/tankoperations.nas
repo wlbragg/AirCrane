@@ -102,7 +102,11 @@ var tank_operations = func {
 	var normalized = 1-(altitude-0)/(60-0);
   var quantity = getprop("sim/model/firetank/quantity");
   var coverage = getprop("sim/model/firetank/coverage");
+  #var cannontoggle = props.globals.getNode("sim/model/watercannon/togglecannonpitch", 1);
   var cannontoggle = getprop("sim/model/watercannon/togglecannonpitch");
+  #var cannon_position_deg = props.globals.getNode("sim/model/watercannon/position-deg", 1);
+
+
   var red_diffuse = getprop("/rendering/scene/diffuse/red");
 
 	setprop("/sim/model/aircrane/effects/particles/redcombined",    red_diffuse*.95);
@@ -272,14 +276,15 @@ var tank_operations = func {
   if (cannontoggle == 1)
     {
       if (cannonpitch < 7.5)
-        cannonpitch = cannonpitch + .25;
+        cannonpitch = cannonpitch + .5;
     }
   else
   if (cannontoggle == -1)
     {
       if (cannonpitch > -7.5)
-      cannonpitch = cannonpitch - .25;
+      cannonpitch = cannonpitch - .5;
     }
 
-   setprop("sim/model/watercannon/position-deg", cannonpitch);
+    #cannon_position_deg.setValue(cannonpitch);
+    setprop("sim/model/watercannon/position-deg", cannonpitch);
 }

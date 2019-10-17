@@ -119,23 +119,6 @@
       </binding>
     </checkbox>
   </group>
-  <group>
-    <layout>hbox</layout>
-    <checkbox>
-      <halign>left</halign>
-      <label>Persistent Position</label>
-      <property>sim/model/aircrane/persistent</property>
-      <live>true</live>
-      <binding>
-        <command>nasal</command>
-        <script>
-          var p = "sim/model/aircrane/persistent";
-          setprop(p, var i = !getprop(p));
-          gui.popupTip("Persistent position " ~ (i ? "On" : "Off"));
-        </script>
-      </binding>
-    </checkbox>
-  </group>
 
   <hrule/>
 

@@ -24,6 +24,14 @@
       <aircrane>
         <state type="int">0</state>
         <engine type="float">0</engine>
+        <engines>
+          <one>
+            <n1 type="double">0</n1>
+          </one>
+          <two>
+            <n1 type="double">0</n1>
+          </two>
+        </engines>
         <rotor-step-deg type="float">-1</rotor-step-deg>
         <main-rpm-pct type="double">0</main-rpm-pct>
         <tail-rpm-pct type="double">0</tail-rpm-pct>
@@ -62,20 +70,11 @@
             <grain>
               <frame type="int">300</frame>
               <floor type="int">150</floor>
-              <wall type="int">600</wall>
+              <wall type="int">200</wall>
               <seal type="int">400</seal>
             </grain>
           </interior>
         </effects>
-        <persistent type="bool">false</persistent>
-        <currentlat type="double">0.0</currentlat>
-        <currentlon type="double">0.0</currentlon>
-        <currentalt type="double">0.0</currentalt>
-        <currenthead type="double">0.0</currenthead>
-        <currentpitch type="double">0.0</currentpitch>
-        <currentroll type="double">0.0</currentroll>
-        <currentvsfps type="double">0.0</currentvsfps>
-        <currenteqnt type="double">0.0</currenteqnt>
       </aircrane>
       <hitch>
         <openhook type="bool">false</openhook>
@@ -432,8 +431,16 @@
     </submodels>
 
     <systems>
+        <path>Aircraft/AirCrane/Systems/systems.xml</path>
+
         <property-rule n="100">
-          <path>Aircraft/AirCrane/Systems/lighting-effects.xml</path>
+          <path>Aircraft/AirCrane/Systems/als-lights.xml</path>
+        </property-rule>
+        <property-rule n="101">
+          <path>Aircraft/AirCrane/Systems/model-effects.xml</path>
+        </property-rule>
+        <property-rule n="102">
+          <path>Aircraft/AirCrane/Systems/electrical.xml</path>
         </property-rule>
     </systems>
 
@@ -479,7 +486,15 @@
         <int type="int" n="3">  0 </int>                                           <!--  3 immat -->
         <int type="int" n="4">  0 </int>                                           <!--  4 immat -->
         <int type="int" n="5">  0 </int>                                           <!--  5 immat -->
+
         <int type="int" n="10" alias="/controls/armament/trigger">0</int>          <!-- 10 reserved for bombable mode -->
+        <int n="11" alias="/sim/model/aircrane/lighting/beaconfwd/enabled"/>
+        <int n="12" alias="/sim/model/aircrane/lighting/beaconaft/enabled"/>
+        <int n="13" alias="/sim/model/aircrane/lighting/strobe/enabled"/>
+        <int n="14" alias="/sim/model/aircrane/lighting/nav-lights"/>
+        <int n="15" alias="/sim/model/aircrane/lighting/spot"/>
+        <int n="16" alias="/sim/model/aircrane/lighting/landing"/>
+
         <float n="0" alias="/sim/model/door-positions/crew/position-norm"/>
         <float n="1" alias="/sim/model/door-positions/passenger/position-norm"/>
         <!--float n="2" alias="/position/gear-agl-m"> 0 </float-->                 <!--  2 altitude for MP shadow -->
@@ -492,8 +507,7 @@
         <float n="8" alias="/sim/model/door-positions/starboard/position-norm"/>
         <float n="9" alias="/sim/model/hitch/hitchhook/position-norm"/>
         <float n="10" alias="/sim/model/hitch/hitchstop/position-norm"/>
-        <!-- For Bombable -->
-        <int type="int" n="10" alias="controls/armament/trigger">0</int>
+
         <string n="9" type="string" />
       </generic>
     </multiplay>
@@ -539,6 +553,11 @@
 
   </sim>
 
+  <configured type="float">0</configured>
+  <configuredf type="float">0</configuredf>
+  <configuredfl type="float">0</configuredfl>
+  <configuredb type="float">0</configuredb>
+
   <environment>
     <aircraft-effects>
       <splash-vector-z type="float">-1</splash-vector-z>
@@ -554,18 +573,23 @@
   <rotors include="rotors.xml"/>
   
   <nasal>
+    <updateloop>
+        <file>Aircraft/Generic/updateloop.nas</file>
+    </updateloop>
     <doors>
       <file>Aircraft/AirCrane/Nasal/doors.nas</file>
     </doors>
     <aircrane>
       <file>Aircraft/AirCrane/Nasal/immat.nas</file>
       <file>Aircraft/AirCrane/Nasal/light.nas</file>
+      <file>Aircraft/AirCrane/Nasal/light-manager.nas</file>
       <file>Aircraft/AirCrane/Nasal/aircrane.nas</file>
       <file>Aircraft/AirCrane/Nasal/liveries.nas</file>
       <file>Aircraft/AirCrane/Nasal/bladevisible.nas</file>
       <file>Aircraft/AirCrane/Nasal/rotorwash.nas</file>
       <file>Aircraft/AirCrane/Nasal/hoseanimation.nas</file>
       <file>Aircraft/AirCrane/Nasal/tankoperations.nas</file>
+      <file>Aircraft/AirCrane/Nasal/engine.nas</file>
       <!-- cargo hauling feature -->
       <file>Aircraft/AirCrane/Nasal/aircraft-dialog.nas</file>
       <!--file>Aircraft/AirCrane/Nasal/longlineanimation.nas</file-->
@@ -573,6 +597,9 @@
       <file>Aircraft/AirCrane/Nasal/cargooperations.nas</file>
       <!-- end cargo hauling feature -->
     </aircrane>
+    <electrical>
+        <file>Aircraft/AirCrane/Nasal/electrical.nas</file>
+    </electrical>
     <fcs>
       <file>Aircraft/AirCrane/Nasal/fcs-management.nas</file>
       <file>Aircraft/Generic/helicopter-fcs.nas</file>
@@ -602,6 +629,15 @@
         <pressure type="double">0</pressure>
         <flow type="double">0</flow>
       </fwd>
+      <aux>
+        <level-lbs type="int">0</level-lbs>
+      </aux>
+      <shutoff>
+        <lever>
+          <left type="int">0</left>
+          <right type="int">0</right>
+        </lever>
+      </shutoff>
       <tank n="0">
         <level-lbs type="int">215</level-lbs>
       </tank>
@@ -630,7 +666,7 @@
   <systems>
     <electrical>
       <outputs>
-        <digital-display type="float">.5</digital-display>
+        <digital-display type="float">0</digital-display>
       </outputs>
     </electrical>
   </systems>

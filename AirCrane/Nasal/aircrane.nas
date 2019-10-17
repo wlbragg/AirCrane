@@ -40,26 +40,21 @@ var cone3 = props.globals.getNode("rotors/main/cone3-deg", 1);
 var cone4 = props.globals.getNode("rotors/main/cone4-deg", 1);
 var main_rpm_pct = props.globals.getNode("sim/model/aircrane/main-rpm-pct", 1);
 var tail_rpm_pct = props.globals.getNode("sim/model/aircrane/tail-rpm-pct", 1);
+#fuel =====================================================
 var tank1_level_lbs = props.globals.getNode("consumables/fuel/tank[0]/level-lbs", 1);
 var tank2_level_lbs = props.globals.getNode("consumables/fuel/tank[1]/level-lbs", 1);
 var tank3_level_lbs = props.globals.getNode("consumables/fuel/tank[2]/level-lbs", 1);
 var tank4_level_lbs = props.globals.getNode("consumables/fuel/tank[3]/level-lbs", 1);
+var tank5_level_lbs = props.globals.getNode("consumables/fuel/tank[4]/level-lbs", 1);
 var fwd_level_lbs = props.globals.getNode("consumables/fuel/fwd/level-lbs", 1);
 var aft_level_lbs = props.globals.getNode("consumables/fuel/aft/level-lbs", 1);
-
-var update_rpm_percents = func {
-    #185
-    #750
-    main_rpm_pct.setValue(196/rotor_rpm.getValue());
-    tail_rpm_pct.setValue(787/tail_rpm.getValue());
-    #setprop("sim/model/aircrane/main-rpm-pct", 196/getprop("rotors/main/rpm"));
-    #setprop("sim/model/aircrane/tail-rpm-pct", 787/getprop("rotors/tail/rpm"));
-}
-
-var update_fuel_lbs = func {
-    fwd_level_lbs.setValue(tank1_level_lbs.getValue()+tank2_level_lbs.getValue());
-    aft_level_lbs.setValue(tank3_level_lbs.getValue()+tank4_level_lbs.getValue());
-}
+var aux_level_lbs = props.globals.getNode("consumables/fuel/aux/level-lbs", 1);
+var fuel_shutoff_left = props.globals.getNode("consumables/fuel/shutoff/lever/left", 1);
+var fuel_shutoff_right = props.globals.getNode("consumables/fuel/shutoff/lever/right", 1);
+#power =====================================================
+var master_bat = props.globals.getNode("controls/switches/master-bat", 1);
+var generator_1 = props.globals.getNode("controls/switches/generator-1", 1);
+var generator_2 = props.globals.getNode("controls/switches/generator-2", 1);
 
 var autostart = func (msg=1) {
     if (getprop("/engines/active-engine/running")) {
@@ -67,8 +62,29 @@ var autostart = func (msg=1) {
         gui.popupTip("Engine already running", 5);
         return;
     }
+    fwd_level_lbs.setValue(100);
+    aft_level_lbs.setValue(100);
+    fuel_shutoff_left.setValue(1);
+    fuel_shutoff_right.setValue(1);
+    master_bat.setValue(1);
+    generator_1.setValue(1);
+    generator_2.setValue(1);
     engines(1);
 };
+
+var update_rpm_percents = func {
+    #185
+    #750
+    main_rpm_pct.setValue(196/rotor_rpm.getValue());
+    tail_rpm_pct.setValue(787/tail_rpm.getValue());
+}
+
+var update_fuel_lbs = func {
+    fwd_level_lbs.setValue(tank1_level_lbs.getValue()+tank2_level_lbs.getValue());
+    aft_level_lbs.setValue(tank3_level_lbs.getValue()+tank4_level_lbs.getValue());
+    aux_level_lbs.setValue(tank4_level_lbs.getValue());
+#var total_fuel_level_lbs = fwd_level_lbs + aft_level_lbs + aux_level_lbs;
+}
 
 # state:
 # 0 off
@@ -83,9 +99,9 @@ var update_state = func {
   var new_state = arg[0];
   if (new_state == (s+1)) {
     state.setValue(new_state);
-    if (new_state == (1)) {
-      settimer(func { update_state(2) }, 2);
-      interpolate(engine, 0.03, 0.1, 0.002, 0.3, 0.02, 0.1, 0.003, 0.7, 0.03, 0.1, 0.01, 0.7);
+    if (new_state == (1)) { 
+        settimer(func { update_state(2) }, 2);
+        interpolate(engine, 0.03, 0.1, 0.002, 0.3, 0.02, 0.1, 0.003, 0.7, 0.03, 0.1, 0.01, 0.7);
     } else {
       if (new_state == (2)) {
         settimer(func { update_state(3) }, 3);
@@ -124,6 +140,19 @@ var update_state = func {
   }
 }
 
+var systems_configured = func {
+    var configuration = 0;
+    var fuel = fwd_level_lbs.getValue() + aft_level_lbs.getValue() + aux_level_lbs.getValue();
+    var fuel_levers = fuel_shutoff_left.getValue() + fuel_shutoff_right.getValue();
+    var bat_connected = master_bat.getValue();
+    configuration = fuel_levers * bat_connected * fuel;
+    setprop("configuredf", fuel);
+    setprop("configuredfl", fuel_levers);
+    setprop("configuredb", bat_connected);
+    setprop("configured", configuration);
+    return configuration;
+}
+
 var engines = func {
   if (props.globals.getNode("sim/crashed",1).getBoolValue()) {return; }
   var s = state.getValue();
@@ -139,10 +168,10 @@ var engines = func {
 }
 
 var update_engine = func {
-  if (state.getValue() > 3 ) {
-    interpolate (engine,  clamp( rotor_rpm.getValue() / 235 ,
-                0.05, target_rel_rpm.getValue() ), 0.25 );
-  }
+    if (state.getValue() > 3 ) {
+      interpolate (engine,  clamp( rotor_rpm.getValue() / 235 ,
+                  0.05, target_rel_rpm.getValue() ), 0.25 );
+    }
 }
 
 #var update_rotor_cone_angle = func {
@@ -414,19 +443,26 @@ dynamic_view.register(func {
 var delta_time = props.globals.getNode("/sim/time/delta-realtime-sec", 1);
 var adf_rotation = props.globals.getNode("/instrumentation/adf/rotation-deg", 1);
 var hi_heading = props.globals.getNode("/instrumentation/heading-indicator/indicated-heading-deg", 1);
-var persistent = getprop("/sim/model/aircrane/persistent") * getprop("gear/gear/wow") * getprop("gear/gear[1]/wow") * getprop("gear/gear[2]/wow");
-var vsfps = getprop("/velocities/vertical-speed-fps");
 
 var main_loop = func {
+
   # adf_rotation.setDoubleValue(hi_heading.getValue());
 
   var dt = delta_time.getValue();
+
+  update_slide();
+  update_rotor_cone_angle();
   update_torque(dt);
   update_stall(dt);
   update_torque_sound_filtered(dt);
-  update_slide();
-  update_engine();
-  update_rotor_cone_angle();
+
+  if (systems_configured()) {
+      update_engine();
+  } else {
+    rotor.setValue(0); # engines stopped
+    state.setValue(0);
+    interpolate(engine, 0, 4);
+  }
 
   update_rpm_percents();
   update_fuel_lbs();
@@ -434,18 +470,12 @@ var main_loop = func {
   rotor_wash_loop();
   flexhose_animation();
 
-  persistent = getprop("/sim/model/aircrane/persistent") * getprop("gear/gear/wow") * getprop("gear/gear[1]/wow") * getprop("gear/gear[2]/wow");
-  vsfps = getprop("/velocities/vertical-speed-fps");
-  if (persistent and (getprop("/velocities/groundspeed-kt") < 1) and (vsfps > -1 and vsfps < 1)) {
-    setprop("/sim/model/aircrane/currentlat", getprop("/position/latitude-deg"));
-    setprop("/sim/model/aircrane/currentlon", getprop("/position/longitude-deg"));
-    setprop("/sim/model/aircrane/currentalt", getprop("/position/altitude-ft"));
-    setprop("/sim/model/aircrane/currenthead", getprop("/orientation/heading-deg"));
-    setprop("/sim/model/aircrane/currentpitch", getprop("/orientation/pitch-deg"));
-    setprop("/sim/model/aircrane/currentroll", getprop("orientation/roll-deg"));
-  }
-
   settimer(main_loop, 0);
+}
+
+var dialog_battery_reload = func {
+    electrical.reset_battery_and_circuit_breakers();
+    gui.popupTip("The battery is now fully charged!");
 }
 
 var crashed = 0;
@@ -455,17 +485,6 @@ var config_dialog = nil;
 
 # initialization
 setlistener("/sim/signals/fdm-initialized", func {
-
-  if (persistent) {
-		setprop("position/latitude-deg", getprop("/sim/model/aircrane/currentlat"));
-    setprop("position/longitude-deg", getprop("/sim/model/aircrane/currentlon"));
-		setprop("position/altitude-ft", getprop("/sim/model/aircrane/currentalt"));
-		setprop("orientation/heading-deg", getprop("/sim/model/aircrane/currenthead"));
-    setprop("orientation/pitch-deg", getprop("/sim/model/aircrane/currentpitch"));
-    setprop("orientation/roll-deg", getprop("/sim/model/aircrane/currentroll"));
-    setprop("velocities/vertical-speed-fps", 0);
-    setprop("velocities/equivalent-kt", 0);
-  }
 
   init_rotoranim();
   collective.setDoubleValue(1);
@@ -582,5 +601,12 @@ setlistener("/sim/gui/show-range", func (node) {
         fgcommand("dialog-show", props.Node.new({"dialog-name": "range-dialog"}));
     } else {
         fgcommand("dialog-close", props.Node.new({"dialog-name": "range-dialog"}));
+    }
+}, 0, 0);
+
+
+setlistener("/sim/model/aircrane/cockpit/rotorbrake-handle-animation", func (node) {      
+    if (node.getValue() == 1) {
+        aircrane.pumpRotorBrake();
     }
 }, 0, 0);

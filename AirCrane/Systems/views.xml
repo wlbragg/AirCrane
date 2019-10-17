@@ -5,18 +5,19 @@
   <chase-distance-m type="double" archive="y">-30</chase-distance-m>
 
   <view n="0">
+    <name>Right Pilot Seat View</name>
     <internal type="bool" archive="y">true</internal>
     <config>
       <x-offset-m archive="y" type="double">0.520</x-offset-m>
-      <y-offset-m archive="y" type="double">-1.0</y-offset-m>
+      <y-offset-m archive="y" type="double">-1.22</y-offset-m>
       <z-offset-m archive="y" type="double">-8.668</z-offset-m>
-      <pitch-offset-deg type="double">-3</pitch-offset-deg>
-      <default-field-of-view-deg type="double">120</default-field-of-view-deg>
+      <pitch-offset-deg type="double">0</pitch-offset-deg>
+      <default-field-of-view-deg type="double">100</default-field-of-view-deg>
     </config>
   </view>
 
   <view n="100">
-    <name>Passanger Seat View</name>
+    <name>Left Pilot Seat View</name>
     <type>lookfrom</type>
     <internal archive="y">true</internal>
     <config>
@@ -25,21 +26,21 @@
 	    <from-model-idx type="int">0</from-model-idx>
       <ground-level-nearplane-m type="double">0.5f</ground-level-nearplane-m>
       <x-offset-m archive="y" type="double">-0.520</x-offset-m> <!--right-->
-      <y-offset-m archive="y" type="double">-1.0</y-offset-m> <!--up-->
+      <y-offset-m archive="y" type="double">-1.08</y-offset-m> <!--up-->
       <z-offset-m archive="y" type="double">-8.668</z-offset-m> <!--back-->
-      <pitch-offset-deg type="double">-3</pitch-offset-deg>
+      <pitch-offset-deg type="double">0</pitch-offset-deg>
       <default-field-of-view-deg type="double">120</default-field-of-view-deg>
     </config>
   </view>
 
   <view n="101">
-    <name>Crane Seat View</name>
+    <name>Aft Pilot Seat View</name>
     <type>lookfrom</type>
     <internal archive="y">true</internal>
     <config>
       <!--dynamic-view type="bool">true</dynamic-view-->
       <from-model type="bool">true</from-model>
-	  <from-model-idx type="int">0</from-model-idx>
+	    <from-model-idx type="int">0</from-model-idx>
       <ground-level-nearplane-m type="double">0.5f</ground-level-nearplane-m>
       <x-offset-m archive="y" type="double">-0.575</x-offset-m> <!--right-->
       <y-offset-m archive="y" type="double">-1.665</y-offset-m> <!--up-->

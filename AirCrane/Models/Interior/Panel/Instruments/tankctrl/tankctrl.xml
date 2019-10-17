@@ -3,6 +3,7 @@
 <PropertyList>
 
   <path>tankctrl.ac</path>
+  <texture-path>../../../../../Models</texture-path>
 
   <!-- ALS Interior Shadows -->
   <effect>
@@ -10,11 +11,7 @@
     <object-name>knob-foam</object-name>
     <object-name>knob-quantity</object-name>
     <object-name>knob-coverage</object-name>
-    <object-name>indicate1</object-name>
-    <object-name>indicate2</object-name>
-    <object-name>indicate3</object-name>
-    <object-name>indicate4</object-name>
-    <object-name>indicate5</object-name>
+    <object-name>indicatebase</object-name>
     <object-name>indicator-foam</object-name>
     <object-name>indicator-go</object-name>
     <object-name>indicator-hyd-snorkel</object-name>
@@ -25,143 +22,61 @@
     <object-name>indicator-hyd-snorkel.001</object-name>
     <object-name>indicat-low-hyd-pres.001</object-name>
     <object-name>indicator-test.001</object-name>
-    <object-name>sysready</object-name>
-    <object-name>sysready.001</object-name>
-    <object-name>sysreadybase</object-name>
-    <object-name>tankpumpot</object-name>
-    <object-name>tankpumpot.001</object-name>
-    <object-name>tankpumpotbase</object-name>
-    <object-name>toggle1</object-name>
-    <object-name>toggle2</object-name>
-    <object-name>toggle3</object-name>
-    <object-name>toggle4</object-name>
+    <object-name>togglebase</object-name>
     <object-name>toggle-arm</object-name>
     <object-name>toggle-foam</object-name>
     <object-name>toggle-hyd-snorkel</object-name>
     <object-name>toggle-sea-snorkel</object-name>
-    <object-name>togglecannonpitch</object-name>
-    <object-name>togglecannonpitchbase</object-name>
-    <object-name>cannon-pitch-glass-bg</object-name>
-    <object-name>snorkel-depth-glass-bg</object-name>
-    <object-name>tank-volume-glass-bg</object-name>
-    <object-name>tank-weight-glass-bg</object-name>
-    <object-name>CannonPitch</object-name>
-    <object-name>TankVolume</object-name>
-    <object-name>FillRange</object-name>
-    <object-name>PayloadWeight</object-name>
-    <object-name>Text</object-name>
-    <object-name>plate</object-name>
-    <object-name>case</object-name>
+    <object-name>tankpumpotdase</object-name>
+    <object-name>sysreadybase</object-name>
   </effect>
-
-  <effect>
-      <inherits-from>Models/Effects/interior/interior-glass-reflection-panel-front</inherits-from>
-      <object-name>glass</object-name>
-  </effect>
-
-  <animation>
-    <type>select</type>
-    <object-name>sysready</object-name>
-    <condition>
-      <greater-than>
-        <property>sim/weight[3]/weight-lb</property>
-        <value>0</value>
-      </greater-than>
-    </condition>
-  </animation>
-  <animation>
-    <type>select</type>
-    <object-name>sysready.001</object-name>
-    <condition>
-      <less-than>
-        <property>sim/weight[3]/weight-lb</property>
-        <value>1</value>
-      </less-than>
-    </condition>
-  </animation>
-
-  <animation>
-    <type>select</type>
-    <object-name>tankpumpot</object-name>
-    <condition>
-        <property>sim/model/aircrane/tank/pump/overtemp</property>
-    </condition>
-  </animation>
-
-  <animation>
-    <type>select</type>
-    <object-name>tankpumpot.001</object-name>
-    <condition>
-        <not>
-            <property>sim/model/aircrane/tank/pump/overtemp</property>
-        </not>
-    </condition>
-  </animation>
 
   <animation>
     <type>select</type>
     <object-name>indicator-foam.001</object-name>
     <condition>
-      <and>
-        <property>sim/model/firetank/enabled</property>
         <not>
           <property>sim/model/firetank/foam</property>
         </not>
-      </and>
     </condition>
   </animation>
   <animation>
     <type>select</type>
     <object-name>indicator-foam</object-name>
     <condition>
-      <and>
-        <property>sim/model/firetank/enabled</property>
         <property>sim/model/firetank/foam</property>
-      </and>
     </condition>
   </animation>
   <animation>
     <type>select</type>
     <object-name>indicator-go.001</object-name>
     <condition>
-      <and>
-        <property>sim/model/firetank/enabled</property>
         <not>
           <property>sim/model/firetank/arm</property>
         </not>
-      </and>
     </condition>
   </animation>
   <animation>
     <type>select</type>
     <object-name>indicator-go</object-name>
     <condition>
-      <and>
-        <property>sim/model/firetank/enabled</property>
         <property>sim/model/firetank/arm</property>
-      </and>
     </condition>
   </animation>
   <animation>
     <type>select</type>
     <object-name>indicator-low-hyd-pres.001</object-name>
     <condition>
-      <and>
-        <property>sim/model/firetank/enabled</property>
         <not>
           <property>sim/model/firetank/lowhydpres</property>
         </not>
-      </and>
     </condition>
   </animation>
   <animation>
     <type>select</type>
     <object-name>indicator-low-hyd-pres</object-name>
     <condition>
-      <and>
-        <property>sim/model/firetank/enabled</property>
         <property>sim/model/firetank/lowhydpres</property>
-      </and>
     </condition>
   </animation>
   <animation>
@@ -180,10 +95,7 @@
     <type>select</type>
     <object-name>indicator-test</object-name>
     <condition>
-      <and>
-        <property>sim/model/firetank/enabled</property>
         <property>sim/model/firetank/test</property>
-      </and>
     </condition>
   </animation>
   <animation>
@@ -191,7 +103,6 @@
     <object-name>indicator-hyd-snorkel.001</object-name>
     <condition>
       <and>
-        <property>sim/model/firetank/enabled</property>
         <less-than>
           <property>sim/model/firetank/deployramscoop/position-norm</property>
           <value>1</value>
@@ -208,7 +119,6 @@
     <object-name>indicator-hyd-snorkel</object-name>
     <condition>
       <and>
-        <property>sim/model/firetank/enabled</property>
         <or>
           <equals>
             <property>sim/model/firetank/deployramscoop/position-norm</property>
@@ -582,208 +492,5 @@
       <z-m>-1.82091</z-m>
     </center>
   </animation>
-
-  <!-- Direct Drive "spring switch" -->
-  <animation>
-    <type>knob</type>
-    <object-name>togglecannonpitch</object-name>
-    <property>sim/model/watercannon/togglecannonpitch</property>
-    <factor>-35</factor>
-    <offset-deg>-10</offset-deg>
-    <center>
-      <x-m>-9.38563</x-m>
-      <y-m>-0.642812</y-m>
-      <z-m>-1.52767</z-m>
-    </center>
-    <axis>
-      <x>0</x>
-      <y>1</y>
-      <z>0</z>
-    </axis>
-    <action>
-      <binding>
-        <command>property-adjust</command>
-        <property>sim/model/watercannon/togglecannonpitch</property>
-        <factor>1</factor>
-        <min>-1</min>
-        <max>1</max>
-        <wrap>false</wrap>
-      </binding>
-      <binding>
-        <command>nasal</command>
-        <script>aircrane.click("avionics")</script>
-      </binding>
-    </action>
-    <release>
-      <binding>
-        <command>property-assign</command>
-        <property>sim/model/watercannon/togglecannonpitch</property>
-        <value>0</value>
-      </binding>
-    </release>
-    <hovered>
-      <binding>
-        <command>set-tooltip</command>
-        <tooltip-id>togglecannonpitch</tooltip-id>
-        <label>Cannon Pitch: %s</label>
-        <property>sim/model/watercannon/togglecannonpitch</property>
-        <mapping>nasal</mapping>
-        <script>
-          var modes = ['Neutral', 'Up', 'Down'];
-          return modes[arg[0]];
-        </script>
-      </binding>
-    </hovered>
-  </animation>
-
-  <!-- water cannon pitch display -->
-  <animation>
-    <object-name>cannon-pitch-glass</object-name>
-    <type>material</type>
-    <condition>
-      <and>
-        <property>sim/model/firetank/enabled</property>
-        <property>sim/model/watercannon/enabled</property>
-        <not>
-          <property>sim/rendering/rembrandt/enabled</property>
-        </not>
-      </and>
-    </condition>
-    <emission>
-      <red>1.0</red>
-      <green>1.0</green>
-      <blue>1.0</blue>
-      <factor-prop>systems/electrical/outputs/digital-display</factor-prop>
-    </emission>
-  </animation>
-  <text>
-    <name>CannonPitch</name>
-    <type type="string">literal</type>
-    <text type="string">Cannon Pitch</text>
-    <draw-text type="bool">true</draw-text>
-    <font>Helvetica.txf</font>
-    <character-size type="double">0.006</character-size>
-    <character-aspect-ratio type="double">1.0</character-aspect-ratio>
-    <max-height>0.2</max-height>
-    <max-width>0.07</max-width>
-    <font-resolution>
-      <width type="int">32</width>
-      <height type="int">32</height>
-    </font-resolution>
-    <alignment>center-center</alignment>
-    <offsets>
-    <pitch-deg>0</pitch-deg>
-    <heading-deg>90</heading-deg>
-    <roll-deg>84</roll-deg>
-      <x-m>-9.37813</x-m>
-      <y-m>-0.605402</y-m>
-      <z-m>-1.543</z-m>
-    </offsets>
-  </text>
-
-  <!-- snorkel depth display
-  <animation>
-    <object-name>snorkel-depth-glass</object-name>
-    <type>material</type>
-    <condition>
-        <not>
-          <property>sim/rendering/rembrandt/enabled</property>
-        </not>
-    </condition>
-    <emission>
-      <red>1.0</red>
-      <green>1.0</green>
-      <blue>1.0</blue>
-      <factor-prop>systems/electrical/outputs/digital-display</factor-prop>
-    </emission>
-  </animation>
-  <text>
-    <name>FillRange</name>
-    <type type="string">literal</type>
-    <text type="string">Fill Range - 7.9</text>
-    <draw-text type="bool">true</draw-text>
-    <font>Helvetica.txf</font>
-    <character-size type="double">0.006</character-size>
-    <character-aspect-ratio type="double">1.0</character-aspect-ratio>
-    <max-height>0.2</max-height>
-    <max-width>0.07</max-width>
-    <font-resolution>
-      <width type="int">32</width>
-      <height type="int">32</height>
-    </font-resolution>
-    <alignment>center-center</alignment>
-    <offsets>
-    <pitch-deg>0</pitch-deg>
-    <heading-deg>90</heading-deg>
-    <roll-deg>84</roll-deg>
-      <x-m>-9.37813</x-m>
-      <y-m>-0.553325</y-m>
-      <z-m>-1.543</z-m>
-    </offsets>
-  </text> -->
-
-  <!-- tank volume display -->
-  <animation>
-    <object-name>tank-volume-glass</object-name>
-    <type>material</type>
-    <condition>
-      <not>
-        <property>sim/rendering/rembrandt/enabled</property>
-      </not>
-    </condition>
-    <emission>
-      <red>1.0</red>
-      <green>1.0</green>
-      <blue>1.0</blue>
-      <factor-prop>systems/electrical/outputs/digital-display</factor-prop>
-    </emission>
-  </animation>
-
-  <!--animation>
-    <object-name>togglecannonpitch</object-name>
-    <object-name>togglecannonpitchbase</object-name>
-    <object-name>cannon-pitch-glass</object-name>
-    <object-name>cannon-pitch-glass-bg</object-name>
-    <object-name>CannonPitch</object-name>
-    <type>select</type>
-    <condition>
-      <and>
-        <property>sim/model/firetank/enabled</property>
-        <property>sim/model/watercannon/enabled</property>
-      </and>
-    </condition>
-  </animation>
-  <animation>
-    <object-name>tank-weight-glass</object-name>
-    <object-name>tank-weight-glass-bg</object-name>
-    <object-name>PayloadWeight</object-name>
-    <object-name>snorkel-depth-glass</object-name>
-    <object-name>snorkel-depth-glass-bg</object-name>
-    <object-name>FillRange</object-name>
-    <object-name>tank-volume-glass</object-name>
-    <object-name>tank-volume-glass-bg</object-name>
-    <object-name>TankVolume</object-name>
-    <object-name>knob-foam</object-name>
-    <object-name>knob-quantity</object-name>
-    <object-name>knob-coverage</object-name>
-    <object-name>indicate1</object-name>
-    <object-name>indicate2</object-name>
-    <object-name>indicate3</object-name>
-    <object-name>indicate4</object-name>
-    <object-name>indicate5</object-name>
-    <object-name>toggle1</object-name>
-    <object-name>toggle2</object-name>
-    <object-name>toggle3</object-name>
-    <object-name>toggle4</object-name>
-    <object-name>toggle-arm</object-name>
-    <object-name>toggle-foam</object-name>
-    <object-name>toggle-hyd-snorkel</object-name>
-    <object-name>toggle-sea-snorkel</object-name>
-    <object-name>Text</object-name>
-    <type>select</type>
-    <condition>
-      <property>sim/model/firetank/enabled</property>
-    </condition>
-  </animation-->
 
 </PropertyList>

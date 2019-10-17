@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+
+    <filter>
+        <name>Temporary Electrical supply to Tank Volume</name>
+        <type>gain</type>
+        <enable>
+            <condition>
+                <not>
+                    <property>/sim/freeze/replay-state</property>
+                </not>
+            </condition>
+        </enable>
+        <input>
+            <condition>
+                <and>
+                    <property>systems/electrical/amps</property>
+                    <property>controls/switches/master-bat</property>
+                </and>
+            </condition>
+            <value>0.5</value>
+        </input>
+        <input>
+            <value>0</value>
+        </input>
+        <output>
+            <property>systems/electrical/outputs/digital-display</property>
+        </output>
+    </filter>
+
+</PropertyList>

@@ -30,7 +30,7 @@
     <type>select</type>
     <object-name>Light</object-name>
     <condition>
-      <property>sim/model/lights/sbc1/state</property>
+      <property>sim/model/aircrane/lighting/strobe/state</property>
     </condition>
   </animation>
 
@@ -52,14 +52,6 @@
       <entry><ind>   20 </ind><dep> 0.50 </dep></entry>
       <entry><ind> 1500 </ind><dep> 5.00 </dep></entry>
     </interpolation>
-  </animation>
-
-  <animation>
-    <type>select</type>
-    <object-name>Light</object-name>
-    <condition>
-      <property>controls/lighting/nav-lights</property>
-    </condition>
   </animation>
 
 </PropertyList>

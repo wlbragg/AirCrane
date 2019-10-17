@@ -20,4 +20,42 @@
     <maxreltorque>1</maxreltorque>
   </rotor>
 
+  <rotorbrake>
+    <rotorbrake-handle type="bool">false</rotorbrake-handle>
+  </rotorbrake>
+
+  <circuit-breakers>
+      <autopilot type="bool">true</autopilot>
+      <bcnlt type="bool">true</bcnlt>
+      <instr type="bool">true</instr>
+      <intlt type="bool">true</intlt>
+      <landing type="bool">true</landing>
+      <spot type="bool">true</spot>
+      <master type="bool">true</master>
+      <navlt type="bool">true</navlt>
+      <pitot-heat type="bool">true</pitot-heat>
+      <radio1 type="bool">true</radio1>
+      <radio2 type="bool">true</radio2>
+      <radio3 type="bool">true</radio3>
+      <radio4 type="bool">true</radio4>
+      <radio5 type="bool">true</radio5>
+      <strobe type="bool">true</strobe>
+      <turn-coordinator type="bool">true</turn-coordinator>
+  </circuit-breakers>
+  <switches>
+      <master-avionics type="bool">false</master-avionics>
+      <starter type="bool">false</starter>
+      <master-alt type="bool">false</master-alt>
+      <master-bat type="bool">false</master-bat>
+      <magnetos type="int">0</magnetos>
+  </switches>
+  <lighting>
+      <nav-lights type="bool">false</nav-lights>
+      <beaconfwd type="bool">false</beaconfwd>
+      <beaconaft type="bool">false</beaconaft>
+      <strobe type="bool">false</strobe>
+      <spot-light type="bool">false</spot-light>
+      <landing-lights type="bool">false</landing-lights>
+  </lighting>
+
 </PropertyList>

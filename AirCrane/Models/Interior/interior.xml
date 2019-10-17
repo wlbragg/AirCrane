@@ -5,10 +5,10 @@
   <path>interior.ac</path>
   <texture-path>../../Models</texture-path>
 
-  <!--effect>
+  <effect>
     <inherits-from>Models/Effects/interior/sealtexture</inherits-from>
     <object-name>tour</object-name>
-  </effect-->
+  </effect>
 
   <effect>
     <inherits-from>Models/Effects/interior/walltexture</inherits-from>
@@ -64,6 +64,15 @@
   <!-- Planche de bord -->
   <model>
     <path>Aircraft/AirCrane/Models/Interior/Panel/panel.xml</path>
+    <offsets>
+      <x-m> 0.0 </x-m>
+      <y-m> 0.0 </y-m>
+      <z-m> 0.0 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/AirCrane/Models/Interior/Panel/paneloverhead.xml</path>
     <offsets>
       <x-m> 0.0 </x-m>
       <y-m> 0.0 </y-m>

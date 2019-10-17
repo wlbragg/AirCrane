@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+
+    <filter>
+        <name>Controls Rotor Brake Handle</name>
+        <type>noise-spike</type>
+        <max-rate-of-change>1.1</max-rate-of-change>
+        <enable>
+            <condition>
+                <not>
+                    <property>/sim/freeze/replay-state</property>
+                </not>
+            </condition>
+        </enable>
+        <input>
+            <property>/controls/rotorbrake/rotorbrake-handle</property>
+        </input>
+        <output>
+            <property>/sim/model/aircrane/cockpit/rotorbrake-handle-animation</property>
+        </output>
+    </filter>
+
+</PropertyList>

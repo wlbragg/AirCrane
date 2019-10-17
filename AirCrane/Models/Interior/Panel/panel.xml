@@ -36,7 +36,12 @@
     <object-name>xoilplate</object-name>
     <object-name>infoplate1</object-name>
     <object-name>cws</object-name>
+    <object-name>cplamptest</object-name>
+    <object-name>cplamptestbase</object-name>
+    <object-name>fgtbase</object-name>
+    <object-name>fgtbtn</object-name>
   </effect>
+
 
   <!-- ai -->
   <model>
@@ -328,20 +333,13 @@
     </offsets>
   </model>
 
-  <!-- tank (horizontal panel)-->
+  <!-- tank qty -->
   <model>
-    <path>Aircraft/AirCrane/Models/Interior/Panel/Instruments/tankctrl/tankctrl.xml</path>
-  </model>
-  <model>
-    <path>Aircraft/AirCrane/Models/Interior/Panel/Instruments/tankvol/tank_vol.xml</path>
-    <condition>
-      <property>sim/model/firetank/enabled</property>
-    </condition>
+    <path>Aircraft/AirCrane/Models/Interior/Panel/Instruments/tankqty/tankqty.xml</path>
     <offsets>
-      <x-m> -8.98988 </x-m>
-      <y-m> -0.21988 </y-m>
-      <z-m> -1.79078 </z-m>
-      <pitch-deg>-82</pitch-deg>
+      <x-m> 0.0 </x-m>
+      <y-m> 0.0 </y-m>
+      <z-m> 0.0 </z-m>
     </offsets>
   </model>
 
@@ -354,5 +352,41 @@
 			<pitch-deg>0</pitch-deg>
 		</offsets>
 	</model>
+
+  <!-- horizontalpanel -->
+
+  <!-- temp round gauge
+  <model>
+    <path>Aircraft/AirCrane/Models/Interior/Panel/Instruments/tankvol/tank_vol.xml</path>
+    <condition>
+      <property>sim/model/firetank/enabled</property>
+    </condition>
+    <offsets>
+      <x-m> -8.98988 </x-m>
+      <y-m> -0.21988 </y-m>
+      <z-m> -1.79078 </z-m>
+      <pitch-deg>-82</pitch-deg>
+    </offsets>
+  </model> -->
+
+  <!-- tank control -->
+  <model>
+    <path>Aircraft/AirCrane/Models/Interior/Panel/Instruments/tankctrl/tankctrl.xml</path>
+    <offsets>
+      <x-m> 0.0 </x-m>
+      <y-m> 0.0 </y-m>
+      <z-m> 0.0 </z-m>
+    </offsets>
+  </model>
+
+  <!-- power panel -->
+  <model>
+    <path>Aircraft/AirCrane/Models/Interior/Panel/Instruments/power/power.xml</path>
+    <offsets>
+      <x-m> 0.0 </x-m>
+      <y-m> 0.0 </y-m>
+      <z-m> 0.0 </z-m>
+    </offsets>
+  </model>
 
 </PropertyList>

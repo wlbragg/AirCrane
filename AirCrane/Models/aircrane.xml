@@ -48,6 +48,21 @@
 
     </unload>
   </nasal>
+
+    <params>
+        <lighting>
+            <navigation>sim/multiplay/generic/int[14]</navigation>
+            <beaconfwd>sim/model/aircrane/lighting/beaconfwd/state</beaconfwd>
+            <beaconaft>sim/model/aircrane/lighting/beaconaft/state</beaconaft>
+            <strobe>sim/model/aircrane/lighting/strobe/state</strobe>
+            <spot>
+                <property>sim/multiplay/generic/int[15]</property>
+            </spot>
+            <landing>
+                <property>sim/multiplay/generic/int[16]</property>
+            </landing>
+        </lighting>
+    </params>
   
   <animation>
     <!-- Objets opaques -->
@@ -89,6 +104,11 @@
     <object-name>steppanel</object-name>
     <object-name>winchcover</object-name>
 
+    <object-name>landinglampbase</object-name>
+    <object-name>spotlampbase</object-name>
+    <object-name>lightlanding</object-name>
+    <object-name>lightspot</object-name>
+
     <object-name>axetail</object-name>
     <object-name>supports</object-name>
     <object-name>tampons</object-name>
@@ -116,12 +136,14 @@
     <object-name>vitresporteDInt</object-name>
     <object-name>lampeG</object-name>
     <object-name>lampeD</object-name>
-    <object-name>lampetailtrs</object-name>
-    <object-name>lampeneztrs</object-name>
+    <object-name>BeaconOffA</object-name>
+    <object-name>BeaconOffF</object-name>
     <object-name>vitresreardoor</object-name>
     <object-name>vitresreardoorInt</object-name>
     <object-name>vitresstarboard</object-name>
     <object-name>vitresstarboardInt</object-name>
+    <object-name>lampeW</object-name>
+    <object-name>lampstrobe</object-name>
   </animation>
   
   <animation>
@@ -181,6 +203,11 @@
     <object-name>roueD</object-name>
     <object-name>roueA</object-name>
     <object-name>echelles</object-name>
+
+    <object-name>landinglampbase</object-name>
+    <object-name>spotlampbase</object-name>
+    <object-name>lightlanding</object-name>
+    <object-name>lightspot</object-name>
     
     <property-base>sim/model/livery/</property-base>
     <texture-prop>texture</texture-prop>
@@ -244,6 +271,11 @@
     <object-name>steppanel</object-name>
     <object-name>winchcover</object-name>
 
+    <object-name>landinglampbase</object-name>
+    <object-name>spotlampbase</object-name>
+    <object-name>lightlanding</object-name>
+    <object-name>lightspot</object-name>
+
     <object-name>cabelgaurdmount</object-name>
     <object-name>cableguardbottom</object-name>
     <object-name>cableguardlowerconnectoraft</object-name>
@@ -253,6 +285,13 @@
     <object-name>cableguardupperconnectorfor</object-name>
     <object-name>cableguidebearing</object-name>
     <object-name>cableguidepin</object-name>
+  </effect>
+
+  <effect>
+    <inherits-from>Effects/model-transparent</inherits-from>
+    <object-name>BeaconOFFA</object-name>
+    <object-name>BeaconOFFF</object-name>
+    <object-name>lampstrobe</object-name>
   </effect>
 
   <!-- Une ombre pour OSG -->
@@ -894,8 +933,24 @@
   </animation>
   
   <!-- Effets lumineux -->
+
+  <!-- ================================================================== -->
+  <!-- Basic And Rembrandt Lighting                                       -->
+  <!-- ================================================================== -->
+
   <model>
-    <path>Aircraft/AirCrane/Models/light/beacon.xml</path>
+      <name>light-strobe</name>
+      <path>Aircraft/AirCrane/Models/light/StrobeLight.xml</path>
+      <offsets>
+          <x-m> 3.246</x-m>
+          <y-m>-0.229943</y-m>
+          <z-m> 0.100174</z-m>
+      </offsets>
+  </model>
+
+  <model>
+    <name>strobe-aft</name>
+    <path>Aircraft/AirCrane/Models/light/Beacon.xml</path>
     <offsets>
       <x-m> 10.438 </x-m>
       <y-m>  0.000 </y-m>
@@ -904,16 +959,8 @@
   </model>
   
   <model>
-    <path>Aircraft/AirCrane/Models/light/beacon.xml</path>
-    <offsets>
-      <x-m>  3.246 </x-m>
-      <y-m> -0.230 </y-m>
-      <z-m>  0.104 </z-m>
-    </offsets>
-  </model>
-  
-  <model>
-    <path>Aircraft/AirCrane/Models/light/beacon.xml</path>
+    <name>strobe-fwd</name>
+    <path>Aircraft/AirCrane/Models/light/Beacon.xml</path>
     <offsets>
       <x-m> -9.281 </x-m>
       <y-m>  0.000 </y-m>
@@ -922,6 +969,7 @@
   </model>
   
   <model>
+    <name>red-nav</name>
     <path>Aircraft/AirCrane/Models/light/RedLight.xml</path>
     <offsets>
       <x-m> -1.051 </x-m>
@@ -931,6 +979,7 @@
   </model>
   
   <model>
+    <name>green-nav</name>
     <path>Aircraft/AirCrane/Models/light/GreenLight.xml</path>
     <offsets>
       <x-m> -1.051 </x-m>
@@ -938,6 +987,444 @@
       <z-m> -1.496 </z-m>
     </offsets>
   </model>
+
+    <animation>
+        <type>select</type>
+        <object-name>strobe-fwd</object-name>
+        <nopreview/>
+        <condition>
+            <and>
+                <property alias="/params/lighting/beaconfwd"/>
+                <!--not>
+                    <property>/sim/rendering/shaders/skydome</property>
+                </not-->
+            </and>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>strobe-aft</object-name>
+        <nopreview/>
+        <condition>
+            <and>
+                <property alias="/params/lighting/beaconaft"/>
+                <!--not>
+                    <property>/sim/rendering/shaders/skydome</property>
+                </not-->
+            </and>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>red-nav</object-name>
+        <nopreview/>
+        <condition>
+            <and>
+                <property alias="/params/lighting/navigation"/>
+                <not>
+                    <property>/sim/rendering/shaders/skydome</property>
+                </not>
+            </and>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>green-nav</object-name>
+        <nopreview/>
+        <condition>
+            <and>
+                <property alias="/params/lighting/navigation"/>
+                <not>
+                    <property>/sim/rendering/shaders/skydome</property>
+                </not>
+            </and>
+        </condition>
+    </animation>
+
+   <animation>
+        <type>select</type>
+        <object-name>light-strobe</object-name>
+        <nopreview/>
+        <condition>
+            <and>
+                <property alias="/params/lighting/strobe"/>
+                <not>
+                    <property>/sim/rendering/shaders/skydome</property>
+                </not>
+            </and>
+        </condition>
+    </animation>
+
+    <!-- ================================================================== -->
+    <!-- ALS Lighting                                                       -->
+    <!-- ================================================================== -->
+
+    <!-- Green navigation light on starboard side (right) -->
+    <model>
+        <name>nav-light-right</name>
+        <path>Effects/lights/procedural_light_nav_right.xml</path>
+        <offsets>
+            <x-m> -1.051 </x-m>
+            <y-m>  3.148 </y-m>
+            <z-m> -1.496 </z-m>
+        </offsets>
+    </model>
+
+    <!-- Red navigation light on port side (left) -->
+    <model>
+        <name>nav-light-left</name>
+        <path>Effects/lights/procedural_light_nav_left.xml</path>
+        <offsets>
+            <x-m> -1.051 </x-m>
+            <y-m> -3.148 </y-m>
+            <z-m> -1.496 </z-m>
+        </offsets>
+    </model>
+
+    <!-- White navigation light on tail -->
+    <model>
+        <name>nav-light-tail</name>
+        <path>Effects/lights/procedural_light_nav_tail.xml</path>
+        <offsets>
+            <x-m>11.351</x-m>
+            <y-m>0.0</y-m>
+            <z-m>1.377</z-m>
+        </offsets>
+    </model>
+
+    <!-- White strobe top middle tail -->
+    <model>
+        <name>strobe-light</name>
+        <path>Effects/lights/procedural_light_strobe.xml</path>
+        <offsets>
+            <x-m> 3.246</x-m>
+            <y-m>-0.229943</y-m>
+            <z-m> 0.100174</z-m>
+        </offsets>
+    </model>
+
+    <!--animation>
+        <type>select</type>
+        <object-name>strobe-fwd</object-name>
+        <nopreview/>
+        <condition>
+            <and>
+                <property alias="/params/lighting/beaconfwd"/>
+                <property>/sim/rendering/shaders/skydome</property>
+            </and>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>strobe-aft</object-name>
+        <nopreview/>
+        <condition>
+            <and>
+                <property alias="/params/lighting/beaconaft"/>
+                <property>/sim/rendering/shaders/skydome</property>
+            </and>
+        </condition>
+    </animation-->
+
+    <animation>
+        <type>select</type>
+        <object-name>nav-light-left</object-name>
+        <nopreview/>
+        <condition>
+            <and>
+                <property alias="/params/lighting/navigation"/>
+                <property>/sim/rendering/shaders/skydome</property>
+            </and>
+        </condition>
+    </animation>
+    <animation>
+        <type>select</type>
+        <object-name>nav-light-right</object-name>
+        <nopreview/>
+        <condition>
+            <and>
+                <property alias="/params/lighting/navigation"/>
+                <property>/sim/rendering/shaders/skydome</property>
+            </and>
+        </condition>
+    </animation>
+    <animation>
+        <type>select</type>
+        <object-name>nav-light-tail</object-name>
+        <nopreview/>
+        <condition>
+            <and>
+                <property alias="/params/lighting/navigation"/>
+                <property>/sim/rendering/shaders/skydome</property>
+            </and>
+        </condition>
+    </animation>
+    <animation>
+        <type>select</type>
+        <object-name>strobe-light</object-name>
+        <nopreview/>
+        <condition>
+            <and>
+                <property alias="/params/lighting/strobe"/>
+                <property>/sim/rendering/shaders/skydome</property>
+            </and>
+        </condition>
+    </animation>
+    <animation>
+        <type>select</type>
+        <object-name>landing-light</object-name>
+        <nopreview/>
+        <condition>
+            <and>
+                <property alias="/params/lighting/landing"/>
+                <property>/sim/rendering/shaders/skydome</property>
+            </and>
+        </condition>
+    </animation>
+    <animation>
+        <type>select</type>
+        <object-name>spot-light</object-name>
+        <nopreview/>
+        <condition>
+            <and>
+                <property alias="/params/lighting/spot"/>
+                <property>/sim/rendering/shaders/skydome</property>
+            </and>
+        </condition>
+    </animation>
+
+    <!-- Landing Light -->
+    <animation>
+        <type>select</type>
+        <object-name>landinglight</object-name>
+        <nopreview/>
+        <condition>
+            <and>
+                <property alias="/params/lighting/landing/property"/>
+                <not>
+                    <property>/sim/rendering/rembrandt/enabled</property>
+                </not>
+            </and>
+        </condition>
+    </animation>
+
+    <!-- Spot Light -->
+    <animation>
+        <type>select</type>
+        <object-name>spotlight</object-name>
+        <nopreview/>
+        <condition>
+            <and>
+                <property alias="/params/lighting/spot/property"/>
+                <not>
+                    <property>/sim/rendering/rembrandt/enabled</property>
+                </not>
+            </and>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>light</type>
+        <light-type>spot</light-type>
+        <name>LandingLight</name>
+        <object-name>LandingLightCone</object-name>
+        <nopreview/>
+        <condition>
+            <property alias="/params/lighting/landing/property"/>
+        </condition>
+        <position>
+            <x>-11.0002</x>
+            <y>  0.000037</y>
+            <z> -2.78261</z>
+        </position>
+        <direction>
+            <x>-1</x>
+            <y>0</y>
+            <z>-0.1</z>
+        </direction>
+        <ambient>
+            <r>0.5</r>
+            <g>0.5</g>
+            <b>0.55</b>
+            <a>1.0</a>
+        </ambient>
+        <diffuse>
+            <r>0.95</r>
+            <g>0.95</g>
+            <b>0.8</b>
+            <a>1.0</a>
+        </diffuse>
+        <specular>
+            <r>0.95</r>
+            <g>0.95</g>
+            <b>0.8</b>
+            <a>1.0</a>
+        </specular>
+        <attenuation>
+            <c>1.0</c>
+            <l>0.0</l>
+            <q>0.00015</q>
+        </attenuation>
+        <exponent>25</exponent>
+        <cutoff>85</cutoff>
+        <near-m>2</near-m>
+        <far-m>250</far-m>
+    </animation>
+
+    <animation>
+        <type>light</type>
+        <light-type>spot</light-type>
+        <name>SpotLight</name>
+        <object-name>SpotLightCone</object-name>
+        <nopreview/>
+        <condition>
+            <property alias="/params/lighting/spot/property"/>
+        </condition>
+        <position>
+            <x>-7.42556</x>
+            <y>-0.055015</y>
+            <z>-3.75486</z>
+        </position>
+        <direction>
+            <x> 1</x>
+            <y>0</y>
+            <z>-0.3</z>
+        </direction>
+        <ambient>
+            <r>0.5</r>
+            <g>0.5</g>
+            <b>0.55</b>
+            <a>1.0</a>
+        </ambient>
+        <diffuse>
+            <r>0.95</r>
+            <g>0.95</g>
+            <b>0.8</b>
+            <a>1.0</a>
+        </diffuse>
+        <specular>
+            <r>0.95</r>
+            <g>0.95</g>
+            <b>0.8</b>
+            <a>1.0</a>
+        </specular>
+        <attenuation>
+            <c>1.0</c>
+            <l>0.0</l>
+            <q>0.00015</q>
+        </attenuation>
+        <exponent>25</exponent>
+        <cutoff>85</cutoff>
+        <near-m>2</near-m>
+        <far-m>250</far-m>
+    </animation>
+    <animation>
+        <type>noshadow</type>
+        <object-name>landinglight</object-name>
+        <object-name>spotlight</object-name>
+    </animation>
+
+    <!--Landing Light-->
+    <animation>
+        <type>flash</type>
+        <object-name>landinglight</object-name>
+        <center>
+            <x-m>-9.96423</x-m>
+            <y-m>-0.00191</y-m>
+            <z-m>-2.79107</z-m>
+        </center>
+        <axis>
+            <x>-1</x>
+            <y>0</y>
+            <z>-0.1</z>
+        </axis>
+        <power>8</power>
+        <factor>6</factor>
+        <offset>0</offset>
+        <two-sides type="bool">false</two-sides>
+        <min>0.5</min>
+        <max>80</max>
+    </animation>
+
+    <!--Spot Light-->
+    <animation>
+        <type>flash</type>
+        <object-name>spotlight</object-name>
+        <center>
+            <x-m>-7.78244</x-m>
+            <y-m>-0.000238</y-m>
+            <z-m>-3.21254</z-m>
+        </center>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>-0.5</z>
+        </axis>
+        <power>8</power>
+        <factor>6</factor>
+        <offset>0</offset>
+        <two-sides type="bool">false</two-sides>
+        <min>0.5</min>
+        <max>80</max>
+    </animation>
+
+    <!--animation>
+        <type>select</type>
+        <object-name>BeaconOffX</object-name>
+        <nopreview/>
+        <condition>
+            <property alias="/params/lighting/beacon"/>
+        </condition>
+    </animation>
+    <BeaconOffXparams>
+        <light-near>0.4</light-near>
+        <light-med>0.8</light-med>
+        <light-far>10</light-far>
+    </BeaconOffXparams>
+    <animation>
+        <type>alpha-test</type>
+        <object-name>BeaconOffX</object-name>
+        <alpha-factor>0.001</alpha-factor>
+    </animation>
+    <animation>
+        <type>translate</type>
+        <object-name>BeaconOffX</object-name>
+        <offset-m>5.599</offset-m>
+        <axis-->
+            <!-- MOD: Position beacon light at MEDIAN point of the object -->
+            <!--x>5.49803</x>
+            <y>0.00000</y>
+            <z>1.081</z-->
+            <!-- MODEND: Position beacon light at MEDIAN point of the object -->
+        <!--/axis>
+    </animation>
+    <animation>
+        <type>billboard</type>
+        <object-name>BeaconOffX</object-name>
+        <spherical type="bool">true</spherical>
+    </animation>
+    <animation>
+        <type>dist-scale</type>
+        <object-name>BeaconOffX</object-name>
+        <interpolation>
+            <entry>
+                <ind>0</ind>
+                <dep alias="/BeaconOffXparams/light-near"/>
+            </entry>
+            <entry>
+                <ind>500</ind>
+                <dep alias="/BeaconOffXparams/light-med"/>
+            </entry>
+            <entry>
+                <ind>16000</ind>
+                <dep alias="/BeaconOffXparams/light-far"/>
+            </entry>
+        </interpolation>
+    </animation-->
 
   <!-- Disintegration -->
 
