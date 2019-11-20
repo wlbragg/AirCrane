@@ -115,6 +115,7 @@
           <cb-sys-aoa type="bool">1</cb-sys-aoa>
           <cb-anti-ice-aoa type="bool">1</cb-anti-ice-aoa>
           <cb-warn-batt type="bool">1</cb-warn-batt>
+          <cb-cws type="bool">1</cb-cws>
           <cb-env-fan type="bool">1</cb-env-fan>
           <cb-rec-voice type="bool">1</cb-rec-voice>
           <cb-inst-clock-left type="bool">1</cb-inst-clock-left>

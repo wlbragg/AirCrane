@@ -65,11 +65,11 @@
         <input>
             <and>
                 <less-than>
-                    <property>systems/electrical/outputs/cws</property>
+                    <property>systems/electrical/outputs/main-left/cws</property>
                     <value>31.5</value>
                 </less-than>
                 <greater-than>
-                    <property>systems/electrical/outputs/cws</property>
+                    <property>systems/electrical/outputs/main-left/cws</property>
                     <value>20.0</value>
                 </greater-than>
             </and>

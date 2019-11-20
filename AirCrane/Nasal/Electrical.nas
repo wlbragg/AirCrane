@@ -269,6 +269,7 @@ var init_electrical = func{
     append(cbs_main_left, "sys-aoa");
     append(cbs_main_left, "anti-ice-aoa");
     append(cbs_main_left, "warn-batt");
+    append(cbs_main_left, "cws");
     append(cbs_main_left, "env-fan");
     append(cbs_main_left, "rec-voice");
     append(cbs_main_left, "inst-clock-left");
