@@ -5,7 +5,7 @@
     <filter>
         <name>Controls Rotor Brake Handle</name>
         <type>noise-spike</type>
-        <max-rate-of-change>1.1</max-rate-of-change>
+        <max-rate-of-change>3</max-rate-of-change>
         <enable>
             <condition>
                 <not>
@@ -19,6 +19,36 @@
         <output>
             <property>/sim/model/aircrane/cockpit/rotorbrake-handle-animation</property>
         </output>
+    </filter>
+
+    <filter>
+        <name>Gas Generator Tachometer Engine One N1</name>
+        <type>noise-spike</type>
+        <max-rate-of-change>6</max-rate-of-change>
+        <input>
+            <expression>
+                <product>
+                   <property>sim/model/aircrane/engines/one/n1</property>
+                   <value>200</value>
+                </product>
+            </expression>
+        </input>
+        <output>/instrumentation/ggt/ggt-one-n1</output>
+    </filter>
+
+    <filter>
+        <name>Gas Generator Tachometer Engine Two N1</name>
+        <type>noise-spike</type>
+        <max-rate-of-change>6</max-rate-of-change>
+        <input>
+            <expression>
+                <product>
+                   <property>sim/model/aircrane/engines/two/n1</property>
+                   <value>200</value>
+                </product>
+            </expression>
+        </input>
+        <output>/instrumentation/ggt/ggt-two-n1</output>
     </filter>
 
 </PropertyList>

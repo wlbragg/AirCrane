@@ -22,28 +22,35 @@
         <index type="int">0</index>
       </livery>
       <aircrane>
-        <state type="int">0</state>
+        <!--app>
+          <running type="int">-1</running>
+          <starting type="bool">false</starting>
+        </app-->
+        <state type="int">-2</state>
         <engine type="float">0</engine>
         <engines>
           <one>
-            <n1 type="double">0</n1>
+            <n1-indent type="int">0</n1-indent>
+            <n1 type="float">0</n1>
           </one>
           <two>
-            <n1 type="double">0</n1>
+            <n1-indent type="int">0</n1-indent>
+            <n1 type="float">0</n1>
           </two>
+          <engines-online type="float">0</engines-online>
         </engines>
         <rotor-step-deg type="float">-1</rotor-step-deg>
-        <main-rpm-pct type="double">0</main-rpm-pct>
-        <tail-rpm-pct type="double">0</tail-rpm-pct>
-        <xmsn-oil-temp type="double">0</xmsn-oil-temp>
-        <xmsn-oil-pressure type="double">0</xmsn-oil-pressure>
-        <oil-temp type="double">0</oil-temp>
-        <oil-pressure type="double">0</oil-pressure>
-        <hydraulic-fst type="double">0</hydraulic-fst>
-        <hydraulic-snd type="double">0</hydraulic-snd>
-        <hydraulic-util type="double">0</hydraulic-util>
-        <engtemp type="double">0</engtemp>
-        <ggt type="double">0</ggt>
+        <main-rpm-pct type="float">0</main-rpm-pct>
+        <tail-rpm-pct type="float">0</tail-rpm-pct>
+        <xmsn-oil-temp type="float">0</xmsn-oil-temp>
+        <xmsn-oil-pressure type="float">0</xmsn-oil-pressure>
+        <oil-temp type="float">0</oil-temp>
+        <oil-pressure type="float">0</oil-pressure>
+        <hydraulic-fst type="float">0</hydraulic-fst>
+        <hydraulic-snd type="float">0</hydraulic-snd>
+        <hydraulic-util type="float">0</hydraulic-util>
+        <engtemp type="float">0</engtemp>
+        <ggt type="float">0</ggt>
         <!--tank>
           <pump>
             <overtemp type="bool">0</overtemp>
@@ -82,6 +89,9 @@
       <cableguard>
         <enabled type="bool">false</enabled>
       </cableguard>
+      <lighting>
+        <cws-bright type="int">0</cws-bright>
+      </lighting>
       <steppanel>
         <enabled type="bool">false</enabled>
       </steppanel>
@@ -492,8 +502,8 @@
         <int n="12" alias="/sim/model/aircrane/lighting/beaconaft/enabled"/>
         <int n="13" alias="/sim/model/aircrane/lighting/strobe/enabled"/>
         <int n="14" alias="/sim/model/aircrane/lighting/nav-lights"/>
-        <int n="15" alias="/sim/model/aircrane/lighting/spot"/>
-        <int n="16" alias="/sim/model/aircrane/lighting/landing"/>
+        <int n="15" alias="/sim/model/aircrane/lighting/spot-light"/>
+        <int n="16" alias="/sim/model/aircrane/lighting/landing-light"/>
 
         <float n="0" alias="/sim/model/door-positions/crew/position-norm"/>
         <float n="1" alias="/sim/model/door-positions/passenger/position-norm"/>
@@ -553,11 +563,6 @@
 
   </sim>
 
-  <configured type="float">0</configured>
-  <configuredf type="float">0</configuredf>
-  <configuredfl type="float">0</configuredfl>
-  <configuredb type="float">0</configuredb>
-
   <environment>
     <aircraft-effects>
       <splash-vector-z type="float">-1</splash-vector-z>
@@ -598,7 +603,8 @@
       <!-- end cargo hauling feature -->
     </aircrane>
     <electrical>
-        <file>Aircraft/AirCrane/Nasal/electrical.nas</file>
+        <!--file>Aircraft/AirCrane/Nasal/electrical.nas</file-->
+        <file>Aircraft/AirCrane/Nasal/Electrical.nas</file>
     </electrical>
     <fcs>
       <file>Aircraft/AirCrane/Nasal/fcs-management.nas</file>
@@ -667,6 +673,10 @@
     <electrical>
       <outputs>
         <digital-display type="float">0</digital-display>
+        <eng1-underspeed type="int">0</eng1-underspeed>
+        <eng2-underspeed type="int">0</eng2-underspeed>
+        <rotorbrake type="int">0</rotorbrake>
+        <!--app-running type="float">0</app-running-->
       </outputs>
     </electrical>
   </systems>

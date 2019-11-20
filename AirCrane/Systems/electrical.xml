@@ -2,30 +2,180 @@
 
 <PropertyList>
 
-    <filter>
-        <name>Temporary Electrical supply to Tank Volume</name>
-        <type>gain</type>
-        <enable>
-            <condition>
-                <not>
-                    <property>/sim/freeze/replay-state</property>
-                </not>
-            </condition>
-        </enable>
+    <logic>
+        <name>Generator 1 Ready</name>
         <input>
-            <condition>
-                <and>
-                    <property>systems/electrical/amps</property>
-                    <property>controls/switches/master-bat</property>
-                </and>
-            </condition>
-            <value>0.5</value>
+            <and>
+                <property>/controls/engines/engine[0]/starter</property>
+                <equals>
+                    <property>/controls/electric/engine[0]/generator-sw</property>
+                    <value>-1</value>
+                </equals>
+            </and>
         </input>
+        <output>
+            <property>controls/electric/engine[0]/generator-ready</property>
+        </output>
+    </logic>
+
+    <logic>
+        <name>Generator 2 Ready</name>
         <input>
-            <value>0</value>
+            <and>
+                <property>/controls/engines/engine[1]/starter</property>
+                <equals>
+                    <property>/controls/electric/engine[1]/generator-sw</property>
+                    <value>-1</value>
+                </equals>
+            </and>
+        </input>
+        <output>
+            <property>controls/electric/engine[1]/generator-ready</property>
+        </output>
+    </logic>
+
+    <!--logic>
+        <name>APP Ready</name>
+        <input>
+            <and>
+                <property>/controls/engines/engine[2]/starter</property>
+                <equals>
+                    <property>controls/engines/engine[2]/running</property>
+                    <value>1</value>
+                </equals>
+            </and>
+        </input>
+        <output>
+            <property>controls/electric/engine[2]/generator-ready</property>
+        </output>
+    </logic-->
+
+    <logic>
+        <name>Electrical supply to Tank Quantity display</name>
+        <input>
+            <property>systems/electrical/output</property>
         </input>
         <output>
             <property>systems/electrical/outputs/digital-display</property>
+        </output>
+    </logic>
+
+    <logic>
+        <name>CWS Power Source</name>
+        <input>
+            <and>
+                <less-than>
+                    <property>systems/electrical/outputs/cws</property>
+                    <value>31.5</value>
+                </less-than>
+                <greater-than>
+                    <property>systems/electrical/outputs/cws</property>
+                    <value>20.0</value>
+                </greater-than>
+            </and>
+        </input>
+        <input>
+            <value>0.0</value>
+        </input>
+        <output>
+            <property>/systems/electrical/outputs/cws-power</property>
+        </output>
+    </logic>
+
+    <logic>
+        <name>CWS Test Switch Power</name>
+        <input>
+            <and>
+                <property>/systems/electrical/outputs/cws-power</property>
+                <property>controls/switches/cws-test</property>
+            </and>
+        </input>
+        <input>
+            <value>0.0</value>
+        </input>
+        <output>
+            <property>/systems/electrical/outputs/cws-test-power</property>
+        </output>
+    </logic>
+
+    <filter>
+        <name>CWS Brightness</name>
+        <type>gain</type>
+        <input>
+            <condition>
+                <property>controls/switches/cws-bright</property>
+            </condition>
+            <value>1</value>
+        </input>
+        <input>
+            <value>0.0</value>
+        </input>
+        <output>
+            <property>/sim/model/aircrane/lighting/cws-bright</property>
+        </output>
+    </filter>
+
+    <!--filter>
+        <name>Environment Temperature Power</name>
+        <type>gain</type>
+        <input>
+            <condition>
+                <greater-than>
+                    <property>/systems/electrical/outputs/instr-ignition-switch</property>
+                    <value>12.0</value>
+                </greater-than>
+            </condition>
+            <value>1</value>
+        </input>
+        <input>
+            <value>0.0</value>
+        </input>
+        <output>
+            <property>/instrumentation/iat/power</property>
+        </output>
+    </filter>
+
+    <filter>
+        <name>Environment Temperature Power to Needle</name>
+        <type>exponential</type>
+        <filter-time>3.0</filter-time>
+        <input>
+            <condition>
+                <property>/instrumentation/iat/power</property>
+            </condition>
+            <property>fdm/jsbsim/heat/air-temperature</property>
+        </input>
+        <input>
+            <value>0.0</value>
+        </input>
+        <output>
+            <property>fdm/jsbsim/heat/air-temperature-powered</property>
+        </output>
+    </filter-->
+
+    <filter>
+        <name>Environment Temperature Source</name>
+        <type>gain</type>
+        <input>
+            <condition>
+                <equals>
+                    <property>/controls/thermometer/temp-mode</property>
+                    <value>1</value>
+                </equals>
+            </condition>
+            <property>/environment/temperature-degc</property>
+        </input>
+        <input>
+            <condition>
+                <equals>
+                    <property>/controls/thermometer/temp-mode</property>
+                    <value>0</value>
+                </equals>
+            </condition>
+            <property>/environment/temperature-degc</property>
+        </input>
+        <output>
+            <property>sim/model/aircrane/environment/air-temperature</property>
         </output>
     </filter>
 

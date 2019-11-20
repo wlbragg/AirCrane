@@ -2,601 +2,615 @@
 
 <PropertyList>
 
-  <path>paneloverhead.ac</path>
-  <texture-path>../../../Models</texture-path>
+    <path>paneloverhead.ac</path>
+    <texture-path>../../../Models</texture-path>
 
-   <params>
-        <controls>
-            <rotorbrake-handle-animation>/sim/model/aircrane/cockpit/rotorbrake-handle-animation</rotorbrake-handle-animation>
-        </controls>
-    </params>
+     <params>
+          <controls>
+              <rotorbrake-handle-animation>/sim/model/aircrane/cockpit/rotorbrake-handle-animation</rotorbrake-handle-animation>
+              <eng1-n1-start-animation>/sim/model/aircrane/cockpit/eng1-n1-start-animation</eng1-n1-start-animation>
+              <eng2-n1-start-animation>/sim/model/aircrane/cockpit/eng2-n1-start-animation</eng2-n1-start-animation>
+          </controls>
+      </params>
 
-  <effect>
-    <inherits-from>Models/Effects/interior/cockpit-interior-shadows</inherits-from>
-    <object-name>paneloverhead</object-name>
-    <object-name>panel</object-name>
-    <object-name>panelscrews</object-name>
-    <object-name>lampferry</object-name>
-    <object-name>lampferryon</object-name>
-    <object-name>lamplanding</object-name>
-    <object-name>lamplandingon</object-name>
-    <object-name>togglecannonpitch</object-name>
-    <object-name>togglecannonpitchbase</object-name>
-    <object-name>panelcannon</object-name>
-    <object-name>controlquadrant</object-name>
-    <object-name>fire</object-name>
-    <object-name>fuelshutoffl</object-name>
-    <object-name>fuelshutoffr</object-name>
-    <object-name>n1leverl</object-name>
-    <object-name>n1leverlplastic</object-name>
-    <object-name>n1leverr</object-name>
-    <object-name>n1leverrplastic</object-name>
-    <object-name>redbase</object-name>
-    <object-name>redonl</object-name>
-    <object-name>redoffl</object-name>
-    <object-name>redonr</object-name>
-    <object-name>redoffr</object-name>
-    <object-name>controlquadrantplates</object-name>
-    <object-name>cqscrews</object-name>
-    <object-name>wire</object-name>
-    <object-name>n1leverlstart</object-name>
-    <object-name>n1leverrstart</object-name>
+    <effect>
+      <inherits-from>Models/Effects/interior/cockpit-interior-shadows</inherits-from>
+      <object-name>paneloverhead</object-name>
+      <object-name>panel</object-name>
+      <object-name>panelscrews</object-name>
+      <object-name>lampferry</object-name>
+      <object-name>lampferryon</object-name>
+      <object-name>lamplanding</object-name>
+      <object-name>lamplandingon</object-name>
+      <object-name>togglecannonpitch</object-name>
+      <object-name>togglecannonpitchbase</object-name>
+      <object-name>panelcannon</object-name>
+      <object-name>controlquadrant</object-name>
+      <object-name>fire</object-name>
+      <object-name>fuelshutoffl</object-name>
+      <object-name>fuelshutoffr</object-name>
+      <object-name>n1leverl</object-name>
+      <object-name>n1leverlplastic</object-name>
+      <object-name>n1leverr</object-name>
+      <object-name>n1leverrplastic</object-name>
+      <object-name>redbase</object-name>
+      <object-name>redonl</object-name>
+      <object-name>redoffl</object-name>
+      <object-name>redonr</object-name>
+      <object-name>redoffr</object-name>
+      <object-name>controlquadrantplates</object-name>
+      <object-name>cqscrews</object-name>
+      <object-name>wire</object-name>
+      <object-name>n1leverlstart</object-name>
+      <object-name>n1leverrstart</object-name>
 
-    <object-name>connector</object-name>
-    <object-name>rotorbrakehandle</object-name>
-    <object-name>hydcase</object-name>
-    <object-name>hydpiston</object-name>
-    <object-name>hydrod</object-name>
-    <object-name>pins</object-name>
-    <object-name>pivot</object-name>
+      <object-name>connector</object-name>
+      <object-name>rotorbrakehandle</object-name>
+      <object-name>hydcase</object-name>
+      <object-name>hydpiston</object-name>
+      <object-name>hydrod</object-name>
+      <object-name>pins</object-name>
+      <object-name>pivot</object-name>
 
-    <object-name>lightsbase</object-name>
-    <object-name>panelextlights</object-name>
-    <object-name>switchacolaft</object-name>
-    <object-name>switchacolfwd</object-name>
-    <object-name>switchnav</object-name>
-    <object-name>switchstrobe</object-name>
-    <object-name>knob-consol</object-name>
-    <object-name>knob-left-pilot-inst</object-name>
-  </effect>
+      <object-name>lightsbase</object-name>
+      <object-name>panelextlights</object-name>
+      <object-name>switchacolaft</object-name>
+      <object-name>switchacolfwd</object-name>
+      <object-name>switchnav</object-name>
+      <object-name>switchstrobe</object-name>
+      <object-name>knob-consol</object-name>
+      <object-name>knob-left-pilot-inst</object-name>
+    </effect>
 
-  <effect>
-    <inherits-from>Models/Effects/interior/interior-glass-reflection-front</inherits-from>
-    <object-name>n1leverlplastic</object-name>
-    <object-name>n1leverrplastic</object-name>
-  </effect>
+    <effect>
+      <inherits-from>Models/Effects/interior/interior-glass-reflection-front</inherits-from>
+      <object-name>n1leverlplastic</object-name>
+      <object-name>n1leverrplastic</object-name>
+    </effect>
 
-  <animation>
-    <type>select</type>
-    <object-name>lampferry</object-name>
-    <condition>
-      <greater-than>
-        <property>sim/model/watercannon/position-deg</property>
-        <value>-7.5</value>
-      </greater-than>
-    </condition>
-  </animation>
-  <animation>
-    <type>select</type>
-    <object-name>lampferryon</object-name>
-    <condition>
-      <equals>
-        <property>sim/model/watercannon/position-deg</property>
-        <value>-7.5</value>
-      </equals>
-    </condition>
-  </animation>
+  <!-- app -->
+  <model>
+    <path>Aircraft/AirCrane/Models/Interior/Panel/Instruments/app/app.xml</path>
+    <offsets>
+      <x-m>0.0</x-m>
+      <y-m>0.0</y-m>
+      <z-m>0.0</z-m>
+    </offsets>
+  </model>
 
-  <animation>
-    <type>select</type>
-    <object-name>lamplanding</object-name>
-    <condition>
-      <less-than>
-        <property>sim/model/watercannon/position-deg</property>
-        <value>7.5</value>
-      </less-than>
-    </condition>
-  </animation>
-  <animation>
-    <type>select</type>
-    <object-name>lamplandingon</object-name>
-    <condition>
-      <equals>
-        <property>sim/model/watercannon/position-deg</property>
-        <value>7.5</value>
-      </equals>
-    </condition>
-  </animation>
+  <!-- omcp -->
+  <model>
+    <path>Aircraft/AirCrane/Models/Interior/Panel/Instruments/omcp/omcp.xml</path>
+    <offsets>
+      <x-m>0.0</x-m>
+      <y-m>0.0</y-m>
+      <z-m>0.0</z-m>
+    </offsets>
+  </model>
 
-  <!-- Direct Drive "spring switch" -->
-  <animation>
-    <type>knob</type>
-    <object-name>togglecannonpitch</object-name>
-    <property>sim/model/watercannon/togglecannonpitch</property>
-    <factor>-35</factor>
-    <offset-deg>-10</offset-deg>
-    <center>
-      <x-m>-8.50175</x-m>
-      <y-m>-0.154198</y-m>
-      <z-m>-0.580201</z-m>
-    </center>
-    <axis>
-      <x>0</x>
-      <y>1</y>
-      <z>0</z>
-    </axis>
-    <action>
-      <binding>
-        <command>property-adjust</command>
-        <property>sim/model/watercannon/togglecannonpitch</property>
-        <factor>1</factor>
-        <min>-1</min>
-        <max>1</max>
-        <wrap>false</wrap>
-      </binding>
-      <binding>
-        <command>nasal</command>
-        <script>aircrane.click("avionics")</script>
-      </binding>
-    </action>
-    <release>
-      <binding>
-        <command>property-assign</command>
-        <property>sim/model/watercannon/togglecannonpitch</property>
-        <value>0</value>
-      </binding>
-    </release>
-    <hovered>
-      <binding>
-        <command>set-tooltip</command>
-        <tooltip-id>togglecannonpitch</tooltip-id>
-        <label>Cannon Pitch: %s</label>
-        <property>sim/model/watercannon/togglecannonpitch</property>
-        <mapping>nasal</mapping>
-        <script>
-          var modes = ['Neutral', 'Up', 'Down'];
-          return modes[arg[0]];
-        </script>
-      </binding>
-    </hovered>
-  </animation>
+    <animation>
+      <type>select</type>
+      <object-name>redoffl</object-name>
+      <condition>
+        <equals>
+          <property>systems/electrical/outputs/eng1-underspeed</property>
+          <value>0</value>
+        </equals>
+      </condition>
+    </animation>
+    <animation>
+      <type>select</type>
+      <object-name>redonl</object-name>
+      <condition>
+        <equals>
+          <property>systems/electrical/outputs/eng1-underspeed</property>
+          <value>1</value>
+        </equals>
+      </condition>
+    </animation>
+    <animation>
+      <type>select</type>
+      <object-name>redoffr</object-name>
+      <condition>
+        <equals>
+          <property>systems/electrical/outputs/eng2-underspeed</property>
+          <value>0</value>
+        </equals>
+      </condition>
+    </animation>
+    <animation>
+      <type>select</type>
+      <object-name>redonr</object-name>
+      <condition>
+        <equals>
+          <property>systems/electrical/outputs/eng2-underspeed</property>
+          <value>1</value>
+        </equals>
+      </condition>
+    </animation>
+    <animation>
+        <type>material</type>
+        <object-name>redonl</object-name>
+        <emission>
+            <red>  0.7</red>
+            <green>0.5</green>
+            <blue> 0.5</blue>
+            <factor-prop>systems/electrical/outputs/eng1-underspeed</factor-prop>
+        </emission>
+    </animation>
+    <animation>
+        <type>material</type>
+        <object-name>redonr</object-name>
+        <emission>
+            <red>  0.7</red>
+            <green>0.5</green>
+            <blue> 0.5</blue>
+            <factor-prop>systems/electrical/outputs/eng2-underspeed</factor-prop>
+        </emission>
+    </animation>
 
-  <animation>
-    <type>knob</type>
-    <object-name>fuelshutoffl</object-name>
-    <property>/consumables/fuel/shutoff/lever/left</property>
-    <factor>40</factor>
-    <axis>
-      <x>0.0</x>
-      <y>1.0</y>
-      <z>0.0</z>
-    </axis>
-    <center>
-      <x-m>-9.02808</x-m>
-      <y-m>-0.025087</y-m>
-      <z-m>-0.637417</z-m>
-    </center>
-    <action>
-      <repeatable>false</repeatable>
-      <binding>
+    <animation>
+      <type>select</type>
+      <object-name>lampferry</object-name>
+      <condition>
+        <greater-than>
+          <property>sim/model/watercannon/position-deg</property>
+          <value>-7.5</value>
+        </greater-than>
+      </condition>
+    </animation>
+    <animation>
+      <type>select</type>
+      <object-name>lampferryon</object-name>
+      <condition>
+        <equals>
+          <property>sim/model/watercannon/position-deg</property>
+          <value>-7.5</value>
+        </equals>
+      </condition>
+    </animation>
+
+    <animation>
+      <type>select</type>
+      <object-name>lamplanding</object-name>
+      <condition>
+        <less-than>
+          <property>sim/model/watercannon/position-deg</property>
+          <value>7.5</value>
+        </less-than>
+      </condition>
+    </animation>
+    <animation>
+      <type>select</type>
+      <object-name>lamplandingon</object-name>
+      <condition>
+        <equals>
+          <property>sim/model/watercannon/position-deg</property>
+          <value>7.5</value>
+        </equals>
+      </condition>
+    </animation>
+
+    <!-- Direct Drive "spring switch" -->
+    <animation>
+      <type>knob</type>
+      <object-name>togglecannonpitch</object-name>
+      <property>sim/model/watercannon/togglecannonpitch</property>
+      <factor>-35</factor>
+      <offset-deg>-10</offset-deg>
+      <center>
+        <x-m>-8.50175</x-m>
+        <y-m>-0.154198</y-m>
+        <z-m>-0.580201</z-m>
+      </center>
+      <axis>
+        <x>0</x>
+        <y>1</y>
+        <z>0</z>
+      </axis>
+      <action>
+        <binding>
           <command>property-adjust</command>
-          <property>/consumables/fuel/shutoff/lever/left</property>
+          <property>sim/model/watercannon/togglecannonpitch</property>
           <factor>1</factor>
-          <min>0</min>
+          <min>-1</min>
           <max>1</max>
-          <wrap>0</wrap>
-      </binding>
-      <binding>
+          <wrap>false</wrap>
+        </binding>
+        <binding>
           <command>nasal</command>
           <script>aircrane.click("avionics")</script>
-      </binding>
-    </action>
-    <hovered>
-      <binding>
+        </binding>
+      </action>
+      <release>
+        <binding>
+          <command>property-assign</command>
+          <property>sim/model/watercannon/togglecannonpitch</property>
+          <value>0</value>
+        </binding>
+      </release>
+      <hovered>
+        <binding>
           <command>set-tooltip</command>
-          <tooltip-id>FuelShutoff</tooltip-id>
-          <label>Fuel Shutoff Engine 1: %s</label>
-          <property>/consumables/fuel/shutoff/lever/left</property>
-          <mapping>on-off</mapping>
-      </binding>
-    </hovered>
-  </animation>
-
-  <animation>
-    <type>knob</type>
-    <object-name>fuelshutoffr</object-name>
-    <property>/consumables/fuel/shutoff/lever/right</property>
-    <factor>40</factor>
-    <axis>
-      <x>0.0</x>
-      <y>1.0</y>
-      <z>0.0</z>
-    </axis>
-    <center>
-      <x-m>-9.02808</x-m>
-      <y-m>-0.025087</y-m>
-      <z-m>-0.637417</z-m>
-    </center>
-    <action>
-      <repeatable>false</repeatable>
-      <binding>
-          <command>property-adjust</command>
-          <property>/consumables/fuel/shutoff/lever/right</property>
-          <factor>1</factor>
-          <min>0</min>
-          <max>1</max>
-          <wrap>0</wrap>
-      </binding>
-      <binding>
-          <command>nasal</command>
-          <script>aircrane.click("avionics")</script>
-      </binding>
-    </action>
-    <hovered>
-      <binding>
-          <command>set-tooltip</command>
-          <tooltip-id>FuelShutoff</tooltip-id>
-          <label>Fuel Shutoff Engine 2: %s</label>
-          <property>/consumables/fuel/shutoff/lever/right</property>
-          <mapping>on-off</mapping>
-      </binding>
-    </hovered>
-  </animation>
-
-  <animation>
-    <type>knob</type>
-    <object-name>n1leverl</object-name>
-    <object-name>n1leverlplastic</object-name>
-    <object-name>n1leverlstart</object-name>
-    <property>/sim/model/aircrane/engines/one/n1</property>
-    <factor>4</factor>
-    <axis>
-      <x>0.0</x>
-      <y>1.0</y>
-      <z>0.0</z>
-    </axis>
-    <center>
-      <x-m>-9.02808</x-m>
-      <y-m>-0.025087</y-m>
-      <z-m>-0.637417</z-m>
-    </center>
-    <action>
-      <repeatable>false</repeatable>
-      <binding>
-          <command>property-adjust</command>
-          <property>/sim/model/aircrane/engines/one/n1</property>
-          <factor>1</factor>
-          <min>0</min>
-          <max>10</max>
-          <wrap>0</wrap>
-      </binding>
-      <binding>
-          <command>nasal</command>
-          <script>aircrane.click("avionics")</script>
-      </binding>
-    </action>
-    <hovered>
-      <binding>
-          <command>set-tooltip</command>
-          <tooltip-id>FuelShutoff</tooltip-id>
-          <label>Fuel Shutoff Engine 1: %s</label>
-          <property>/sim/model/aircrane/engines/one/n1</property>
-          <mapping>on-off</mapping>
-      </binding>
-    </hovered>
-  </animation>
-
-  <animation>
-    <type>knob</type>
-    <object-name>n1leverr</object-name>
-    <object-name>n1leverrplastic</object-name>
-    <object-name>n1leverrstart</object-name>
-    <property>/sim/model/aircrane/engines/two/n1</property>
-    <factor>4</factor>
-    <axis>
-      <x>0.0</x>
-      <y>1.0</y>
-      <z>0.0</z>
-    </axis>
-    <center>
-      <x-m>-9.02808</x-m>
-      <y-m>-0.025087</y-m>
-      <z-m>-0.637417</z-m>
-    </center>
-    <action>
-      <repeatable>false</repeatable>
-      <binding>
-          <command>property-adjust</command>
-          <property>/sim/model/aircrane/engines/two/n1</property>
-          <factor>1</factor>
-          <min>0</min>
-          <max>10</max>
-          <wrap>0</wrap>
-      </binding>
-      <binding>
-          <command>nasal</command>
-          <script>aircrane.click("avionics")</script>
-      </binding>
-    </action>
-    <hovered>
-      <binding>
-          <command>set-tooltip</command>
-          <tooltip-id>FuelShutoff</tooltip-id>
-          <label>Fuel Shutoff Engine 2: %s</label>
-          <property>/sim/model/aircrane/engines/two/n1</property>
-          <mapping>on-off</mapping>
-      </binding>
-    </hovered>
-  </animation>
-
-    <!-- Exterior Lighting "Toggle" -->
+          <tooltip-id>togglecannonpitch</tooltip-id>
+          <label>Cannon Pitch: %s</label>
+          <property>sim/model/watercannon/togglecannonpitch</property>
+          <mapping>nasal</mapping>
+          <script>
+            var modes = ['Neutral', 'Up', 'Down'];
+            return modes[arg[0]];
+          </script>
+        </binding>
+      </hovered>
+    </animation>
 
     <animation>
-        <type>pick</type>
-        <object-name>switchacolfwd</object-name>
-        <visible>true</visible>
-        <action>
-            <button>0</button>
-            <repeatable>false</repeatable>
-            <binding>
-                <command>property-toggle</command>
-                <property>controls/lighting/beaconfwd</property>
-            </binding>
-            <binding>
-                <command>property-toggle</command>
-                <property>/sim/model/aircrane/lighting/beacon/enabled</property>
-            </binding>
-            <binding>
-                <command>nasal</command>
-                <script>aircrane.click("light")</script>
-            </binding>
-        </action>
-        <hovered>
-            <binding>
-                <command>set-tooltip</command>
-                <tooltip-id>beacon-switch-fwd</tooltip-id>
-                <label>Anti Coll FWD: %s</label>
-                <mapping>on-off</mapping>
-                <property>controls/lighting/beaconfwd</property>
-            </binding>
-        </hovered>
+      <type>knob</type>
+      <object-name>fuelshutoffl</object-name>
+      <property>/consumables/fuel/shutoff/lever/left</property>
+      <factor>40</factor>
+      <axis>
+        <x>0.0</x>
+        <y>1.0</y>
+        <z>0.0</z>
+      </axis>
+      <center>
+        <x-m>-9.02808</x-m>
+        <y-m>-0.025087</y-m>
+        <z-m>-0.637417</z-m>
+      </center>
+      <action>
+        <repeatable>false</repeatable>
+        <binding>
+            <command>property-adjust</command>
+            <property>/consumables/fuel/shutoff/lever/left</property>
+            <factor>1</factor>
+            <min>0</min>
+            <max>1</max>
+            <wrap>0</wrap>
+        </binding>
+        <binding>
+            <command>nasal</command>
+            <script>aircrane.click("avionics")</script>
+        </binding>
+      </action>
+      <hovered>
+        <binding>
+            <command>set-tooltip</command>
+            <tooltip-id>FuelShutoff</tooltip-id>
+            <label>Fuel Shutoff Engine 1: %s</label>
+            <property>/consumables/fuel/shutoff/lever/left</property>
+            <mapping>on-off</mapping>
+        </binding>
+      </hovered>
+    </animation>
+
+    <animation>
+      <type>knob</type>
+      <object-name>fuelshutoffr</object-name>
+      <property>/consumables/fuel/shutoff/lever/right</property>
+      <factor>40</factor>
+      <axis>
+        <x>0.0</x>
+        <y>1.0</y>
+        <z>0.0</z>
+      </axis>
+      <center>
+        <x-m>-9.02808</x-m>
+        <y-m>-0.025087</y-m>
+        <z-m>-0.637417</z-m>
+      </center>
+      <action>
+        <repeatable>false</repeatable>
+        <binding>
+            <command>property-adjust</command>
+            <property>/consumables/fuel/shutoff/lever/right</property>
+            <factor>1</factor>
+            <min>0</min>
+            <max>1</max>
+            <wrap>0</wrap>
+        </binding>
+        <binding>
+            <command>nasal</command>
+            <script>aircrane.click("avionics")</script>
+        </binding>
+      </action>
+      <hovered>
+        <binding>
+            <command>set-tooltip</command>
+            <tooltip-id>FuelShutoff</tooltip-id>
+            <label>Fuel Shutoff Engine 2: %s</label>
+            <property>/consumables/fuel/shutoff/lever/right</property>
+            <mapping>on-off</mapping>
+        </binding>
+      </hovered>
+    </animation>
+
+    <!-- N1 Engine 1 -->
+    <animation>
+      <type>knob</type>
+      <object-name>n1leverl</object-name>
+      <object-name>n1leverlplastic</object-name>
+      <property>/sim/model/aircrane/engines/one/n1</property>
+      <factor>60</factor>
+      <axis>
+        <x>0.0</x>
+        <y>1.0</y>
+        <z>0.0</z>
+      </axis>
+      <center>
+        <x-m>-9.02808</x-m>
+        <y-m>-0.025087</y-m>
+        <z-m>-0.637417</z-m>
+      </center>
+      <action>
+        <repeatable>false</repeatable>
+        <!--condition>
+            <not>
+                <property>/sim/model/aircrane/engines/one/n1-indent</property>
+            </not>
+        </condition-->
+        <binding>
+            <command>property-adjust</command>
+            <property>/sim/model/aircrane/engines/one/n1</property>
+            <factor>.05</factor>
+            <min>0</min>
+            <max>.5</max>
+            <wrap>0</wrap>
+        </binding>
+        <binding>
+            <command>nasal</command>
+            <script>
+                var n1_state = getprop("/sim/model/aircrane/engines/one/n1");
+                if (n1_state == .15) setprop("/sim/model/aircrane/engines/one/n1-indent", 1);
+                if (!n1_state) setprop("/consumables/fuel/shutoff/lever/left", 0);
+                aircrane.click("avionics");
+            </script>
+        </binding>
+      </action>
+      <hovered>
+        <binding>
+            <command>set-tooltip</command>
+            <tooltip-id>eng1-n1</tooltip-id>
+            <label>Engine 1 N1: %s</label>
+            <property>sim/model/aircrane/engines/one/n1</property>
+        </binding>
+      </hovered>
     </animation>
     <animation>
         <type>rotate</type>
-        <object-name>switchacolfwd</object-name>
-        <property>controls/lighting/beaconfwd</property>
-        <factor>30</factor>
+        <object-name>n1leverlstart</object-name>
+        <property>/sim/model/aircrane/engines/one/n1</property>
+        <factor>60</factor>
         <axis>
           <x>0.0</x>
           <y>1.0</y>
           <z>0.0</z>
         </axis>
         <center>
-          <x-m>-8.62058</x-m>
-          <y-m>-0.25019</y-m>
-          <z-m>-0.583735</z-m>
+          <x-m>-9.02808</x-m>
+          <y-m>-0.025087</y-m>
+          <z-m>-0.637417</z-m>
         </center>
     </animation>
 
-    <animation>
+    <!--animation>
         <type>pick</type>
-        <object-name>switchacolaft</object-name>
+        <object-name>n1leverl</object-name>
+        <object-name>n1leverlplastic</object-name>
         <visible>true</visible>
         <action>
             <button>0</button>
             <repeatable>false</repeatable>
             <binding>
-                <command>property-toggle</command>
-                <property>controls/lighting/beaconaft</property>
-            </binding>
-            <binding>
-                <command>property-toggle</command>
-                <property>/sim/model/aircrane/lighting/beacon/enabled</property>
-            </binding>
-            <binding>
-                <command>nasal</command>
-                <script>aircrane.click("light")</script>
+                <command>property-assign</command>
+                <property>/sim/model/aircrane/engines/one/n1-indent</property>
+                <value>0</value>
             </binding>
         </action>
         <hovered>
             <binding>
                 <command>set-tooltip</command>
-                <tooltip-id>beacon-switch-aft</tooltip-id>
-                <label>Anti Coll AFT: %s</label>
-                <mapping>on-off</mapping>
-                <property>controls/lighting/beaconaft</property>
+                <tooltip-id>eng1-n1-indent</tooltip-id>
+                <label>Engine 1 N1 Indent:(%1d)</label>
+                <property>/sim/model/aircrane/engines/one/n1-indent</property>
+            </binding>
+        </hovered>
+    </animation-->
+    <animation>
+        <type>translate</type>
+        <object-name>n1leverl</object-name>
+        <object-name>n1leverlplastic</object-name>
+        <property>/sim/model/aircrane/engines/one/n1-indent</property>
+        <factor>-0.0057</factor>
+        <axis>
+          <x>0.75</x>
+          <y>0.0</y>
+          <z>0.25</z>
+        </axis>
+    </animation>
+
+    <!-- N1 Engine 1 Start -->
+    <animation>
+        <type>pick</type>
+        <object-name>n1leverlstart</object-name>
+        <visible>true</visible>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+                <command>nasal</command>
+                <script>aircrane.cycleN1Start("eng1-n1-start")</script>
+            </binding>
+            <binding>
+                <command>nasal</command>
+                <script>aircrane.click("avionics")</script>
+            </binding>
+        </action>
+        <hovered>
+            <binding>
+                <command>set-tooltip</command>
+                <tooltip-id>eng1-n1-start</tooltip-id>
+                <label>Engine 1 N1 Start:(%1d)</label>
+                <property>controls/switches/eng1-n1-start</property>
             </binding>
         </hovered>
     </animation>
     <animation>
+        <type>translate</type>
+        <object-name>n1leverlstart</object-name>
+        <property>controls/switches/eng1-n1-start</property>
+        <factor>-0.0057</factor>
+        <axis>
+          <x>0.75</x>
+          <y>0.0</y>
+          <z>0.25</z>
+        </axis>
+    </animation>
+
+    <!-- N1 Engine 2 -->
+    <animation>
+      <type>knob</type>
+      <object-name>n1leverr</object-name>
+      <object-name>n1leverrplastic</object-name>
+      <property>/sim/model/aircrane/engines/two/n1</property>
+      <factor>60</factor>
+      <axis>
+        <x>0.0</x>
+        <y>1.0</y>
+        <z>0.0</z>
+      </axis>
+      <center>
+        <x-m>-9.02808</x-m>
+        <y-m>-0.025087</y-m>
+        <z-m>-0.637417</z-m>
+      </center>
+      <action>
+        <repeatable>false</repeatable>
+        <!--condition>
+            <not>
+                <property>/sim/model/aircrane/engines/two/n1-indent</property>
+            </not>
+        </condition-->
+        <binding>
+            <command>property-adjust</command>
+            <property>/sim/model/aircrane/engines/two/n1</property>
+            <factor>.05</factor>
+            <min>0</min>
+            <max>.5</max>
+            <wrap>0</wrap>
+        </binding>
+        <binding>
+            <command>nasal</command>
+            <script>
+                var n1_state = getprop("/sim/model/aircrane/engines/two/n1");
+                if (n1_state == "0.15") setprop("/sim/model/aircrane/engines/two/n1-indent", 1);
+                if (!n1_state) setprop("/consumables/fuel/shutoff/lever/right", 0);
+                aircrane.click("avionics");
+            </script>
+        </binding>
+      </action>
+      <hovered>
+        <binding>
+            <command>set-tooltip</command>
+            <tooltip-id>eng2-n1</tooltip-id>
+            <label>Engine 2 N1: %s</label>
+            <property>/sim/model/aircrane/engines/two/n1</property>
+        </binding>
+      </hovered>
+    </animation>
+    <animation>
         <type>rotate</type>
-        <object-name>switchacolaft</object-name>
-        <property>controls/lighting/beaconaft</property>
-        <factor>30</factor>
+        <object-name>n1leverrstart</object-name>
+        <property>/sim/model/aircrane/engines/two/n1</property>
+        <factor>60</factor>
         <axis>
           <x>0.0</x>
           <y>1.0</y>
           <z>0.0</z>
         </axis>
         <center>
-          <x-m>-8.62058</x-m>
-          <y-m>-0.219334</y-m>
-          <z-m>-0.583735</z-m>
+          <x-m>-9.02808</x-m>
+          <y-m>-0.025087</y-m>
+          <z-m>-0.637417</z-m>
         </center>
     </animation>
 
-    <animation>
+    <!--animation>
         <type>pick</type>
-        <object-name>switchnav</object-name>
+        <object-name>n1leverr</object-name>
+        <object-name>n1leverrplastic</object-name>
         <visible>true</visible>
         <action>
             <button>0</button>
             <repeatable>false</repeatable>
             <binding>
-                <command>property-toggle</command>
-                <property>controls/lighting/nav-lights</property>
-            </binding>
-            <binding>
-                <command>nasal</command>
-                <script>aircrane.click("light")</script>
+                <command>property-assign</command>
+                <property>/sim/model/aircrane/engines/two/n1-indent</property>
+                <value>0</value>
             </binding>
         </action>
         <hovered>
             <binding>
                 <command>set-tooltip</command>
-                <tooltip-id>nav-light-switch</tooltip-id>
-                <label>Navigation Lights: %s</label>
-                <mapping>on-off</mapping>
-                <property>controls/lighting/nav-lights</property>
+                <tooltip-id>eng2-n1-indent</tooltip-id>
+                <label>Engine 2 N1 Indent:(%1d)</label>
+                <property>/sim/model/aircrane/engines/two/n1-indent</property>
             </binding>
         </hovered>
-    </animation>
+    </animation-->
     <animation>
-        <type>rotate</type>
-        <object-name>switchnav</object-name>
-        <property>controls/lighting/nav-lights</property>
-        <factor>30</factor>
+        <type>translate</type>
+        <object-name>n1leverr</object-name>
+        <object-name>n1leverrplastic</object-name>
+        <property>/sim/model/aircrane/engines/two/n1-indent</property>
+        <factor>-0.0057</factor>
         <axis>
-          <x>0.0</x>
-          <y>1.0</y>
-          <z>0.0</z>
+          <x>0.75</x>
+          <y>0.0</y>
+          <z>0.25</z>
         </axis>
-        <center>
-          <x-m>-8.62058</x-m>
-          <y-m>-0.335578</y-m>
-          <z-m>-0.583735</z-m>
-        </center>
     </animation>
 
+    <!-- N1 Engine 2 Start -->
     <animation>
         <type>pick</type>
-        <object-name>switchstrobe</object-name>
+        <object-name>n1leverrstart</object-name>
         <visible>true</visible>
         <action>
             <button>0</button>
             <repeatable>false</repeatable>
             <binding>
-                <command>property-toggle</command>
-                <property>controls/lighting/strobe</property>
+                <command>nasal</command>
+                <script>aircrane.cycleN1Start("eng2-n1-start")</script>
             </binding>
             <binding>
                 <command>nasal</command>
-                <script>aircrane.click("light")</script>
+                <script>aircrane.click("avionics")</script>
             </binding>
         </action>
         <hovered>
             <binding>
                 <command>set-tooltip</command>
-                <tooltip-id>strobe-switch</tooltip-id>
-                <label>White Strobe: %s</label>
-                <mapping>on-off</mapping>
-                <property>controls/lighting/strobe</property>
+                <tooltip-id>eng2-n1-start</tooltip-id>
+                <label>Engine 2 N1 Start:(%1d)</label>
+                <property>controls/switches/eng2-n1-start</property>
             </binding>
         </hovered>
     </animation>
     <animation>
-        <type>rotate</type>
-        <object-name>switchstrobe</object-name>
-        <property>controls/lighting/strobe</property>
-        <factor>30</factor>
+        <type>translate</type>
+        <object-name>n1leverrstart</object-name>
+        <property>controls/switches/eng2-n1-start</property>
+        <factor>-0.0057</factor>
         <axis>
-          <x>0.0</x>
-          <y>1.0</y>
-          <z>0.0</z>
+          <x>0.75</x>
+          <y>0.0</y>
+          <z>0.25</z>
         </axis>
-        <center>
-          <x-m>-8.62058</x-m>
-          <y-m>-0.302527</y-m>
-          <z-m>-0.583735</z-m>
-        </center>
     </animation>
 
-    <animation>
-        <type>pick</type>
-        <object-name>switchlanding</object-name>
-        <visible>true</visible>
-        <action>
-            <button>0</button>
-            <repeatable>false</repeatable>
-            <binding>
-                <command>property-toggle</command>
-                <property>controls/lighting/landing-light</property>
-            </binding>
-            <binding>
-                <command>nasal</command>
-                <script>aircrane.click("light")</script>
-            </binding>
-        </action>
-        <hovered>
-            <binding>
-                <command>set-tooltip</command>
-                <tooltip-id>landing-light-switch</tooltip-id>
-                <label>Landing Lights: %s</label>
-                <mapping>on-off</mapping>
-                <property>controls/lighting/landing-light</property>
-            </binding>
-        </hovered>
-    </animation>
-    <animation>
-        <type>rotate</type>
-        <object-name>switchlanding</object-name>
-        <property>controls/lighting/landing-light</property>
-        <factor>30</factor>
-        <axis>
-          <x>0.0</x>
-          <y>1.0</y>
-          <z>0.0</z>
-        </axis>
-        <center>
-          <x-m>-8.66985</x-m>
-          <y-m>-0.321451</y-m>
-          <z-m>-0.58716</z-m>
-        </center>
-    </animation>
-
-    <animation>
-        <type>pick</type>
-        <object-name>switchspot</object-name>
-        <visible>true</visible>
-        <action>
-            <button>0</button>
-            <repeatable>false</repeatable>
-            <binding>
-                <command>property-toggle</command>
-                <property>controls/lighting/spot-light</property>
-            </binding>
-            <binding>
-                <command>nasal</command>
-                <script>aircrane.click("light")</script>
-            </binding>
-        </action>
-        <hovered>
-            <binding>
-                <command>set-tooltip</command>
-                <tooltip-id>spot-light-switch</tooltip-id>
-                <label>Spot Light: %s</label>
-                <mapping>on-off</mapping>
-                <property>controls/lighting/spot-light</property>
-            </binding>
-        </hovered>
-    </animation>
-    <animation>
-        <type>rotate</type>
-        <object-name>switchspot</object-name>
-        <property>controls/lighting/spot-light</property>
-        <factor>30</factor>
-        <axis>
-          <x>0.0</x>
-          <y>1.0</y>
-          <z>0.0</z>
-        </axis>
-        <center>
-          <x-m>-8.66985</x-m>
-          <y-m>-0.249538</y-m>
-          <z-m>-0.58716</z-m>
-        </center>
-    </animation>
-
+    <!-- Rotorbrake -->
     <animation>
         <type>pick</type>
         <object-name>rotorbrakehandle</object-name>
@@ -608,13 +622,9 @@
                 <command>nasal</command>
                 <script>aircrane.pumpRotorBrake()</script>
             </binding>
-            <!--binding>
-                <command>nasal</command>
-                <script>c172p.click("primer-in", 1.2)</script>
-            </binding-->
             <binding>
                 <command>nasal</command>
-                <script>aircrane.click("light")</script>
+                <script>aircrane.click("avionics")</script>
             </binding>
         </action>
         <hovered>
@@ -622,7 +632,7 @@
                 <command>set-tooltip</command>
                 <tooltip-id>rotor-brake</tooltip-id>
                 <label>Pump Rotor Brake:(%1d)</label>
-                <property>controls/rotorbrake/rotorbrake</property>
+                <property>controls/rotorbrake/pressure</property>
             </binding>
         </hovered>
     </animation>
@@ -672,6 +682,274 @@
           <y>0.0</y>
           <z>0.0</z>
         </axis>
+    </animation>
+
+    <!-- Exterior Lighting "Toggle" -->
+
+    <animation>
+        <type>pick</type>
+        <object-name>switchacolfwd</object-name>
+        <visible>true</visible>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+                <command>property-toggle</command>
+                <property>controls/lighting/beaconfwd-light-switch</property>
+            </binding>
+            <binding>
+                <command>property-toggle</command>
+                <property>/sim/model/aircrane/lighting/beacon/enabled</property>
+            </binding>
+            <binding>
+                <command>nasal</command>
+                <script>aircrane.click("avionics")</script>
+            </binding>
+        </action>
+        <hovered>
+            <binding>
+                <command>set-tooltip</command>
+                <tooltip-id>beacon-switch-fwd</tooltip-id>
+                <label>Anti Coll FWD: %s</label>
+                <mapping>on-off</mapping>
+                <property>controls/lighting/beaconfwd-light-switch</property>
+            </binding>
+        </hovered>
+    </animation>
+    <animation>
+        <type>rotate</type>
+        <object-name>switchacolfwd</object-name>
+        <property>controls/lighting/beaconfwd-light-switch</property>
+        <factor>30</factor>
+        <axis>
+          <x>0.0</x>
+          <y>1.0</y>
+          <z>0.0</z>
+        </axis>
+        <center>
+          <x-m>-8.62058</x-m>
+          <y-m>-0.25019</y-m>
+          <z-m>-0.583735</z-m>
+        </center>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>switchacolaft</object-name>
+        <visible>true</visible>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+                <command>property-toggle</command>
+                <property>controls/lighting/beaconaft-light-switch</property>
+            </binding>
+            <binding>
+                <command>property-toggle</command>
+                <property>/sim/model/aircrane/lighting/beacon/enabled</property>
+            </binding>
+            <binding>
+                <command>nasal</command>
+                <script>aircrane.click("avionics")</script>
+            </binding>
+        </action>
+        <hovered>
+            <binding>
+                <command>set-tooltip</command>
+                <tooltip-id>beacon-switch-aft</tooltip-id>
+                <label>Anti Coll AFT: %s</label>
+                <mapping>on-off</mapping>
+                <property>controls/lighting/beaconaft-light-switch</property>
+            </binding>
+        </hovered>
+    </animation>
+    <animation>
+        <type>rotate</type>
+        <object-name>switchacolaft</object-name>
+        <property>controls/lighting/beaconaft-light-switch</property>
+        <factor>30</factor>
+        <axis>
+          <x>0.0</x>
+          <y>1.0</y>
+          <z>0.0</z>
+        </axis>
+        <center>
+          <x-m>-8.62058</x-m>
+          <y-m>-0.219334</y-m>
+          <z-m>-0.583735</z-m>
+        </center>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>switchnav</object-name>
+        <visible>true</visible>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+                <command>property-toggle</command>
+                <property>controls/lighting/nav-lights-switch</property>
+            </binding>
+            <binding>
+                <command>nasal</command>
+                <script>aircrane.click("avionics")</script>
+            </binding>
+        </action>
+        <hovered>
+            <binding>
+                <command>set-tooltip</command>
+                <tooltip-id>nav-light-switch</tooltip-id>
+                <label>Navigation Lights: %s</label>
+                <mapping>on-off</mapping>
+                <property>controls/lighting/nav-lights-switch</property>
+            </binding>
+        </hovered>
+    </animation>
+    <animation>
+        <type>rotate</type>
+        <object-name>switchnav</object-name>
+        <property>controls/lighting/nav-lights-switch</property>
+        <factor>30</factor>
+        <axis>
+          <x>0.0</x>
+          <y>1.0</y>
+          <z>0.0</z>
+        </axis>
+        <center>
+          <x-m>-8.62058</x-m>
+          <y-m>-0.335578</y-m>
+          <z-m>-0.583735</z-m>
+        </center>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>switchstrobe</object-name>
+        <visible>true</visible>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+                <command>property-toggle</command>
+                <property>controls/lighting/strobe-light-switch</property>
+            </binding>
+            <binding>
+                <command>nasal</command>
+                <script>aircrane.click("avionics")</script>
+            </binding>
+        </action>
+        <hovered>
+            <binding>
+                <command>set-tooltip</command>
+                <tooltip-id>strobe-switch</tooltip-id>
+                <label>White Strobe: %s</label>
+                <mapping>on-off</mapping>
+                <property>controls/lighting/strobe-light-switch</property>
+            </binding>
+        </hovered>
+    </animation>
+    <animation>
+        <type>rotate</type>
+        <object-name>switchstrobe</object-name>
+        <property>controls/lighting/strobe-light-switch</property>
+        <factor>30</factor>
+        <axis>
+          <x>0.0</x>
+          <y>1.0</y>
+          <z>0.0</z>
+        </axis>
+        <center>
+          <x-m>-8.62058</x-m>
+          <y-m>-0.302527</y-m>
+          <z-m>-0.583735</z-m>
+        </center>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>switchlanding</object-name>
+        <visible>true</visible>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+                <command>property-toggle</command>
+                <property>controls/lighting/landing-light-switch</property>
+            </binding>
+            <binding>
+                <command>nasal</command>
+                <script>aircrane.click("avionics")</script>
+            </binding>
+        </action>
+        <hovered>
+            <binding>
+                <command>set-tooltip</command>
+                <tooltip-id>landing-light-switch</tooltip-id>
+                <label>Landing Lights: %s</label>
+                <mapping>on-off</mapping>
+                <property>controls/lighting/landing-light-switch</property>
+            </binding>
+        </hovered>
+    </animation>
+    <animation>
+        <type>rotate</type>
+        <object-name>switchlanding</object-name>
+        <property>controls/lighting/landing-light-switch</property>
+        <factor>30</factor>
+        <axis>
+          <x>0.0</x>
+          <y>1.0</y>
+          <z>0.0</z>
+        </axis>
+        <center>
+          <x-m>-8.66985</x-m>
+          <y-m>-0.321451</y-m>
+          <z-m>-0.58716</z-m>
+        </center>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>switchspot</object-name>
+        <visible>true</visible>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+                <command>property-toggle</command>
+                <property>controls/lighting/spot-light-switch</property>
+            </binding>
+            <binding>
+                <command>nasal</command>
+                <script>aircrane.click("avionics")</script>
+            </binding>
+        </action>
+        <hovered>
+            <binding>
+                <command>set-tooltip</command>
+                <tooltip-id>spot-light-switch</tooltip-id>
+                <label>Spot Light: %s</label>
+                <mapping>on-off</mapping>
+                <property>controls/lighting/spot-light-switch</property>
+            </binding>
+        </hovered>
+    </animation>
+    <animation>
+        <type>rotate</type>
+        <object-name>switchspot</object-name>
+        <property>controls/lighting/spot-light-switch</property>
+        <factor>30</factor>
+        <axis>
+          <x>0.0</x>
+          <y>1.0</y>
+          <z>0.0</z>
+        </axis>
+        <center>
+          <x-m>-8.66985</x-m>
+          <y-m>-0.249538</y-m>
+          <z-m>-0.58716</z-m>
+        </center>
     </animation>
 
 </PropertyList>

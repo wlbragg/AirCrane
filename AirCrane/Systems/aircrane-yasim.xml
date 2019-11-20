@@ -121,7 +121,7 @@
          weightperblade="20"
          relbladecenter="0.5"
          dynamic="0.7"
-         rpm="750"
+         rpm="850"
          rellenflaphinge="0"
          delta="0.1" delta3="0"
          translift="0"
@@ -142,6 +142,7 @@
 <!--
          <control-input control="COLLECTIVE" axis="/controls/flight/fcs/yaw" invert="true" src0="-1.0" src1="1.0" dst0="-0.66" dst1=" 0.66"/>
          <control-input control="COLLECTIVE" axis="/controls/engines/engine[0]/throttle"   src0=" 0.0" src1="0.6" dst0=" 0.45" dst1="-0.50"/>
+         <control-input control="COLLECTIVE" axis="/controls/engines/engine[1]/throttle"   src0=" 0.0" src1="0.6" dst0=" 0.45" dst1="-0.50"/>
 -->
   </rotor>
 
@@ -152,7 +153,7 @@
   -->
 
   <rotorgear max-power-engine="8400"
-             max-power-rotor-brake="185"
+             max-power-rotor-brake="1000"
              rotorgear-friction="3.7"
              engine-prop-factor="0.01"
              engine-accel-limit="4"

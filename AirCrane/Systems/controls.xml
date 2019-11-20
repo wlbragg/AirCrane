@@ -4,10 +4,19 @@
 
   <engines>
     <engine n="0">
-      <magnetos>0</magnetos>
+      <running type="bool">false</running>
+      <starter type="bool">false</starter>
+      <starting type="bool">false</starting>
     </engine>
     <engine n="1">
-      <magnetos>0</magnetos>
+      <running type="bool">false</running>
+      <starter type="bool">false</starter>
+      <starting type="bool">false</starting>
+    </engine>
+    <engine n="2">
+      <running type="bool">false</running>
+      <starter type="bool">false</starter>
+      <starting type="bool">false</starting>
     </engine>
   </engines>
   
@@ -24,38 +33,314 @@
     <rotorbrake-handle type="bool">false</rotorbrake-handle>
   </rotorbrake>
 
-  <circuit-breakers>
-      <autopilot type="bool">true</autopilot>
-      <bcnlt type="bool">true</bcnlt>
-      <instr type="bool">true</instr>
-      <intlt type="bool">true</intlt>
-      <landing type="bool">true</landing>
-      <spot type="bool">true</spot>
-      <master type="bool">true</master>
-      <navlt type="bool">true</navlt>
-      <pitot-heat type="bool">true</pitot-heat>
-      <radio1 type="bool">true</radio1>
-      <radio2 type="bool">true</radio2>
-      <radio3 type="bool">true</radio3>
-      <radio4 type="bool">true</radio4>
-      <radio5 type="bool">true</radio5>
-      <strobe type="bool">true</strobe>
-      <turn-coordinator type="bool">true</turn-coordinator>
-  </circuit-breakers>
-  <switches>
-      <master-avionics type="bool">false</master-avionics>
-      <starter type="bool">false</starter>
-      <master-alt type="bool">false</master-alt>
-      <master-bat type="bool">false</master-bat>
-      <magnetos type="int">0</magnetos>
-  </switches>
-  <lighting>
+    <electric>
+      <battery-bus-switch type="int">0</battery-bus-switch>
+      <app-bus-switch type="int">0</app-bus-switch>
+      <inverter-switch type="bool">1</inverter-switch>
+      <avionics-switch type="bool">false</avionics-switch>
+      <battery-oheat type="bool">false</battery-oheat>
+      <maingear-switch type="bool">true</maingear-switch>
+      <voltage-sel type="int">0</voltage-sel>
+      <system-test type="int">0</system-test>
+      <system-test-sw type="int">0</system-test-sw>
+      <gyro-vert-sw type="bool">0</gyro-vert-sw>
+      <gyro-mode-sw type="bool">0</gyro-mode-sw>
+      <gyro-set-sw type="int">0</gyro-set-sw>
+      <overspeed-horn type="bool">false</overspeed-horn>
+      <engine n="0">
+        <starter-btn type="bool">false</starter-btn>
+        <generator-sw type="int">0</generator-sw>
+        <generator-ready type="bool">0</generator-ready>
+      </engine>
+      <engine n="1">
+        <starter-btn type="bool">false</starter-btn>
+        <generator-sw type="int">0</generator-sw>
+        <generator-ready type="bool">0</generator-ready>
+      </engine>
+      <engine n="2">
+        <generator-sw type="int">1</generator-sw>
+        <generator-ready type="bool">0</generator-ready>
+      </engine>
+      <fuel-sel type="int">0</fuel-sel>
+
+      <circuit-breakers>
+        <battery-hot>
+<!-- circuit-breakers on battery hot bus located in J-Box -->
+          <cb-light-comp type="bool">1</cb-light-comp>
+          <cb-light-emer type="bool">1</cb-light-emer>
+          <cb-ignition type="bool">1</cb-ignition>
+          <cb-emer-power type="bool">1</cb-emer-power>
+        </battery-hot>
+
+        <battery>
+<!-- circuit-breakers on battery bus located in J-Box -->
+          <cb-batt-voltage type="bool">1</cb-batt-voltage>
+        </battery>
+
+        <isolated-left>
+<!-- circuit-breakers on left isolated bus located in J-Box -->
+          <cb-gen-ammeter-left type="bool">1</cb-gen-ammeter-left>
+          <cb-gen-sense-left type="bool">1</cb-gen-sense-left>
+          <cb-light-start-left type="bool">1</cb-light-start-left>
+          <cb-gen-voltage-left type="bool">1</cb-gen-voltage-left>
+        </isolated-left>
+
+        <isolated-right>
+<!-- circuit-breakers on right isolated bus located in J-Box -->
+          <cb-gen-ammeter-right type="bool">1</cb-gen-ammeter-right>
+          <cb-gen-sense-right type="bool">1</cb-gen-sense-right>
+          <cb-light-start-right type="bool">1</cb-light-start-right>
+          <cb-gen-voltage-right type="bool">1</cb-gen-voltage-right>
+        </isolated-right>
+
+<!-- main circuit-breakers left main bus -->
+        <cb-main-left-1 type="bool">1</cb-main-left-1>
+        <cb-main-left-2 type="bool">1</cb-main-left-2>
+        <cb-main-left-3 type="bool">1</cb-main-left-3>
+
+        <main-left>
+<!-- circuit-breakers on left main bus located in J-Box -->
+          <cb-left-sense type="bool">1</cb-left-sense>
+          <cb-fuel-boost-left type="bool">1</cb-fuel-boost-left>
+          <cb-annun-genoff-left type="bool">1</cb-annun-genoff-left>
+          <cb-light-recog-left type="bool">1</cb-light-recog-left>
+          <cb-light-advisory type="bool">1</cb-light-advisory>
+          <cb-light-indirect type="bool">1</cb-light-indirect>
+          <cb-entertainment type="bool">1</cb-entertainment>
+<!-- circuit-breakers on left main bus located on left panel -->
+          <cb-engine-fan-left type="bool">1</cb-engine-fan-left>
+          <cb-engine-turbine-left type="bool">1</cb-engine-turbine-left>
+          <cb-light-panel-left type="bool">1</cb-light-panel-left>
+          <cb-left-inverter type="bool">1</cb-left-inverter>
+          <cb-sys-aoa type="bool">1</cb-sys-aoa>
+          <cb-anti-ice-aoa type="bool">1</cb-anti-ice-aoa>
+          <cb-warn-batt type="bool">1</cb-warn-batt>
+          <cb-env-fan type="bool">1</cb-env-fan>
+          <cb-rec-voice type="bool">1</cb-rec-voice>
+          <cb-inst-clock-left type="bool">1</cb-inst-clock-left>
+          <cb-light-panel-el type="bool">1</cb-light-panel-el>
+          <cb-anti-ice-engine-left type="bool">1</cb-anti-ice-engine-left>
+          <cb-sys-engine-sync type="bool">1</cb-sys-engine-sync>
+          <cb-engine-fire-left type="bool">1</cb-engine-fire-left>
+          <cb-engine-shutoff-left type="bool">1</cb-engine-shutoff-left>
+          <cb-sys-flap-ctrl type="bool">1</cb-sys-flap-ctrl>
+          <cb-rec-flight type="bool">1</cb-rec-flight>
+          <cb-fuel-boost-right type="bool">1</cb-fuel-boost-right>
+          <cb-engine-fuelflow-left type="bool">1</cb-engine-fuelflow-left>
+          <cb-engine-qty-left type="bool">1</cb-engine-qty-left>
+          <cb-engine-ign-right type="bool">1</cb-engine-ign-right>
+          <cb-engine-itt-left type="bool">1</cb-engine-itt-left>
+          <cb-sys-gear-ctrl type="bool">1</cb-sys-gear-ctrl>
+          <cb-warn-gear type="bool">1</cb-warn-gear>
+          <cb-left-starter type="bool">1</cb-left-starter>
+          <cb-light-winginsp type="bool">1</cb-light-winginsp>
+          <cb-sys-nose-wheel-rpm type="bool">1</cb-sys-nose-wheel-rpm>
+          <cb-inst-oat type="bool">1</cb-inst-oat>
+          <cb-engine-oilp-left type="bool">1</cb-engine-oilp-left>
+          <cb-engine-oilt-left type="bool">1</cb-engine-oilt-left>
+          <cb-sys-pitch-trim type="bool">1</cb-sys-pitch-trim>
+          <cb-anti-ice-pitot-left type="bool">1</cb-anti-ice-pitot-left>
+          <cb-sys-skid-ctrl type="bool">1</cb-sys-skid-ctrl>
+          <cb-env-normalp type="bool">1</cb-env-normalp>
+          <cb-left-xover type="bool">1</cb-left-xover>
+          <cb-sys-speed-brake type="bool">1</cb-sys-speed-brake>
+          <cb-inst-gyro-standby type="bool">1</cb-inst-gyro-standby>
+          <cb-env-temp type="bool">1</cb-env-temp>
+          <cb-sys-thrustrev-left type="bool">1</cb-sys-thrustrev-left>
+          <cb-warn-lts1 type="bool">1</cb-warn-lts1>
+          <cb-anti-ice-bleedair-ws type="bool">1</cb-anti-ice-bleedair-ws>
+          <cb-anti-ice-bleedair-ws-temp type="bool">1</cb-anti-ice-bleedair-ws-temp>
+          <cb-sys-flap-motor type="bool">1</cb-sys-flap-motor>
+
+          <cb-landing-light type="bool">1</cb-landing-light>
+          <cb-beaconfwd-light type="bool">1</cb-beaconfwd-light>
+          <cb-beaconaft-light type="bool">1</cb-beaconaft-light>
+          <cb-strobe-light type="bool">1</cb-strobe-light>
+          <cb-nav-lights type="bool">1</cb-nav-lights>
+          <cb-spot-light type="bool">1</cb-spot-light>
+
+        </main-left>
+
+        <main-left-xover>
+<!-- circuit-breakers on left main bus cross over to right panel -->
+          <cb-dc-nav1 type="bool">1</cb-dc-nav1>
+          <cb-dc-adf1 type="bool">1</cb-dc-adf1>
+          <cb-dc-audio1 type="bool">1</cb-dc-audio1>
+          <cb-dc-dme1 type="bool">1</cb-dc-dme1>
+          <cb-dc-efis-adi type="bool">1</cb-dc-efis-adi>
+          <cb-dc-efis-disp type="bool">1</cb-dc-efis-disp>
+          <cb-dc-efis-efis type="bool">1</cb-dc-efis-efis>
+          <cb-dc-efis-hsi type="bool">1</cb-dc-efis-hsi>
+          <cb-dc-fd1 type="bool">1</cb-dc-fd1>
+          <cb-dc-radalt type="bool">1</cb-dc-radalt>
+          <cb-dc-rmi1 type="bool">1</cb-dc-rmi1>
+          <cb-dc-xpdr1 type="bool">1</cb-dc-xpdr1>
+          <cb-dc-comm2 type="bool">1</cb-dc-comm2>
+          <cb-dc-dg1 type="bool">1</cb-dc-dg1>
+          <cb-dc-ap type="bool">1</cb-dc-ap>
+          <cb-dc-phone type="bool">1</cb-dc-phone>
+
+          <cb-dc-voice-adv type="bool">1</cb-dc-voice-adv>
+
+        </main-left-xover>
+
+<!-- main circuit-breakers right main bus -->
+        <cb-main-right-1 type="bool">1</cb-main-right-1>
+        <cb-main-right-2 type="bool">1</cb-main-right-2>
+        <cb-main-right-3 type="bool">1</cb-main-right-3>
+
+        <main-right>
+<!-- circuit-breakers on right main bus located in J-Box -->
+          <cb-right-sense type="bool">1</cb-right-sense>
+          <cb-fuel-boost-right type="bool">1</cb-fuel-boost-right>
+          <cb-annun-genoff-right type="bool">1</cb-annun-genoff-right>
+          <cb-light-recog-right type="bool">1</cb-light-recog-right>
+          <cb-light-cabin type="bool">1</cb-light-cabin>
+          <cb-light-toilet type="bool">1</cb-light-toilet>
+<!-- circuit-breakers on right main bus located on right panel -->
+          <cb-engine-fan-right type="bool">1</cb-engine-fan-right>
+          <cb-engine-turbine-right type="bool">1</cb-engine-turbine-right>
+          <cb-right-inverter type="bool">1</cb-right-inverter>
+          <cb-engine-fuelflow-right type="bool">1</cb-engine-fuelflow-right>
+          <cb-engine-qty-right type="bool">1</cb-engine-qty-right>
+          <cb-engine-itt-right type="bool">1</cb-engine-itt-right>
+          <cb-right-xover type="bool">1</cb-right-xover>
+          <cb-engine-oilp-right type="bool">1</cb-engine-oilp-right>
+          <cb-engine-oilt-right type="bool">1</cb-engine-oilt-right>
+          <cb-right-starter type="bool">1</cb-right-starter>
+
+          <cb-dc-dme2 type="bool">1</cb-dc-dme2>
+          <cb-dc-xpdr2 type="bool">1</cb-dc-xpdr2>
+          <cb-dc-adf2 type="bool">1</cb-dc-adf2>
+          <cb-dc-comm3 type="bool">1</cb-dc-comm3>
+          <cb-dc-audio2 type="bool">1</cb-dc-audio2>
+
+          <cb-dc-warn type="bool">1</cb-dc-warn>
+          <cb-dc-nav-area type="bool">1</cb-dc-nav-area>
+          <cb-dc-gpws type="bool">1</cb-dc-gpws>
+          <cb-dc-tas-htr type="bool">1</cb-dc-tas-htr>
+          <cb-dc-nav-vlf type="bool">1</cb-dc-nav-vlf>
+          <cb-dc-nav-db type="bool">1</cb-dc-nav-db>
+          <cb-dc-fms type="bool">1</cb-dc-fms>
+          <cb-dc-radar type="bool">1</cb-dc-radar>
+          <cb-dc-fd2 type="bool">1</cb-dc-fd2>
+          <cb-dc-rmi2 type="bool">1</cb-dc-rmi2>
+        </main-right>
+
+        <main-right-xover>
+<!-- circuit-breakers on right main bus cross over to left panel -->
+          <cb-light-panel-center type="bool">1</cb-light-panel-center>
+          <cb-light-panel-right type="bool">1</cb-light-panel-right>
+          <cb-anti-ice-alcohol type="bool">1</cb-anti-ice-alcohol>
+          <cb-inst-ralt type="bool">1</cb-inst-ralt>
+          <cb-inst-clock-right type="bool">1</cb-inst-clock-right>
+          <cb-env-emerp type="bool">1</cb-env-emerp>
+          <cb-anti-ice-engine-right type="bool">1</cb-anti-ice-engine-right>
+          <cb-engine-fire-right type="bool">1</cb-engine-fire-right>
+          <cb-engine-shutoff-right type="bool">1</cb-engine-shutoff-right>
+          <cb-inst-flt-hr type="bool">1</cb-inst-flt-hr>
+          <cb-engine-ign-left type="bool">1</cb-engine-ign-left>
+          <cb-warn-speed type="bool">1</cb-warn-speed>
+          <cb-anti-ice-pitot-right type="bool">1</cb-anti-ice-pitot-right>
+          <cb-anti-ice-surface type="bool">1</cb-anti-ice-surface>
+          <cb-sys-thrustrev-right type="bool">1</cb-sys-thrustrev-right>
+          <cb-warn-lts2 type="bool">1</cb-warn-lts2>
+          <cb-fuel-boost-left type="bool">1</cb-fuel-boost-left>
+          <cb-sys-equip-cool type="bool">1</cb-sys-equip-cool>
+        </main-right-xover>
+
+        <AC-115V>
+<!-- circuit-breakers on AC 115V bus located on right panel -->
+          <cb-ac-ap type="bool">1</cb-ac-ap>
+          <cb-ac-fd1 type="bool">1</cb-ac-fd1>
+          <cb-ac-air-data type="bool">1</cb-ac-air-data>
+          <cb-ac-vgyro1 type="bool">1</cb-ac-vgyro1>
+          <cb-ac-radar type="bool">1</cb-ac-radar>
+
+          <cb-ac-fd2 type="bool">1</cb-ac-fd2>
+          <cb-ac-vgyro2 type="bool">1</cb-ac-vgyro2>
+        </AC-115V>
+
+        <AC-26V>
+<!-- circuit-breakers on AC 26V bus located on right panel -->
+          <cb-ac-nav1 type="bool">1</cb-ac-nav1>
+          <cb-ac-rmi-adf1 type="bool">1</cb-ac-rmi-adf1>
+          <cb-ac-hsi1 type="bool">1</cb-ac-hsi1>
+          <cb-ac-adi1 type="bool">1</cb-ac-adi1>
+          <cb-ac-gpws type="bool">1</cb-ac-gpws>
+
+          <cb-ac-nav2 type="bool">1</cb-ac-nav2>
+          <cb-ac-rmi-adf2 type="bool">1</cb-ac-rmi-adf2>
+          <cb-ac-hsi2 type="bool">1</cb-ac-hsi2>
+          <cb-ac-adi2 type="bool">1</cb-ac-adi2>
+          <cb-ac-efis type="bool">1</cb-ac-efis>
+        </AC-26V>
+
+        <emer>
+<!-- circuit-breakers on emergency bus located on right panel -->
+          <cb-dc-nav2 type="bool">1</cb-dc-nav2>
+          <cb-dc-comm1 type="bool">1</cb-dc-comm1>
+          <cb-dc-dg2 type="bool">1</cb-dc-dg2>
+          <cb-light-flood type="bool">1</cb-light-flood>
+        </emer>
+
+      </circuit-breakers>
+    </electric>
+    <lighting>
+      <instrument-lights-norm type="double">0.5</instrument-lights-norm>
+      <left-panel-norm type="double">0.5</left-panel-norm>
+      <center-panel-norm type="double">0.5</center-panel-norm>
+      <right-panel-norm type="double">0.5</right-panel-norm>
+      <map-lights type="bool">0</map-lights>
+      <panel-lights-switch type="bool">0</panel-lights-switch>
+      <flood-light-norm type="double">0.0</flood-light-norm>
+      <left-panel-light-emission type="double">0.0</left-panel-light-emission>
+      <center-panel-light-emission type="double">0.0</center-panel-light-emission>
+      <right-panel-light-emission type="double">0.0</right-panel-light-emission>
+      <instrument-lights-emission type="double">0.0</instrument-lights-emission>
+      <map-lights-emission type="double">0.0</map-lights-emission>
+      <flightdeck-average-ambient-light type="double">0.0</flightdeck-average-ambient-light>
+      <flightdeck-average-ambient-light-center-console type="double">0.0</flightdeck-average-ambient-light-center-console>
+      <flightdeck-average-ambient-light-environment type="double">0.0</flightdeck-average-ambient-light-environment>
+      <flightdeck-average-instrument-emission type="double">0.0</flightdeck-average-instrument-emission>
+      <panel-average-lighting type="double">0.0</panel-average-lighting>
+      <stdbygyro-switch type="int">0</stdbygyro-switch>
+      <passenger-switch type="int">0</passenger-switch>
+      <!-- cabin-lights-norm type=""></cabin-lights-norm -->
+      <recog-lights-switch type="bool">0</recog-lights-switch>
+      <altitude-alerter-dim type="double">1.0</altitude-alerter-dim>
+      <fdpanel-dim type="double">1.0</fdpanel-dim>
+
+      <landing-light-switch type="bool">0</landing-light-switch>
+      <spot-light-switch type="bool">0</spot-light-switch>
+      <nav-lights-switch type="bool">0</nav-lights-switch>
+      <strobe-light-switch type="bool">0</strobe-light-switch>
+      <beaconfwd-light-switch type="bool">0</beaconfwd-light-switch>
+      <beaconaft-light-switch type="bool">0</beaconaft-light-switch>
+
       <nav-lights type="bool">false</nav-lights>
-      <beaconfwd type="bool">false</beaconfwd>
-      <beaconaft type="bool">false</beaconaft>
-      <strobe type="bool">false</strobe>
+      <beaconfwd-light type="bool">false</beaconfwd-light>
+      <beaconaft-light type="bool">false</beaconaft-light>
+      <strobe-light type="bool">false</strobe-light>
       <spot-light type="bool">false</spot-light>
-      <landing-lights type="bool">false</landing-lights>
-  </lighting>
+      <landing-light type="bool">false</landing-light>
+    </lighting>
+    <switches>
+        <master-avionics type="bool">false</master-avionics>
+        <eng1-n1-start type="bool">false</eng1-n1-start>
+        <eng2-n1-start type="bool">false</eng2-n1-start>
+        <ignition-1 type="int">0</ignition-1>
+        <ignition-2 type="int">0</ignition-2>
+        <app-start-20 type="bool">false</app-start-20>
+        <app-master type="bool">false</app-master>
+        <app-start type="bool">false</app-start>
+        <app-stop type="bool">false</app-stop>
+        <app-fuel type="bool">false</app-fuel>
+        <cws-test type="bool">false</cws-test>
+        <cws-bright type="int">false</cws-bright>
+    </switches>
+    <thermometer>
+        <temp-mode type="int">0</temp-mode>
+    </thermometer>
 
 </PropertyList>

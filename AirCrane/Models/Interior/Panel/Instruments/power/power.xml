@@ -81,16 +81,16 @@
             <repeatable>false</repeatable>
             <binding>
                 <command>property-toggle</command>
-                <property>controls/switches/master-bat</property>
+                <property>controls/electric/battery-bus-switch</property>
             </binding>
-            <binding>
+            <!--binding>
                 <command>nasal</command>
                 <script>
                     var master_state = getprop("/controls/switches/master-bat");
                     if (!master_state) setprop("/controls/switches/master-alt", 0);
                     aircrane.click("master");
                 </script>
-            </binding>
+            </binding-->
         </action>
         <hovered>
             <binding>
@@ -98,14 +98,14 @@
                 <tooltip-id>master-switch</tooltip-id>
                 <label>Battery: %s</label>
                 <mapping>on-off</mapping>
-                <property>controls/switches/master-bat</property>
+                <property>controls/electric/battery-bus-switch</property>
             </binding>
         </hovered>
     </animation>
     <animation>
         <type>rotate</type>
         <object-name>switch-master-bat</object-name>
-        <property>controls/switches/master-bat</property>
+        <property>controls/electric/battery-bus-switch</property>
         <factor>-30</factor>
         <axis>
           <x>0.0</x>
@@ -120,101 +120,85 @@
     </animation>
 
     <animation>
-        <type>pick</type>
-        <object-name>switch-gen-1</object-name>
-        <visible>true</visible>
-        <action>
-            <button>0</button>
-            <repeatable>false</repeatable>
-            <binding>
-                <command>property-toggle</command>
-                <property>controls/switches/generator-1</property>
-            </binding>
-            <binding>
-                <command>nasal</command>
-                <script>
-                    if (getprop("controls/switches/generator-1") or getprop("controls/switches/generator-2"))
-                        setprop("/controls/switches/master-alt", 1);
-                    else
-                        setprop("/controls/switches/master-alt", 0);
-                    aircrane.click("light");
-                </script>
-            </binding>
-        </action>
-        <hovered>
-            <binding>
-                <command>set-tooltip</command>
-                <tooltip-id>gen-1-switch</tooltip-id>
-                <label>Generator 1: %s</label>
-                <mapping>on-off</mapping>
-                <property>controls/switches/generator-1</property>
-            </binding>
-        </hovered>
-    </animation>
-    <animation>
-        <type>rotate</type>
-        <object-name>switch-gen-1</object-name>
-        <property>controls/switches/generator-1</property>
-        <factor>-30</factor>
-        <axis>
-          <x>0.0</x>
-          <y>1.0</y>
-          <z>0.0</z>
-        </axis>
-        <center>
-          <x-m>-8.88491</x-m>
-          <y-m>-0.090564</y-m>
-          <z-m>-1.80665</z-m>
-        </center>
+      <type>knob</type>
+      <object-name>switch-gen-1</object-name>
+      <property>controls/electric/engine[0]/generator-sw</property>
+      <factor>30</factor>
+      <offset-deg>-10</offset-deg>
+      <axis>
+        <x>0.0</x>
+        <y>1.0</y>
+        <z>0.0</z>
+      </axis>
+      <center>
+        <x-m>-8.88491</x-m>
+        <y-m>-0.072598</y-m>
+        <z-m>-1.80665</z-m>
+      </center>
+      <action>
+        <repeatable>false</repeatable>
+        <binding>
+            <command>property-adjust</command>
+            <property>controls/electric/engine[0]/generator-sw</property>
+            <factor>1</factor>
+            <min>-1</min>
+            <max> 1</max>
+            <wrap>0</wrap>
+        </binding>
+        <binding>
+            <command>nasal</command>
+            <script>aircrane.click("avionics")</script>
+        </binding>
+      </action>
+      <hovered>
+        <binding>
+            <command>set-tooltip</command>
+            <tooltip-id>switch-gen-1</tooltip-id>
+            <label>Generator 1 Switch: %s</label>
+            <property>controls/electric/engine[0]/generator-sw</property>
+        </binding>
+      </hovered>
     </animation>
 
-    <animation>
-        <type>pick</type>
-        <object-name>switch-gen-2</object-name>
-        <visible>true</visible>
-        <action>
-            <button>0</button>
-            <repeatable>false</repeatable>
-            <binding>
-                <command>property-toggle</command>
-                <property>controls/switches/generator-2</property>
-            </binding>
-            <binding>
-                <command>nasal</command>
-                <script>
-                    if (getprop("controls/switches/generator-1") or getprop("controls/switches/generator-2"))
-                        setprop("/controls/switches/master-alt", 1);
-                    else
-                        setprop("/controls/switches/master-alt", 0);
-                    aircrane.click("light");
-                </script>
-            </binding>
-        </action>
-        <hovered>
-            <binding>
-                <command>set-tooltip</command>
-                <tooltip-id>gen-2-switch</tooltip-id>
-                <label>Generator 2: %s</label>
-                <mapping>on-off</mapping>
-                <property>controls/switches/generator-2</property>
-            </binding>
-        </hovered>
-    </animation>
-    <animation>
-        <type>rotate</type>
-        <object-name>switch-gen-2</object-name>
-        <property>controls/switches/generator-2</property>
-        <factor>-30</factor>
-        <axis>
-          <x>0.0</x>
-          <y>1.0</y>
-          <z>0.0</z>
-        </axis>
-        <center>
-          <x-m>-8.88491</x-m>
-          <y-m>-0.063034</y-m>
-          <z-m>-1.80665</z-m>
-        </center>
+     <animation>
+      <type>knob</type>
+      <object-name>switch-gen-2</object-name>
+      <property>controls/electric/engine[1]/generator-sw</property>
+      <factor>30</factor>
+      <offset-deg>-10</offset-deg>
+      <axis>
+        <x>0.0</x>
+        <y>1.0</y>
+        <z>0.0</z>
+      </axis>
+      <center>
+        <x-m>-8.88491</x-m>
+        <y-m>-0.042982</y-m>
+        <z-m>-1.80665</z-m>
+      </center>
+      <action>
+        <repeatable>false</repeatable>
+        <binding>
+            <command>property-adjust</command>
+            <property>controls/electric/engine[1]/generator-sw</property>
+            <factor>1</factor>
+            <min>-1</min>
+            <max> 1</max>
+            <wrap>0</wrap>
+        </binding>
+        <binding>
+            <command>nasal</command>
+            <script>aircrane.click("avionics")</script>
+        </binding>
+      </action>
+      <hovered>
+        <binding>
+            <command>set-tooltip</command>
+            <tooltip-id>switch-gen-2</tooltip-id>
+            <label>Generator 2 Switch: %s</label>
+            <property>controls/electric/engine[1]/generator-sw</property>
+        </binding>
+      </hovered>
     </animation>
 
     <animation>
@@ -261,93 +245,85 @@
     </animation>
 
     <animation>
-        <type>pick</type>
-        <object-name>switch-ignition-1</object-name>
-        <visible>true</visible>
-        <action>
-            <button>0</button>
-            <repeatable>false</repeatable>
-            <binding>
-                <command>property-toggle</command>
-                <property>controls/switches/ignition-1</property>
-            </binding>
-            <binding>
-                <command>nasal</command>
-                <script>
-                    aircrane.click("master");
-                </script>
-            </binding>
-        </action>
-        <hovered>
-            <binding>
-                <command>set-tooltip</command>
-                <tooltip-id>ignition-1-switch</tooltip-id>
-                <label>Ignition 1: %s</label>
-                <mapping>on-off</mapping>
-                <property>controls/switches/ignition-1</property>
-            </binding>
-        </hovered>
-    </animation>
-    <animation>
-        <type>rotate</type>
-        <object-name>switch-ignition-1</object-name>
-        <property>controls/switches/ignition-1</property>
-        <factor>30</factor>
-        <axis>
-          <x>0.0</x>
-          <y>1.0</y>
-          <z>0.0</z>
-        </axis>
-        <center>
-          <x-m>-8.82817</x-m>
-          <y-m>-0.039622</y-m>
-          <z-m>-1.81489</z-m>
-        </center>
+      <type>knob</type>
+      <object-name>switch-ignition-1</object-name>
+      <property>controls/switches/ignition-1</property>
+      <factor>30</factor>
+      <offset-deg>-10</offset-deg>
+      <axis>
+        <x>0.0</x>
+        <y>1.0</y>
+        <z>0.0</z>
+      </axis>
+      <center>
+        <x-m>-8.82817</x-m>
+        <y-m>-0.039622</y-m>
+        <z-m>-1.81489</z-m>
+      </center>
+      <action>
+        <repeatable>false</repeatable>
+        <binding>
+            <command>property-adjust</command>
+            <property>controls/switches/ignition-1</property>
+            <factor>1</factor>
+            <min>-1</min>
+            <max> 1</max>
+            <wrap>0</wrap>
+        </binding>
+        <binding>
+            <command>nasal</command>
+            <script>aircrane.click("avionics")</script>
+        </binding>
+      </action>
+      <hovered>
+        <binding>
+            <command>set-tooltip</command>
+            <tooltip-id>ignition-1-switch</tooltip-id>
+            <label>Ignition 1 Switch: %s</label>
+            <property>controls/switches/ignition-1</property>
+        </binding>
+      </hovered>
     </animation>
 
     <animation>
-        <type>pick</type>
-        <object-name>switch-ignition-2</object-name>
-        <visible>true</visible>
-        <action>
-            <button>0</button>
-            <repeatable>false</repeatable>
-            <binding>
-                <command>property-toggle</command>
-                <property>controls/switches/ignition-2</property>
-            </binding>
-            <binding>
-                <command>nasal</command>
-                <script>
-                    aircrane.click("master");
-                </script>
-            </binding>
-        </action>
-        <hovered>
-            <binding>
-                <command>set-tooltip</command>
-                <tooltip-id>ignition-2-switch</tooltip-id>
-                <label>Ignition 2: %s</label>
-                <mapping>on-off</mapping>
-                <property>controls/switches/ignition-2</property>
-            </binding>
-        </hovered>
-    </animation>
-    <animation>
-        <type>rotate</type>
-        <object-name>switch-ignition-2</object-name>
-        <property>controls/switches/ignition-2</property>
-        <factor>-30</factor>
-        <axis>
-          <x>0.0</x>
-          <y>1.0</y>
-          <z>0.0</z>
-        </axis>
-        <center>
-          <x-m>-8.82817</x-m>
-          <y-m>-0.00666</y-m>
-          <z-m>-1.81489</z-m>
-        </center>
+      <type>knob</type>
+      <object-name>switch-ignition-2</object-name>
+      <property>controls/switches/ignition-2</property>
+      <factor>30</factor>
+      <offset-deg>-10</offset-deg>
+      <axis>
+        <x>0.0</x>
+        <y>1.0</y>
+        <z>0.0</z>
+      </axis>
+      <center>
+        <x-m>-8.82817</x-m>
+        <y-m>-0.00666</y-m>
+        <z-m>-1.81489</z-m>
+      </center>
+      <action>
+        <repeatable>false</repeatable>
+        <binding>
+            <command>property-adjust</command>
+            <property>controls/switches/ignition-2</property>
+            <factor>1</factor>
+            <min>-1</min>
+            <max> 1</max>
+            <wrap>0</wrap>
+        </binding>
+        <binding>
+            <command>nasal</command>
+            <script>aircrane.click("avionics")</script>
+        </binding>
+      </action>
+      <hovered>
+        <binding>
+            <command>set-tooltip</command>
+            <tooltip-id>ignition-2-switch</tooltip-id>
+            <label>Ignition 2 Switch: %s</label>
+            <property>controls/switches/ignition-2</property>
+        </binding>
+      </hovered>
     </animation>
 
 </PropertyList>

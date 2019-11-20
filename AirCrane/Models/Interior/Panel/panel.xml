@@ -40,8 +40,15 @@
     <object-name>cplamptestbase</object-name>
     <object-name>fgtbase</object-name>
     <object-name>fgtbtn</object-name>
+    <object-name>cws</object-name>
+    <object-name>cwsboard</object-name>
+    <object-name>cwstest</object-name>
   </effect>
 
+  <effect>
+    <inherits-from>Models/Effects/interior/interior-glass-reflection-front</inherits-from>
+    <object-name>cwsglass</object-name>
+  </effect>
 
   <!-- ai -->
   <model>
@@ -388,5 +395,139 @@
       <z-m> 0.0 </z-m>
     </offsets>
   </model>
+
+  <!-- rotor brake panel -->
+  <model>
+    <path>Aircraft/AirCrane/Models/Interior/Panel/Instruments/rotorbrakepanel/rotorbrakepanel.xml</path>
+    <offsets>
+      <x-m> 0.0 </x-m>
+      <y-m> 0.0 </y-m>
+      <z-m> 0.0 </z-m>
+    </offsets>
+  </model>
+
+    <!-- CWS bright -->
+    <animation>
+        <type>material</type>
+            <object-name>cwstest</object-name>
+        <emission>
+            <red>  1</red>
+            <green>1</green>
+            <blue> 1</blue>
+            <factor-prop>/sim/model/aircrane/lighting/cws-bright</factor-prop>
+        </emission>
+    </animation>
+
+    <animation>
+      <type>knob</type>
+      <object-name>cplamptest</object-name>
+      <property>controls/switches/cws-test</property>
+      <factor>0.003</factor>
+      <axis>
+        <x>1.0</x>
+        <y>0.0</y>
+        <z>0.0</z>
+      </axis>
+        <center>
+          <x-m>-9.36984</x-m>
+          <y-m>-0.207153</y-m>
+          <z-m>-1.65129</z-m>
+        </center>
+      <action>
+        <binding>
+          <command>property-adjust</command>
+          <property>controls/switches/cws-test</property>
+          <factor>1</factor>
+          <min>0</min>
+          <max>1</max>
+          <wrap>false</wrap>
+        </binding>
+        <binding>
+          <command>nasal</command>
+          <script>aircrane.click("avionics")</script>
+        </binding>
+      </action>
+      <release>
+        <binding>
+          <command>property-assign</command>
+          <property>controls/switches/cws-test</property>
+          <value>0</value>
+        </binding>
+      </release>
+        <hovered>
+            <binding>
+                <command>set-tooltip</command>
+                <tooltip-id>cplamptest</tooltip-id>
+                <label>CWS Test: %s</label>
+                <mapping>on-off</mapping>
+                <property>controls/switches/cws-test</property>
+            </binding>
+        </hovered>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>cpswitch</object-name>
+        <visible>true</visible>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+                <command>property-toggle</command>
+                <property>controls/switches/cws-bright</property>
+            </binding>
+        </action>
+        <release>
+          <binding>
+            <command>property-assign</command>
+            <property>controls/switches/cws-bright</property>
+            <value>0</value>
+          </binding>
+        </release>
+        <hovered>
+            <binding>
+                <command>set-tooltip</command>
+                <tooltip-id>cpswitch</tooltip-id>
+                <label>CWS Brightness: %s</label>
+                <mapping>Dim-Bright</mapping>
+                <property>controls/switches/cws-bright</property>
+            </binding>
+        </hovered>
+    </animation>
+    <animation>
+        <type>rotate</type>
+        <object-name>cpswitch</object-name>
+        <property>controls/switches/cws-bright</property>
+        <factor>-45</factor>
+        <offset-deg>20</offset-deg>
+        <center>
+          <x-m>-9.37678</x-m>
+          <y-m>-0.256186</y-m>
+          <z-m>-1.65109</z-m>
+        </center>
+        <axis>
+          <x>0.0</x>
+          <y>1.0</y>
+          <z>0.0</z>
+        </axis>
+    </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>cwsboard</object-name>
+    <condition>
+      <not>
+        <property>/systems/electrical/outputs/cws-test-power</property>
+      </not>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>cwstest</object-name>
+    <condition>
+        <property>/systems/electrical/outputs/cws-test-power</property>
+    </condition>
+  </animation>
 
 </PropertyList>

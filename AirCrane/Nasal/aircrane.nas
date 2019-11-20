@@ -31,6 +31,27 @@ var torque_pct = props.globals.getNode("sim/model/aircrane/torque-pct", 1);
 var stall = props.globals.getNode("rotors/main/stall", 1);
 var stall_filtered = props.globals.getNode("rotors/main/stall-filtered", 1);
 var torque_sound_filtered = props.globals.getNode("rotors/gear/torque-sound-filtered", 1);
+
+var engine_one = props.globals.getNode("sim/model/aircrane/engines/one/n1", 1);
+var engine_two = props.globals.getNode("sim/model/aircrane/engines/two/n1", 1);
+var ignition_one = props.globals.getNode("controls/switches/ignition-1", 1);
+var ignition_two = props.globals.getNode("controls/switches/ignition-2", 1);
+var eng1_start = props.globals.getNode("controls/switches/eng1-n1-start", 1);
+var eng2_start = props.globals.getNode("controls/switches/eng2-n1-start", 1);
+var eng1_underspeed = props.globals.getNode("systems/electrical/outputs/eng1-underspeed", 1);
+var eng2_underspeed = props.globals.getNode("systems/electrical/outputs/eng2-underspeed", 1);
+var eng1_running = props.globals.getNode("controls/engines/engine[0]/running", 1);
+var eng2_running = props.globals.getNode("controls/engines/engine[1]/running", 1);
+var eng1_starting = props.globals.getNode("controls/engines/engine[0]/starting", 1);
+var eng2_starting = props.globals.getNode("controls/engines/engine[1]/starting", 1);
+
+var app_master = props.globals.getNode("controls/switches/app-master", 1);
+var app_fuel = props.globals.getNode("controls/switches/app-fuel", 1);
+var app_start_20 = props.globals.getNode("controls/switches/app-start-20", 1);
+var app_start = props.globals.getNode("controls/switches/app-start", 1);
+var app_running = props.globals.getNode("controls/engines/engine[2]/running", 1);
+var app_starting = props.globals.getNode("controls/engines/engine[2]/starting", 1);
+
 var target_rel_rpm = props.globals.getNode("controls/rotor/reltarget", 1);
 var max_rel_torque = props.globals.getNode("controls/rotor/maxreltorque", 1);
 var cone = props.globals.getNode("rotors/main/cone-deg", 1);
@@ -52,31 +73,56 @@ var aux_level_lbs = props.globals.getNode("consumables/fuel/aux/level-lbs", 1);
 var fuel_shutoff_left = props.globals.getNode("consumables/fuel/shutoff/lever/left", 1);
 var fuel_shutoff_right = props.globals.getNode("consumables/fuel/shutoff/lever/right", 1);
 #power =====================================================
-var master_bat = props.globals.getNode("controls/switches/master-bat", 1);
-var generator_1 = props.globals.getNode("controls/switches/generator-1", 1);
-var generator_2 = props.globals.getNode("controls/switches/generator-2", 1);
+var master_bat = props.globals.getNode("controls/electric/battery-bus-switch", 1);
+var generator_1 = props.globals.getNode("controls/electric/engine[0]/generator-sw", 1);
+var generator_2 = props.globals.getNode("controls/electric/engine[1]/generator-sw", 1);
 
 var autostart = func (msg=1) {
-    if (getprop("/engines/active-engine/running")) {
+    #if (getprop("/engines/active-engine/running")) {
       #if (msg)
-        gui.popupTip("Engine already running", 5);
-        return;
-    }
+        #gui.popupTip("Engine already running", 5);
+        #return;
+    #}
     fwd_level_lbs.setValue(100);
     aft_level_lbs.setValue(100);
+    ignition_one.setValue(-1);
+    ignition_two.setValue(-1);
     fuel_shutoff_left.setValue(1);
     fuel_shutoff_right.setValue(1);
-    master_bat.setValue(1);
-    generator_1.setValue(1);
-    generator_2.setValue(1);
+    engine_one.setValue(.5);
+    engine_two.setValue(.5);
+    master_bat.setValue(0);
+    generator_1.setValue(-1);
+    generator_2.setValue(-1);
+    eng1_running.setValue(1);
+    eng2_running.setValue(1);
+    state.setValue(0);
     engines(1);
 };
 
+var app_startup = func {
+    var app_start_condition = app_start.getBoolValue() * app_master.getBoolValue() * master_bat.getValue();
+    if (app_start_condition) {
+        app_starting.setValue(1);
+        settimer(func {
+          if (!app_fuel.getValue()) {
+            app_running.setValue(0);   
+          } else {
+            app_running.setValue(1);
+          }
+          app_start.setValue(0);
+          app_starting.setValue(0);
+        }, 20);  
+    }
+}
+
+#sim/model/aircrane/app/running
+
 var update_rpm_percents = func {
     #185
-    #750
+    #850
     main_rpm_pct.setValue(196/rotor_rpm.getValue());
-    tail_rpm_pct.setValue(787/tail_rpm.getValue());
+    tail_rpm_pct.setValue(892/tail_rpm.getValue());
 }
 
 var update_fuel_lbs = func {
@@ -100,8 +146,8 @@ var update_state = func {
   if (new_state == (s+1)) {
     state.setValue(new_state);
     if (new_state == (1)) { 
-        settimer(func { update_state(2) }, 2);
-        interpolate(engine, 0.03, 0.1, 0.002, 0.3, 0.02, 0.1, 0.003, 0.7, 0.03, 0.1, 0.01, 0.7);
+      settimer(func { update_state(2) }, 2);
+      interpolate(engine, 0.03, 0.1, 0.002, 0.3, 0.02, 0.1, 0.003, 0.7, 0.03, 0.1, 0.01, 0.7);
     } else {
       if (new_state == (2)) {
         settimer(func { update_state(3) }, 3);
@@ -140,16 +186,21 @@ var update_state = func {
   }
 }
 
-var systems_configured = func {
+var engines_configured = func(x) {
     var configuration = 0;
     var fuel = fwd_level_lbs.getValue() + aft_level_lbs.getValue() + aux_level_lbs.getValue();
     var fuel_levers = fuel_shutoff_left.getValue() + fuel_shutoff_right.getValue();
-    var bat_connected = master_bat.getValue();
-    configuration = fuel_levers * bat_connected * fuel;
-    setprop("configuredf", fuel);
-    setprop("configuredfl", fuel_levers);
-    setprop("configuredb", bat_connected);
-    setprop("configured", configuration);
+    var ignition = 0;
+
+    if (x == 0)
+      ignition = ignition_one.getValue();
+    if (x == 1)
+      ignition = ignition_two.getValue();
+    if (x == 2)
+      ignition = ignition_one.getValue() + ignition_two.getValue();
+
+    configuration = fuel_levers * ignition * fuel;
+
     return configuration;
 }
 
@@ -161,34 +212,74 @@ var engines = func {
       update_state(1);
     }
   } else {
-    rotor.setValue(0);        # engines stopped
+    rotor.setValue(0); # engines stopped
     state.setValue(0);
+    eng1_running.setValue(0);
+    eng2_running.setValue(0);
     interpolate(engine, 0, 4);
   }
 }
 
 var update_engine = func {
-    if (state.getValue() > 3 ) {
-      interpolate (engine,  clamp( rotor_rpm.getValue() / 235 ,
-                  0.05, target_rel_rpm.getValue() ), 0.25 );
+
+  if (state.getValue() == -2) return;
+
+  #engine starting up
+  if (eng1_starting.getValue() == 1) {
+    #if (n1_percentage(0) < 5 and ignition_one.getValue()) pop();
+      if ((n1_percentage(0) > 29 and n1_percentage(0) < 45 ) and ignition_one.getValue() and app_running.getValue()) {
+        eng1_running.setValue(1);
+        eng1_starting.setValue(0);
+      } else return;
+  }
+  if (eng2_starting.getValue() == 1) {
+    #if (n1_percentage(1) < 5 and ignition_two.getValue()) pop();
+      if ((n1_percentage(1) > 29 and n1_percentage(1) < 45 ) and ignition_two.getValue() and app_running.getValue()) {
+        eng2_running.setValue(1);
+        eng2_starting.setValue(0);
+      } else return;
+  }
+
+  #engine not configured shutdown
+  if (!engines_configured(0)) eng1_running.setValue(0);
+  if (!engines_configured(1)) eng2_running.setValue(0); 
+
+  var engines_online = n1_percentage(2);
+  if ((engines_configured(0) and eng1_running.getValue()) or (engines_configured(1) and eng2_running.getValue())) {
+    if (state.getValue() > 3 ) { 
+        #max_rel_torque.setValue(1*engines_online);
+        target_rel_rpm.setValue(1.03*engines_online);
+        interpolate (engine,  clamp( rotor_rpm.getValue() / 235 , 0.05, target_rel_rpm.getValue() ), 0.25 );
+    } else {
+          state.setValue(1);
+          update_state(2);
     }
+  } else { 
+      engines(0);
+  }
 }
 
-#var update_rotor_cone_angle = func {
-# r = rotor_rpm.getValue();
-# var f = 1 - r / 100;
-# f = clamp (f, 0.1 , 1);
-# c = cone.getValue();
-# cone1.setDoubleValue( f *c *0.40 + (1-f) * c );
-# cone2.setDoubleValue( f *c *0.35);
-# cone3.setDoubleValue( f *c *0.30);
-# cone4.setDoubleValue( f *c *0.25);
-#}
+var n1_percentage = func(x) {
+    var percentage = 0;
+    if (x == 2)
+      percentage = engine_one.getValue() * eng1_running.getValue() + engine_two.getValue() * eng2_running.getValue();
+    if (x == 0)
+      percentage = engine_one.getValue()*200;
+    if (x == 1)
+      percentage = engine_two.getValue()*200;
 
-# 0.50
-# 0.75
-# 1.00
-# 1.25
+    return percentage;
+}
+
+var update_engparams = func {
+  eng1_underspeed.setValue(0);
+  eng2_underspeed.setValue(0);
+  if (n1_percentage(0) < 60 and eng1_running.getValue() == 1) 
+    eng1_underspeed.setValue(1);
+  if (n1_percentage(1) < 60 and eng2_running.getValue() == 1) 
+    eng2_underspeed.setValue(1);
+}
+
 var update_rotor_cone_angle = func {
   r = rotor_rpm.getValue();
         #print("r  = ", r);
@@ -234,7 +325,6 @@ var update_stall = func(dt) {
   var c = collective.getValue();
   stall_filtered.setDoubleValue(stall_val + 0.006 * (1 - c));
 }
-
 
 # modify sound by torque
 var torque_val = 0;
@@ -420,7 +510,6 @@ controls.flapsDown = func(v) {
   }
 }
 
-
 # register function that may set me.heading_offset, me.pitch_offset, me.roll_offset,
 # me.x_offset, me.y_offset, me.z_offset, and me.fov_offset
 #
@@ -456,26 +545,16 @@ var main_loop = func {
   update_stall(dt);
   update_torque_sound_filtered(dt);
 
-  if (systems_configured()) {
-      update_engine();
-  } else {
-    rotor.setValue(0); # engines stopped
-    state.setValue(0);
-    interpolate(engine, 0, 4);
-  }
+  update_engine();
 
   update_rpm_percents();
   update_fuel_lbs();
+  update_engparams();
 
   rotor_wash_loop();
   flexhose_animation();
 
   settimer(main_loop, 0);
-}
-
-var dialog_battery_reload = func {
-    electrical.reset_battery_and_circuit_breakers();
-    gui.popupTip("The battery is now fully charged!");
 }
 
 var crashed = 0;
@@ -521,6 +600,7 @@ setlistener("/sim/signals/reinit", func {
   cmdarg().getBoolValue() and return;
   cprint("32;1", "reinit");
   turbine_timer.stop();
+  tankop_timer.stop();
   collective.setDoubleValue(1);
   variant.scan();
   crashed = 0;
@@ -604,9 +684,96 @@ setlistener("/sim/gui/show-range", func (node) {
     }
 }, 0, 0);
 
-
 setlistener("/sim/model/aircrane/cockpit/rotorbrake-handle-animation", func (node) {      
     if (node.getValue() == 1) {
         aircrane.pumpRotorBrake();
     }
 }, 0, 0);
+
+setlistener("controls/switches/eng1-n1-start", func (node) {
+    if (node.getValue() and engine_one.getValue() == 0 and app_running.getValue()) {
+        state.setValue(-1);
+        eng1_starting.setValue(1);
+        settimer(func {
+          eng1_starting.setValue(0);
+          if (!eng1_running.getValue() and !eng2_running.getValue())
+              state.setValue(0);
+        }, 20);   
+    }
+}, 0, 0);
+
+setlistener("controls/switches/eng2-n1-start", func (node) {
+    if (node.getValue() and engine_two.getValue() == 0 and app_running.getValue()) {
+        state.setValue(-1);
+        eng2_starting.setValue(1);
+        settimer(func {
+          eng2_starting.setValue(0);
+          if (!eng1_running.getValue() and !eng2_running.getValue())
+              state.setValue(0);
+        }, 20);   
+    }
+}, 0, 0);
+
+setlistener("controls/switches/app-start-20", func (node) {
+    if (node.getValue()) app_startup();
+}, 0, 0);
+
+setlistener("controls/switches/app-stop", func (node) {
+    app_stop();
+}, 0, 0);
+
+#controls/switches/app-start
+
+###############################################################################
+# On-screen displays
+var enableOSD = func {
+  var left  = screen.display.new(20, 10);
+  var right = screen.display.new(-300, 10);
+
+  left.add("/sim/model/aircrane/state");
+  left.add("/sim/model/aircrane/engine");
+  left.add("/controls/engines/engine/magnetos");
+  left.add("/controls/engines/engine[0]/throttle");
+  left.add("/sim/model/aircrane/engines/one/n1");
+  left.add("/sim/model/aircrane/engines/two/n1");
+  left.add("/controls/switches/ignition-1");
+  left.add("/controls/switches/ignition-2");
+  left.add("/controls/switches/eng1-n1-start");
+  left.add("/controls/switches/eng2-n1-start");
+  left.add("/systems/electrical/outputs/eng1-underspeed");
+  left.add("/systems/electrical/outputs/eng2-underspeed");
+  left.add("/controls/engines/engine[0]/starter");
+  left.add("/controls/engines/engine[1]/starter");
+  left.add("/sim/model/aircrane/engines/one/starting");
+  left.add("/sim/model/aircrane/engines/two/starting");
+
+  left.add("/rotors/main/rpm");
+  left.add("/rotors/tail/rpm");
+  left.add("/sim/model/aircrane/turbine-rpm-pct");
+  left.add("/sim/model/aircrane/torque-pct");
+  left.add("/rotors/main/stall");
+  left.add("/rotors/main/stall-filtered");
+  left.add("/controls/rotor/reltarget");
+  left.add("/controls/rotor/maxreltorque");
+  left.add("/sim/model/aircrane/main-rpm-pct");
+  left.add("/sim/model/aircrane/tail-rpm-pct");
+
+  right.add("/controls/switches/app-master");
+  right.add("/controls/switches/app-fuel");
+  right.add("/controls/switches/app-start-20");
+  right.add("/controls/switches/app-start");
+  right.add("/sim/model/aircrane/app/running");
+  right.add("/sim/model/aircrane/app/starting");
+
+  right.add("/consumables/fuel/tank[0]/level-lbs");
+  right.add("/consumables/fuel/tank[1]/level-lbs");
+  right.add("/consumables/fuel/tank[2]/level-lbs");
+  right.add("/consumables/fuel/tank[3]/level-lbs");
+  right.add("/consumables/fuel/tank[4]/level-lbs");
+  right.add("/consumables/fuel/fwd/level-lbs");
+  right.add("/consumables/fuel/aft/level-lbs");
+  right.add("/consumables/fuel/aux/level-lbs");
+  right.add("/consumables/fuel/shutoff/lever/left");
+  right.add("/consumables/fuel/shutoff/lever/right");
+}
+#enableOSD();

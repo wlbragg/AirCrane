@@ -23,54 +23,60 @@
 	<animation>
 		<type>rotate</type>
     <object-name>needle-l</object-name>
-    <property>/sim/model/aircrane/ggt</property>
+    <property>/instrumentation/ggt/ggt-one-n1</property>
 		<interpolation>
-			<entry><ind>-999</ind><dep>   1</dep></entry>
-			<entry><ind>   0</ind><dep>   0</dep></entry>
-      <entry><ind>   5</ind><dep> -39</dep></entry>
-      <entry><ind>  10</ind><dep> -77</dep></entry>
-			<entry><ind>  15</ind><dep>-116</dep></entry>
-			<entry><ind>  20</ind><dep>-153 </dep></entry>
-			<entry><ind>  25</ind><dep>-192</dep></entry>
-			<entry><ind>  30</ind><dep>-230</dep></entry>
-			<entry><ind>  35</ind><dep>-269</dep></entry>
-			<entry><ind>  40</ind><dep>-309</dep></entry>
-			<entry><ind> 999</ind><dep>-310</dep></entry>
+			<entry><ind>-999</ind><dep>-139</dep></entry>
+			<entry><ind>   0</ind><dep>-138</dep></entry>
+      <entry><ind>  10</ind><dep>-111</dep></entry>
+      <entry><ind>  20</ind><dep> -83.8</dep></entry>
+			<entry><ind>  30</ind><dep> -56.1</dep></entry>
+			<entry><ind>  40</ind><dep> -28.6</dep></entry>
+			<entry><ind>  50</ind><dep>  -1.2</dep></entry>
+			<entry><ind>  60</ind><dep>  26.3</dep></entry>
+			<entry><ind>  70</ind><dep>  53.5</dep></entry>
+			<entry><ind>  80</ind><dep>  80.8</dep></entry>
+			<entry><ind>  90</ind><dep> 108</dep></entry>
+			<entry><ind> 100</ind><dep> 135</dep></entry>
+			<entry><ind> 104</ind><dep> 146</dep></entry>
+			<entry><ind> 999</ind><dep> 147</dep></entry>
 		</interpolation>
 		<axis>
-			  <x1-m>-9.40329</x1-m>
-        <y1-m>-0.001489</y1-m> 
-        <z1-m>-1.39291</z1-m>
-        <x2-m>-9.40247</x2-m>
-        <y2-m>-0.001491</y2-m>
-        <z2-m>-1.39283</z2-m>
+			  <x1-m>-9.40557</x1-m>
+        <y1-m>-0.001329</y1-m> 
+        <z1-m>-1.32977</z1-m>
+        <x2-m>-9.40955</x2-m>
+        <y2-m>-0.001389</y2-m>
+        <z2-m>-1.33017</z2-m>
     </axis>
 	</animation>
 
 	<animation>
 		<type>rotate</type>
     <object-name>needle-r</object-name>
-    <property>/sim/model/aircrane/ggt</property>
+    <property>/instrumentation/ggt/ggt-two-n1</property>
 		<interpolation>
-			<entry><ind>-999</ind><dep>   1</dep></entry>
-			<entry><ind>   0</ind><dep>   0</dep></entry>
-      <entry><ind>   5</ind><dep> -39</dep></entry>
-      <entry><ind>  10</ind><dep> -77</dep></entry>
-			<entry><ind>  15</ind><dep>-116</dep></entry>
-			<entry><ind>  20</ind><dep>-153 </dep></entry>
-			<entry><ind>  25</ind><dep>-192</dep></entry>
-			<entry><ind>  30</ind><dep>-230</dep></entry>
-			<entry><ind>  35</ind><dep>-269</dep></entry>
-			<entry><ind>  40</ind><dep>-309</dep></entry>
-			<entry><ind> 999</ind><dep>-310</dep></entry>
+			<entry><ind>-999</ind><dep>-139</dep></entry>
+			<entry><ind>   0</ind><dep>-138</dep></entry>
+      <entry><ind>  10</ind><dep>-111</dep></entry>
+      <entry><ind>  20</ind><dep> -83.8</dep></entry>
+			<entry><ind>  30</ind><dep> -56.1</dep></entry>
+			<entry><ind>  40</ind><dep> -28.6</dep></entry>
+			<entry><ind>  50</ind><dep>  -1.2</dep></entry>
+			<entry><ind>  60</ind><dep>  26.3</dep></entry>
+			<entry><ind>  70</ind><dep>  53.5</dep></entry>
+			<entry><ind>  80</ind><dep>  80.8</dep></entry>
+			<entry><ind>  90</ind><dep> 108</dep></entry>
+			<entry><ind> 100</ind><dep> 135</dep></entry>
+			<entry><ind> 104</ind><dep> 146</dep></entry>
+			<entry><ind> 999</ind><dep> 147</dep></entry>
 		</interpolation>
 		<axis>
-			  <x1-m>-9.40348</x1-m>
-        <y1-m> 0.099667</y1-m> 
-        <z1-m>-1.39324</z1-m>
-        <x2-m>-9.40266</x2-m>
-        <y2-m> 0.09967</y2-m>
-        <z2-m>-1.39317</z2-m>
+			  <x1-m>-9.40538</x1-m>
+        <y1-m> 0.099849</y1-m> 
+        <z1-m>-1.33013</z1-m>
+        <x2-m>-9.40948</x2-m>
+        <y2-m> 0.099797</y2-m>
+        <z2-m>-1.33052</z2-m>
     </axis>
 	</animation>
 

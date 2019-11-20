@@ -183,6 +183,13 @@ var reset_battery_and_circuit_breakers = func {
     setprop("/controls/circuit-breakers/radio4", 1);
     setprop("/controls/circuit-breakers/radio5", 1);
     setprop("/controls/circuit-breakers/autopilot", 1);
+    setprop("/controls/circuit-breakers/tank-volume", 1);
+    setprop("/controls/circuit-breakers/rotorbrake-pwr", 1);
+    setprop("/controls/circuit-breakers/no-1-converter", 1);
+    setprop("/controls/circuit-breakers/no-2-converter", 1);
+    setprop("/controls/circuit-breakers/app-cont", 1);
+    setprop("/controls/circuit-breakers/n1-quadrent", 1);
+    setprop("/controls/circuit-breakers/cws", 1);
 }
 
 ##
@@ -351,6 +358,14 @@ var electrical_bus_1 = func() {
         setprop("/systems/electrical/outputs/cabin-lights", 0.0);
     }
 
+    # CWS lights
+    if ( getprop("/controls/circuit-breakers/cws") ) {
+        setprop("/systems/electrical/outputs/cws", bus_volts);
+        load += bus_volts / 57;
+    } else {
+        setprop("/systems/electrical/outputs/cws", 0.0);
+    }
+
     # Landing Light Power
     if ( getprop("/controls/circuit-breakers/landing") and getprop("/controls/lighting/landing-light") ) {
         setprop("/systems/electrical/outputs/landing-light", bus_volts);
@@ -409,6 +424,54 @@ var electrical_bus_1 = func() {
     } else {
         setprop("/systems/electrical/outputs/turn-coordinator", 0.0);
         setprop("/systems/electrical/outputs/DG", 0.0);
+    }
+
+    # N1 Underpower
+    if ( getprop("/controls/circuit-breakers/n1-quadrent") ) {
+        setprop("/systems/electrical/outputs/n1-quadrent", bus_volts);
+        load += bus_volts / 14;
+    } else {
+        setprop("/systems/electrical/outputs/n1-quadrent", 0.0);
+    }
+
+    # Rotor Brake
+    if ( getprop("/controls/circuit-breakers/rotorbrake-pwr") ) {
+        setprop("/systems/electrical/outputs/rotorbrake-pwr", bus_volts);
+        load += bus_volts / 14;
+    } else {
+        setprop("/systems/electrical/outputs/rotorbrake-pwr", 0.0);
+    }
+
+    # Tank Volume
+    if ( getprop("/controls/circuit-breakers/tank-volume") ) {
+        setprop("/systems/electrical/outputs/tank-volume", bus_volts);
+        load += bus_volts / 14;
+    } else {
+        setprop("/systems/electrical/outputs/tank-volume", 0.0);
+    }
+
+    # No1 converter
+    if ( getprop("/controls/circuit-breakers/no-1-converter") ) {
+        setprop("/systems/electrical/outputs/no-1-converter", bus_volts);
+        load += bus_volts / 14;
+    } else {
+        setprop("/systems/electrical/outputs/no-1-converter", 0.0);
+    }
+
+    # No2 converter
+    if ( getprop("/controls/circuit-breakers/no-2-converter") ) {
+        setprop("/systems/electrical/outputs/no-2-converter", bus_volts);
+        load += bus_volts / 14;
+    } else {
+        setprop("/systems/electrical/outputs/no-2-converter", 0.0);
+    }
+
+    # APP Cont
+    if ( getprop("/controls/circuit-breakers/app-cont") ) {
+        setprop("/systems/electrical/outputs/app-cont", bus_volts);
+        load += bus_volts / 14;
+    } else {
+        setprop("/systems/electrical/outputs/app-cont", 0.0);
     }
 
     # register bus voltage

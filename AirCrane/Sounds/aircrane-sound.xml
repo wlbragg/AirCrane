@@ -11,10 +11,24 @@
       <path>Aircraft/AirCrane/Sounds/turbine-start.wav</path>
       <condition>
         <and>
-          <greater-than>
-            <property>sim/model/aircrane/state</property>
-            <value>0</value>
-          </greater-than>
+          <or>
+            <!--greater-than>
+              <property>sim/model/aircrane/state</property>
+              <value>0</value>
+            </greater-than-->
+            <equals>
+              <property>controls/engines/engine[0]/starting</property>
+              <value>1</value>
+            </equals>
+            <equals>
+              <property>controls/engines/engine[1]/starting</property>
+              <value>1</value>
+            </equals>
+            <equals>
+              <property>controls/engines/engine[2]/starting</property>
+              <value>1</value>
+            </equals>
+          </or>
           <not>
             <property>sim/crashed</property>
           </not>
@@ -53,10 +67,24 @@
       <path>Aircraft/AirCrane/Sounds/turbine-start-in.wav</path>
       <condition>
         <and>
-          <greater-than>
-            <property>sim/model/aircrane/state</property>
-            <value>0</value>
-          </greater-than>
+          <or>
+            <!--greater-than>
+              <property>sim/model/aircrane/state</property>
+              <value>0</value>
+            </greater-than-->
+            <equals>
+              <property>controls/engines/engine[0]/starting</property>
+              <value>1</value>
+            </equals>
+            <equals>
+              <property>controls/engines/engine[1]/starting</property>
+              <value>1</value>
+            </equals>
+            <equals>
+              <property>controls/engines/engine[2]/starting</property>
+              <value>1</value>
+            </equals>
+          </or>
           <not>
             <property>sim/crashed</property>
           </not>
@@ -89,10 +117,24 @@
       <path>Aircraft/AirCrane/Sounds/turbine-loop.wav</path>
       <condition>
         <and>
-          <greater-than>
-            <property>sim/model/aircrane/state</property>
-            <value>0</value>
-          </greater-than>
+          <or>
+            <!--greater-than>
+              <property>sim/model/aircrane/state</property>
+              <value>0</value>
+            </greater-than-->
+            <equals>
+              <property>controls/engines/engine[0]/running</property>
+              <value>1</value>
+            </equals>
+            <equals>
+              <property>controls/engines/engine[1]/running</property>
+              <value>1</value>
+            </equals>
+            <equals>
+              <property>controls/engines/engine[2]/running</property>
+              <value>1</value>
+            </equals>
+          </or>
           <not>
             <property>sim/crashed</property>
           </not>
@@ -131,10 +173,66 @@
       <path>Aircraft/AirCrane/Sounds/turbine-loop-in.wav</path>
       <condition>
         <and>
-          <greater-than>
-            <property>sim/model/aircrane/state</property>
-            <value>0</value>
-          </greater-than>
+          <or>
+            <!--greater-than>
+              <property>sim/model/aircrane/state</property>
+              <value>0</value>
+            </greater-than-->
+            <equals>
+              <property>controls/engines/engine[0]/running</property>
+              <value>1</value>
+            </equals>
+            <equals>
+              <property>controls/engines/engine[1]/running</property>
+              <value>1</value>
+            </equals>
+            <equals>
+              <property>controls/engines/engine[2]/running</property>
+              <value>1</value>
+            </equals>
+          </or>
+          <not>
+            <property>sim/crashed</property>
+          </not>
+          <or>
+            <equals>
+              <property>sim/current-view/view-number</property>
+              <value>0</value> <!-- Pilote view -->
+            </equals>
+            <equals>
+              <property>sim/current-view/view-number</property>
+              <value>8</value> <!-- Copilote view -->
+            </equals>
+            <equals>
+              <property>sim/current-view/view-number</property>
+              <value>9</value> <!-- Crane view -->
+            </equals>
+          </or>
+        </and>
+      </condition>
+      <volume>
+        <factor>0.12</factor>
+      </volume>
+      <reference-dist>50</reference-dist>
+      <max-dist>200</max-dist>
+    </engine>
+
+    <engine>
+      <name>Turbine2 internal</name>
+      <mode>looped</mode>
+      <path>Aircraft/AirCrane/Sounds/turbine-loop2-in.wav</path>
+      <condition>
+        <and>
+          <or>
+            <greater-than>
+              <property>sim/model/aircrane/state</property>
+              <value>0</value>
+            </greater-than>
+            <equals>
+              <property>sim/model/aircrane/state</property>
+              <value>-1</value>
+            </equals>
+          </or>
           <not>
             <property>sim/crashed</property>
           </not>
@@ -167,10 +265,20 @@
       <path>Aircraft/AirCrane/Sounds/turbine-stop.wav</path>
       <condition>
         <and>
-          <greater-than>
-            <property>sim/model/aircrane/state</property>
-            <value>0</value>
-          </greater-than>
+          <or>
+            <equals>
+              <property>controls/engines/engine[0]/running</property>
+              <value>0</value>
+            </equals>
+            <equals>
+              <property>controls/engines/engine[1]/running</property>
+              <value>0</value>
+            </equals>
+            <equals>
+              <property>controls/engines/engine[2]/running</property>
+              <value>0</value>
+            </equals>
+          </or>
           <not>
             <property>sim/crashed</property>
           </not>
@@ -209,10 +317,20 @@
       <path>Aircraft/AirCrane/Sounds/turbine-stop-in.wav</path>
       <condition>
         <and>
-          <greater-than>
-            <property>sim/model/aircrane/state</property>
-            <value>0</value>
-          </greater-than>
+          <or>
+            <equals>
+              <property>controls/engines/engine[0]/running</property>
+              <value>0</value>
+            </equals>
+            <equals>
+              <property>controls/engines/engine[1]/running</property>
+              <value>0</value>
+            </equals>
+            <equals>
+              <property>controls/engines/engine[2]/running</property>
+              <value>0</value>
+            </equals>
+          </or>
           <not>
             <property>sim/crashed</property>
           </not>
