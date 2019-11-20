@@ -409,7 +409,7 @@
     <!-- CWS bright -->
     <animation>
         <type>material</type>
-            <object-name>cwstest</object-name>
+        <object-name>cwstest</object-name>
         <emission>
             <red>  1</red>
             <green>1</green>
@@ -419,41 +419,34 @@
     </animation>
 
     <animation>
-      <type>knob</type>
-      <object-name>cplamptest</object-name>
-      <property>controls/switches/cws-test</property>
-      <factor>0.003</factor>
-      <axis>
-        <x>1.0</x>
-        <y>0.0</y>
-        <z>0.0</z>
-      </axis>
-        <center>
-          <x-m>-9.36984</x-m>
-          <y-m>-0.207153</y-m>
-          <z-m>-1.65129</z-m>
-        </center>
-      <action>
-        <binding>
-          <command>property-adjust</command>
-          <property>controls/switches/cws-test</property>
-          <factor>1</factor>
-          <min>0</min>
-          <max>1</max>
-          <wrap>false</wrap>
-        </binding>
-        <binding>
-          <command>nasal</command>
-          <script>aircrane.click("avionics")</script>
-        </binding>
-      </action>
-      <release>
-        <binding>
-          <command>property-assign</command>
-          <property>controls/switches/cws-test</property>
-          <value>0</value>
-        </binding>
-      </release>
+        <type>slider</type>
+        <object-name>cplamptest</object-name>
+        <property>controls/switches/cws-test</property>
+        <repeatable>false</repeatable>
+        <factor>0.002</factor>
+        <axis>
+            <x>-1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+        <action>
+            <repeatable>false</repeatable>
+            <binding>
+                <command>nasal</command>
+                <script>
+                    setprop("/controls/switches/cws-test", 1);
+                </script>
+            </binding>
+        </action>
+        <release>
+            <binding>
+                <command>nasal</command>
+                <script>
+                    setprop("/controls/switches/cws-test", 0);
+                    aircrane.click("avionics");
+                </script>
+            </binding>
+        </release>
         <hovered>
             <binding>
                 <command>set-tooltip</command>

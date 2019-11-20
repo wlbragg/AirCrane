@@ -482,6 +482,8 @@
       <path>/sim/gui/dialogs/aicargo-dialog/alt-origin</path>
       <path>/sim/model/garmin196-visible</path>
 
+      <path>/controls/switches/cws-bright</path>
+
       <path>/sim/gui/show-range</path>
 
       <!-- end cargo hauling feature -->

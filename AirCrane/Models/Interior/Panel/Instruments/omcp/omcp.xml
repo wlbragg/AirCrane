@@ -36,57 +36,76 @@
 
     <!-- APP Start 20% "spring switch" -->
     <animation>
-      <type>knob</type>
-      <object-name>appstart20</object-name>
-      <property>controls/switches/app-start-20</property>
-      <repeatable>false</repeatable>
-      <factor>-35</factor>
-      <offset-deg>-10</offset-deg>
-      <center>
-          <x-m>-8.64014</x-m>
-          <y-m> 0.040212</y-m>
-          <z-m>-0.588184</z-m>
-      </center>
-      <axis>
-        <x>0</x>
-        <y>1</y>
-        <z>0</z>
-      </axis>
-      <action>
-          <binding>
+        <type>knob</type>
+        <object-name>appstart20</object-name>
+        <property>controls/switches/app-start-20</property>
+        <factor>-35</factor>
+        <offset-deg>-10</offset-deg>
+        <center>
+            <x-m>-8.64014</x-m>
+            <y-m> 0.040212</y-m>
+            <z-m>-0.588184</z-m>
+        </center>
+        <axis>
+            <x>0</x>
+            <y>1</y>
+            <z>0</z>
+        </axis>
+        <action>
+            <binding>
+                <command>property-assign</command>
+                <property>controls/switches/app-start-20</property>
+                <value>1</value>
+            </binding>
+            <binding>
+                <command>property-assign</command>
+                <property>controls/switches/app-start</property>
+                <value>1</value>
+            </binding>
+          <!--binding>
               <command>property-adjust</command>
               <property>controls/switches/app-start-20</property>
-              <repeatable>false</repeatable>
               <factor>1</factor>
               <min>0</min>
               <max>1</max>
               <wrap>false</wrap>
           </binding>
           <binding>
-              <command>nasal</command>
-              <script>aircrane.click("avionics")</script>
-          </binding>
-      </action>
-      <release>
-        <binding>
-          <command>property-assign</command>
-          <property>controls/switches/app-start-20</property>
-          <value>0</value>
-        </binding>
-      </release>
-      <hovered>
-          <binding>
-              <command>set-tooltip</command>
-              <tooltip-id>appstart</tooltip-id>
-              <label>APP Start 20: %s</label>
-              <property>controls/switches/app-start-20</property>
-              <mapping>nasal</mapping>
-              <script>
-                  var modes = ['Off', 'On'];
-                  return modes[arg[0]];
-              </script>
-          </binding>
-      </hovered>
+              <command>property-adjust</command>
+              <property>controls/switches/app-start</property>
+              <factor>1</factor>
+              <min>0</min>
+              <max>1</max>
+              <wrap>false</wrap>
+          </binding-->
+        </action>
+        <release>
+            <binding>
+                <command>nasal</command>
+                <script>
+                    setprop("/controls/switches/app-start-20", 0);
+                    aircrane.click("avionics");
+                </script>
+            </binding>
+            <binding>
+                <command>property-assign</command>
+                <property>controls/switches/app-start</property>
+                <value>0</value>
+            </binding>
+        </release>
+        <hovered>
+            <binding>
+                <command>set-tooltip</command>
+                <tooltip-id>appstart</tooltip-id>
+                <label>APP Start 20: %s</label>
+                <property>controls/switches/app-start-20</property>
+                <mapping>nasal</mapping>
+                <script>
+                    var modes = ['Off', 'On'];
+                    return modes[arg[0]];
+                </script>
+                </binding>
+        </hovered>
     </animation>
 
     <animation>
