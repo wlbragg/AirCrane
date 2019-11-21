@@ -44,6 +44,8 @@ var eng1_running = props.globals.getNode("controls/engines/engine[0]/running", 1
 var eng2_running = props.globals.getNode("controls/engines/engine[1]/running", 1);
 var eng1_starting = props.globals.getNode("controls/engines/engine[0]/starting", 1);
 var eng2_starting = props.globals.getNode("controls/engines/engine[1]/starting", 1);
+var eng1_shutdown = props.globals.getNode("controls/engines/engine[0]/shutdown", 1);
+var eng2_shutdown = props.globals.getNode("controls/engines/engine[1]/shutdown", 1);
 
 var app_master = props.globals.getNode("controls/switches/app-master", 1);
 var app_fuel = props.globals.getNode("controls/switches/app-fuel", 1);
@@ -51,6 +53,7 @@ var app_start_20 = props.globals.getNode("controls/switches/app-start-20", 1);
 var app_start = props.globals.getNode("controls/switches/app-start", 1);
 var app_running = props.globals.getNode("controls/engines/engine[2]/running", 1);
 var app_starting = props.globals.getNode("controls/engines/engine[2]/starting", 1);
+var app_shutdown = props.globals.getNode("controls/engines/engine[2]/shutdown", 1);
 
 var target_rel_rpm = props.globals.getNode("controls/rotor/reltarget", 1);
 var max_rel_torque = props.globals.getNode("controls/rotor/maxreltorque", 1);
@@ -77,6 +80,9 @@ var master_bat = props.globals.getNode("controls/electric/battery-bus-switch", 1
 var generator_1 = props.globals.getNode("controls/electric/engine[0]/generator-sw", 1);
 var generator_2 = props.globals.getNode("controls/electric/engine[1]/generator-sw", 1);
 
+var rectifier_1 = props.globals.getNode("controls/switches/rect-1", 1);
+var rectifier_2 = props.globals.getNode("controls/switches/rect-2", 1);
+
 var autostart = func (msg=1) {
     #if (getprop("/engines/active-engine/running")) {
       #if (msg)
@@ -96,6 +102,8 @@ var autostart = func (msg=1) {
     generator_2.setValue(-1);
     eng1_running.setValue(1);
     eng2_running.setValue(1);
+    rectifier_1.setValue(1);
+    rectifier_2.setValue(1);
     state.setValue(0);
     engines(1);
 };
@@ -105,8 +113,10 @@ var app_startup = func {
     if (app_start_condition) {
         app_starting.setValue(1);
         settimer(func {
+          #if (!app_fuel.getValue() or app_rpm_percent.getValue() < 20) {
           if (!app_fuel.getValue()) {
-            app_running.setValue(0);   
+            app_running.setValue(0);
+            app_stop();  
           } else {
             app_running.setValue(1);
           }
@@ -116,7 +126,15 @@ var app_startup = func {
     }
 }
 
-#sim/model/aircrane/app/running
+var app_stop = func {
+    if (app_running.getValue() or app_starting.getValue()) {
+        app_running.setValue(0);
+        app_start.setValue(0);
+        app_starting.setValue(0);
+        app_shutdown.setValue(1);
+        settimer(func {app_shutdown.setValue(0);}, 20);
+    }
+}
 
 var update_rpm_percents = func {
     #185
@@ -241,8 +259,16 @@ var update_engine = func {
   }
 
   #engine not configured shutdown
-  if (!engines_configured(0)) eng1_running.setValue(0);
-  if (!engines_configured(1)) eng2_running.setValue(0); 
+  if (!engines_configured(0)) {
+    eng1_shutdown.setValue(1);
+    settimer(func {eng1_shutdown.setValue(0);}, 20);
+    eng1_running.setValue(0);
+  }
+  if (!engines_configured(1)) {
+    eng2_shutdown.setValue(1);
+    settimer(func {eng2_shutdown.setValue(0);}, 20);
+    eng2_running.setValue(0); 
+  }
 
   var engines_online = n1_percentage(2);
   if ((engines_configured(0) and eng1_running.getValue()) or (engines_configured(1) and eng2_running.getValue())) {
@@ -696,8 +722,11 @@ setlistener("controls/switches/eng1-n1-start", func (node) {
         eng1_starting.setValue(1);
         settimer(func {
           eng1_starting.setValue(0);
-          if (!eng1_running.getValue() and !eng2_running.getValue())
+          if (!eng1_running.getValue()) {
               state.setValue(0);
+              eng1_shutdown.setValue(1);
+              settimer(func {eng1_shutdown.setValue(0);}, 20);
+          }
         }, 20);   
     }
 }, 0, 0);
@@ -708,14 +737,20 @@ setlistener("controls/switches/eng2-n1-start", func (node) {
         eng2_starting.setValue(1);
         settimer(func {
           eng2_starting.setValue(0);
-          if (!eng1_running.getValue() and !eng2_running.getValue())
+          if (!eng2_running.getValue()) {
               state.setValue(0);
+              eng2_shutdown.setValue(1);
+              settimer(func {eng2_shutdown.setValue(0);}, 20);
+          }
         }, 20);   
     }
 }, 0, 0);
 
 setlistener("controls/switches/app-start-20", func (node) {
-    if (node.getValue()) app_startup();
+    if (node.getValue()) {
+        if (!app_starting.getValue() or !app_running.getValue())
+            app_startup();
+    }
 }, 0, 0);
 
 setlistener("controls/switches/app-stop", func (node) {

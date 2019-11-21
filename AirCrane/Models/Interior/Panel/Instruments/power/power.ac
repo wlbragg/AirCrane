@@ -32109,7 +32109,7 @@ refs 3
 32 0.313595 0.042378
 kids 0
 OBJECT poly
-name "switch-reac-1"
+name "switch-rect-1"
 data 14
 toggle-arm.003
 crease 30.0
@@ -32368,7 +32368,7 @@ refs 3
 32 0.313595 0.042378
 kids 0
 OBJECT poly
-name "switch-reac-2"
+name "switch-rect-2"
 data 14
 toggle-arm.004
 crease 30.0

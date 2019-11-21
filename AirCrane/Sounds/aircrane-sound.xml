@@ -267,16 +267,16 @@
         <and>
           <or>
             <equals>
-              <property>controls/engines/engine[0]/running</property>
-              <value>0</value>
+              <property>controls/engines/engine[0]/shutdown</property>
+              <value>1</value>
             </equals>
             <equals>
-              <property>controls/engines/engine[1]/running</property>
-              <value>0</value>
+              <property>controls/engines/engine[1]/shutdown</property>
+              <value>1</value>
             </equals>
             <equals>
-              <property>controls/engines/engine[2]/running</property>
-              <value>0</value>
+              <property>controls/engines/engine[2]/shutdown</property>
+              <value>1</value>
             </equals>
           </or>
           <not>
@@ -319,16 +319,16 @@
         <and>
           <or>
             <equals>
-              <property>controls/engines/engine[0]/running</property>
-              <value>0</value>
+              <property>controls/engines/engine[0]/shutdown</property>
+              <value>1</value>
             </equals>
             <equals>
-              <property>controls/engines/engine[1]/running</property>
-              <value>0</value>
+              <property>controls/engines/engine[1]/shutdown</property>
+              <value>1</value>
             </equals>
             <equals>
-              <property>controls/engines/engine[2]/running</property>
-              <value>0</value>
+              <property>controls/engines/engine[2]/shutdown</property>
+              <value>1</value>
             </equals>
           </or>
           <not>

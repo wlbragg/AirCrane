@@ -52,45 +52,23 @@
             <z>0</z>
         </axis>
         <action>
+            <repeatable>false</repeatable>
             <binding>
-                <command>property-assign</command>
-                <property>controls/switches/app-start-20</property>
-                <value>1</value>
+                <command>nasal</command>
+                <script>
+                    setprop("/controls/switches/app-start", 1);
+                    setprop("/controls/switches/app-start-20", 1);
+                </script>
             </binding>
-            <binding>
-                <command>property-assign</command>
-                <property>controls/switches/app-start</property>
-                <value>1</value>
-            </binding>
-          <!--binding>
-              <command>property-adjust</command>
-              <property>controls/switches/app-start-20</property>
-              <factor>1</factor>
-              <min>0</min>
-              <max>1</max>
-              <wrap>false</wrap>
-          </binding>
-          <binding>
-              <command>property-adjust</command>
-              <property>controls/switches/app-start</property>
-              <factor>1</factor>
-              <min>0</min>
-              <max>1</max>
-              <wrap>false</wrap>
-          </binding-->
         </action>
         <release>
             <binding>
                 <command>nasal</command>
                 <script>
+                    setprop("/controls/switches/app-start", 0);
                     setprop("/controls/switches/app-start-20", 0);
                     aircrane.click("avionics");
                 </script>
-            </binding>
-            <binding>
-                <command>property-assign</command>
-                <property>controls/switches/app-start</property>
-                <value>0</value>
             </binding>
         </release>
         <hovered>

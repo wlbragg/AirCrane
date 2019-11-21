@@ -11,7 +11,6 @@
     <object-name>panel2</object-name>
     <object-name>panel3</object-name>
     <object-name>panel4</object-name>
-
   </effect>
 
   <effect>
@@ -42,7 +41,59 @@
     <object-name>fgtbtn</object-name>
     <object-name>cws</object-name>
     <object-name>cwsboard</object-name>
-    <object-name>cwstest</object-name>
+
+    <object-name>cws-1-eng-anti-ice</object-name>
+    <object-name>cws-1-eng-anti-ice-on</object-name>
+    <object-name>cws-1-eng-chip</object-name>
+    <object-name>cws-1-eng-fuel-bypass</object-name>
+    <object-name>cws-1-eng-oil-press</object-name>
+    <object-name>cws-1-eng-starter-on</object-name>
+    <object-name>cws-1-eng-t5</object-name>
+    <object-name>cws-1-fuel-press</object-name>
+    <object-name>cws-1-gen</object-name>
+    <object-name>cws-1-rect</object-name>
+    <object-name>cws-1st-stage-servo</object-name>
+    <object-name>cws-1st-stage-servo-press</object-name>
+    <object-name>cws-1st-stg-tl-rotor-servo</object-name>
+    <object-name>cws-2-eng-anti-ice</object-name>
+    <object-name>cws-2-eng-anti-ice-on</object-name>
+    <object-name>cws-2-eng-chip</object-name>
+    <object-name>cws-2-eng-fuel-bypass</object-name>
+    <object-name>cws-2-eng-oil-press</object-name>
+    <object-name>cws-2-eng-starter-on</object-name>
+    <object-name>cws-2-eng-t5</object-name>
+    <object-name>cws-2-fuel-press</object-name>
+    <object-name>cws-2-gen</object-name>
+    <object-name>cws-2-rect</object-name>
+    <object-name>cws-2nd-stage-servo</object-name>
+    <object-name>cws-2nd-stage-servo-press</object-name>
+    <object-name>cws-afcs-off</object-name>
+    <object-name>cws-afcs-servo-press</object-name>
+    <object-name>cws-aft-fuel-low</object-name>
+    <object-name>cws-app-on</object-name>
+    <object-name>cws-aux-fuel-press</object-name>
+    <object-name>cws-chip-inter-trans</object-name>
+    <object-name>cws-chip-main-trans</object-name>
+    <object-name>cws-chip-tail-trans</object-name>
+    <object-name>cws-ext-power-connected</object-name>
+    <object-name>cws-fuel-temp-low</object-name>
+    <object-name>cws-fwd-fuel-low</object-name>
+    <object-name>cws-hoist-oil-hot</object-name>
+    <object-name>cws-hoist-overspeed</object-name>
+    <object-name>cws-hoist-shear-armed</object-name>
+    <object-name>cws-inter-trans-oil-press</object-name>
+    <object-name>cws-left-pilot-pitot-heat</object-name>
+    <object-name>cws-left-pilot-turn-slip</object-name>
+    <object-name>cws-oil-cooler</object-name>
+    <object-name>cws-parking-brake-on</object-name>
+    <object-name>cws-rear-control-engaged</object-name>
+    <object-name>cws-right-pilot-pitot-heat</object-name>
+    <object-name>cws-right-pilot-turn-slip</object-name>
+    <object-name>cws-rotor-brake-on</object-name>
+    <object-name>cws-rotor-brake-press</object-name>
+    <object-name>cws-trans-oil-hot</object-name>
+    <object-name>cws-trans-oil-press</object-name>
+
   </effect>
 
   <effect>
@@ -409,7 +460,58 @@
     <!-- CWS bright -->
     <animation>
         <type>material</type>
-        <object-name>cwstest</object-name>
+        <!--object-name>cwstestpanel</object-name-->
+        <object-name>cws-1-eng-anti-ice</object-name>
+        <object-name>cws-1-eng-anti-ice-on</object-name>
+        <object-name>cws-1-eng-chip</object-name>
+        <object-name>cws-1-eng-fuel-bypass</object-name>
+        <object-name>cws-1-eng-oil-press</object-name>
+        <object-name>cws-1-eng-starter-on</object-name>
+        <object-name>cws-1-eng-t5</object-name>
+        <object-name>cws-1-fuel-press</object-name>
+        <object-name>cws-1-gen</object-name>
+        <object-name>cws-1-rect</object-name>
+        <object-name>cws-1st-stage-servo</object-name>
+        <object-name>cws-1st-stage-servo-press</object-name>
+        <object-name>cws-1st-stg-tl-rotor-servo</object-name>
+        <object-name>cws-2-eng-anti-ice</object-name>
+        <object-name>cws-2-eng-anti-ice-on</object-name>
+        <object-name>cws-2-eng-chip</object-name>
+        <object-name>cws-2-eng-fuel-bypass</object-name>
+        <object-name>cws-2-eng-oil-press</object-name>
+        <object-name>cws-2-eng-starter-on</object-name>
+        <object-name>cws-2-eng-t5</object-name>
+        <object-name>cws-2-fuel-press</object-name>
+        <object-name>cws-2-gen</object-name>
+        <object-name>cws-2-rect</object-name>
+        <object-name>cws-2nd-stage-servo</object-name>
+        <object-name>cws-2nd-stage-servo-press</object-name>
+        <object-name>cws-afcs-off</object-name>
+        <object-name>cws-afcs-servo-press</object-name>
+        <object-name>cws-aft-fuel-low</object-name>
+        <object-name>cws-app-on</object-name>
+        <object-name>cws-aux-fuel-press</object-name>
+        <object-name>cws-chip-inter-trans</object-name>
+        <object-name>cws-chip-main-trans</object-name>
+        <object-name>cws-chip-tail-trans</object-name>
+        <object-name>cws-ext-power-connected</object-name>
+        <object-name>cws-fuel-temp-low</object-name>
+        <object-name>cws-fwd-fuel-low</object-name>
+        <object-name>cws-hoist-oil-hot</object-name>
+        <object-name>cws-hoist-overspeed</object-name>
+        <object-name>cws-hoist-shear-armed</object-name>
+        <object-name>cws-inter-trans-oil-press</object-name>
+        <object-name>cws-left-pilot-pitot-heat</object-name>
+        <object-name>cws-left-pilot-turn-slip</object-name>
+        <object-name>cws-oil-cooler</object-name>
+        <object-name>cws-parking-brake-on</object-name>
+        <object-name>cws-rear-control-engaged</object-name>
+        <object-name>cws-right-pilot-pitot-heat</object-name>
+        <object-name>cws-right-pilot-turn-slip</object-name>
+        <object-name>cws-rotor-brake-on</object-name>
+        <object-name>cws-rotor-brake-press</object-name>
+        <object-name>cws-trans-oil-hot</object-name>
+        <object-name>cws-trans-oil-press</object-name>
         <emission>
             <red>  1</red>
             <green>1</green>
@@ -507,19 +609,114 @@
 
   <animation>
     <type>select</type>
-    <object-name>cwsboard</object-name>
+    <object-name>cws-1-eng-anti-ice</object-name>
+    <object-name>cws-1-eng-anti-ice-on</object-name>
+    <object-name>cws-1-eng-chip</object-name>
+    <object-name>cws-1-eng-fuel-bypass</object-name>
+    <object-name>cws-1-eng-oil-press</object-name>
+    <object-name>cws-1-eng-starter-on</object-name>
+    <object-name>cws-1-eng-t5</object-name>
+    <object-name>cws-1-fuel-press</object-name>
+    <!--object-name>cws-1-gen</object-name>
+    <object-name>cws-1-rect</object-name-->
+    <object-name>cws-1st-stage-servo</object-name>
+    <object-name>cws-1st-stage-servo-press</object-name>
+    <object-name>cws-1st-stg-tl-rotor-servo</object-name>
+    <object-name>cws-2-eng-anti-ice</object-name>
+    <object-name>cws-2-eng-anti-ice-on</object-name>
+    <object-name>cws-2-eng-chip</object-name>
+    <object-name>cws-2-eng-fuel-bypass</object-name>
+    <object-name>cws-2-eng-oil-press</object-name>
+    <object-name>cws-2-eng-starter-on</object-name>
+    <object-name>cws-2-eng-t5</object-name>
+    <object-name>cws-2-fuel-press</object-name>
+    <!--object-name>cws-2-gen</object-name>
+    <object-name>cws-2-rect</object-name-->
+    <object-name>cws-2nd-stage-servo</object-name>
+    <object-name>cws-2nd-stage-servo-press</object-name>
+    <object-name>cws-afcs-off</object-name>
+    <object-name>cws-afcs-servo-press</object-name>
+    <object-name>cws-aft-fuel-low</object-name>
+    <!--object-name>cws-app-on</object-name-->
+    <object-name>cws-aux-fuel-press</object-name>
+    <object-name>cws-chip-inter-trans</object-name>
+    <object-name>cws-chip-main-trans</object-name>
+    <object-name>cws-chip-tail-trans</object-name>
+    <object-name>cws-ext-power-connected</object-name>
+    <object-name>cws-fuel-temp-low</object-name>
+    <object-name>cws-fwd-fuel-low</object-name>
+    <object-name>cws-hoist-oil-hot</object-name>
+    <object-name>cws-hoist-overspeed</object-name>
+    <object-name>cws-hoist-shear-armed</object-name>
+    <object-name>cws-inter-trans-oil-press</object-name>
+    <object-name>cws-left-pilot-pitot-heat</object-name>
+    <object-name>cws-left-pilot-turn-slip</object-name>
+    <object-name>cws-oil-cooler</object-name>
+    <object-name>cws-parking-brake-on</object-name>
+    <object-name>cws-rear-control-engaged</object-name>
+    <object-name>cws-right-pilot-pitot-heat</object-name>
+    <object-name>cws-right-pilot-turn-slip</object-name>
+    <object-name>cws-rotor-brake-on</object-name>
+    <object-name>cws-rotor-brake-press</object-name>
+    <object-name>cws-trans-oil-hot</object-name>
+    <object-name>cws-trans-oil-press</object-name>
     <condition>
-      <not>
         <property>/systems/electrical/outputs/cws-test-power</property>
-      </not>
     </condition>
   </animation>
 
   <animation>
     <type>select</type>
-    <object-name>cwstest</object-name>
+    <object-name>cws-1-gen</object-name>
     <condition>
-        <property>/systems/electrical/outputs/cws-test-power</property>
+        <or>
+            <property>/systems/electrical/outputs/cws-gen-1</property>
+            <property>/systems/electrical/outputs/cws-test-power</property>
+        </or>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>cws-2-gen</object-name>
+    <condition>
+        <or>
+            <property>/systems/electrical/outputs/cws-gen-2</property>
+            <property>/systems/electrical/outputs/cws-test-power</property>
+        </or>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>cws-1-rect</object-name>
+    <condition>
+        <or>
+            <property>/systems/electrical/outputs/cws-rect-1</property>
+            <property>/systems/electrical/outputs/cws-test-power</property>
+        </or>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>cws-2-rect</object-name>
+    <condition>
+        <or>
+            <property>/systems/electrical/outputs/cws-rect-2</property>
+            <property>/systems/electrical/outputs/cws-test-power</property>
+        </or>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>cws-app-on</object-name>
+    <condition>
+        <or>
+            <property>/systems/electrical/outputs/cws-app-on</property>
+            <property>/systems/electrical/outputs/cws-test-power</property>
+        </or>
     </condition>
   </animation>
 

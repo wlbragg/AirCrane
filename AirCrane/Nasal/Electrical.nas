@@ -42,9 +42,13 @@ var gen2_ready            = props.globals.getNode("controls/electric/engine[1]/g
 var gen2_switch           = props.globals.getNode("controls/electric/engine[1]/generator-sw",0);
 var gen2_start            = props.globals.getNode("controls/engines/engine[1]/starter",0);
 
-#var gen3_ready            = props.globals.getNode("controls/electric/engine[2]/generator-ready",0);
-#var gen3_switch           = props.globals.getNode("controls/electric/engine[2]/generator-sw",0);
-#var gen3_start            = props.globals.getNode("controls/engines/engine[2]/starter",0);
+#Use for APP
+var app1_ready            = props.globals.getNode("controls/electric/engine[2]/app-ready",0);
+var app1_switch           = props.globals.getNode("controls/electric/engine[2]/app-sw",0);
+var app1_start            = props.globals.getNode("controls/engines/engine[2]/starter",0);
+
+var rect1_switch          = props.globals.getNode("controls/switches/rect-1",0);
+var rect2_switch          = props.globals.getNode("controls/switches/rect-2",0);
 
 ### arrays for circuit-breakers
 var cbs_battery_hot=[];
@@ -130,6 +134,7 @@ var Battery = {
 ########################################################
 
 # var alternator = Alternator.new(num,switch,rpm_source,rpm_threshold,volts,amps);
+# also used as generator or APP
 var Alternator = {
     new : func (num,switch,src,thr,vlt,amp){
         m = { parents : [Alternator] };
@@ -219,7 +224,7 @@ var External = {
 var battery = Battery.new(0,24,80,40,7.0);
 var alternator1 = Alternator.new(0,"controls/electric/engine[0]/generator-ready","rotors/main/rpm",45.0,28.0,400.0);
 var alternator2 = Alternator.new(1,"controls/electric/engine[1]/generator-ready","rotors/main/rpm",45.0,28.0,400.0);
-#var alternator3 = Alternator.new(2,"controls/electric/engine[2]/generator-ready","rotors/main/rpm",45.0,28.0,400.0);
+var alternator3 = Alternator.new(2,"controls/electric/engine[2]/app-ready","rotors/main/rpm",45.0,28.0,400.0); #APP
 var external = External.new("controls/electric/external-power",26.0,1200.0);
 
 setlistener("/sim/signals/fdm-initialized", func {
@@ -269,7 +274,6 @@ var init_electrical = func{
     append(cbs_main_left, "sys-aoa");
     append(cbs_main_left, "anti-ice-aoa");
     append(cbs_main_left, "warn-batt");
-    append(cbs_main_left, "cws");
     append(cbs_main_left, "env-fan");
     append(cbs_main_left, "rec-voice");
     append(cbs_main_left, "inst-clock-left");
@@ -313,6 +317,10 @@ var init_electrical = func{
     append(cbs_main_left, "beaconaft-light");
     append(cbs_main_left, "nav-lights");
     append(cbs_main_left, "strobe-light");
+
+    append(cbs_main_left, "tank-qty");
+    append(cbs_main_left, "cws");
+    append(cbs_main_left, "app-cont");
 
     append(cbs_main_left_xover, "dc-nav1");
     append(cbs_main_left_xover, "dc-adf1");
@@ -606,8 +614,13 @@ update_buses = func(dt) {
         gen2_online = 1;
     }
 
+# rectifier 1 is online
+    if (gen1_online and rec1_switch.getValue() == -1) {
+        rec_online = 1;
+    }
+
 # generator 3 is online
-#    if (gen3_ready.getBoolValue() and gen2_switch.getValue() == -1) {
+#    if (gen3_ready.getBoolValue() and gen3_switch.getValue() == -1) {
 #        gen3_online = 1;
 #    }
 

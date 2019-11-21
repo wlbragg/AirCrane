@@ -23,8 +23,8 @@
     <object-name>switch-master-bat</object-name>
     <object-name>switch-pitot</object-name>
     <object-name>switch-pod-power</object-name>
-    <object-name>switch-reac-1</object-name>
-    <object-name>switch-reac-2</object-name>
+    <object-name>switch-rect-1</object-name>
+    <object-name>switch-rect-2</object-name>
     <object-name>switch-tailskid</object-name>
     <object-name>knob-cabin-vent</object-name>
   </effect>
@@ -197,6 +197,88 @@
             <tooltip-id>switch-gen-2</tooltip-id>
             <label>Generator 2 Switch: %s</label>
             <property>controls/electric/engine[1]/generator-sw</property>
+        </binding>
+      </hovered>
+    </animation>
+
+     <animation>
+      <type>knob</type>
+      <object-name>switch-rect-1</object-name>
+      <property>controls/switches/rect-1</property>
+      <factor>-40</factor>
+      <offset-deg>15</offset-deg>
+      <axis>
+        <x>0.0</x>
+        <y>1.0</y>
+        <z>0.0</z>
+      </axis>
+      <center>
+        <x-m>-8.88491</x-m>
+        <y-m>-0.011305</y-m>
+        <z-m>-1.80665</z-m>
+      </center>
+      <action>
+        <repeatable>false</repeatable>
+        <binding>
+            <command>property-adjust</command>
+            <property>controls/switches/rect-1</property>
+            <factor>1</factor>
+            <min>0</min>
+            <max>1</max>
+            <wrap>0</wrap>
+        </binding>
+        <binding>
+            <command>nasal</command>
+            <script>aircrane.click("avionics")</script>
+        </binding>
+      </action>
+      <hovered>
+        <binding>
+            <command>set-tooltip</command>
+            <tooltip-id>switch-rect-1</tooltip-id>
+            <label>Rectifier 1 Switch: %s</label>
+            <property>controls/switches/rect-1</property>
+        </binding>
+      </hovered>
+    </animation>
+
+     <animation>
+      <type>knob</type>
+      <object-name>switch-rect-2</object-name>
+      <property>controls/switches/rect-2</property>
+      <factor>-30</factor>
+      <offset-deg>15</offset-deg>
+      <axis>
+        <x>0.0</x>
+        <y>1.0</y>
+        <z>0.0</z>
+      </axis>
+      <center>
+        <x-m>-8.88491</x-m>
+        <y-m> 0.011665</y-m>
+        <z-m>-1.80665</z-m>
+      </center>
+      <action>
+        <repeatable>false</repeatable>
+        <binding>
+            <command>property-adjust</command>
+            <property>controls/switches/rect-2</property>
+            <factor>1</factor>
+            <min>0</min>
+            <max>1</max>
+            <wrap>0</wrap>
+        </binding>
+        <binding>
+            <command>nasal</command>
+            <script>aircrane.click("avionics")</script>
+        </binding>
+      </action>
+      <hovered>
+        <binding>
+            <command>set-tooltip</command>
+            <tooltip-id>switch-rect-2</tooltip-id>
+            <label>Rectifier 2 Switch: %s</label>
+            <property>controls/switches/rect-2</property>
         </binding>
       </hovered>
     </animation>

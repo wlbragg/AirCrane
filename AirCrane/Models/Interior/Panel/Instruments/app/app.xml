@@ -49,7 +49,11 @@
             </binding>
             <binding>
                 <command>nasal</command>
-                <script>aircrane.click("avionics")</script>
+                <script>
+                    var app_master = getprop("controls/switches/app-master");
+                    if (!app_master) aircrane.app_stop();
+                    aircrane.click("avionics");
+                </script>
             </binding>
         </action>
         <hovered>
@@ -101,15 +105,8 @@
                 <command>nasal</command>
                 <script>
                     setprop("/controls/switches/app-start", 1);
+                    setprop("/controls/switches/app-start-20", 1);
                 </script>
-            </binding>
-            <binding>
-                <command>property-adjust</command>
-                <property>controls/switches/app-start-20</property>
-                <factor>1</factor>
-                <min>0</min>
-                <max>1</max>
-                <wrap>false</wrap>
             </binding>
         </action>
         <release>
@@ -117,13 +114,9 @@
                 <command>nasal</command>
                 <script>
                     setprop("/controls/switches/app-start", 0);
+                    setprop("/controls/switches/app-start-20", 0);
                     aircrane.click("avionics");
                 </script>
-            </binding>
-            <binding>
-                <command>property-assign</command>
-                <property>controls/switches/app-start-20</property>
-                <value>0</value>
             </binding>
         </release>
         <hovered>
@@ -138,17 +131,35 @@
     </animation>
 
     <animation>
-        <type>pick</type>
+        <type>slider</type>
         <object-name>appstop</object-name>
-        <visible>true</visible>
+        <property>controls/switches/app-stop</property>
+        <repeatable>false</repeatable>
+        <factor>0.002</factor>
+        <axis>
+            <x>0</x>
+            <y>0</y>
+            <z>1</z>
+        </axis>
         <action>
-            <button>0</button>
             <repeatable>false</repeatable>
             <binding>
-                <command>property-toggle</command>
-                <property>controls/switches/app-stop</property>
+                <command>nasal</command>
+                <script>
+                    setprop("/controls/switches/app-stop", 1);
+                    aircrane.app_stop();
+                </script>
             </binding>
         </action>
+        <release>
+            <binding>
+                <command>nasal</command>
+                <script>
+                    setprop("/controls/switches/app-stop", 0);
+                    aircrane.click("avionics");
+                </script>
+            </binding>
+        </release>
         <hovered>
             <binding>
                 <command>set-tooltip</command>
@@ -158,17 +169,6 @@
                 <property>controls/switches/app-stop</property>
             </binding>
         </hovered>
-    </animation>
-    <animation>
-        <type>translate</type>
-        <object-name>appstop</object-name>
-        <property>controls/switches/app-stop</property>
-        <factor>0.003</factor>
-        <axis>
-          <x>0.0</x>
-          <y>0.0</y>
-          <z>1.0</z>
-        </axis>
     </animation>
 
     <animation>
