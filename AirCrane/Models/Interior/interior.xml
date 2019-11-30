@@ -128,6 +128,7 @@
     <name>IntLaPorteGauche</name>
     <object-name>intporteG</object-name>
     <object-name>intvitresporteG</object-name>
+    <object-name>intvitresporteGint</object-name>
   </animation>
   
   <animation>
@@ -163,6 +164,7 @@
     <name>IntLaPorteDroite</name>
     <object-name>intporteD</object-name>
     <object-name>intvitresporteD</object-name>
+    <object-name>intvitresporteDint</object-name>
   </animation>
   
   <animation>

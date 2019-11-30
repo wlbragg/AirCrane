@@ -6,7 +6,7 @@
         <name>Generator 1 Ready</name>
         <input>
             <and>
-                <property>/controls/engines/engine[0]/starter</property>
+                <property>/controls/engines/engine[0]/running</property>
                 <equals>
                     <property>/controls/electric/engine[0]/generator-sw</property>
                     <value>-1</value>
@@ -22,7 +22,7 @@
         <name>Generator 2 Ready</name>
         <input>
             <and>
-                <property>/controls/engines/engine[1]/starter</property>
+                <property>/controls/engines/engine[1]/running</property>
                 <equals>
                     <property>/controls/electric/engine[1]/generator-sw</property>
                     <value>-1</value>
@@ -37,13 +37,7 @@
     <logic>
         <name>APP Ready</name>
         <input>
-            <and>
-                <property>/controls/engines/engine[2]/starter</property>
-                <equals>
-                    <property>controls/engines/engine[2]/running</property>
-                    <value>1</value>
-                </equals>
-            </and>
+            <property>/controls/engines/engine[2]/running</property>
         </input>
         <output>
             <property>controls/electric/engine[2]/app-ready</property>
@@ -235,6 +229,42 @@
         </input>
         <output>
             <property>/systems/electrical/outputs/cws-app-on</property>
+        </output>
+    </logic>
+
+    <logic>
+        <name>APP Overspeed On</name>
+        <input>
+            <and>
+                <not>
+                    <property>/controls/engines/engine[2]/running</property>
+                </not>
+                <property>/systems/electrical/outputs/app-power</property>
+            </and>
+        </input>
+        <input>
+            <value>0.0</value>
+        </input>
+        <output>
+            <property>/systems/electrical/outputs/app-overspeed-on</property>
+        </output>
+    </logic>
+
+    <logic>
+        <name>APP Fire On</name>
+        <input>
+            <and>
+                <not>
+                    <property>/controls/engines/engine[2]/running</property>
+                </not>
+                <property>/systems/electrical/outputs/app-power</property>
+            </and>
+        </input>
+        <input>
+            <value>0.0</value>
+        </input>
+        <output>
+            <property>/systems/electrical/outputs/app-fire-on</property>
         </output>
     </logic>
 

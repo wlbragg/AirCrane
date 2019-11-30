@@ -172,44 +172,51 @@
     </animation>
 
     <animation>
+        <type>select</type>
+        <object-name>overspeedon</object-name>
+        <condition>
+            <property>/systems/electrical/outputs/app-overspeed-on</property>
+        </condition>
+    </animation>
+    <animation>
+        <type>material</type>
+        <object-name>overspeedon</object-name>
+        <emission>
+            <red>  0.7</red>
+            <green>0.5</green>
+            <blue> 0.5</blue>
+            <factor-prop>systems/electrical/outputs/app-overspeed-on</factor-prop>
+        </emission>
+    </animation>
+    <animation>
+        <type>select</type>
+        <object-name>overspeedoff</object-name>
+        <condition>
+            <not>
+                <property>/systems/electrical/outputs/app-overspeed-on</property>
+            </not>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>material</type>
+        <object-name>appfire</object-name>
+        <emission>
+            <red>  0.7</red>
+            <green>0.5</green>
+            <blue> 0.5</blue>
+            <factor-prop>systems/electrical/outputs/app-fire-on</factor-prop>
+        </emission>
+    </animation>
+
+    <!--animation>
       <type>select</type>
-      <object-name>overspeedon</object-name>
+      <object-name>appfireon</object-name>
       <condition>
         <greater-than>
           <property>sim/model/watercannon/position-deg</property>
           <value>-7.5</value>
         </greater-than>
-      </condition>
-    </animation>
-    <animation>
-      <type>select</type>
-      <object-name>lampferryon</object-name>
-      <condition>
-        <equals>
-          <property>sim/model/watercannon/position-deg</property>
-          <value>-7.5</value>
-        </equals>
-      </condition>
-    </animation>
-
-    <animation>
-      <type>select</type>
-      <object-name>overspeedoff</object-name>
-      <condition>
-        <less-than>
-          <property>sim/model/watercannon/position-deg</property>
-          <value>7.5</value>
-        </less-than>
-      </condition>
-    </animation>
-    <animation>
-      <type>select</type>
-      <object-name>lamplandingon</object-name>
-      <condition>
-        <equals>
-          <property>sim/model/watercannon/position-deg</property>
-          <value>7.5</value>
-        </equals>
       </condition>
     </animation>
 
@@ -225,33 +232,12 @@
     </animation>
     <animation>
       <type>select</type>
-      <object-name>lampferryon</object-name>
-      <condition>
-        <equals>
-          <property>sim/model/watercannon/position-deg</property>
-          <value>-7.5</value>
-        </equals>
-      </condition>
-    </animation>
-
-    <animation>
-      <type>select</type>
       <object-name>hitempoff</object-name>
       <condition>
         <less-than>
           <property>sim/model/watercannon/position-deg</property>
           <value>7.5</value>
         </less-than>
-      </condition>
-    </animation>
-    <animation>
-      <type>select</type>
-      <object-name>lamplandingon</object-name>
-      <condition>
-        <equals>
-          <property>sim/model/watercannon/position-deg</property>
-          <value>7.5</value>
-        </equals>
       </condition>
     </animation>
 
@@ -267,17 +253,6 @@
     </animation>
     <animation>
       <type>select</type>
-      <object-name>lampferryon</object-name>
-      <condition>
-        <equals>
-          <property>sim/model/watercannon/position-deg</property>
-          <value>-7.5</value>
-        </equals>
-      </condition>
-    </animation>
-
-    <animation>
-      <type>select</type>
       <object-name>lowoilpressoff</object-name>
       <condition>
         <less-than>
@@ -285,16 +260,6 @@
           <value>7.5</value>
         </less-than>
       </condition>
-    </animation>
-    <animation>
-      <type>select</type>
-      <object-name>lamplandingon</object-name>
-      <condition>
-        <equals>
-          <property>sim/model/watercannon/position-deg</property>
-          <value>7.5</value>
-        </equals>
-      </condition>
-    </animation>
+    </animation-->
 
 </PropertyList>
