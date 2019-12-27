@@ -615,8 +615,13 @@ update_buses = func(dt) {
     }
 
 # rectifier 1 is online
-    if (gen1_online and rec1_switch.getValue() == -1) {
-        rec_online = 1;
+    if (gen1_online and rect1_switch.getValue() == -1) {
+        rect1_online = 1;
+    }
+
+# rectifier 2 is online
+    if (gen2_online and rect2_switch.getValue() == -1) {
+        rect2_online = 1;
     }
 
 # generator 3 is online
