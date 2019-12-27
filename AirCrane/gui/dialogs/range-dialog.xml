@@ -12,7 +12,7 @@
       <valign>fill</valign>
       <halign>fill</halign>
       <stretch>true</stretch>
-      <pref-width>230</pref-width>
+      <pref-width>300</pref-width>
       <pref-height>200</pref-height>
       <nasal>      
           <load>
@@ -26,7 +26,7 @@
                   .setAlignment("left-top")
                   .setFontSize(30)
                   .setFont("LiberationFonts/LiberationSans-Regular.ttf")
-                  .set("max-width", 230)
+                  .set("max-width", 300)
                   .setColor(1,1,1);
 
               var range_loop = func {
