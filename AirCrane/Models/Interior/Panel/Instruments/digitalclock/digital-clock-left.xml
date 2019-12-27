@@ -13,7 +13,7 @@
         <object-name>KnobCenter</object-name>
         <object-name>KnobRight</object-name>
     </effect>
-    <!--effect>
+    <effect>
         <inherits-from>Models/Effects/interior/cockpit-flashlight</inherits-from>
         <object-name>HR.001</object-name>
         <object-name>HR.002</object-name>
@@ -21,7 +21,7 @@
         <object-name>M877.timerind</object-name>
         <object-name>MN.001</object-name>
         <object-name>MN.002</object-name>
-    </effect-->
+    </effect>
     <effect>
         <inherits-from>Models/Effects/interior/interior-glass-reflection-panel-front</inherits-from>
         <object-name>Glass</object-name>

@@ -4,6 +4,20 @@
 
   <path>compass.ac</path>
 
+  <effect>
+      <inherits-from>Models/Effects/interior/cockpit-interior-shadows</inherits-from>
+      <object-name>fond</object-name>
+      <object-name>lubber</object-name>
+  </effect>
+  <effect>
+      <inherits-from>Models/Effects/interior/cockpit-flashlight</inherits-from>
+      <object-name>face</object-name>
+  </effect>
+  <effect>
+      <inherits-from>Models/Effects/interior/interior-glass-reflection-panel-front</inherits-from>
+      <object-name>vitre</object-name>
+  </effect>
+
   <animation>
     <object-name>fond</object-name>
     <object-name>face</object-name>
