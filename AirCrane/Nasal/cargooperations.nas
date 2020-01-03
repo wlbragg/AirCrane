@@ -437,11 +437,6 @@ if(cargo_comp == 0) {
                 props.globals.getNode("/models/cargo/" ~ cargoParent ~ "/pitch-deg").setDoubleValue(pitchNode);
                 props.globals.getNode("/models/cargo/" ~ cargoParent ~ "/roll-deg").setDoubleValue(rollNode);
 
-                if (stack == -1) {
-                    gui.popupTip(cargoName~" ready to drop", 1);
-                    stackConnected = 1;
-                }
-
             } else {
                 gui.popupTip("Cargo too tall use rope", 3);
                 hooked = 0;
@@ -565,19 +560,16 @@ setprop("/sim/cargo/current-cargo-name", cargoName);
                     gui.popupTip(cargoName~" Connected", 1);
             }
 
-
-
-if (stack == -1) {
-    setprop("sim/cargo/cargo-on-hook", 0);
-    setprop("controls/cargo-release", 0);
-    hooked = 0;
-    setprop("sim/cargo/cargo-hook", 0);
-    cargoReleased = 1;
-    setprop("sim/cargo/rope/pulling", 0);
-    setprop("sim/cargo/"~cargoName~"-onhook", 0);
-    setprop("controls/release-"~cargoName, 1);
-}
-
+#if (stack == -1) {
+#    setprop("sim/cargo/cargo-on-hook", 0);
+#    setprop("controls/cargo-release", 0);
+#    hooked = 0;
+#    setprop("sim/cargo/cargo-hook", 0);
+#    cargoReleased = 1;
+#    setprop("sim/cargo/rope/pulling", 0);
+#    setprop("sim/cargo/"~cargoName~"-onhook", 0);
+#    setprop("controls/release-"~cargoName, 1);
+#}
 
         else {
                 gui.popupTip("Cargo not on ground or out of position", 1);
