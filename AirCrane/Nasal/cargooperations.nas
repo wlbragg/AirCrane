@@ -334,6 +334,10 @@ var cargo_closest=0;
         foreach(var cargoN; props.globals.getNode("/models/cargo", 1).getChildren("cargo")) {
 
             cargoElevation = cargoN.getNode("elevation-ft").getValue();
+
+#print( "lat:" ~ cargoN.getNode("latitude-deg").getValue());
+#print( "lon:" ~ cargoN.getNode("longitude-deg").getValue());
+
             cargoGroundElevFt = geo.elevation(cargoN.getNode("latitude-deg").getValue(), cargoN.getNode("longitude-deg").getValue()) * 3.28;
 
             if (altNode - (hookHeight + offset) < cargoElevation - cargoGroundElevFt) {
@@ -363,7 +367,7 @@ if(cargo_comp == 0) {
 					                  if (hookNode == 1 or autoHookNode == 1) {
 						                    hooked = 1;
 
-						                    cargoParent = cargoN.getNode("callsign").getParent().getName() ~ "[" ~ cargoN.getNode("callsign").getParent().getIndex() ~ "]";
+						        cargoParent = cargoN.getNode("callsign").getParent().getName() ~ "[" ~ cargoN.getNode("callsign").getParent().getIndex() ~ "]";
                                 cargoName = cargoN.getNode("callsign").getValue();
 
                                 #maybe condition to only if longline
@@ -433,10 +437,10 @@ if(cargo_comp == 0) {
                 props.globals.getNode("/models/cargo/" ~ cargoParent ~ "/pitch-deg").setDoubleValue(pitchNode);
                 props.globals.getNode("/models/cargo/" ~ cargoParent ~ "/roll-deg").setDoubleValue(rollNode);
 
-if (stack == -1) {
-    gui.popupTip(cargoName~" ready to drop", 1);
-    stackConnected = 1;
-}
+                if (stack == -1) {
+                    gui.popupTip(cargoName~" ready to drop", 1);
+                    stackConnected = 1;
+                }
 
             } else {
                 gui.popupTip("Cargo too tall use rope", 3);
@@ -606,17 +610,17 @@ if (stack == -1) {
 
         if (!longline) {
 
-if (stack == -1) {
-    setprop("/models/cargo/"~cargoParent~"/elevation-ft", (getprop("/position/altitude-ft") + 13.8) - (cargoHeight * 3.28));
-    setprop("/models/cargo/"~cargoParent~"/heading-deg", headNode);
-    setprop("/models/cargo/"~cargoParent~"/latitude-deg", latNode);
-    setprop("/models/cargo/"~cargoParent~"/longitude-deg", lonNode);
-} else {
-            setprop("/models/cargo/"~cargoParent~"/elevation-ft", (geo.elevation(latNode, lonNode) + cargoHeight) * 3.2808);
-            setprop("/models/cargo/"~cargoParent~"/heading-deg", headNode);
-            setprop("/models/cargo/"~cargoParent~"/latitude-deg", latNode);
-            setprop("/models/cargo/"~cargoParent~"/longitude-deg", lonNode);
-}
+            if (stack == -1) {
+                setprop("/models/cargo/"~cargoParent~"/elevation-ft", (getprop("/position/altitude-ft") + 13.8) - (cargoHeight * 3.28));
+                setprop("/models/cargo/"~cargoParent~"/heading-deg", headNode);
+                setprop("/models/cargo/"~cargoParent~"/latitude-deg", latNode);
+                setprop("/models/cargo/"~cargoParent~"/longitude-deg", lonNode);
+            } else {
+                        setprop("/models/cargo/"~cargoParent~"/elevation-ft", (geo.elevation(latNode, lonNode) + cargoHeight) * 3.2808);
+                        setprop("/models/cargo/"~cargoParent~"/heading-deg", headNode);
+                        setprop("/models/cargo/"~cargoParent~"/latitude-deg", latNode);
+                        setprop("/models/cargo/"~cargoParent~"/longitude-deg", lonNode);
+            }
         } else {
             setprop("/models/cargo/"~cargoParent~"/heading-deg", originalYaw);
             if (stack and stackConnected) {
