@@ -586,9 +586,9 @@
     <doors>
       <file>Aircraft/AirCrane/Nasal/doors.nas</file>
     </doors>
-    <autostart>
-        <file>Nasal/autostart.nas</file>
-    </autostart>
+    <js>
+        <file>Nasal/js.nas</file>
+    </js>
     <aircrane>
       <file>Aircraft/AirCrane/Nasal/immat.nas</file>
       <file>Aircraft/AirCrane/Nasal/light.nas</file>

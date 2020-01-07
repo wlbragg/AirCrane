@@ -314,8 +314,7 @@ var cargo_init = func () {
 
     var n_seg_reeled = getprop("/sim/cargo/rope/segments-reeled-in");
     var rope_length = (ropeSegments - n_seg_reeled) * seg_length;
-
-    setprop("/sim/cargo/rope/length", rope_length* 3.28);
+    setprop("/sim/cargo/rope/length", rope_length * 3.28);
 
     if (longline){
         #hookHeight = 55;
@@ -334,18 +333,14 @@ var cargo_closest=0;
         foreach(var cargoN; props.globals.getNode("/models/cargo", 1).getChildren("cargo")) {
 
             cargoElevation = cargoN.getNode("elevation-ft").getValue();
-
-#print( "lat:" ~ cargoN.getNode("latitude-deg").getValue());
-#print( "lon:" ~ cargoN.getNode("longitude-deg").getValue());
-
-            cargoGroundElevFt = geo.elevation(cargoN.getNode("latitude-deg").getValue(), cargoN.getNode("longitude-deg").getValue()) * 3.28;
+            cargoGroundElevFt = cargoElevation - cargoN.getNode("height").getValue();
 
             if (altNode - (hookHeight + offset) < cargoElevation - cargoGroundElevFt) {
 
 setprop("/sim/cargo/current-cargo-elevation", cargoElevation - cargoGroundElevFt);
 setprop("/sim/cargo/current-cargo-elevation-two", altNode - rope_length);
 
-			          if (string.match(cargoN.getNode("callsign").getValue(), "cargo*")){
+                if (string.match(cargoN.getNode("callsign").getValue(), "cargo*")){
                     cargo_pos.set_latlon(cargoN.getNode("latitude-deg").getValue(), cargoN.getNode("longitude-deg").getValue());
                     cargo_dist = aircraft_pos.distance_to(cargo_pos);
 
@@ -360,12 +355,11 @@ if(cargo_comp == 0) {
   }
   setprop("/sim/cargo/current-cargo-distance", cargo_closest);
 }
-
                     if (cargo_dist <= (hookHeight + 5)/3.281) {
                         if (cargoN.getNode("elevation-ft").getValue() > -999){
                             gui.popupTip(cargoN.getNode("callsign").getValue()~" in range", 1);
-					                  if (hookNode == 1 or autoHookNode == 1) {
-						                    hooked = 1;
+		                    if (hookNode == 1 or autoHookNode == 1) {
+			                    hooked = 1;
 
 						        cargoParent = cargoN.getNode("callsign").getParent().getName() ~ "[" ~ cargoN.getNode("callsign").getParent().getIndex() ~ "]";
                                 cargoName = cargoN.getNode("callsign").getValue();
@@ -380,8 +374,8 @@ if(cargo_comp == 0) {
                                 cargoHeight = props.globals.getNode("/models/cargo/" ~ cargoParent ~ "/height").getValue();
                                 cargoWeight = props.globals.getNode("/models/cargo/" ~ cargoParent ~ "/weight").getValue();
                                 cargoHarness = props.globals.getNode("/models/cargo/" ~ cargoParent ~ "/harness").getValue();
-                                cargoElevation = props.globals.getNode("/models/cargo/" ~ cargoParent ~ "/elevation-ft").getValue();
-                                cargoGroundElevFt = geo.elevation(props.globals.getNode("/models/cargo/" ~ cargoParent ~ "/latitude-deg").getValue(), props.globals.getNode("/models/cargo/" ~ cargoParent ~ "/longitude-deg").getValue()) * 3.28;
+                                #cargoElevation = props.globals.getNode("/models/cargo/" ~ cargoParent ~ "/elevation-ft").getValue();
+                                #cargoGroundElevFt = geo.elevation(props.globals.getNode("/models/cargo/" ~ cargoParent ~ "/latitude-deg").getValue(), props.globals.getNode("/models/cargo/" ~ cargoParent ~ "/longitude-deg").getValue()) * 3.28;
                                 stack = props.globals.getNode("/models/cargo/" ~ cargoParent ~ "/stack").getValue();
 
                                 if (cargoHeight < 3.12)
@@ -446,6 +440,7 @@ if(cargo_comp == 0) {
             }
         } else {
             if (longline and !cargoOnGround) {
+
                 setprop("/sim/cargo/rope/damping", .1);
                 setprop("/sim/cargo/rope/load-damping", .9);
 
@@ -456,9 +451,8 @@ if(cargo_comp == 0) {
                 if (currentYaw < 0) currentYaw = currentYaw + 360;
                 setprop("/sim/cargo/currentyaw", currentYaw);
 
-                setprop("sim/cargo/cargoalt", -rope_length + -cargoHarness + -hitchOffset);
-
-                setprop("sim/cargo/harnessalt", -hitchOffset + -rope_length);
+                setprop("sim/cargo/cargoalt", (-cargoHarness + -hitchOffset + -rope_length) - (n_seg_reeled*.19));
+                setprop("sim/cargo/harnessalt", (-hitchOffset + -rope_length) - (n_seg_reeled*.19));
 
                 setprop("sim/weight[3]/weight-lb", cargoWeight);
 
@@ -472,8 +466,8 @@ if(cargo_comp == 0) {
                     var cargoBaseHeight = (aircraft_alt_ft + offset) - ((rope_length + cargoHarness + cargoHeight) * 3.28);
                     var stackTopHeight = getprop("/models/cargo/cargo[" ~ stack ~ "]/elevation-ft");
 
-setprop("/sim/cargo/current-cargo-elevation", stackTopHeight);
-setprop("/sim/cargo/current-cargo-elevation-two", cargoBaseHeight);
+                    setprop("/sim/cargo/current-cargo-elevation", stackTopHeight);
+                    setprop("/sim/cargo/current-cargo-elevation-two", cargoBaseHeight);
 
                     var verticalDist = cargoBaseHeight - stackTopHeight;
                     stack_pos.set_latlon(getprop("/models/cargo/cargo[" ~ stack ~ "]/latitude-deg"), getprop("/models/cargo/cargo[" ~ stack ~ "]/longitude-deg"));
@@ -546,16 +540,16 @@ setprop("/sim/cargo/current-cargo-name", cargoName);
             if (onGround or (longline and cargoOnGround) or (stack and stackConnected)) {
                 setprop("sim/cargo/cargo-on-hook", 0);
                 setprop("controls/cargo-release", 0);
-	              hooked = 0;
+	            hooked = 0;
                 setprop("sim/cargo/cargo-hook", 0);
-	              cargoReleased = 1;
+	            cargoReleased = 1;
                 if (getprop("sim/cargo/rope/pulling") == 2) {
 	                  gui.popupTip("Drag force exceeded", 3);
                 } else 
                     gui.popupTip("Cargo released", 3);
                 setprop("sim/cargo/rope/pulling", 0);
-	              setprop("sim/cargo/"~cargoName~"-onhook", 0);
-	              setprop("controls/release-"~cargoName, 1);
+	            setprop("sim/cargo/"~cargoName~"-onhook", 0);
+	            setprop("controls/release-"~cargoName, 1);
                 if (stackConnected)
                     gui.popupTip(cargoName~" Connected", 1);
             }
