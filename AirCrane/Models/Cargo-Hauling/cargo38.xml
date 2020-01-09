@@ -8,8 +8,8 @@
 <PropertyList>
 
   <model>
-    <path>hvac.ac</path>
-    <name>hvac</name>
+    <path>ball.ac</path>
+    <name>ball</name>
     <condition>
       <and>
         <property>sim/cargo/enabled</property>
@@ -34,7 +34,7 @@
   </model>
 
   <!--animation>
-    <object-name>hvac</object-name>
+    <object-name>ball</object-name>
     <enable-hot type="bool">false</enable-hot>
   </animation-->
 

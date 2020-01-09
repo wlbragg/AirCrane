@@ -8,7 +8,7 @@
     <author>BARANGER Emmanuel (3D), Heiko Schulz (FDM), Wayne Bragg (Utility 3D and Systems, Effects)</author>
     <status>alpha</status>
     <aircraft-version>2019.2-git</aircraft-version>
-    <minimum-fg-version>2019.2.0</minimum-fg-version>
+    <minimum-fg-version>2018.3.4</minimum-fg-version>
     <license>GPL v2</license>
     <flight-model>yasim</flight-model>
     <aero>Systems/aircrane-yasim</aero>
