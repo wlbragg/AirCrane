@@ -378,11 +378,11 @@
         <or>
           <equals>
             <property>sim/current-view/name</property>
-            <value>Cockpit View</value>
+            <value>Right Pilot Seat View</value>
           </equals>
           <equals>
             <property>sim/current-view/name</property>
-            <value>Crane Seat View</value>
+            <value>Aft Pilot Seat View</value>
           </equals>
         </or>
       </and>
@@ -402,7 +402,7 @@
         <property>sim/model/garmin196-visible</property>
         <equals>
           <property>sim/current-view/name</property>
-          <value>Passanger Seat View</value>
+          <value>Left Pilot Seat View</value>
         </equals>
       </and>
     </condition>
