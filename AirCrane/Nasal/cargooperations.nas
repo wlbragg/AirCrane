@@ -335,7 +335,7 @@ var cargo_closest=0;
         foreach(var cargoN; props.globals.getNode("/models/cargo", 1).getChildren("cargo")) {
 
             cargoElevation = cargoN.getNode("elevation-ft").getValue();
-            cargoGroundElevFt = cargoElevation - cargoN.getNode("height").getValue();
+            cargoGroundElevFt = geo.elevation(cargoN.getNode("latitude-deg").getValue(), cargoN.getNode("longitude-deg").getValue()) * 3.28;
 
             if (altNode - (hookHeight + offset) < cargoElevation - cargoGroundElevFt) {
 
@@ -376,8 +376,8 @@ if(cargo_comp == 0) {
                                 cargoHeight = props.globals.getNode("/models/cargo/" ~ cargoParent ~ "/height").getValue();
                                 cargoWeight = props.globals.getNode("/models/cargo/" ~ cargoParent ~ "/weight").getValue();
                                 cargoHarness = props.globals.getNode("/models/cargo/" ~ cargoParent ~ "/harness").getValue();
-                                #cargoElevation = props.globals.getNode("/models/cargo/" ~ cargoParent ~ "/elevation-ft").getValue();
-                                #cargoGroundElevFt = geo.elevation(props.globals.getNode("/models/cargo/" ~ cargoParent ~ "/latitude-deg").getValue(), props.globals.getNode("/models/cargo/" ~ cargoParent ~ "/longitude-deg").getValue()) * 3.28;
+                                cargoElevation = props.globals.getNode("/models/cargo/" ~ cargoParent ~ "/elevation-ft").getValue();
+                                cargoGroundElevFt = geo.elevation(props.globals.getNode("/models/cargo/" ~ cargoParent ~ "/latitude-deg").getValue(), props.globals.getNode("/models/cargo/" ~ cargoParent ~ "/longitude-deg").getValue()) * 3.28;
                                 stack = props.globals.getNode("/models/cargo/" ~ cargoParent ~ "/stack").getValue();
 
                                 if (cargoHeight < 3.12)
@@ -405,12 +405,12 @@ if(cargo_comp == 0) {
                                 setprop("sim/cargo/"~cargoName~"-onhook", 1);
                                 setprop("sim/cargo/cargo-on-hook", 1);
                             }
-					              }
-				            }
-			          }
+                        }
+                    }
+                }
             }
-		    } #for
-	  }
+        } #for
+    }
     if (hooked == 1) {
         cargoHeight = getprop("/models/cargo/" ~ cargoParent ~ "/height");
         if (!longline) {
@@ -554,20 +554,7 @@ setprop("/sim/cargo/current-cargo-name", cargoName);
 	            setprop("controls/release-"~cargoName, 1);
                 if (stackConnected)
                     gui.popupTip(cargoName~" Connected", 1);
-            }
-
-#if (stack == -1) {
-#    setprop("sim/cargo/cargo-on-hook", 0);
-#    setprop("controls/cargo-release", 0);
-#    hooked = 0;
-#    setprop("sim/cargo/cargo-hook", 0);
-#    cargoReleased = 1;
-#    setprop("sim/cargo/rope/pulling", 0);
-#    setprop("sim/cargo/"~cargoName~"-onhook", 0);
-#    setprop("controls/release-"~cargoName, 1);
-#}
-
-        else {
+            } else {
                 gui.popupTip("Cargo not on ground or out of position", 1);
                 setprop("controls/cargo-release", cargoReleased = 0);
             }
@@ -582,8 +569,7 @@ setprop("/sim/cargo/current-cargo-name", cargoName);
             setprop("sim/cargo/cargo-hook", 0);
         }
     }
-
-	  if (cargoReleased == 1) {
+	if (cargoReleased == 1) {
         setprop("sim/weight[3]/weight-lb", 0);
 
         setprop("/sim/cargo/rope/damping", .6);
@@ -643,7 +629,7 @@ setprop("/sim/cargo/current-cargo-name", cargoName);
         #  setprop("/sim/gui/dialogs/aicargo-dialog/selected_cargo_alt", getprop("/ai/models/" ~ cargoParent ~ "/position/altitude-ft"));
         #  setprop("/sim/gui/dialogs/aicargo-dialog/selected_cargo_head", getprop("/ai/models/" ~ cargoParent ~ "/orientation/true-heading-deg"));
         #}
-	  }
+	}
 
     if (hookNode)
         setprop("/sim/cargo/cargo-hook", 0);
@@ -652,7 +638,7 @@ setprop("/sim/cargo/current-cargo-name", cargoName);
 
     longline_animation(0);
 
-	  settimer(cargo_tow, interval);
+	settimer(cargo_tow, interval);
 
 }
 
