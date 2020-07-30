@@ -3,15 +3,15 @@
 <PropertyList>
 
   <path>interior.ac</path>
-  <texture-path>../../Models</texture-path>
+  <texture-path>../../Models/Interior/Panel</texture-path>
 
   <effect>
-    <inherits-from>Models/Effects/interior/sealtexture</inherits-from>
+    <inherits-from>Aircraft/AirCrane/Models/Effects/interior/sealtexture</inherits-from>
     <object-name>tour</object-name>
   </effect>
 
   <effect>
-    <inherits-from>Models/Effects/interior/walltexture</inherits-from>
+    <inherits-from>Aircraft/AirCrane/Models/Effects/interior/walltexture</inherits-from>
     <object-name>interieur</object-name>
     <object-name>planchet</object-name>
   </effect>
@@ -26,13 +26,13 @@
   </effect>
 
   <effect>
-    <inherits-from>Models/Effects/interior/interior-glass-reflection-front</inherits-from>
+    <inherits-from>Aircraft/AirCrane/Models/Effects/interior/interior-glass-reflection-front</inherits-from>
     <object-name>intvitresint</object-name>
     <object-name>intvitresreardoorint</object-name>
   </effect>
 
   <effect>
-    <inherits-from>Models/Effects/interior/interior-glass-reflection-side</inherits-from>
+    <inherits-from>Aircraft/AirCrane/Models/Effects/interior/interior-glass-reflection-side</inherits-from>
     <object-name>intvitresporteGint</object-name>
     <object-name>intvitresporteDint</object-name>
     <object-name>intvitresstarboardint</object-name>
@@ -40,10 +40,8 @@
 
   <!-- ALS Interior Shadows -->
   <effect>
-    <inherits-from>Models/Effects/interior/cockpit-interior-shadows</inherits-from>
+    <inherits-from>Aircraft/AirCrane/Models/Effects/interior/cockpit-interior-shadows</inherits-from>
     <object-name>tour</object-name>
-    <!--object-name>interieur</object-name>
-    <object-name>planchet</object-name-->
     <object-name>floor</object-name>
     <object-name>reposepieds</object-name>
     <object-name>accoudoir</object-name>
@@ -52,7 +50,6 @@
     <object-name>gruesiege2</object-name>
     <object-name>grueinstr</object-name>
     <object-name>plaque</object-name>
-    <object-name>cranejoystick</object-name>
     <object-name>intporteG</object-name>
     <object-name>intporteD</object-name>
     <object-name>intreardoor</object-name>
@@ -80,6 +77,34 @@
     </offsets>
   </model>
 
+  <!-- Engineering Station -->
+  <model>
+    <path>Aircraft/AirCrane/Models/Interior/Panel/Instruments/engstatione/engstatione.xml</path>
+    <condition>
+      <not>
+        <property>sim/model/aircrane/model-f</property>
+      </not>
+    </condition>
+    <offsets>
+      <x-m> 0.0 </x-m>
+      <y-m> 0.0 </y-m>
+      <z-m> 0.0 </z-m>
+    </offsets>
+  </model>
+
+  <!-- Engineering Station -->
+  <model>
+    <path>Aircraft/AirCrane/Models/Interior/Panel/Instruments/engstationf/engstationf.xml</path>
+    <condition>
+      <property>sim/model/aircrane/model-f</property>
+    </condition>
+    <offsets>
+      <x-m> 0.0 </x-m>
+      <y-m> 0.0 </y-m>
+      <z-m> 0.0 </z-m>
+    </offsets>
+  </model>
+
   <!-- Pedals -->
   <model>
     <path>Aircraft/AirCrane/Models/Interior/pedals.xml</path>
@@ -93,6 +118,16 @@
   <!-- Seats -->
   <model>
     <path>Aircraft/AirCrane/Models/Interior/seats.xml</path>
+    <offsets>
+      <x-m> 0.0 </x-m>
+      <y-m> 0.0 </y-m>
+      <z-m> 0.0 </z-m>
+    </offsets>
+  </model>
+
+  <!-- Yokes -->
+  <model>
+    <path>Aircraft/AirCrane/Models/Interior/Yoke/yoke.xml</path>
     <offsets>
       <x-m> 0.0 </x-m>
       <y-m> 0.0 </y-m>

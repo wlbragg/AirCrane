@@ -633,6 +633,40 @@
       <max-dist>50.0</max-dist>
     </right-door-closing>
 
+    <!-- Button down sound -->
+    <switch>
+        <name>click-button-down-switch</name>
+        <mode>once</mode>
+        <path>Sounds/button_down.wav</path>
+        <condition>
+            <property>/sim/model/aircrane/sound/click-button-down</property>
+        </condition>
+        <position>
+            <x><property>/sim/model/aircrane/sound/click-pos-x</property></x>
+            <y><property>/sim/model/aircrane/sound/click-pos-y</property></y>
+            <z><property>/sim/model/aircrane/sound/click-pos-z</property></z>
+        </position>
+        <reference-dist>.02</reference-dist>
+        <max-dist>5.0</max-dist>
+    </switch>
+
+    <!-- Button up sound -->
+    <switch>
+        <name>click-button-up-switch</name>
+        <mode>once</mode>
+        <path>Sounds/button_up.wav</path>
+        <condition>
+            <property>/sim/model/aircrane/sound/click-button-up</property>
+        </condition>
+        <position>
+            <x><property>/sim/model/aircrane/sound/click-pos-x</property></x>
+            <y><property>/sim/model/aircrane/sound/click-pos-y</property></y>
+            <z><property>/sim/model/aircrane/sound/click-pos-z</property></z>
+        </position>
+        <reference-dist>.02</reference-dist>
+        <max-dist>5.0</max-dist>
+    </switch>
+
   </fx>
   
 </PropertyList>

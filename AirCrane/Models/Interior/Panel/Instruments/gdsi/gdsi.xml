@@ -16,21 +16,19 @@
       <object-name>Pointeur</object-name>
       <object-name>Case</object-name>
       <object-name>fasteners</object-name>
-  </effect>
-  <effect>
-      <inherits-from>Models/Effects/interior/cockpit-flashlight</inherits-from>
+
       <object-name>IndicU</object-name>
       <object-name>IndicV</object-name>
   </effect>
+  <!--effect>
+      <inherits-from>Models/Effects/interior/cockpit-flashlight</inherits-from>
+      <object-name>IndicU</object-name>
+      <object-name>IndicV</object-name>
+  </effect-->
   <effect>
       <inherits-from>Models/Effects/interior/interior-glass-reflection-panel-front</inherits-from>
       <object-name>glass</object-name>
   </effect>
-
-  <animation>
-	  <type>noshadow</type>
-	  <object-name>PAR</object-name>
-  </animation>
 
   <animation>
       <type>rotate</type>

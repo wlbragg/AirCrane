@@ -19,14 +19,17 @@
       <object-name>course-flag</object-name>
       <object-name>ring-slip</object-name>
       <object-name>fasteners</object-name>
+
+      <object-name>AttitudeBall</object-name>
+      <object-name>slip-ball</object-name>
+      <object-name>bank-index</object-name>
   </effect>
-  <effect>
+  <!--effect>
       <inherits-from>Models/Effects/interior/cockpit-flashlight</inherits-from>
-          <object-name>AttitudeBall</object-name>
-          <object-name>SkyPointer</object-name>
-          <object-name>slip-ball</object-name>
-          <object-name>bank-index</object-name>
-  </effect>
+      <object-name>AttitudeBall</object-name>
+      <object-name>slip-ball</object-name>
+      <object-name>bank-index</object-name>
+  </effect-->
   <effect>
       <inherits-from>Models/Effects/interior/interior-glass-reflection-panel-front</inherits-from>
       <object-name>glass</object-name>
@@ -35,7 +38,6 @@
   <!--animation>
     <type>material</type>
     <object-name>AttitudeBall</object-name>
-    <object-name>SkyPointer</object-name>
     <object-name>slip-ball</object-name>
     <object-name>ils-flag</object-name>
     <object-name>course-flag</object-name>
@@ -85,23 +87,6 @@
       <z> 0 </z>
     </axis>
   </animation>  
-
-  <animation>
-    <type>rotate</type>
-    <object-name>SkyPointer</object-name>
-    <property>orientation/roll-deg</property>
-    <factor>1</factor>
-    <center>
-      <x-m>-9.4327</x-m>
-      <y-m>-0.347757</y-m>
-      <z-m>-1.46523</z-m>
-    </center>
-    <axis>
-      <x> 1 </x>
-      <y> 0 </y>
-      <z> 0 </z>
-    </axis>
-  </animation>
  
   <animation>
     <type>rotate</type>

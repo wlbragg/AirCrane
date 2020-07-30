@@ -10,9 +10,7 @@
       <inherits-from>Models/Effects/interior/cockpit-interior-shadows</inherits-from>
       <object-name>Case</object-name>
       <object-name>fasteners</object-name>
-  </effect>
-  <effect>
-      <inherits-from>Models/Effects/interior/cockpit-flashlight</inherits-from>
+
       <object-name>face-c</object-name>
       <object-name>face-p</object-name>
       <object-name>RMI.Needle1-c</object-name>
@@ -20,6 +18,15 @@
       <object-name>RMI.Needle1-p</object-name>
       <object-name>RMI.Needle2-p</object-name>
   </effect>
+  <!--effect>
+      <inherits-from>Models/Effects/interior/cockpit-flashlight</inherits-from>
+      <object-name>face-c</object-name>
+      <object-name>face-p</object-name>
+      <object-name>RMI.Needle1-c</object-name>
+      <object-name>RMI.Needle2-c</object-name>
+      <object-name>RMI.Needle1-p</object-name>
+      <object-name>RMI.Needle2-p</object-name>
+  </effect-->
   <effect>
       <inherits-from>Models/Effects/interior/interior-glass-reflection-panel-front</inherits-from>
       <object-name>glass</object-name>

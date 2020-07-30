@@ -29,7 +29,8 @@
 				<property>sim/crashed</property>
 			</not>
 			<less-than>
-        <property>position/true-agl-ft</property>
+        <!--property>position/true-agl-ft</property-->
+        <property>position/gear-agl-ft</property>
 				<value>80</value>
 			</less-than>
 			<greater-than>
@@ -212,7 +213,8 @@
   <animation>
     <type>translate</type>
     <object-name>rotorwashpower</object-name>
-    <property>position/true-agl-ft</property>
+    <!--property>position/true-agl-ft</property-->
+    <property>position/gear-agl-ft</property>
     <factor>-0.3048</factor>
     <center>
       <x-m>0</x-m>

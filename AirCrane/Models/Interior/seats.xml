@@ -3,7 +3,7 @@
 <PropertyList>
 
   <path>seats.ac</path>
-  <texture-path>../../Models</texture-path>
+  <texture-path>../../Models/Interior/Panel</texture-path>
 
   <animation>
     <!-- Objets opaques -->

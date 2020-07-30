@@ -80,8 +80,11 @@ var master_bat = props.globals.getNode("controls/electric/battery-bus-switch", 1
 var generator_1 = props.globals.getNode("controls/electric/engine[0]/generator-sw", 1);
 var generator_2 = props.globals.getNode("controls/electric/engine[1]/generator-sw", 1);
 
-var rectifier_1 = props.globals.getNode("controls/switches/rect-1", 1);
-var rectifier_2 = props.globals.getNode("controls/switches/rect-2", 1);
+var rectifier_1 = props.globals.getNode("controls/electric/rect-1", 1);
+var rectifier_2 = props.globals.getNode("controls/electric/rect-2", 1);
+
+var afcs = props.globals.getNode("controls/switches/afcs", 1);
+var afcs_servo = props.globals.getNode("controls/switches/afcs-servo", 1);
 
 var autostart = func (msg=1) {
     #if (getprop("/engines/active-engine/running")) {
@@ -97,7 +100,7 @@ var autostart = func (msg=1) {
     fuel_shutoff_right.setValue(1);
     engine_one.setValue(.5);
     engine_two.setValue(.5);
-    master_bat.setValue(0);
+    master_bat.setValue(1);
     generator_1.setValue(-1);
     generator_2.setValue(-1);
     eng1_running.setValue(1);
@@ -106,6 +109,8 @@ var autostart = func (msg=1) {
     rectifier_2.setValue(1);
     state.setValue(0);
     engines(1);
+    afcs.setValue(1);
+    afcs_servo.setValue(1);
 };
 
 var app_startup = func {
@@ -580,6 +585,9 @@ var main_loop = func {
   rotor_wash_loop();
   flexhose_animation();
 
+  #trueGrndElevFt = geo.elevation(latNode.getValue(), lonNode.getValue()) * 3.28;
+  #aircraftTrueAgl.setValue(trueGrndElevFt);
+
   settimer(main_loop, 0);
 }
 
@@ -587,6 +595,11 @@ var crashed = 0;
 var variant = nil;
 var doors = nil;
 var config_dialog = nil;
+
+#var lonNode = props.globals.getNode("position/longitude-deg", 1);
+#var latNode = props.globals.getNode("position/latitude-deg", 1);
+#var trueGrndElevFt = 0;
+#var aircraftTrueAgl = props.globals.getNode("position/true-agl-ft", 1);
 
 # initialization
 setlistener("/sim/signals/fdm-initialized", func {
@@ -622,6 +635,18 @@ setlistener("/sim/signals/fdm-initialized", func {
   main_loop();
 });
 
+# ALS flashlight
+var toggle_flashlight = func {
+    if (getprop("/sim/rendering/shaders/skydome")) {
+        var old_value = getprop("/sim/rendering/als-secondary-lights/use-flashlight");
+        var new_value = math.mod(old_value + 1, 3);
+        setprop("/sim/rendering/als-secondary-lights/use-flashlight", new_value);
+    }
+    else {
+        gui.popupTip("Enable ALS for ALS Flashlight", 4);
+    }
+};
+
 setlistener("/sim/signals/reinit", func {
   cmdarg().getBoolValue() and return;
   cprint("32;1", "reinit");
@@ -653,38 +678,6 @@ setlistener("/sim/signals/click", func {
 	  var click_pos = geo.click_position();
 	  if (__kbd.ctrl.getBoolValue()) {
 		  wildfire.ignite(click_pos);
-	  } else {
-		  #wildfire.resolve_foam_drop(click_pos, 50, 1);
-          var aic = getprop("/sim/gui/dialogs/aicargo-dialog/ai-path");
-          if (aic != nil) {
-            var pos_lat = click_pos.lat();
-            var pos_lon = click_pos.lon();
-            var click_alt = geo.elevation(click_pos.lat(), click_pos.lon());
-            var alt_offset = getprop("/models/cargo/"~aic~"/height");
-            setprop("/models/cargo/"~aic~"/latitude-deg", pos_lat);
-            setprop("/models/cargo/"~aic~"/longitude-deg", pos_lon);
-            setprop("/models/cargo/"~aic~"/elevation-ft/", (click_alt + alt_offset) * 3.28);
-            setprop("/sim/gui/dialogs/aicargo-dialog/selected_cargo_lat", pos_lat);
-            setprop("/sim/gui/dialogs/aicargo-dialog/selected_cargo_lon", pos_lon);
-            setprop("/sim/gui/dialogs/aicargo-dialog/selected_cargo_alt", (click_alt + alt_offset) * 3.28);
-            setprop("/sim/gui/dialogs/aicargo-dialog/selected_cargo_head", getprop("/sim/gui/dialogs/aicargo-dialog/selected_cargo_head"));
-
-            if (getprop("/sim/gui/dialogs/aicargo-dialog/save")) {
-              var cargo = getprop("/sim/gui/dialogs/aicargo-dialog/selected-cargo");
-              setprop("/sim/model/aircrane/"~cargo~"/saved", 1);
-              setprop("/sim/model/aircrane/"~cargo~"/position/latitude-deg", getprop("/sim/gui/dialogs/aicargo-dialog/selected_cargo_lat"));
-              setprop("/sim/model/aircrane/"~cargo~"/position/longitude-deg", getprop("/sim/gui/dialogs/aicargo-dialog/selected_cargo_lon"));
-              setprop("/sim/model/aircrane/"~cargo~"/position/altitude-ft", getprop("/sim/gui/dialogs/aicargo-dialog/selected_cargo_alt"));
-              setprop("/sim/model/aircrane/"~cargo~"/orientation/true-heading-deg", getprop("/sim/gui/dialogs/aicargo-dialog/selected_cargo_head"));
-              aircraft.data.add("/sim/model/aircrane/"~cargo~"/position/latitude-deg",
-                                "/sim/model/aircrane/"~cargo~"/position/longitude-deg",
-                                "/sim/model/aircrane/"~cargo~"/position/altitude-ft",
-                                "/sim/model/aircrane/"~cargo~"/orientation/true-heading-deg");
-              aircraft.data.save();
-            }
-          } else {
-            gui.popupTip("No Cargo Selected, first select cargo to move in the AirCrane's Cargo Menu", 3);
-          }
 	  }
   }
 });
@@ -701,14 +694,6 @@ setlistener("/sim/ai/aircraft/impact/retardant", func (n) {
   wildfire.resolve_foam_drop(pos, 10, 0);
   #wildfire.resolve_retardant_drop(pos, 10, 0);
 });
-
-setlistener("/sim/gui/show-range", func (node) {      
-    if (node.getBoolValue()) {
-        fgcommand("dialog-show", props.Node.new({"dialog-name": "range-dialog"}));
-    } else {
-        fgcommand("dialog-close", props.Node.new({"dialog-name": "range-dialog"}));
-    }
-}, 0, 0);
 
 setlistener("/sim/model/aircrane/cockpit/rotorbrake-handle-animation", func (node) {      
     if (node.getValue() == 1) {

@@ -1,0 +1,191 @@
+<?xml version="1.0"?>
+
+<!-- AirCrane
+ This program is free software; you can redistribute it and/or
+ modify it under the terms of the GNU General Public License as
+ published by the Free Software Foundation; either version 2 of the
+ License, or (at your option) any later version.
+
+ This program is distributed in the hope that it will be useful, but
+ WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ General Public License for more details.
+-->
+
+<PropertyList>
+  <name>fcs-dialog</name>
+	<layout>vbox</layout>
+	<resizable>true</resizable>
+	<default-padding>3</default-padding>
+
+  <group>
+    <layout>hbox</layout>
+		<default-padding>1</default-padding>
+    <empty><stretch>true</stretch></empty>
+    <text>
+      <label>FCS Managements</label>
+    </text>
+    <empty><stretch>true</stretch></empty>
+
+    <button>
+      <legend/>
+      <key>Esc</key>
+      <pref-width>16</pref-width>
+      <pref-height>16</pref-height>
+      <binding>
+        <command>dialog-close</command>
+      </binding>
+    </button>
+  </group>
+
+  <hrule/>
+
+  <group>
+    <layout>vbox</layout>
+
+    <checkbox>
+      <halign>left</halign>
+      <label>SAS Enabled</label>
+      <property>controls/flight/fcs/switches/sas</property>
+      <live>true</live>
+      <binding>
+        <command>nasal</command>
+        <script>fcs.sas.toggleEnable();</script>
+      </binding>
+    </checkbox>
+    <checkbox>
+      <halign>left</halign>
+      <label>CAS Enabled</label>
+      <property>controls/flight/fcs/switches/cas</property>
+      <live>true</live>
+      <binding>
+        <command>nasal</command>
+        <script>fcs.cas.toggleEnable();</script>
+      </binding>
+    </checkbox>
+    <checkbox>
+      <halign>left</halign>
+      <label>Auto Hover Enabled</label>
+      <property>controls/flight/fcs/switches/auto-hover</property>
+      <live>true</live>
+      <binding>
+        <command>nasal</command>
+        <script>fcs.afcs.toggleAutoHover();</script>
+      </binding>
+    </checkbox>
+    <checkbox>
+      <halign>left</halign>
+      <label>Auto Stabilizer</label>
+      <property>controls/flight/fcs/switches/auto-stabilizer</property>
+      <live>true</live>
+      <binding>
+          <command>dialog-apply</command>
+      </binding>
+    </checkbox>
+    <checkbox>
+      <halign>left</halign>
+      <label>Air Speed Lock</label>
+      <property>controls/flight/fcs/switches/air-speed-lock</property>
+      <live>true</live>
+      <binding>
+        <command>nasal</command>
+        <script>fcs.afcs.toggleAirSpeedLock();</script>
+      </binding>
+    </checkbox>
+    <checkbox>
+      <halign>left</halign>
+      <label>Heading Lock</label>
+      <property>controls/flight/fcs/switches/heading-lock</property>
+      <live>true</live>
+      <binding>
+        <command>nasal</command>
+        <script>fcs.afcs.toggleHeadingLock();</script>
+      </binding>
+    </checkbox>
+    <checkbox>
+      <halign>left</halign>
+      <label>Heading Adjuster</label>
+      <property>controls/flight/fcs/switches/heading-adjuster</property>
+      <live>true</live>
+      <binding>
+          <command>dialog-apply</command>
+      </binding>
+    </checkbox>
+    <checkbox>
+      <halign>left</halign>
+      <label>Altitude Lock</label>
+      <property>controls/flight/fcs/switches/altitude-lock</property>
+      <live>true</live>
+      <binding>
+        <command>nasal</command>
+        <script>fcs.afcs.toggleAltitudeLock();</script>
+      </binding>
+    </checkbox>
+    <checkbox>
+      <halign>left</halign>
+      <label>Altitude Control</label>
+      <property>controls/flight/fcs/switches/altitude-control</property>
+      <live>true</live>
+      <binding>
+          <command>dialog-apply</command>
+      </binding>
+    </checkbox>
+    <checkbox>
+      <halign>left</halign>
+      <label>Sideslip Adjuster</label>
+      <property>controls/flight/fcs/switches/sideslip-adjuster</property>
+      <live>true</live>
+      <binding>
+          <command>dialog-apply</command>
+      </binding>
+    </checkbox>
+    <checkbox>
+      <halign>left</halign>
+      <label>Tail Rotor Adjuster</label>
+      <property>controls/flight/fcs/switches/tail-rotor-adjuster</property>
+      <live>true</live>
+      <binding>
+          <command>dialog-apply</command>
+      </binding>
+    </checkbox>
+    <checkbox>
+      <halign>left</halign>
+      <label>Backup Mode</label>
+      <property>controls/flight/fcs/switches/backup-mode</property>
+      <live>true</live>
+      <binding>
+          <command>dialog-apply</command>
+      </binding>
+    </checkbox>
+    <checkbox>
+      <halign>left</halign>
+      <label>Debug</label>
+      <property>controls/flight/fcs/switches/debug</property>
+      <live>true</live>
+      <binding>
+          <command>dialog-apply</command>
+      </binding>
+    </checkbox>
+
+  </group>
+
+  <hrule/>
+
+  <!-- Button bar -->
+  <group>
+    <layout>hbox</layout>
+    <default-padding>6</default-padding>
+    <empty><stretch>true</stretch></empty>
+    <button>
+      <legend>Close</legend>
+      <equal>true</equal>
+      <key>Esc</key>
+      <default>true</default>
+      <binding>
+        <command>dialog-close</command>
+      </binding>
+    </button>
+    <empty><stretch>true</stretch></empty>
+  </group>
+
+</PropertyList>

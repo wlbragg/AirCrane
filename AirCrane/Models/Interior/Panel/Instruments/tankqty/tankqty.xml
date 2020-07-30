@@ -3,7 +3,7 @@
 <PropertyList>
 
   <path>tankqty.ac</path>
-  <texture-path>../../../../../Models</texture-path>
+  <texture-path>../../../../../Models/Interior/Panel</texture-path>
 
   <!-- ALS Interior Shadows -->
   <effect>

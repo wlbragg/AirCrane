@@ -11,14 +11,19 @@
       <object-name>ballcase</object-name>
       <object-name>fasteners</object-name>
       <object-name>center</object-name>
-  </effect>
-  <effect>
-      <inherits-from>Models/Effects/interior/cockpit-flashlight</inherits-from>
+
       <object-name>ball-p</object-name>
       <object-name>ball-c</object-name>
       <object-name>needle-p</object-name>
       <object-name>needle-c</object-name>
   </effect>
+  <!--effect>
+      <inherits-from>Models/Effects/interior/cockpit-flashlight</inherits-from>
+      <object-name>ball-p</object-name>
+      <object-name>ball-c</object-name>
+      <object-name>needle-p</object-name>
+      <object-name>needle-c</object-name>
+  </effect-->
   <effect>
       <inherits-from>Models/Effects/interior/interior-glass-reflection-panel-front</inherits-from>
       <object-name>glass</object-name>

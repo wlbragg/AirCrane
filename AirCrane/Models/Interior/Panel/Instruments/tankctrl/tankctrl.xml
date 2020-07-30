@@ -3,7 +3,7 @@
 <PropertyList>
 
   <path>tankctrl.ac</path>
-  <texture-path>../../../../../Models</texture-path>
+  <texture-path>../../../../../Models/Interior/Panel</texture-path>
 
   <!-- ALS Interior Shadows -->
   <effect>
@@ -29,6 +29,7 @@
     <object-name>toggle-sea-snorkel</object-name>
     <object-name>tankpumpotdase</object-name>
     <object-name>sysreadybase</object-name>
+    <object-name>panel</object-name>
   </effect>
 
   <animation>
@@ -83,12 +84,9 @@
     <type>select</type>
     <object-name>indicator-test.001</object-name>
     <condition>
-      <and>
-        <property>sim/model/firetank/enabled</property>
         <not>
           <property>sim/model/firetank/test</property>
         </not>
-      </and>
     </condition>
   </animation>
   <animation>

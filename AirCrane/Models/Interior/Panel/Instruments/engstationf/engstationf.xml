@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+
+  <path>engstationf.ac</path>
+
+  <!-- ALS Interior Shadows -->
+  <effect>
+    <inherits-from>Models/Effects/interior/cockpit-interior-shadows</inherits-from>
+    <object-name>case</object-name>
+    <object-name>cpplate</object-name>
+    <object-name>cpplate.001</object-name>
+    <object-name>cpplate.002</object-name>
+    <object-name>cpplate.003</object-name>
+    <object-name>face</object-name>
+    <object-name>fasteners</object-name>
+    <object-name>needle-l</object-name>
+    <object-name>needle-r</object-name>
+    <object-name>panel</object-name>
+    <object-name>bootplate</object-name>
+    <object-name>fasteners</object-name>
+    <object-name>cranejoystick</object-name>
+    <object-name>boot</object-name>
+  </effect>
+
+  <effect>
+      <inherits-from>Models/Effects/interior/interior-glass-reflection-panel-front</inherits-from>
+      <object-name>glass</object-name>
+  </effect>
+
+</PropertyList>

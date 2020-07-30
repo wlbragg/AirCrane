@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 
-<!-- J3Cub
+<!-- AirCrane
  This program is free software; you can redistribute it and/or
  modify it under the terms of the GNU General Public License as
  published by the Free Software Foundation; either version 2 of the
@@ -13,22 +13,6 @@
 -->
 
 <PropertyList>
-  <nasal>
-        <open>
-            # Cargo Hauling option
-            var p = getprop("sim/gui/dialogs/aicargo-dialog/connection");
-            setprop("/sim/model/aircrane/cargo_connection_flag_0", 0);
-            setprop("/sim/model/aircrane/cargo_connection_flag_1", 0);
-            setprop("/sim/model/aircrane/cargo_connection_flag_" ~ p, 1);
-
-            # Long Line option
-            p = getprop("sim/gui/dialogs/aicargo-dialog/longline");
-            setprop("/sim/model/aircrane/longline_flag_0",0);
-						setprop("/sim/model/aircrane/longline_flag_1",0);
-            setprop("/sim/model/aircrane/longline_flag_" ~ p, 1);
-        </open>
-    </nasal>
-
   <name>aircraft-dialog</name>
 	<layout>vbox</layout>
 	<resizable>true</resizable>
@@ -57,7 +41,7 @@
   <hrule/>
 
   <group>
-    <layout>hbox</layout>
+    <layout>vbox</layout>
     <checkbox>
       <halign>left</halign>
       <label>Blades Visible</label>
@@ -72,9 +56,6 @@
         </script>
       </binding>
     </checkbox>
-  </group>
-  <group>
-    <layout>hbox</layout>
     <checkbox>
       <halign>left</halign>
       <label>Shadow</label>
@@ -89,9 +70,6 @@
         </script>
       </binding>
     </checkbox>
-  </group>
-  <group>
-    <layout>hbox</layout>
     <checkbox>
       <halign>left</halign>
       <label>Show Particle Effects</label>
@@ -106,9 +84,6 @@
         </script>
       </binding>
     </checkbox>
-  </group>
-  <group>
-    <layout>hbox</layout>
     <checkbox>
       <halign>left</halign>
       <label>Human models</label>
@@ -123,7 +98,16 @@
   <hrule/>
 
   <group>
-    <layout>hbox</layout>
+    <layout>vbox</layout>
+    <checkbox>
+      <halign>left</halign>
+      <label>Model F Instruments</label>
+      <property>sim/model/aircrane/model-f</property>
+      <live>true</live>
+      <binding>
+          <command>dialog-apply</command>
+      </binding>
+    </checkbox>
     <checkbox>
       <halign>left</halign>
       <label>Equip Garmin 196 GPS</label>
@@ -133,9 +117,6 @@
           <command>dialog-apply</command>
       </binding>
     </checkbox>
-  </group>
-  <group>
-    <layout>hbox</layout>
     <checkbox>
       <halign>left</halign>
       <label>Step Cover</label>
@@ -150,248 +131,101 @@
   <hrule/>
 
   <group>
-  <layout>vbox</layout>
-  <group>
-    <layout>hbox</layout>
-    <checkbox>
-      <halign>left</halign>
-      <label>Fluid Pumping System</label>
-      <property>sim/model/firetank/enabled</property>
-      <live>true</live>
-      <binding>
-        <command>nasal</command>
-        <script>
-          var p = "sim/model/firetank/enabled";
-          setprop(p, var i = !getprop(p));
-          gui.popupTip("Pumping system " ~ (i ? "On" : "Off"));
-          setprop("sim/gui/dialogs/aicargo-dialog/connection", 0);
-          setprop("sim/model/aircrane/cargo_connection_flag_0",1);
-				  setprop("sim/model/aircrane/cargo_connection_flag_1",0);
-          setprop("sim/model/cableguard/enabled",0);
-        </script>
-      </binding>
-    </checkbox>
-  </group>
-  <group>
-    <layout>hbox</layout>
-    <checkbox>
-      <halign>left</halign>
-      <label>Water Cannon</label>
-      <property>sim/model/watercannon/enabled</property>
-      <live>true</live>
-      <enable>
-					<property>sim/model/firetank/enabled</property>
-			</enable>
-      <binding>
-        <command>nasal</command>
-        <script>
-          var p = "sim/model/watercannon/enabled";
-          setprop(p, var i = !getprop(p));
-          gui.popupTip("Water cannon " ~ (i ? "On" : "Off"));
-        </script>
-      </binding>
-    </checkbox>
-  </group>
+      <layout>vbox</layout>
+      <group>
+        <layout>hbox</layout>
+        <checkbox>
+          <halign>left</halign>
+          <label>Fluid Pumping System</label>
+          <property>sim/model/firetank/enabled</property>
+          <live>true</live>
+          <binding>
+            <command>nasal</command>
+            <script>
+              var p = "sim/model/firetank/enabled";
+              setprop(p, var i = !getprop(p));
+              gui.popupTip("Pumping system " ~ (i ? "On" : "Off"));
+              setprop("sim/model/cableguard/enabled",0);
+            </script>
+          </binding>
+        </checkbox>
+      </group>
+      <group>
+        <layout>hbox</layout>
+        <checkbox>
+          <halign>left</halign>
+          <label>Water Cannon</label>
+          <property>sim/model/watercannon/enabled</property>
+          <live>true</live>
+          <enable>
+					    <property>sim/model/firetank/enabled</property>
+			    </enable>
+          <binding>
+            <command>nasal</command>
+            <script>
+              var p = "sim/model/watercannon/enabled";
+              setprop(p, var i = !getprop(p));
+              gui.popupTip("Water cannon " ~ (i ? "On" : "Off"));
+            </script>
+          </binding>
+        </checkbox>
+      </group>
   </group>
 
   <hrule/>
 
-	<group>
-		<layout>vbox</layout>
+  <group>
+    <layout>vbox</layout>
+    <checkbox>
+      <halign>left</halign>
+      <label>Winch Cover </label>
+      <property>/sim/model/winchcover/enabled</property>
+      <live>true</live>
+      <binding>
+          <command>dialog-apply</command>
+      </binding>
+    </checkbox>
+    <checkbox>
+      <halign>left</halign>
+      <label>Cable Guard</label>
+      <property>sim/model/cableguard/enabled</property>
+      <live>true</live>
+      <enable>
+        <and>
+          <not>
+            <property>/sim/freeze/replay-state</property>
+          </not>
+        </and>
+	    </enable>
+      <binding>
+        <command>nasal</command>
+        <script>
+          var p = "sim/model/cableguard/enabled";
+          setprop(p, var i = !getprop(p));
+          gui.popupTip("Cable guard " ~ (i ? "On" : "Off"));
+          setprop("sim/model/firetank/enabled", 0);
+        </script>
+      </binding>
+    </checkbox>
+  </group>
 
-		<text>
-			<label>Cargo Connection</label>
-			<halign>center</halign>
-		</text>
+  <hrule/>
 
-		<group>
-			<layout>hbox</layout>
-			<radio>
-				<halign>left</halign>
-				<label>Hard Docked</label>
-				<property>sim/model/aircrane/cargo_connection_flag_0</property>
-				<live>true</live>
-				<enable>
-          <and>
-					  <not>
-						  <property>/sim/freeze/replay-state</property>
-					  </not>
-            <not>
-						  <property>/sim/cargo/cargo-on-hook</property>
-					  </not>
-          </and>
-				</enable>
-        <binding>
-          <command>nasal</command>
-          <script>
-            var p = "sim/gui/dialogs/aicargo-dialog/connection";
-            setprop(p, var i = 0);
-            gui.popupTip("Cargo connection " ~ (i ? "Long Line" : "Hard Docked"));
-            setprop("sim/model/aircrane/cargo_connection_flag_0",1);
-						setprop("sim/model/aircrane/cargo_connection_flag_1",0);
-          </script>
-        </binding>
-			</radio>
-			<radio>
-				<halign>left</halign>
-				<label>Long Line</label>
-				<property>sim/model/aircrane/cargo_connection_flag_1</property>
-				<live>true</live>
-				<enable>
-          <and>
-					  <not>
-						  <property>/sim/freeze/replay-state</property>
-					  </not>
-            <not>
-						  <property>/sim/cargo/cargo-on-hook</property>
-					  </not>
-          </and>
-				</enable>
-        <binding>
-          <command>nasal</command>
-          <script>
-            var p = "sim/gui/dialogs/aicargo-dialog/connection";
-            setprop(p, var i = 1);
-            gui.popupTip("Cargo connection " ~ (i ? "Long Line" : "Hard Docked"));
-            setprop("sim/model/aircrane/cargo_connection_flag_0",0);
-						setprop("sim/model/aircrane/cargo_connection_flag_1",1);
-            setprop("sim/model/firetank/enabled", 0);
-          </script>
-        </binding>
-			</radio>
-		</group>
-		<group>
-			<layout>hbox</layout>
-			<radio>
-				<halign>left</halign>
-				<label>Rope</label>
-				<property>sim/model/aircrane/longline_flag_0</property>
-				<live>true</live>
-				<enable>
-          <and>
-					  <not>
-						  <property>/sim/freeze/replay-state</property>
-					  </not>
-            <not>
-						  <property>/sim/model/winchcover/enabled</property>
-					  </not>
-          </and>
-				</enable>
-        <binding>
-          <command>nasal</command>
-          <script>
-            var p = "sim/gui/dialogs/aicargo-dialog/longline";
-            setprop(p, var i = 0);
-            gui.popupTip("Line type " ~ (i ? "Cable" : "Rope"));
-            setprop("sim/model/aircrane/longline_flag_0",1);
-						setprop("sim/model/aircrane/longline_flag_1",0);
-          </script>
-        </binding>
-			</radio>
-			<radio>
-				<halign>left</halign>
-				<label>Cable</label>
-				<property>sim/model/aircrane/longline_flag_1</property>
-				<live>true</live>
-        <enable>
-          <and>
-					  <not>
-						  <property>/sim/freeze/replay-state</property>
-					  </not>
-            <not>
-						  <property>/sim/model/winchcover/enabled</property>
-					  </not>
-          </and>
-				</enable>
-        <binding>
-          <command>nasal</command>
-          <script>
-            var p = "sim/gui/dialogs/aicargo-dialog/longline";
-            setprop(p, var i = 1);
-            gui.popupTip("Line type " ~ (i ? "Cable" : "Rope"));
-            setprop("sim/model/aircrane/longline_flag_0",0);
-						setprop("sim/model/aircrane/longline_flag_1",1);
-          </script>
-        </binding>
-			</radio>
-		</group>
-    <group>
-      <layout>hbox</layout>
-      <checkbox>
-        <halign>left</halign>
-        <label>Winch Cover </label>
-        <property>/sim/model/winchcover/enabled</property>
-        <live>true</live>
-        <binding>
-            <command>dialog-apply</command>
-        </binding>
-      </checkbox>
-    </group>
-    <group>
-      <layout>hbox</layout>
-      <checkbox>
-        <halign>left</halign>
-        <label>Cable Guard</label>
-        <property>sim/model/cableguard/enabled</property>
-        <live>true</live>
-        <enable>
-          <and>
-					  <not>
-						  <property>/sim/freeze/replay-state</property>
-					  </not>
-            <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
-          </and>
-				</enable>
-        <binding>
-          <command>nasal</command>
-          <script>
-            var p = "sim/model/cableguard/enabled";
-            setprop(p, var i = !getprop(p));
-            gui.popupTip("Cable guard " ~ (i ? "On" : "Off"));
-          </script>
-        </binding>
-      </checkbox>
-    </group>
-    <group>
-      <layout>hbox</layout>
-      <checkbox>
-        <halign>left</halign>
-        <label>Cargo Effects Rope</label>
-        <property>/sim/gui/dialogs/aicargo-dialog/alt-origin</property>
-        <live>true</live>
-        <enable>
-            <and>
-					    <not>
-						    <property>/sim/freeze/replay-state</property>
-					    </not>
-              <property>/sim/gui/dialogs/aicargo-dialog/connection</property>
-            </and>
-				  </enable>
-          <binding>
-            <command>dialog-apply</command>
-          </binding>
-        </checkbox>
-    </group>
-
-    <hrule/>
-
-    <!-- Button bar -->
-    <group>
-      <layout>hbox</layout>
-      <default-padding>6</default-padding>
-      <empty><stretch>true</stretch></empty>
-      <button>
-        <legend>Close</legend>
-        <equal>true</equal>
-        <key>Esc</key>
-        <default>true</default>
-        <binding>
-          <command>dialog-close</command>
-        </binding>
-      </button>
-      <empty><stretch>true</stretch></empty>
-    </group>
-
+  <!-- Button bar -->
+  <group>
+    <layout>hbox</layout>
+    <default-padding>6</default-padding>
+    <empty><stretch>true</stretch></empty>
+    <button>
+      <legend>Close</legend>
+      <equal>true</equal>
+      <key>Esc</key>
+      <default>true</default>
+      <binding>
+        <command>dialog-close</command>
+      </binding>
+    </button>
+    <empty><stretch>true</stretch></empty>
   </group>
 
 </PropertyList>

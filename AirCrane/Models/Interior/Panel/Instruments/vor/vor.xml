@@ -25,14 +25,19 @@
         <object-name>Case</object-name>
         <object-name>screws</object-name>
         <object-name>fasteners</object-name>
-    </effect>
-    <effect>
-        <inherits-from>Models/Effects/interior/cockpit-flashlight</inherits-from>
+
         <object-name>GlideslopeNeedle</object-name>
         <object-name>LocalizerNeedle</object-name>
         <object-name>Ring</object-name>
         <object-name>disk</object-name>
     </effect>
+    <!--effect>
+        <inherits-from>Models/Effects/interior/cockpit-flashlight</inherits-from>
+        <object-name>GlideslopeNeedle</object-name>
+        <object-name>LocalizerNeedle</object-name>
+        <object-name>Ring</object-name>
+        <object-name>disk</object-name>
+    </effect-->
     <effect>
         <inherits-from>Models/Effects/interior/interior-glass-reflection-panel-front</inherits-from>
         <object-name>glass</object-name>

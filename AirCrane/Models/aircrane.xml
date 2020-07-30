@@ -208,7 +208,7 @@
     <object-name>spotlampbase</object-name>
     <object-name>lightlanding</object-name>
     <object-name>lightspot</object-name>
-    
+
     <property-base>sim/model/livery/</property-base>
     <texture-prop>texture</texture-prop>
     <texture>texture.png</texture>
@@ -276,15 +276,6 @@
     <object-name>lightlanding</object-name>
     <object-name>lightspot</object-name>
 
-    <object-name>cabelgaurdmount</object-name>
-    <object-name>cableguardbottom</object-name>
-    <object-name>cableguardlowerconnectoraft</object-name>
-    <object-name>cableguardlowerconnectorfor</object-name>
-    <object-name>cableguardtop</object-name>
-    <object-name>cableguardupperconnectoraft</object-name>
-    <object-name>cableguardupperconnectorfor</object-name>
-    <object-name>cableguidebearing</object-name>
-    <object-name>cableguidepin</object-name>
   </effect>
 
   <effect>
@@ -294,7 +285,7 @@
     <object-name>lampstrobe</object-name>
   </effect>
 
-  <!-- Une ombre pour OSG -->
+  <!-- Une ombre pour OSG
   <model>
     <path>Aircraft/AirCrane/Models/Effects/shadows/shadow.xml</path>
     <offsets>
@@ -303,21 +294,11 @@
       <z-m>-3.85</z-m>
       <pitch-deg>1</pitch-deg>
     </offsets>
-  </model>
-
-  <!-- Long Line Cargo
-  <model>
-    <path>Aircraft/AirCrane/Models/Cargo-Hauling/long-line.xml</path>
   </model> -->
-
-  <!-- Long Line Cargo Unchained -->
-  <model>
-    <path>Aircraft/AirCrane/Models/Cargo-Hauling/long-line-uc.xml</path>
-  </model>
 
   <!-- Cable Guard -->
   <model>
-    <path>Aircraft/AirCrane/Models/Cargo-Hauling/cableguard.xml</path>
+    <path>Aircraft/AirCrane/Models/Cable-Guard/cableguard.xml</path>
   </model>
   
   <!-- Water System -->
@@ -365,6 +346,8 @@
   
   <!-- Interior -->
   <model>
+    <!--name>interior</name>
+    <usage>interior</usage-->
     <path>Aircraft/AirCrane/Models/Interior/interior.xml</path>
   </model>
 
@@ -1174,7 +1157,7 @@
             </and>
         </condition>
     </animation>
-    <animation>
+    <!--animation>
         <type>select</type>
         <object-name>landing-light</object-name>
         <nopreview/>
@@ -1195,7 +1178,7 @@
                 <property>/sim/rendering/shaders/skydome</property>
             </and>
         </condition>
-    </animation>
+    </animation-->
 
     <!-- Landing Light -->
     <animation>
@@ -1227,7 +1210,7 @@
         </condition>
     </animation>
 
-    <animation>
+    <!--animation>
         <type>light</type>
         <light-type>spot</light-type>
         <name>LandingLight</name>
@@ -1273,9 +1256,9 @@
         <cutoff>85</cutoff>
         <near-m>2</near-m>
         <far-m>250</far-m>
-    </animation>
+    </animation-->
 
-    <animation>
+    <!--animation>
         <type>light</type>
         <light-type>spot</light-type>
         <name>SpotLight</name>
@@ -1326,7 +1309,7 @@
         <type>noshadow</type>
         <object-name>landinglight</object-name>
         <object-name>spotlight</object-name>
-    </animation>
+    </animation-->
 
     <!--Landing Light-->
     <animation>

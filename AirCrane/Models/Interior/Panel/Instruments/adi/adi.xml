@@ -11,14 +11,19 @@
       <object-name>W</object-name>
       <object-name>Housing</object-name>
       <object-name>fasteners</object-name>
-  </effect>
-  <effect>
-      <inherits-from>Models/Effects/interior/cockpit-flashlight</inherits-from>
+
       <object-name>TurnIndicator</object-name>
       <object-name>PitchKnob</object-name>
       <object-name>RollKnob</object-name>
       <object-name>ATTFlag</object-name>
   </effect>
+  <!--effect>
+      <inherits-from>Models/Effects/interior/cockpit-flashlight</inherits-from>
+      <object-name>TurnIndicator</object-name>
+      <object-name>PitchKnob</object-name>
+      <object-name>RollKnob</object-name>
+      <object-name>ATTFlag</object-name>
+  </effect-->
   <effect>
       <inherits-from>Models/Effects/interior/interior-glass-reflection-panel-front</inherits-from>
       <object-name>glass</object-name>

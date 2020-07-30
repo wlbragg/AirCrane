@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+
+  <path>yoke.ac</path>
+
+  <!-- ALS Interior Shadows -->
+  <effect>
+    <inherits-from>Aircraft/AirCrane/Models/Effects/interior/cockpit-interior-shadows</inherits-from>
+    <object-name>base</object-name>
+    <object-name>manche</object-name>
+    <object-name>btn1</object-name>
+    <object-name>btn2</object-name>
+    <object-name>btn3</object-name>
+    <object-name>chapeau</object-name>
+    <object-name>base.001</object-name>
+    <object-name>manche.001</object-name>
+    <object-name>btn1.001</object-name>
+    <object-name>btn2.001</object-name>
+    <object-name>btn3.001</object-name>
+    <object-name>chapeau.001</object-name>
+    <object-name>portboot1</object-name>
+    <object-name>portboot2</object-name>
+    <object-name>portboot3</object-name>
+    <object-name>portboot4</object-name>
+    <object-name>portboot5</object-name>
+    <object-name>portboot6</object-name>
+    <object-name>starboot1</object-name>
+    <object-name>starboot2</object-name>
+    <object-name>starboot3</object-name>
+    <object-name>starboot4</object-name>
+    <object-name>starboot5</object-name>
+    <object-name>starboot6</object-name>
+  </effect>
+
+  <animation>
+    <name>PortYoke</name>
+    <object-name>manche</object-name>
+    <object-name>btn1</object-name>
+    <object-name>btn2</object-name>
+    <object-name>btn3</object-name>
+    <object-name>chapeau</object-name>
+    <object-name>portboot1</object-name>
+    <object-name>portboot2</object-name>
+    <object-name>portboot3</object-name>
+    <object-name>portboot4</object-name>
+    <object-name>portboot5</object-name>
+    <object-name>portboot6</object-name>
+  </animation>
+  
+  <animation>
+    <name>StarYoke</name>
+    <object-name>base.001</object-name>
+    <object-name>manche.001</object-name>
+    <object-name>btn1.001</object-name>
+    <object-name>btn2.001</object-name>
+    <object-name>btn3.001</object-name>
+    <object-name>chapeau.001</object-name>
+    <object-name>starboot1</object-name>
+    <object-name>starboot2</object-name>
+    <object-name>starboot3</object-name>
+    <object-name>starboot4</object-name>
+    <object-name>starboot5</object-name>
+    <object-name>starboot6</object-name>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>PortYoke</object-name>
+    <property>controls/flight/elevator</property>
+    <factor> -10 </factor>
+    <center>
+      <x-m> -9.11377 </x-m>
+      <y-m> -0.576956 </y-m>
+      <z-m> -2.08005 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>PortYoke</object-name>
+    <property>controls/flight/aileron</property>
+    <factor> -10 </factor>
+    <center>
+      <x-m> -9.11377 </x-m>
+      <y-m> -0.576956 </y-m>
+      <z-m> -2.08005 </z-m>
+    </center>
+    <axis>
+      <x> 1 </x>
+      <y> 0 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>StarYoke</object-name>
+    <property>controls/flight/elevator</property>
+    <factor> -10 </factor>
+    <center>
+      <x-m> -9.09598 </x-m>
+      <y-m>  0.576984</y-m>
+      <z-m> -2.07945 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>StarYoke</object-name>
+    <property>controls/flight/aileron</property>
+    <factor> -10 </factor>
+    <center>
+      <x-m> -9.09598 </x-m>
+      <y-m>  0.576984</y-m>
+      <z-m> -2.07945 </z-m>
+    </center>
+    <axis>
+      <x> 1 </x>
+      <y> 0 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+
+ </PropertyList>

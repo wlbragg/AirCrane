@@ -9,9 +9,7 @@
       <object-name>case</object-name>
       <object-name>face</object-name>
       <object-name>fasteners</object-name>
-  </effect>
-  <effect>
-      <inherits-from>Models/Effects/interior/cockpit-flashlight</inherits-from>
+
       <object-name>needle-aux</object-name>
       <object-name>needle-fwd</object-name>
       <object-name>needle-aft</object-name>
@@ -20,6 +18,16 @@
       <object-name>knob-fwd</object-name>
       <object-name>knob-aft</object-name>
   </effect>
+  <!--effect>
+      <inherits-from>Models/Effects/interior/cockpit-flashlight</inherits-from>
+      <object-name>needle-aux</object-name>
+      <object-name>needle-fwd</object-name>
+      <object-name>needle-aft</object-name>
+      <object-name>bug-fwd</object-name>
+      <object-name>bug-aft</object-name>
+      <object-name>knob-fwd</object-name>
+      <object-name>knob-aft</object-name>
+  </effect-->
   <effect>
       <inherits-from>Models/Effects/interior/interior-glass-reflection-panel-front</inherits-from>
       <object-name>glass</object-name>

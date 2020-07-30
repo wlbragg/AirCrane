@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+  
+  <path>cableguard.ac</path>
+  
+  <animation>
+    <!-- Objets opaques -->
+    <object-name>cableguardmount</object-name>
+    <object-name>cableguardbottom</object-name>
+    <object-name>cableguardtop</object-name>
+  </animation>
+
+  <effect>
+    <inherits-from>Aircraft/Generic/Effects/Fuselagereflect</inherits-from>
+    <object-name>cableguardmount</object-name>
+    <object-name>cableguardbottom</object-name>
+    <object-name>cableguardtop</object-name>
+  </effect>
+  
+  <animation>
+    <type>select</type>
+    <object-name>cabelguardmount</object-name>
+    <object-name>cableguardbottom</object-name>
+    <object-name>cableguardtop</object-name>
+    <condition>
+      <property>sim/model/cableguard/enabled</property>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>cableguardbottom</object-name>
+    <object-name>cableguardtop</object-name>
+    <property>orientation/pitch-deg</property>
+    <factor> -1 </factor>
+    <axis>
+      <x1-m> -2.42645 </x1-m>
+      <y1-m> -1.003   </y1-m> 
+      <z1-m> -1.17918 </z1-m>
+      <x2-m> -2.4179  </x2-m>
+      <y2-m>  0.99798 </y2-m>
+      <z2-m> -1.17918 </z2-m>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>cableguardbottom</object-name>
+    <property>orientation/roll-deg</property>
+    <factor> -1 </factor>
+    <axis>
+      <x1-m> -1.82919 </x1-m>
+      <y1-m> -0.00011 </y1-m> 
+      <z1-m> -2.43671 </z1-m>
+      <x2-m> -3.01566 </x2-m>
+      <y2-m> -0.00444 </y2-m>
+      <z2-m> -2.43796 </z2-m>
+    </axis>
+  </animation>
+
+</PropertyList>

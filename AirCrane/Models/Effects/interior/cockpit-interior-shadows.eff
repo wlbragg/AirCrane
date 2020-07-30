@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PropertyList>
   <name>cockpit-interior-shadows</name>
-  <inherits-from>Models/Effects/interior/cockpit-interior</inherits-from>
+  <inherits-from>Aircraft/AirCrane/Models/Effects/interior/cockpit-interior</inherits-from>
   <parameters>
     <texture n="4">
       <type>cubemap</type>

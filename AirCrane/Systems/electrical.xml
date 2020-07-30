@@ -45,6 +45,44 @@
     </logic>
 
     <logic>
+        <name>Rectifier 1 Ready</name>
+        <input>
+            <and>
+                <or>
+                    <property>/controls/electric/engine[1]/generator-ready</property>
+                    <property>/controls/electric/engine[1]/generator-ready</property>
+                </or>
+                <property>/controls/switches/rect-1</property>
+            </and>
+        </input>
+        <input>
+            <value>0.0</value>
+        </input>
+        <output>
+            <property>systems/electrical/outputs/cws-rect-1</property>
+        </output>
+    </logic>
+
+    <logic>
+        <name>Rectifier 2 Ready</name>
+        <input>
+            <and>
+                <or>
+                    <property>/controls/electric/engine[1]/generator-ready</property>
+                    <property>/controls/electric/engine[1]/generator-ready</property>
+                </or>
+                <property>/controls/switches/rect-2</property>
+            </and>
+        </input>
+        <input>
+            <value>0.0</value>
+        </input>
+        <output>
+            <property>systems/electrical/outputs/cws-rect-2</property>
+        </output>
+    </logic>
+
+    <logic>
         <name>Electrical supply to Tank Quantity display</name>
         <input>
             <and>
@@ -66,208 +104,6 @@
         </output>
     </logic>
 
-    <logic>
-        <name>CWS Power Source</name>
-        <input>
-            <and>
-                <less-than>
-                    <property>systems/electrical/outputs/main-left/cws</property>
-                    <value>31.5</value>
-                </less-than>
-                <greater-than>
-                    <property>systems/electrical/outputs/main-left/cws</property>
-                    <value>20.0</value>
-                </greater-than>
-            </and>
-        </input>
-        <input>
-            <value>0.0</value>
-        </input>
-        <output>
-            <property>/systems/electrical/outputs/cws-power</property>
-        </output>
-    </logic>
-
-    <logic>
-        <name>CWS Test Switch Power</name>
-        <input>
-            <and>
-                <property>/systems/electrical/outputs/cws-power</property>
-                <property>controls/switches/cws-test</property>
-            </and>
-        </input>
-        <input>
-            <value>0.0</value>
-        </input>
-        <output>
-            <property>/systems/electrical/outputs/cws-test-power</property>
-        </output>
-    </logic>
-
-    <filter>
-        <name>CWS Brightness</name>
-        <type>gain</type>
-        <input>
-            <condition>
-                <property>controls/switches/cws-bright</property>
-            </condition>
-            <value>1</value>
-        </input>
-        <input>
-            <value>0.0</value>
-        </input>
-        <output>
-            <property>/sim/model/aircrane/lighting/cws-bright</property>
-        </output>
-    </filter>
-
-    <logic>
-        <name>CWS Gen 1</name>
-        <input>
-            <and>
-                <property>/systems/electrical/outputs/cws-power</property>
-                <not>
-                    <property>controls/electric/engine[0]/generator-sw</property>
-                </not>
-            </and>
-        </input>
-        <input>
-            <value>0.0</value>
-        </input>
-        <output>
-            <property>/systems/electrical/outputs/cws-gen-1</property>
-        </output>
-    </logic>
-
-    <logic>
-        <name>CWS Gen 2</name>
-        <input>
-            <and>
-                <property>/systems/electrical/outputs/cws-power</property>
-                <not>
-                    <property>controls/electric/engine[1]/generator-sw</property>
-                </not>
-            </and>
-        </input>
-        <input>
-            <value>0.0</value>
-        </input>
-        <output>
-            <property>/systems/electrical/outputs/cws-gen-2</property>
-        </output>
-    </logic>
-
-    <logic>
-        <name>CWS Rectifier 1</name>
-        <input>
-            <and>
-                <property>/systems/electrical/outputs/cws-power</property>
-                <not>
-                    <property>controls/switches/rect-1</property>
-                </not>
-            </and>
-        </input>
-        <input>
-            <value>0.0</value>
-        </input>
-        <output>
-            <property>/systems/electrical/outputs/cws-rect-1</property>
-        </output>
-    </logic>
-
-    <logic>
-        <name>CWS Rectifier 2</name>
-        <input>
-            <and>
-                <property>/systems/electrical/outputs/cws-power</property>
-                <not>
-                    <property>controls/switches/rect-2</property>
-                </not>
-            </and>
-        </input>
-        <input>
-            <value>0.0</value>
-        </input>
-        <output>
-            <property>/systems/electrical/outputs/cws-rect-2</property>
-        </output>
-    </logic>
-
-    <logic>
-        <name>APP DC Power</name>
-        <input>
-            <and>
-                <less-than>
-                    <property>systems/electrical/outputs/main-left/app-cont</property>
-                    <value>31.5</value>
-                </less-than>
-                <greater-than>
-                    <property>systems/electrical/outputs/main-left/app-cont</property>
-                    <value>20.0</value>
-                </greater-than>
-                <property>controls/switches/app-master</property>
-            </and>
-        </input>
-        <input>
-            <value>0.0</value>
-        </input>
-        <output>
-            <property>/systems/electrical/outputs/app-power</property>
-        </output>
-    </logic>
-
-    <logic>
-        <name>CWS APP On</name>
-        <input>
-            <and>
-                <property>/systems/electrical/outputs/cws-power</property>
-                <property>/systems/electrical/outputs/app-power</property>
-            </and>
-        </input>
-        <input>
-            <value>0.0</value>
-        </input>
-        <output>
-            <property>/systems/electrical/outputs/cws-app-on</property>
-        </output>
-    </logic>
-
-    <logic>
-        <name>APP Overspeed On</name>
-        <input>
-            <and>
-                <not>
-                    <property>/controls/engines/engine[2]/running</property>
-                </not>
-                <property>/systems/electrical/outputs/app-power</property>
-            </and>
-        </input>
-        <input>
-            <value>0.0</value>
-        </input>
-        <output>
-            <property>/systems/electrical/outputs/app-overspeed-on</property>
-        </output>
-    </logic>
-
-    <logic>
-        <name>APP Fire On</name>
-        <input>
-            <and>
-                <not>
-                    <property>/controls/engines/engine[2]/running</property>
-                </not>
-                <property>/systems/electrical/outputs/app-power</property>
-            </and>
-        </input>
-        <input>
-            <value>0.0</value>
-        </input>
-        <output>
-            <property>/systems/electrical/outputs/app-fire-on</property>
-        </output>
-    </logic>
-
     <!--filter>
         <name>Environment Temperature Power</name>
         <type>gain</type>
@@ -284,7 +120,7 @@
             <value>0.0</value>
         </input>
         <output>
-            <property>/instrumentation/iat/power</property>
+            <property>instrumentation/iat/power</property>
         </output>
     </filter>
 
@@ -296,7 +132,7 @@
             <condition>
                 <property>/instrumentation/iat/power</property>
             </condition>
-            <property>fdm/jsbsim/heat/air-temperature</property>
+            <property>/fdm/jsbsim/heat/air-temperature</property>
         </input>
         <input>
             <value>0.0</value>
@@ -331,5 +167,251 @@
             <property>sim/model/aircrane/environment/air-temperature</property>
         </output>
     </filter>
+
+    <!-- ######################################## -->
+    <!-- ####### Caution and Warning (CWS) ###### -->
+    <!-- ######################################## -->
+
+    <logic>
+        <name>CWS Power Source</name>
+        <input>
+            <and>
+                <less-than>
+                    <property>/systems/electrical/outputs/main-left/cws</property>
+                    <value>31.5</value>
+                </less-than>
+                <greater-than>
+                    <property>/systems/electrical/outputs/main-left/cws</property>
+                    <value>20.0</value>
+                </greater-than>
+            </and>
+        </input>
+        <input>
+            <value>0.0</value>
+        </input>
+        <output>
+            <property>systems/electrical/outputs/cws-power</property>
+        </output>
+    </logic>
+
+    <logic>
+        <name>CWS Test Switch Power</name>
+        <input>
+            <and>
+                <property>/systems/electrical/outputs/cws-power</property>
+                <property>/controls/switches/cws-test</property>
+            </and>
+        </input>
+        <input>
+            <value>0.0</value>
+        </input>
+        <output>
+            <property>systems/electrical/outputs/cws-test-power</property>
+        </output>
+    </logic>
+
+    <filter>
+        <name>CWS Brightness</name>
+        <type>gain</type>
+        <input>
+            <condition>
+                <property>/controls/switches/cws-bright</property>
+            </condition>
+            <value>1</value>
+        </input>
+        <input>
+            <value>0.0</value>
+        </input>
+        <output>
+            <property>sim/model/aircrane/lighting/cws-bright</property>
+        </output>
+    </filter>
+
+    <logic>
+        <name>CWS Gen 1</name>
+        <input>
+            <and>
+                <property>/systems/electrical/outputs/cws-power</property>
+                <not>
+                    <property>/controls/electric/engine[0]/generator-sw</property>
+                </not>
+            </and>
+        </input>
+        <input>
+            <value>0.0</value>
+        </input>
+        <output>
+            <property>systems/electrical/outputs/cws-gen-1</property>
+        </output>
+    </logic>
+
+    <logic>
+        <name>CWS Gen 2</name>
+        <input>
+            <and>
+                <property>/systems/electrical/outputs/cws-power</property>
+                <not>
+                    <property>/controls/electric/engine[1]/generator-sw</property>
+                </not>
+            </and>
+        </input>
+        <input>
+            <value>0.0</value>
+        </input>
+        <output>
+            <property>/systems/electrical/outputs/cws-gen-2</property>
+        </output>
+    </logic>
+
+    <logic>
+        <name>CWS Rectifier 1</name>
+        <input>
+            <and>
+                <property>/systems/electrical/outputs/cws-power</property>
+                <not>
+                    <property>/controls/switches/rect-1</property>
+                </not>
+            </and>
+        </input>
+        <input>
+            <value>0.0</value>
+        </input>
+        <output>
+            <property>systems/electrical/outputs/cws-rect-1</property>
+        </output>
+    </logic>
+
+    <logic>
+        <name>CWS Rectifier 2</name>
+        <input>
+            <and>
+                <property>/systems/electrical/outputs/cws-power</property>
+                <not>
+                    <property>/controls/switches/rect-2</property>
+                </not>
+            </and>
+        </input>
+        <input>
+            <value>0.0</value>
+        </input>
+        <output>
+            <property>systems/electrical/outputs/cws-rect-2</property>
+        </output>
+    </logic>
+
+    <!-- ######################################## -->
+    <!-- ##### Caution - Warning (Non -CWS) ##### -->
+    <!-- ######################################## -->
+
+    <logic>
+        <name>APP DC Power</name>
+        <input>
+            <and>
+                <less-than>
+                    <property>systems/electrical/outputs/main-left/app-cont</property>
+                    <value>31.5</value>
+                </less-than>
+                <greater-than>
+                    <property>systems/electrical/outputs/main-left/app-cont</property>
+                    <value>20.0</value>
+                </greater-than>
+                <property>/controls/switches/app-master</property>
+            </and>
+        </input>
+        <input>
+            <value>0.0</value>
+        </input>
+        <output>
+            <property>systems/electrical/outputs/app-power</property>
+        </output>
+    </logic>
+
+    <logic>
+        <name>CWS APP On</name>
+        <input>
+            <and>
+                <property>/systems/electrical/outputs/cws-power</property>
+                <property>/systems/electrical/outputs/app-power</property>
+            </and>
+        </input>
+        <input>
+            <value>0.0</value>
+        </input>
+        <output>
+            <property>systems/electrical/outputs/cws-app-on</property>
+        </output>
+    </logic>
+
+    <logic>
+        <name>CWS Rotor Brake On</name>
+        <input>
+            <and>
+                <property>/systems/electrical/outputs/cws-power</property>
+                <property>/systems/electrical/outputs/rotorbrake</property>
+            </and>
+        </input>
+        <input>
+            <value>0.0</value>
+        </input>
+        <output>
+            <property>systems/electrical/outputs/cws-rotor-brake-on</property>
+        </output>
+    </logic>
+
+    <!--object-name>cws-rotor-brake-press</object-name-->
+
+    <logic>
+        <name>APP Overspeed On</name>
+        <input>
+            <and>
+                <not>
+                    <property>/controls/engines/engine[2]/running</property>
+                </not>
+                <property>/systems/electrical/outputs/app-power</property>
+            </and>
+        </input>
+        <input>
+            <value>0.0</value>
+        </input>
+        <output>
+            <property>/systems/electrical/outputs/app-overspeed-on</property>
+        </output>
+    </logic>
+
+    <logic>
+        <name>High Exhaust Temp On</name>
+        <input>
+            <and>
+                <not>
+                    <property>/controls/engines/engine[2]/running</property>
+                </not>
+                <property>/systems/electrical/outputs/app-power</property>
+            </and>
+        </input>
+        <input>
+            <value>0.0</value>
+        </input>
+        <output>
+            <property>systems/electrical/outputs/hi-exh-temp-on</property>
+        </output>
+    </logic>
+
+    <logic>
+        <name>APP Fire On</name>
+        <input>
+            <and>
+                <not>
+                    <property>/controls/engines/engine[2]/running</property>
+                </not>
+                <property>/systems/electrical/outputs/app-power</property>
+            </and>
+        </input>
+        <input>
+            <value>0.0</value>
+        </input>
+        <output>
+            <property>systems/electrical/outputs/app-fire-on</property>
+        </output>
+    </logic>
 
 </PropertyList>

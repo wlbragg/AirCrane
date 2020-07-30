@@ -332,6 +332,11 @@
       <spot-light type="bool">false</spot-light>
       <landing-light type="bool">false</landing-light>
     </lighting>
+    <knobs>
+        <yaw-trim type="float">0</yaw-trim>
+        <roll-trim type="float">0</roll-trim>
+        <cg-trim type="float">0</cg-trim>
+    </knobs>
     <switches>
         <master-avionics type="bool">false</master-avionics>
         <eng1-n1-start type="bool">false</eng1-n1-start>
@@ -347,6 +352,25 @@
         <cws-bright type="int">false</cws-bright>
         <rect-1 type="bool">false</rect-1>
         <rect-2 type="bool">false</rect-2>
+        <afcs-servo type="bool">false</afcs-servo>
+        <afcs type="bool">false</afcs>
+        <afcs-1 type="bool">false</afcs-1>
+        <afcs-2 type="bool">false</afcs-2>
+        <afcs-fault type="bool">false</afcs-fault>
+        <bar-alt type="bool">false</bar-alt>
+        <stick-trim type="bool">false</stick-trim>
+        <stick-trim-cover type="bool">false</stick-trim-cover>
+        <yaw type="bool">false</yaw>
+        <spring-switch>
+            <afcs-servo type="int">0</afcs-servo>
+            <afcs type="int">0</afcs>
+            <afcs-1 type="int">0</afcs-1>
+            <afcs-2 type="int">0</afcs-2>
+            <afcs-fault type="int">0</afcs-fault>
+            <bar-alt type="int">0</bar-alt>
+            <stick-trim type="int">0</stick-trim>
+            <yaw type="int">0</yaw>
+        </spring-switch>
     </switches>
     <thermometer>
         <temp-mode type="int">0</temp-mode>

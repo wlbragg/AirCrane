@@ -9,9 +9,7 @@
       <object-name>Face</object-name>
       <object-name>Case</object-name>
       <object-name>fasteners</object-name>
-  </effect>
-  <effect>
-      <inherits-from>Models/Effects/interior/cockpit-flashlight</inherits-from>
+
       <object-name>inhg-p</object-name>
       <object-name>Needle10000-p</object-name>
       <object-name>Needle1000-p</object-name>
@@ -23,6 +21,19 @@
       <object-name>Needle100-c</object-name>
       <object-name>disk-c</object-name>
   </effect>
+  <!--effect>
+      <inherits-from>Models/Effects/interior/cockpit-flashlight</inherits-from>
+      <object-name>inhg-p</object-name>
+      <object-name>Needle10000-p</object-name>
+      <object-name>Needle1000-p</object-name>
+      <object-name>Needle100-p</object-name>
+      <object-name>disk-p</object-name>
+      <object-name>inhg-c</object-name>
+      <object-name>Needle10000-c</object-name>
+      <object-name>Needle1000-c</object-name>
+      <object-name>Needle100-c</object-name>
+      <object-name>disk-c</object-name>
+  </effect-->
   <effect>
       <inherits-from>Models/Effects/interior/interior-glass-reflection-panel-front</inherits-from>
       <object-name>glass</object-name>

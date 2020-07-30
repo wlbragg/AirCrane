@@ -21,7 +21,7 @@ var fcs_params = {
         'yaw' : 0.5, 
         'roll-brake-freq' : 10, 
         'pitch-brake-freq' : 3, 
-        'roll-brake' : 0.4, 
+        'roll-brake' : 0.4,
         'pitch-brake' : 6, 
         'anti-side-slip-gain' : -4.5,
         'heading-adjuster-gain' : -8,
@@ -42,15 +42,26 @@ var fcs_params = {
   },
   'switches' : { # initial status of FCS
     'auto-hover' : 0, 
-    'cas' : 1, 
-    'sas' : 1, 
-    'auto-stabilator' : 1, 
-    'sideslip-adjuster' : 1, 
-    'tail-rotor-adjuster' : 1,
-    'heading-adjuster' : 1,
-    'debug' : 1  # Add this only when you are adjusting FCS parameters
+    'cas' : 0, 
+    'sas' : 0, 
+    'auto-stabilator' : 0, 
+    'sideslip-adjuster' : 0, 
+    'tail-rotor-adjuster' : 0,
+    'heading-adjuster' : 0,
+    'debug' : 0  # Add this only when you are adjusting FCS parameters
   }
 };
+
+# defaults
+#    'auto-hover' : 0, 
+#    'cas' : 1, 
+#    'sas' : 1, 
+#    'auto-stabilator' : 1, 
+#    'sideslip-adjuster' : 1, 
+#    'tail-rotor-adjuster' : 1,
+#    'heading-adjuster' : 1,
+#controls/flight/fcs/switches/auto-hover
+#fcs.afcs.toggleAutoHover();
     
 var setAFCSConfig = func() {
   var confNode = props.globals.getNode("/controls/flight/fcs", 1);
@@ -60,3 +71,68 @@ var setAFCSConfig = func() {
 }
 
 _setlistener("/sim/signals/fdm-initialized", setAFCSConfig);
+
+setlistener("controls/switches/afcs", func (node) {
+    if (node.getValue() and getprop("/controls/switches/afcs-servo")) {
+        sas_status(1);
+        cas_status(1);
+    } else {
+        sas_status(0);
+        cas_status(0);
+    }
+}, 0, 0);
+
+setlistener("controls/switches/afcs-1", func (node) {
+    if (node.getValue() and getprop("/controls/switches/afcs-servo"))
+        sas_status(1);
+    else
+        sas_status(0);
+}, 0, 0);
+
+setlistener("controls/switches/afcs-2", func (node) {
+    if (node.getValue() and getprop("/controls/switches/afcs-servo"))
+        cas_status(1);
+    else
+        cas_status(0);
+}, 0, 0);
+
+setlistener("controls/switches/afcs-servo", func (node) {
+    if (!node.getValue() and (getprop("/controls/switches/afcs-1") or getprop("/controls/switches/afcs-2") or getprop("/controls/switches/afcs"))) {
+        cas_status(0);
+        sas_status(0);
+        setprop("/controls/switches/afcs", 0);
+        setprop("/controls/switches/afcs-fault", 1);
+        setprop("/controls/flight/fcs/switches/auto-stabilizer", 0);
+        setprop("/controls/flight/fcs/switches/sideslip-adjuster", 0);
+        setprop("/controls/flight/fcs/switches/tail-rotor-adjuster", 0);
+        setprop("/controls/flight/fcs/switches/heading-adjuster", 0);
+    } else {
+        setprop("/controls/switches/afcs-fault", 0);
+        setprop("/controls/flight/fcs/switches/auto-stabilizer", 1);
+        setprop("/controls/flight/fcs/switches/sideslip-adjuster", 1);
+        setprop("/controls/flight/fcs/switches/tail-rotor-adjuster", 1);
+        setprop("/controls/flight/fcs/switches/heading-adjuster", 1);
+        if (getprop("/controls/switches/afcs-1"))
+            setprop("/controls/flight/fcs/switches/sas", 1);
+        if (getprop("/controls/switches/afcs-2"))
+            setprop("/controls/flight/fcs/switches/cas", 1);
+    }
+}, 0, 0);
+
+var sas_status = func(x) {
+    if (x == 1) {
+        setprop("/controls/flight/fcs/switches/sas", 1);
+        setprop("/controls/switches/afcs-fault", 0);
+    } else {
+        setprop("/controls/flight/fcs/switches/sas", 0);
+    }
+}
+
+var cas_status = func(x) {
+    if (x == 1) {
+        setprop("controls/flight/fcs/switches/cas", 1);
+        setprop("controls/switches/afcs-fault", 0);
+    } else {
+        setprop("controls/flight/fcs/switches/cas", 0);
+    }
+}

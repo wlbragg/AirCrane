@@ -36,10 +36,10 @@
           </binding>
       </item>
       <item>
-          <label>Cargo Settings</label>
+          <label>FCS Management</label>
           <binding>
             <command>dialog-show</command>
-            <dialog-name>aicargo-dialog</dialog-name>
+            <dialog-name>fcs-dialog</dialog-name>
           </binding>
       </item>
     </menu>

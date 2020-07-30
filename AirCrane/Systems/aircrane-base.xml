@@ -12,6 +12,14 @@
     
     <sound>
       <path>Aircraft/AirCrane/Sounds/aircrane-sound.xml</path>
+		  <click-avionics type="bool">false</click-avionics>
+		  <click-button-down type="bool">false</click-button-down>
+		  <click-button-up type="bool">false</click-button-up>
+		  <click-knob type="bool">false</click-knob>
+		  <click-cover type="bool">false</click-cover>
+		  <click-pos-x type="double">-12.21132</click-pos-x>
+		  <click-pos-y type="double"> -0.03679</click-pos-y>
+		  <click-pos-z type="double"> -0.83401</click-pos-z>
     </sound>
    
     <model>
@@ -82,6 +90,7 @@
             </grain>
           </interior>
         </effects>
+        <model-f type="bool">false</model-f>
       </aircrane>
       <hitch>
         <openhook type="bool">false</openhook>
@@ -200,241 +209,6 @@
       <garmin196-visible type="bool">false</garmin196-visible>
     </model>
 
-    <!-- cargo hauling feature -->
-    <cargo>
-      <enabled type="bool">true</enabled>
-      <currentyaw type="double">0.0</currentyaw>
-      <cargoalt type="double">0.0</cargoalt>
-      <harnessalt type="double">0.0</harnessalt>
-      <cargoheight type="double">0.0</cargoheight>
-      <cargoharness type="double">0.0</cargoharness>
-      <rope>
-        <bearing type="double">1.0</bearing>
-        <pull-factor-pitch type="double">0.0</pull-factor-pitch>
-        <pull-factor-roll type="double">0.0</pull-factor-roll>
-        <pull-force type="double">9</pull-force>
-
-        <flex-force type="double">0.09</flex-force>
-        <!-- factor = rope segment length in M -->
-        <factor type="double">0.19</factor>
-        <!-- offset from wheelbase to top of rope in M -->
-        <offset type="double">2.87</offset>
-        <bendforce type="int">29</bendforce>
-        <damping type="double">0.1</damping>
-        <load-damping type="double">1</load-damping>
-        <stiffness type="double">10.0</stiffness>
-        <correction type="double">-.01</correction>
-
-        <coil-flag type="int">1</coil-flag>
-        <coil-factor type="int">20.0</coil-factor>
-        <!-- offset from wheelbase to blender 0-Z in ft ? -->
-        <coil-angle type="double">13.8</coil-angle>
-        <yaw1  type="double">0.0</yaw1>
-        <segments-reeled-in type="int">0</segments-reeled-in>
-
-        <length type="int">0</length>
-
-        <pitch1  type="double">0.0</pitch1>
-        <pitch2  type="double">0.0</pitch2>
-        <pitch3  type="double">0.0</pitch3>
-        <pitch4  type="double">0.0</pitch4>
-        <pitch5  type="double">0.0</pitch5>
-        <pitch6  type="double">0.0</pitch6>
-        <pitch7  type="double">0.0</pitch7>
-        <pitch8  type="double">0.0</pitch8>
-        <pitch9  type="double">0.0</pitch9>
-        <pitch10 type="double">0.0</pitch10>
-        <pitch11 type="double">0.0</pitch11>
-        <pitch12 type="double">0.0</pitch12>
-        <pitch13 type="double">0.0</pitch13>
-        <pitch14 type="double">0.0</pitch14>
-        <pitch15 type="double">0.0</pitch15>
-        <pitch16 type="double">0.0</pitch16>
-        <pitch17 type="double">0.0</pitch17>
-        <pitch18 type="double">0.0</pitch18>
-        <pitch19 type="double">0.0</pitch19>
-        <pitch20 type="double">0.0</pitch20>
-        <pitch21 type="double">0.0</pitch21>
-        <pitch22 type="double">0.0</pitch22>
-        <pitch23 type="double">0.0</pitch23>
-        <pitch24 type="double">0.0</pitch24>
-        <pitch25 type="double">0.0</pitch25>
-        <pitch26 type="double">0.0</pitch26>
-        <pitch27 type="double">0.0</pitch27>
-        <pitch28 type="double">0.0</pitch28>
-        <pitch29 type="double">0.0</pitch29>
-        <pitch30 type="double">0.0</pitch30>
-        <pitch31 type="double">0.0</pitch31>
-        <pitch32 type="double">0.0</pitch32>
-        <pitch33 type="double">0.0</pitch33>
-        <pitch34 type="double">0.0</pitch34>
-        <pitch35 type="double">0.0</pitch35>
-        <pitch36 type="double">0.0</pitch36>
-        <pitch37 type="double">0.0</pitch37>
-        <pitch38 type="double">0.0</pitch38>
-        <pitch39 type="double">0.0</pitch39>
-        <pitch40 type="double">0.0</pitch40>
-        <pitch41 type="double">0.0</pitch41>
-        <pitch42 type="double">0.0</pitch42>
-        <pitch43 type="double">0.0</pitch43>
-        <pitch44 type="double">0.0</pitch44>
-        <pitch45 type="double">0.0</pitch45>
-        <pitch46 type="double">0.0</pitch46>
-        <pitch47 type="double">0.0</pitch47>
-        <pitch48 type="double">0.0</pitch48>
-        <pitch49 type="double">0.0</pitch49>
-        <pitch50 type="double">0.0</pitch50>
-        <pitch51 type="double">0.0</pitch51>
-        <pitch52 type="double">0.0</pitch52>
-        <pitch53 type="double">0.0</pitch53>
-        <pitch54 type="double">0.0</pitch54>
-        <pitch55 type="double">0.0</pitch55>
-        <pitch56 type="double">0.0</pitch56>
-        <pitch57 type="double">0.0</pitch57>
-        <pitch58 type="double">0.0</pitch58>
-        <pitch59 type="double">0.0</pitch59>
-        <pitch60 type="double">0.0</pitch60>
-        <pitch61 type="double">0.0</pitch61>
-        <pitch62 type="double">0.0</pitch62>
-        <pitch63 type="double">0.0</pitch63>
-        <pitch64 type="double">0.0</pitch64>
-        <pitch65 type="double">0.0</pitch65>
-        <pitch66 type="double">0.0</pitch66>
-        <pitch67 type="double">0.0</pitch67>
-        <pitch68 type="double">0.0</pitch68>
-        <pitch69 type="double">0.0</pitch69>
-        <pitch70 type="double">0.0</pitch70>
-        <pitch71 type="double">0.0</pitch71>
-        <pitch72 type="double">0.0</pitch72>
-        <pitch73 type="double">0.0</pitch73>
-        <pitch74 type="double">0.0</pitch74>
-        <pitch75 type="double">0.0</pitch75>
-        <pitch76 type="double">0.0</pitch76>
-        <pitch77 type="double">0.0</pitch77>
-        <pitch78 type="double">0.0</pitch78>
-        <pitch79 type="double">0.0</pitch79>
-        <pitch80 type="double">0.0</pitch80>
-        <pitch81 type="double">0.0</pitch81>
-        <pitch82 type="double">0.0</pitch82>
-        <pitch83 type="double">0.0</pitch83>
-        <pitch84 type="double">0.0</pitch84>
-        <pitch85 type="double">0.0</pitch85>
-        <pitch86 type="double">0.0</pitch86>
-        <pitch87 type="double">0.0</pitch87>
-        <pitch88 type="double">0.0</pitch88>
-        <pitch89 type="double">0.0</pitch89>
-        <pitch90 type="double">0.0</pitch90>
-        <roll1  type="double">0.0</roll1>
-        <roll2  type="double">0.0</roll2>
-        <roll3  type="double">0.0</roll3>
-        <roll4  type="double">0.0</roll4>
-        <roll5  type="double">0.0</roll5>
-        <roll6  type="double">0.0</roll6>
-        <roll7  type="double">0.0</roll7>
-        <roll8  type="double">0.0</roll8>
-        <roll9  type="double">0.0</roll9>
-        <roll10 type="double">0.0</roll10>
-        <roll11 type="double">0.0</roll11>
-        <roll12 type="double">0.0</roll12>
-        <roll13 type="double">0.0</roll13>
-        <roll14 type="double">0.0</roll14>
-        <roll15 type="double">0.0</roll15>
-        <roll16 type="double">0.0</roll16>
-        <roll17 type="double">0.0</roll17>
-        <roll18 type="double">0.0</roll18>
-        <roll19 type="double">0.0</roll19>
-        <roll20 type="double">0.0</roll20>
-        <roll21 type="double">0.0</roll21>
-        <roll22 type="double">0.0</roll22>
-        <roll23 type="double">0.0</roll23>
-        <roll24 type="double">0.0</roll24>
-        <roll25 type="double">0.0</roll25>
-        <roll26 type="double">0.0</roll26>
-        <roll27 type="double">0.0</roll27>
-        <roll28 type="double">0.0</roll28>
-        <roll29 type="double">0.0</roll29>
-        <roll30 type="double">0.0</roll30>
-        <roll31 type="double">0.0</roll31>
-        <roll32 type="double">0.0</roll32>
-        <roll33 type="double">0.0</roll33>
-        <roll34 type="double">0.0</roll34>
-        <roll35 type="double">0.0</roll35>
-        <roll36 type="double">0.0</roll36>
-        <roll37 type="double">0.0</roll37>
-        <roll38 type="double">0.0</roll38>
-        <roll39 type="double">0.0</roll39>
-        <roll40 type="double">0.0</roll40>
-        <roll41 type="double">0.0</roll41>
-        <roll42 type="double">0.0</roll42>
-        <roll43 type="double">0.0</roll43>
-        <roll44 type="double">0.0</roll44>
-        <roll45 type="double">0.0</roll45>
-        <roll46 type="double">0.0</roll46>
-        <roll47 type="double">0.0</roll47>
-        <roll48 type="double">0.0</roll48>
-        <roll49 type="double">0.0</roll49>
-        <roll50 type="double">0.0</roll50>
-        <roll51 type="double">0.0</roll51>
-        <roll52 type="double">0.0</roll52>
-        <roll53 type="double">0.0</roll53>
-        <roll54 type="double">0.0</roll54>
-        <roll55 type="double">0.0</roll55>
-        <roll56 type="double">0.0</roll56>
-        <roll57 type="double">0.0</roll57>
-        <roll58 type="double">0.0</roll58>
-        <roll59 type="double">0.0</roll59>
-        <roll60 type="double">0.0</roll60>
-        <roll61 type="double">0.0</roll61>
-        <roll62 type="double">0.0</roll62>
-        <roll63 type="double">0.0</roll63>
-        <roll64 type="double">0.0</roll64>
-        <roll65 type="double">0.0</roll65>
-        <roll66 type="double">0.0</roll66>
-        <roll67 type="double">0.0</roll67>
-        <roll68 type="double">0.0</roll68>
-        <roll69 type="double">0.0</roll69>
-        <roll70 type="double">0.0</roll70>
-        <roll71 type="double">0.0</roll71>
-        <roll72 type="double">0.0</roll72>
-        <roll73 type="double">0.0</roll73>
-        <roll74 type="double">0.0</roll74>
-        <roll75 type="double">0.0</roll75>
-        <roll76 type="double">0.0</roll76>
-        <roll77 type="double">0.0</roll77>
-        <roll78 type="double">0.0</roll78>
-        <roll79 type="double">0.0</roll79>
-        <roll80 type="double">0.0</roll80>
-        <roll81 type="double">0.0</roll81>
-        <roll82 type="double">0.0</roll82>
-        <roll83 type="double">0.0</roll83>
-        <roll84 type="double">0.0</roll84>
-        <roll85 type="double">0.0</roll85>
-        <roll86 type="double">0.0</roll86>
-        <roll87 type="double">0.0</roll87>
-        <roll88 type="double">0.0</roll88>
-        <roll89 type="double">0.0</roll89>
-        <roll90 type="double">0.0</roll90>
-      </rope>
-
-      <current-cargo-distance type="double">0.0</current-cargo-distance>
-      <current-connection-distance type="double">0.0</current-connection-distance>
-      <current-cargo-name type="string">Name</current-cargo-name>
-      <current-cargo-elevation type="double">0.0</current-cargo-elevation>
-      <current-cargo-elevation-two type="double">0.0</current-cargo-elevation-two>
-
-    </cargo>
-
-    <gui>
-      <dialogs>
-        <aicargo-dialog>
-          <longline type="bool">false</longline>
-          <connection type="bool">false</connection>
-          <alt-origin type="bool">false</alt-origin>
-        </aicargo-dialog>
-      </dialogs>
-    </gui>
-    <!-- end cargo hauling feature -->
-
 	  <submodels>
 		  <serviceable type="bool">true</serviceable>
 		  <path>Aircraft/AirCrane/Models/submodels.xml</path>
@@ -442,6 +216,10 @@
 
     <systems>
         <path>Aircraft/AirCrane/Systems/systems.xml</path>
+
+        <autopilot n="0">
+            <path>Aircraft/AirCrane/Systems/engineering-station.xml</path>
+        </autopilot>
 
         <property-rule n="100">
           <path>Aircraft/AirCrane/Systems/als-lights.xml</path>
@@ -452,41 +230,35 @@
         <property-rule n="102">
           <path>Aircraft/AirCrane/Systems/electrical.xml</path>
         </property-rule>
+        <property-rule n="103">
+          <path>Aircraft/AirCrane/Systems/afcs.xml</path>
+        </property-rule>
     </systems>
 
     <aircraft-data>
-      <path>sim/model/firetank/enabled</path>
-      <path>sim/model/watercannon/enabled</path>
-      <path>/sim/model/cableguard/enabled</path>
-      <path>/sim/model/winchcover/enabled</path>
-      <path>/sim/model/hitch/enabled</path>
-      <path>/sim/model/steppanel/enabled</path>
-      <path>/sim/model/aircrane/persistent</path>
-      <path>/sim/model/aircrane/currentlat</path>
-      <path>/sim/model/aircrane/currentlon</path>
-      <path>/sim/model/aircrane/currentalt</path>
-      <path>/sim/model/aircrane/currenthead</path>
-      <path>/sim/model/aircrane/currentpitch</path>
-      <path>/sim/model/aircrane/currentroll</path>
-      <path>/sim/model/aircrane/currentvsfps</path>
-      <path>/sim/model/aircrane/currenteqnt</path>
-      <path>/rotors/main/bladesvisible</path>
-      <path>/sim/model/aircrane/effects/particles/enabled</path>
-      <path>/sim/model/aircrane/effects/shadow</path>
-      <path>/sim/model/occupants</path>
-      <!--path>/sim/model/aircrane/effects/als-shadow</path-->
-      <!-- cargo hauling feature -->
-      <path>/sim/gui/dialogs/aicargo-dialog/longline</path>
-      <path>/sim/gui/dialogs/aicargo-dialog/connection</path>
-      <path>/sim/gui/dialogs/aicargo-dialog/connector</path>
-      <path>/sim/gui/dialogs/aicargo-dialog/alt-origin</path>
-      <path>/sim/model/garmin196-visible</path>
-
-      <path>/controls/switches/cws-bright</path>
-
-      <path>/sim/gui/show-range</path>
-
-      <!-- end cargo hauling feature -->
+        <path>/sim/model/aircrane/persistent</path>
+        <path>/sim/model/aircrane/currentlat</path>
+        <path>/sim/model/aircrane/currentlon</path>
+        <path>/sim/model/aircrane/currentalt</path>
+        <path>/sim/model/aircrane/currenthead</path>
+        <path>/sim/model/aircrane/currentpitch</path>
+        <path>/sim/model/aircrane/currentroll</path>
+        <path>/sim/model/aircrane/currentvsfps</path>
+        <path>/sim/model/aircrane/currenteqnt</path>
+        <path>/sim/model/aircrane/effects/particles/enabled</path>
+        <path>/sim/model/firetank/enabled</path>
+        <path>/sim/model/watercannon/enabled</path>
+        <path>/sim/model/cableguard/enabled</path>
+        <path>/sim/model/winchcover/enabled</path>
+        <path>/sim/model/hitch/enabled</path>
+        <path>/sim/model/steppanel/enabled</path>
+        <path>/sim/model/garmin196-visible</path>
+        <path>/controls/switches/cws-bright</path>
+        <path>/sim/model/occupants</path>
+        <path>/rotors/main/bladesvisible</path>
+        <path>/sim/model/aircrane/model-f</path>
+        <!--path>/sim/model/aircrane/effects/als-shadow</path>
+        <path>/sim/model/aircrane/effects/shadow</path-->
     </aircraft-data> 
 
     <multiplay>
@@ -600,16 +372,11 @@
       <file>Aircraft/AirCrane/Nasal/hoseanimation.nas</file>
       <file>Aircraft/AirCrane/Nasal/tankoperations.nas</file>
       <file>Aircraft/AirCrane/Nasal/engine.nas</file>
-      <!-- cargo hauling feature -->
-      <file>Aircraft/AirCrane/Nasal/aircraft-dialog.nas</file>
-      <!--file>Aircraft/AirCrane/Nasal/longlineanimation.nas</file-->
-      <file>Aircraft/AirCrane/Nasal/longlineanimation-uc.nas</file>
-      <file>Aircraft/AirCrane/Nasal/cargooperations.nas</file>
-      <!-- end cargo hauling feature -->
+      <file>Aircraft/AirCrane/Nasal/dialogs.nas</file>
+      <file>Aircraft/AirCrane/Nasal/sound.nas</file>
     </aircrane>
     <electrical>
-        <!--file>Aircraft/AirCrane/Nasal/electrical.nas</file-->
-        <file>Aircraft/AirCrane/Nasal/Electrical.nas</file>
+        <file>Aircraft/AirCrane/Nasal/electrical.nas</file>
     </electrical>
     <fcs>
       <file>Aircraft/AirCrane/Nasal/fcs-management.nas</file>
@@ -633,15 +400,18 @@
         <bug type="double">0</bug>
         <pressure type="double">0</pressure>
         <flow type="double">0</flow>
+        <temp type="double">0</temp>
       </aft>
       <fwd>
         <level-lbs type="int">0</level-lbs>
         <bug type="double">0</bug>
         <pressure type="double">0</pressure>
         <flow type="double">0</flow>
+        <temp type="double">0</temp>
       </fwd>
       <aux>
         <level-lbs type="int">0</level-lbs>
+        <temp type="double">0</temp>
       </aux>
       <shutoff>
         <lever>
