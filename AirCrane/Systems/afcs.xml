@@ -19,66 +19,175 @@
 
 <PropertyList>
 
-    <!--
-    <logic>
-        <name>AFCS CAS On</name>
-        <input>
-            <and>
-                <property>/controls/switches/afcs-servo</property>
-            </and>
-        </input>
-        <input>
-            <value>0.0</value>
-        </input>
-        <output>
-            <property>controls/electric/engine[0]/generator-ready</property>
-        </output>
-    </logic>
+  <!-- Altitude hold.  2 stage cascade controller. -->
 
-    <logic>
-        <name>Rectifier 1 Ready</name>
-        <input>
-            <and>
-                <or>
-                    <property>/controls/electric/engine[1]/generator-ready</property>
-                    <property>/controls/electric/engine[1]/generator-ready</property>
-                </or>
-                <property>/controls/switches/rect-1</property>
-            </and>
-        </input>
-        <input>
-            <value>0.0</value>
-        </input>
-        <output>
-            <property>systems/electrical/outputs/cws-rect-1</property>
-        </output>
-    </logic>
+  <!-- Stage #1 sets target rate of climb based on diff between current alt -->
+  <!-- and target altitude. -->
+  <pi-simple-controller>
+    <name>Altitude Hold (Altimeter based) Stage 1</name>
+    <debug>false</debug>
+    <enable>
+      <prop>/controls/switches/bar-alt</prop>
+    </enable>
+    <input>
+      <prop>/position/altitude-ft</prop>
+    </input>
+    <reference>
+      <prop>/position/altitude-ft</prop>
+    </reference>
+    <output>
+      <prop>/autopilot/internal/target-climb-rate-fps</prop>
+    </output>
+    <config>
+      <Kp>1</Kp>          <!-- proportional gain -->
+      <Ki>0.0</Ki>          <!-- integral gain -->
+      <u_min>-16.67</u_min> <!-- minimum output clamp -->
+      <u_max>8.33</u_max>   <!-- maximum output clamp -->
+    </config>
+  </pi-simple-controller>
 
-    <filter>
-        <name>Environment Temperature Source</name>
-        <type>gain</type>
-        <input>
-            <condition>
-                <equals>
-                    <property>/controls/thermometer/temp-mode</property>
-                    <value>1</value>
-                </equals>
-            </condition>
-            <property>/environment/temperature-degc</property>
-        </input>
-        <input>
-            <condition>
-                <equals>
-                    <property>/controls/thermometer/temp-mode</property>
-                    <value>0</value>
-                </equals>
-            </condition>
-            <property>/environment/temperature-degc</property>
-        </input>
-        <output>
-            <property>sim/model/aircrane/environment/air-temperature</property>
-        </output>
-    </filter>
--->
+  <!-- Stage #2 drives the elevator-trim to achieve the desired climb rate. -->
+  <pid-controller>
+    <name>Altitude Hold (Altimeter based) Stage 2</name>
+    <debug>false</debug>
+    <enable>
+      <prop>/controls/switches/bar-alt</prop>
+    </enable>
+    <input>
+      <prop>/velocities/vertical-speed-fps</prop>
+    </input>
+    <reference>
+      <prop>/autopilot/internal/target-climb-rate-fps</prop>
+    </reference>
+    <output>
+      <prop>/controls/engines/engine[0]/throttle</prop>
+	
+    </output>
+    <config>
+      <Kp>-1.0</Kp>        <!-- proportional gain -->
+      <beta>1.0</beta>     <!-- input value weighing factor -->
+      <alpha>0.1</alpha>   <!-- low pass filter weighing factor -->
+      <gamma>0.0</gamma>   <!-- input value weighing factor for -->
+                           <!-- unfiltered derivative error -->
+      <Ti>5.0</Ti>         <!-- integrator time -->
+      <Td>0.00001</Td>     <!-- derivator time -->
+      <u_min>-20.0</u_min> <!-- minimum output clamp -->
+      <u_max>20.0</u_max>  <!-- maximum output clamp -->
+    </config>
+  </pid-controller>
+
+  <!-- AGL hold.  2 stage cascade controller. -->
+
+  <!-- Stage #1 sets target rate of climb based on diff between current agl -->
+  <!-- and target agl. -->
+  <pi-simple-controller>
+    <name>AGL Hold (Altimeter based) Stage 1</name>
+    <debug>false</debug>
+    <enable>
+      <prop>/autopilot/locks/altitude</prop>
+      <value>agl-hold</value>
+    </enable>
+    <input>
+      <prop>/position/altitude-agl-ft</prop>
+    </input>
+    <reference>
+      <prop>/autopilot/settings/target-agl-ft</prop>
+    </reference>
+    <output>
+      <prop>/autopilot/internal/target-climb-rate-fps</prop>
+    </output>
+    <config>
+      <Kp>1</Kp>          <!-- proportional gain -->
+      <Ki>0.0</Ki>          <!-- integral gain -->
+      <u_min>-16.67</u_min> <!-- minimum output clamp -->
+      <u_max>8.33</u_max>   <!-- maximum output clamp -->
+    </config>
+  </pi-simple-controller>
+
+  <!-- Stage #2 drives the elevator-trim to achieve the desired climb rate. -->
+  <pid-controller>
+    <name>AGL Hold (Altimeter based) Stage 2</name>
+    <debug>false</debug>
+    <enable>
+      <prop>/autopilot/locks/altitude</prop>
+      <value>agl-hold</value>
+    </enable>
+    <input>
+      <prop>/velocities/vertical-speed-fps</prop>
+    </input>
+    <reference>
+      <prop>/autopilot/internal/target-climb-rate-fps</prop>
+    </reference>
+    <output>
+      <prop>/controls/engines/engine[0]/throttle</prop>
+    </output>
+     <config>
+      <Kp>-1.0</Kp>        <!-- proportional gain -->
+      <beta>1.0</beta>     <!-- input value weighing factor -->
+      <alpha>0.1</alpha>   <!-- low pass filter weighing factor -->
+      <gamma>0.0</gamma>   <!-- input value weighing factor for -->
+                           <!-- unfiltered derivative error -->
+      <Ti>5.0</Ti>        <!-- integrator time -->
+      <Td>0.00001</Td>     <!-- derivator time -->
+      <u_min>-20.0</u_min> <!-- minimum output clamp -->
+      <u_max>20.0</u_max>  <!-- maximum output clamp -->
+    </config>
+  </pid-controller>
+  
+  <!-- Yaw Trim.  2 stage cascade controller. -->
+
+  <!-- Stage #1 sets target yaw based on diff between current heading -->
+  <!-- and target heading. -->
+  <pi-simple-controller>
+    <name>Heading Hold (DG based) Stage 1</name>
+    <debug>false</debug>
+    <enable>
+      <prop>/controls/switches/yaw</prop>
+    </enable>
+    <input>
+      <prop>/orientation/heading-deg</prop>
+    </input>
+    <reference>
+      <prop>/orientation/heading-deg</prop>
+    </reference>
+    <output>
+      <prop>/autopilot/internal/target-yaw-rate-fps</prop>
+    </output>
+    <config>
+      <Kp>1</Kp>          <!-- proportional gain -->
+      <Ki>0.0</Ki>          <!-- integral gain -->
+      <u_min>-16.67</u_min> <!-- minimum output clamp -->
+      <u_max>8.33</u_max>   <!-- maximum output clamp -->
+    </config>
+  </pi-simple-controller>
+
+  <!-- Stage #2 drives the rudder trim to achieve the desired turn rate. -->
+  <pid-controller>
+    <name>Heading Change (DG based) Stage 2</name>
+    <debug>false</debug>
+    <enable>
+      <prop>/controls/switches/yaw</prop>
+    </enable>
+    <input>
+      <prop>/orientation/yaw-rate-degps</prop>
+    </input>
+    <reference>
+      <prop>/autopilot/internal/target-yaw-rate-fps</prop>
+    </reference>
+    <output>
+      <prop>/controls/flight/rudder</prop>
+    </output>
+    <config>
+      <Kp>-1.0</Kp>        <!-- proportional gain -->
+      <beta>1.0</beta>     <!-- input value weighing factor -->
+      <alpha>0.1</alpha>   <!-- low pass filter weighing factor -->
+      <gamma>0.0</gamma>   <!-- input value weighing factor for -->
+                           <!-- unfiltered derivative error -->
+      <Ti>5.0</Ti>        <!-- integrator time -->
+      <Td>0.00001</Td>     <!-- derivator time -->
+      <u_min>-2.0</u_min> <!-- minimum output clamp -->
+      <u_max>2.0</u_max>  <!-- maximum output clamp -->
+    </config>
+  </pid-controller>
 
 </PropertyList>

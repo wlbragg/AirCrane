@@ -651,7 +651,6 @@ setlistener("/sim/signals/reinit", func {
   cmdarg().getBoolValue() and return;
   cprint("32;1", "reinit");
   turbine_timer.stop();
-  tankop_timer.stop();
   collective.setDoubleValue(1);
   variant.scan();
   crashed = 0;

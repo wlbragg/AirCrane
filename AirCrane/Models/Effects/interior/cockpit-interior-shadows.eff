@@ -3,7 +3,7 @@
   <name>cockpit-interior-shadows</name>
   <inherits-from>Aircraft/AirCrane/Models/Effects/interior/cockpit-interior</inherits-from>
   <parameters>
-    <texture n="4">
+    <!--texture n="4">
       <type>cubemap</type>
       <images>
         <positive-x>Models/Effects/interior/0004m.png</positive-x>
@@ -13,13 +13,25 @@
         <positive-z>Models/Effects/interior/0006m.png</positive-z>
         <negative-z>Models/Effects/interior/0005m.png</negative-z>
       </images>
-    </texture>
+    </texture-->
     <!-- the cube center must be the same as the camera x,y,z in blend -->
-    <opacity-cube-center type="vec3d" n="0"> -8.62744 0.0 -1.08545</opacity-cube-center>
+    <!--opacity-cube-center type="vec3d" n="0"> -8.62744 0.0 -1.08545</opacity-cube-center>
     <opacity-cube-scale type="vec3d" n="0"> 1 1 1</opacity-cube-scale>
-    <opacity-cube-angle type="float">0.0</opacity-cube-angle>
-  <light-filter-one type="vec3d">0.5 0.5 0.5</light-filter-one>
-  <light-filter-two type="vec3d">0.9 0.2 0.2</light-filter-two>
-  <light-radius type="float">13</light-radius>
+    <opacity-cube-angle type="float">0.0</opacity-cube-angle-->
+	<texture n="4">
+		<type>cubemap</type>
+		<images>
+			<positive-x>Models/Effects/interior/white.png</positive-x>
+			<negative-x>Models/Effects/interior/white.png</negative-x>
+			<positive-y>Models/Effects/interior/white.png</positive-y>
+			<negative-y>Models/Effects/interior/white.png</negative-y>
+			<positive-z>Models/Effects/interior/white.png</positive-z>
+			<negative-z>Models/Effects/interior/white.png</negative-z>
+		</images>
+	</texture>
+	<shadow-mapping-enabled>true</shadow-mapping-enabled>
+    <light-filter-one type="vec3d">0.5 0.5 0.5</light-filter-one>
+    <light-filter-two type="vec3d">0.9 0.2 0.2</light-filter-two>
+    <light-radius type="float">13</light-radius>
   </parameters>
 </PropertyList>

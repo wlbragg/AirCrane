@@ -30,6 +30,24 @@
       <cockpit type="int"> 1 </cockpit>
       <model type="int">   4 </model>
     </rating>
+	        <!-- Splash screens. One is randomly chosen when FlightGear starts -->
+        <previews>
+            <preview>
+                <type>cockpit</type>
+                <path>Previews/aircrane-preview1.jpg</path>
+                <splash type="bool">true</splash>
+            </preview>
+            <preview>
+                <type>exterior</type>
+                <path>Previews/aircrane-preview2.jpg</path>
+                <splash type="bool">true</splash>
+            </preview>
+            <preview>
+                <type>exterior</type>
+                <path>Previews/aircrane-preview3.jpg</path>
+                <splash type="bool">true</splash>
+            </preview>
+        </previews>
 
   </sim>
 
