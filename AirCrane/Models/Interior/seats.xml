@@ -7,12 +7,13 @@
 
   <animation>
     <!-- Objets opaques -->
-     <object-name>seatframeplt</object-name>
+    <object-name>seatframeplt</object-name>
     <object-name>seathdwrplt</object-name>
     <object-name>seatcushplt</object-name>
     <object-name>seatframecoplt</object-name>
     <object-name>seathdwrcoplt</object-name>
     <object-name>seatcushcoplt</object-name>
+    <object-name>seatplate</object-name>
   </animation>
 
   <!-- ALS Interior Shadows -->
@@ -24,6 +25,7 @@
     <object-name>seatframecoplt</object-name>
     <object-name>seathdwrcoplt</object-name>
     <object-name>seatcushcoplt</object-name>
+    <object-name>seatplate</object-name>
   </effect>
 
 </PropertyList>

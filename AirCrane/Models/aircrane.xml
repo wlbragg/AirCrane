@@ -371,9 +371,9 @@
       </and>
     </condition>
     <offsets>
-      <x-m>-9.37908</x-m>
-      <y-m> 0.476044</y-m>
-      <z-m>-1.255300</z-m>
+      <x-m>-9.36</x-m>
+      <y-m> 0.35</y-m>
+      <z-m>-1.226</z-m>
       <heading-deg>-13.0</heading-deg>
     </offsets>
   </model>
@@ -391,7 +391,7 @@
     </condition>
     <offsets>
       <x-m>-9.36025</x-m>
-      <y-m>-0.20100</y-m>
+      <y-m>-0.29</y-m>
       <z-m>-1.21999</z-m>
       <heading-deg>-3.0</heading-deg>
     </offsets>

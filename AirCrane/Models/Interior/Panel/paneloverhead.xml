@@ -54,6 +54,7 @@
       <object-name>hydrod</object-name>
       <object-name>pins</object-name>
       <object-name>pivot</object-name>
+      <object-name>hydline</object-name>
 
       <object-name>lightsbase</object-name>
       <object-name>panelextlights</object-name>

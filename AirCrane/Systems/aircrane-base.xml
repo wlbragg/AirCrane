@@ -245,6 +245,10 @@
         <path>/sim/model/aircrane/currentroll</path>
         <path>/sim/model/aircrane/currentvsfps</path>
         <path>/sim/model/aircrane/currenteqnt</path>
+		<path>/controls/switches/cws-bright</path>
+        <path>/sim/model/occupants</path>
+        <path>/rotors/main/bladesvisible</path>
+        <path>/sim/model/aircrane/model-f</path>
         <path>/sim/model/aircrane/effects/particles/enabled</path>
         <path>/sim/model/firetank/enabled</path>
         <path>/sim/model/watercannon/enabled</path>
@@ -253,10 +257,6 @@
         <path>/sim/model/hitch/enabled</path>
         <path>/sim/model/steppanel/enabled</path>
         <path>/sim/model/garmin196-visible</path>
-        <path>/controls/switches/cws-bright</path>
-        <path>/sim/model/occupants</path>
-        <path>/rotors/main/bladesvisible</path>
-        <path>/sim/model/aircrane/model-f</path>
         <!--path>/sim/model/aircrane/effects/als-shadow</path>
         <path>/sim/model/aircrane/effects/shadow</path-->
     </aircraft-data> 
