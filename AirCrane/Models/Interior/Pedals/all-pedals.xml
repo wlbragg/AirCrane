@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+
+  <!-- Pilot pedals -->
+  <model>
+    <path>Aircraft/AirCrane/Models/Interior/Pedals/pedals.xml</path>
+    <offsets>
+      <x-m> -0.00094 </x-m>
+      <y-m>  0.64160 </y-m>
+      <z-m> -0.00234 </z-m>
+    </offsets>
+  </model>
+
+  <!-- Copilot pedals -->
+  <model>
+    <path>Aircraft/AirCrane/Models/Interior/Pedals/pedals.xml</path>
+    <offsets>
+      <x-m> -0.00094 </x-m>
+      <y-m> -0.64046 </y-m>
+      <z-m> -0.00234 </z-m>
+    </offsets>
+  </model>
+
+</PropertyList>

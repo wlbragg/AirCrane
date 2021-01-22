@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+
+  <model>
+    <path>Aircraft/AirCrane/Models/Interior/Overhead/Instruments/empty/empty1.xml</path>
+    <offsets>
+      <x-m>  0.28628 </x-m>
+      <y-m> -0.27550 </y-m>
+      <z-m>  0.01452 </z-m>
+      <pitch-deg> 87 </pitch-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/AirCrane/Models/Interior/Overhead/Instruments/empty/empty2.xml</path>
+    <offsets>
+      <x-m>  0.18986 </x-m>
+      <y-m> -0.09193 </y-m>
+      <z-m>  0.00962 </z-m>
+      <pitch-deg> 87 </pitch-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/AirCrane/Models/Interior/Overhead/Instruments/empty/empty3.xml</path>
+    <offsets>
+      <x-m> 0.26215 </x-m>
+      <y-m> 0.09437 </y-m>
+      <z-m> 0.01341 </z-m>
+      <pitch-deg> 87 </pitch-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/AirCrane/Models/Interior/Overhead/Instruments/empty/empty4.xml</path>
+    <offsets>
+      <x-m> -0.26851 </x-m>
+      <y-m> -0.27995 </y-m>
+      <z-m> -0.01500 </z-m>
+      <pitch-deg> 87 </pitch-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/AirCrane/Models/Interior/Overhead/Instruments/empty/empty5.xml</path>
+    <offsets>
+      <x-m> -0.25654 </x-m>
+      <y-m> -0.09613 </y-m>
+      <z-m> -0.01431 </z-m>
+      <pitch-deg> 87 </pitch-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/AirCrane/Models/Interior/Overhead/Instruments/empty/empty6.xml</path>
+    <offsets>
+      <x-m> -0.27453 </x-m>
+      <y-m>  0.08974 </y-m>
+      <z-m> -0.01542 </z-m>
+      <pitch-deg> 87 </pitch-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/AirCrane/Models/Interior/Overhead/Instruments/empty/empty7.xml</path>
+    <offsets>
+      <x-m>  0.26388 </x-m>
+      <y-m> -0.08816 </y-m>
+      <z-m>  0.01335 </z-m>
+      <pitch-deg> 87 </pitch-deg>
+    </offsets>
+  </model>
+
+</PropertyList>

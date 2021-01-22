@@ -3,12 +3,12 @@
 <PropertyList>
 
   <!-- Chaque pales est formée de 4 parties
-  
+
        Axe 0               Axe 1               Axe 2               Axe 3
          +______blade1_______+_______blade2______+______blade3_______+_____blade4________
       center
         of
-       rotor 
+       rotor
 
   -->
   <path>blade.ac</path>
@@ -47,7 +47,7 @@
     <object-name>propdisc3</object-name>
     <object-name>propdisc4</object-name>
   </effect>
-  <!--  
+
   <animation>
     <type>noshadow</type>
     <object-name>propblur1</object-name>
@@ -59,7 +59,7 @@
     <object-name>propdisc3</object-name>
     <object-name>propdisc4</object-name>
   </animation>
-  -->
+
   <!-- Sélection blade/blur/disc main rotor-->
   <animation>
     <name>DiscComplet</name>
@@ -105,6 +105,7 @@
     </condition>
   </animation>
 
+  <!-- Blades always visible
   <animation>
     <name>PaleComplete</name>
     <object-name>blade1</object-name>
@@ -117,18 +118,12 @@
     <type>select</type>
     <object-name>PaleComplete</object-name>
     <condition>
-      <or>
-        <less-than>
-          <property>rotors/main/rpm</property>
-          <value>150</value>
-        </less-than>
-        <equals>
-          <property>rotors/main/bladesvisible</property>
-          <value>1</value>
-        </equals>
-      </or>
+      <less-than>
+        <property>rotors/main/rpm</property>
+        <value>150</value>
+      </less-than>
     </condition>
-  </animation>
+  </animation> -->
 
   <!-- Axe 0 de pliage des pâles pour le cône -->
   <animation>

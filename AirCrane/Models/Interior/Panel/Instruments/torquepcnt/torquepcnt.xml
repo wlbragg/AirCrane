@@ -4,75 +4,62 @@
 
   <path>torquepcnt.ac</path>
 
-  <effect>
-      <inherits-from>Models/Effects/interior/cockpit-interior-shadows</inherits-from>
-      <object-name>Face</object-name>
-      <object-name>Case</object-name>
-      <object-name>fasteners</object-name>
-      <object-name>needlecover</object-name>
+  <animation>
+    <object-name>fond</object-name>
+    <object-name>face</object-name>
+    <object-name>needle</object-name>
 
-      <object-name>needle-a</object-name>
-  </effect>
-  <!--effect>
-      <inherits-from>Models/Effects/interior/cockpit-flashlight</inherits-from>
-      <object-name>needle-a</object-name>
-  </effect-->
+    <object-name>vitre</object-name>
+  </animation>
+
   <effect>
-      <inherits-from>Models/Effects/interior/interior-glass-reflection-panel-front</inherits-from>
-      <object-name>glass</object-name>
+    <inherits-from>Aircraft/AirCrane/Models/Effects/Interior/cockpit-interior</inherits-from>
+    <object-name>fond</object-name>
+    <object-name>face</object-name>
+    <object-name>needle</object-name>
+  </effect>
+
+  <effect>
+    <inherits-from>Aircraft/AirCrane/Models/Effects/Interior/interior-glass-reflection-panel-front</inherits-from>
+    <object-name>vitre</object-name>
   </effect>
 
   <animation>
-    <type>rotate</type>
-    <object-name>needle-a</object-name>
-    <property>sim/model/aircrane/torque-pct</property>
-    <interpolation>
-      <entry><ind>-999</ind><dep>   1</dep></entry>
-      <entry><ind>   0</ind><dep>   0</dep></entry>
-      <entry><ind> 100</ind><dep> -24</dep></entry>
-      <entry><ind> 200</ind><dep> -49</dep></entry>
-      <entry><ind> 300</ind><dep> -71</dep></entry>
-      <entry><ind> 400</ind><dep> -95</dep></entry>
-      <entry><ind> 500</ind><dep>-119</dep></entry>
-      <entry><ind> 600</ind><dep>-143</dep></entry>
-      <entry><ind> 700</ind><dep>-167</dep></entry>
-      <entry><ind>1300</ind><dep>-312</dep></entry>
-      <entry><ind>9999</ind><dep>-313</dep></entry>
-    </interpolation>
-    <axis>
-        <x1-m>-9.38531</x1-m>
-        <y1-m> 0.473719</y1-m> 
-        <z1-m>-1.55405</z1-m>
-        <x2-m>-9.3833</x2-m>
-        <y2-m> 0.47372</y2-m>
-        <z2-m>-1.55383</z2-m>
-    </axis>
+    <type>material</type>
+    <object-name>face</object-name>
+    <object-name>needle</object-name>
+    <condition>
+      <property>controls/electric/battery-bus-switch</property>
+    </condition>
+    <emission>
+      <factor-prop>controls/lighting/luminosite-lights</factor-prop>
+      <red>   0.50 </red>
+      <green> 0.40 </green>
+      <blue>  0.30 </blue>
+    </emission>
   </animation>
 
   <animation>
     <type>rotate</type>
-    <object-name>needle-b</object-name>
+    <object-name>needle</object-name>
     <property>sim/model/aircrane/torque-pct</property>
     <interpolation>
-      <entry><ind>-999</ind><dep>   1</dep></entry>
-      <entry><ind>   0</ind><dep>   0</dep></entry>
-      <entry><ind> 100</ind><dep> -24</dep></entry>
-      <entry><ind> 200</ind><dep> -49</dep></entry>
-      <entry><ind> 300</ind><dep> -71</dep></entry>
-      <entry><ind> 400</ind><dep> -95</dep></entry>
-      <entry><ind> 500</ind><dep>-119</dep></entry>
-      <entry><ind> 600</ind><dep>-143</dep></entry>
-      <entry><ind> 700</ind><dep>-167</dep></entry>
-      <entry><ind>1300</ind><dep>-312</dep></entry>
-      <entry><ind>9999</ind><dep>-313</dep></entry>
+      <entry><ind> -999 </ind><dep>    1 </dep></entry>
+      <entry><ind>    0 </ind><dep>    0 </dep></entry>
+      <entry><ind>  100 </ind><dep>  -24 </dep></entry>
+      <entry><ind>  200 </ind><dep>  -49 </dep></entry>
+      <entry><ind>  300 </ind><dep>  -71 </dep></entry>
+      <entry><ind>  400 </ind><dep>  -95 </dep></entry>
+      <entry><ind>  500 </ind><dep> -119 </dep></entry>
+      <entry><ind>  600 </ind><dep> -143 </dep></entry>
+      <entry><ind>  700 </ind><dep> -167 </dep></entry>
+      <entry><ind> 1300 </ind><dep> -312 </dep></entry>
+      <entry><ind> 9999 </ind><dep> -313 </dep></entry>
     </interpolation>
     <axis>
-        <x1-m>-9.38594</x1-m>
-        <y1-m>-0.723275</y1-m> 
-        <z1-m>-1.54531</z1-m>
-        <x2-m>-9.38339</x2-m>
-        <y2-m>-0.723274</y2-m>
-        <z2-m>-1.54502</z2-m>
+      <x> 1 </x>
+      <y> 0 </y>
+      <z> 0 </z>
     </axis>
   </animation>
 

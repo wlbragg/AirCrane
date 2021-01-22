@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+
+  <path>fanR.ac</path>
+
+  <animation>
+    <!-- Objets opaques -->
+    <object-name>fan</object-name>
+
+  </animation>
+
+  <effect>
+    <inherits-from>Aircraft/AirCrane/Models/Effects/Interior/cockpit-interior</inherits-from>
+	<object-name>fan</object-name>
+  </effect>
+
+</PropertyList>

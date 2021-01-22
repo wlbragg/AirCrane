@@ -2,46 +2,30 @@
 
 <PropertyList>
 
-  <path>interior.ac</path>
-  <texture-path>../../Models/Interior/Panel</texture-path>
+  <!--path>interior.ac</path-->
 
-  <effect>
-    <inherits-from>Aircraft/AirCrane/Models/Effects/interior/sealtexture</inherits-from>
-    <object-name>tour</object-name>
-  </effect>
+  <!-- Interior -->
+  <model>
+    <path>interior-f.ac</path>
+    <condition>
+        <property>sim/model/aircrane/model-f</property>
+    </condition>
+  </model>
 
-  <effect>
-    <inherits-from>Aircraft/AirCrane/Models/Effects/interior/walltexture</inherits-from>
+  <model>
+    <path>interior-e.ac</path>
+    <condition>
+		<not>
+			<property>sim/model/aircrane/model-f</property>
+		</not>
+    </condition>
+  </model>
+
+  <animation>
+    <!-- Objets opaques -->
     <object-name>interieur</object-name>
-    <object-name>planchet</object-name>
-  </effect>
-
-  <effect>
-    <inherits-from>Aircraft/AirCrane/Models/Effects/exterior/exterior-glass-reflection</inherits-from>
-    <object-name>intvitres</object-name>
-    <object-name>intvitresporteG</object-name>
-    <object-name>intvitresporteD</object-name>
-    <object-name>intvitresreardoor</object-name>
-    <object-name>intvitresstarboard</object-name>
-  </effect>
-
-  <effect>
-    <inherits-from>Aircraft/AirCrane/Models/Effects/interior/interior-glass-reflection-front</inherits-from>
-    <object-name>intvitresint</object-name>
-    <object-name>intvitresreardoorint</object-name>
-  </effect>
-
-  <effect>
-    <inherits-from>Aircraft/AirCrane/Models/Effects/interior/interior-glass-reflection-side</inherits-from>
-    <object-name>intvitresporteGint</object-name>
-    <object-name>intvitresporteDint</object-name>
-    <object-name>intvitresstarboardint</object-name>
-  </effect>
-
-  <!-- ALS Interior Shadows -->
-  <effect>
-    <inherits-from>Aircraft/AirCrane/Models/Effects/interior/cockpit-interior-shadows</inherits-from>
     <object-name>tour</object-name>
+    <object-name>planchet</object-name>
     <object-name>floor</object-name>
     <object-name>reposepieds</object-name>
     <object-name>accoudoir</object-name>
@@ -52,105 +36,125 @@
     <object-name>plaque</object-name>
     <object-name>intporteG</object-name>
     <object-name>intporteD</object-name>
-    <object-name>intreardoor</object-name>
-    <object-name>intstarboarddoor</object-name>
-    <object-name>siegegrue1</object-name>
-    <object-name>siegegrue2</object-name>
+    <object-name>winchcomp</object-name>
     <object-name>harness</object-name>
-	<object-name>fan</object-name>
+
+    <!-- Objets transparents -->
+    <object-name>intvitres</object-name>
+    <object-name>intvitresporteG</object-name>
+    <object-name>intvitresporteD</object-name>
+    <object-name>intvitresstarboard</object-name>
+    <object-name>intvitresreardoor</object-name>
+  </animation>
+
+  <effect>
+    <inherits-from>Aircraft/AirCrane/Models/Effects/Interior/cockpit-interior</inherits-from>
+    <object-name>interieur</object-name>
+    <object-name>tour</object-name>
+    <object-name>planchet</object-name>
+    <object-name>floor</object-name>
+    <object-name>reposepieds</object-name>
+    <object-name>accoudoir</object-name>
+    <object-name>barre</object-name>
+    <object-name>gruesiege1</object-name>
+    <object-name>gruesiege2</object-name>
+    <object-name>grueinstr</object-name>
+    <object-name>plaque</object-name>
+    <object-name>intporteG</object-name>
+    <object-name>intporteD</object-name>
+    <object-name>winchcomp</object-name>
+    <object-name>harness</object-name>
   </effect>
-  
-  <!-- Planche de bord -->
+
+  <!-- working for Compositor -->
+  <effect>
+    <inherits-from>Effects/model-transparent</inherits-from>
+    <object-name>intvitres</object-name>
+    <object-name>intvitresporteG</object-name>
+    <object-name>intvitresporteD</object-name>
+    <object-name>intvitresstarboard</object-name>
+    <object-name>intvitresreardoor</object-name>
+  </effect>
+
+  <!-- Panel -->
   <model>
     <path>Aircraft/AirCrane/Models/Interior/Panel/panel.xml</path>
     <offsets>
-      <x-m> 0.0 </x-m>
-      <y-m> 0.0 </y-m>
-      <z-m> 0.0 </z-m>
+      <x-m> -9.39232 </x-m>
+      <y-m>  0.00000 </y-m>
+      <z-m> -1.50912 </z-m>
     </offsets>
   </model>
 
+  <!-- Pedestal -->
   <model>
-    <path>Aircraft/AirCrane/Models/Interior/Panel/paneloverhead.xml</path>
+    <path>Aircraft/AirCrane/Models/Interior/Pedestal/pedestal.xml</path>
     <offsets>
-      <x-m> 0.0 </x-m>
-      <y-m> 0.0 </y-m>
-      <z-m> 0.0 </z-m>
+      <x-m> -9.39232 </x-m>
+      <y-m>  0.00000 </y-m>
+      <z-m> -1.50912 </z-m>
     </offsets>
   </model>
 
-  <!-- Engineering Station -->
+  <!-- Overhead -->
   <model>
-    <path>Aircraft/AirCrane/Models/Interior/Panel/Instruments/engstatione/engstatione.xml</path>
-    <condition>
-      <not>
-        <property>sim/model/aircrane/model-f</property>
-      </not>
-    </condition>
+    <path>Aircraft/AirCrane/Models/Interior/Overhead/overhead.xml</path>
     <offsets>
-      <x-m> 0.0 </x-m>
-      <y-m> 0.0 </y-m>
-      <z-m> 0.0 </z-m>
+      <x-m> -8.61341 </x-m>
+      <y-m>  0.00000 </y-m>
+      <z-m> -0.58131 </z-m>
     </offsets>
   </model>
 
   <!-- Engineering Station -->
   <model>
-    <path>Aircraft/AirCrane/Models/Interior/Panel/Instruments/engstationf/engstationf.xml</path>
-    <condition>
-      <property>sim/model/aircrane/model-f</property>
-    </condition>
+    <path>Aircraft/AirCrane/Models/Interior/Engineering/engineering.xml</path>
     <offsets>
-      <x-m> 0.0 </x-m>
-      <y-m> 0.0 </y-m>
-      <z-m> 0.0 </z-m>
+      <x-m> -7.57466 </x-m>
+      <y-m> -0.96734 </y-m>
+      <z-m> -2.26114 </z-m>
     </offsets>
   </model>
 
   <!-- Pedals -->
   <model>
-    <path>Aircraft/AirCrane/Models/Interior/pedals.xml</path>
+    <path>Aircraft/AirCrane/Models/Interior/Pedals/all-pedals.xml</path>
     <offsets>
-      <x-m> 0.0 </x-m>
-      <y-m> 0.0 </y-m>
-      <z-m> 0.0 </z-m>
+      <x-m> -9.43674 </x-m>
+      <y-m>  0.00000 </y-m>
+      <z-m> -2.04662 </z-m>
     </offsets>
   </model>
 
   <!-- Seats -->
   <model>
-    <path>Aircraft/AirCrane/Models/Interior/seats.xml</path>
-    <offsets>
-      <x-m> 0.0 </x-m>
-      <y-m> 0.0 </y-m>
-      <z-m> 0.0 </z-m>
-    </offsets>
+    <path>Aircraft/AirCrane/Models/Interior/Seats/all-seats.xml</path>
   </model>
 
   <!-- Yokes -->
   <model>
-    <path>Aircraft/AirCrane/Models/Interior/Yoke/yoke.xml</path>
-    <offsets>
-      <x-m> 0.0 </x-m>
-      <y-m> 0.0 </y-m>
-      <z-m> 0.0 </z-m>
-    </offsets>
+    <path>Aircraft/AirCrane/Models/Interior/Yoke/all-yokes.xml</path>
+  </model>
+
+  <!-- Fans -->
+  <model>
+    <path>Aircraft/AirCrane/Models/Interior/Fans/all-fans.xml</path>
   </model>
 
   <!-- Winch -->
   <model>
-    <path>Aircraft/AirCrane/Models/Interior/winch.xml</path>
+    <path>Aircraft/AirCrane/Models/Interior/Winch/winch.xml</path>
     <offsets>
-      <x-m> 0.0 </x-m>
-      <y-m> 0.0 </y-m>
-      <z-m> 0.0 </z-m>
+      <x-m> -2.377910 </x-m>
+      <y-m>  0.016045 </y-m>
+      <z-m> -1.100290 </z-m>
     </offsets>
   </model>
 
   <!-- Pilote -->
   <model>
     <path>Aircraft/AirCrane/Models/Pilot/pilot.xml</path>
-    <condition> 
+    <condition>
       <property>sim/model/occupants</property>
     </condition>
     <offsets>
@@ -165,9 +169,8 @@
     <name>IntLaPorteGauche</name>
     <object-name>intporteG</object-name>
     <object-name>intvitresporteG</object-name>
-    <object-name>intvitresporteGint</object-name>
   </animation>
-  
+
   <animation>
     <type>pick</type>
     <object-name>IntLaPorteGauche</object-name>
@@ -181,7 +184,7 @@
       </binding>
     </action>
   </animation>
-  
+
   <animation>
     <type>rotate</type>
     <object-name>IntLaPorteGauche</object-name>
@@ -189,21 +192,20 @@
     <factor> -100 </factor>
     <axis>
       <x1-m> -9.06146 </x1-m>
-      <y1-m> -1.08691 </y1-m> 
+      <y1-m> -1.08691 </y1-m>
       <z1-m> -1.57367 </z1-m>
       <x2-m> -8.87113 </x2-m>
       <y2-m> -0.92390 </y2-m>
       <z2-m> -0.79338 </z2-m>
     </axis>
   </animation>
-  
+
   <animation>
     <name>IntLaPorteDroite</name>
     <object-name>intporteD</object-name>
     <object-name>intvitresporteD</object-name>
-    <object-name>intvitresporteDint</object-name>
   </animation>
-  
+
   <animation>
     <type>pick</type>
     <object-name>IntLaPorteDroite</object-name>
@@ -217,7 +219,7 @@
       </binding>
     </action>
   </animation>
-  
+
   <animation>
     <type>rotate</type>
     <object-name>IntLaPorteDroite</object-name>
@@ -225,7 +227,7 @@
     <factor> 100 </factor>
     <axis>
       <x1-m> -9.06146 </x1-m>
-      <y1-m>  1.08731 </y1-m> 
+      <y1-m>  1.08731 </y1-m>
       <z1-m> -1.57367 </z1-m>
       <x2-m> -8.87113 </x2-m>
       <y2-m>  0.92431 </y2-m>
@@ -239,7 +241,7 @@
     <object-name>intvitresstarboard</object-name>
     <object-name>intstarboarddoor</object-name>
   </animation>
-  
+
   <animation>
     <type>pick</type>
     <object-name>IntStarboardDoor</object-name>
@@ -253,7 +255,7 @@
       </binding>
     </action>
   </animation>
-  
+
   <animation>
     <type>rotate</type>
     <object-name>IntStarboardDoor</object-name>
@@ -261,7 +263,7 @@
     <factor> -110 </factor>
     <axis>
       <x1-m> -7.63431 </x1-m>
-      <y1-m>  1.10955 </y1-m> 
+      <y1-m>  1.10955 </y1-m>
       <z1-m> -1.79148 </z1-m>
       <x2-m> -7.63414 </x2-m>
       <y2-m>  1.11068 </y2-m>
@@ -275,7 +277,7 @@
     <object-name>intreardoor</object-name>
     <object-name>intvitresreardoor</object-name>
   </animation>
-  
+
   <animation>
     <type>pick</type>
     <object-name>IntEngineer</object-name>
@@ -289,19 +291,42 @@
       </binding>
     </action>
   </animation>
-  
+
   <animation>
     <type>rotate</type>
     <object-name>IntEngineer</object-name>
+    <condition>
+		<property>sim/model/aircrane/model-f</property>
+    </condition>
     <property>sim/model/door-positions/engineer/position-norm</property>
     <factor> -170 </factor>
     <axis>
       <x1-m> -7.01647 </x1-m>
-      <y1-m>  0.665   </y1-m> 
+      <y1-m>  0.665   </y1-m>
       <z1-m> -1.11658 </z1-m>
       <x2-m> -7.01653 </x2-m>
       <y2-m>  0.66501 </y2-m>
       <z2-m> -2.37967 </z2-m>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>IntEngineer</object-name>
+    <condition>
+		<not>
+			<property>sim/model/aircrane/model-f</property>
+		</not>
+    </condition>
+    <property>sim/model/door-positions/engineer/position-norm</property>
+    <factor> -170 </factor>
+    <axis>
+      <x1-m> -7.59194 </x1-m>
+      <y1-m>  0.78551 </y1-m>
+      <z1-m> -1.11463 </z1-m>
+      <x2-m> -7.58729 </x2-m>
+      <y2-m>  0.78401 </y2-m>
+      <z2-m> -2.38094 </z2-m>
     </axis>
   </animation>
 

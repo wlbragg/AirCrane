@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+
+  <path>switch.ac</path>
+
+  <animation>
+    <object-name>base</object-name>
+    <object-name>switch</object-name>
+  </animation>
+
+  <effect>
+    <inherits-from>Aircraft/AirCrane/Models/Effects/Interior/cockpit-interior</inherits-from>
+    <object-name>base</object-name>
+    <object-name>switch</object-name>
+  </effect>
+
+  <animation>
+    <type>material</type>
+    <object-name>base</object-name>
+    <object-name>switch</object-name>
+    <condition>
+      <property>controls/electric/battery-bus-switch</property>
+    </condition>
+    <emission>
+      <factor-prop>controls/lighting/luminosite-lights</factor-prop>
+      <red>   0.50 </red>
+      <green> 0.40 </green>
+      <blue>  0.30 </blue>
+    </emission>
+  </animation>
+
+  <!-- AUX Fuel Tank Pump 2 "Switch" -->
+  <animation>
+    <type>knob</type>
+    <object-name>switch</object-name>
+    <property>/controls/fuel/afpno2</property>
+    <factor>-30</factor>
+    <offset-deg>0</offset-deg>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+    <action>
+      <binding>
+        <command>property-adjust</command>
+        <property>/controls/fuel/afpno2</property>
+        <factor>1</factor>
+        <min>0</min>
+        <max>1</max>
+        <wrap>false</wrap>
+      </binding>
+      <binding>
+        <command>nasal</command>
+        <script>aircrane.click("avionics")</script>
+      </binding>
+    </action>
+    <hovered>
+      <binding>
+        <command>set-tooltip</command>
+        <tooltip-id>afpno2</tooltip-id>
+        <label>AUX Fuel Tank Pump 2: %s</label>
+        <property>/controls/fuel/afpno2</property>
+        <mapping>nasal</mapping>
+        <script>
+          var modes = ['Off', 'On'];
+          return modes[arg[0]];
+        </script>
+      </binding>
+    </hovered>
+  </animation>
+
+</PropertyList>

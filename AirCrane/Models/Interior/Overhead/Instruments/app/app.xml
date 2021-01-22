@@ -1,0 +1,320 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+
+  <path>app.ac</path>
+
+  <animation>
+    <object-name>panel</object-name>
+    <object-name>lampbase</object-name>
+    <object-name>buttonbase</object-name>
+    <object-name>appmaster</object-name>
+    <object-name>appstart</object-name>
+    <object-name>appstop</object-name>
+    <object-name>appfire</object-name>
+    <object-name>overspeedon</object-name>
+    <object-name>hitempon</object-name>
+    <object-name>lowoilpresson</object-name>
+    <object-name>overspeedoff</object-name>
+    <object-name>hitempoff</object-name>
+    <object-name>lowoilpressoff</object-name>
+  </animation>
+
+  <effect>
+    <inherits-from>Aircraft/AirCrane/Models/Effects/Interior/cockpit-interior</inherits-from>
+    <object-name>panel</object-name>
+    <object-name>lampbase</object-name>
+    <object-name>buttonbase</object-name>
+    <object-name>appmaster</object-name>
+    <object-name>appstart</object-name>
+    <object-name>appstop</object-name>
+    <object-name>appfire</object-name>
+    <object-name>overspeedon</object-name>
+    <object-name>hitempon</object-name>
+    <object-name>lowoilpresson</object-name>
+    <object-name>overspeedoff</object-name>
+    <object-name>hitempoff</object-name>
+    <object-name>lowoilpressoff</object-name>
+  </effect>
+
+  <model>
+    <path>Aircraft/AirCrane/Models/Interior/Overhead/Instruments/app/apprpmper/apprpmper.xml</path>
+    <offsets>
+      <x-m>  0.001 </x-m>
+      <y-m> -0.034 </y-m>
+      <z-m>  0.047 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/AirCrane/Models/Interior/Overhead/Instruments/app/egt/egt.xml</path>
+    <offsets>
+      <x-m>  0.004 </x-m>
+      <y-m> -0.034 </y-m>
+      <z-m> -0.038 </z-m>
+    </offsets>
+  </model>
+
+  <!-- ####################################################### -->
+  <!-- ####################### app ########################### -->
+  <!-- ####################################################### -->
+  <animation>
+    <type>pick</type>
+    <object-name>appmaster</object-name>
+    <visible>true</visible>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>property-toggle</command>
+        <property>controls/switches/app-master</property>
+      </binding>
+      <binding>
+        <command>nasal</command>
+        <script>
+          var app_master = getprop("controls/switches/app-master");
+          if (!app_master) aircrane.app_stop();
+          aircrane.click("avionics");
+        </script>
+      </binding>
+    </action>
+    <hovered>
+      <binding>
+        <command>set-tooltip</command>
+        <tooltip-id>appmaster</tooltip-id>
+        <label>APP Master: %s</label>
+        <property>controls/switches/app-master</property>
+        <mapping>nasal</mapping>
+        <script>
+          var modes = ['Off', 'On'];
+          return modes[arg[0]];
+        </script>
+      </binding>
+    </hovered>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>appmaster</object-name>
+    <property>controls/switches/app-master</property>
+    <factor>30</factor>
+    <offset-deg>-10</offset-deg>
+    <center>
+      <x-m> 0.006901 </x-m>
+      <y-m> 0.046493 </y-m>
+      <z-m> 0.055484 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>slider</type>
+    <object-name>appstart</object-name>
+    <property>controls/switches/app-start</property>
+    <repeatable>false</repeatable>
+    <factor>0.002</factor>
+    <axis>
+      <x> -1 </x>
+      <y>  0 </y>
+      <z>  0 </z>
+    </axis>
+    <action>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>nasal</command>
+        <script>
+          setprop("/controls/switches/app-start", 1);
+          setprop("/controls/switches/app-start-20", 1);
+        </script>
+      </binding>
+    </action>
+    <release>
+      <binding>
+        <command>nasal</command>
+        <script>
+          setprop("/controls/switches/app-start", 0);
+          setprop("/controls/switches/app-start-20", 0);
+          aircrane.click("avionics");
+        </script>
+      </binding>
+    </release>
+    <hovered>
+      <binding>
+        <command>set-tooltip</command>
+        <tooltip-id>appstart</tooltip-id>
+        <label>APP Start: %s</label>
+        <mapping>on-off</mapping>
+        <property>controls/switches/app-start</property>
+      </binding>
+    </hovered>
+  </animation>
+
+  <animation>
+    <type>slider</type>
+    <object-name>appstop</object-name>
+    <property>controls/switches/app-stop</property>
+    <repeatable>false</repeatable>
+    <factor>0.002</factor>
+    <axis>
+      <x> -1 </x>
+      <y>  0 </y>
+      <z>  0 </z>
+    </axis>
+    <action>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>nasal</command>
+        <script>
+          setprop("/controls/switches/app-stop", 1);
+          aircrane.app_stop();
+        </script>
+      </binding>
+    </action>
+    <release>
+      <binding>
+        <command>nasal</command>
+        <script>
+          setprop("/controls/switches/app-stop", 0);
+          aircrane.click("avionics");
+        </script>
+      </binding>
+    </release>
+    <hovered>
+      <binding>
+        <command>set-tooltip</command>
+        <tooltip-id>appstop</tooltip-id>
+        <label>APP Stop: %s</label>
+        <mapping>on-off</mapping>
+        <property>controls/switches/app-stop</property>
+      </binding>
+    </hovered>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>overspeedon</object-name>
+    <condition>
+      <property>/systems/electrical/outputs/app-overspeed-on</property>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>material</type>
+    <object-name>overspeedon</object-name>
+    <emission>
+      <factor-prop>/systems/electrical/outputs/app-overspeed-on</factor-prop>
+      <red>   0.7 </red>
+      <green> 0.5 </green>
+      <blue>  0.5 </blue>
+    </emission>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>overspeedoff</object-name>
+    <condition>
+      <not>
+        <property>/systems/electrical/outputs/app-overspeed-on</property>
+      </not>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>hitempon</object-name>
+    <condition>
+      <property>/systems/electrical/outputs/hi-exh-temp-on</property>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>material</type>
+    <object-name>hitempon</object-name>
+    <emission>
+      <factor-prop>/systems/electrical/outputs/hi-exh-temp-on</factor-prop>
+      <red>   0.7 </red>
+      <green> 0.5 </green>
+      <blue>  0.5 </blue>
+    </emission>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>hitempoff</object-name>
+    <condition>
+      <not>
+        <property>/systems/electrical/outputs/hi-exh-temp-on</property>
+      </not>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>material</type>
+    <object-name>appfire</object-name>
+    <emission>
+      <factor-prop>systems/electrical/outputs/app-fire-on</factor-prop>
+      <red>   0.7 </red>
+      <green> 0.5 </green>
+      <blue>  0.5 </blue>
+    </emission>
+  </animation>
+
+  <!--
+  <animation>
+    <type>select</type>
+    <object-name>appfireon</object-name>
+    <condition>
+      <greater-than>
+        <property>sim/model/watercannon/position-deg</property>
+        <value>-7.5</value>
+      </greater-than>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>hitempon</object-name>
+    <condition>
+      <greater-than>
+        <property>sim/model/watercannon/position-deg</property>
+        <value>-7.5</value>
+      </greater-than>
+    </condition>
+  </animation>
+  <animation>
+    <type>select</type>
+    <object-name>hitempoff</object-name>
+    <condition>
+      <less-than>
+        <property>sim/model/watercannon/position-deg</property>
+        <value>7.5</value>
+      </less-than>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>lowoilpresson</object-name>
+    <condition>
+      <greater-than>
+        <property>sim/model/watercannon/position-deg</property>
+        <value>-7.5</value>
+      </greater-than>
+    </condition>
+  </animation>
+  <animation>
+    <type>select</type>
+    <object-name>lowoilpressoff</object-name>
+    <condition>
+      <less-than>
+        <property>sim/model/watercannon/position-deg</property>
+        <value>7.5</value>
+      </less-than>
+    </condition>
+  </animation>
+  -->
+</PropertyList>

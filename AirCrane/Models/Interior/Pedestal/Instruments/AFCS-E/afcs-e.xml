@@ -1,0 +1,432 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+
+  <path>afcs-e.ac</path>
+
+  <animation>
+    <object-name>base</object-name>
+    <object-name>afcs</object-name>
+    <object-name>baralt</object-name>
+    <object-name>rolltrim</object-name>
+    <object-name>cgtrim</object-name>
+    <object-name>yawtrim</object-name>
+    <object-name>baroff</object-name>
+    <object-name>baron</object-name>
+    <object-name>afcsservo</object-name>
+    <object-name>sticktrimcover</object-name>
+    <object-name>sticktrim</object-name>
+  </animation>
+
+  <effect>
+    <inherits-from>Aircraft/AirCrane/Models/Effects/Interior/cockpit-interior</inherits-from>
+    <object-name>base</object-name>
+    <object-name>afcs</object-name>
+    <object-name>baralt</object-name>
+    <object-name>rolltrim</object-name>
+    <object-name>cgtrim</object-name>
+    <object-name>yawtrim</object-name>
+    <object-name>baroff</object-name>
+    <object-name>baron</object-name>
+    <object-name>afcsservo</object-name>
+    <object-name>sticktrimcover</object-name>
+    <object-name>sticktrim</object-name>
+  </effect>
+
+  <!-- AFCS "Button" -->
+  <animation>
+    <type>slider</type>
+    <object-name>afcs</object-name>
+    <property>/controls/switches/spring-switch/afcs</property>
+    <factor>0.002</factor>
+    <axis>
+      <x>  0 </x>
+      <y>  0 </y>
+      <z> -1 </z>
+    </axis>
+    <action>
+      <binding>
+        <command>nasal</command>
+        <script>
+          if (getprop("/controls/switches/spring-switch/afcs") == 0) {
+            setprop("/controls/switches/spring-switch/afcs", 1);
+            if (!getprop("/controls/switches/afcs")) {
+              setprop("/controls/switches/afcs", 1);
+            } else {
+              setprop("/controls/switches/afcs", 0);
+            }
+            aircrane.click("button-up", -9.18262, -0.099266, -1.75216);
+          }
+        </script>
+      </binding>
+    </action>
+    <release>
+      <binding>
+        <command>nasal</command>
+        <script>
+          if (getprop("/controls/switches/spring-switch/afcs") == 1) {
+            setprop("/controls/switches/spring-switch/afcs", 0);
+            aircrane.click("button-up", -9.18262, -0.099266, -1.75216);
+          }
+        </script>
+      </binding>
+    </release>
+    <hovered>
+      <binding>
+        <command>set-tooltip</command>
+        <tooltip-id>afcsservo</tooltip-id>
+        <label>AFCS</label>
+      </binding>
+    </hovered>
+  </animation>
+  <animation>
+    <object-name>afcs</object-name>
+    <type>material</type>
+    <condition>
+      <and>
+        <property>/controls/switches/afcs</property>
+        <property>/systems/electrical/outputs/digital-display</property>
+      </and>
+    </condition>
+    <emission>
+      <red>   0 </red>
+      <green> 1 </green>
+      <blue>  1 </blue>
+    </emission>
+  </animation>
+
+  <!-- BAR Alt "Button" -->
+  <animation>
+    <type>slider</type>
+    <object-name>baralt</object-name>
+    <property>/controls/switches/spring-switch/bar-alt</property>
+    <factor>0.002</factor>
+    <axis>
+      <x>  0 </x>
+      <y>  0 </y>
+      <z> -1 </z>
+    </axis>
+    <action>
+      <binding>
+        <command>nasal</command>
+        <script>
+          if (getprop("/controls/switches/spring-switch/bar-alt") == 0) {
+            setprop("/controls/switches/spring-switch/bar-alt", 1);
+            if (!getprop("/controls/switches/bar-alt")) {
+              setprop("/controls/switches/bar-alt", 1);
+            } else {
+              setprop("/controls/switches/bar-alt", 0);
+            }
+            aircrane.click("button-up", -9.18295, -0.063997, -1.75222);
+          }
+        </script>
+      </binding>
+    </action>
+    <release>
+      <binding>
+        <command>nasal</command>
+        <script>
+          if (getprop("/controls/switches/spring-switch/bar-alt") == 1) {
+            setprop("/controls/switches/spring-switch/bar-alt", 0);
+            aircrane.click("button-up", -9.18295, -0.063997, -1.75222);
+          }
+        </script>
+      </binding>
+    </release>
+    <hovered>
+      <binding>
+        <command>set-tooltip</command>
+        <tooltip-id>baralt</tooltip-id>
+        <label>BAR ALT</label>
+      </binding>
+    </hovered>
+  </animation>
+
+  <animation>
+    <object-name>baralt</object-name>
+    <type>material</type>
+    <condition>
+      <and>
+        <property>/controls/switches/bar-alt</property>
+        <property>/systems/electrical/outputs/digital-display</property>
+      </and>
+    </condition>
+    <emission>
+      <red>   0 </red>
+      <green> 1 </green>
+      <blue>  1 </blue>
+    </emission>
+  </animation>
+
+  <animation>
+    <object-name>baroff</object-name>
+    <type>material</type>
+    <condition>
+      <and>
+        <not>
+          <property>/controls/switches/bar-alt</property>
+        </not>
+        <property>/systems/electrical/outputs/digital-display</property>
+      </and>
+    </condition>
+    <emission>
+      <red>   1 </red>
+      <green> 0 </green>
+      <blue>  0 </blue>
+    </emission>
+  </animation>
+
+  <!-- Yaw Trim "Knob" -->
+  <animation>
+    <type>knob</type>
+    <object-name>yawtrim</object-name>
+    <property>controls/knobs/yaw-trim</property>
+    <factor>-60</factor>
+    <offset-deg>0</offset-deg>
+    <center>
+      <x-m>  0.03346 </x-m>
+      <y-m> -0.04460 </y-m>
+      <z-m>  0.00448 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 0 </y>
+      <z> 1 </z>
+    </axis>
+    <action>
+      <repeatable>true</repeatable>
+      <binding>
+        <command>property-adjust</command>
+        <property>controls/knobs/yaw-trim</property>
+        <factor>.01</factor>
+        <min>-3</min>
+        <max>3</max>
+        <wrap>false</wrap>
+      </binding>
+      <binding>
+        <command>nasal</command>
+        <script>aircrane.click("avionics")</script>
+      </binding>
+    </action>
+    <hovered>
+      <binding>
+        <command>set-tooltip</command>
+        <tooltip-id>yawtrim</tooltip-id>
+        <label>Yaw Trim: %s</label>
+        <property>controls/knobs/yaw-trim</property>
+      </binding>
+    </hovered>
+  </animation>
+
+  <!-- Roll Trim "Knob" -->
+  <animation>
+    <type>knob</type>
+    <object-name>rolltrim</object-name>
+    <property>controls/knobs/roll-trim</property>
+    <factor>-60</factor>
+    <offset-deg>0</offset-deg>
+    <center>
+      <x-m> -0.04683 </x-m>
+      <y-m>  0.01701 </y-m>
+      <z-m>  0.00492 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 0 </y>
+      <z> 1 </z>
+    </axis>
+    <action>
+      <repeatable>true</repeatable>
+      <binding>
+        <command>property-adjust</command>
+        <property>controls/knobs/roll-trim</property>
+        <factor>.01</factor>
+        <min>-3</min>
+        <max>3</max>
+        <wrap>false</wrap>
+      </binding>
+      <binding>
+        <command>nasal</command>
+        <script>aircrane.click("avionics")</script>
+      </binding>
+    </action>
+    <hovered>
+      <binding>
+        <command>set-tooltip</command>
+        <tooltip-id>rolltrim</tooltip-id>
+        <label>Roll Trim: %s</label>
+        <property>controls/knobs/roll-trim</property>
+      </binding>
+    </hovered>
+  </animation>
+
+  <!-- CG Trim "Knob" -->
+  <animation>
+    <type>knob</type>
+    <object-name>cgtrim</object-name>
+    <property>controls/knobs/cg-trim</property>
+    <factor>-60</factor>
+    <offset-deg>0</offset-deg>
+    <center>
+      <x-m> 0.02080 </x-m>
+      <y-m> 0.02782 </y-m>
+      <z-m> 0.00645 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 0 </y>
+      <z> 1 </z>
+    </axis>
+    <action>
+      <repeatable>true</repeatable>
+      <binding>
+        <command>property-adjust</command>
+        <property>controls/knobs/cg-trim</property>
+        <factor>.01</factor>
+        <min>-1</min>
+        <max>1</max>
+        <wrap>false</wrap>
+      </binding>
+      <binding>
+        <command>nasal</command>
+        <script>aircrane.click("avionics")</script>
+      </binding>
+    </action>
+    <hovered>
+      <binding>
+        <command>set-tooltip</command>
+        <tooltip-id>cgtrim</tooltip-id>
+        <label>CG Trim: %s</label>
+        <property>controls/knobs/cg-trim</property>
+      </binding>
+    </hovered>
+  </animation>
+
+  <!-- AFCS Servo -->
+  <animation>
+    <type>knob</type>
+    <object-name>afcsservo</object-name>
+    <property>/controls/switches/afcs-servo</property>
+    <offset-deg>-30</offset-deg>
+    <factor>-45</factor>
+    <center>
+      <x-m> -0.03247 </x-m>
+      <y-m>  0.05742 </y-m>
+      <z-m>  0.00695 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+    <action>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>property-toggle</command>
+        <property>/controls/switches/afcs-servo</property>
+      </binding>
+      <binding>
+        <command>nasal</command>
+        <script>
+          aircrane.click("avionics");
+        </script>
+      </binding>
+    </action>
+    <hovered>
+      <binding>
+        <command>set-tooltip</command>
+        <tooltip-id>afcsservo</tooltip-id>
+        <label>AFCS Servo: %s</label>
+        <property>/controls/switches/afcs-servo</property>
+      </binding>
+    </hovered>
+  </animation>
+
+  <!-- Stick Trim "Switch" -->
+  <animation>
+    <type>knob</type>
+    <object-name>sticktrim</object-name>
+    <property>/controls/switches/stick-trim</property>
+    <factor>-45</factor>
+    <offset-deg>0</offset-deg>
+    <center>
+      <x-m> 0.02677 </x-m>
+      <y-m> 0.06055 </y-m>
+      <z-m> 0.00698 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+    <action>
+      <binding>
+        <command>property-adjust</command>
+        <property>/controls/switches/stick-trim</property>
+        <factor>1</factor>
+        <min>0</min>
+        <max>1</max>
+        <wrap>false</wrap>
+      </binding>
+      <binding>
+        <command>nasal</command>
+        <script>aircrane.click("avionics")</script>
+      </binding>
+    </action>
+    <hovered>
+      <binding>
+        <command>set-tooltip</command>
+        <tooltip-id>sticktrim</tooltip-id>
+        <label>Stick Trim: %s</label>
+        <property>/controls/switches/stick-trim</property>
+        <mapping>nasal</mapping>
+        <script>
+          var modes = ['OFF', 'ON'];
+          return modes[arg[0]];
+        </script>
+      </binding>
+    </hovered>
+  </animation>
+
+  <!-- Stick Trim "Cover" -->
+  <animation>
+    <type>knob</type>
+    <object-name>sticktrimcover</object-name>
+    <property>/controls/switches/stick-trim-cover</property>
+    <factor>-70</factor>
+    <offset-deg>0</offset-deg>
+    <center>
+      <x-m> 0.00116 </x-m>
+      <y-m> 0.06033 </y-m>
+      <z-m> 0.00457 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+    <action>
+      <binding>
+        <command>property-adjust</command>
+        <property>/controls/switches/stick-trim-cover</property>
+        <factor>1</factor>
+        <min>0</min>
+        <max>1</max>
+        <wrap>false</wrap>
+      </binding>
+      <binding>
+        <command>nasal</command>
+        <script>aircrane.click("cover")</script>
+      </binding>
+    </action>
+    <hovered>
+      <binding>
+        <command>set-tooltip</command>
+        <tooltip-id>sticktrimcover</tooltip-id>
+        <label>Stick Trim Cover</label>
+        <property>/controls/switches/stick-trim-cover</property>
+      </binding>
+    </hovered>
+  </animation>
+
+</PropertyList>

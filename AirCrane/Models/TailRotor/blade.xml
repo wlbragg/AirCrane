@@ -17,13 +17,13 @@
     <object-name>propblur</object-name>
     <object-name>propdisc</object-name>
   </effect>
-  <!--  
+
   <animation>
     <type>noshadow</type>
     <object-name>propblur</object-name>
     <object-name>propdisc</object-name>
   </animation>
-  -->
+
   <!-- Sélection blade/blur/disc tail rotor-->
   <animation>
     <type>select</type>
@@ -53,6 +53,7 @@
     </condition>
   </animation>
 
+  <!-- Blades always visible
   <animation>
     <type>select</type>
     <object-name>blade</object-name>
@@ -62,13 +63,26 @@
         <value>150</value>
       </less-than>
     </condition>
-  </animation>
+  </animation> -->
 
-  <!-- Incidence de la pale -->
+  <!-- Incidence de la pale
   <animation>
     <type>rotate</type>
     <object-name>blade</object-name>
     <property>rotors/tail/blade/incidence-deg</property>
+    <axis>
+      <x> 1 </x>
+      <y> 0 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+  -->
+  <!-- Incidence de la pale -->
+  <animation>
+    <type>rotate</type>
+    <object-name>blade</object-name>
+    <property>controls/flight/rudder</property>
+    <factor> 15 </factor>
     <axis>
       <x> 1 </x>
       <y> 0 </y>

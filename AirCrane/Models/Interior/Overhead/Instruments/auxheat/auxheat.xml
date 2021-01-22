@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+
+  <path>auxheat.ac</path>
+
+  <animation>
+    <object-name>base</object-name>
+    <object-name>knob-aux-heat-bac</object-name>
+    <object-name>switchauxheatbac</object-name>
+    <object-name>valve-1-closed-off</object-name>
+    <object-name>valve-1-closed-on</object-name>
+    <object-name>valve-1-open-off</object-name>
+    <object-name>valve-1-open-on</object-name>
+  </animation>
+
+  <effect>
+    <inherits-from>Aircraft/AirCrane/Models/Effects/Interior/cockpit-interior</inherits-from>
+    <object-name>base</object-name>
+    <object-name>knob-aux-heat-bac</object-name>
+    <object-name>switchauxheatbac</object-name>
+    <object-name>valve-1-closed-off</object-name>
+    <object-name>valve-1-closed-on</object-name>
+    <object-name>valve-1-open-off</object-name>
+    <object-name>valve-1-open-on</object-name>
+  </effect>
+
+</PropertyList>

@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 
 <PropertyList>
-  
+
   <sim>
-    
+
     <model>
       <livery>
         <name type="string">Erickson</name>
         <index type="int">3</index>
-        <texture>Liveries/2096x2096/Erickson.png</texture>
+        <texture>Liveries/2048x2048/Erickson.png</texture>
         <specular>
           <red>   0.3 </red>
           <green> 0.3 </green>
@@ -18,7 +18,7 @@
       <liverytail>
         <name type="string">Grey</name>
         <index type="int">2</index>
-        <texture>Liveries/1024x1024/greytailrotor.png</texture>
+        <texture>Liveries/256x256/greytailrotor.png</texture>
         <specular>
           <red>   0.3 </red>
           <green> 0.3 </green>
@@ -28,7 +28,7 @@
       <liverytank>
         <name type="string">Default</name>
         <index type="int">1</index>
-        <texture>Liveries/2096x2096/Erickson-water-system.png</texture>
+        <texture>Liveries/10248x1024/Erickson-water-system.png</texture>
         <specular>
           <red>   0.3 </red>
           <green> 0.3 </green>
@@ -36,7 +36,7 @@
         </specular>
       </liverytank>
     </model>
-    
+
   </sim>
-  
+
 </PropertyList>

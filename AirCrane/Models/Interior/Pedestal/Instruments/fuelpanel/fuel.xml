@@ -1,0 +1,370 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+
+  <path>fuel.ac</path>
+
+  <animation>
+    <object-name>base</object-name>
+    <object-name>fuelheatereng1</object-name>
+    <object-name>fuelpumptest</object-name>
+    <object-name>fuelheatereng2</object-name>
+    <object-name>fuelxfeed</object-name>
+    <object-name>fail-fwd-tnk-pump1-off</object-name>
+    <object-name>fail-fwd-tnk-pump2-off</object-name>
+    <object-name>fail-aft-tnk-pump1-off</object-name>
+    <object-name>fail-aft-tnk-pump2-off</object-name>
+    <object-name>fail-fwd-tnk-pump1-on</object-name>
+    <object-name>fail-fwd-tnk-pump2-on</object-name>
+    <object-name>fail-aft-tnk-pump1-on</object-name>
+    <object-name>fail-aft-tnk-pump2-on</object-name>
+    <object-name>fuelpump1eng1</object-name>
+    <object-name>fuelpump2eng1</object-name>
+    <object-name>fuelpump1eng2</object-name>
+    <object-name>fuelpump2eng2</object-name>
+  </animation>
+
+  <effect>
+    <inherits-from>Aircraft/AirCrane/Models/Effects/Interior/cockpit-interior</inherits-from>
+    <object-name>base</object-name>
+    <object-name>fuelheatereng1</object-name>
+    <object-name>fuelpumptest</object-name>
+    <object-name>fuelheatereng2</object-name>
+    <object-name>fuelxfeed</object-name>
+    <object-name>fail-fwd-tnk-pump1-off</object-name>
+    <object-name>fail-fwd-tnk-pump2-off</object-name>
+    <object-name>fail-aft-tnk-pump1-off</object-name>
+    <object-name>fail-aft-tnk-pump2-off</object-name>
+    <object-name>fail-fwd-tnk-pump1-on</object-name>
+    <object-name>fail-fwd-tnk-pump2-on</object-name>
+    <object-name>fail-aft-tnk-pump1-on</object-name>
+    <object-name>fail-aft-tnk-pump2-on</object-name>
+    <object-name>fuelpump1eng1</object-name>
+    <object-name>fuelpump2eng1</object-name>
+    <object-name>fuelpump1eng2</object-name>
+    <object-name>fuelpump2eng2</object-name>
+  </effect>
+
+  <!-- Eng 1 Fuel Heater "Switch" -->
+  <animation>
+    <type>knob</type>
+    <object-name>fuelheatereng1</object-name>
+    <property>/controls/fuel/fuelheatereng1</property>
+    <factor>-45</factor>
+    <offset-deg>20</offset-deg>
+    <center>
+      <x-m> -0.05602 </x-m>
+      <y-m> -0.04565 </y-m>
+      <z-m>  0.00629 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+    <action>
+      <binding>
+        <command>property-adjust</command>
+        <property>/controls/fuel/fuelheatereng1</property>
+        <factor>1</factor>
+        <min>0</min>
+        <max>1</max>
+        <wrap>false</wrap>
+      </binding>
+      <binding>
+        <command>nasal</command>
+        <script>aircrane.click("avionics")</script>
+      </binding>
+    </action>
+    <hovered>
+      <binding>
+        <command>set-tooltip</command>
+        <tooltip-id>fuelheatereng1</tooltip-id>
+        <label>Eng 1 Fuel Heat: %s</label>
+        <property>/controls/fuel/fuelheatereng1</property>
+        <mapping>nasal</mapping>
+        <script>
+          var modes = ['Off', 'On'];
+          return modes[arg[0]];
+        </script>
+      </binding>
+    </hovered>
+  </animation>
+
+  <!-- Eng 2 Fuel Heater "Switch" -->
+  <animation>
+    <type>knob</type>
+    <object-name>fuelheatereng2</object-name>
+    <property>/controls/fuel/fuelheatereng2</property>
+    <factor>-45</factor>
+    <offset-deg>20</offset-deg>
+    <center>
+      <x-m> -0.05602 </x-m>
+      <y-m>  0.04838 </y-m>
+      <z-m>  0.00629 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+    <action>
+      <binding>
+        <command>property-adjust</command>
+        <property>/controls/fuel/fuelheatereng2</property>
+        <factor>1</factor>
+        <min>0</min>
+        <max>1</max>
+        <wrap>false</wrap>
+      </binding>
+      <binding>
+        <command>nasal</command>
+        <script>aircrane.click("avionics")</script>
+      </binding>
+    </action>
+    <hovered>
+      <binding>
+        <command>set-tooltip</command>
+        <tooltip-id>fuelheatereng2</tooltip-id>
+        <label>Eng 2 Fuel Heat: %s</label>
+        <property>/controls/fuel/fuelheatereng2</property>
+        <mapping>nasal</mapping>
+        <script>
+          var modes = ['Off', 'On'];
+          return modes[arg[0]];
+        </script>
+      </binding>
+    </hovered>
+  </animation>
+
+  <!-- X-Feed "Switch" -->
+  <animation>
+    <type>knob</type>
+    <object-name>fuelxfeed</object-name>
+    <property>/controls/fuel/fuelxfeed</property>
+    <factor>-45</factor>
+    <offset-deg>20</offset-deg>
+    <center>
+      <x-m> -0.00170 </x-m>
+      <y-m>  0.00031 </y-m>
+      <z-m>  0.00715 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+    <action>
+      <binding>
+        <command>property-adjust</command>
+        <property>/controls/fuel/fuelxfeed</property>
+        <factor>1</factor>
+        <min>0</min>
+        <max>1</max>
+        <wrap>false</wrap>
+      </binding>
+      <binding>
+        <command>nasal</command>
+        <script>aircrane.click("avionics")</script>
+      </binding>
+    </action>
+    <hovered>
+      <binding>
+        <command>set-tooltip</command>
+        <tooltip-id>fuelxfeed</tooltip-id>
+        <label>X-Feed: %s</label>
+        <property>/controls/fuel/fuelxfeed</property>
+        <mapping>nasal</mapping>
+        <script>
+          var modes = ['Close', 'Open'];
+          return modes[arg[0]];
+        </script>
+      </binding>
+    </hovered>
+  </animation>
+
+  <!-- FWD Tank Pump 1 "Switch" -->
+  <animation>
+    <type>knob</type>
+    <object-name>fuelpump1eng1</object-name>
+    <property>/controls/fuel/fuelpump1eng1</property>
+    <factor>-30</factor>
+    <offset-deg>0</offset-deg>
+    <center>
+      <x-m>  0.04807 </x-m>
+      <y-m> -0.05897 </y-m>
+      <z-m>  0.00759 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+    <action>
+      <binding>
+        <command>property-adjust</command>
+        <property>/controls/fuel/fuelpump1eng1</property>
+        <factor>1</factor>
+        <min>0</min>
+        <max>1</max>
+        <wrap>false</wrap>
+      </binding>
+      <binding>
+        <command>nasal</command>
+        <script>aircrane.click("avionics")</script>
+      </binding>
+    </action>
+    <hovered>
+      <binding>
+        <command>set-tooltip</command>
+        <tooltip-id>fuelpump1eng1</tooltip-id>
+        <label>FWD Fuel Tank Pump 1: %s</label>
+        <property>/controls/fuel/fuelpump1eng1</property>
+        <mapping>nasal</mapping>
+        <script>
+          var modes = ['Off', 'On'];
+          return modes[arg[0]];
+        </script>
+      </binding>
+    </hovered>
+  </animation>
+
+  <!-- FWD Tank Pump 2 "Switch" -->
+  <animation>
+    <type>knob</type>
+    <object-name>fuelpump2eng1</object-name>
+    <property>/controls/fuel/fuelpump2eng1</property>
+    <factor>-30</factor>
+    <offset-deg>0</offset-deg>
+    <center>
+      <x-m>  0.04807 </x-m>
+      <y-m> -0.01745 </y-m>
+      <z-m>  0.00759 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+    <action>
+      <binding>
+        <command>property-adjust</command>
+        <property>/controls/fuel/fuelpump2eng1</property>
+        <factor>1</factor>
+        <min>0</min>
+        <max>1</max>
+        <wrap>false</wrap>
+      </binding>
+      <binding>
+        <command>nasal</command>
+        <script>aircrane.click("avionics")</script>
+      </binding>
+    </action>
+    <hovered>
+      <binding>
+        <command>set-tooltip</command>
+        <tooltip-id>fuelpump2eng1</tooltip-id>
+        <label>FWD Fuel Tank Pump 2: %s</label>
+        <property>/controls/fuel/fuelpump2eng1</property>
+        <mapping>nasal</mapping>
+        <script>
+          var modes = ['Off', 'On'];
+          return modes[arg[0]];
+        </script>
+      </binding>
+    </hovered>
+  </animation>
+
+  <!-- AFT Tank Pump 1 "Switch" -->
+  <animation>
+    <type>knob</type>
+    <object-name>fuelpump1eng2</object-name>
+    <property>/controls/fuel/fuelpump1eng2</property>
+    <factor>-30</factor>
+    <offset-deg>0</offset-deg>
+    <center>
+      <x-m> 0.04807 </x-m>
+      <y-m> 0.02107 </y-m>
+      <z-m> 0.00759 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+    <action>
+      <binding>
+        <command>property-adjust</command>
+        <property>/controls/fuel/fuelpump1eng2</property>
+        <factor>1</factor>
+        <min>0</min>
+        <max>1</max>
+        <wrap>false</wrap>
+      </binding>
+      <binding>
+        <command>nasal</command>
+        <script>aircrane.click("avionics")</script>
+      </binding>
+    </action>
+    <hovered>
+      <binding>
+        <command>set-tooltip</command>
+        <tooltip-id>fuelpump1eng2</tooltip-id>
+        <label>AFT Fuel Tank Pump 1: %s</label>
+        <property>/controls/fuel/fuelpump1eng2</property>
+        <mapping>nasal</mapping>
+        <script>
+          var modes = ['Off', 'On'];
+          return modes[arg[0]];
+        </script>
+      </binding>
+    </hovered>
+  </animation>
+
+  <!-- AFT Fuel Tank Pump 2 "Switch" -->
+  <animation>
+    <type>knob</type>
+    <object-name>fuelpump2eng2</object-name>
+    <property>/controls/fuel/fuelpump2eng2</property>
+    <factor>-30</factor>
+    <offset-deg>0</offset-deg>
+    <center>
+      <x-m> 0.04807 </x-m>
+      <y-m> 0.06196 </y-m>
+      <z-m> 0.00759 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+    <action>
+      <binding>
+        <command>property-adjust</command>
+        <property>/controls/fuel/fuelpump2eng2</property>
+        <factor>1</factor>
+        <min>0</min>
+        <max>1</max>
+        <wrap>false</wrap>
+      </binding>
+      <binding>
+        <command>nasal</command>
+        <script>aircrane.click("avionics")</script>
+      </binding>
+    </action>
+    <hovered>
+      <binding>
+        <command>set-tooltip</command>
+        <tooltip-id>fuelpump2eng2</tooltip-id>
+        <label>AFT Fuel Tank Pump 2: %s</label>
+        <property>/controls/fuel/fuelpump2eng2</property>
+        <mapping>nasal</mapping>
+        <script>
+          var modes = ['Off', 'On'];
+          return modes[arg[0]];
+        </script>
+      </binding>
+    </hovered>
+  </animation>
+
+</PropertyList>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+ <PropertyList>
+
+  <path>spot-light.ac</path>
+  <nopreview/>
+
+  <!-- Spot Light ALS -->
+  <animation>
+    <type>select</type>
+    <object-name>spotlightals</object-name>
+    <condition>
+      <property>/sim/model/aircrane/lighting/spot-light</property>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>flash</type>
+    <object-name>spotlightals</object-name>
+    <center>
+      <x-m>-7.78244</x-m>
+      <y-m>-0.000238</y-m>
+      <z-m>-3.21254</z-m>
+    </center>
+    <axis>
+      <x>1</x>
+      <y>0</y>
+      <z>-0.5</z>
+    </axis>
+    <power>8</power>
+    <factor>6</factor>
+    <offset>0</offset>
+    <two-sides type="bool">false</two-sides>
+    <min>0.5</min>
+    <max>80</max>
+  </animation>
+
+</PropertyList>

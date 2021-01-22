@@ -1,32 +1,53 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
-<!--
-<PropertyList include="load-unload.xml">-->
+
+<!-- <PropertyList include="load-unload.xml"> -->
 <PropertyList>
-  
-  <path>aircrane.ac</path>
+
+  <!--path>aircrane.ac</path-->
+
+  <model>
+    <path>aircrane-f.ac</path>
+    <condition>
+		<property>sim/model/aircrane/model-f</property>
+    </condition>
+  </model>
+
+  <model>
+    <path>aircrane-e.ac</path>
+    <condition>
+		<not>
+			<property>sim/model/aircrane/model-f</property>
+		</not>    
+    </condition>
+  </model>
+
+  <!-- MP sound call -->
+  <sound>
+    <path>Aircraft/AirCrane/Sounds/mp-sound.xml</path>
+  </sound>
 
   <nasal>
     <load>
       <![CDATA[
         var livery_update = aircraft.livery_update.new("Aircraft/AirCrane/Models/Liveries", 10);
       ]]>
-      
+
       var self = cmdarg();
-      
+
       var float_0 = self.getNode("sim/multiplay/generic/float[0]", 1);
       var float_1 = self.getNode("sim/multiplay/generic/float[1]", 1);
       var float_2 = self.getNode("sim/multiplay/generic/float[5]", 1);
       var float_3 = self.getNode("sim/multiplay/generic/float[6]", 1);
       var float_7 = self.getNode("sim/multiplay/generic/float[7]", 1);
       var float_8 = self.getNode("sim/multiplay/generic/float[8]", 1);
-      
+
       var crew_door = self.getNode("sim/model/door-positions/crew/position-norm", 1);
       var passenger_door = self.getNode("sim/model/door-positions/passenger/position-norm", 1);
       var engineer_door = self.getNode("sim/model/door-positions/engineer/position-norm", 1);
       var starboard_door = self.getNode("sim/model/door-positions/starboard/position-norm", 1);
       var ram_scoop = self.getNode("sim/model/firetank/deployramscoop/position-norm", 1);
       var flex_hose = self.getNode("sim/model/firetank/deployflexhose/position-norm", 1);
-      
+
       crew_door.alias(float_0);
       passenger_door.alias(float_1);
       ram_scoop.alias(float_2);
@@ -34,7 +55,7 @@
       engineer_door.alias(float_7);
       starboard_door.alias(float_8);
     </load>
-    
+
     <unload>
       <![CDATA[
         livery_update.stop();
@@ -49,21 +70,6 @@
     </unload>
   </nasal>
 
-    <params>
-        <lighting>
-            <navigation>sim/multiplay/generic/int[14]</navigation>
-            <beaconfwd>sim/model/aircrane/lighting/beaconfwd/state</beaconfwd>
-            <beaconaft>sim/model/aircrane/lighting/beaconaft/state</beaconaft>
-            <strobe>sim/model/aircrane/lighting/strobe/state</strobe>
-            <spot>
-                <property>sim/multiplay/generic/int[15]</property>
-            </spot>
-            <landing>
-                <property>sim/multiplay/generic/int[16]</property>
-            </landing>
-        </lighting>
-    </params>
-  
   <animation>
     <!-- Objets opaques -->
     <object-name>fuselage</object-name>
@@ -93,6 +99,7 @@
     <object-name>pate4</object-name>
     <object-name>caches</object-name>
     <object-name>caches2</object-name>
+    <object-name>caches3</object-name>
     <object-name>caches4</object-name>
     <object-name>aileron</object-name>
     <object-name>blocmoteur1</object-name>
@@ -100,7 +107,6 @@
     <object-name>supportaileron</object-name>
     <object-name>lampetail</object-name>
     <object-name>tankpins</object-name>
-    <object-name>screws</object-name>
     <object-name>steppanel</object-name>
     <object-name>winchcover</object-name>
 
@@ -118,7 +124,6 @@
     <object-name>cotesaxerotor</object-name>
     <object-name>moteurs</object-name>
     <object-name>intmoteurs</object-name>
-    <object-name>caches3</object-name>
     <object-name>cables1</object-name>
     <object-name>cables2</object-name>
     <object-name>cables3</object-name>
@@ -126,26 +131,22 @@
     <object-name>roueD</object-name>
     <object-name>roueA</object-name>
     <object-name>echelles</object-name>
-    
+
     <!-- Transparence -->
     <object-name>vitres</object-name>
     <object-name>vitresporteG</object-name>
     <object-name>vitresporteD</object-name>
-    <object-name>vitresInt</object-name>
-    <object-name>vitresporteGInt</object-name>
-    <object-name>vitresporteDInt</object-name>
+    <object-name>vitresreardoor</object-name>
+    <object-name>vitresstarboard</object-name>
     <object-name>lampeG</object-name>
     <object-name>lampeD</object-name>
+    <object-name>BeaconA</object-name>
     <object-name>BeaconOffA</object-name>
     <object-name>BeaconOffF</object-name>
-    <object-name>vitresreardoor</object-name>
-    <object-name>vitresreardoorInt</object-name>
-    <object-name>vitresstarboard</object-name>
-    <object-name>vitresstarboardInt</object-name>
     <object-name>lampeW</object-name>
     <object-name>lampstrobe</object-name>
   </animation>
-  
+
   <animation>
     <type>material</type>
     <object-name>fuselage</object-name>
@@ -175,6 +176,7 @@
     <object-name>pate4</object-name>
     <object-name>caches</object-name>
     <object-name>caches2</object-name>
+    <object-name>caches3</object-name>
     <object-name>caches4</object-name>
     <object-name>aileron</object-name>
     <object-name>blocmoteur1</object-name>
@@ -182,9 +184,11 @@
     <object-name>supportaileron</object-name>
     <object-name>lampetail</object-name>
     <object-name>tankpins</object-name>
-    <object-name>screws</object-name>
     <object-name>steppanel</object-name>
     <object-name>winchcover</object-name>
+
+    <object-name>landinglampbase</object-name>
+    <object-name>spotlampbase</object-name>
 
     <object-name>axetail</object-name>
     <object-name>supports</object-name>
@@ -195,7 +199,6 @@
     <object-name>cotesaxerotor</object-name>
     <object-name>moteurs</object-name>
     <object-name>intmoteurs</object-name>
-    <object-name>caches3</object-name>
     <object-name>cables1</object-name>
     <object-name>cables2</object-name>
     <object-name>cables3</object-name>
@@ -203,11 +206,6 @@
     <object-name>roueD</object-name>
     <object-name>roueA</object-name>
     <object-name>echelles</object-name>
-
-    <object-name>landinglampbase</object-name>
-    <object-name>spotlampbase</object-name>
-    <object-name>lightlanding</object-name>
-    <object-name>lightspot</object-name>
 
     <property-base>sim/model/livery/</property-base>
     <texture-prop>texture</texture-prop>
@@ -218,7 +216,92 @@
       <blue-prop>emission/blue</blue-prop>
     </emission>
   </animation>
-  
+
+  <effect>
+    <inherits-from>Aircraft/AirCrane/Models/Effects/Exterior/bumpspec-fuselage</inherits-from>
+    <object-name>fuselage</object-name>
+    <object-name>porteG</object-name>
+    <object-name>porteD</object-name>
+    <object-name>reardoor</object-name>
+    <object-name>startboarddoor</object-name>
+    <object-name>antennes</object-name>
+    <object-name>rebords</object-name>
+    <object-name>supportlight</object-name>
+    <object-name>axeAH</object-name>
+    <object-name>axeAB</object-name>
+    <object-name>axeGH</object-name>
+    <object-name>axeGB</object-name>
+    <object-name>axeDH</object-name>
+    <object-name>axeDB</object-name>
+    <object-name>articuleAH</object-name>
+    <object-name>articuleAB</object-name>
+    <object-name>articuleGH</object-name>
+    <object-name>articuleGB</object-name>
+    <object-name>articuleDH</object-name>
+    <object-name>articuleDB</object-name>
+    <object-name>lampenez</object-name>
+    <object-name>pate1</object-name>
+    <object-name>pate2</object-name>
+    <object-name>pate3</object-name>
+    <object-name>pate4</object-name>
+    <object-name>caches</object-name>
+    <object-name>caches2</object-name>
+    <object-name>caches3</object-name>
+    <object-name>caches4</object-name>
+    <object-name>aileron</object-name>
+    <object-name>blocmoteur1</object-name>
+    <object-name>structure</object-name>
+    <object-name>supportaileron</object-name>
+    <object-name>lampetail</object-name>
+    <object-name>tankpins</object-name>
+    <object-name>steppanel</object-name>
+    <object-name>winchcover</object-name>
+    <object-name>landinglampbase</object-name>
+    <object-name>spotlampbase</object-name>
+    <object-name>lightlanding</object-name>
+    <object-name>lightspot</object-name>
+  </effect>
+
+  <!-- working for Compositor -->
+  <effect>
+    <inherits-from>Aircraft/AirCrane/Models/Effects/Exterior/glass</inherits-from>
+    <object-name>vitres</object-name>
+    <object-name>vitresporteG</object-name>
+    <object-name>vitresporteD</object-name>
+    <object-name>vitresInt</object-name>
+    <object-name>vitresreardoor</object-name>
+    <object-name>vitresstarboard</object-name>
+    <object-name>lampeG</object-name>
+    <object-name>lampeD</object-name>
+    <object-name>BeaconA</object-name>
+    <object-name>BeaconOffA</object-name>
+    <object-name>BeaconOffF</object-name>
+    <object-name>lampeW</object-name>
+    <object-name>lampstrobe</object-name>
+  </effect>
+
+  <!-- Rotor principale -->
+  <model>
+    <path>Aircraft/AirCrane/Models/MainRotor/mainrotor.xml</path>
+    <offsets>
+      <x-m> -2.606 </x-m>
+      <y-m>  0.000 </y-m>
+      <z-m>  1.383 </z-m>
+      <pitch-deg> -3 </pitch-deg>
+    </offsets>
+  </model>
+
+  <!-- Rotor de queue -->
+  <model>
+    <path>Aircraft/AirCrane/Models/TailRotor/tailrotor.xml</path>
+    <offsets>
+      <x-m> 11.118 </x-m>
+      <y-m> -1.023 </y-m>
+      <z-m>  1.319 </z-m>
+      <roll-deg> 90 </roll-deg>
+    </offsets>
+  </model>
+
   <animation>
     <type>material</type>
     <object-name>rotortail</object-name>
@@ -231,81 +314,32 @@
       <blue-prop>emission/blue</blue-prop>
     </specular>
   </animation>
-  
-  <effect>
-    <inherits-from>Aircraft/Generic/Effects/Fuselagereflect</inherits-from>
-    <object-name>fuselage</object-name>
-    <object-name>porteG</object-name>
-    <object-name>porteD</object-name>
-    <object-name>reardoor</object-name>
-    <object-name>startboarddoor</object-name>
-    <object-name>antennes</object-name>
-    <object-name>rebords</object-name>
-    <object-name>supportlight</object-name>
-    <object-name>axeAH</object-name>
-    <object-name>axeAB</object-name>
-    <object-name>axeGH</object-name>
-    <object-name>axeGB</object-name>
-    <object-name>axeDH</object-name>
-    <object-name>axeDB</object-name>
-    <object-name>articuleAH</object-name>
-    <object-name>articuleAB</object-name>
-    <object-name>articuleGH</object-name>
-    <object-name>articuleGB</object-name>
-    <object-name>articuleDH</object-name>
-    <object-name>articuleDB</object-name>
-    <object-name>lampenez</object-name>
-    <object-name>pate1</object-name>
-    <object-name>pate2</object-name>
-    <object-name>pate3</object-name>
-    <object-name>pate4</object-name>
-    <object-name>caches</object-name>
-    <object-name>caches2</object-name>
-    <object-name>caches4</object-name>
-    <object-name>aileron</object-name>
-    <object-name>blocmoteur1</object-name>
-    <object-name>structure</object-name>
-    <object-name>supportaileron</object-name>
-    <object-name>lampetail</object-name>
-    <object-name>tankpins</object-name>
-    <object-name>steppanel</object-name>
-    <object-name>winchcover</object-name>
 
-    <object-name>landinglampbase</object-name>
-    <object-name>spotlampbase</object-name>
-    <object-name>lightlanding</object-name>
-    <object-name>lightspot</object-name>
-
-  </effect>
-
-  <effect>
-    <inherits-from>Effects/model-transparent</inherits-from>
-    <object-name>BeaconOFFA</object-name>
-    <object-name>BeaconOFFF</object-name>
-    <object-name>lampstrobe</object-name>
-  </effect>
-
-  <!-- Une ombre pour OSG
+  <!-- Une ombre pour OSG -->
   <model>
     <path>Aircraft/AirCrane/Models/Effects/shadows/shadow.xml</path>
     <offsets>
-      <x-m>  0.0 </x-m>
-      <y-m>  0.0 </y-m>
-      <z-m>-3.85</z-m>
-      <pitch-deg>1</pitch-deg>
+      <x-m>  0.00 </x-m>
+      <y-m>  0.00 </y-m>
+      <z-m> -3.85 </z-m>
     </offsets>
-  </model> -->
+  </model>
 
   <!-- Cable Guard -->
   <model>
     <path>Aircraft/AirCrane/Models/Cable-Guard/cableguard.xml</path>
+    <offsets>
+      <x-m> -2.40027 </x-m>
+      <y-m>  0.00000 </y-m>
+      <z-m> -1.04188 </z-m>
+    </offsets>
   </model>
-  
+
   <!-- Water System -->
   <model>
     <path>Aircraft/AirCrane/Models/Water-System/water-system.xml</path>
   </model>
-  
+
   <animation>
     <type>material</type>
     <object-name>tank</object-name>
@@ -333,7 +367,7 @@
     <object-name>cachesfss</object-name>
     <object-name>tankdockpins</object-name>
     <object-name>flexhoserelease</object-name>
-    
+
     <property-base>sim/model/liverytank/</property-base>
     <texture-prop>texture</texture-prop>
     <texture>Water-System/water-system.png</texture>
@@ -343,11 +377,9 @@
       <blue-prop>emission/blue</blue-prop>
     </emission>
   </animation>
-  
+
   <!-- Interior -->
   <model>
-    <!--name>interior</name>
-    <usage>interior</usage-->
     <path>Aircraft/AirCrane/Models/Interior/interior.xml</path>
   </model>
 
@@ -371,12 +403,13 @@
       </and>
     </condition>
     <offsets>
-      <x-m>-9.36</x-m>
-      <y-m> 0.35</y-m>
-      <z-m>-1.226</z-m>
-      <heading-deg>-13.0</heading-deg>
+      <x-m> -9.379080 </x-m>
+      <y-m>  0.476044 </y-m>
+      <z-m> -1.255300 </z-m>
+      <heading-deg> -13 </heading-deg>
     </offsets>
   </model>
+
   <model>
     <name>Garmin196-GPS-non-Canvas-Pilot-View</name>
     <path>Aircraft/Instruments-3d/garmin196/garmin196.xml</path>
@@ -390,10 +423,10 @@
       </and>
     </condition>
     <offsets>
-      <x-m>-9.36025</x-m>
-      <y-m>-0.29</y-m>
-      <z-m>-1.21999</z-m>
-      <heading-deg>-3.0</heading-deg>
+      <x-m> -9.36025 </x-m>
+      <y-m> -0.20100 </y-m>
+      <z-m> -1.21999 </z-m>
+      <heading-deg> -3 </heading-deg>
     </offsets>
   </model>
 
@@ -401,9 +434,9 @@
   <model>
     <path>Aircraft/AirCrane/Models/Immat/immat.xml</path>
   </model>
-  
+
   <!-- Effet de particules du rotor au sol -->
-  <model>	
+  <model>
     <path>Aircraft/AirCrane/Models/Effects/particles/rotorwashidle.xml</path>
     <offsets>
       <x-m> -2.900 </x-m>
@@ -421,29 +454,7 @@
       <z-m> -7.701 </z-m>
    </offsets>
   </model>
-  
-  <!-- Rotor principale -->
-  <model>
-    <path>Aircraft/AirCrane/Models/MainRotor/mainrotor.xml</path>
-    <offsets>
-      <x-m> -2.606 </x-m>
-      <y-m>  0.000 </y-m>
-      <z-m>  1.383 </z-m>
-      <pitch-deg> -3 </pitch-deg>
-    </offsets>
-  </model>
-  
-  <!-- Rotor de queue -->
-  <model>
-    <path>Aircraft/AirCrane/Models/TailRotor/tailrotor.xml</path>
-    <offsets>
-      <x-m> 11.118 </x-m>
-      <y-m> -1.023 </y-m>
-      <z-m>  1.319 </z-m>
-      <roll-deg> 90 </roll-deg>
-    </offsets>
-  </model>
- 
+
   <!-- Rotation de la roue avant en fonction de la gouverne de direction -->
   <animation>
     <name>EnsembleRoueAvant</name>
@@ -453,24 +464,24 @@
     <object-name>articuleAH</object-name>
     <object-name>articuleAB</object-name>
   </animation>
-  
+
   <animation>
     <type>rotate</type>
     <object-name>EnsembleRoueAvant</object-name>
-    <property>surface-positions/rudder-pos-norm</property>
-    <factor> 35 </factor>
+    <property>gear/gear[0]/caster-angle-deg</property>
+    <factor> -1 </factor>
     <center>
       <x-m> -8.740 </x-m>
       <y-m>  0.000 </y-m>
       <z-m> -2.989 </z-m>
     </center>
     <axis>
-      <x>  0 </x>
-      <y>  0 </y>
-      <z> -1 </z>
+      <x> 0 </x>
+      <y> 0 </y>
+      <z>-1 </z>
     </axis>
   </animation>
-  
+
   <!-- Compression -->
   <animation>
     <name>RoueAvant</name>
@@ -478,21 +489,21 @@
     <object-name>axeAB</object-name>
     <object-name>articuleAB</object-name>
   </animation>
-  
+
   <animation>
     <name>RoueGauche</name>
     <object-name>roueG</object-name>
     <object-name>axeGB</object-name>
     <object-name>articuleGB</object-name>
   </animation>
-  
+
   <animation>
     <name>RoueDroite</name>
     <object-name>roueD</object-name>
     <object-name>axeDB</object-name>
     <object-name>articuleDB</object-name>
   </animation>
-  
+
   <animation>
     <type>translate</type>
     <object-name>RoueAvant</object-name>
@@ -508,7 +519,7 @@
       <z> 1 </z>
     </axis>
   </animation>
-  
+
   <animation>
     <type>rotate</type>
     <object-name>articuleAH</object-name>
@@ -529,7 +540,7 @@
       <z> 0 </z>
     </axis>
   </animation>
-  
+
   <animation>
     <type>rotate</type>
     <object-name>articuleAB</object-name>
@@ -550,7 +561,7 @@
       <z> 0 </z>
     </axis>
   </animation>
-  
+
   <animation>
     <type>translate</type>
     <object-name>RoueGauche</object-name>
@@ -566,7 +577,7 @@
       <z> 1 </z>
     </axis>
   </animation>
-  
+
   <animation>
     <type>rotate</type>
     <object-name>articuleGH</object-name>
@@ -587,7 +598,7 @@
       <z> 0 </z>
     </axis>
   </animation>
-  
+
   <animation>
     <type>rotate</type>
     <object-name>articuleGB</object-name>
@@ -608,7 +619,7 @@
       <z> 0 </z>
     </axis>
   </animation>
-  
+
   <animation>
     <type>translate</type>
     <object-name>RoueDroite</object-name>
@@ -624,7 +635,7 @@
       <z> 1 </z>
     </axis>
   </animation>
-  
+
   <animation>
     <type>rotate</type>
     <object-name>articuleDH</object-name>
@@ -645,7 +656,7 @@
       <z> 0 </z>
     </axis>
   </animation>
-  
+
   <animation>
     <type>rotate</type>
     <object-name>articuleDB</object-name>
@@ -666,7 +677,7 @@
       <z> 0 </z>
     </axis>
   </animation>
-  
+
   <!-- Rotation des roues lors du roulage -->
   <animation>
     <type>spin</type>
@@ -684,7 +695,7 @@
       <z>  0 </z>
     </axis>
   </animation>
-  
+
   <animation>
     <type>spin</type>
     <object-name>roueG</object-name>
@@ -701,7 +712,7 @@
       <z>  0 </z>
     </axis>
   </animation>
-  
+
   <animation>
     <type>spin</type>
     <object-name>roueD</object-name>
@@ -718,15 +729,14 @@
       <z>  0 </z>
     </axis>
   </animation>
-  
+
   <!-- animation des portes -->
   <animation>
     <name>LaPorteGauche</name>
     <object-name>porteG</object-name>
     <object-name>vitresporteG</object-name>
-    <object-name>vitresporteGInt</object-name>
   </animation>
-  
+
   <animation>
     <type>pick</type>
     <object-name>LaPorteGauche</object-name>
@@ -740,7 +750,7 @@
       </binding>
     </action>
   </animation>
-  
+
   <animation>
     <type>rotate</type>
     <object-name>LaPorteGauche</object-name>
@@ -749,21 +759,20 @@
     <factor> -100 </factor>
     <axis>
       <x1-m> -9.06146 </x1-m>
-      <y1-m> -1.08691 </y1-m> 
+      <y1-m> -1.08691 </y1-m>
       <z1-m> -1.57367 </z1-m>
       <x2-m> -8.87113 </x2-m>
       <y2-m> -0.92390 </y2-m>
       <z2-m> -0.79338 </z2-m>
     </axis>
   </animation>
-  
+
   <animation>
     <name>LaPorteDroite</name>
     <object-name>porteD</object-name>
     <object-name>vitresporteD</object-name>
-    <object-name>vitresporteDInt</object-name>
   </animation>
-  
+
   <animation>
     <type>pick</type>
     <object-name>LaPorteDroite</object-name>
@@ -777,7 +786,7 @@
       </binding>
     </action>
   </animation>
-  
+
   <animation>
     <type>rotate</type>
     <object-name>LaPorteDroite</object-name>
@@ -785,7 +794,7 @@
     <factor> 100 </factor>
     <axis>
       <x1-m> -9.06146 </x1-m>
-      <y1-m>  1.08731 </y1-m> 
+      <y1-m>  1.08731 </y1-m>
       <z1-m> -1.57367 </z1-m>
       <x2-m> -8.87113 </x2-m>
       <y2-m>  0.92431 </y2-m>
@@ -797,10 +806,9 @@
   <animation>
     <name>StarboardDoor</name>
     <object-name>vitresstarboard</object-name>
-    <object-name>vitresstarboardInt</object-name>
     <object-name>startboarddoor</object-name>
   </animation>
-  
+
   <animation>
     <type>pick</type>
     <object-name>StarboardDoor</object-name>
@@ -814,7 +822,7 @@
       </binding>
     </action>
   </animation>
-  
+
   <animation>
     <type>rotate</type>
     <object-name>StarboardDoor</object-name>
@@ -822,7 +830,7 @@
     <factor> -110 </factor>
     <axis>
       <x1-m> -7.63431 </x1-m>
-      <y1-m>  1.10955 </y1-m> 
+      <y1-m>  1.10955 </y1-m>
       <z1-m> -1.79148 </z1-m>
       <x2-m> -7.63414 </x2-m>
       <y2-m>  1.11068 </y2-m>
@@ -834,10 +842,9 @@
   <animation>
     <name>EngineerDoor</name>
     <object-name>vitresreardoor</object-name>
-    <object-name>vitresreardoorInt</object-name>
     <object-name>reardoor</object-name>
   </animation>
-  
+
   <animation>
     <type>pick</type>
     <object-name>EngineerDoor</object-name>
@@ -851,15 +858,18 @@
       </binding>
     </action>
   </animation>
-  
+
   <animation>
     <type>rotate</type>
     <object-name>EngineerDoor</object-name>
+    <condition>
+		<property>sim/model/aircrane/model-f</property>
+    </condition>
     <property>sim/model/door-positions/engineer/position-norm</property>
     <factor> -170 </factor>
     <axis>
       <x1-m> -7.01647 </x1-m>
-      <y1-m>  0.665   </y1-m> 
+      <y1-m>  0.665   </y1-m>
       <z1-m> -1.11658 </z1-m>
       <x2-m> -7.01653 </x2-m>
       <y2-m>  0.66501 </y2-m>
@@ -868,8 +878,27 @@
   </animation>
 
   <animation>
+    <type>rotate</type>
+    <object-name>EngineerDoor</object-name>
+    <condition>
+		<not>
+			<property>sim/model/aircrane/model-f</property>
+		</not>
+    </condition>
+    <property>sim/model/door-positions/engineer/position-norm</property>
+    <factor> -170 </factor>
+    <axis>
+      <x1-m> -7.59194 </x1-m>
+      <y1-m>  0.78551 </y1-m>
+      <z1-m> -1.11463 </z1-m>
+      <x2-m> -7.58729 </x2-m>
+      <y2-m>  0.78401 </y2-m>
+      <z2-m> -2.38094 </z2-m>
+    </axis>
+  </animation>
+
+  <animation>
     <type>pick</type>
-    <object-name>screws</object-name>
     <object-name>steppanel</object-name>
     <visible>true</visible>
     <action>
@@ -884,10 +913,9 @@
 
   <animation>
     <type>select</type>
-    <object-name>screws</object-name>
     <object-name>steppanel</object-name>
     <condition>
-      <property>sim/model/steppanel/enabled</property>
+		<property>sim/model/steppanel/enabled</property>
     </condition>
   </animation>
 
@@ -914,45 +942,40 @@
       <property>sim/model/winchcover/enabled</property>
     </condition>
   </animation>
-  
+
   <!-- Effets lumineux -->
-
-  <!-- ================================================================== -->
-  <!-- Basic And Rembrandt Lighting                                       -->
-  <!-- ================================================================== -->
-
+  <!-- White strobe top middle tail -->
   <model>
-      <name>light-strobe</name>
-      <path>Aircraft/AirCrane/Models/light/StrobeLight.xml</path>
-      <offsets>
-          <x-m> 3.246</x-m>
-          <y-m>-0.229943</y-m>
-          <z-m> 0.100174</z-m>
-      </offsets>
+    <path>Aircraft/AirCrane/Models/light/StrobeLight.xml</path>
+    <offsets>
+      <x-m>  3.246000 </x-m>
+      <y-m> -0.229943 </y-m>
+      <z-m>  0.100174 </z-m>
+    </offsets>
   </model>
 
+  <!-- Aft Beacon -->
   <model>
-    <name>strobe-aft</name>
-    <path>Aircraft/AirCrane/Models/light/Beacon.xml</path>
+    <path>Aircraft/AirCrane/Models/light/Beaconaft.xml</path>
     <offsets>
       <x-m> 10.438 </x-m>
-      <y-m>  0.000 </y-m>
+      <y-m> -0.015 </y-m>
       <z-m>  1.495 </z-m>
     </offsets>
   </model>
-  
+
+  <!-- Fwd Beacon -->
   <model>
-    <name>strobe-fwd</name>
-    <path>Aircraft/AirCrane/Models/light/Beacon.xml</path>
+    <path>Aircraft/AirCrane/Models/light/Beaconfwd.xml</path>
     <offsets>
       <x-m> -9.281 </x-m>
       <y-m>  0.000 </y-m>
       <z-m> -3.181 </z-m>
     </offsets>
   </model>
-  
+
+  <!-- Red navigation light on port side (left) -->
   <model>
-    <name>red-nav</name>
     <path>Aircraft/AirCrane/Models/light/RedLight.xml</path>
     <offsets>
       <x-m> -1.051 </x-m>
@@ -960,9 +983,9 @@
       <z-m> -1.496 </z-m>
     </offsets>
   </model>
-  
+
+  <!-- Green navigation light on starboard side (right) -->
   <model>
-    <name>green-nav</name>
     <path>Aircraft/AirCrane/Models/light/GreenLight.xml</path>
     <offsets>
       <x-m> -1.051 </x-m>
@@ -971,446 +994,32 @@
     </offsets>
   </model>
 
-    <animation>
-        <type>select</type>
-        <object-name>strobe-fwd</object-name>
-        <nopreview/>
-        <condition>
-            <and>
-                <property alias="/params/lighting/beaconfwd"/>
-                <!--not>
-                    <property>/sim/rendering/shaders/skydome</property>
-                </not-->
-            </and>
-        </condition>
-    </animation>
+  <!-- White navigation light on tail -->
+  <model>
+    <path>Aircraft/AirCrane/Models/light/WhiteLight.xml</path>
+    <offsets>
+      <x-m> 11.351 </x-m>
+      <y-m>  0.000 </y-m>
+      <z-m>  1.377 </z-m>
+    </offsets>
+  </model>
 
-    <animation>
-        <type>select</type>
-        <object-name>strobe-aft</object-name>
-        <nopreview/>
-        <condition>
-            <and>
-                <property alias="/params/lighting/beaconaft"/>
-                <!--not>
-                    <property>/sim/rendering/shaders/skydome</property>
-                </not-->
-            </and>
-        </condition>
-    </animation>
+  <!-- Landing Light -->
+  <model>
+    <path>Aircraft/AirCrane/Models/light/LandingLight.xml</path>
+  </model>
 
-    <animation>
-        <type>select</type>
-        <object-name>red-nav</object-name>
-        <nopreview/>
-        <condition>
-            <and>
-                <property alias="/params/lighting/navigation"/>
-                <not>
-                    <property>/sim/rendering/shaders/skydome</property>
-                </not>
-            </and>
-        </condition>
-    </animation>
+  <!-- Spot Light -->
+  <model>
+    <path>Aircraft/AirCrane/Models/light/SpotLight.xml</path>
+  </model>
 
-    <animation>
-        <type>select</type>
-        <object-name>green-nav</object-name>
-        <nopreview/>
-        <condition>
-            <and>
-                <property alias="/params/lighting/navigation"/>
-                <not>
-                    <property>/sim/rendering/shaders/skydome</property>
-                </not>
-            </and>
-        </condition>
-    </animation>
-
-   <animation>
-        <type>select</type>
-        <object-name>light-strobe</object-name>
-        <nopreview/>
-        <condition>
-            <and>
-                <property alias="/params/lighting/strobe"/>
-                <not>
-                    <property>/sim/rendering/shaders/skydome</property>
-                </not>
-            </and>
-        </condition>
-    </animation>
-
-    <!-- ================================================================== -->
-    <!-- ALS Lighting                                                       -->
-    <!-- ================================================================== -->
-
-    <!-- Green navigation light on starboard side (right) -->
-    <model>
-        <name>nav-light-right</name>
-        <path>Effects/lights/procedural_light_nav_right.xml</path>
-        <offsets>
-            <x-m> -1.051 </x-m>
-            <y-m>  3.148 </y-m>
-            <z-m> -1.496 </z-m>
-        </offsets>
-    </model>
-
-    <!-- Red navigation light on port side (left) -->
-    <model>
-        <name>nav-light-left</name>
-        <path>Effects/lights/procedural_light_nav_left.xml</path>
-        <offsets>
-            <x-m> -1.051 </x-m>
-            <y-m> -3.148 </y-m>
-            <z-m> -1.496 </z-m>
-        </offsets>
-    </model>
-
-    <!-- White navigation light on tail -->
-    <model>
-        <name>nav-light-tail</name>
-        <path>Effects/lights/procedural_light_nav_tail.xml</path>
-        <offsets>
-            <x-m>11.351</x-m>
-            <y-m>0.0</y-m>
-            <z-m>1.377</z-m>
-        </offsets>
-    </model>
-
-    <!-- White strobe top middle tail -->
-    <model>
-        <name>strobe-light</name>
-        <path>Effects/lights/procedural_light_strobe.xml</path>
-        <offsets>
-            <x-m> 3.246</x-m>
-            <y-m>-0.229943</y-m>
-            <z-m> 0.100174</z-m>
-        </offsets>
-    </model>
-
-    <!--animation>
-        <type>select</type>
-        <object-name>strobe-fwd</object-name>
-        <nopreview/>
-        <condition>
-            <and>
-                <property alias="/params/lighting/beaconfwd"/>
-                <property>/sim/rendering/shaders/skydome</property>
-            </and>
-        </condition>
-    </animation>
-
-    <animation>
-        <type>select</type>
-        <object-name>strobe-aft</object-name>
-        <nopreview/>
-        <condition>
-            <and>
-                <property alias="/params/lighting/beaconaft"/>
-                <property>/sim/rendering/shaders/skydome</property>
-            </and>
-        </condition>
-    </animation-->
-
-    <animation>
-        <type>select</type>
-        <object-name>nav-light-left</object-name>
-        <nopreview/>
-        <condition>
-            <and>
-                <property alias="/params/lighting/navigation"/>
-                <property>/sim/rendering/shaders/skydome</property>
-            </and>
-        </condition>
-    </animation>
-    <animation>
-        <type>select</type>
-        <object-name>nav-light-right</object-name>
-        <nopreview/>
-        <condition>
-            <and>
-                <property alias="/params/lighting/navigation"/>
-                <property>/sim/rendering/shaders/skydome</property>
-            </and>
-        </condition>
-    </animation>
-    <animation>
-        <type>select</type>
-        <object-name>nav-light-tail</object-name>
-        <nopreview/>
-        <condition>
-            <and>
-                <property alias="/params/lighting/navigation"/>
-                <property>/sim/rendering/shaders/skydome</property>
-            </and>
-        </condition>
-    </animation>
-    <animation>
-        <type>select</type>
-        <object-name>strobe-light</object-name>
-        <nopreview/>
-        <condition>
-            <and>
-                <property alias="/params/lighting/strobe"/>
-                <property>/sim/rendering/shaders/skydome</property>
-            </and>
-        </condition>
-    </animation>
-    <!--animation>
-        <type>select</type>
-        <object-name>landing-light</object-name>
-        <nopreview/>
-        <condition>
-            <and>
-                <property alias="/params/lighting/landing"/>
-                <property>/sim/rendering/shaders/skydome</property>
-            </and>
-        </condition>
-    </animation>
-    <animation>
-        <type>select</type>
-        <object-name>spot-light</object-name>
-        <nopreview/>
-        <condition>
-            <and>
-                <property alias="/params/lighting/spot"/>
-                <property>/sim/rendering/shaders/skydome</property>
-            </and>
-        </condition>
-    </animation-->
-
-    <!-- Landing Light -->
-    <animation>
-        <type>select</type>
-        <object-name>landinglight</object-name>
-        <nopreview/>
-        <condition>
-            <and>
-                <property alias="/params/lighting/landing/property"/>
-                <not>
-                    <property>/sim/rendering/rembrandt/enabled</property>
-                </not>
-            </and>
-        </condition>
-    </animation>
-
-    <!-- Spot Light -->
-    <animation>
-        <type>select</type>
-        <object-name>spotlight</object-name>
-        <nopreview/>
-        <condition>
-            <and>
-                <property alias="/params/lighting/spot/property"/>
-                <not>
-                    <property>/sim/rendering/rembrandt/enabled</property>
-                </not>
-            </and>
-        </condition>
-    </animation>
-
-    <!--animation>
-        <type>light</type>
-        <light-type>spot</light-type>
-        <name>LandingLight</name>
-        <object-name>LandingLightCone</object-name>
-        <nopreview/>
-        <condition>
-            <property alias="/params/lighting/landing/property"/>
-        </condition>
-        <position>
-            <x>-11.0002</x>
-            <y>  0.000037</y>
-            <z> -2.78261</z>
-        </position>
-        <direction>
-            <x>-1</x>
-            <y>0</y>
-            <z>-0.1</z>
-        </direction>
-        <ambient>
-            <r>0.5</r>
-            <g>0.5</g>
-            <b>0.55</b>
-            <a>1.0</a>
-        </ambient>
-        <diffuse>
-            <r>0.95</r>
-            <g>0.95</g>
-            <b>0.8</b>
-            <a>1.0</a>
-        </diffuse>
-        <specular>
-            <r>0.95</r>
-            <g>0.95</g>
-            <b>0.8</b>
-            <a>1.0</a>
-        </specular>
-        <attenuation>
-            <c>1.0</c>
-            <l>0.0</l>
-            <q>0.00015</q>
-        </attenuation>
-        <exponent>25</exponent>
-        <cutoff>85</cutoff>
-        <near-m>2</near-m>
-        <far-m>250</far-m>
-    </animation-->
-
-    <!--animation>
-        <type>light</type>
-        <light-type>spot</light-type>
-        <name>SpotLight</name>
-        <object-name>SpotLightCone</object-name>
-        <nopreview/>
-        <condition>
-            <property alias="/params/lighting/spot/property"/>
-        </condition>
-        <position>
-            <x>-7.42556</x>
-            <y>-0.055015</y>
-            <z>-3.75486</z>
-        </position>
-        <direction>
-            <x> 1</x>
-            <y>0</y>
-            <z>-0.3</z>
-        </direction>
-        <ambient>
-            <r>0.5</r>
-            <g>0.5</g>
-            <b>0.55</b>
-            <a>1.0</a>
-        </ambient>
-        <diffuse>
-            <r>0.95</r>
-            <g>0.95</g>
-            <b>0.8</b>
-            <a>1.0</a>
-        </diffuse>
-        <specular>
-            <r>0.95</r>
-            <g>0.95</g>
-            <b>0.8</b>
-            <a>1.0</a>
-        </specular>
-        <attenuation>
-            <c>1.0</c>
-            <l>0.0</l>
-            <q>0.00015</q>
-        </attenuation>
-        <exponent>25</exponent>
-        <cutoff>85</cutoff>
-        <near-m>2</near-m>
-        <far-m>250</far-m>
-    </animation>
-    <animation>
-        <type>noshadow</type>
-        <object-name>landinglight</object-name>
-        <object-name>spotlight</object-name>
-    </animation-->
-
-    <!--Landing Light-->
-    <animation>
-        <type>flash</type>
-        <object-name>landinglight</object-name>
-        <center>
-            <x-m>-9.96423</x-m>
-            <y-m>-0.00191</y-m>
-            <z-m>-2.79107</z-m>
-        </center>
-        <axis>
-            <x>-1</x>
-            <y>0</y>
-            <z>-0.1</z>
-        </axis>
-        <power>8</power>
-        <factor>6</factor>
-        <offset>0</offset>
-        <two-sides type="bool">false</two-sides>
-        <min>0.5</min>
-        <max>80</max>
-    </animation>
-
-    <!--Spot Light-->
-    <animation>
-        <type>flash</type>
-        <object-name>spotlight</object-name>
-        <center>
-            <x-m>-7.78244</x-m>
-            <y-m>-0.000238</y-m>
-            <z-m>-3.21254</z-m>
-        </center>
-        <axis>
-            <x>1</x>
-            <y>0</y>
-            <z>-0.5</z>
-        </axis>
-        <power>8</power>
-        <factor>6</factor>
-        <offset>0</offset>
-        <two-sides type="bool">false</two-sides>
-        <min>0.5</min>
-        <max>80</max>
-    </animation>
-
-    <!--animation>
-        <type>select</type>
-        <object-name>BeaconOffX</object-name>
-        <nopreview/>
-        <condition>
-            <property alias="/params/lighting/beacon"/>
-        </condition>
-    </animation>
-    <BeaconOffXparams>
-        <light-near>0.4</light-near>
-        <light-med>0.8</light-med>
-        <light-far>10</light-far>
-    </BeaconOffXparams>
-    <animation>
-        <type>alpha-test</type>
-        <object-name>BeaconOffX</object-name>
-        <alpha-factor>0.001</alpha-factor>
-    </animation>
-    <animation>
-        <type>translate</type>
-        <object-name>BeaconOffX</object-name>
-        <offset-m>5.599</offset-m>
-        <axis-->
-            <!-- MOD: Position beacon light at MEDIAN point of the object -->
-            <!--x>5.49803</x>
-            <y>0.00000</y>
-            <z>1.081</z-->
-            <!-- MODEND: Position beacon light at MEDIAN point of the object -->
-        <!--/axis>
-    </animation>
-    <animation>
-        <type>billboard</type>
-        <object-name>BeaconOffX</object-name>
-        <spherical type="bool">true</spherical>
-    </animation>
-    <animation>
-        <type>dist-scale</type>
-        <object-name>BeaconOffX</object-name>
-        <interpolation>
-            <entry>
-                <ind>0</ind>
-                <dep alias="/BeaconOffXparams/light-near"/>
-            </entry>
-            <entry>
-                <ind>500</ind>
-                <dep alias="/BeaconOffXparams/light-med"/>
-            </entry>
-            <entry>
-                <ind>16000</ind>
-                <dep alias="/BeaconOffXparams/light-far"/>
-            </entry>
-        </interpolation>
-    </animation-->
+  <!-- Clustered Shader Procedural Lights -->
+  <model>
+    <path>Aircraft/AirCrane/Models/light/Clustered/clustered-shader-lights.xml</path>
+  </model>
 
   <!-- Disintegration -->
-
   <animation>
     <name>wheelL</name>
     <object-name>roueG</object-name>
@@ -1423,6 +1032,7 @@
     <object-name>articuleGH</object-name>
     <object-name>articuleGB</object-name>
   </animation>
+
   <!-- X translate -->
   <animation>
     <type>translate</type>
@@ -1451,7 +1061,7 @@
           </prod>
           <prod>
             <!-- custom initial speed -->
-            <property>disintegration/parts/gearL/vX</property> 
+            <property>disintegration/parts/gearL/vX</property>
             <dif>
               <property>/sim/time/elapsed-sec</property>
               <property>disintegration/crashTime</property>
@@ -1461,11 +1071,12 @@
       </prod>
     </expression>
     <axis>
-      <x>-1</x>
-      <y>0</y>
-      <z>0</z>
+      <x> -1 </x>
+      <y>  0 </y>
+      <z>  0 </z>
     </axis>
   </animation>
+
   <!-- Y translate -->
   <animation>
     <type>translate</type>
@@ -1499,7 +1110,7 @@
           </prod>
           <prod>
             <!-- custom initial speed -->
-            <property>disintegration/parts/gearL/vY</property> 
+            <property>disintegration/parts/gearL/vY</property>
             <dif>
               <property>/sim/time/elapsed-sec</property>
               <property>disintegration/crashTime</property>
@@ -1509,11 +1120,12 @@
       </prod>
     </expression>
     <axis>
-      <x></x>
-      <y>-1</y>
-      <z>0</z>
+      <x>  0 </x>
+      <y> -1 </y>
+      <z>  0 </z>
     </axis>
   </animation>
+
   <!-- Z translate -->
   <animation>
     <type>translate</type>
@@ -1547,7 +1159,7 @@
           </prod>
           <prod>
             <!-- custom initial speed -->
-            <property>disintegration/parts/gearL/vZ</property> 
+            <property>disintegration/parts/gearL/vZ</property>
             <dif>
               <property>/sim/time/elapsed-sec</property>
               <property>disintegration/crashTime</property>
@@ -1557,11 +1169,12 @@
       </prod>
     </expression>
     <axis>
-      <x>0</x>
-      <y>0</y>
-      <z>1</z>
+      <x> 0 </x>
+      <y> 0 </y>
+      <z> 1 </z>
     </axis>
   </animation>
+
   <animation> <!-- X spin -->
     <type>spin</type>
     <object-name>gearL</object-name>
@@ -1576,16 +1189,17 @@
       </prod>
     </expression>
     <center> <!-- Must correspond with geometrical center of object -->
-      <x-m>-1.05087</x-m>
-      <y-m>-3.0711</y-m>
-      <z-m>-2.3245</z-m>
+      <x-m> -1.05087 </x-m>
+      <y-m> -3.07110 </y-m>
+      <z-m> -2.32450 </z-m>
     </center>
     <axis>
-      <x>1</x>
-      <y>0</y>
-      <z>0</z>
+      <x> 1 </x>
+      <y> 0 </y>
+      <z> 0 </z>
     </axis>
   </animation>
+
   <animation> <!-- Y spin -->
     <type>spin</type>
     <object-name>gearL</object-name>
@@ -1600,14 +1214,14 @@
       </prod>
     </expression>
     <center> <!-- Must correspond with geometrical center of object -->
-      <x-m>-1.05087</x-m>
-      <y-m>-3.0711</y-m>
-      <z-m>-2.3245</z-m>
+      <x-m> -1.05087 </x-m>
+      <y-m> -3.07110 </y-m>
+      <z-m> -2.32450 </z-m>
     </center>
     <axis>
-      <x>0</x>
-      <y>1</y>
-      <z>0</z>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
     </axis>
   </animation>
 
@@ -1623,6 +1237,7 @@
     <object-name>articuleDH</object-name>
     <object-name>articuleDB</object-name>
   </animation>
+
   <!-- X translate -->
   <animation>
     <type>translate</type>
@@ -1651,7 +1266,7 @@
           </prod>
           <prod>
             <!-- custom initial speed -->
-            <property>disintegration/parts/gearR/vX</property> 
+            <property>disintegration/parts/gearR/vX</property>
             <dif>
               <property>/sim/time/elapsed-sec</property>
               <property>disintegration/crashTime</property>
@@ -1661,11 +1276,12 @@
       </prod>
     </expression>
     <axis>
-      <x>-1</x>
-      <y>0</y>
-      <z>0</z>
+      <x> -1 </x>
+      <y>  0 </y>
+      <z>  0 </z>
     </axis>
   </animation>
+
   <!-- Y translate -->
   <animation>
     <type>translate</type>
@@ -1699,7 +1315,7 @@
           </prod>
           <prod>
             <!-- custom initial speed -->
-            <property>disintegration/parts/gearR/vY</property> 
+            <property>disintegration/parts/gearR/vY</property>
             <dif>
               <property>/sim/time/elapsed-sec</property>
               <property>disintegration/crashTime</property>
@@ -1709,11 +1325,12 @@
       </prod>
     </expression>
     <axis>
-      <x></x>
-      <y>-1</y>
-      <z>0</z>
+      <x>  0 </x>
+      <y> -1 </y>
+      <z>  0 </z>
     </axis>
   </animation>
+
   <!-- Z translate -->
   <animation>
     <type>translate</type>
@@ -1747,7 +1364,7 @@
           </prod>
           <prod>
             <!-- custom initial speed -->
-            <property>disintegration/parts/gearR/vZ</property> 
+            <property>disintegration/parts/gearR/vZ</property>
             <dif>
               <property>/sim/time/elapsed-sec</property>
               <property>disintegration/crashTime</property>
@@ -1757,11 +1374,12 @@
       </prod>
     </expression>
     <axis>
-      <x>0</x>
-      <y>0</y>
-      <z>1</z>
+      <x> 0 </x>
+      <y> 0 </y>
+      <z> 1 </z>
     </axis>
   </animation>
+
   <animation> <!-- X spin -->
     <type>spin</type>
     <object-name>gearR</object-name>
@@ -1776,16 +1394,17 @@
       </prod>
     </expression>
     <center> <!-- Must correspond with geometrical center of object -->
-      <x-m>-1.05268</x-m>
-      <y-m> 3.07897</y-m>
-      <z-m>-2.56335</z-m>
+      <x-m> -1.05268 </x-m>
+      <y-m>  3.07897 </y-m>
+      <z-m> -2.56335 </z-m>
     </center>
     <axis>
-      <x>1</x>
-      <y>0</y>
-      <z>0</z>
+      <x> 1 </x>
+      <y> 0 </y>
+      <z> 0 </z>
     </axis>
   </animation>
+
   <animation> <!-- Y spin -->
     <type>spin</type>
     <object-name>gearR</object-name>
@@ -1800,14 +1419,14 @@
       </prod>
     </expression>
     <center> <!-- Must correspond with geometrical center of object -->
-      <x-m>-1.05268</x-m>
-      <y-m> 3.07898</y-m>
-      <z-m>-2.56335</z-m>
+      <x-m> -1.05268 </x-m>
+      <y-m>  3.07898 </y-m>
+      <z-m> -2.56335 </z-m>
     </center>
     <axis>
-      <x>0</x>
-      <y>1</y>
-      <z>0</z>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
     </axis>
   </animation>
 
@@ -1823,7 +1442,8 @@
     <object-name>articuleAH</object-name>
     <object-name>articuleAB</object-name>
   </animation>
- <!-- X translate -->
+
+  <!-- X translate -->
   <animation>
     <type>translate</type>
     <object-name>gearN</object-name>
@@ -1851,7 +1471,7 @@
           </prod>
           <prod>
             <!-- custom initial speed -->
-            <property>disintegration/parts/gearN/vX</property> 
+            <property>disintegration/parts/gearN/vX</property>
             <dif>
               <property>/sim/time/elapsed-sec</property>
               <property>disintegration/crashTime</property>
@@ -1861,11 +1481,12 @@
       </prod>
     </expression>
     <axis>
-      <x>-1</x>
-      <y>0</y>
-      <z>0</z>
+      <x> -1 </x>
+      <y>  0 </y>
+      <z>  0 </z>
     </axis>
   </animation>
+
   <!-- Y translate -->
   <animation>
     <type>translate</type>
@@ -1899,7 +1520,7 @@
           </prod>
           <prod>
             <!-- custom initial speed -->
-            <property>disintegration/parts/gearN/vY</property> 
+            <property>disintegration/parts/gearN/vY</property>
             <dif>
               <property>/sim/time/elapsed-sec</property>
               <property>disintegration/crashTime</property>
@@ -1909,11 +1530,12 @@
       </prod>
     </expression>
     <axis>
-      <x></x>
-      <y>-1</y>
-      <z>0</z>
+      <x>  0 </x>
+      <y> -1 </y>
+      <z>  0 </z>
     </axis>
   </animation>
+
   <!-- Z translate -->
   <animation>
     <type>translate</type>
@@ -1947,7 +1569,7 @@
           </prod>
           <prod>
             <!-- custom initial speed -->
-            <property>disintegration/parts/gearN/vZ</property> 
+            <property>disintegration/parts/gearN/vZ</property>
             <dif>
               <property>/sim/time/elapsed-sec</property>
               <property>disintegration/crashTime</property>
@@ -1957,11 +1579,12 @@
       </prod>
     </expression>
     <axis>
-      <x>0</x>
-      <y>0</y>
-      <z>1</z>
+      <x> 0 </x>
+      <y> 0 </y>
+      <z> 1 </z>
     </axis>
   </animation>
+
   <animation> <!-- X spin -->
     <type>spin</type>
     <object-name>gearN</object-name>
@@ -1976,16 +1599,17 @@
       </prod>
     </expression>
     <center> <!-- Must correspond with geometrical center of object -->
-      <x-m>-8.67077</x-m>
-      <y-m> 3.07897</y-m>
-      <z-m>-3.27622</z-m>
+      <x-m> -8.67077 </x-m>
+      <y-m>  3.07897 </y-m>
+      <z-m> -3.27622 </z-m>
     </center>
     <axis>
-      <x>1</x>
-      <y>0</y>
-      <z>0</z>
+      <x> 1 </x>
+      <y> 0 </y>
+      <z> 0 </z>
     </axis>
   </animation>
+
   <animation> <!-- Y spin -->
     <type>spin</type>
     <object-name>gearN</object-name>
@@ -2000,14 +1624,14 @@
       </prod>
     </expression>
     <center> <!-- Must correspond with geometrical center of object -->
-      <x-m>-8.67077</x-m>
-      <y-m> 3.07897</y-m>
-      <z-m>-3.27622</z-m>
+      <x-m> -8.67077 </x-m>
+      <y-m>  3.07897 </y-m>
+      <z-m> -3.27622 </z-m>
     </center>
     <axis>
-      <x>0</x>
-      <y>1</y>
-      <z>0</z>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
     </axis>
   </animation>
 

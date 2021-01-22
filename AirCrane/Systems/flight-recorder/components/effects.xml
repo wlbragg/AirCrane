@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="ISO-8859-1"?>
 
 <PropertyList>
 
@@ -220,7 +220,7 @@
     <property type="string">sim/cargo/rope/pulling</property>
   </signal>
 
-    <!-- Sprayer - Water Drop - Cargo -->
+  <!-- Sprayer - Water Drop - Cargo -->
   <signal>
     <type>bool</type>
     <property type="string">/sim/cargo/cargo-hook</property>

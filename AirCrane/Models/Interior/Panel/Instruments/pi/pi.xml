@@ -1,53 +1,68 @@
-<?xml version="1.0"?>
+<?xml version="1.0" encoding="ISO-8859-1"?>
 
 <PropertyList>
 
-<path>pi.ac</path>
+  <path>pi.ac</path>
+
+  <animation>
+    <object-name>fond</object-name>
+    <object-name>face</object-name>
+    <object-name>needle</object-name>
+
+    <object-name>vitre</object-name>
+  </animation>
 
   <effect>
-      <inherits-from>Models/Effects/interior/cockpit-interior-shadows</inherits-from>
-      <object-name>case</object-name>
-      <object-name>face</object-name>
-      <object-name>fasteners</object-name>
-
-      <object-name>needle</object-name>
+    <inherits-from>Aircraft/AirCrane/Models/Effects/Interior/cockpit-interior</inherits-from>
+    <object-name>fond</object-name>
+    <object-name>face</object-name>
+    <object-name>needle</object-name>
   </effect>
-  <!--effect>
-      <inherits-from>Models/Effects/interior/cockpit-flashlight</inherits-from>
-      <object-name>needle</object-name>
-  </effect-->
+
   <effect>
-      <inherits-from>Models/Effects/interior/interior-glass-reflection-panel-front</inherits-from>
-      <object-name>glass</object-name>
+    <inherits-from>Aircraft/AirCrane/Models/Effects/Interior/interior-glass-reflection-panel-front</inherits-from>
+    <object-name>vitre</object-name>
   </effect>
 
-	<animation>
-		<type>rotate</type>
+  <animation>
+    <type>material</type>
+    <object-name>face</object-name>
+    <object-name>needle</object-name>
+    <condition>
+      <property>controls/electric/battery-bus-switch</property>
+    </condition>
+    <emission>
+      <factor-prop>controls/lighting/luminosite-lights</factor-prop>
+      <red>   0.50 </red>
+      <green> 0.40 </green>
+      <blue>  0.30 </blue>
+    </emission>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
     <object-name>needle</object-name>
     <property>/rotors/main/stall-filtered</property>
-		<interpolation>
-			<entry><ind>-99</ind><dep>     1</dep></entry>
-			<entry><ind> 0</ind><dep>      0</dep></entry>
-      <entry><ind> .006</ind><dep> -22</dep></entry>
-      <entry><ind> .007</ind><dep> -43</dep></entry>
-      <entry><ind> .008</ind><dep> -64.5</dep></entry>
-			<entry><ind> .009</ind><dep> -86</dep></entry>
-			<entry><ind> .010</ind><dep>-108</dep></entry>
-			<entry><ind> .011</ind><dep>-129</dep></entry>
-			<entry><ind> .012</ind><dep>-151</dep></entry>
-			<entry><ind> .013</ind><dep>-173</dep></entry>
-			<entry><ind> .014</ind><dep>-195</dep></entry>
-			<entry><ind> .015</ind><dep>-218</dep></entry>
-			<entry><ind>99</ind><dep>-219</dep></entry>
-		</interpolation>
-		<axis>
-			  <x1-m>-9.40493</x1-m>
-        <y1-m> 0.366861</y1-m> 
-        <z1-m>-1.386</z1-m>
-        <x2-m>-9.40289</x2-m>
-        <y2-m> 0.366886</y2-m>
-        <z2-m>-1.38587</z2-m>
+    <interpolation>
+      <entry><ind> -99 </ind><dep>    1.0 </dep></entry>
+      <entry><ind>   0 </ind><dep>    0.0 </dep></entry>
+      <entry><ind>  .6 </ind><dep>  -22.0 </dep></entry>
+      <entry><ind>  .7 </ind><dep>  -43.0 </dep></entry>
+      <entry><ind>  .8 </ind><dep>  -64.5 </dep></entry>
+      <entry><ind>  .9 </ind><dep>  -86.0 </dep></entry>
+      <entry><ind> .10 </ind><dep> -108.0 </dep></entry>
+      <entry><ind> .11 </ind><dep> -129.0 </dep></entry>
+      <entry><ind> .12 </ind><dep> -151.0 </dep></entry>
+      <entry><ind> .13 </ind><dep> -173.0 </dep></entry>
+      <entry><ind> .14 </ind><dep> -195.0 </dep></entry>
+      <entry><ind> .15 </ind><dep> -218.0 </dep></entry>
+      <entry><ind>  99 </ind><dep> -219.0 </dep></entry>
+    </interpolation>
+    <axis>
+      <x> 1 </x>
+      <y> 0 </y>
+      <z> 0 </z>
     </axis>
-	</animation>
+  </animation>
 
 </PropertyList>

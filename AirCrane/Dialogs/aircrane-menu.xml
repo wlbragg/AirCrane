@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 
 <PropertyList>
-  
+
   <default>
     <menu n="10">
       <label>S-64 AirCrane</label>
       <enabled type="bool">true</enabled>
-
       <item>
         <label>Autostart</label>
         <binding>
@@ -29,20 +28,20 @@
         </binding>
       </item>
       <item>
-          <label>Aircraft Options</label>
-          <binding>
-            <command>dialog-show</command>
-            <dialog-name>aircraft-dialog</dialog-name>
-          </binding>
+        <label>Aircraft Options</label>
+        <binding>
+          <command>dialog-show</command>
+          <dialog-name>aircraft-dialog</dialog-name>
+        </binding>
       </item>
       <item>
-          <label>FCS Management</label>
-          <binding>
-            <command>dialog-show</command>
-            <dialog-name>fcs-dialog</dialog-name>
-          </binding>
+        <label>FCS Management</label>
+        <binding>
+          <command>dialog-show</command>
+          <dialog-name>fcs-dialog</dialog-name>
+        </binding>
       </item>
     </menu>
   </default>
-  
+
 </PropertyList>

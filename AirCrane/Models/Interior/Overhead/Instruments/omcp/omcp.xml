@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+
+  <path>omcp.ac</path>
+
+  <animation>
+    <object-name>base</object-name>
+    <object-name>appstart20</object-name>
+    <object-name>appfuel</object-name>
+    <object-name>engchip</object-name>
+    <object-name>toggleswitch</object-name>
+  </animation>
+
+  <effect>
+    <inherits-from>Aircraft/AirCrane/Models/Effects/Interior/cockpit-interior</inherits-from>
+    <object-name>base</object-name>
+    <object-name>appstart20</object-name>
+    <object-name>appfuel</object-name>
+    <object-name>engchip</object-name>
+    <object-name>toggleswitch</object-name>
+  </effect>
+
+  <model>
+    <path>Aircraft/AirCrane/Models/Interior/Overhead/Instruments/omcp/iat/iat.xml</path>
+    <offsets>
+      <x-m>  0.000 </x-m>
+      <y-m>  0.041 </y-m>
+      <z-m> -0.003 </z-m>
+    </offsets>
+  </model>
+
+  <!-- APP Start 20% "spring switch" -->
+  <animation>
+    <type>knob</type>
+    <object-name>appstart20</object-name>
+    <property>controls/switches/app-start-20</property>
+    <factor>-35</factor>
+    <offset-deg>-10</offset-deg>
+    <center>
+      <x-m>  0.00668 </x-m>
+      <y-m> -0.05157 </y-m>
+      <z-m>  0.01474 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+    <action>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>nasal</command>
+        <script>
+          setprop("/controls/switches/app-start", 1);
+          setprop("/controls/switches/app-start-20", 1);
+        </script>
+      </binding>
+    </action>
+    <release>
+      <binding>
+        <command>nasal</command>
+        <script>
+          setprop("/controls/switches/app-start", 0);
+          setprop("/controls/switches/app-start-20", 0);
+          aircrane.click("avionics");
+        </script>
+      </binding>
+    </release>
+    <hovered>
+      <binding>
+        <command>set-tooltip</command>
+        <tooltip-id>appstart</tooltip-id>
+        <label>APP Start 20: %s</label>
+        <property>controls/switches/app-start-20</property>
+        <mapping>nasal</mapping>
+        <script>
+          var modes = ['Off', 'On'];
+          return modes[arg[0]];
+        </script>
+      </binding>
+    </hovered>
+  </animation>
+
+  <animation>
+    <type>knob</type>
+    <object-name>appfuel</object-name>
+    <property>controls/switches/app-fuel</property>
+    <factor>-45</factor>
+    <offset-deg>10</offset-deg>
+    <center>
+      <x-m>  0.00668 </x-m>
+      <y-m> -0.01894 </y-m>
+      <z-m>  0.01474 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+    <action>
+      <binding>
+        <command>property-adjust</command>
+        <property>controls/switches/app-fuel</property>
+        <factor>1</factor>
+        <min>0</min>
+        <max>1</max>
+        <wrap>false</wrap>
+      </binding>
+      <binding>
+        <command>nasal</command>
+        <script>aircrane.click("avionics")</script>
+      </binding>
+    </action>
+    <hovered>
+      <binding>
+        <command>set-tooltip</command>
+        <tooltip-id>appfuel</tooltip-id>
+        <label>APP Fuel: %s</label>
+        <property>controls/switches/app-fuel</property>
+        <mapping>nasal</mapping>
+        <script>
+          var modes = ['Main', 'Start'];
+          return modes[arg[0]];
+        </script>
+      </binding>
+    </hovered>
+  </animation>
+
+  <animation>
+    <type>knob</type>
+    <object-name>engchip</object-name>
+    <property>controls/switches/engchip</property>
+    <factor>-45</factor>
+    <offset-deg>10</offset-deg>
+    <center>
+      <x-m>  0.00696 </x-m>
+      <y-m> -0.03655 </y-m>
+      <z-m> -0.04090 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+    <action>
+      <binding>
+        <command>property-adjust</command>
+        <property>controls/switches/engchip</property>
+        <factor>1</factor>
+        <min>0</min>
+        <max>1</max>
+        <wrap>false</wrap>
+      </binding>
+      <binding>
+        <command>nasal</command>
+        <script>aircrane.click("avionics")</script>
+      </binding>
+    </action>
+    <hovered>
+      <binding>
+        <command>set-tooltip</command>
+        <tooltip-id>engchip</tooltip-id>
+        <label>Engine Chip: %s</label>
+        <property>controls/switches/engchip</property>
+        <mapping>nasal</mapping>
+        <script>
+          var modes = ['Off', 'Test'];
+          return modes[arg[0]];
+        </script>
+      </binding>
+    </hovered>
+  </animation>
+
+  <animation>
+    <type>knob</type>
+    <object-name>toggleswitch</object-name>
+    <property>controls/thermometer/temp-mode</property>
+    <factor>45</factor>
+    <offset-deg>-20</offset-deg>
+    <center>
+      <x-m>  0.00613 </x-m>
+      <y-m>  0.04215 </y-m>
+      <z-m> -0.05076 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+    <action>
+      <binding>
+        <command>property-adjust</command>
+        <property>controls/thermometer/temp-mode</property>
+        <factor>1</factor>
+        <min>0</min>
+        <max>1</max>
+        <wrap>false</wrap>
+      </binding>
+      <binding>
+        <command>nasal</command>
+        <script>aircrane.click("avionics")</script>
+      </binding>
+    </action>
+    <hovered>
+      <binding>
+        <command>set-tooltip</command>
+        <tooltip-id>Temperature Mode</tooltip-id>
+        <label>Position: %s</label>
+        <property>controls/thermometer/temp-mode</property>
+        <mapping>nasal</mapping>
+        <script>
+          var modes = ['Indoor', 'Outdoor'];
+          return modes[arg[0]];
+        </script>
+      </binding>
+    </hovered>
+  </animation>
+
+</PropertyList>

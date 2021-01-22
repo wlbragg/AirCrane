@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+
+  <!-- Pilot seat -->
+  <model>
+    <path>Aircraft/AirCrane/Models/Interior/Seats/seat.xml</path>
+    <offsets>
+      <x-m> -8.72346 </x-m>
+      <y-m>  0.59661 </y-m>
+      <z-m> -1.57192 </z-m>
+    </offsets>
+  </model>
+
+  <!-- Copilot seat -->
+  <model>
+    <path>Aircraft/AirCrane/Models/Interior/Seats/seat.xml</path>
+    <offsets>
+      <x-m> -8.72346 </x-m>
+      <y-m> -0.59661 </y-m>
+      <z-m> -1.57192 </z-m>
+    </offsets>
+  </model>
+
+</PropertyList>

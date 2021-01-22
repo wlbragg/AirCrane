@@ -35,22 +35,22 @@
     </condition>
 
     <shooter>
-      <theta-min-deg>0</theta-min-deg>
-      <theta-max-deg>360</theta-max-deg>
-      <phi-min-deg>-0.1</phi-min-deg>
-      <phi-max-deg>0.1</phi-max-deg>
+      <theta-min-deg>   0.0 </theta-min-deg>
+      <theta-max-deg> 360.0 </theta-max-deg>
+      <phi-min-deg>    -0.1 </phi-min-deg>
+      <phi-max-deg>     0.1 </phi-max-deg>
       <speed-mps>
         <property>rotors/main/rpm</property>
         <factor>0.1</factor>
         <spread>2</spread>
       </speed-mps>
       <rotation-speed>
-        <x-max-deg-sec>15</x-max-deg-sec>
-        <x-min-deg-sec>-15</x-min-deg-sec>
-        <y-max-deg-sec>15</y-max-deg-sec>
-        <y-min-deg-sec>-15</y-min-deg-sec>
-        <z-max-deg-sec>15</z-max-deg-sec>
-        <z-min-deg-sec>-15</z-min-deg-sec>
+        <x-max-deg-sec>  15 </x-max-deg-sec>
+        <x-min-deg-sec> -15 </x-min-deg-sec>
+        <y-max-deg-sec>  15 </y-max-deg-sec>
+        <y-min-deg-sec> -15 </y-min-deg-sec>
+        <z-max-deg-sec>  15 </z-max-deg-sec>
+        <z-min-deg-sec> -15 </z-min-deg-sec>
       </rotation-speed>
     </shooter>
 
@@ -80,27 +80,15 @@
             <property>environment/terrain-dust-factor</property>
             <!--property>controls/engines/engine/throttle</property-->
             <interpolation>
-             <!--entry>
-              <ind>0.0</ind><dep>0.15</dep>
-             </entry>
-             <entry>
-              <ind>0.5</ind><dep>0.1</dep>
-             </entry>
-             <entry>
-              <ind>1.0</ind><dep>0.04</dep>
-             </entry-->
-             <entry>
-              <ind>1.0</ind><dep>0.075</dep>
-             </entry>
-             <entry>
-              <ind>0.5</ind><dep>0.05</dep>
-             </entry>
-             <entry>
-              <ind>0.0</ind><dep>0.02</dep>
-             </entry>
-             <entry>
-              <ind>-0.9</ind><dep>0.0</dep>
-             </entry>
+             <!--
+             <entry><ind> 0.0 </ind><dep> 0.15 </dep></entry>
+             <entry><ind> 0.5 </ind><dep> 0.10 </dep></entry>
+             <entry><ind> 1.0 </ind><dep> 0.04 </dep></entry>
+              -->
+             <entry><ind>  1.0 </ind><dep> 0.075 </dep></entry>
+             <entry><ind>  0.5 </ind><dep> 0.050 </dep></entry>
+             <entry><ind>  0.0 </ind><dep> 0.020 </dep></entry>
+             <entry><ind> -0.9 </ind><dep> 0.000 </dep></entry>
             </interpolation>
           </alpha>
         </color>
@@ -125,27 +113,15 @@
             <property>environment/terrain-dust-factor</property>
             <!--property>controls/engines/engine/throttle</property-->
             <interpolation>
-             <!--entry>
-              <ind>0.0</ind><dep>0.15</dep>
-             </entry>
-             <entry>
-              <ind>0.5</ind><dep>0.1</dep>
-             </entry>
-             <entry>
-              <ind>1.0</ind><dep>0.04</dep>
-             </entry-->
-             <entry>
-              <ind>1.0</ind><dep>0.075</dep>
-             </entry>
-             <entry>
-              <ind>0.5</ind><dep>0.05</dep>
-             </entry>
-             <entry>
-              <ind>0.0</ind><dep>0.02</dep>
-             </entry>
-             <entry>
-              <ind>-0.9</ind><dep>0.0</dep>
-             </entry>
+             <!--
+             <entry><ind> 0.0 </ind><dep> 0.15 </dep></entry>
+             <entry><ind> 0.5 </ind><dep> 0.10 </dep></entry>
+             <entry><ind> 1.0 </ind><dep> 0.04 </dep></entry>
+             -->
+             <entry><ind>  1.0 </ind><dep> 0.075 </dep></entry>
+             <entry><ind>  0.5 </ind><dep> 0.050 </dep></entry>
+             <entry><ind>  0.0 </ind><dep> 0.020 </dep></entry>
+             <entry><ind> -0.9 </ind><dep> 0.000 </dep></entry>
             </interpolation>
           </alpha>
         </color>
@@ -175,16 +151,11 @@
     <type>rotate</type>
     <object-name>rotorwashidle</object-name>
     <property>orientation/pitch-deg</property>
-    <factor>1.0</factor>
-    <center>
-      <x-m>0</x-m>
-      <y-m>0</y-m>
-      <z-m>0</z-m>
-    </center>
+    <factor> 1 </factor>
     <axis>
-      <x>0</x>
-      <y>0</y>
-      <z>1</z>
+      <x> 0 </x>
+      <y> 0 </y>
+      <z> 1 </z>
     </axis>
   </animation>
 
@@ -193,16 +164,11 @@
     <type>rotate</type>
     <object-name>rotorwashidle</object-name>
     <property>orientation/roll-deg</property>
-    <factor>1.0</factor>
-    <center>
-      <x-m>0</x-m>
-      <y-m>0</y-m>
-      <z-m>0</z-m>
-    </center>
+    <factor> 1 </factor>
     <axis>
-      <x>1</x>
-      <y>0</y>
-      <z>0</z>
+      <x> 1 </x>
+      <y> 0 </y>
+      <z> 0 </z>
     </axis>
   </animation>
 
@@ -213,15 +179,10 @@
     <!--property>position/true-agl-ft</property-->
     <property>position/gear-agl-ft</property>
     <factor>-0.3048</factor>
-    <center>
-      <x-m>0</x-m>
-      <y-m>0</y-m>
-      <z-m>0</z-m>
-    </center>
     <axis>
-      <x>0</x>
-      <y>1</y>
-      <z>0</z>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
     </axis>
   </animation>
 

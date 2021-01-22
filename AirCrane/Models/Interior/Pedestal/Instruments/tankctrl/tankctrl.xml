@@ -1,0 +1,543 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+
+  <path>tankctrl.ac</path>
+
+  <animation>
+    <object-name>base</object-name>
+    <object-name>knob-quantity</object-name>
+    <object-name>knob-coverage</object-name>
+    <object-name>knob-foam</object-name>
+    <object-name>toggle-arm</object-name>
+    <object-name>toggle-hyd-snorkel</object-name>
+    <object-name>toggle-foam</object-name>
+    <object-name>toggle-sea-snorkel</object-name>
+    <object-name>indicator-test</object-name>
+    <object-name>indicator-teston</object-name>
+    <object-name>indicator-go</object-name>
+    <object-name>indicator-goon</object-name>
+    <object-name>indicator-hyd-snorkel</object-name>
+    <object-name>indicator-hyd-snorkelon</object-name>
+    <object-name>indicator-foam</object-name>
+    <object-name>indicator-foamon</object-name>
+    <object-name>indicator-low-hyd-pres</object-name>
+    <object-name>indicator-low-hyd-preson</object-name>
+  </animation>
+
+  <effect>
+    <inherits-from>Aircraft/AirCrane/Models/Effects/Interior/cockpit-interior</inherits-from>
+    <object-name>base</object-name>
+    <object-name>knob-quantity</object-name>
+    <object-name>knob-coverage</object-name>
+    <object-name>knob-foam</object-name>
+    <object-name>toggle-arm</object-name>
+    <object-name>toggle-hyd-snorkel</object-name>
+    <object-name>toggle-foam</object-name>
+    <object-name>toggle-sea-snorkel</object-name>
+    <object-name>indicator-test</object-name>
+    <object-name>indicator-teston</object-name>
+    <object-name>indicator-go</object-name>
+    <object-name>indicator-goon</object-name>
+    <object-name>indicator-hyd-snorkel</object-name>
+    <object-name>indicator-hyd-snorkelon</object-name>
+    <object-name>indicator-foam</object-name>
+    <object-name>indicator-foamon</object-name>
+    <object-name>indicator-low-hyd-pres</object-name>
+    <object-name>indicator-low-hyd-preson</object-name>
+  </effect>
+
+  <animation>
+    <type>material</type>
+    <object-name>indicator-teston</object-name>
+    <object-name>indicator-goon</object-name>
+    <object-name>indicator-hyd-snorkelon</object-name>
+    <object-name>indicator-foamon</object-name>
+    <object-name>indicator-low-hyd-preson</object-name>
+    <condition>
+      <property>controls/electric/battery-bus-switch</property>
+    </condition>
+    <emission>
+      <factor-prop>controls/lighting/luminosite-lights</factor-prop>
+      <red>   2 </red>
+      <green> 2 </green>
+      <blue>  2 </blue>
+    </emission>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>indicator-foam</object-name>
+    <condition>
+      <not>
+        <property>sim/model/firetank/foam</property>
+      </not>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>indicator-foamon</object-name>
+    <condition>
+      <property>sim/model/firetank/foam</property>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>indicator-go</object-name>
+    <condition>
+      <not>
+        <property>sim/model/firetank/arm</property>
+      </not>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>indicator-goon</object-name>
+    <condition>
+      <property>sim/model/firetank/arm</property>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>indicator-low-hyd-pres</object-name>
+    <condition>
+      <not>
+        <property>sim/model/firetank/lowhydpres</property>
+      </not>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>indicator-low-hyd-preson</object-name>
+    <condition>
+      <property>sim/model/firetank/lowhydpres</property>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>indicator-test</object-name>
+    <condition>
+      <not>
+        <property>sim/model/firetank/test</property>
+      </not>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>indicator-teston</object-name>
+    <condition>
+      <property>sim/model/firetank/test</property>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>indicator-hyd-snorkel</object-name>
+    <condition>
+      <and>
+        <less-than>
+          <property>sim/model/firetank/deployramscoop/position-norm</property>
+          <value>1</value>
+        </less-than>
+        <greater-than>
+          <property>sim/model/firetank/deployflexhose/position-norm</property>
+          <value>0</value>
+        </greater-than>
+      </and>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>indicator-hyd-snorkelon</object-name>
+    <condition>
+      <and>
+        <or>
+          <equals>
+            <property>sim/model/firetank/deployramscoop/position-norm</property>
+            <value>1</value>
+          </equals>
+          <equals>
+            <property>sim/model/firetank/deployflexhose/position-norm</property>
+            <value>0</value>
+          </equals>
+        </or>
+      </and>
+    </condition>
+  </animation>
+
+  <!-- Quantity "Knob" -->
+  <animation>
+    <type>knob</type>
+    <object-name>knob-quantity</object-name>
+    <property>sim/model/firetank/quantity</property>
+    <factor>45</factor>
+    <offset-deg>0</offset-deg>
+    <center>
+      <x-m> -0.04119 </x-m>
+      <y-m> -0.04216 </y-m>
+      <z-m>  0.00502 </z-m>
+    </center>
+    <axis>
+      <x>  0 </x>
+      <y>  0 </y>
+      <z> -1 </z>
+    </axis>
+    <action>
+      <repeatable>true</repeatable>
+      <binding>
+        <command>property-adjust</command>
+        <property>sim/model/firetank/quantity</property>
+        <factor>1</factor>
+        <min>0</min>
+        <max>4</max>
+        <wrap>0</wrap>
+      </binding>
+      <binding>
+        <command>nasal</command>
+        <script>aircrane.click("avionics")</script>
+      </binding>
+    </action>
+    <hovered>
+      <binding>
+        <command>set-tooltip</command>
+        <tooltip-id>knob-quantity</tooltip-id>
+        <label>Quantity: %s</label>
+        <property>sim/model/firetank/quantity</property>
+        <mapping>nasal</mapping>
+        <script>
+          var modes = ['Safe', '25%', '50%', '75%', '100%'];
+          return modes[arg[0]];
+        </script>
+      </binding>
+    </hovered>
+  </animation>
+
+  <!-- Foam Concentrate "Knob" -->
+  <animation>
+    <type>knob</type>
+    <object-name>knob-foam</object-name>
+    <property>sim/model/firetank/foamconcentrate</property>
+    <factor>28</factor>
+    <offset-deg>5</offset-deg>
+    <center>
+      <x-m> -0.01549 </x-m>
+      <y-m> -0.00218 </y-m>
+      <z-m>  0.00490 </z-m>
+    </center>
+    <axis>
+      <x>  0 </x>
+      <y>  0 </y>
+      <z> -1 </z>
+    </axis>
+    <action>
+      <repeatable>true</repeatable>
+      <binding>
+        <command>property-adjust</command>
+        <property>sim/model/firetank/foamconcentrate</property>
+        <factor>1</factor>
+        <min>0</min>
+        <max>8</max>
+        <wrap>0</wrap>
+      </binding>
+      <binding>
+        <command>nasal</command>
+        <script>aircrane.click("avionics")</script>
+      </binding>
+    </action>
+    <hovered>
+      <binding>
+        <command>set-tooltip</command>
+        <tooltip-id>knob-foam</tooltip-id>
+        <label>Foam Concentrate: %s</label>
+        <property>sim/model/firetank/foamconcentrate</property>
+        <mapping>nasal</mapping>
+        <script>
+          var modes = ['0', '.5', '1', '1.5', '2', '2.5', '3', '3.5', '4'];
+          return modes[arg[0]];
+        </script>
+      </binding>
+    </hovered>
+  </animation>
+
+  <!-- Coverage "Knob" -->
+  <animation>
+    <type>knob</type>
+    <object-name>knob-coverage</object-name>
+    <property>sim/model/firetank/coverage</property>
+    <factor>31</factor>
+    <offset-deg>0</offset-deg>
+    <center>
+      <x-m> -0.04350 </x-m>
+      <y-m>  0.04155 </y-m>
+      <z-m>  0.00496 </z-m>
+    </center>
+    <axis>
+      <x>  0 </x>
+      <y>  0 </y>
+      <z> -1 </z>
+    </axis>
+    <action>
+      <repeatable>true</repeatable>
+      <binding>
+        <command>property-adjust</command>
+        <property>sim/model/firetank/coverage</property>
+        <factor>1</factor>
+        <min>0</min>
+        <max>8</max>
+        <wrap>0</wrap>
+      </binding>
+      <binding>
+        <command>nasal</command>
+        <script>aircrane.click("avionics")</script>
+      </binding>
+    </action>
+    <hovered>
+      <binding>
+        <command>set-tooltip</command>
+        <tooltip-id>knob-coverage</tooltip-id>
+        <label>Coverage: %s</label>
+        <property>sim/model/firetank/coverage</property>
+        <mapping>nasal</mapping>
+        <script>
+          var modes = ['1', '2', '3', '4', '5', '6', '7', '8', 'Salvo'];
+          return modes[arg[0]];
+        </script>
+      </binding>
+    </hovered>
+  </animation>
+
+  <!-- Arm "Toggle" -->
+  <animation>
+    <type>pick</type>
+    <object-name>toggle-arm</object-name>
+    <visible>true</visible>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>property-toggle</command>
+        <property>sim/model/firetank/arm</property>
+      </binding>
+      <binding>
+        <command>nasal</command>
+        <script>aircrane.click("avionics")</script>
+      </binding>
+    </action>
+    <hovered>
+      <binding>
+        <command>set-tooltip</command>
+        <tooltip-id>toggle-arm</tooltip-id>
+        <label>Arm: %s</label>
+        <property>sim/model/firetank/arm</property>
+        <mapping>nasal</mapping>
+        <script>
+          var modes = ['Off', 'On'];
+          return modes[arg[0]];
+        </script>
+      </binding>
+    </hovered>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>toggle-arm</object-name>
+    <property>sim/model/firetank/arm</property>
+    <factor>-45</factor>
+    <center>
+      <x-m>  0.06040 </x-m>
+      <y-m> -0.05125 </y-m>
+      <z-m>  0.00666 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+
+  <!-- Hyd Snorkel "Toggle" -->
+  <animation>
+    <type>pick</type>
+    <object-name>toggle-hyd-snorkel</object-name>
+    <visible>true</visible>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>property-toggle</command>
+        <property>sim/model/firetank/deployflexhose</property>
+      </binding>
+      <binding>
+        <command>nasal</command>
+        <script>
+          if (getprop("sim/model/firetank/arm")) {
+            if (getprop("/sim/model/firetank/flexhose/hosehitsground")) {
+              screen.log.write("Damage will occur if Snorkel is deployed this low!");
+            }
+          } else if (getprop("sim/model/firetank/deployflexhose") == 1 and getprop("sim/model/firetank/deployflexhose/position-norm") == 1) {
+            doors.flexhose.toggle();
+          } else if (getprop("sim/model/firetank/deployflexhose") == 0 and getprop("sim/model/firetank/deployflexhose/position-norm") == 0) {
+            screen.log.write("Hose already deployed!");
+          } else {
+            screen.log.write("System must be armed first!");
+          }
+        </script>
+      </binding>
+      <binding>
+        <command>nasal</command>
+        <script>aircrane.click("avionics")</script>
+      </binding>
+    </action>
+    <hovered>
+      <binding>
+        <command>set-tooltip</command>
+        <tooltip-id>toggle-hyd-snorkel</tooltip-id>
+        <label>Toggle: %s</label>
+        <property>sim/model/firetank/deployflexhose</property>
+        <mapping>nasal</mapping>
+        <script>
+          var modes = ['Release', 'Released'];
+          return modes[arg[0]];
+        </script>
+      </binding>
+    </hovered>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>toggle-hyd-snorkel</object-name>
+    <property>sim/model/firetank/deployflexhose</property>
+    <factor>-45</factor>
+    <center>
+      <x-m>  0.06004 </x-m>
+      <y-m> -0.02711 </y-m>
+      <z-m>  0.00664 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+
+  <!-- Foam "Toggle" -->
+  <animation>
+    <type>pick</type>
+    <object-name>toggle-foam</object-name>
+    <visible>true</visible>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>property-toggle</command>
+        <property>sim/model/firetank/foam</property>
+      </binding>
+      <binding>
+        <command>nasal</command>
+        <script>aircrane.click("avionics")</script>
+      </binding>
+    </action>
+    <hovered>
+      <binding>
+        <command>set-tooltip</command>
+        <tooltip-id>toggle-foam</tooltip-id>
+        <label>Foam: %s</label>
+        <property>sim/model/firetank/foam</property>
+        <mapping>nasal</mapping>
+        <script>
+          var modes = ['Off', 'On'];
+          return modes[arg[0]];
+        </script>
+      </binding>
+    </hovered>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>toggle-foam</object-name>
+    <property>sim/model/firetank/foam</property>
+    <factor>-45</factor>
+    <center>
+      <x-m>  0.05970 </x-m>
+      <y-m> -0.00353 </y-m>
+      <z-m>  0.00663 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+
+  <!-- Hyd Sea Snorkel "Toggle" -->
+  <animation>
+    <type>pick</type>
+    <object-name>toggle-sea-snorkel</object-name>
+    <visible>true</visible>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>property-toggle</command>
+        <property>sim/model/firetank/deployramscoop</property>
+      </binding>
+      <binding>
+        <command>nasal</command>
+        <script>
+          if (getprop("sim/model/firetank/arm")) {
+            if (getprop("/sim/model/firetank/flexhose/hosehitsground")) {
+              screen.log.write("Damage will occur if Snorkel is deployed this low!");
+            }
+          } else if ((getprop("sim/model/firetank/deployramscoop") == 0 and getprop("sim/model/firetank/deployramscoop/position-norm") == 1) or (getprop("sim/model/firetank/deployramscoop") == 1 and getprop("sim/model/firetank/deployramscoop/position-norm") == 0)) {
+            doors.ramscoop.toggle();
+          } else {
+            screen.log.write("System must be armed first!");
+          }
+        </script>
+      </binding>
+      <binding>
+        <command>nasal</command>
+        <script>aircrane.click("avionics")</script>
+      </binding>
+    </action>
+    <hovered>
+      <binding>
+        <command>set-tooltip</command>
+        <tooltip-id>toggle-sea-snorkel</tooltip-id>
+        <label>Sea Snorkel: %s</label>
+        <property>sim/model/firetank/deployramscoop</property>
+        <mapping>nasal</mapping>
+        <script>
+          var modes = ['Retract', 'Extend'];
+          return modes[arg[0]];
+        </script>
+      </binding>
+    </hovered>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>toggle-sea-snorkel</object-name>
+    <property>sim/model/firetank/deployramscoop</property>
+    <factor>-45</factor>
+    <center>
+      <x-m>  0.05935 </x-m>
+      <y-m>  0.02003 </y-m>
+      <z-m>  0.00662 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+
+</PropertyList>

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 
 <PropertyList>
-  
+
   <keyboard>
-    
+
     <key n="100">
       <name>d</name>
       <desc>Crew door</desc>
@@ -12,7 +12,7 @@
         <script>doors.crew.toggle();</script>
       </binding>
     </key>
-    
+
     <key n="68">
       <name>D</name>
       <desc>Passenger door</desc>
@@ -21,7 +21,7 @@
         <script>doors.passenger.toggle();</script>
       </binding>
     </key>
-    
+
     <key n="4">
       <name>Ctrl-d</name>
       <desc>Toggle SAS enable</desc>
@@ -30,7 +30,7 @@
         <script>fcs.sas.toggleEnable();</script>
       </binding>
     </key>
-    
+
     <key n="5">
       <name>Ctrl-e</name>
       <desc>Toggle CAS enable</desc>
@@ -39,7 +39,7 @@
         <script>fcs.cas.toggleEnable();</script>
       </binding>
     </key>
-    
+
     <key n="6">
       <name>Ctrl-f</name>
       <desc>Toggle AutoHover</desc>
@@ -50,25 +50,25 @@
     </key>
 
     <key n="70">
-        <name>F</name>
-        <desc>Toggle flashlight</desc>
-        <repeatable type="bool">true</repeatable>
-        <binding>
-            <command>nasal</command>
-            <script>aircrane.toggle_flashlight()</script>
-        </binding>
+      <name>F</name>
+      <desc>Toggle flashlight</desc>
+      <repeatable type="bool">true</repeatable>
+      <binding>
+        <command>nasal</command>
+        <script>aircrane.toggle_flashlight()</script>
+      </binding>
     </key>
 
     <key n="102">
-        <name>f</name>
-        <desc>Toggle flashlight</desc>
-        <repeatable type="bool">true</repeatable>
-        <binding>
-            <command>nasal</command>
-            <script>aircrane.toggle_flashlight()</script>
-        </binding>
+      <name>f</name>
+      <desc>Toggle flashlight</desc>
+      <repeatable type="bool">true</repeatable>
+      <binding>
+        <command>nasal</command>
+        <script>aircrane.toggle_flashlight()</script>
+      </binding>
     </key>
-    
+
     <key n="82">
       <name>R</name>
       <desc>Toggle rotor brake</desc>
@@ -80,7 +80,7 @@
         </script>
       </binding>
     </key>
-    
+
     <key n="114">
       <name>r</name>
       <desc>Apply rotor brake</desc>
@@ -95,7 +95,7 @@
         </binding>
       </mod-up>
     </key>
-    
+
     <key n="125">
       <name>}</name>
       <desc>Start Engines</desc>
@@ -104,7 +104,7 @@
         <script>aircrane.engines(1)</script>
       </binding>
     </key>
-    
+
     <key n="123">
       <name>{</name>
       <desc>Shutdown Engines</desc>
@@ -113,52 +113,50 @@
         <script>aircrane.engines(0)</script>
       </binding>
     </key>
-    
+
     <key n="106">
       <name>j</name>
       <desc>Arm and Deploy SeaWater Snorkel</desc>
       <binding>
         <command>nasal</command>
         <script>
-          if (getprop("sim/model/firetank/deployramscoop/position-norm") == 0)
-          {
-            if (getprop("/sim/model/firetank/flexhose/hosehitsground"))
+          if (getprop("sim/model/firetank/deployramscoop/position-norm") == 0) {
+            if (getprop("/sim/model/firetank/flexhose/hosehitsground")) {
               screen.log.write("Damage will occur if SeaSnorkel is deployed this low!");
-            else {
+            } else {
               setprop("sim/model/firetank/arm", 1);
               doors.ramscoop.toggle();
             }
-          }
-          else {
-            if (getprop("sim/model/firetank/deployflexhose/position-norm") == 1)
+          } else {
+            if (getprop("sim/model/firetank/deployflexhose/position-norm") == 1) {
               setprop("sim/model/firetank/arm", 0);
-            doors.ramscoop.toggle();
+              doors.ramscoop.toggle();
+            }
           }
         </script>
       </binding>
     </key>
-    
+
     <key n="74">
       <name>J</name>
       <desc>Arm and Deploy Snorkel</desc>
       <binding>
         <command>nasal</command>
         <script>
-          if (getprop("sim/model/firetank/deployflexhose/position-norm") == 1)
-          {
-            if (getprop("/sim/model/firetank/flexhose/hosehitsground"))
+          if (getprop("sim/model/firetank/deployflexhose/position-norm") == 1) {
+            if (getprop("/sim/model/firetank/flexhose/hosehitsground")) {
               screen.log.write("Damage will occur if Snorkel is deployed this low!");
-            else {
+            } else {
               setprop("sim/model/firetank/arm", 1);
               doors.flexhose.toggle();
             }
-          }
-          else
+          } else {
             screen.log.write("Hose already deployed!");
+          }
         </script>
       </binding>
     </key>
-    
+
     <key n="107">
       <name>k</name>
       <desc>Open Cannon Valve</desc>
@@ -167,28 +165,25 @@
         <property>sim/model/firetank/opencannonvalve</property>
       </binding>
     </key>
-    
+
     <key n="75">
       <name>K</name>
       <desc>Open Tank Doors</desc>
       <binding>
         <command>nasal</command>
         <script>
-          if (!getprop("sim/model/firetank/opentankdoors"))
-            {
-              if (getprop("sim/model/firetank/quantity") > 0)
-                {
-                  setprop("sim/model/firetank/opentankdoors", 1);
-                }
-              else
-                screen.log.write("Quantity set to safe!");
-            }
-          else
-             setprop("sim/model/firetank/opentankdoors", 0);
+          if (!getprop("sim/model/firetank/opentankdoors")) {
+            if (getprop("sim/model/firetank/quantity") > 0) {
+              setprop("sim/model/firetank/opentankdoors", 1);
+            } else {
+              screen.log.write("Quantity set to safe!");
+            } else {
+              setprop("sim/model/firetank/opentankdoors", 0);
+          }
         </script>
       </binding>
     </key>
 
   </keyboard>
-  
+
 </PropertyList>

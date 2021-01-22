@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+
+  <!-- ================================================================== -->
+  <!-- Basic Lighting                                                     -->
+  <!-- ================================================================== -->
+  <model>
+    <name>spotlightDEF</name>
+    <path>Aircraft/AirCrane/Models/light/DEFAULT/SpotLight.xml</path>
+    <offsets>
+      <x-m> -7.78415 </x-m>
+      <y-m>  0.00000 </y-m>
+      <z-m> -3.21645 </z-m>
+      <pitch-deg> -105 </pitch-deg>
+    </offsets>
+  </model>
+
+  <animation>
+    <type>select</type>
+    <object-name>spotlightDEF</object-name>
+    <condition>
+      <not><property>/sim/rendering/shaders/skydome</property></not>
+    </condition>
+  </animation>
+
+  <!-- ================================================================== -->
+  <!-- ALS Lighting                                                       -->
+  <!-- ================================================================== -->
+  
+  <!-- Done in main aircraft.xml -->
+  <model>
+    <name>spotlightALS</name>
+    <path>Aircraft/AirCrane/Models/light/ALS/SpotLight.xml</path>
+  </model>
+
+  <animation>
+    <type>select</type>
+    <object-name>spotlightALS</object-name>
+    <condition>
+      <property>/sim/rendering/shaders/skydome</property>
+    </condition>
+  </animation>
+
+</PropertyList>

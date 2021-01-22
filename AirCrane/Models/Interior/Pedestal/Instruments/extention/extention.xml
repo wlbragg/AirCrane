@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+
+  <path>extention.ac</path>
+
+  <animation>
+    <object-name>parkingbrake-base</object-name>
+    <object-name>parkingbrake-handle</object-name>
+    <object-name>pedestal-extention</object-name>
+    <object-name>placard</object-name>
+    <object-name>wheellock-base</object-name>
+    <object-name>wheellock-handle</object-name>
+    <object-name>base</object-name>
+    <object-name>portboot1</object-name>
+    <object-name>portboot2</object-name>
+    <object-name>portboot3</object-name>
+    <object-name>portboot4</object-name>
+    <object-name>portboot5</object-name>
+    <object-name>portboot6</object-name>
+  </animation>
+
+  <effect>
+    <inherits-from>Aircraft/AirCrane/Models/Effects/Interior/cockpit-interior</inherits-from>
+    <object-name>parkingbrake-base</object-name>
+    <object-name>parkingbrake-handle</object-name>
+    <object-name>pedestal-extention</object-name>
+    <object-name>placard</object-name>
+    <object-name>wheellock-base</object-name>
+    <object-name>wheellock-handle</object-name>
+    <object-name>base</object-name>
+    <object-name>portboot1</object-name>
+    <object-name>portboot2</object-name>
+    <object-name>portboot3</object-name>
+    <object-name>portboot4</object-name>
+    <object-name>portboot5</object-name>
+    <object-name>portboot6</object-name>
+  </effect>
+
+   <!-- Parking Brake -->
+    <animation>
+        <type>translate</type>
+        <object-name>parkingbrake-handle</object-name>
+        <property>/controls/gear/brake-parking</property>
+        <factor>-0.06</factor>
+        <axis>
+			<x1-m> 0.022417</x1-m>
+            <y1-m>-0.095776</y1-m>
+            <z1-m> 0.074   </z1-m>
+            <x2-m> 0.022417</x2-m>
+            <y2-m>-0.095776</y2-m>
+            <z2-m>-0.01019 </z2-m>
+        </axis>
+    </animation>
+    <animation>
+        <type>rotate</type>
+        <object-name>parkingbrake-handle</object-name>
+        <property>/controls/gear/brake-parking</property>
+        <factor>-45</factor>
+        <axis>
+			<x1-m> 0.022417</x1-m>
+            <y1-m>-0.095776</y1-m>
+            <z1-m> 0.074   </z1-m>
+            <x2-m> 0.022417</x2-m>
+            <y2-m>-0.095776</y2-m>
+            <z2-m>-0.01019 </z2-m>
+        </axis>
+    </animation>
+    <animation>
+        <type>pick</type>
+        <object-name>parkingbrake-handle</object-name>
+        <visible>true</visible>
+        <action>
+            <name>Select</name>
+            <button>0</button>
+            <binding>
+                <command>property-toggle</command>
+                <property>/controls/gear/brake-parking</property>
+            </binding>
+            <binding>
+                <command>nasal</command>
+                <script>aircrane.click("avionics")</script>
+            </binding>
+        </action>
+        <hovered>
+            <binding>
+                <command>set-tooltip</command>
+                <label>Parking brake: %s</label>
+                <property>/controls/gear/brake-parking</property>
+                <tooltip-id>parking-brake</tooltip-id>
+                <mapping>on-off</mapping>
+            </binding>
+        </hovered>
+    </animation>
+
+   <!-- None Gear Lock -->
+
+    <animation>
+        <name>assembly</name>
+        <object-name>wheellock-handle</object-name>
+		<object-name>wheellock-base</object-name>
+		<object-name>portboot1</object-name>
+		<object-name>portboot2</object-name>
+		<object-name>portboot3</object-name>
+		<object-name>portboot4</object-name>
+		<object-name>portboot5</object-name>
+		<object-name>portboot6</object-name>
+    </animation>
+
+    <animation>
+        <type>translate</type>
+        <object-name>wheellock-handle</object-name>
+        <property>/controls/gear/wheellock</property>
+        <factor>0.01</factor>
+        <axis>
+			<x1-m> 0.022399</x1-m>
+            <y1-m> 0.10276 </y1-m>
+            <z1-m> 0.040731</z1-m>
+            <x2-m> 0.022316</x2-m>
+            <y2-m> 0.103051</y2-m>
+            <z2-m>-0.008485</z2-m>
+        </axis>
+    </animation>
+    <animation>
+        <type>rotate</type>
+        <object-name>wheellock-handle</object-name>
+        <property>/controls/gear/wheellock</property>
+        <factor>-45</factor>
+        <axis>
+			<x1-m> 0.022399</x1-m>
+            <y1-m> 0.10276 </y1-m>
+            <z1-m> 0.040731</z1-m>
+            <x2-m> 0.022316</x2-m>
+            <y2-m> 0.103051</y2-m>
+            <z2-m>-0.008485</z2-m>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>rotate</type>
+        <object-name>assembly</object-name>
+        <property>/controls/gear/wheellock</property>
+        <factor>1.25</factor>
+        <axis>
+            <x>-0.57</x>
+            <y> 0.3</y>
+            <z> 0.0</z>
+        </axis>
+        <center>
+            <x-m> 0.02255 </x-m>
+            <y-m> 0.102992</y-m>
+            <z-m>-0.22519 </z-m>
+        </center>
+    </animation>
+    <animation>
+        <type>pick</type>
+        <object-name>wheellock-handle</object-name>
+        <visible>true</visible>
+        <action>
+            <name>Select</name>
+            <button>0</button>
+            <binding>
+                <command>property-toggle</command>
+                <property>/controls/gear/wheellock</property>
+            </binding>
+            <binding>
+                <command>nasal</command>
+                <script>aircrane.click("avionics")</script>
+            </binding>
+        </action>
+        <hovered>
+            <binding>
+                <command>set-tooltip</command>
+                <label>Wheel lock: %s</label>
+                <property>/controls/gear/wheellock</property>
+                <tooltip-id>wheel-lock</tooltip-id>
+                <mapping>on-off</mapping>
+            </binding>
+        </hovered>
+    </animation>
+
+</PropertyList>

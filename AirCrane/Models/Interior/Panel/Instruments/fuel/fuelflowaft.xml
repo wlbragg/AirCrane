@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+
+  <path>fuelflow.ac</path>
+
+  <animation>
+    <object-name>fond</object-name>
+    <object-name>face</object-name>
+    <object-name>needle</object-name>
+
+    <object-name>vitre</object-name>
+  </animation>
+
+  <effect>
+    <inherits-from>Aircraft/AirCrane/Models/Effects/Interior/cockpit-interior</inherits-from>
+    <object-name>fond</object-name>
+    <object-name>face</object-name>
+    <object-name>needle</object-name>
+  </effect>
+
+  <effect>
+    <inherits-from>Aircraft/AirCrane/Models/Effects/Interior/interior-glass-reflection-panel-front</inherits-from>
+    <object-name>vitre</object-name>
+  </effect>
+
+  <animation>
+    <type>material</type>
+    <object-name>face</object-name>
+    <object-name>needle</object-name>
+    <condition>
+      <property>controls/electric/battery-bus-switch</property>
+    </condition>
+    <emission>
+      <factor-prop>controls/lighting/luminosite-lights</factor-prop>
+      <red>   0.50 </red>
+      <green> 0.40 </green>
+      <blue>  0.30 </blue>
+    </emission>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>needle</object-name>
+    <property>consumables/fuel/aft/flow</property>
+    <interpolation>
+      <entry><ind> -999 </ind><dep>    1 </dep></entry>
+      <entry><ind>    0 </ind><dep>    0 </dep></entry>
+      <entry><ind>    5 </ind><dep>  -39 </dep></entry>
+      <entry><ind>   10 </ind><dep>  -77 </dep></entry>
+      <entry><ind>   15 </ind><dep> -116 </dep></entry>
+      <entry><ind>   20 </ind><dep> -153 </dep></entry>
+      <entry><ind>   25 </ind><dep> -192 </dep></entry>
+      <entry><ind>   30 </ind><dep> -230 </dep></entry>
+      <entry><ind>   35 </ind><dep> -269 </dep></entry>
+      <entry><ind>   40 </ind><dep> -309 </dep></entry>
+      <entry><ind>  999 </ind><dep> -310 </dep></entry>
+    </interpolation>
+    <axis>
+      <x> 1 </x>
+      <y> 0 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+
+</PropertyList>

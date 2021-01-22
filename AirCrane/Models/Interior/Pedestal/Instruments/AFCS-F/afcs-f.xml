@@ -1,0 +1,517 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+
+  <path>afcs-f.ac</path>
+
+  <animation>
+    <object-name>base</object-name>
+    <object-name>afcs1</object-name>
+    <object-name>afcs2</object-name>
+    <object-name>afcsfault</object-name>
+    <object-name>baralt</object-name>
+    <object-name>sticktrim</object-name>
+    <object-name>yaw</object-name>
+    <object-name>afcsservo</object-name>
+    <object-name>yawtrim</object-name>
+  </animation>
+
+  <effect>
+    <inherits-from>Aircraft/AirCrane/Models/Effects/Interior/cockpit-interior</inherits-from>
+    <object-name>base</object-name>
+    <object-name>afcs1</object-name>
+    <object-name>afcs2</object-name>
+    <object-name>afcsfault</object-name>
+    <object-name>baralt</object-name>
+    <object-name>sticktrim</object-name>
+    <object-name>yaw</object-name>
+    <object-name>afcsservo</object-name>
+    <object-name>yawtrim</object-name>
+  </effect>
+
+  <!-- AFCS Servo "Button" -->
+  <animation>
+    <type>slider</type>
+    <object-name>afcsservo</object-name>
+    <property>/controls/switches/spring-switch/afcs-servo</property>
+    <factor>0.002</factor>
+    <axis>
+      <x>  0 </x>
+      <y>  0 </y>
+      <z> -1 </z>
+    </axis>
+    <action>
+      <binding>
+        <command>nasal</command>
+        <script>
+          if (getprop("/controls/switches/spring-switch/afcs-servo") == 0) {
+            setprop("/controls/switches/spring-switch/afcs-servo", 1);
+            if (!getprop("/controls/switches/afcs-servo")) {
+              setprop("/controls/switches/afcs-servo", 1);
+            } else {
+              setprop("/controls/switches/afcs-servo", 0);
+            }
+            aircrane.click("button-up", -9.17972, -0.002227, -1.76167);
+          }
+        </script>
+      </binding>
+    </action>
+    <release>
+      <binding>
+        <command>nasal</command>
+        <script>
+          if (getprop("/controls/switches/spring-switch/afcs-servo") == 1) {
+            setprop("/controls/switches/spring-switch/afcs-servo", 0);
+            aircrane.click("button-up", -9.17972, -0.002227, -1.76167);
+          }
+        </script>
+      </binding>
+    </release>
+    <hovered>
+      <binding>
+        <command>set-tooltip</command>
+        <tooltip-id>afcsservo</tooltip-id>
+        <label>AFCS Servo</label>
+      </binding>
+    </hovered>
+  </animation>
+
+  <animation>
+    <object-name>afcsservo</object-name>
+    <type>material</type>
+    <condition>
+      <and>
+        <property>/controls/switches/afcs-servo</property>
+        <property>/systems/electrical/outputs/digital-display</property>
+      </and>
+    </condition>
+    <emission>
+      <red>   0 </red>
+      <green> 1 </green>
+      <blue>  1 </blue>
+    </emission>
+  </animation>
+
+  <!-- AFCS 1 "Button" -->
+  <animation>
+    <type>slider</type>
+    <object-name>afcs1</object-name>
+    <property>/controls/switches/spring-switch/afcs-1</property>
+    <factor>0.002</factor>
+    <axis>
+      <x>  0 </x>
+      <y>  0 </y>
+      <z> -1 </z>
+    </axis>
+    <action>
+      <binding>
+        <command>nasal</command>
+        <script>
+          if (getprop("/controls/switches/spring-switch/afcs-1") == 0) {
+            setprop("/controls/switches/spring-switch/afcs-1", 1);
+            if (!getprop("/controls/switches/afcs-1")) {
+              setprop("/controls/switches/afcs-1", 1);
+            } else {
+              setprop("/controls/switches/afcs-1", 0);
+            }
+            aircrane.click("button-up", -9.1788, -0.095699, -1.76156);
+          }
+          #fcs.sas.toggleEnable();
+        </script>
+      </binding>
+    </action>
+    <release>
+      <binding>
+        <command>nasal</command>
+        <script>
+          if (getprop("/controls/switches/spring-switch/afcs-1") == 1) {
+            setprop("/controls/switches/spring-switch/afcs-1", 0);
+            aircrane.click("button-up", -9.1788, -0.095699, -1.76156);
+          }
+        </script>
+      </binding>
+    </release>
+    <hovered>
+      <binding>
+        <command>set-tooltip</command>
+        <tooltip-id>afcs1</tooltip-id>
+        <label>AFCS 1</label>
+      </binding>
+    </hovered>
+  </animation>
+
+  <animation>
+    <object-name>afcs1</object-name>
+    <type>material</type>
+    <condition>
+      <and>
+        <property>/controls/switches/afcs-1</property>
+        <property>/systems/electrical/outputs/digital-display</property>
+      </and>
+    </condition>
+    <emission>
+      <red>   0 </red>
+      <green> 1 </green>
+      <blue>  1 </blue>
+    </emission>
+  </animation>
+
+  <!-- AFCS 2 "Button" -->
+  <animation>
+    <type>slider</type>
+    <object-name>afcs2</object-name>
+    <property>/controls/switches/spring-switch/afcs-2</property>
+    <factor>0.002</factor>
+    <axis>
+      <x>  0 </x>
+      <y>  0 </y>
+      <z> -1 </z>
+    </axis>
+    <action>
+      <binding>
+        <command>nasal</command>
+        <script>
+          if (getprop("/controls/switches/spring-switch/afcs-2") == 0) {
+            setprop("/controls/switches/spring-switch/afcs-2", 1);
+            if (!getprop("/controls/switches/afcs-2")) {
+              setprop("/controls/switches/afcs-2", 1);
+            } else {
+              setprop("/controls/switches/afcs-2", 0);
+            }
+            aircrane.click("button-up", -9.17918, -0.070808, -1.76163);
+          }
+        </script>
+      </binding>
+    </action>
+    <release>
+      <binding>
+        <command>nasal</command>
+        <script>
+          if (getprop("/controls/switches/spring-switch/afcs-2") == 1) {
+            setprop("/controls/switches/spring-switch/afcs-2", 0);
+            aircrane.click("button-up", -9.17918, -0.070808, -1.76163);
+          }
+        </script>
+      </binding>
+    </release>
+    <hovered>
+      <binding>
+        <command>set-tooltip</command>
+        <tooltip-id>afcs2</tooltip-id>
+        <label>AFCS 2</label>
+      </binding>
+    </hovered>
+  </animation>
+
+  <animation>
+    <object-name>afcs2</object-name>
+    <type>material</type>
+    <condition>
+      <and>
+        <property>/controls/switches/afcs-2</property>
+        <property>/systems/electrical/outputs/digital-display</property>
+      </and>
+    </condition>
+    <emission>
+      <red>0.0</red>
+      <green>1.0</green>
+      <blue>1.0</blue>
+    </emission>
+  </animation>
+
+  <!-- AFCS Fault "Button" -->
+  <animation>
+    <type>slider</type>
+    <object-name>afcsfault</object-name>
+    <property>/controls/switches/spring-switch/afcs-fault</property>
+    <factor>0.002</factor>
+    <axis>
+      <x>  0 </x>
+      <y>  0 </y>
+      <z> -1 </z>
+    </axis>
+    <action>
+      <binding>
+        <command>nasal</command>
+        <script>
+          if (getprop("/controls/switches/spring-switch/afcs-fault") == 0) {
+            setprop("/controls/switches/spring-switch/afcs-fault", 1);
+            if (!getprop("/controls/switches/afcs-fault")) {
+              setprop("/controls/switches/afcs-fault", 1);
+            } else {
+              setprop("/controls/switches/afcs-fault", 0);
+            }
+            aircrane.click("button-up", -9.16008, -0.095251, -1.76517);
+          }
+        </script>
+      </binding>
+    </action>
+    <release>
+      <binding>
+        <command>nasal</command>
+        <script>
+          if (getprop("/controls/switches/spring-switch/afcs-fault") == 1) {
+            setprop("/controls/switches/spring-switch/afcs-fault", 0);
+            aircrane.click("button-up", -9.16008, -0.095251, -1.76517);
+          }
+        </script>
+      </binding>
+    </release>
+    <hovered>
+      <binding>
+        <command>set-tooltip</command>
+        <tooltip-id>afcsfault</tooltip-id>
+        <label>AFCS Fault</label>
+      </binding>
+    </hovered>
+  </animation>
+
+  <animation>
+    <object-name>afcsfault</object-name>
+    <type>material</type>
+    <condition>
+      <and>
+        <property>/controls/switches/afcs-fault</property>
+        <property>/systems/electrical/outputs/digital-display</property>
+      </and>
+    </condition>
+    <emission>
+      <red>   1 </red>
+      <green> 0 </green>
+      <blue>  0 </blue>
+    </emission>
+  </animation>
+
+  <!-- Bar Alt "Button" -->
+  <animation>
+    <type>slider</type>
+    <object-name>baralt</object-name>
+    <property>/controls/switches/spring-switch/bar-alt</property>
+    <factor>0.002</factor>
+    <axis>
+      <x>  0 </x>
+      <y>  0 </y>
+      <z> -1 </z>
+    </axis>
+    <action>
+      <binding>
+        <command>nasal</command>
+        <script>
+          if (getprop("/controls/switches/spring-switch/bar-alt") == 0) {
+            setprop("/controls/switches/spring-switch/bar-alt", 1);
+            if (!getprop("/controls/switches/bar-alt")) {
+              setprop("/controls/switches/bar-alt", 1);
+            } else {
+              setprop("/controls/switches/bar-alt", 0);
+            }
+          aircrane.click("button-up", -9.16008, -0.070808, -1.76452);
+          }
+        </script>
+      </binding>
+    </action>
+    <release>
+      <binding>
+        <command>nasal</command>
+        <script>
+          if (getprop("/controls/switches/spring-switch/bar-alt") == 1) {
+            setprop("/controls/switches/spring-switch/bar-alt", 0);
+            aircrane.click("button-up", -9.16008, -0.070808, -1.76452);
+          }
+        </script>
+      </binding>
+    </release>
+    <hovered>
+      <binding>
+        <command>set-tooltip</command>
+        <tooltip-id>baralt</tooltip-id>
+        <label>Bar Alt</label>
+      </binding>
+    </hovered>
+  </animation>
+
+  <animation>
+    <object-name>baralt</object-name>
+    <type>material</type>
+    <condition>
+      <and>
+        <property>/controls/switches/bar-alt</property>
+        <property>/systems/electrical/outputs/digital-display</property>
+      </and>
+    </condition>
+    <emission>
+      <red>   0 </red>
+      <green> 1 </green>
+      <blue>  1 </blue>
+    </emission>
+  </animation>
+
+  <!-- Stick Trim "Button" -->
+  <animation>
+    <type>slider</type>
+    <object-name>sticktrim</object-name>
+    <property>/controls/switches/spring-switch/stick-trim</property>
+    <factor>0.002</factor>
+    <axis>
+      <x>  0 </x>
+      <y>  0 </y>
+      <z> -1 </z>
+    </axis>
+    <action>
+      <binding>
+        <command>nasal</command>
+        <script>
+          if (getprop("/controls/switches/spring-switch/stick-trim") == 0) {
+            setprop("/controls/switches/spring-switch/stick-trim", 1);
+            if (!getprop("/controls/switches/stick-trim")) {
+              setprop("/controls/switches/stick-trim", 1);
+            } else {
+              setprop("/controls/switches/stick-trim", 0);
+            }
+            aircrane.click("button-up", -9.13785, -0.095226, -1.76783);
+          }
+
+        </script>
+      </binding>
+    </action>
+    <release>
+      <binding>
+        <command>nasal</command>
+        <script>
+          if (getprop("/controls/switches/spring-switch/stick-trim") == 1) {
+            setprop("/controls/switches/spring-switch/stick-trim", 0);
+            aircrane.click("button-up", -9.13785, -0.095226, -1.76783);
+          }
+        </script>
+      </binding>
+    </release>
+    <hovered>
+      <binding>
+        <command>set-tooltip</command>
+        <tooltip-id>sticktrim</tooltip-id>
+        <label>Stick Trim</label>
+      </binding>
+    </hovered>
+  </animation>
+
+  <animation>
+    <object-name>sticktrim</object-name>
+    <type>material</type>
+    <condition>
+      <and>
+        <property>/controls/switches/stick-trim</property>
+        <property>/systems/electrical/outputs/digital-display</property>
+      </and>
+    </condition>
+    <emission>
+      <red>   0 </red>
+      <green> 1 </green>
+      <blue>  1 </blue>
+    </emission>
+  </animation>
+
+  <!-- Yaw "Button" -->
+  <animation>
+    <type>slider</type>
+    <object-name>yaw</object-name>
+    <property>/controls/switches/spring-switch/yaw</property>
+    <factor>0.002</factor>
+    <axis>
+      <x>  0 </x>
+      <y>  0 </y>
+      <z> -1 </z>
+    </axis>
+    <action>
+      <binding>
+        <command>nasal</command>
+        <script>
+          if (getprop("/controls/switches/spring-switch/yaw") == 0) {
+            setprop("/controls/switches/spring-switch/yaw", 1);
+            if (!getprop("/controls/switches/yaw")) {
+              setprop("/controls/switches/yaw", 1);
+            } else {
+              setprop("/controls/switches/yaw", 0);
+            }
+            aircrane.click("button-up", -9.13813, -0.070683, -1.76792);
+          }
+        </script>
+      </binding>
+    </action>
+    <release>
+      <binding>
+        <command>nasal</command>
+        <script>
+          if (getprop("/controls/switches/spring-switch/yaw") == 1) {
+            setprop("/controls/switches/spring-switch/yaw", 0);
+            aircrane.click("button-up", -9.13813, -0.070683, -1.76792);
+          }
+        </script>
+      </binding>
+    </release>
+    <hovered>
+      <binding>
+        <command>set-tooltip</command>
+        <tooltip-id>yaw</tooltip-id>
+        <label>Yaw</label>
+      </binding>
+    </hovered>
+  </animation>
+
+  <animation>
+    <object-name>yaw</object-name>
+    <type>material</type>
+    <condition>
+      <and>
+        <property>/controls/switches/yaw</property>
+        <property>/systems/electrical/outputs/digital-display</property>
+      </and>
+    </condition>
+    <emission>
+      <red>   0 </red>
+      <green> 1 </green>
+      <blue>  1 </blue>
+    </emission>
+  </animation>
+
+  <!-- Yaw Trim "Knob" -->
+  <animation>
+    <type>knob</type>
+    <object-name>yawtrim</object-name>
+    <property>controls/knobs/yaw-trim</property>
+    <factor>-60</factor>
+    <offset-deg>0</offset-deg>
+    <center>
+      <x-m> 0.02538 </x-m>
+      <y-m> 0.04329 </y-m>
+      <z-m> 0.00334 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 0 </y>
+      <z> 1 </z>
+    </axis>
+    <action>
+      <repeatable>true</repeatable>
+      <binding>
+        <command>property-adjust</command>
+        <property>controls/knobs/yaw-trim</property>
+        <factor>.01</factor>
+        <min>-3</min>
+        <max>3</max>
+        <wrap>false</wrap>
+      </binding>
+      <binding>
+        <command>nasal</command>
+        <script>aircrane.click("avionics")</script>
+      </binding>
+    </action>
+    <hovered>
+      <binding>
+        <command>set-tooltip</command>
+        <tooltip-id>yawtrim</tooltip-id>
+        <label>Yaw Trim: %s</label>
+        <property>controls/knobs/yaw-trim</property>
+      </binding>
+    </hovered>
+  </animation>
+
+</PropertyList>

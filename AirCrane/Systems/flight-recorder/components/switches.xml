@@ -1,11 +1,10 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="ISO-8859-1"?>
 
 <PropertyList>
 
   <!-- ============================================================== -->
   <!-- Switches                                                       -->
   <!-- ============================================================== -->
-
   <signal>
     <type>bool</type>
     <property type="string">/controls/engines/engine/primer-lever</property>
@@ -28,7 +27,7 @@
   </signal>
 
   <!-- Note: /controls/switches/master-avionics is set in
-             Aircraft/Generic/flightrecorder/components/controls.xml.
+       Aircraft/Generic/flightrecorder/components/controls.xml.
   -->
 
   <!-- Passengers and baggage -->
@@ -78,7 +77,6 @@
   <!-- ============================================================== -->
   <!-- Doors and Movable Objects                                      -->
   <!-- ============================================================== -->
-
   <signal>
     <type>float</type>
     <property type="string">/sim/model/door-positions/crew/position-norm</property>

@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList include="Systems/aircrane-base.xml">
+
+  <sim>
+
+    <variant-of>aircrane-e</variant-of>
+
+    <description>AirCrane S-64F (Yasim)</description>
+    <author>BARANGER Emmanuel (3D/FDM), Heiko Schulz (FDM), Wayne Bragg (Utility 3D and Systems, Effects)</author>
+
+    <aircraft-version>2020.4-git</aircraft-version>
+    <status>alpha</status>
+    <license>GPL v2</license>
+
+    <flight-model>yasim</flight-model>
+    <aero>Systems/aircrane-yasim-f</aero>
+
+    <rating>
+      <FDM type="int">     4 </FDM>
+      <systems type="int"> 3 </systems>
+      <cockpit type="int"> 4 </cockpit>
+      <model type="int">   4 </model>
+    </rating>
+
+    <!-- Splash screens. One is randomly chosen when FlightGear starts -->
+    <previews>
+      <preview>
+        <type>cockpit</type>
+        <path>Previews/aircrane-preview1.jpg</path>
+        <splash type="bool">true</splash>
+      </preview>
+      <preview>
+        <type>exterior</type>
+        <path>Previews/aircrane-preview2.jpg</path>
+        <splash type="bool">true</splash>
+      </preview>
+      <preview>
+        <type>exterior</type>
+        <path>Previews/aircrane-preview3.jpg</path>
+        <splash type="bool">true</splash>
+      </preview>
+      <preview>
+        <type>cockpit</type>
+        <path>Previews/aircrane-preview4.jpg</path>
+        <splash type="bool">true</splash>
+      </preview>
+      <preview>
+        <type>exterior</type>
+        <path>Previews/aircrane-preview5.jpg</path>
+        <splash type="bool">true</splash>
+      </preview>
+      <preview>
+        <type>exterior</type>
+        <path>Previews/aircrane-preview6.jpg</path>
+        <splash type="bool">true</splash>
+      </preview>
+      <preview>
+        <type>cockpit</type>
+        <path>Previews/aircrane-preview7.jpg</path>
+        <splash type="bool">true</splash>
+      </preview>
+      <preview>
+        <type>exterior</type>
+        <path>Previews/aircrane-preview8.jpg</path>
+        <splash type="bool">true</splash>
+      </preview>
+      <preview>
+        <type>exterior</type>
+        <path>Previews/aircrane-preview9.jpg</path>
+        <splash type="bool">true</splash>
+      </preview>
+      <preview>
+        <type>cockpit</type>
+        <path>Previews/aircrane-preview10.jpg</path>
+        <splash type="bool">true</splash>
+      </preview>
+      <preview>
+        <type>exterior</type>
+        <path>Previews/aircrane-preview11.jpg</path>
+        <splash type="bool">true</splash>
+      </preview>
+      <preview>
+        <type>exterior</type>
+        <path>Previews/aircrane-preview12.jpg</path>
+        <splash type="bool">true</splash>
+      </preview>
+      <preview>
+        <type>cockpit</type>
+        <path>Previews/aircrane-preview13.jpg</path>
+        <splash type="bool">true</splash>
+      </preview>
+      <preview>
+        <type>exterior</type>
+        <path>Previews/aircrane-preview14.jpg</path>
+        <splash type="bool">true</splash>
+      </preview>
+      <preview>
+        <type>exterior</type>
+        <path>Previews/aircrane-preview15.jpg</path>
+        <splash type="bool">true</splash>
+      </preview>
+    </previews>
+
+    <tags>
+      <tag>Sikorsky</tag>
+      <tag>helicopter</tag>
+      <tag>2-engine</tag>
+      <tag>1960s</tag>
+      <tag>1970s</tag>
+      <tag>1980s</tag>
+      <tag>1990s</tag>
+      <tag>2000s</tag>
+      <tag>2010s</tag>
+      <tag>2020s</tag>
+      <tag>compositor</tag>
+    </tags>
+
+	<model>
+	  <variant type="int">1</variant>
+      <aircrane>
+		<model-f type="bool">true</model-f>
+      </aircrane>
+	</model>
+
+  </sim>
+
+</PropertyList>

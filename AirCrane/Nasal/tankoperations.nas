@@ -54,15 +54,8 @@ var digital_display =
 #20 snorkel
 };
 
-#var pitch_indicator = digital_display.new("Cannon_Pitch", "cannon-pitch-glass", "position-deg", "0.00", "%1.2f", "30", "0.2", "1.0", "0.2");
-#var snorkel_depth_indicator = digital_display.new("Snorkel_Depth", "snorkel-depth-glass", "snorkel-depth", "0.00", "%1.2f", "30", "0.2", "1.0", "0.2");
 var tank_volume_indicator = digital_display.new("Tank_Volume", "tank-volume-glass", "tank-volume", "0000", "%4.0f", "30", "1.0", "0.2", "0.2");
-#var tank_weight_indicator = digital_display.new("Tank_Weight", "tank-weight-glass", "tank-weight", "00000", "%5.0f", "30", "0.2", "1.0", "0.2");
-
-#pitch_indicator.update();
-#snorkel_depth_indicator.update();
 tank_volume_indicator.update();
-#tank_weight_indicator.update();
 
 #################### watertank ####################
 

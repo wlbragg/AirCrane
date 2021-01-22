@@ -1,49 +1,64 @@
-<?xml version="1.0"?>
+<?xml version="1.0" encoding="ISO-8859-1"?>
 
 <PropertyList>
 
-<path>wl.ac</path>
+  <path>wl.ac</path>
+
+  <animation>
+    <object-name>fond</object-name>
+    <object-name>face</object-name>
+    <object-name>needle</object-name>
+
+    <object-name>vitre</object-name>
+  </animation>
 
   <effect>
-      <inherits-from>Models/Effects/interior/cockpit-interior-shadows</inherits-from>
-      <object-name>case</object-name>
-      <object-name>face</object-name>
-      <object-name>fasteners</object-name>
-
-      <object-name>needle</object-name>
+    <inherits-from>Aircraft/AirCrane/Models/Effects/Interior/cockpit-interior</inherits-from>
+    <object-name>fond</object-name>
+    <object-name>face</object-name>
+    <object-name>needle</object-name>
   </effect>
-  <!--effect>
-      <inherits-from>Models/Effects/interior/cockpit-flashlight</inherits-from>
-      <object-name>needle</object-name>
-  </effect-->
+
   <effect>
-      <inherits-from>Models/Effects/interior/interior-glass-reflection-panel-front</inherits-from>
-      <object-name>glass</object-name>
+    <inherits-from>Aircraft/AirCrane/Models/Effects/Interior/interior-glass-reflection-panel-front</inherits-from>
+    <object-name>vitre</object-name>
   </effect>
 
-	<animation>
-		<type>rotate</type>
+  <animation>
+    <type>material</type>
+    <object-name>face</object-name>
+    <object-name>needle</object-name>
+    <condition>
+      <property>controls/electric/battery-bus-switch</property>
+    </condition>
+    <emission>
+      <factor-prop>controls/lighting/luminosite-lights</factor-prop>
+      <red>   0.50 </red>
+      <green> 0.40 </green>
+      <blue>  0.30 </blue>
+    </emission>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
     <object-name>needle</object-name>
     <property>/sim/weight[3]/weight-lb</property>
-		<interpolation>
-			<entry><ind>-99999</ind><dep>   1</dep></entry>
-			<entry><ind>     0</ind><dep>   0</dep></entry>
-      <entry><ind>  5000</ind><dep> -42</dep></entry>
-      <entry><ind> 10000</ind><dep> -84</dep></entry>
-			<entry><ind> 15000</ind><dep>-128</dep></entry>
-			<entry><ind> 20000</ind><dep>-172</dep></entry>
-			<entry><ind> 25000</ind><dep>-216</dep></entry>
-			<entry><ind> 30000</ind><dep>-259</dep></entry>
-			<entry><ind> 99999</ind><dep>-300</dep></entry>
-		</interpolation>
-		<axis>
-			  <x1-m>-9.39682</x1-m>
-        <y1-m> 0.204802</y1-m> 
-        <z1-m>-1.46139</z1-m>
-        <x2-m>-9.39479</x2-m>
-        <y2-m> 0.204887</y2-m>
-        <z2-m>-1.46111</z2-m>
+    <interpolation>
+      <entry><ind> -99999 </ind><dep>    1 </dep></entry>
+      <entry><ind>      0 </ind><dep>    0 </dep></entry>
+      <entry><ind>   5000 </ind><dep>  -42 </dep></entry>
+      <entry><ind>  10000 </ind><dep>  -84 </dep></entry>
+      <entry><ind>  15000 </ind><dep> -128 </dep></entry>
+      <entry><ind>  20000 </ind><dep> -172 </dep></entry>
+      <entry><ind>  25000 </ind><dep> -216 </dep></entry>
+      <entry><ind>  30000 </ind><dep> -259 </dep></entry>
+      <entry><ind>  99999 </ind><dep> -300 </dep></entry>
+    </interpolation>
+    <axis>
+      <x> -1 </x>
+      <y>  0 </y>
+      <z>  0 </z>
     </axis>
-	</animation>
+  </animation>
 
 </PropertyList>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+
+  <!-- Pilot yoke -->
+  <model>
+    <path>Aircraft/AirCrane/Models/Interior/Yoke/yoke.xml</path>
+    <offsets>
+      <x-m> -9.11749 </x-m>
+      <y-m>  0.57674 </y-m>
+      <z-m> -2.05168 </z-m>
+    </offsets>
+  </model>
+
+  <!-- Copilot yoke -->
+  <model>
+    <path>Aircraft/AirCrane/Models/Interior/Yoke/yoke.xml</path>
+    <offsets>
+      <x-m> -9.11749 </x-m>
+      <y-m> -0.57674 </y-m>
+      <z-m> -2.05168 </z-m>
+    </offsets>
+  </model>
+
+</PropertyList>

@@ -8,6 +8,11 @@
     <object-name>rotortail</object-name>
   </animation>
 
+  <effect>
+    <inherits-from>Aircraft/AirCrane/Models/Effects/Exterior/exterior</inherits-from>
+    <object-name>rotortail</object-name>
+  </effect>
+
   <!-- Blades -->
   <model>
     <name>Blade1</name>

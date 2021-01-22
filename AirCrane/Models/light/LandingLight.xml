@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+
+  <!-- ================================================================== -->
+  <!-- Basic Lighting                                                     -->
+  <!-- ================================================================== -->
+  <model>
+    <name>landinglightDEF</name>
+    <path>Aircraft/AirCrane/Models/light/DEFAULT/LandingLight.xml</path>
+    <offsets>
+      <x-m> -9.93245 </x-m>
+      <y-m>  0.00000 </y-m>
+      <z-m> -2.78235 </z-m>
+      <pitch-deg> -25 </pitch-deg>
+    </offsets>
+  </model>
+
+  <animation>
+    <type>select</type>
+    <object-name>landinglightDEF</object-name>
+    <condition>
+      <not><property>/sim/rendering/shaders/skydome</property></not>
+    </condition>
+  </animation>
+
+  <!-- ================================================================== -->
+  <!-- ALS Lighting                                                       -->
+  <!-- ================================================================== -->
+  
+  <!-- Done in main aircraft.xml -->
+  <model>
+    <name>landinglightALS</name>
+    <path>Aircraft/AirCrane/Models/light/ALS/LandingLight.xml</path>
+  </model>
+
+  <animation>
+    <type>select</type>
+    <object-name>landinglightALS</object-name>
+    <condition>
+      <property>/sim/rendering/shaders/skydome</property>
+    </condition>
+  </animation>
+
+</PropertyList>

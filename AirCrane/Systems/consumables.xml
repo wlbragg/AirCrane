@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+
+  <fuel>
+    <aft>
+      <level-lbs type="int">0</level-lbs>
+      <bug type="double">0</bug>
+      <pressure type="double">0</pressure>
+      <flow type="double">0</flow>
+      <temp type="double">0</temp>
+    </aft>
+    <fwd>
+      <level-lbs type="int">0</level-lbs>
+      <bug type="double">0</bug>
+      <pressure type="double">0</pressure>
+      <flow type="double">0</flow>
+      <temp type="double">0</temp>
+    </fwd>
+    <aux>
+      <level-lbs type="int">0</level-lbs>
+      <temp type="double">0</temp>
+    </aux>
+    <shutoff>
+      <lever>
+        <left type="int">0</left>
+        <right type="int">0</right>
+      </lever>
+    </shutoff>
+    <tank n="0">
+      <level-lbs type="int">215</level-lbs>
+    </tank>
+    <tank n="1">
+      <level-lbs type="int">215</level-lbs>
+    </tank>
+    <tank n="2">
+      <level-lbs type="int">215</level-lbs>
+    </tank>
+    <tank n="3">
+      <level-lbs type="int">215</level-lbs>
+    </tank>
+    <tank n="4">
+      <level-lbs type="int">0</level-lbs>
+    </tank>
+  </fuel>
+
+</PropertyList>

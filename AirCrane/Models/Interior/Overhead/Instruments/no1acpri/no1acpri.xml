@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+
+  <path>no1acpri.ac</path>
+
+  <animation>
+    <object-name>base</object-name>
+
+    <object-name>breaker01</object-name>
+    <object-name>breaker02</object-name>
+    <object-name>breaker03</object-name>
+    <object-name>breaker04</object-name>
+
+    <object-name>breaker05</object-name>
+    <object-name>breaker06</object-name>
+    <object-name>breaker07</object-name>
+    <object-name>breaker08</object-name>
+    <object-name>breaker09</object-name>
+    <object-name>breaker10</object-name>
+    <object-name>breaker11</object-name>
+    <object-name>breaker12</object-name>
+
+    <object-name>breaker13</object-name>
+    <object-name>breaker14</object-name>
+    <object-name>breaker15</object-name>
+
+    <object-name>breaker16</object-name>
+    <object-name>breaker17</object-name>
+    <object-name>breaker18</object-name>
+  </animation>
+
+  <effect>
+    <inherits-from>Aircraft/AirCrane/Models/Effects/Interior/cockpit-interior</inherits-from>
+    <object-name>base</object-name>
+
+    <object-name>breaker01</object-name>
+    <object-name>breaker02</object-name>
+    <object-name>breaker03</object-name>
+    <object-name>breaker04</object-name>
+
+    <object-name>breaker05</object-name>
+    <object-name>breaker06</object-name>
+    <object-name>breaker07</object-name>
+    <object-name>breaker08</object-name>
+    <object-name>breaker09</object-name>
+    <object-name>breaker10</object-name>
+    <object-name>breaker11</object-name>
+    <object-name>breaker12</object-name>
+
+    <object-name>breaker13</object-name>
+    <object-name>breaker14</object-name>
+    <object-name>breaker15</object-name>
+
+    <object-name>breaker16</object-name>
+    <object-name>breaker17</object-name>
+    <object-name>breaker18</object-name>
+  </effect>
+
+</PropertyList>

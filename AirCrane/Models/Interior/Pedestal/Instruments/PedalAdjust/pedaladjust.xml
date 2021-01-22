@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+
+  <path>pedaladjust.ac</path>
+
+  <animation>
+    <object-name>base</object-name>
+    <object-name>pedaladjustleft</object-name>
+    <object-name>pedaladjustright</object-name>
+  </animation>
+
+  <effect>
+    <inherits-from>Aircraft/AirCrane/Models/Effects/Interior/cockpit-interior</inherits-from>
+    <object-name>base</object-name>
+    <object-name>pedaladjustleft</object-name>
+    <object-name>pedaladjustright</object-name>
+  </effect>
+
+  <!-- Left Pedal Adjust "Switch" -->
+  <animation>
+    <type>knob</type>
+    <object-name>pedaladjustleft</object-name>
+    <property>controls/pedaladjustleft</property>
+    <factor>30</factor>
+    <center>
+      <x-m> -0.00256 </x-m>
+      <y-m> -0.01704 </y-m>
+      <z-m>  0.00723 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+    <action>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>property-adjust</command>
+        <property>controls/pedaladjustleft</property>
+        <factor>1</factor>
+        <min>-1</min>
+        <max> 1</max>
+        <wrap>0</wrap>
+      </binding>
+      <binding>
+        <command>nasal</command>
+        <script>
+          #var brake = getprop("systems/electrical/outputs/rotorbrake");
+          #var pressure = getprop("controls/rotorbrake/rotorbrake");
+          #if(brake == -1) {
+          #  setprop("controls/rotor/brake", pressure * .1);
+          #}
+          #if(brake == 1) {
+          #  setprop("controls/rotorbrake/rotorbrake", 0);
+          #}
+          aircrane.click("avionics");
+        </script>
+      </binding>
+    </action>
+    <hovered>
+      <binding>
+        <command>set-tooltip</command>
+        <tooltip-id>pedaladjustleft</tooltip-id>
+        <label>Adjust Left Pedal: %s</label>
+        <property>controls/pedaladjustleft</property>
+      </binding>
+    </hovered>
+  </animation>
+
+  <!-- Right Pedal Adjust "Switch" -->
+  <animation>
+    <type>knob</type>
+    <object-name>pedaladjustright</object-name>
+    <property>controls/pedaladjustright</property>
+    <factor>30</factor>
+    <center>
+      <x-m> -0.00256 </x-m>
+      <y-m>  0.01755 </y-m>
+      <z-m>  0.00723 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+    <action>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>property-adjust</command>
+        <property>controls/pedaladjustright</property>
+        <factor>1</factor>
+        <min>-1</min>
+        <max> 1</max>
+        <wrap>0</wrap>
+      </binding>
+      <binding>
+        <command>nasal</command>
+        <script>
+          #var brake = getprop("systems/electrical/outputs/rotorbrake");
+          #var pressure = getprop("controls/rotorbrake/rotorbrake");
+          #if(brake == -1) {
+          #  setprop("controls/rotor/brake", pressure * .1);
+          #}
+          #if(brake == 1) {
+          #  setprop("controls/rotorbrake/rotorbrake", 0);
+          #}
+          aircrane.click("avionics");
+        </script>
+      </binding>
+    </action>
+    <hovered>
+      <binding>
+        <command>set-tooltip</command>
+        <tooltip-id>pedaladjustright</tooltip-id>
+        <label>Adjust Right Pedal: %s</label>
+        <property>controls/pedaladjustright</property>
+      </binding>
+    </hovered>
+  </animation>
+
+</PropertyList>

@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+
+  <path>digitalclock.ac</path>
+
+  <animation>
+    <object-name>fond</object-name>
+    <object-name>face</object-name>
+    <object-name>KnobLeft</object-name>
+    <object-name>KnobCenter</object-name>
+    <object-name>KnobRight</object-name>
+    <object-name>HR1</object-name>
+    <object-name>M877.timerind</object-name>
+    <object-name>HR2</object-name>
+    <object-name>M877.colon</object-name>
+    <object-name>MN1</object-name>
+    <object-name>MN2</object-name>
+
+    <object-name>vitre</object-name>
+  </animation>
+
+  <effect>
+    <inherits-from>Aircraft/AirCrane/Models/Effects/Interior/cockpit-interior</inherits-from>
+    <object-name>fond</object-name>
+    <object-name>face</object-name>
+    <object-name>KnobLeft</object-name>
+    <object-name>KnobCenter</object-name>
+    <object-name>KnobRight</object-name>
+    <object-name>HR1</object-name>
+    <object-name>M877.timerind</object-name>
+    <object-name>HR2</object-name>
+    <object-name>M877.colon</object-name>
+    <object-name>MN1</object-name>
+    <object-name>MN2</object-name>
+  </effect>
+
+  <effect>
+    <inherits-from>Aircraft/AirCrane/Models/Effects/Interior/interior-glass-reflection-panel-front</inherits-from>
+    <object-name>vitre</object-name>
+  </effect>
+
+  <animation>
+    <type>material</type>
+    <object-name>face</object-name>
+    <object-name>HR1</object-name>
+    <object-name>M877.timerind</object-name>
+    <object-name>HR2</object-name>
+    <object-name>M877.colon</object-name>
+    <object-name>MN1</object-name>
+    <object-name>MN2</object-name>
+    <condition>
+      <property>controls/electric/battery-bus-switch</property>
+    </condition>
+    <emission>
+      <factor-prop>controls/lighting/luminosite-lights</factor-prop>
+      <red>   0.50 </red>
+      <green> 0.40 </green>
+      <blue>  0.30 </blue>
+    </emission>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>M877.timerind</object-name>
+    <condition>
+      <equals>
+        <property>instrumentation/clock/lc2/mode-string</property>
+        <value>ET</value>
+      </equals>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>M877.colon</object-name>
+    <condition>
+      <property>instrumentation/clock/lc2/power</property>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>HR1</object-name>
+    <condition>
+      <property>instrumentation/clock/lc2/digit[3]</property>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>HR2</object-name>
+    <condition>
+      <property>instrumentation/clock/lc2/digit[2]</property>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>MN1</object-name>
+    <condition>
+      <property>instrumentation/clock/lc2/digit[1]</property>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>MN2</object-name>
+    <condition>
+      <property>instrumentation/clock/lc2/digit[0]</property>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>textranslate</type>
+    <object-name>HR1</object-name>
+    <property>instrumentation/clock/lc2/indicated-hour</property>
+    <factor>0.01</factor>
+    <step>10</step>
+    <axis>
+      <x> 1 </x>
+      <y> 0 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>textranslate</type>
+    <object-name>HR2</object-name>
+    <property>instrumentation/clock/lc2/indicated-hour</property>
+    <factor>0.1</factor>
+    <step>1</step>
+    <axis>
+      <x> 1 </x>
+      <y> 0 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>textranslate</type>
+    <object-name>MN1</object-name>
+    <property>instrumentation/clock/lc2/indicated-min</property>
+    <factor>0.01</factor>
+    <step>10</step>
+    <axis>
+      <x> 1 </x>
+      <y> 0 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>textranslate</type>
+    <object-name>MN2</object-name>
+    <property>instrumentation/clock/lc2/indicated-min</property>
+    <factor>0.1</factor>
+    <step>1</step>
+    <axis>
+      <x> 1 </x>
+      <y> 0 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>pick</type>
+    <object-name>KnobLeft</object-name>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>nasal</command>
+        <script>clock.astrotech.left_knob();</script>
+      </binding>
+    </action>
+  </animation>
+
+  <animation>
+    <type>pick</type>
+    <object-name>KnobCenter</object-name>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>nasal</command>
+        <script>clock.astrotech.select_mode();</script>
+      </binding>
+    </action>
+  </animation>
+
+  <animation>
+    <type>pick</type>
+    <object-name>KnobRight</object-name>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>nasal</command>
+        <script>clock.astrotech.right_knob();</script>
+      </binding>
+    </action>
+  </animation>
+
+</PropertyList>

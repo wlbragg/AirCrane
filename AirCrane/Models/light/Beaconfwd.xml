@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+
+  <!-- ================================================================== -->
+  <!-- Basic Lighting                                                     -->
+  <!-- ================================================================== -->
+  <model>
+    <name>beaconfwd</name>
+    <path>Aircraft/AirCrane/Models/light/DEFAULT/Beaconfwd.xml</path>
+  </model>
+
+  <!--animation>
+    <type>select</type>
+    <object-name>beaconfwd</object-name>
+    <condition>
+      <not><property>/sim/rendering/shaders/skydome</property></not>
+    </condition>
+  </animation-->
+
+  <!-- ================================================================== -->
+  <!-- ALS Lighting - using Basic lighting for Beacon                     -->
+  <!-- ================================================================== -->
+  <!--model>
+    <name>beaconfwdALS</name>
+    <path>Aircraft/AirCrane/Models/light/ALS/Beaconfwd.xml</path>
+  </model>
+
+  <animation>
+    <type>select</type>
+    <object-name>beaconfwdALS</object-name>
+    <condition>
+      <property>/sim/rendering/shaders/skydome</property>
+    </condition>
+  </animation-->
+
+</PropertyList>

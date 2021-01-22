@@ -4,76 +4,55 @@
 
   <path>yoke.ac</path>
 
-  <!-- ALS Interior Shadows -->
-  <effect>
-    <inherits-from>Aircraft/AirCrane/Models/Effects/interior/cockpit-interior-shadows</inherits-from>
-    <object-name>base</object-name>
+  <animation>
     <object-name>manche</object-name>
     <object-name>btn1</object-name>
     <object-name>btn2</object-name>
     <object-name>btn3</object-name>
     <object-name>chapeau</object-name>
-    <object-name>base.001</object-name>
-    <object-name>manche.001</object-name>
-    <object-name>btn1.001</object-name>
-    <object-name>btn2.001</object-name>
-    <object-name>btn3.001</object-name>
-    <object-name>chapeau.001</object-name>
-    <object-name>portboot1</object-name>
-    <object-name>portboot2</object-name>
-    <object-name>portboot3</object-name>
-    <object-name>portboot4</object-name>
-    <object-name>portboot5</object-name>
-    <object-name>portboot6</object-name>
-    <object-name>starboot1</object-name>
-    <object-name>starboot2</object-name>
-    <object-name>starboot3</object-name>
-    <object-name>starboot4</object-name>
-    <object-name>starboot5</object-name>
-    <object-name>starboot6</object-name>
+    <object-name>boot1</object-name>
+    <object-name>boot2</object-name>
+    <object-name>boot3</object-name>
+    <object-name>boot4</object-name>
+    <object-name>boot5</object-name>
+    <object-name>boot6</object-name>
+  </animation>
+
+  <effect>
+    <inherits-from>Aircraft/AirCrane/Models/Effects/Interior/cockpit-interior</inherits-from>
+    <object-name>manche</object-name>
+    <object-name>btn1</object-name>
+    <object-name>btn2</object-name>
+    <object-name>btn3</object-name>
+    <object-name>chapeau</object-name>
+    <object-name>boot1</object-name>
+    <object-name>boot2</object-name>
+    <object-name>boot3</object-name>
+    <object-name>boot4</object-name>
+    <object-name>boot5</object-name>
+    <object-name>boot6</object-name>
   </effect>
 
   <animation>
-    <name>PortYoke</name>
+	<name>Yoke</name>
     <object-name>manche</object-name>
     <object-name>btn1</object-name>
     <object-name>btn2</object-name>
     <object-name>btn3</object-name>
     <object-name>chapeau</object-name>
-    <object-name>portboot1</object-name>
-    <object-name>portboot2</object-name>
-    <object-name>portboot3</object-name>
-    <object-name>portboot4</object-name>
-    <object-name>portboot5</object-name>
-    <object-name>portboot6</object-name>
-  </animation>
-  
-  <animation>
-    <name>StarYoke</name>
-    <object-name>base.001</object-name>
-    <object-name>manche.001</object-name>
-    <object-name>btn1.001</object-name>
-    <object-name>btn2.001</object-name>
-    <object-name>btn3.001</object-name>
-    <object-name>chapeau.001</object-name>
-    <object-name>starboot1</object-name>
-    <object-name>starboot2</object-name>
-    <object-name>starboot3</object-name>
-    <object-name>starboot4</object-name>
-    <object-name>starboot5</object-name>
-    <object-name>starboot6</object-name>
+    <!--object-name>boot1</object-name>
+    <object-name>boot2</object-name>
+    <object-name>boot3</object-name>
+    <object-name>boot4</object-name>
+    <object-name>boot5</object-name>
+    <object-name>boot6</object-name-->
   </animation>
 
   <animation>
     <type>rotate</type>
-    <object-name>PortYoke</object-name>
+    <object-name>Yoke</object-name>
     <property>controls/flight/elevator</property>
     <factor> -10 </factor>
-    <center>
-      <x-m> -9.11377 </x-m>
-      <y-m> -0.576956 </y-m>
-      <z-m> -2.08005 </z-m>
-    </center>
     <axis>
       <x> 0 </x>
       <y> 1 </y>
@@ -83,13 +62,26 @@
 
   <animation>
     <type>rotate</type>
-    <object-name>PortYoke</object-name>
-    <property>controls/flight/aileron</property>
+    <object-name>Yoke</object-name>
+   <property>controls/flight/aileron</property>
     <factor> -10 </factor>
+    <axis>
+      <x> 1 </x>
+      <y> 0 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+
+  <!--===== Boot =====-->
+  <animation>
+    <type>rotate</type>
+    <object-name>boot6</object-name>
+    <property>controls/flight/aileron</property>
+    <factor>-1</factor>
     <center>
-      <x-m> -9.11377 </x-m>
-      <y-m> -0.576956 </y-m>
-      <z-m> -2.08005 </z-m>
+      <x-m> 0.0 </x-m>
+      <y-m> 0.0 </y-m>
+      <z-m> 0.0 </z-m>
     </center>
     <axis>
       <x> 1 </x>
@@ -100,13 +92,13 @@
 
   <animation>
     <type>rotate</type>
-    <object-name>StarYoke</object-name>
+    <object-name>boot6</object-name>
     <property>controls/flight/elevator</property>
-    <factor> -10 </factor>
+    <factor>-1</factor>
     <center>
-      <x-m> -9.09598 </x-m>
-      <y-m>  0.576984</y-m>
-      <z-m> -2.07945 </z-m>
+      <x-m> 0.0 </x-m>
+      <y-m> 0.0 </y-m>
+      <z-m> 0.0 </z-m>
     </center>
     <axis>
       <x> 0 </x>
@@ -117,13 +109,13 @@
 
   <animation>
     <type>rotate</type>
-    <object-name>StarYoke</object-name>
+    <object-name>boot5</object-name>
     <property>controls/flight/aileron</property>
-    <factor> -10 </factor>
+    <factor>-2</factor>
     <center>
-      <x-m> -9.09598 </x-m>
-      <y-m>  0.576984</y-m>
-      <z-m> -2.07945 </z-m>
+      <x-m> 0.0 </x-m>
+      <y-m> 0.0 </y-m>
+      <z-m> 0.0 </z-m>
     </center>
     <axis>
       <x> 1 </x>
@@ -132,4 +124,157 @@
     </axis>
   </animation>
 
- </PropertyList>
+  <animation>
+    <type>rotate</type>
+    <object-name>boot5</object-name>
+    <property>controls/flight/elevator</property>
+    <factor>-2</factor>
+    <center>
+      <x-m> 0.0 </x-m>
+      <y-m> 0.0 </y-m>
+      <z-m> 0.0 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>boot4</object-name>
+    <property>controls/flight/aileron</property>
+    <factor>-4</factor>
+    <center>
+      <x-m> 0.0 </x-m>
+      <y-m> 0.0 </y-m>
+      <z-m> 0.0 </z-m>
+    </center>
+    <axis>
+      <x> 1 </x>
+      <y> 0 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>boot4</object-name>
+    <property>controls/flight/elevator</property>
+    <factor>-4</factor>
+    <center>
+      <x-m> 0.0 </x-m>
+      <y-m> 0.0 </y-m>
+      <z-m> 0.0 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>boot3</object-name>
+    <property>controls/flight/aileron</property>
+    <factor>-6</factor>
+    <center>
+      <x-m> 0.0 </x-m>
+      <y-m> 0.0 </y-m>
+      <z-m> 0.0 </z-m>
+    </center>
+    <axis>
+      <x> 1 </x>
+      <y> 0 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>boot3</object-name>
+    <property>controls/flight/elevator</property>
+    <factor>-6</factor>
+    <center>
+      <x-m> 0.0 </x-m>
+      <y-m> 0.0 </y-m>
+      <z-m> 0.0 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>boot2</object-name>
+    <property>controls/flight/aileron</property>
+    <factor>-8</factor>
+    <center>
+      <x-m> 0.0 </x-m>
+      <y-m> 0.0 </y-m>
+      <z-m> 0.0 </z-m>
+    </center>
+    <axis>
+      <x> 1 </x>
+      <y> 0 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>boot2</object-name>
+    <property>controls/flight/elevator</property>
+    <factor>-8</factor>
+    <center>
+      <x-m> 0.0 </x-m>
+      <y-m> 0.0 </y-m>
+      <z-m> 0.0 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>boot1</object-name>
+    <property>controls/flight/aileron</property>
+    <factor>-10</factor>
+    <center>
+      <x-m> 0.0 </x-m>
+      <y-m> 0.0 </y-m>
+      <z-m> 0.0 </z-m>
+    </center>
+    <axis>
+      <x> 1 </x>
+      <y> 0 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>boot1</object-name>
+    <property>controls/flight/elevator</property>
+    <factor>-10</factor>
+    <center>
+      <x-m> 0.0 </x-m>
+      <y-m> 0.0 </y-m>
+      <z-m> 0.0 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+
+</PropertyList>

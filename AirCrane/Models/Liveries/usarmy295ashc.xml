@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 
 <PropertyList>
-  
+
   <sim>
-    
+
     <model>
       <livery>
         <name type="string">USArmy295ASHC</name>
         <index type="int">9</index>
-        <texture>Liveries/2096x2096/USArmy295ASHC.png</texture>
+        <texture>Liveries/2048x2048/USArmy295ASHC.png</texture>
         <specular>
           <red>   0.3 </red>
           <green> 0.3 </green>
@@ -18,7 +18,7 @@
       <liverytail>
         <name type="string">Grey</name>
         <index type="int">2</index>
-        <texture>Liveries/1024x1024/greytailrotor.png</texture>
+        <texture>Liveries/256x256/greytailrotor.png</texture>
         <specular>
           <red>   0.3 </red>
           <green> 0.3 </green>
@@ -36,7 +36,7 @@
         </specular>
       </liverytank>
     </model>
-    
+
   </sim>
-  
+
 </PropertyList>

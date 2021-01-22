@@ -32,8 +32,6 @@
       <and>
         <not><property>sim/freeze/replay-state</property></not>
         <not><property>sim/rendering/shadows/enabled</property></not>
-        <!--not><property>sim/model/aircrane/effects/als-shadow</property></not-->
-        <property>sim/model/aircrane/effects/shadow</property>
         <less-than>
           <property>sim/multiplay/generic/float[2]</property>
           <value>2000</value>
@@ -51,7 +49,7 @@
       </and>
     </condition>
   </animation>
-  
+
   <!-- pitch -->
   <animation>
     <type>rotate</type>

@@ -34,7 +34,7 @@
         m.ET_MN=m.lc2.initNode("ET-min",0,"INT");
         return m;
     },
-    
+
 #### displayed mode  ####
     select_mode : func(){
         if(me.set_mode==0){
@@ -127,14 +127,14 @@
             pwr=1;
         }
         me.power.setValue(pwr);
-        
+
         if (me.et_frozen==1) {
             me.et_offset=getprop("/sim/time/elapsed-sec") - me.et_pause_time;
         }
         if(me.flip==0){
             me.update_ET();
         }
-        
+
         if(me.MODE == 0){
             me.HR.setValue(getprop("/instrumentation/clock/local-hour"));
             me.MN.setValue(getprop("/instrumentation/clock/indicated-min"));
@@ -145,7 +145,7 @@
             me.HR.setValue(getprop("/sim/time/real/month"));
             me.MN.setValue(getprop("/sim/time/real/day"));
         }
-        
+
         if(me.set_mode==1){
             var flsh=me.digit[me.digit_to_set].getValue();
             flsh=1-flsh;

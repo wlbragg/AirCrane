@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+
+  <path>ext.ac</path>
+
+  <animation>
+    <object-name>external</object-name>
+
+    <object-name>breaker01</object-name>
+    <object-name>breaker02</object-name>
+    <object-name>breaker03</object-name>
+    <object-name>breaker04</object-name>
+    <object-name>breaker05</object-name>
+    <object-name>breaker06</object-name>
+    <object-name>breaker07</object-name>
+    <object-name>breaker08</object-name>
+    <object-name>breaker09</object-name>
+    <object-name>breaker10</object-name>
+    <object-name>breaker11</object-name>
+    <object-name>breaker12</object-name>
+  </animation>
+
+  <effect>
+    <inherits-from>Aircraft/AirCrane/Models/Effects/Interior/cockpit-interior</inherits-from>
+    <object-name>external</object-name>
+
+    <object-name>breaker01</object-name>
+    <object-name>breaker02</object-name>
+    <object-name>breaker03</object-name>
+    <object-name>breaker04</object-name>
+    <object-name>breaker05</object-name>
+    <object-name>breaker06</object-name>
+    <object-name>breaker07</object-name>
+    <object-name>breaker08</object-name>
+    <object-name>breaker09</object-name>
+    <object-name>breaker10</object-name>
+    <object-name>breaker11</object-name>
+    <object-name>breaker12</object-name>
+  </effect>
+
+</PropertyList>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+
+  <replay-config type="int">0</replay-config>
+  <config n="0" include="flight-recorder/flight-recorder.xml">
+    <name type="string">Aircrane Flight Recorder</name>
+  </config>
+
+</PropertyList>

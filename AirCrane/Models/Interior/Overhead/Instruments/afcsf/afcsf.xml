@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+
+  <path>afcsf.ac</path>
+
+  <animation>
+    <object-name>base</object-name>
+    <object-name>switchalt</object-name>
+    <object-name>switchpitch</object-name>
+    <object-name>switchyaw</object-name>
+    <object-name>switchroll</object-name>
+  </animation>
+
+  <effect>
+    <inherits-from>Aircraft/AirCrane/Models/Effects/Interior/cockpit-interior</inherits-from>
+    <object-name>base</object-name>
+    <object-name>switchalt</object-name>
+    <object-name>switchpitch</object-name>
+    <object-name>switchyaw</object-name>
+    <object-name>switchroll</object-name>
+  </effect>
+
+</PropertyList>

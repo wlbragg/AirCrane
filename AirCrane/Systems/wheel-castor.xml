@@ -1,0 +1,18 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+
+	<system name="AirCrane Wheel Castor">
+
+		<channel name="wheel-castor">
+
+			<integrator name="heat/surface-temp-degc">
+				<input>heat/surface-cabin-heat-transfer</input>
+
+				<!-- This is the constant that actually controls how fast
+					 (or slow) the wheel's castor angle changes.
+				-->
+				<c1>0.020</c1>
+			</integrator>
+
+		</channel>
+
+	</system>

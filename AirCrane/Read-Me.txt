@@ -9,17 +9,17 @@ A little history
 Erickson S 64 E AirCrane
 ========================
 
-Manufacturer                  : 
-Type                          : 
-Year                          : 
-Powerplant                    : 
-Wingspan                      : 
-Length                        : 
-Height                        : 
-weight                        : 
-Cruise speed                  : 
-Range                         : 
-Crew                          :  
+Manufacturer                  :
+Type                          :
+Year                          :
+Powerplant                    :
+Wingspan                      :
+Length                        :
+Height                        :
+weight                        :
+Cruise speed                  :
+Range                         :
+Crew                          :
 
 Some useful keys:
 =================
@@ -27,12 +27,15 @@ Some useful keys:
 Thanks
 ======
 Heiko SCHULZ for FDM
+Wayne Bragg for all instruments panel, effects and systems addon
 
 ===============
 BARANGER Emmanuel
-Februry, 13, 2009. 
+Februry, 13, 2009.
+Cevember, 24, 2020.
 
 http://helijah.free.fr/flightgear/hangar.htm
+http://embaranger.free.fr
 embaranger@free.fr
 
 
@@ -64,10 +67,13 @@ Quelques touches utiles :
 Remerciements
 =============
 Heiko SCHULZ pour le modèle de vol.
+Wayne Bragg for pour les instruments, les effects et les ajout systèmes
 
 ===============
 BARANGER Emmanuel
 13 Février 2009.
+24 Décembre 2020.
 
 http://helijah.free.fr/flightgear/hangar.htm
-embaranger@free.fr
+http://embaranger.free.fr
+embaranger@gmail.com

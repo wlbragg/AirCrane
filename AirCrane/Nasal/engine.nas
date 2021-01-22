@@ -3,7 +3,6 @@
 
 # goes here
 
-
 # ========== rotor brake ======================
 
 # Toggles the state of rotor brake pressure

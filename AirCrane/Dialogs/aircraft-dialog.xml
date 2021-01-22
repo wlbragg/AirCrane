@@ -1,26 +1,25 @@
-<?xml version="1.0"?>
+<?xml version="1.0" encoding="ISO-8859-1"?>
 
 <!-- AirCrane
- This program is free software; you can redistribute it and/or
- modify it under the terms of the GNU General Public License as
- published by the Free Software Foundation; either version 2 of the
- License, or (at your option) any later version.
+      This program is free software; you can redistribute it and/or
+      modify it under the terms of the GNU General Public License as
+      published by the Free Software Foundation; either version 2 of the
+      License, or (at your option) any later version.
 
- This program is distributed in the hope that it will be useful, but
- WITHOUT ANY WARRANTY; without even the implied warranty of
- MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
- General Public License for more details.
+      This program is distributed in the hope that it will be useful, but
+      WITHOUT ANY WARRANTY; without even the implied warranty of
+      MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+      General Public License for more details.
 -->
-
 <PropertyList>
   <name>aircraft-dialog</name>
-	<layout>vbox</layout>
-	<resizable>true</resizable>
-	<default-padding>3</default-padding>
+  <layout>vbox</layout>
+  <resizable>true</resizable>
+  <default-padding>3</default-padding>
 
   <group>
     <layout>hbox</layout>
-		<default-padding>1</default-padding>
+    <default-padding>1</default-padding>
     <empty><stretch>true</stretch></empty>
     <text>
       <label>Aircraft Options</label>
@@ -44,34 +43,6 @@
     <layout>vbox</layout>
     <checkbox>
       <halign>left</halign>
-      <label>Blades Visible</label>
-      <property>rotors/main/bladesvisible</property>
-      <live>true</live>
-      <binding>
-        <command>nasal</command>
-        <script>
-          var p = "rotors/main/bladesvisible";
-          setprop(p, var i = !getprop(p));
-          gui.popupTip("Blades visible " ~ (i ? "On" : "Off"));
-        </script>
-      </binding>
-    </checkbox>
-    <checkbox>
-      <halign>left</halign>
-      <label>Shadow</label>
-      <property>sim/model/aircrane/effects/shadow</property>
-      <live>true</live>
-      <binding>
-        <command>nasal</command>
-        <script>
-          var p = "sim/model/aircrane/effects/shadow";
-          setprop(p, var i = !getprop(p));
-          gui.popupTip("Aircraft shadow " ~ (i ? "On" : "Off"));
-        </script>
-      </binding>
-    </checkbox>
-    <checkbox>
-      <halign>left</halign>
       <label>Show Particle Effects</label>
       <property>sim/model/aircrane/effects/particles/enabled</property>
       <live>true</live>
@@ -83,6 +54,15 @@
           gui.popupTip("Particle effects " ~ (i ? "On" : "Off"));
         </script>
       </binding>
+    </checkbox>
+    <checkbox>
+		<halign>left</halign>
+		<label>Enable Instrument Illumination</label>
+		<property>controls/lighting/luminosite-lights</property>
+		<live>true</live>
+		<binding>
+			<command>dialog-apply</command>
+		</binding>
     </checkbox>
     <checkbox>
       <halign>left</halign>
@@ -101,20 +81,11 @@
     <layout>vbox</layout>
     <checkbox>
       <halign>left</halign>
-      <label>Model F Instruments</label>
-      <property>sim/model/aircrane/model-f</property>
-      <live>true</live>
-      <binding>
-          <command>dialog-apply</command>
-      </binding>
-    </checkbox>
-    <checkbox>
-      <halign>left</halign>
       <label>Equip Garmin 196 GPS</label>
       <property>/sim/model/garmin196-visible</property>
       <live>true</live>
       <binding>
-          <command>dialog-apply</command>
+        <command>dialog-apply</command>
       </binding>
     </checkbox>
     <checkbox>
@@ -123,7 +94,7 @@
       <property>/sim/model/steppanel/enabled</property>
       <live>true</live>
       <binding>
-          <command>dialog-apply</command>
+        <command>dialog-apply</command>
       </binding>
     </checkbox>
   </group>
@@ -131,45 +102,45 @@
   <hrule/>
 
   <group>
-      <layout>vbox</layout>
-      <group>
-        <layout>hbox</layout>
-        <checkbox>
-          <halign>left</halign>
-          <label>Fluid Pumping System</label>
+    <layout>vbox</layout>
+    <group>
+      <layout>hbox</layout>
+      <checkbox>
+        <halign>left</halign>
+        <label>Fluid Pumping System</label>
+        <property>sim/model/firetank/enabled</property>
+        <live>true</live>
+        <binding>
+          <command>nasal</command>
+          <script>
+            var p = "sim/model/firetank/enabled";
+            setprop(p, var i = !getprop(p));
+            gui.popupTip("Pumping system " ~ (i ? "On" : "Off"));
+            setprop("sim/model/cableguard/enabled",0);
+          </script>
+        </binding>
+      </checkbox>
+    </group>
+    <group>
+      <layout>hbox</layout>
+      <checkbox>
+        <halign>left</halign>
+        <label>Water Cannon</label>
+        <property>sim/model/watercannon/enabled</property>
+        <live>true</live>
+        <enable>
           <property>sim/model/firetank/enabled</property>
-          <live>true</live>
-          <binding>
-            <command>nasal</command>
-            <script>
-              var p = "sim/model/firetank/enabled";
-              setprop(p, var i = !getprop(p));
-              gui.popupTip("Pumping system " ~ (i ? "On" : "Off"));
-              setprop("sim/model/cableguard/enabled",0);
-            </script>
-          </binding>
-        </checkbox>
-      </group>
-      <group>
-        <layout>hbox</layout>
-        <checkbox>
-          <halign>left</halign>
-          <label>Water Cannon</label>
-          <property>sim/model/watercannon/enabled</property>
-          <live>true</live>
-          <enable>
-					    <property>sim/model/firetank/enabled</property>
-			    </enable>
-          <binding>
-            <command>nasal</command>
-            <script>
-              var p = "sim/model/watercannon/enabled";
-              setprop(p, var i = !getprop(p));
-              gui.popupTip("Water cannon " ~ (i ? "On" : "Off"));
-            </script>
-          </binding>
-        </checkbox>
-      </group>
+        </enable>
+        <binding>
+          <command>nasal</command>
+          <script>
+            var p = "sim/model/watercannon/enabled";
+            setprop(p, var i = !getprop(p));
+            gui.popupTip("Water cannon " ~ (i ? "On" : "Off"));
+          </script>
+        </binding>
+      </checkbox>
+    </group>
   </group>
 
   <hrule/>
@@ -182,7 +153,7 @@
       <property>/sim/model/winchcover/enabled</property>
       <live>true</live>
       <binding>
-          <command>dialog-apply</command>
+        <command>dialog-apply</command>
       </binding>
     </checkbox>
     <checkbox>
@@ -196,7 +167,7 @@
             <property>/sim/freeze/replay-state</property>
           </not>
         </and>
-	    </enable>
+      </enable>
       <binding>
         <command>nasal</command>
         <script>

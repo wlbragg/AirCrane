@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="ISO-8859-1"?>
 
 <!--
     Copyright (c) 2015 onox
@@ -19,38 +19,38 @@
 
 <PropertyList>
 
-    <electrical>
-        <name>electrical</name>
-        <number>0</number>
-        <!-- null electrical system path here so we can use a nasal based -->
-        <!-- model defined later in the nasal section of this file. -->
-        <path/>
-    </electrical>
+  <electrical>
+    <name>electrical</name>
+    <number>0</number>
+    <!-- null electrical system path here so we can use a nasal based -->
+    <!-- model defined later in the nasal section of this file. -->
+    <path/>
+  </electrical>
 
-    <pitot>
-        <name>pitot</name>
-        <number>0</number>
+  <pitot>
+    <name>pitot</name>
+    <number>0</number>
 
-        <!-- Default angle -->
-        <stall-deg>60</stall-deg>
-    </pitot>
+    <!-- Default angle -->
+    <stall-deg>60</stall-deg>
+  </pitot>
 
-    <static>
-        <name>static</name>
-        <number>0</number>
-        <tau>0.1</tau>
-        <!-- Side-slip angle influence only. Type 2 will also give AoA
-             influence. See Docs/README.systems.
-        -->
-        <type>1</type>
-        <error-factor>0.2</error-factor>
-    </static>
+  <static>
+    <name>static</name>
+    <number>0</number>
+    <tau>0.1</tau>
+    <!-- Side-slip angle influence only. Type 2 will also give AoA
+    influence. See Docs/README.systems.
+    -->
+    <type>1</type>
+    <error-factor>0.2</error-factor>
+  </static>
 
-    <vacuum>
-        <name>vacuum</name>
-        <number>0</number>
-        <rpm>/engines/active-engine/rpm</rpm>
-        <scale>1.0</scale>
-    </vacuum>
+  <vacuum>
+    <name>vacuum</name>
+    <number>0</number>
+    <rpm>/engines/active-engine/rpm</rpm>
+    <scale>1.0</scale>
+  </vacuum>
 
 </PropertyList>

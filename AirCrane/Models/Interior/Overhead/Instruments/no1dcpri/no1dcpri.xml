@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+
+  <path>no1dcpri.ac</path>
+
+  <animation>
+    <object-name>base</object-name>
+
+    <object-name>breaker01</object-name>
+    <object-name>breaker02</object-name>
+    <object-name>breaker03</object-name>
+    <object-name>breaker04</object-name>
+    <object-name>breaker05</object-name>
+    <object-name>breaker06</object-name>
+    <object-name>breaker07</object-name>
+    <object-name>breaker08</object-name>
+
+    <object-name>breaker09</object-name>
+    <object-name>breaker10</object-name>
+    <object-name>breaker11</object-name>
+    <object-name>breaker12</object-name>
+    <object-name>breaker13</object-name>
+    <object-name>breaker14</object-name>
+    <object-name>breaker15</object-name>
+    <object-name>breaker16</object-name>
+    <object-name>breaker17</object-name>
+
+    <object-name>breaker18</object-name>
+    <object-name>breaker19</object-name>
+    <object-name>breaker20</object-name>
+    <object-name>breaker21</object-name>
+    <object-name>breaker22</object-name>
+    <object-name>breaker23</object-name>
+    <object-name>breaker24</object-name>
+    <object-name>breaker25</object-name>
+    <object-name>breaker26</object-name>
+
+    <object-name>breaker27</object-name>
+    <object-name>breaker28</object-name>
+    <object-name>breaker29</object-name>
+    <object-name>breaker30</object-name>
+    <object-name>breaker31</object-name>
+    <object-name>breaker32</object-name>
+    <object-name>breaker33</object-name>
+    <object-name>breaker34</object-name>
+
+    <object-name>breaker35</object-name>
+    <object-name>breaker36</object-name>
+    <object-name>breaker37</object-name>
+    <object-name>breaker38</object-name>
+    <object-name>breaker39</object-name>
+    <object-name>breaker40</object-name>
+    <object-name>breaker41</object-name>
+    <object-name>breaker42</object-name>
+
+    <object-name>breaker43</object-name>
+    <object-name>breaker44</object-name>
+    <object-name>breaker45</object-name>
+    <object-name>breaker46</object-name>
+    <object-name>breaker47</object-name>
+    <object-name>breaker48</object-name>
+    <object-name>breaker49</object-name>
+    <object-name>breaker50</object-name>
+
+    <object-name>breaker51</object-name>
+    <object-name>breaker52</object-name>
+    <object-name>breaker53</object-name>
+    <object-name>breaker54</object-name>
+    <object-name>breaker55</object-name>
+    <object-name>breaker56</object-name>
+    <object-name>breaker57</object-name>
+
+    <object-name>breaker58</object-name>
+    <object-name>breaker59</object-name>
+    <object-name>breaker60</object-name>
+    <object-name>breaker61</object-name>
+    <object-name>breaker62</object-name>
+    <object-name>breaker63</object-name>
+    <object-name>breaker64</object-name>
+    <object-name>breaker65</object-name>
+  </animation>
+
+  <effect>
+    <inherits-from>Aircraft/AirCrane/Models/Effects/Interior/cockpit-interior</inherits-from>
+    <object-name>base</object-name>
+
+    <object-name>breaker01</object-name>
+    <object-name>breaker02</object-name>
+    <object-name>breaker03</object-name>
+    <object-name>breaker04</object-name>
+    <object-name>breaker05</object-name>
+    <object-name>breaker06</object-name>
+    <object-name>breaker07</object-name>
+    <object-name>breaker08</object-name>
+
+    <object-name>breaker09</object-name>
+    <object-name>breaker10</object-name>
+    <object-name>breaker11</object-name>
+    <object-name>breaker12</object-name>
+    <object-name>breaker13</object-name>
+    <object-name>breaker14</object-name>
+    <object-name>breaker15</object-name>
+    <object-name>breaker16</object-name>
+    <object-name>breaker17</object-name>
+
+    <object-name>breaker18</object-name>
+    <object-name>breaker19</object-name>
+    <object-name>breaker20</object-name>
+    <object-name>breaker21</object-name>
+    <object-name>breaker22</object-name>
+    <object-name>breaker23</object-name>
+    <object-name>breaker24</object-name>
+    <object-name>breaker25</object-name>
+    <object-name>breaker26</object-name>
+
+    <object-name>breaker27</object-name>
+    <object-name>breaker28</object-name>
+    <object-name>breaker29</object-name>
+    <object-name>breaker30</object-name>
+    <object-name>breaker31</object-name>
+    <object-name>breaker32</object-name>
+    <object-name>breaker33</object-name>
+    <object-name>breaker34</object-name>
+
+    <object-name>breaker35</object-name>
+    <object-name>breaker36</object-name>
+    <object-name>breaker37</object-name>
+    <object-name>breaker38</object-name>
+    <object-name>breaker39</object-name>
+    <object-name>breaker40</object-name>
+    <object-name>breaker41</object-name>
+    <object-name>breaker42</object-name>
+
+    <object-name>breaker43</object-name>
+    <object-name>breaker44</object-name>
+    <object-name>breaker45</object-name>
+    <object-name>breaker46</object-name>
+    <object-name>breaker47</object-name>
+    <object-name>breaker48</object-name>
+    <object-name>breaker49</object-name>
+    <object-name>breaker50</object-name>
+
+    <object-name>breaker51</object-name>
+    <object-name>breaker52</object-name>
+    <object-name>breaker53</object-name>
+    <object-name>breaker54</object-name>
+    <object-name>breaker55</object-name>
+    <object-name>breaker56</object-name>
+    <object-name>breaker57</object-name>
+
+    <object-name>breaker58</object-name>
+    <object-name>breaker59</object-name>
+    <object-name>breaker60</object-name>
+    <object-name>breaker61</object-name>
+    <object-name>breaker62</object-name>
+    <object-name>breaker63</object-name>
+    <object-name>breaker64</object-name>
+    <object-name>breaker65</object-name>
+  </effect>
+
+</PropertyList>

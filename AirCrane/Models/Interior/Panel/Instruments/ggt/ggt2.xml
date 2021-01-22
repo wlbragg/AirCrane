@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+
+  <path>ggt.ac</path>
+
+  <animation>
+    <object-name>fond</object-name>
+    <object-name>face</object-name>
+    <object-name>needle</object-name>
+
+    <object-name>vitre</object-name>
+  </animation>
+
+  <effect>
+    <inherits-from>Aircraft/AirCrane/Models/Effects/Interior/cockpit-interior</inherits-from>
+    <object-name>fond</object-name>
+    <object-name>face</object-name>
+    <object-name>needle</object-name>
+  </effect>
+
+  <effect>
+    <inherits-from>Aircraft/AirCrane/Models/Effects/Interior/interior-glass-reflection-panel-front</inherits-from>
+    <object-name>vitre</object-name>
+  </effect>
+
+  <animation>
+    <type>material</type>
+    <object-name>face</object-name>
+    <object-name>needle</object-name>
+    <condition>
+      <property>controls/electric/battery-bus-switch</property>
+    </condition>
+    <emission>
+      <factor-prop>controls/lighting/luminosite-lights</factor-prop>
+      <red>   0.50 </red>
+      <green> 0.40 </green>
+      <blue>  0.30 </blue>
+    </emission>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>needle</object-name>
+    <property>/instrumentation/ggt/ggt-two-n1</property>
+    <interpolation>
+      <entry><ind> -999 </ind><dep> -139.0 </dep></entry>
+      <entry><ind>    0 </ind><dep> -138.0 </dep></entry>
+      <entry><ind>   10 </ind><dep> -111.0 </dep></entry>
+      <entry><ind>   20 </ind><dep>  -83.8 </dep></entry>
+      <entry><ind>   30 </ind><dep>  -56.1 </dep></entry>
+      <entry><ind>   40 </ind><dep>  -28.6 </dep></entry>
+      <entry><ind>   50 </ind><dep>   -1.2 </dep></entry>
+      <entry><ind>   60 </ind><dep>   26.3 </dep></entry>
+      <entry><ind>   70 </ind><dep>   53.5 </dep></entry>
+      <entry><ind>   80 </ind><dep>   80.8 </dep></entry>
+      <entry><ind>   90 </ind><dep>  108.0 </dep></entry>
+      <entry><ind>  100 </ind><dep>  135.0 </dep></entry>
+      <entry><ind>  104 </ind><dep>  146.0 </dep></entry>
+      <entry><ind>  999 </ind><dep>  147.0 </dep></entry>
+    </interpolation>
+    <axis>
+      <x> 1 </x>
+      <y> 0 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+
+</PropertyList>

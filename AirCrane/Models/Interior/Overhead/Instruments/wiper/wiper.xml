@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+
+  <path>wiper.ac</path>
+
+  <animation>
+    <object-name>base</object-name>
+    <object-name>knob-wiper</object-name>
+    <object-name>switchwasher</object-name>
+  </animation>
+
+  <effect>
+    <inherits-from>Aircraft/AirCrane/Models/Effects/Interior/cockpit-interior</inherits-from>
+    <object-name>base</object-name>
+    <object-name>knob-wiper</object-name>
+    <object-name>switchwasher</object-name>
+  </effect>
+
+</PropertyList>

@@ -1,26 +1,25 @@
-<?xml version="1.0"?>
+<?xml version="1.0" encoding="ISO-8859-1"?>
 
 <!-- AirCrane
- This program is free software; you can redistribute it and/or
- modify it under the terms of the GNU General Public License as
- published by the Free Software Foundation; either version 2 of the
- License, or (at your option) any later version.
+      This program is free software; you can redistribute it and/or
+      modify it under the terms of the GNU General Public License as
+      published by the Free Software Foundation; either version 2 of the
+      License, or (at your option) any later version.
 
- This program is distributed in the hope that it will be useful, but
- WITHOUT ANY WARRANTY; without even the implied warranty of
- MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
- General Public License for more details.
+      This program is distributed in the hope that it will be useful, but
+      WITHOUT ANY WARRANTY; without even the implied warranty of
+      MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+      General Public License for more details.
 -->
-
 <PropertyList>
   <name>fcs-dialog</name>
-	<layout>vbox</layout>
-	<resizable>true</resizable>
-	<default-padding>3</default-padding>
+  <layout>vbox</layout>
+  <resizable>true</resizable>
+  <default-padding>3</default-padding>
 
   <group>
     <layout>hbox</layout>
-		<default-padding>1</default-padding>
+    <default-padding>1</default-padding>
     <empty><stretch>true</stretch></empty>
     <text>
       <label>FCS Managements</label>
@@ -79,7 +78,7 @@
       <property>controls/flight/fcs/switches/auto-stabilizer</property>
       <live>true</live>
       <binding>
-          <command>dialog-apply</command>
+        <command>dialog-apply</command>
       </binding>
     </checkbox>
     <checkbox>
@@ -108,7 +107,7 @@
       <property>controls/flight/fcs/switches/heading-adjuster</property>
       <live>true</live>
       <binding>
-          <command>dialog-apply</command>
+        <command>dialog-apply</command>
       </binding>
     </checkbox>
     <checkbox>
@@ -127,7 +126,7 @@
       <property>controls/flight/fcs/switches/altitude-control</property>
       <live>true</live>
       <binding>
-          <command>dialog-apply</command>
+        <command>dialog-apply</command>
       </binding>
     </checkbox>
     <checkbox>
@@ -136,7 +135,7 @@
       <property>controls/flight/fcs/switches/sideslip-adjuster</property>
       <live>true</live>
       <binding>
-          <command>dialog-apply</command>
+        <command>dialog-apply</command>
       </binding>
     </checkbox>
     <checkbox>
@@ -145,7 +144,7 @@
       <property>controls/flight/fcs/switches/tail-rotor-adjuster</property>
       <live>true</live>
       <binding>
-          <command>dialog-apply</command>
+        <command>dialog-apply</command>
       </binding>
     </checkbox>
     <checkbox>
@@ -154,7 +153,7 @@
       <property>controls/flight/fcs/switches/backup-mode</property>
       <live>true</live>
       <binding>
-          <command>dialog-apply</command>
+        <command>dialog-apply</command>
       </binding>
     </checkbox>
     <checkbox>
@@ -163,7 +162,7 @@
       <property>controls/flight/fcs/switches/debug</property>
       <live>true</live>
       <binding>
-          <command>dialog-apply</command>
+        <command>dialog-apply</command>
       </binding>
     </checkbox>
 

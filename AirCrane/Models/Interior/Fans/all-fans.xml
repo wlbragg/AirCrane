@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+
+  <!-- Pilot fan -->
+  <model>
+    <path>Aircraft/AirCrane/Models/Interior/Fans/fanR.xml</path>
+    <offsets>
+      <x-m> -9.69285 </x-m>
+      <y-m>  0.68375 </y-m>
+      <z-m> -2.04995 </z-m>
+    </offsets>
+  </model>
+
+  <!-- Copilot fan -->
+  <model>
+    <path>Aircraft/AirCrane/Models/Interior/Fans/fanL.xml</path>
+    <offsets>
+      <x-m> -9.69164 </x-m>
+      <y-m> -0.65755 </y-m>
+      <z-m> -2.04556 </z-m>
+    </offsets>
+  </model>
+
+</PropertyList>

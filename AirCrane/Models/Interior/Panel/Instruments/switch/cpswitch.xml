@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+
+  <path>switch.ac</path>
+
+  <animation>
+    <object-name>base</object-name>
+    <object-name>switch</object-name>
+  </animation>
+
+  <effect>
+    <inherits-from>Aircraft/AirCrane/Models/Effects/Interior/cockpit-interior</inherits-from>
+    <object-name>base</object-name>
+    <object-name>switch</object-name>
+  </effect>
+
+  <animation>
+    <type>material</type>
+    <object-name>base</object-name>
+    <object-name>switch</object-name>
+    <condition>
+      <property>controls/electric/battery-bus-switch</property>
+    </condition>
+    <emission>
+      <factor-prop>controls/lighting/luminosite-lights</factor-prop>
+      <red>   0.50 </red>
+      <green> 0.40 </green>
+      <blue>  0.30 </blue>
+    </emission>
+  </animation>
+
+  <animation>
+    <type>pick</type>
+    <object-name>switch</object-name>
+    <visible>true</visible>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>property-toggle</command>
+        <property>controls/switches/cws-bright</property>
+      </binding>
+    </action>
+    <release>
+      <binding>
+        <command>property-assign</command>
+        <property>controls/switches/cws-bright</property>
+        <value>0</value>
+      </binding>
+    </release>
+    <hovered>
+      <binding>
+        <command>set-tooltip</command>
+        <tooltip-id>cpswitch</tooltip-id>
+        <label>CWS Brightness: %s</label>
+        <mapping>Dim-Bright</mapping>
+        <property>controls/switches/cws-bright</property>
+      </binding>
+    </hovered>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>switch</object-name>
+    <property>controls/switches/cws-bright</property>
+    <factor>-45</factor>
+    <offset-deg>20</offset-deg>
+    <axis>
+      <x> 0.0 </x>
+      <y> 1.0 </y>
+      <z> 0.0 </z>
+    </axis>
+  </animation>
+
+</PropertyList>

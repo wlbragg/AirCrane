@@ -1,240 +1,246 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
 <PropertyList>
 
   <nasal>
-    <load><![CDATA[
-var root = cmdarg();
-var rootindex = root.getIndex();
-var mpPath = "/ai/models/multiplayer["~ rootindex ~"]/";
 
-props.globals.initNode(mpPath~"sim/is-MP-Aircraft", 1, "BOOL");
-      
-srand();
-#wherever you want to add randomization of time, use something like:  + rand()*0.05-0.025
+    <load>
+      <![CDATA[
+      var root = cmdarg();
+      var rootindex = root.getIndex();
+      var mpPath = "/ai/models/multiplayer["~ rootindex ~"]/";
+
+      props.globals.initNode(mpPath~"sim/is-MP-Aircraft", 1, "BOOL");
+
+      srand();
+      #wherever you want to add randomization of time, use something like:  + rand()*0.05-0.025
 
 
-#I need to set listener on some MP transferred properties; this doesn't seem to work well sometimes, so I mirror them to the original location on any change
-#This also simplifies work as I can use almost the same code for MP as is the local Nasal. Furthermore, I can use meaningful property names in the model XML files instead of referencing the MP properties. 
-var mpVar = {
-	new: func(propIn, propOut) {
-		var m = { parents: [mpVar] };
-		m.propIn = propIn;
-		m.propOut = propOut;
-		if(propIn==nil or propOut==nil) return m;
-		m.value = getprop(propIn);
-		if(m.value!=nil) setprop(propOut, m.value);
-		return m;
-	},
-	check: func {
-		if(me.propIn==nil or me.propOut==nil) return;
-		var newValue = getprop(me.propIn);
-		if(newValue != me.value and newValue!=nil) {
-			setprop(me.propOut, newValue);
-			me.value = newValue;
-			#print("value of "~me.propOut~" changed: "~newValue);
-		}
-	},
-};
-#init any property copy object needed in this array (anything you need to transfer over MP, but you are using the original paths in your xmls)
-#also used for properties you are using a listener on, or properties which you maybe want to manipulate during the <unload> 
-#if you're just using the pack, change the values according to the MP bindings in the -set.xml file
-#you don't need to delete the entries if the path is nil - it gets skipped automatically and the MP path is just ignored
-var mirrorValues = [
-	mpVar.new(mpPath~"sim/multiplay/generic/int[7]", mpPath~"sim/crashed"),
-];
-#loop at the default MP transfer frequency (10Hz)
-var mirrorTimer = maketimer(0.1, func {
-	foreach(var mir; mirrorValues) {
-		mir.check();
-	}
-});
-mirrorTimer.start();
+      #I need to set listener on some MP transferred properties; this doesn't seem to work well sometimes, so I mirror them to the original location on any change
+      #This also simplifies work as I can use almost the same code for MP as is the local Nasal. Furthermore, I can use meaningful property names in the model XML files instead of referencing the MP properties.
+      var mpVar = {
+        new: func(propIn, propOut) {
+          var m = { parents: [mpVar] };
+          m.propIn = propIn;
+          m.propOut = propOut;
+          if(propIn==nil or propOut==nil) {
+            return m;
+          }
+          m.value = getprop(propIn);
+          if(m.value!=nil) {
+            setprop(propOut, m.value);
+          }
+          return m;
+        },
+        check: func {
+          if (me.propIn==nil or me.propOut==nil) {
+            return;
+          }
+          var newValue = getprop(me.propIn);
+          if (newValue != me.value and newValue!=nil) {
+            setprop(me.propOut, newValue);
+            me.value = newValue;
+            #print("value of "~me.propOut~" changed: "~newValue);
+          }
+        },
+      };
+      #init any property copy object needed in this array (anything you need to transfer over MP, but you are using the original paths in your xmls)
+      #also used for properties you are using a listener on, or properties which you maybe want to manipulate during the <unload>
+      #if you're just using the pack, change the values according to the MP bindings in the -set.xml file
+      #you don't need to delete the entries if the path is nil - it gets skipped automatically and the MP path is just ignored
+      var mirrorValues = [
+        mpVar.new(mpPath~"sim/multiplay/generic/int[7]", mpPath~"sim/crashed"),
+      ];
+      #loop at the default MP transfer frequency (10Hz)
+      var mirrorTimer = maketimer(0.1, func {
+        foreach(var mir; mirrorValues) {
+          mir.check();
+        }
+      });
+      mirrorTimer.start();
 
-### DISINTEGRATION ###
+      ### DISINTEGRATION ###
 
-props.globals.initNode(mpPath~"disintegration/spinSpeed", 0, "DOUBLE");
-props.globals.initNode(mpPath~"disintegration/crashTime", 0, "DOUBLE");
-props.globals.initNode(mpPath~"disintegration/negAGL", 0, "DOUBLE");
-props.globals.initNode(mpPath~"disintegration/severity", 1, "DOUBLE");
+      props.globals.initNode(mpPath~"disintegration/spinSpeed", 0, "DOUBLE");
+      props.globals.initNode(mpPath~"disintegration/crashTime", 0, "DOUBLE");
+      props.globals.initNode(mpPath~"disintegration/negAGL", 0, "DOUBLE");
+      props.globals.initNode(mpPath~"disintegration/severity", 1, "DOUBLE");
 
-var partsNode = props.globals.getNode(mpPath~"disintegration/parts");
+      var partsNode = props.globals.getNode(mpPath~"disintegration/parts");
 
-var degToRad = 3.141592654/180;
-var kt2mps = 0.51444;
-var ft2m = 0.3048;
-var maxSpin = 36; #0.6 rev/s
-var baseSpin = 4; 
-var g = 9.81;
+      var degToRad = 3.141592654/180;
+      var kt2mps = 0.51444;
+      var ft2m = 0.3048;
+      var maxSpin = 36; #0.6 rev/s
+      var baseSpin = 4;
+      var g = 9.81;
 
-var crashSlow = 0.3; #factor by which is fwd movement slowed after crash
+      var crashSlow = 0.3; #factor by which is fwd movement slowed after crash
 
-#function for initializing parts
-var initPart = func(name, dX, dY, dZ, vX=0, vY=0, vZ=0) {
-	#geometrical center of the element
-	props.globals.initNode(mpPath~"disintegration/parts/"~name~"/dX", dX, "DOUBLE");
-	props.globals.initNode(mpPath~"disintegration/parts/"~name~"/dY", dY, "DOUBLE");
-	props.globals.initNode(mpPath~"disintegration/parts/"~name~"/dZ", dZ, "DOUBLE");
-	#initial velocities, in local coords
-	props.globals.initNode(mpPath~"disintegration/parts/"~name~"/vX", vX, "DOUBLE");
-	props.globals.initNode(mpPath~"disintegration/parts/"~name~"/vX-base", vX, "DOUBLE");
-	props.globals.initNode(mpPath~"disintegration/parts/"~name~"/vY", vY, "DOUBLE");
-	props.globals.initNode(mpPath~"disintegration/parts/"~name~"/vY-base", vY, "DOUBLE");
-	props.globals.initNode(mpPath~"disintegration/parts/"~name~"/vZ", vZ, "DOUBLE");
-	props.globals.initNode(mpPath~"disintegration/parts/"~name~"/vZ-base", vZ, "DOUBLE");
-	#stops the animation after part specific fall time
-	props.globals.initNode(mpPath~"disintegration/parts/"~name~"/falling", 0, "BOOL");
-	props.globals.initNode(mpPath~"disintegration/parts/"~name~"/dropped", 0, "BOOL");
-}
+      #function for initializing parts
+      var initPart = func(name, dX, dY, dZ, vX=0, vY=0, vZ=0) {
+        #geometrical center of the element
+        props.globals.initNode(mpPath~"disintegration/parts/"~name~"/dX", dX, "DOUBLE");
+        props.globals.initNode(mpPath~"disintegration/parts/"~name~"/dY", dY, "DOUBLE");
+        props.globals.initNode(mpPath~"disintegration/parts/"~name~"/dZ", dZ, "DOUBLE");
+        #initial velocities, in local coords
+        props.globals.initNode(mpPath~"disintegration/parts/"~name~"/vX", vX, "DOUBLE");
+        props.globals.initNode(mpPath~"disintegration/parts/"~name~"/vX-base", vX, "DOUBLE");
+        props.globals.initNode(mpPath~"disintegration/parts/"~name~"/vY", vY, "DOUBLE");
+        props.globals.initNode(mpPath~"disintegration/parts/"~name~"/vY-base", vY, "DOUBLE");
+        props.globals.initNode(mpPath~"disintegration/parts/"~name~"/vZ", vZ, "DOUBLE");
+        props.globals.initNode(mpPath~"disintegration/parts/"~name~"/vZ-base", vZ, "DOUBLE");
+        #stops the animation after part specific fall time
+        props.globals.initNode(mpPath~"disintegration/parts/"~name~"/falling", 0, "BOOL");
+        props.globals.initNode(mpPath~"disintegration/parts/"~name~"/dropped", 0, "BOOL");
+      }
 
-setprop("/disX", 0);
-setprop("/disY", 0);
-setprop("/disZ", 0);
+      setprop("/disX", 0);
+      setprop("/disY", 0);
+      setprop("/disZ", 0);
 
-var disX = 0;
-var disY = 0;
-var disZ = 0;
+      var disX = 0;
+      var disY = 0;
+      var disZ = 0;
 
-#calls of previous function to initialize parts
+      #calls of previous function to initialize parts
 
-initPart("gearN", -8.67077, 3.07897,-3.27622,-1.35, 0.13,-0.62);
-#initPart("gearL", -1.05087,-3.0711 ,-0.70136,-0.1,  0.42,-0.14);
-initPart("gearL", -1.05087,-3.0711 ,-0.70136, disX, disY, disZ);
-initPart("gearR", -1.05268, 3.07898,-2.3245, -0.12,-0.31,-0.09);
+      initPart("gearN", -8.67077, 3.07897,-3.27622,-1.35, 0.13,-0.62);
+      #initPart("gearL", -1.05087,-3.0711 ,-0.70136,-0.1,  0.42,-0.14);
+      initPart("gearL", -1.05087,-3.0711 ,-0.70136, disX, disY, disZ);
+      initPart("gearR", -1.05268, 3.07898,-2.3245, -0.12,-0.31,-0.09);
 
-var partsList = partsNode.getChildren();
+      var partsList = partsNode.getChildren();
 
-#function for computing part specific stuff
-var setPart = func(name, AGL, groundspeed, severity, ground) {
-	var pitch = degToRad * getprop(mpPath~"orientation/pitch-deg");
-	var roll = degToRad * getprop(mpPath~"orientation/roll-deg");
-	
-	var globalVZ = ground * (2 * severity + 2 * severity * math.abs(math.sin(pitch)) + 0.04 * crashSlow * groundspeed * severity * math.abs(math.sin(pitch) * math.cos(pitch)));
-	
-	
-	var heightX = (getprop(mpPath~"disintegration/parts/"~name~"/dX")) * math.sin(pitch);
-	var heightY = (getprop(mpPath~"disintegration/parts/"~name~"/dY")) * math.cos(pitch) * math.sin(roll);
-	var heightZ = (getprop(mpPath~"disintegration/parts/"~name~"/dZ")) * math.cos(pitch) * math.cos(roll);
-	
-	var height = AGL + heightX + heightY + heightZ;
-	
-	setprop(mpPath~"disintegration/parts/"~name~"/vX", 
-		severity * getprop(mpPath~"disintegration/parts/"~name~"/vX-base") + 
-		groundspeed * kt2mps * crashSlow + 
-		globalVZ * math.sin(pitch)
-	);
-	
-	setprop(mpPath~"disintegration/parts/"~name~"/vY", 
-		severity * getprop(mpPath~"disintegration/parts/"~name~"/vY-base") + 
-		globalVZ * math.cos(pitch) * math.sin(roll)
-	);
-	setprop(mpPath~"disintegration/parts/"~name~"/vZ", 
-		severity * getprop(mpPath~"disintegration/parts/"~name~"/vZ-base") + 
-		globalVZ * math.cos(pitch) * math.cos(roll)
-	);
-	
-	
-	var velX = getprop(mpPath~"disintegration/parts/"~name~"/vX") * math.sin(pitch);
-	var velY = getprop(mpPath~"disintegration/parts/"~name~"/vY") * math.cos(pitch) * math.sin(roll);
-	var velZ = getprop(mpPath~"disintegration/parts/"~name~"/vZ") * math.cos(pitch) * math.cos(roll);
-	
-	var upV = velX + velY + velZ;
-	
-	var fallTime = (upV*upV + 2*g*height)>0 ? (upV + math.sqrt(upV*upV + 2*g*height))/g : upV/g;
-	
-	#print("name:"~name~" height:"~height~" fallTime:"~fallTime);
-	
-	setprop(mpPath~"disintegration/parts/"~name~"/falling", 1);
-	settimer(func{setprop(mpPath~"disintegration/parts/"~name~"/falling", 0);}, fallTime>0 ? fallTime : 0);
-	setprop(mpPath~"disintegration/parts/"~name~"/dropped", 1);
-}
+      #function for computing part specific stuff
+      var setPart = func(name, AGL, groundspeed, severity, ground) {
+        var pitch = degToRad * getprop(mpPath~"orientation/pitch-deg");
+        var roll = degToRad * getprop(mpPath~"orientation/roll-deg");
 
-var getSeverity = func {
-	uBody = getprop(mpPath~"velocities/uBody-fps");
-	vBody = getprop(mpPath~"velocities/vBody-fps");
-	wBody = getprop(mpPath~"velocities/wBody-fps");
-	var speed = ft2m * math.sqrt(uBody*uBody + vBody*vBody + wBody*wBody);
-	return 10 - (1000/(speed + 100)); 
-}
+        var globalVZ = ground * (2 * severity + 2 * severity * math.abs(math.sin(pitch)) + 0.04 * crashSlow * groundspeed * severity * math.abs(math.sin(pitch) * math.cos(pitch)));
 
-#fwd is based on groundspeed, side and up on impact severity
+        var heightX = (getprop(mpPath~"disintegration/parts/"~name~"/dX")) * math.sin(pitch);
+        var heightY = (getprop(mpPath~"disintegration/parts/"~name~"/dY")) * math.cos(pitch) * math.sin(roll);
+        var heightZ = (getprop(mpPath~"disintegration/parts/"~name~"/dZ")) * math.cos(pitch) * math.cos(roll);
 
-var disintegrated = 0;
-var disintegrate = func(override=0, gr=nil, sev=nil) {
-	if(disintegrated == 0 and (getprop(mpPath~"sim/multiplay/generic/int[7]") or override)) {
-		disintegrated = 1;
-		setprop(mpPath~"sim/multiplay/generic/int[7]", 1);
-		setprop(mpPath~"disintegration/crashTime", getprop("/sim/time/elapsed-sec"));
-		
-		var groundspeed = getprop(mpPath~"sim/multiplay/generic/float[2]");
-		var negAGL = -0.3048 * getprop(mpPath~"sim/multiplay/generic/float[3]");
-		setprop(mpPath~"disintegration/negAGL", negAGL);
-		
-		var severity = 0;
-		if(sev==nil) {
-			severity = getSeverity();
-		}
-		else {
-			severity = sev;
-		}
-		
-		var ground = 0;
-		if(gr==nil) {
-			if(negAGL < -15) {
-				ground = 0;
-			}
-			else {
-				ground = 1;
-			}
-		}
-		else {
-			ground = gr;
-		}
-		
-		if(severity>5) {
-			#explode(ground);
-		}
-		
-		setprop(mpPath~"disintegration/severity", severity);
-		setprop(mpPath~"disintegration/spinSpeed", 0);
-		interpolate(mpPath~"disintegration/spinSpeed", (severity*baseSpin)>maxSpin ? maxSpin : severity*baseSpin, 0.15);
-		settimer(func{interpolate(mpPath~"disintegration/spinSpeed", baseSpin, 3);}, 0.15);
-		
-		#loop over all parts and prepare them for animation
-		foreach(var p; partsList) {
-			setPart(p.getName(), -negAGL, groundspeed, severity, ground);
-		}
-		
-	}
-	else {
-		if(getprop(mpPath~"sim/multiplay/generic/int[7]") == 0 and disintegrated == 1) {
-			disintegrated = 0;
-			#stopFire();
-			#set all falling to 1 briefly to enable position reset
-			foreach(var p; partsList) {
-				var nameStr = p.getName();
-				setprop(mpPath~"disintegration/parts/"~nameStr~"/falling", 1);
-				settimer(func{setprop(mpPath~"disintegration/parts/"~nameStr~"/falling", 0);}, 0.3);
-				setprop(mpPath~"disintegration/parts/"~nameStr~"/dropped", 0);
-			}
-		}
-	}
-}
+        var height = AGL + heightX + heightY + heightZ;
 
-var listenCrash = setlistener(mpPath~"sim/multiplay/generic/int[7]", func{
+        setprop(mpPath~"disintegration/parts/"~name~"/vX",
+          severity * getprop(mpPath~"disintegration/parts/"~name~"/vX-base") +
+          groundspeed * kt2mps * crashSlow +
+          globalVZ * math.sin(pitch)
+        );
 
-  if (getprop("/sim/crashed")) {
-    disX = getprop("/disX");
-    disY = getprop("/disY");
-    disZ = getprop("/disZ");
-    initPart("gearL", -1.05087,-3.0711 ,-0.70136, disX, disY, disZ);
-  }
+        setprop(mpPath~"disintegration/parts/"~name~"/vY",
+          severity * getprop(mpPath~"disintegration/parts/"~name~"/vY-base") +
+          globalVZ * math.cos(pitch) * math.sin(roll)
+        );
+        setprop(mpPath~"disintegration/parts/"~name~"/vZ",
+          severity * getprop(mpPath~"disintegration/parts/"~name~"/vZ-base") +
+          globalVZ * math.cos(pitch) * math.cos(roll)
+        );
 
-  disintegrate();
+        var velX = getprop(mpPath~"disintegration/parts/"~name~"/vX") * math.sin(pitch);
+        var velY = getprop(mpPath~"disintegration/parts/"~name~"/vY") * math.cos(pitch) * math.sin(roll);
+        var velZ = getprop(mpPath~"disintegration/parts/"~name~"/vZ") * math.cos(pitch) * math.cos(roll);
 
-});
-        ]]>
+        var upV = velX + velY + velZ;
+
+        var fallTime = (upV*upV + 2*g*height)>0 ? (upV + math.sqrt(upV*upV + 2*g*height))/g : upV/g;
+
+        #print("name:"~name~" height:"~height~" fallTime:"~fallTime);
+
+        setprop(mpPath~"disintegration/parts/"~name~"/falling", 1);
+        settimer(func{setprop(mpPath~"disintegration/parts/"~name~"/falling", 0);}, fallTime>0 ? fallTime : 0);
+        setprop(mpPath~"disintegration/parts/"~name~"/dropped", 1);
+      }
+
+      var getSeverity = func {
+        uBody = getprop(mpPath~"velocities/uBody-fps");
+        vBody = getprop(mpPath~"velocities/vBody-fps");
+        wBody = getprop(mpPath~"velocities/wBody-fps");
+        var speed = ft2m * math.sqrt(uBody*uBody + vBody*vBody + wBody*wBody);
+        return 10 - (1000/(speed + 100));
+      }
+
+      #fwd is based on groundspeed, side and up on impact severity
+
+      var disintegrated = 0;
+      var disintegrate = func(override=0, gr=nil, sev=nil) {
+        if (disintegrated == 0 and (getprop(mpPath~"sim/multiplay/generic/int[7]") or override)) {
+          disintegrated = 1;
+          setprop(mpPath~"sim/multiplay/generic/int[7]", 1);
+          setprop(mpPath~"disintegration/crashTime", getprop("/sim/time/elapsed-sec"));
+
+          var groundspeed = getprop(mpPath~"sim/multiplay/generic/float[2]");
+          var negAGL = -0.3048 * getprop(mpPath~"sim/multiplay/generic/float[3]");
+          setprop(mpPath~"disintegration/negAGL", negAGL);
+
+          var severity = 0;
+          if(sev==nil) {
+            severity = getSeverity();
+          } else {
+            severity = sev;
+          }
+
+          var ground = 0;
+          if (gr==nil) {
+            if (negAGL < -15) {
+              ground = 0;
+            } else {
+              ground = 1;
+            }
+          } else {
+            ground = gr;
+          }
+
+          if(severity>5) {
+            #explode(ground);
+          }
+
+          setprop(mpPath~"disintegration/severity", severity);
+          setprop(mpPath~"disintegration/spinSpeed", 0);
+          interpolate(mpPath~"disintegration/spinSpeed", (severity*baseSpin)>maxSpin ? maxSpin : severity*baseSpin, 0.15);
+          settimer(func{interpolate(mpPath~"disintegration/spinSpeed", baseSpin, 3);}, 0.15);
+
+          #loop over all parts and prepare them for animation
+          foreach(var p; partsList) {
+            setPart(p.getName(), -negAGL, groundspeed, severity, ground);
+          }
+
+        } else {
+          if (getprop(mpPath~"sim/multiplay/generic/int[7]") == 0 and disintegrated == 1) {
+            disintegrated = 0;
+            #stopFire();
+            #set all falling to 1 briefly to enable position reset
+            foreach(var p; partsList) {
+              var nameStr = p.getName();
+              setprop(mpPath~"disintegration/parts/"~nameStr~"/falling", 1);
+              settimer(func{setprop(mpPath~"disintegration/parts/"~nameStr~"/falling", 0);}, 0.3);
+              setprop(mpPath~"disintegration/parts/"~nameStr~"/dropped", 0);
+            }
+          }
+        }
+      }
+
+      var listenCrash = setlistener(mpPath~"sim/multiplay/generic/int[7]", func{
+
+        if (getprop("/sim/crashed")) {
+          disX = getprop("/disX");
+          disY = getprop("/disY");
+          disZ = getprop("/disZ");
+          initPart("gearL", -1.05087,-3.0711 ,-0.70136, disX, disY, disZ);
+        }
+
+        disintegrate();
+
+      });
+      ]]>
     </load>
-    <unload>  
+
+    <unload>
     </unload>
+
   </nasal>
 
 </PropertyList>

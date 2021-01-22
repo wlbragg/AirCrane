@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+
+  <path>strobe_light.ac</path>
+  <nopreview/>
+
+  <animation>
+    <object-name>strobe_light</object-name>
+  </animation>
+
+  <animation>
+    <type>noshadow</type>
+    <object-name>strobe_light</object-name>
+  </animation>
+
+  <effect>
+    <inherits-from>BeaconLight</inherits-from>
+    <object-name>strobe_light</object-name>
+  </effect>
+
+  <animation>
+    <type>scale</type>
+    <x-offset>0.9</x-offset>
+    <y-offset>0.9</y-offset>
+    <z-offset>0.9</z-offset>
+  </animation>
+
+  <animation>
+    <type>dist-scale</type>
+    <object-name>strobe_light</object-name>
+    <interpolation>
+      <entry><ind>   0 </ind><dep> 1 </dep></entry>
+      <entry><ind> 300 </ind><dep> 4 </dep></entry>
+      <entry><ind>1500 </ind><dep> 8 </dep></entry>
+    </interpolation>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>strobe_light</object-name>
+    <condition>
+      <property>/sim/model/aircrane/lighting/beaconfwd-light</property>
+    </condition>
+  </animation>
+
+</PropertyList>

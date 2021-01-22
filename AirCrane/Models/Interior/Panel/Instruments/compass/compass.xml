@@ -1,53 +1,41 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="ISO-8859-1"?>
 
 <PropertyList>
 
   <path>compass.ac</path>
 
-  <effect>
-      <inherits-from>Models/Effects/interior/cockpit-interior-shadows</inherits-from>
-      <object-name>fond</object-name>
-      <object-name>lubber</object-name>
-
-      <object-name>face</object-name>
-  </effect>
-  <!--effect>
-      <inherits-from>Models/Effects/interior/cockpit-flashlight</inherits-from>
-      <object-name>face</object-name>
-  </effect-->
-  <effect>
-      <inherits-from>Models/Effects/interior/interior-glass-reflection-panel-front</inherits-from>
-      <object-name>vitre</object-name>
-  </effect>
-
   <animation>
     <object-name>fond</object-name>
     <object-name>face</object-name>
     <object-name>lubber</object-name>
+
     <object-name>vitre</object-name>
   </animation>
 
-  <animation>
-    <type>noshadow</type>
-    <object-name>vitre</object-name>
-  </animation>
+  <effect>
+    <inherits-from>Aircraft/AirCrane/Models/Effects/Interior/cockpit-interior</inherits-from>
+    <object-name>fond</object-name>
+    <object-name>face</object-name>
+    <object-name>lubber</object-name>
+  </effect>
 
-  <animation>
-    <type>shader</type>
-    <shader>chrome</shader>
-    <texture>Aircraft/Generic/Effects/glass_shader.png</texture>
+  <effect>
+    <inherits-from>Aircraft/AirCrane/Models/Effects/Interior/interior-glass-reflection-panel-front</inherits-from>
     <object-name>vitre</object-name>
-  </animation>
+  </effect>
 
   <animation>
     <type>material</type>
     <object-name>face</object-name>
     <object-name>lubber</object-name>
+    <condition>
+      <property>controls/electric/battery-bus-switch</property>
+    </condition>
     <emission>
-      <red>   0.04 </red>
-      <green> 0.05 </green>
-      <blue>  0.04 </blue>
-      <factor-prop>systems/electrical/outputs/instrument-lights</factor-prop>
+      <factor-prop>controls/lighting/luminosite-lights</factor-prop>
+      <red>   0.50 </red>
+      <green> 0.40 </green>
+      <blue>  0.30 </blue>
     </emission>
   </animation>
 

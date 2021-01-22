@@ -14,11 +14,11 @@ var npow = func(v, w) { math.exp(math.ln(abs(v)) * w) * (v < 0 ? -1 : 1) }
 var clamp = func(v, min = 0, max = 1) { v < min ? min : v > max ? max : v }
 var normatan = func(x) { math.atan2(x, 1) * 2 / math.pi }
 
-# timers ============================================================
+# ======================================================================= timers
 var turbine_timer = aircraft.timer.new("/sim/time/hobbs/turbines", 10);
 aircraft.timer.new("/sim/time/hobbs/helicopter", nil).start();
 
-# engines/rotor =====================================================
+# ======================================================================= engines/rotor
 var state = props.globals.getNode("sim/model/aircrane/state");
 var engine = props.globals.getNode("sim/model/aircrane/engine");
 var rotor = props.globals.getNode("controls/engines/engine/magnetos");
@@ -64,7 +64,8 @@ var cone3 = props.globals.getNode("rotors/main/cone3-deg", 1);
 var cone4 = props.globals.getNode("rotors/main/cone4-deg", 1);
 var main_rpm_pct = props.globals.getNode("sim/model/aircrane/main-rpm-pct", 1);
 var tail_rpm_pct = props.globals.getNode("sim/model/aircrane/tail-rpm-pct", 1);
-#fuel =====================================================
+
+# ======================================================================= fuel
 var tank1_level_lbs = props.globals.getNode("consumables/fuel/tank[0]/level-lbs", 1);
 var tank2_level_lbs = props.globals.getNode("consumables/fuel/tank[1]/level-lbs", 1);
 var tank3_level_lbs = props.globals.getNode("consumables/fuel/tank[2]/level-lbs", 1);
@@ -75,7 +76,8 @@ var aft_level_lbs = props.globals.getNode("consumables/fuel/aft/level-lbs", 1);
 var aux_level_lbs = props.globals.getNode("consumables/fuel/aux/level-lbs", 1);
 var fuel_shutoff_left = props.globals.getNode("consumables/fuel/shutoff/lever/left", 1);
 var fuel_shutoff_right = props.globals.getNode("consumables/fuel/shutoff/lever/right", 1);
-#power =====================================================
+
+# ======================================================================= power
 var master_bat = props.globals.getNode("controls/electric/battery-bus-switch", 1);
 var generator_1 = props.globals.getNode("controls/electric/engine[0]/generator-sw", 1);
 var generator_2 = props.globals.getNode("controls/electric/engine[1]/generator-sw", 1);
@@ -87,72 +89,72 @@ var afcs = props.globals.getNode("controls/switches/afcs", 1);
 var afcs_servo = props.globals.getNode("controls/switches/afcs-servo", 1);
 
 var autostart = func (msg=1) {
-    #if (getprop("/engines/active-engine/running")) {
-      #if (msg)
-        #gui.popupTip("Engine already running", 5);
-        #return;
-    #}
-    fwd_level_lbs.setValue(100);
-    aft_level_lbs.setValue(100);
-    ignition_one.setValue(-1);
-    ignition_two.setValue(-1);
-    fuel_shutoff_left.setValue(1);
-    fuel_shutoff_right.setValue(1);
-    engine_one.setValue(.5);
-    engine_two.setValue(.5);
-    master_bat.setValue(1);
-    generator_1.setValue(-1);
-    generator_2.setValue(-1);
-    eng1_running.setValue(1);
-    eng2_running.setValue(1);
-    rectifier_1.setValue(1);
-    rectifier_2.setValue(1);
-    state.setValue(0);
-    engines(1);
-    afcs.setValue(1);
-    afcs_servo.setValue(1);
+  # if (getprop("/engines/active-engine/running")) {
+  #   if (msg) {
+  #     gui.popupTip("Engine already running", 5);
+  #   }
+  #   return;
+  # }
+  fwd_level_lbs.setValue(100);
+  aft_level_lbs.setValue(100);
+  ignition_one.setValue(-1);
+  ignition_two.setValue(-1);
+  fuel_shutoff_left.setValue(1);
+  fuel_shutoff_right.setValue(1);
+  engine_one.setValue(.5);
+  engine_two.setValue(.5);
+  master_bat.setValue(1);
+  generator_1.setValue(-1);
+  generator_2.setValue(-1);
+  eng1_running.setValue(1);
+  eng2_running.setValue(1);
+  rectifier_1.setValue(1);
+  rectifier_2.setValue(1);
+  state.setValue(0);
+  engines(1);
+  afcs_servo.setValue(1);
+  afcs.setValue(1);
 };
 
 var app_startup = func {
-    var app_start_condition = app_start.getBoolValue() * app_master.getBoolValue() * master_bat.getValue();
-    if (app_start_condition) {
-        app_starting.setValue(1);
-        settimer(func {
-          #if (!app_fuel.getValue() or app_rpm_percent.getValue() < 20) {
-          if (!app_fuel.getValue()) {
-            app_running.setValue(0);
-            app_stop();  
-          } else {
-            app_running.setValue(1);
-          }
-          app_start.setValue(0);
-          app_starting.setValue(0);
-        }, 20);  
-    }
+  var app_start_condition = app_start.getBoolValue() * app_master.getBoolValue() * master_bat.getValue();
+  if (app_start_condition) {
+    app_starting.setValue(1);
+    settimer(func {
+      if (!app_fuel.getValue()) {
+        app_running.setValue(0);
+        app_stop();
+      } else {
+        app_running.setValue(1);
+      }
+      app_start.setValue(0);
+      app_starting.setValue(0);
+    }, 20);
+  }
 }
 
 var app_stop = func {
-    if (app_running.getValue() or app_starting.getValue()) {
-        app_running.setValue(0);
-        app_start.setValue(0);
-        app_starting.setValue(0);
-        app_shutdown.setValue(1);
-        settimer(func {app_shutdown.setValue(0);}, 20);
-    }
+  if (app_running.getValue() or app_starting.getValue()) {
+    app_running.setValue(0);
+    app_start.setValue(0);
+    app_starting.setValue(0);
+    app_shutdown.setValue(1);
+    settimer(func {app_shutdown.setValue(0);}, 20);
+  }
 }
 
 var update_rpm_percents = func {
-    #185
-    #850
-    main_rpm_pct.setValue(196/rotor_rpm.getValue());
-    tail_rpm_pct.setValue(892/tail_rpm.getValue());
+  #185
+  #850
+  main_rpm_pct.setValue(196/rotor_rpm.getValue());
+  tail_rpm_pct.setValue(892/tail_rpm.getValue());
 }
 
 var update_fuel_lbs = func {
-    fwd_level_lbs.setValue(tank1_level_lbs.getValue()+tank2_level_lbs.getValue());
-    aft_level_lbs.setValue(tank3_level_lbs.getValue()+tank4_level_lbs.getValue());
-    aux_level_lbs.setValue(tank4_level_lbs.getValue());
-#var total_fuel_level_lbs = fwd_level_lbs + aft_level_lbs + aux_level_lbs;
+  fwd_level_lbs.setValue(tank1_level_lbs.getValue()+tank2_level_lbs.getValue());
+  aft_level_lbs.setValue(tank3_level_lbs.getValue()+tank4_level_lbs.getValue());
+  aux_level_lbs.setValue(tank4_level_lbs.getValue());
+  #var total_fuel_level_lbs = fwd_level_lbs + aft_level_lbs + aux_level_lbs;
 }
 
 # state:
@@ -168,7 +170,7 @@ var update_state = func {
   var new_state = arg[0];
   if (new_state == (s+1)) {
     state.setValue(new_state);
-    if (new_state == (1)) { 
+    if (new_state == (1)) {
       settimer(func { update_state(2) }, 2);
       interpolate(engine, 0.03, 0.1, 0.002, 0.3, 0.02, 0.1, 0.003, 0.7, 0.03, 0.1, 0.01, 0.7);
     } else {
@@ -178,7 +180,7 @@ var update_state = func {
         max_rel_torque.setValue(0.01);
         target_rel_rpm.setValue(0.002);
         interpolate(engine, 0.05, 0.2, 0.03, 1, 0.07, 0.1, 0.04, 0.9, 0.02, 0.5);
-      } else { 
+      } else {
         if (new_state == (3)) {
           if (rotor_rpm.getValue() > 100) {
             #rotor is running at high rpm, so accel. engine faster
@@ -198,7 +200,7 @@ var update_state = func {
             max_rel_torque.setValue(0.25);
             target_rel_rpm.setValue(0.8);
           } else {
-              if (new_state == (5)) {
+            if (new_state == (5)) {
               max_rel_torque.setValue(1);
               target_rel_rpm.setValue(1.03);
             }
@@ -210,21 +212,21 @@ var update_state = func {
 }
 
 var engines_configured = func(x) {
-    var configuration = 0;
-    var fuel = fwd_level_lbs.getValue() + aft_level_lbs.getValue() + aux_level_lbs.getValue();
-    var fuel_levers = fuel_shutoff_left.getValue() + fuel_shutoff_right.getValue();
-    var ignition = 0;
+  var configuration = 0;
+  var fuel = fwd_level_lbs.getValue() + aft_level_lbs.getValue() + aux_level_lbs.getValue();
+  var fuel_levers = fuel_shutoff_left.getValue() + fuel_shutoff_right.getValue();
+  var ignition = 0;
 
-    if (x == 0)
-      ignition = ignition_one.getValue();
-    if (x == 1)
-      ignition = ignition_two.getValue();
-    if (x == 2)
-      ignition = ignition_one.getValue() + ignition_two.getValue();
+  if (x == 0)
+    ignition = ignition_one.getValue();
+  if (x == 1)
+    ignition = ignition_two.getValue();
+  if (x == 2)
+    ignition = ignition_one.getValue() + ignition_two.getValue();
 
-    configuration = fuel_levers * ignition * fuel;
+  configuration = fuel_levers * ignition * fuel;
 
-    return configuration;
+  return configuration;
 }
 
 var engines = func {
@@ -272,43 +274,48 @@ var update_engine = func {
   if (!engines_configured(1)) {
     eng2_shutdown.setValue(1);
     settimer(func {eng2_shutdown.setValue(0);}, 20);
-    eng2_running.setValue(0); 
+    eng2_running.setValue(0);
   }
 
   var engines_online = n1_percentage(2);
   if ((engines_configured(0) and eng1_running.getValue()) or (engines_configured(1) and eng2_running.getValue())) {
-    if (state.getValue() > 3 ) { 
-        #max_rel_torque.setValue(1*engines_online);
-        target_rel_rpm.setValue(1.03*engines_online);
-        interpolate (engine,  clamp( rotor_rpm.getValue() / 235 , 0.05, target_rel_rpm.getValue() ), 0.25 );
+    if (state.getValue() > 3 ) {
+      #max_rel_torque.setValue(1*engines_online);
+      target_rel_rpm.setValue(1.03*engines_online);
+      interpolate (engine,  clamp( rotor_rpm.getValue() / 235 , 0.05, target_rel_rpm.getValue() ), 0.25 );
     } else {
-          state.setValue(1);
-          update_state(2);
+      state.setValue(1);
+      update_state(2);
     }
-  } else { 
-      engines(0);
+  } else {
+    engines(0);
   }
 }
 
 var n1_percentage = func(x) {
-    var percentage = 0;
-    if (x == 2)
-      percentage = engine_one.getValue() * eng1_running.getValue() + engine_two.getValue() * eng2_running.getValue();
-    if (x == 0)
-      percentage = engine_one.getValue()*200;
-    if (x == 1)
-      percentage = engine_two.getValue()*200;
+  var percentage = 0;
+  if (x == 2) {
+    percentage = engine_one.getValue() * eng1_running.getValue() + engine_two.getValue() * eng2_running.getValue();
+  }
+  if (x == 0) {
+    percentage = engine_one.getValue()*200;
+  }
+  if (x == 1) {
+    percentage = engine_two.getValue()*200;
+  }
 
-    return percentage;
+  return percentage;
 }
 
 var update_engparams = func {
   eng1_underspeed.setValue(0);
   eng2_underspeed.setValue(0);
-  if (n1_percentage(0) < 60 and eng1_running.getValue() == 1) 
+  if (n1_percentage(0) < 60 and eng1_running.getValue() == 1) {
     eng1_underspeed.setValue(1);
-  if (n1_percentage(1) < 60 and eng2_running.getValue() == 1) 
+  }
+  if (n1_percentage(1) < 60 and eng2_running.getValue() == 1) {
     eng2_underspeed.setValue(1);
+  }
 }
 
 var update_rotor_cone_angle = func {
@@ -631,6 +638,7 @@ setlistener("/sim/signals/fdm-initialized", func {
       fgcommand("dialog-close", props.Node.new({"dialog-name": "range-dialog"}));
   }
 
+  setprop("instrumentation/comm/volume", 0);
 
   main_loop();
 });
@@ -652,7 +660,7 @@ setlistener("/sim/signals/reinit", func {
   cprint("32;1", "reinit");
   turbine_timer.stop();
   collective.setDoubleValue(1);
-  variant.scan();
+  #variant.scan();
   crashed = 0;
 });
 
@@ -674,10 +682,10 @@ setlistener("/sim/freeze/replay-state", func {
 # firebug fire starter ctrl+shift+leftmouseclick
 setlistener("/sim/signals/click", func {
   if (__kbd.shift.getBoolValue()) {
-	  var click_pos = geo.click_position();
-	  if (__kbd.ctrl.getBoolValue()) {
-		  wildfire.ignite(click_pos);
-	  }
+    var click_pos = geo.click_position();
+    if (__kbd.ctrl.getBoolValue()) {
+      wildfire.ignite(click_pos);
+    }
   }
 });
 
@@ -694,51 +702,52 @@ setlistener("/sim/ai/aircraft/impact/retardant", func (n) {
   #wildfire.resolve_retardant_drop(pos, 10, 0);
 });
 
-setlistener("/sim/model/aircrane/cockpit/rotorbrake-handle-animation", func (node) {      
-    if (node.getValue() == 1) {
-        aircrane.pumpRotorBrake();
-    }
+setlistener("/sim/model/aircrane/cockpit/rotorbrake-handle-animation", func (node) {
+  if (node.getValue() == 1) {
+    aircrane.pumpRotorBrake();
+  }
 }, 0, 0);
 
 setlistener("controls/switches/eng1-n1-start", func (node) {
-    if (node.getValue() and engine_one.getValue() == 0 and app_running.getValue()) {
-        state.setValue(-1);
-        eng1_starting.setValue(1);
-        settimer(func {
-          eng1_starting.setValue(0);
-          if (!eng1_running.getValue()) {
-              state.setValue(0);
-              eng1_shutdown.setValue(1);
-              settimer(func {eng1_shutdown.setValue(0);}, 20);
-          }
-        }, 20);   
-    }
+  if (node.getValue() and engine_one.getValue() == 0 and app_running.getValue()) {
+    state.setValue(-1);
+    eng1_starting.setValue(1);
+    settimer(func {
+      eng1_starting.setValue(0);
+      if (!eng1_running.getValue()) {
+        state.setValue(0);
+        eng1_shutdown.setValue(1);
+        settimer(func {eng1_shutdown.setValue(0);}, 20);
+      }
+    }, 20);
+  }
 }, 0, 0);
 
 setlistener("controls/switches/eng2-n1-start", func (node) {
-    if (node.getValue() and engine_two.getValue() == 0 and app_running.getValue()) {
-        state.setValue(-1);
-        eng2_starting.setValue(1);
-        settimer(func {
-          eng2_starting.setValue(0);
-          if (!eng2_running.getValue()) {
-              state.setValue(0);
-              eng2_shutdown.setValue(1);
-              settimer(func {eng2_shutdown.setValue(0);}, 20);
-          }
-        }, 20);   
-    }
+  if (node.getValue() and engine_two.getValue() == 0 and app_running.getValue()) {
+    state.setValue(-1);
+    eng2_starting.setValue(1);
+    settimer(func {
+      eng2_starting.setValue(0);
+      if (!eng2_running.getValue()) {
+        state.setValue(0);
+        eng2_shutdown.setValue(1);
+        settimer(func {eng2_shutdown.setValue(0);}, 20);
+      }
+    }, 20);
+  }
 }, 0, 0);
 
 setlistener("controls/switches/app-start-20", func (node) {
-    if (node.getValue()) {
-        if (!app_starting.getValue() or !app_running.getValue())
-            app_startup();
+  if (node.getValue()) {
+    if (!app_starting.getValue() or !app_running.getValue()) {
+      app_startup();
     }
+  }
 }, 0, 0);
 
 setlistener("controls/switches/app-stop", func (node) {
-    app_stop();
+  app_stop();
 }, 0, 0);
 
 #controls/switches/app-start

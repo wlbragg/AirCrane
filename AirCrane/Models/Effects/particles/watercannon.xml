@@ -1,32 +1,32 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 
 <PropertyList>
-  
+
   <!-- <params>
-    IMPORTANT: int properties 14 to 19, both included, are reserved for the immat system. Do not use them! 
+    IMPORTANT: int properties 14 to 19, both included, are reserved for the immat system. Do not use them!
     <spray_wake_speed_kt>
     <property>sim/multiplay/generic/float[6]</property>
     </spray_wake_speed_kt>
   </params>-->
-  
+
   <particlesystem>
     <name>watercannon</name>
     <type>normal</type>
     <texture>smoke.png</texture>
-    
+
     <emissive>false</emissive>
     <lighting>false</lighting>
-    
+
     <condition>
       <property>sim/model/firetank/watercannonparticlectrl</property>
     </condition>
-    
+
     <attach>world</attach>
-    
+
     <placer>
       <type>point</type>
     </placer>
-    
+
     <shooter>
       <theta-min-deg>-80</theta-min-deg>
       <theta-max-deg>-86</theta-max-deg>
@@ -45,15 +45,15 @@
         <z-max-deg-sec> 15 </z-max-deg-sec>
       </rotation-speed>
     </shooter>
-    
+
     <counter>
       <particles-per-sec>
         <value>700</value>
       </particles-per-sec>
     </counter>
-    
+
     <align>billboard</align>
-    
+
     <particle>
       <start>
         <color>
@@ -100,15 +100,15 @@
       <mass-kg>25</mass-kg>
       <radius-m>.9</radius-m>
     </particle>
-    
+
     <program>
       <fluid>  water</fluid>
       <gravity>true</gravity>
       <wind>   true</wind>
     </program>
-    
+
   </particlesystem>
-  
+
   <!-- water cannon translation -->
   <animation>
    <type>translate</type>
@@ -129,15 +129,10 @@
     <object-name>watercannon</object-name>
     <property>sim/model/watercannon/position-deg</property>
     <factor>1</factor>
-    <center>
-      <x-m>0</x-m>
-      <y-m>0</y-m>
-      <z-m>0</z-m>
-    </center>
     <axis>
-      <x>0</x>
-      <y>1</y>
-      <z>0</z>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
     </axis>
   </animation>
 

@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+
+  <model>
+    <path>Aircraft/AirCrane/Models/Interior/Pedestal/Instruments/empty/empty1.xml</path>
+    <offsets>
+      <x-m>  0.05770 </x-m>
+      <y-m> -0.22056 </y-m>
+      <z-m> -0.23738 </z-m>
+      <pitch-deg> 8 </pitch-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/AirCrane/Models/Interior/Pedestal/Instruments/empty/empty2.xml</path>
+    <offsets>
+      <x-m>  0.14620 </x-m>
+      <y-m> -0.22056 </y-m>
+      <z-m> -0.24987 </z-m>
+      <pitch-deg> 8 </pitch-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/AirCrane/Models/Interior/Pedestal/Instruments/empty/empty3.xml</path>
+    <offsets>
+      <x-m>  0.23181 </x-m>
+      <y-m> -0.22056 </y-m>
+      <z-m> -0.26196 </z-m>
+      <pitch-deg> 8 </pitch-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/AirCrane/Models/Interior/Pedestal/Instruments/empty/empty4.xml</path>
+    <offsets>
+      <x-m>  0.30829 </x-m>
+      <y-m> -0.22056 </y-m>
+      <z-m> -0.27277 </z-m>
+      <pitch-deg> 8 </pitch-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/AirCrane/Models/Interior/Pedestal/Instruments/empty/empty5.xml</path>
+    <offsets>
+      <x-m>  0.39759 </x-m>
+      <y-m> -0.22056 </y-m>
+      <z-m> -0.28539 </z-m>
+      <pitch-deg> 8 </pitch-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/AirCrane/Models/Interior/Pedestal/Instruments/empty/empty6.xml</path>
+    <offsets>
+      <x-m>  0.46438 </x-m>
+      <y-m> -0.22056 </y-m>
+      <z-m> -0.29482 </z-m>
+      <pitch-deg> 8 </pitch-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/AirCrane/Models/Interior/Pedestal/Instruments/empty/empty7.xml</path>
+    <offsets>
+      <x-m>  0.34428 </x-m>
+      <y-m> -0.04503 </y-m>
+      <z-m> -0.27793 </z-m>
+      <pitch-deg> 8 </pitch-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/AirCrane/Models/Interior/Pedestal/Instruments/empty/empty8.xml</path>
+    <offsets>
+      <x-m>  0.61230 </x-m>
+      <y-m> -0.04486 </y-m>
+      <z-m> -0.31580 </z-m>
+      <pitch-deg> 8 </pitch-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/AirCrane/Models/Interior/Pedestal/Instruments/empty/empty9.xml</path>
+    <offsets>
+      <x-m>  0.08647 </x-m>
+      <y-m>  0.12903 </y-m>
+      <z-m> -0.24157 </z-m>
+      <pitch-deg> 8 </pitch-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/AirCrane/Models/Interior/Pedestal/Instruments/empty/empty10.xml</path>
+    <offsets>
+      <x-m>  0.19553 </x-m>
+      <y-m>  0.12879 </y-m>
+      <z-m> -0.25698 </z-m>
+      <pitch-deg> 8 </pitch-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/AirCrane/Models/Interior/Pedestal/Instruments/empty/empty11.xml</path>
+    <offsets>
+      <x-m>  0.32414 </x-m>
+      <y-m>  0.07731 </y-m>
+      <z-m> -0.27513 </z-m>
+      <pitch-deg> 8 </pitch-deg>
+    </offsets>
+  </model>
+
+</PropertyList>

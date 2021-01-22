@@ -1,0 +1,550 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+
+    <!-- ================================================================== -->
+    <!-- Procedural Clustered Shading Lighting                              -->
+    <!-- ================================================================== -->
+
+	<!-- Procedural Landing Light -->
+    <animation>
+        <type>select</type>
+		<object-name>ProceduralLandingLight</object-name>
+        <nopreview/>
+        <condition>
+            <property>/sim/model/aircrane/lighting/landing-light</property>
+        </condition>
+    </animation>
+	<light>
+		<name>ProceduralLandingLight</name>
+		<type>spot</type>
+		<position>
+			<x-m> -9.93245 </x-m>
+			<y-m>  0.00000 </y-m>
+			<z-m> -2.78235 </z-m>
+		</position>
+		<direction>
+			<lookat-x-m>-20</lookat-x-m>
+			<lookat-y-m>  0</lookat-y-m>
+			<lookat-z-m>-3 </lookat-z-m>
+		</direction>
+		<ambient>
+			<r>0.95</r>
+			<g>0.95</g>
+			<b>0.95</b>
+			<a>1</a>
+		</ambient>
+		<diffuse>
+			<r>0.95</r>
+			<g>0.95</g>
+			<b>0.95</b>
+			<a>1</a>
+		</diffuse>
+		<specular>
+			<r>0.95</r>
+			<g>0.95</g>
+			<b>0.95</b>
+			<a>1</a>
+		</specular>
+		<attenuation>
+			<c>1.0</c>
+			<l>0.007</l>
+			<q>0.0002</q>
+		</attenuation>
+		<spot-exponent>5</spot-exponent>
+		<spot-cutoff>89</spot-cutoff>
+		<range-m>300</range-m>
+		<debug-color>
+			<r>1</r>
+			<g>1</g>
+			<b>1</b>
+			<a>1</a>
+		</debug-color>
+	</light>
+
+	<!-- Procedural Spot Light -->
+    <animation>
+        <type>select</type>
+        <object-name>ProceduralSpotLight</object-name>
+        <nopreview/>
+        <condition>
+			<property>/sim/model/aircrane/lighting/spot-light</property>
+        </condition>
+    </animation>
+	<light>
+		<name>ProceduralSpotLight</name>
+		<type>spot</type>
+		<position>
+			<x-m> -7.78415 </x-m>
+			<y-m>  0.00000 </y-m>
+			<z-m> -3.21645 </z-m>
+		</position>
+		<direction>
+			<lookat-x-m>  -8</lookat-x-m>
+			<lookat-y-m>   0</lookat-y-m>
+			<lookat-z-m>-700</lookat-z-m>
+		</direction>
+		<ambient>
+			<r>0.95</r>
+			<g>0.95</g>
+			<b>0.95</b>
+			<a>1</a>
+		</ambient>
+		<diffuse>
+			<r>0.95</r>
+			<g>0.95</g>
+			<b>0.95</b>
+			<a>1</a>
+		</diffuse>
+		<specular>
+			<r>0.95</r>
+			<g>0.95</g>
+			<b>0.95</b>
+			<a>1</a>
+		</specular>
+		<attenuation>
+			<c>1.0</c>
+			<l>0.0014</l>
+			<q>0.000007</q>
+		</attenuation>
+		<spot-exponent>100</spot-exponent>
+		<spot-cutoff>20</spot-cutoff>
+		<range-m>1000</range-m>
+		<debug-color>
+			<r>1</r>
+			<g>1</g>
+			<b>1</b>
+			<a>1</a>
+		</debug-color>
+	</light>
+
+	<!-- Procedural Courtesy Lights -->
+    <!--animation>
+        <type>select</type>
+        <object-name>ProceduralCourtesyLeftLight</object-name>
+        <object-name>ProceduralCourtesyRightLight</object-name>
+        <nopreview/>
+        <condition>
+			<property>/sim/model/c172p/lighting/courtesy</property>
+        </condition>
+    </animation>
+
+	<light>
+		<name>ProceduralCourtesyLeftLight</name>
+		<type>spot</type>
+		<position>
+			<x-m> 0.77</x-m>
+			<y-m>-1.65</y-m>
+			<z-m> 0.36</z-m>
+		</position>
+		<direction>
+			<lookat-x-m>-7 </lookat-x-m>
+			<lookat-y-m>-3 </lookat-y-m>
+			<lookat-z-m>-30</lookat-z-m>
+		</direction>
+		<ambient>
+			<r>1</r>
+			<g>1</g>
+			<b>1</b>
+			<a>1</a>
+		</ambient>
+		<diffuse>
+			<r>1</r>
+			<g>1</g>
+			<b>1</b>
+			<a>1</a>
+		</diffuse>
+		<specular>
+			<r>1</r>
+			<g>1</g>
+			<b>1</b>
+			<a>1</a>
+		</specular>
+		<attenuation>
+			<c>1.0</c>
+			<l>0.7</l>
+			<q>1.8</q>
+		</attenuation>
+		<spot-exponent>3</spot-exponent>
+		<spot-cutoff>80</spot-cutoff>
+		<range-m>10</range-m>
+		<debug-color>
+			<r>1</r>
+			<g>1</g>
+			<b>1</b>
+			<a>1</a>
+		</debug-color>
+	</light>
+
+	<light>
+		<name>ProceduralCourtesyRightLight</name>
+		<type>spot</type>
+		<position>
+			<x-m>0.77</x-m>
+			<y-m>1.65</y-m>
+			<z-m>0.36</z-m>
+		</position>
+		<direction>
+			<lookat-x-m>-7 </lookat-x-m>
+			<lookat-y-m> 3 </lookat-y-m>
+			<lookat-z-m>-30</lookat-z-m>
+		</direction>
+		<ambient>
+			<r>1</r>
+			<g>1</g>
+			<b>1</b>
+			<a>1</a>
+		</ambient>
+		<diffuse>
+			<r>1</r>
+			<g>1</g>
+			<b>1</b>
+			<a>1</a>
+		</diffuse>
+		<specular>
+			<r>1</r>
+			<g>1</g>
+			<b>1</b>
+			<a>1</a>
+		</specular>
+		<attenuation>
+			<c>1.0</c>
+			<l>0.7</l>
+			<q>1.8</q>
+		</attenuation>
+		<spot-exponent>3</spot-exponent>
+		<spot-cutoff>80</spot-cutoff>
+		<range-m>10</range-m>
+		<debug-color>
+			<r>1</r>
+			<g>1</g>
+			<b>1</b>
+			<a>1</a>
+		</debug-color>
+	</light-->
+
+    <!-- Procedural Strobe Light -->
+    <animation>
+        <type>select</type>
+		<object-name>strobe</object-name>
+        <nopreview/>
+		<condition>
+			<and>
+				<property>/sim/model/lights/sbc1/state</property>
+				<property>/sim/model/aircrane/lighting/strobe-light</property>
+			</and>
+		</condition>
+    </animation>
+
+	<light>
+		<name>strobe</name>
+		<type>point</type>
+		<position>
+			<x-m>  3.246000 </x-m>
+			<y-m> -0.229943 </y-m>
+			<z-m>  0.100174 </z-m>
+		</position>
+		<ambient>
+			<r>1</r>
+			<g>1</g>
+			<b>1</b>
+			<a>1</a>
+		</ambient>
+		<diffuse>
+			<r>1</r>
+			<g>1</g>
+			<b>1</b>
+			<a>1</a>
+		</diffuse>
+		<specular>
+			<r>1</r>
+			<g>1</g>
+			<b>1</b>
+			<a>1</a>
+		</specular>
+		<attenuation>
+			<c>1.0 </c>
+			<l>0.92</l>
+			<q>2.40</q>
+		</attenuation>
+		<range-m>30</range-m>
+		<debug-color>
+			<r>1</r>
+			<g>1</g>
+			<b>1</b>
+			<a>1</a>
+		</debug-color>
+	</light>
+
+	<!-- Beacon Fwd Procedural Light -->
+	<animation>
+		<type>select</type>
+		<object-name>beaconlightfwd</object-name>
+		<condition>
+			<property>/sim/model/aircrane/lighting/beaconfwd-light</property>
+		</condition>
+	</animation>
+
+	<light>
+		<name>beaconlightfwd</name>
+		<type>spot</type>
+		<position>
+			<x-m> -9.281 </x-m>
+			<y-m>  0.000 </y-m>
+			<z-m> -3. </z-m>
+		</position>
+		<direction>
+			<lookat-x-m>-9.3</lookat-x-m>
+			<lookat-y-m>  0 </lookat-y-m>
+			<lookat-z-m> -4 </lookat-z-m>
+		</direction>
+		<ambient>
+			<r>0.98</r>
+			<g>0.2</g>
+			<b>0.2</b>
+			<a>1</a>
+		</ambient>
+		<diffuse>
+			<r>0.98</r>
+			<g>0.2</g>
+			<b>0.2</b>
+			<a>1</a>
+		</diffuse>
+		<specular>
+			<r>0.98</r>
+			<g>0.2</g>
+			<b>0.2</b>
+			<a>1</a>
+		</specular>
+		<attenuation>
+			<c>1.0</c>
+			<l>1.40</l>
+			<q>3.60</q>
+		</attenuation>
+		<dim-factor>
+			<property>/sim/model/lights/beacon/state</property>
+		</dim-factor>
+		<spot-exponent>.5</spot-exponent>
+		<spot-cutoff>89</spot-cutoff>
+		<range-m>50</range-m>
+		<debug-color>
+			<r>1</r>
+			<g>0</g>
+			<b>0</b>
+			<a>1</a>
+		</debug-color>
+	</light>
+
+	<!-- Beacon Aft Procedural Light -->
+	<animation>
+		<type>select</type>
+		<object-name>beaconlightaft</object-name>
+		<condition>
+			<property>/sim/model/aircrane/lighting/beaconaft-light</property>
+		</condition>
+	</animation>
+	 
+	<light>
+		<name>beaconlightaft</name>
+		<type>point</type>
+		<position>
+			<x-m> 10.438 </x-m>
+			<y-m> -0.015 </y-m>
+			<z-m>  1.495 </z-m>
+		</position>
+		<ambient>
+			<r>0.98</r>
+			<g>0.2</g>
+			<b>0.2</b>
+			<a>1</a>
+		</ambient>
+		<diffuse>
+			<r>0.98</r>
+			<g>0.2</g>
+			<b>0.2</b>
+			<a>1</a>
+		</diffuse>
+		<specular>
+			<r>0.98</r>
+			<g>0.2</g>
+			<b>0.2</b>
+			<a>1</a>
+		</specular>
+		<attenuation>
+			<c>1.0</c>
+			<l>1.40</l>
+			<q>3.60</q>
+		</attenuation>
+		<dim-factor>
+			<property>/sim/model/lights/beacon/state</property>
+		</dim-factor>
+		<range-m>10</range-m>
+		<debug-color>
+			<r>1</r>
+			<g>0</g>
+			<b>0</b>
+			<a>1</a>
+		</debug-color>
+	</light>
+
+	<!-- Procedural Nav Lights -->
+	<animation>
+		<type>select</type>
+		<object-name>taillight</object-name>
+		<object-name>navlightred</object-name>
+		<object-name>navlightgreen</object-name>
+		<condition>
+			<property>/sim/model/aircrane/lighting/nav-lights</property>
+		</condition>
+	</animation>
+
+	<light>
+		<name>taillight</name>
+		<type>point</type>
+		<position>
+			<x-m> 13 </x-m>
+			<y-m>  0.000 </y-m>
+			<z-m>  1.377 </z-m>
+		</position>
+		<direction>
+			<lookat-x-m> 27</lookat-x-m>
+			<lookat-y-m> 0.00</lookat-y-m>
+			<lookat-z-m> -20 </lookat-z-m>
+		</direction>
+		<ambient>
+			<r>0.95</r>
+			<g>0.95</g>
+			<b>0.95</b>
+			<a>1</a>
+		</ambient>
+		<diffuse>
+			<r>0.95</r>
+			<g>0.95</g>
+			<b>0.95</b>
+			<a>1</a>
+		</diffuse>
+		<specular>
+			<r>0.95</r>
+			<g>0.95</g>
+			<b>0.95</b>
+			<a>1</a>
+		</specular>
+		<attenuation>
+			<c>1.0</c>
+			<l>1.40</l>
+			<q>2.16</q>
+		</attenuation>
+		<range-m>20</range-m>
+		<debug-color>
+			<r>1</r>
+			<g>1</g>
+			<b>1</b>
+			<a>1</a>
+		</debug-color>
+	</light>
+
+	<light>
+		<name>navlightred</name>
+		<type>point</type>
+		<position>
+			<x-m> -1.051 </x-m>
+			<y-m> -5 </y-m>
+			<z-m> -1.496 </z-m>
+		</position>
+		<direction>
+			<lookat-x-m>-13 </lookat-x-m>
+			<lookat-y-m>-13 </lookat-y-m>
+			<lookat-z-m>0.53</lookat-z-m>
+		</direction>
+		<ambient>
+			<r>1</r>
+			<g>0.1</g>
+			<b>0.1</b>
+			<a>1</a>
+		</ambient>
+		<diffuse>
+			<r>1</r>
+			<g>0.1</g>
+			<b>0.1</b>
+			<a>1</a>
+		</diffuse>
+		<specular>
+			<r>1</r>
+			<g>0.1</g>
+			<b>0.1</b>
+			<a>1</a>
+		</specular>
+		<attenuation>
+			<c>1.0</c>
+			<l>1.4</l>
+			<q>3.6</q>
+		</attenuation>
+		<range-m>10</range-m>
+		<debug-color>
+			<r>1</r>
+			<g>0</g>
+			<b>0</b>
+			<a>1</a>
+		</debug-color>
+	</light>
+
+	<light>
+		<name>navlightgreen</name>
+		<type>point</type>
+		<position>
+			<x-m> -1.051 </x-m>
+			<y-m>  5 </y-m>
+			<z-m> -1.496 </z-m>
+		</position>
+		<direction>
+			<lookat-x-m>-13 </lookat-x-m>
+			<lookat-y-m> 13 </lookat-y-m>
+			<lookat-z-m>0.53</lookat-z-m>
+		</direction>
+		<ambient>
+			<r>0.1</r>
+			<g>1</g>
+			<b>0.1</b>
+			<a>1</a>
+		</ambient>
+		<diffuse>
+			<r>0.1</r>
+			<g>1</g>
+			<b>0.1</b>
+			<a>1</a>
+		</diffuse>
+		<specular>
+			<r>0.1</r>
+			<g>1</g>
+			<b>0.1</b>
+			<a>1</a>
+		</specular>
+		<attenuation>
+			<c>1.0</c>
+			<l>1.4</l>
+			<q>3.6</q>
+		</attenuation>
+		<range-m>10</range-m>
+		<debug-color>
+			<r>0</r>
+			<g>1</g>
+			<b>0</b>
+			<a>1</a>
+		</debug-color>
+	</light>
+
+    <animation>
+        <type>noshadow</type>
+        <object-name>landinglight</object-name>
+        <object-name>taxilight</object-name>
+		<object-name>taillight</object-name>
+		<object-name>navlightred</object-name>
+		<object-name>navlightgreen</object-name>
+		<object-name>beaconlightaft</object-name>
+		<object-name>beaconlightfwd</object-name>
+		<object-name>strobe</object-name>
+		<object-name>ProceduralLandingLight</object-name>
+		<object-name>ProceduralSpotLight</object-name>
+    </animation>
+
+</PropertyList>

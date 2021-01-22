@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+
+  <path>winch.ac</path>
+
+  <animation>
+    <!-- Objets opaques -->
+    <object-name>winch</object-name>
+    <object-name>winchhead</object-name>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>winch</object-name>
+    <object-name>winchhead</object-name>
+    <condition>
+      <not>
+        <property>sim/model/winchcover/enabled</property>
+      </not>
+    </condition>
+  </animation>
+
+</PropertyList>

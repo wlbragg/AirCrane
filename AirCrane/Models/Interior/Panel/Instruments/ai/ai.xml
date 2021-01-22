@@ -4,55 +4,75 @@
 
   <path>ai.ac</path>
 
-  <effect>
-      <inherits-from>Models/Effects/interior/cockpit-interior-shadows</inherits-from>
-      <object-name>fond</object-name>
-      <object-name>barre</object-name>
-      <object-name>barre1</object-name>
-      <object-name>barre2</object-name>
-      <object-name>bouton</object-name>
-      <object-name>ai-ring</object-name>
-      <object-name>nav-pitch-steering-ba</object-name>
-      <object-name>nav-yaw-steering-bar</object-name>
-      <object-name>gs-scale</object-name>
-      <object-name>ils-flags</object-name>
-      <object-name>course-flag</object-name>
-      <object-name>ring-slip</object-name>
-      <object-name>fasteners</object-name>
-
-      <object-name>AttitudeBall</object-name>
-      <object-name>slip-ball</object-name>
-      <object-name>bank-index</object-name>
-  </effect>
-  <!--effect>
-      <inherits-from>Models/Effects/interior/cockpit-flashlight</inherits-from>
-      <object-name>AttitudeBall</object-name>
-      <object-name>slip-ball</object-name>
-      <object-name>bank-index</object-name>
-  </effect-->
-  <effect>
-      <inherits-from>Models/Effects/interior/interior-glass-reflection-panel-front</inherits-from>
-      <object-name>glass</object-name>
-  </effect>
-
-  <!--animation>
-    <type>material</type>
+  <animation>
+    <object-name>fond</object-name>
+    <object-name>bouton</object-name>
+    <object-name>face</object-name>
     <object-name>AttitudeBall</object-name>
-    <object-name>slip-ball</object-name>
-    <object-name>ils-flag</object-name>
-    <object-name>course-flag</object-name>
     <object-name>barre</object-name>
     <object-name>barre1</object-name>
     <object-name>barre2</object-name>
+    <object-name>gs-scale</object-name>
+    <object-name>ring-slip</object-name>
+    <object-name>course-flag</object-name>
+    <object-name>slip-ball</object-name>
     <object-name>nav-pitch-steering-ba</object-name>
     <object-name>nav-yaw-steering-bar</object-name>
+    <object-name>bank-index</object-name>
+    <object-name>ils-flags</object-name>
+
+    <object-name>vitre</object-name>
+  </animation>
+
+  <effect>
+    <inherits-from>Aircraft/AirCrane/Models/Effects/Interior/cockpit-interior</inherits-from>
+    <object-name>fond</object-name>
+    <object-name>bouton</object-name>
+    <object-name>face</object-name>
+    <object-name>AttitudeBall</object-name>
+    <object-name>barre</object-name>
+    <object-name>barre1</object-name>
+    <object-name>barre2</object-name>
+    <object-name>gs-scale</object-name>
+    <object-name>ring-slip</object-name>
+    <object-name>course-flag</object-name>
+    <object-name>slip-ball</object-name>
+    <object-name>nav-pitch-steering-ba</object-name>
+    <object-name>nav-yaw-steering-bar</object-name>
+    <object-name>bank-index</object-name>
+    <object-name>ils-flags</object-name>
+  </effect>
+
+  <effect>
+    <inherits-from>Aircraft/AirCrane/Models/Effects/Interior/interior-glass-reflection-panel-front</inherits-from>
+    <object-name>vitre</object-name>
+  </effect>
+
+  <animation>
+    <type>material</type>
+    <object-name>face</object-name>
+    <object-name>AttitudeBall</object-name>
+    <object-name>barre</object-name>
+    <object-name>barre1</object-name>
+    <object-name>barre2</object-name>
+    <object-name>gs-scale</object-name>
+    <object-name>ring-slip</object-name>
+    <object-name>course-flag</object-name>
+    <object-name>slip-ball</object-name>
+    <object-name>nav-pitch-steering-ba</object-name>
+    <object-name>nav-yaw-steering-bar</object-name>
+    <object-name>bank-index</object-name>
+    <object-name>ils-flags</object-name>
+    <condition>
+      <property>controls/electric/battery-bus-switch</property>
+    </condition>
     <emission>
-      <factor-prop>systems/electrical/outputs/instrument-lights</factor-prop>
-      <red>   0.04 </red>
-      <green> 0.05 </green>
-      <blue>  0.04 </blue>
+      <factor-prop>controls/lighting/luminosite-lights</factor-prop>
+      <red>   0.50 </red>
+      <green> 0.40 </green>
+      <blue>  0.30 </blue>
     </emission>
-  </animation-->    
+  </animation>
 
   <animation>
     <type>rotate</type>
@@ -60,16 +80,16 @@
     <property>orientation/roll-deg</property>
     <factor>1</factor>
     <center>
-      <x-m>-9.4327</x-m>
-      <y-m>-0.347757</y-m>
-      <z-m>-1.46523</z-m>
+      <x-m> -0.03484 </x-m>
+      <y-m>  0.00000 </y-m>
+      <z-m>  0.00000 </z-m>
     </center>
     <axis>
       <x> 1 </x>
       <y> 0 </y>
       <z> 0 </z>
     </axis>
-  </animation>  
+  </animation>
 
   <animation>
     <type>rotate</type>
@@ -77,17 +97,17 @@
     <property>orientation/pitch-deg</property>
     <factor>1</factor>
     <center>
-      <x-m>-9.4327</x-m>
-      <y-m>-0.347757</y-m>
-      <z-m>-1.46523</z-m>
+      <x-m> -0.03484 </x-m>
+      <y-m>  0.00000 </y-m>
+      <z-m>  0.00000 </z-m>
     </center>
     <axis>
       <x> 0 </x>
       <y> 1 </y>
       <z> 0 </z>
     </axis>
-  </animation>  
- 
+  </animation>
+
   <animation>
     <type>rotate</type>
     <object-name>slip-ball</object-name>
@@ -96,9 +116,9 @@
     <min-deg> -13 </min-deg>
     <max-deg>  13 </max-deg>
     <center>
-      <x-m>-9.4327</x-m>
-      <y-m>-0.347757</y-m>
-      <z-m>-1.46523</z-m>
+      <x-m>  0.00 </x-m>
+      <y-m>  0.00 </y-m>
+      <z-m>  0.02 </z-m>
     </center>
     <axis>
       <x> -1 </x>
@@ -111,13 +131,8 @@
     <type>rotate</type>
     <object-name>bank-index</object-name>
     <property>orientation/roll-deg</property>
-    <min-deg>-120</min-deg>
-    <max-deg>120</max-deg>
-    <center>
-      <x-m>-9.4327</x-m>
-      <y-m>-0.347757</y-m>
-      <z-m>-1.46523</z-m>
-    </center>
+    <min-deg> -120 </min-deg>
+    <max-deg>  120 </max-deg>
     <axis>
       <x> -1 </x>
       <y>  0 </y>

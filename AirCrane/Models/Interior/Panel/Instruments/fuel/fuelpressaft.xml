@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+
+  <path>fuelpress.ac</path>
+
+  <animation>
+    <object-name>fond</object-name>
+    <object-name>face</object-name>
+    <object-name>needle1</object-name>
+    <object-name>needle2</object-name>
+    <object-name>bug</object-name>
+    <object-name>knob</object-name>
+
+    <object-name>vitre</object-name>
+  </animation>
+
+  <effect>
+    <inherits-from>Aircraft/AirCrane/Models/Effects/Interior/cockpit-interior</inherits-from>
+    <object-name>fond</object-name>
+    <object-name>face</object-name>
+    <object-name>needle1</object-name>
+    <object-name>needle2</object-name>
+    <object-name>bug</object-name>
+    <object-name>knob</object-name>
+  </effect>
+
+  <effect>
+    <inherits-from>Aircraft/AirCrane/Models/Effects/Interior/interior-glass-reflection-panel-front</inherits-from>
+    <object-name>vitre</object-name>
+  </effect>
+
+  <animation>
+    <type>material</type>
+    <object-name>face</object-name>
+    <object-name>needle1</object-name>
+    <object-name>needle2</object-name>
+    <object-name>bug</object-name>
+    <condition>
+      <property>controls/electric/battery-bus-switch</property>
+    </condition>
+    <emission>
+      <factor-prop>controls/lighting/luminosite-lights</factor-prop>
+      <red>   0.50 </red>
+      <green> 0.40 </green>
+      <blue>  0.30 </blue>
+    </emission>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>needle1</object-name>
+    <property>consumables/fuel/aft/pressure</property>
+    <interpolation>
+      <entry><ind>-99</ind><dep>     1</dep></entry>
+      <entry><ind>  0</ind><dep>     0</dep></entry>
+      <entry><ind>  1.5</ind><dep> -81</dep></entry>
+      <entry><ind>  2.0</ind><dep>-174</dep></entry>
+      <entry><ind>  2.5</ind><dep>-271</dep></entry>
+      <entry><ind> 99</ind><dep>  -272</dep></entry>
+    </interpolation>
+    <axis>
+      <x> 1 </x>
+      <y> 0 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>needle2</object-name>
+    <property>consumables/fuel/aft/pressure</property>
+    <interpolation>
+      <entry><ind>-99</ind><dep>   1</dep></entry>
+      <entry><ind>  0</ind><dep>   0</dep></entry>
+      <entry><ind>  1</ind><dep> -38.5</dep></entry>
+      <entry><ind>  2</ind><dep> -75</dep></entry>
+      <entry><ind>  3</ind><dep>-111</dep></entry>
+      <entry><ind>  4</ind><dep>-147</dep></entry>
+      <entry><ind>  5</ind><dep>-181</dep></entry>
+      <entry><ind>  6</ind><dep>-216</dep></entry>
+      <entry><ind>  7</ind><dep>-251</dep></entry>
+      <entry><ind>  8</ind><dep>-285</dep></entry>
+      <entry><ind>  9</ind><dep>-322</dep></entry>
+      <entry><ind> 10</ind><dep>-357</dep></entry>
+      <entry><ind> 99</ind><dep>-358</dep></entry>
+    </interpolation>
+    <center>
+      <x-m>  0.00691 </x-m>
+      <y-m>  0.01912 </y-m>
+      <z-m> -0.00027 </z-m>
+    </center>
+    <axis>
+      <x> 1 </x>
+      <y> 0 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>bug</object-name>
+    <property>consumables/fuel/aft/bug</property>
+    <interpolation>
+      <entry><ind>-99</ind><dep>     1</dep></entry>
+      <entry><ind>  0</ind><dep>     0</dep></entry>
+      <entry><ind>  1.5</ind><dep> -81</dep></entry>
+      <entry><ind>  2.0</ind><dep>-174</dep></entry>
+      <entry><ind>  2.5</ind><dep>-271</dep></entry>
+      <entry><ind> 99</ind><dep>  -272</dep></entry>
+    </interpolation>
+    <axis>
+      <x> 1 </x>
+      <y> 0 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>knob</type>
+    <object-name>knob</object-name>
+    <property>/consumables/fuel/aft/bug</property>
+    <factor>.01</factor>
+    <center>
+      <x-m>  0.00991 </x-m>
+      <y-m>  0.02788 </y-m>
+      <z-m> -0.02804 </z-m>
+    </center>
+    <axis>
+      <x> 1 </x>
+      <y> 0 </y>
+      <z> 0 </z>
+    </axis>
+    <action>
+      <binding>
+        <command>property-adjust</command>
+        <property>/consumables/fuel/aft/bug</property>
+        <factor>0.01</factor>
+        <min>0</min>
+        <max>2.5</max>
+        <wrap>false</wrap>
+      </binding>
+    </action>
+    <hovered>
+      <binding>
+        <command>set-tooltip</command>
+        <tooltip-id>alt-setting</tooltip-id>
+        <label>Pressure Ratio: %1.1f</label>
+        <property>/consumables/fuel/aft/bug</property>
+      </binding>
+    </hovered>
+  </animation>
+
+</PropertyList>

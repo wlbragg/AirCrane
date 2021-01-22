@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+
+  <path>dome.ac</path>
+
+  <animation>
+    <object-name>base</object-name>
+    <object-name>plaques</object-name>
+    <object-name>domelightred</object-name>
+    <object-name>domelightwhite</object-name>
+    <object-name>switchbase</object-name>
+    <object-name>switch</object-name>
+    <object-name>lightonwhite</object-name>
+    <object-name>lightonred</object-name>
+  </animation>
+
+  <effect>
+    <inherits-from>Aircraft/AirCrane/Models/Effects/Interior/cockpit-interior</inherits-from>
+    <object-name>base</object-name>
+    <object-name>plaques</object-name>
+    <object-name>domelightred</object-name>
+    <object-name>domelightwhite</object-name>
+    <object-name>switchbase</object-name>
+    <object-name>switch</object-name>
+    <object-name>lightonwhite</object-name>
+    <object-name>lightonred</object-name>
+  </effect>
+
+</PropertyList>

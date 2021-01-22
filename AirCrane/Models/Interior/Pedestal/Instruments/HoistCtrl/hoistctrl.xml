@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+
+  <path>hoistctrl.ac</path>
+
+  <animation>
+    <object-name>base</object-name>
+    <object-name>knobhoistcntrl</object-name>
+    <object-name>emgshearcover</object-name>
+    <object-name>emgshear</object-name>
+  </animation>
+
+  <effect>
+    <inherits-from>Aircraft/AirCrane/Models/Effects/Interior/cockpit-interior</inherits-from>
+    <object-name>base</object-name>
+    <object-name>knobhoistcntrl</object-name>
+    <object-name>emgshearcover</object-name>
+    <object-name>emgshear</object-name>
+  </effect>
+
+  <!-- Hoist Control "Knob" -->
+  <animation>
+    <type>knob</type>
+    <object-name>knobhoistcntrl</object-name>
+    <property>controls/hoist-control</property>
+    <factor>-60</factor>
+    <offset-deg>0</offset-deg>
+    <center>
+      <x-m> -0.02766 </x-m>
+      <y-m> -0.00166 </y-m>
+      <z-m>  0.00247 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 0 </y>
+      <z> 1 </z>
+    </axis>
+    <action>
+      <repeatable>true</repeatable>
+      <binding>
+        <command>property-adjust</command>
+        <property>controls/hoist-control</property>
+        <factor>1</factor>
+        <min>0</min>
+        <max>3</max>
+        <wrap>0</wrap>
+      </binding>
+      <binding>
+        <command>nasal</command>
+        <script>aircrane.click("avionics")</script>
+      </binding>
+    </action>
+    <hovered>
+      <binding>
+        <command>set-tooltip</command>
+        <tooltip-id>hoist-control</tooltip-id>
+        <label>Hoist Control: %s</label>
+        <property>controls/hoist-control</property>
+        <mapping>nasal</mapping>
+        <script>
+          var modes = ['Off', 'Left Pilot', 'Right Pilot', 'Aft'];
+          return modes[arg[0]];
+        </script>
+      </binding>
+    </hovered>
+  </animation>
+
+  <!-- Emergency Shear "Switch" -->
+  <animation>
+    <type>knob</type>
+    <object-name>emgshear</object-name>
+    <property>/controls/emgshear</property>
+    <factor>-45</factor>
+    <offset-deg>0</offset-deg>
+    <center>
+      <x-m> 0.02542 </x-m>
+      <y-m> 0.00000 </y-m>
+      <z-m> 0.00466 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+    <action>
+      <binding>
+        <command>property-adjust</command>
+        <property>/controls/emgshear</property>
+        <factor>1</factor>
+        <min>0</min>
+        <max>1</max>
+        <wrap>false</wrap>
+      </binding>
+      <binding>
+        <command>nasal</command>
+        <script>aircrane.click("avionics")</script>
+      </binding>
+    </action>
+    <hovered>
+      <binding>
+        <command>set-tooltip</command>
+        <tooltip-id>emg-shear-sw-tch</tooltip-id>
+        <label>Emergency Shear: %s</label>
+        <property>/controls/emgshear</property>
+        <mapping>nasal</mapping>
+        <script>
+          var modes = ['ARM', 'SHEAR'];
+          return modes[arg[0]];
+        </script>
+      </binding>
+    </hovered>
+  </animation>
+
+  <!-- Emergency Shear "Cover" -->
+  <animation>
+    <type>knob</type>
+    <object-name>emgshearcover</object-name>
+    <property>/controls/emgshearcover</property>
+    <factor>-70</factor>
+    <offset-deg>0</offset-deg>
+    <center>
+      <x-m>  0.01295 </x-m>
+      <y-m> -0.00019 </y-m>
+      <z-m>  0.00244 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+    <action>
+      <binding>
+        <command>property-adjust</command>
+        <property>/controls/emgshearcover</property>
+        <factor>1</factor>
+        <min>0</min>
+        <max>1</max>
+        <wrap>false</wrap>
+      </binding>
+      <binding>
+        <command>nasal</command>
+        <script>aircrane.click("cover")</script>
+      </binding>
+    </action>
+    <hovered>
+      <binding>
+        <command>set-tooltip</command>
+        <tooltip-id>emgshearcover</tooltip-id>
+        <label>Emergancy Shear Cover</label>
+        <property>/controls/emgshearcover</property>
+      </binding>
+    </hovered>
+  </animation>
+
+</PropertyList>

@@ -17,7 +17,7 @@
   Tail rotor diameter: 4.9m
   disc area: 18.7 sqm
 
-  airfoil: naca 0011 
+  airfoil: naca 0011
 
   2 Pratt and Whitney jftd12a-4a
   max power 9000 shp ( ca. 7000 kw)
@@ -61,8 +61,7 @@
     <control-setting axis="/controls/engines/engine[0]/throttle" value="1"/>
   </cruise>
 
-<!--airfoil-lift-coefficient="3.65" airfoil-drag-coefficient0="0.0025" airfoil-drag-coefficient1="0.030"-->
-  <rotor name="main" 
+  <rotor name="main"
          x="2.606" y="0.00" z="1.383"
          nx="0.087" ny="0" nz="1."
          fx="1" fy="0" fz="0"
@@ -70,7 +69,7 @@
          mincollective="-0.5" maxcollective="14.9"
          mincyclicele="-13.6" maxcyclicele="13.6"
          mincyclicail="-6.2" maxcyclicail="6.2"
-         diameter="22.7" 
+         diameter="22.7"
          numblades="6"
          weightperblade="600"
          twist="-4.1"
@@ -92,7 +91,7 @@
          number-of-parts="8"
          rel-len-where-incidence-is-measured="0.7"
          rel-len-blade-start="0.29"
-         airfoil-lift-coefficient="5.15" airfoil-drag-coefficient0="0.0025" airfoil-drag-coefficient1="0.030"
+         airfoil-lift-coefficient="3.65" airfoil-drag-coefficient0="0.0025" airfoil-drag-coefficient1="0.030"
          incidence-stall-zero-speed="31" incidence-stall-half-sonic-speed="19"
          lift-factor-stall="0.18"
          stall-change-over="3"
@@ -100,12 +99,12 @@
          cyclic-factor="0.4"
          rotor-correction-factor="0.77"
          balance="0.9985">
-         <control-input control="CYCLICAIL"  axis="/controls/flight/aileron-trim-actual" split="true"/>
-         <control-input control="CYCLICAIL"  axis="/controls/flight/fcs/roll-actual" src0="-1.0" src1="1.0" dst0="-1.0" dst1="1.0"/>
+         <control-input control="CYCLICAIL"  axis="/controls/flight/aileron-trim" split="true"/>
+         <control-input control="CYCLICAIL"  axis="/controls/flight/fcs/roll"            src0="-1.0" src1="1.0" dst0="-1.0" dst1="1.0"/>
          <control-input control="CYCLICAIL"  axis="/controls/engines/engine[0]/throttle" src0=" 0.0" src1="1.0" dst0="-0.1" dst1="0.1"/>
-         
-         <control-input control="CYCLICELE"  axis="/controls/flight/elevator-trim-actual" split="true"/>
-         <control-input control="CYCLICELE"  axis="/controls/flight/fcs/pitch-actual" src0="-1.0" src1="1.0" dst0="-1.0" dst1=" 1.0"/>
+
+         <control-input control="CYCLICELE"  axis="/controls/flight/elevator-trim" split="true"/>
+         <control-input control="CYCLICELE"  axis="/controls/flight/fcs/pitch"           src0="-1.0" src1="1.0" dst0="-1.0" dst1=" 1.0"/>
          <control-input control="COLLECTIVE" axis="/controls/engines/engine[0]/throttle" src0=" 0.0" src1="1.0" dst0=" 1.0" dst1="-1.0"/>
   </rotor>
 
@@ -121,7 +120,7 @@
          weightperblade="20"
          relbladecenter="0.5"
          dynamic="0.7"
-         rpm="850"
+         rpm="750"
          rellenflaphinge="0"
          delta="0.1" delta3="0"
          translift="0"
@@ -142,23 +141,17 @@
 <!--
          <control-input control="COLLECTIVE" axis="/controls/flight/fcs/yaw" invert="true" src0="-1.0" src1="1.0" dst0="-0.66" dst1=" 0.66"/>
          <control-input control="COLLECTIVE" axis="/controls/engines/engine[0]/throttle"   src0=" 0.0" src1="0.6" dst0=" 0.45" dst1="-0.50"/>
-         <control-input control="COLLECTIVE" axis="/controls/engines/engine[1]/throttle"   src0=" 0.0" src1="0.6" dst0=" 0.45" dst1="-0.50"/>
 -->
   </rotor>
 
   <!-- only the engine power below is a known good value -->
-  <!--
-    max-power-engine="4200"
-    yasimliftfactor="110"
-  -->
-
-  <rotorgear max-power-engine="8400"
-             max-power-rotor-brake="1000"
+  <rotorgear max-power-engine="4200"
+             max-power-rotor-brake="185"
              rotorgear-friction="3.7"
              engine-prop-factor="0.01"
              engine-accel-limit="4"
              yasimdragfactor="60"
-             yasimliftfactor="140">
+             yasimliftfactor="110">
              <control-input control="ROTORGEARENGINEON"       axis="/controls/engines/engine[0]/magnetos"/>
              <control-input control="ROTORBRAKE"              axis="/controls/rotor/brake"        src0="0.0" src1="1.0" dst0="0.0" dst1="1.0"/>
              <control-input control="ROTORRELTARGET"          axis="/controls/rotor/reltarget"    src0="0.0" src1="2.0" dst0="0.0" dst1="2.0"/>
@@ -199,14 +192,14 @@
   </hstab>
 
   <gear x="8.295" y="0" z="-4"
-        compression="0.1"
-        spring="3"
-        damp="1.0"
-        sfric="1.5"
+        compression="0.2"
+        spring="1.1"
+        damp="1.4"
+		sfric="1.5"
         dfric="0.8"
         stiction="1">
-        <control-input  control="STEER" axis="/controls/flight/rudder" square="true" src0="-1" dst0="-1.0" src1="1" dst1="1.0"/>
-        <control-output control="STEER" prop="controls/gear/steering"/>
+        <control-input  control="CASTERING" axis="/controls/gear/wheellock" src0=" 0" src1="1" dst0=" 1"   dst1="0"/>
+		<control-input axis="/controls/gear/brake-parking" control="BRAKE"/>
   </gear>
 
   <!-- left gear -->
@@ -216,7 +209,8 @@
         damp="1.0"
         sfric="1.5"
         dfric="0.8"
-        initial-load="1">
+        initial-load="1"
+        stiction="1">
         <control-input control="BRAKE" axis="/controls/gear/brake-left"/>
         <control-input control="BRAKE" axis="/controls/gear/brake-parking"/>
   </gear>
@@ -228,8 +222,8 @@
         damp="1.0"
         sfric="1.5"
         dfric="0.8"
-        stiction="1"
-        initial-load="1">
+        initial-load="1"
+        stiction="1">
         <control-input control="BRAKE" axis="/controls/gear/brake-right"/>
         <control-input control="BRAKE" axis="/controls/gear/brake-parking"/>
   </gear>
@@ -240,16 +234,13 @@
         compression="0.01"
         spring="0.1"
         sfric="1"
-        dfric="1"
-        stiction="1">
+        dfric="1">
   </gear>
 
-
-  <tank x="-2.3" y=" 0.0" z="-0.89" capacity="431"/>
-  <tank x="-3.0" y=" 0.0" z="-0.89" capacity="431"/>
-  <tank x=" 0.0" y=" 0.0" z="-0.89" capacity="431"/>
-  <tank x="-0.7" y=" 0.0" z="-0.89" capacity="431"/>
-  <tank x=" 0.7" y=" 0.0" z="-0.89" capacity="431"/>
+  <tank x=" 2.6" y=" 0.7" z="-0.31" capacity="1351"/>
+  <tank x="-2.6" y="-0.7" z="-0.31" capacity="734"/>
+  <tank x=" 2.6" y=" 0.0" z="-0.31" capacity="851"/>
+  <tank x="-2.6" y=" 0.0" z="-0.31" capacity="904"/>
 
   <!-- <ballast x="-0.7" y="0.0" z="-1.0" mass="450"/> -->
 
@@ -278,16 +269,16 @@
   <weight x="2.6" y="0" z="-1.2" mass-prop="/sim/weight[3]/weight-lb"/>
 
   <!-- hitch -->
-  <hitch name="aerotow" 
-         x="2.6" y="0.0" z="-0.7" 
+  <hitch name="aerotow"
+         x="2.6" y="0.0" z="-0.7"
          force-is-calculated-by-other="0">
-         <tow length="30" 
-              weight-per-meter="0.035" 
-              elastic-constant="9000" 
-              break-force="80000" 
+         <tow length="30"
+              weight-per-meter="0.035"
+              elastic-constant="9000"
+              break-force="80000"
               mp-auto-connect-period="0.0"/>
-         <winch max-tow-length="100" 
-                min-tow-length="30" 
+         <winch max-tow-length="100"
+                min-tow-length="30"
                 initial-tow-length="30"/>
          <control-input axis="/controls/aerotow/find-aircraft" control="FINDAITOW"/>
   </hitch>

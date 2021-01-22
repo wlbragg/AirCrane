@@ -69,7 +69,7 @@
     <object-name>Blade6</object-name>
   </animation>
 
-  <!-- Rotation du rotor 
+  <!-- Rotation du rotor
   <animation>
     <type>rotate</type>
     <object-name>touteslespales</object-name>
@@ -92,8 +92,7 @@
       <y> -1 </y>
       <z>  0 </z>
     </axis>
-  </animation>
-  -->
+  </animation> -->
 
   <animation>
     <name>rotorcomplet</name>

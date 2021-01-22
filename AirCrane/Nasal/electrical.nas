@@ -454,7 +454,7 @@ var init_electrical = func{
     append(lights_output,props.globals.initNode("systems/electrical/outputs/spot-light",0,"DOUBLE"));
     append(lights_power, 5.0);
 
-    append(lights_state,props.globals.initNode("controls/lighting/nav-lights-switch",0,"BOOL"));
+    append(lights_state,props.globals.initNode("controls/lighting/nav-light-switch",0,"BOOL"));
     append(lights_factor, 1.0);
     append(lights_bus,"main-left");
     append(lights_input,"nav-lights");

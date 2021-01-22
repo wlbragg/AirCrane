@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+
+  <path>pedestal.ac</path>
+
+  <animation>
+    <!-- Objets opaques -->
+    <object-name>panel3</object-name>
+    <object-name>panel4</object-name>
+  </animation>
+
+  <effect>
+    <inherits-from>Aircraft/AirCrane/Models/Effects/Interior/cockpit-interior</inherits-from>
+    <object-name>panel3</object-name>
+    <object-name>panel4</object-name>
+  </effect>
+
+  <model>
+    <path>Aircraft/AirCrane/Models/Interior/Pedestal/Instruments/empty/all-empty.xml</path>
+  </model>
+
+  <!-- afcs panel E-->
+  <model>
+    <path>Aircraft/AirCrane/Models/Interior/Pedestal/Instruments/AFCS-E/afcs-e.xml</path>
+    <condition>
+      <not>
+        <property>sim/model/aircrane/model-f</property>
+      </not>
+    </condition>
+    <offsets>
+      <x-m>  0.24645 </x-m>
+      <y-m> -0.04503 </y-m>
+      <z-m> -0.26390 </z-m>
+      <pitch-deg> 8 </pitch-deg>
+    </offsets>
+  </model>
+
+  <!-- afcs panel F-->
+  <model>
+    <path>Aircraft/AirCrane/Models/Interior/Pedestal/Instruments/AFCS-F/afcs-f.xml</path>
+    <condition>
+      <property>sim/model/aircrane/model-f</property>
+    </condition>
+    <offsets>
+      <x-m>  0.24645 </x-m>
+      <y-m> -0.04503 </y-m>
+      <z-m> -0.26390 </z-m>
+      <pitch-deg> 8 </pitch-deg>
+    </offsets>
+  </model>
+
+  <!-- tank volume round gauge unused -->
+  <model>
+    <path>Aircraft/AirCrane/Models/Interior/Pedestal/Instruments/tankvol/tank_vol.xml</path>
+    <condition>
+      <property>sim/model/firetank/enabled</property>
+    </condition>
+    <offsets>
+      <x-m>  0.39841 </x-m>
+      <y-m> -0.21988 </y-m>
+      <z-m> -0.27984 </z-m>
+      <pitch-deg> -82 </pitch-deg>
+    </offsets>
+  </model>
+
+  <!-- tank control -->
+  <model>
+    <path>Aircraft/AirCrane/Models/Interior/Pedestal/Instruments/tankctrl/tankctrl.xml</path>
+    <offsets>
+      <x-m>  0.55745 </x-m>
+      <y-m> -0.22056 </y-m>
+      <z-m> -0.30937 </z-m>
+      <pitch-deg> 8 </pitch-deg>
+    </offsets>
+  </model>
+
+  <!-- power panel -->
+  <model>
+    <path>Aircraft/AirCrane/Models/Interior/Pedestal/Instruments/power/power.xml</path>
+    <offsets>
+      <x-m>  0.48192 </x-m>
+      <y-m> -0.04516 </y-m>
+      <z-m> -0.29837 </z-m>
+      <pitch-deg> 8 </pitch-deg>
+    </offsets>
+  </model>
+
+  <!-- fuel panel -->
+  <model>
+    <path>Aircraft/AirCrane/Models/Interior/Pedestal/Instruments/fuelpanel/fuel.xml</path>
+    <offsets>
+      <x-m>  0.09731 </x-m>
+      <y-m> -0.04503 </y-m>
+      <z-m> -0.24206 </z-m>
+      <pitch-deg> 8 </pitch-deg>
+    </offsets>
+  </model>
+
+  <!-- hoist control panel -->
+  <model>
+    <path>Aircraft/AirCrane/Models/Interior/Pedestal/Instruments/HoistCtrl/hoistctrl.xml</path>
+    <offsets>
+      <x-m>  0.47125 </x-m>
+      <y-m>  0.07731 </y-m>
+      <z-m> -0.29686 </z-m>
+      <pitch-deg> 8 </pitch-deg>
+    </offsets>
+  </model>
+
+  <!-- pedal adjust panel -->
+  <model>
+    <path>Aircraft/AirCrane/Models/Interior/Pedestal/Instruments/PedalAdjust/pedaladjust.xml</path>
+    <offsets>
+      <x-m>  0.60250 </x-m>
+      <y-m>  0.07731 </y-m>
+      <z-m> -0.31608 </z-m>
+      <pitch-deg> 8 </pitch-deg>
+    </offsets>
+  </model>
+
+  <!-- rotor brake panel -->
+  <model>
+    <path>Aircraft/AirCrane/Models/Interior/Pedestal/Instruments/RotorBrake/rotorbrake.xml</path>
+    <offsets>
+      <x-m>  0.54908 </x-m>
+      <y-m>  0.07731 </y-m>
+      <z-m> -0.30826 </z-m>
+      <pitch-deg> 8 </pitch-deg>
+    </offsets>
+  </model>
+
+  <!-- brake and wheel lock pedestal extention -->
+  <model>
+    <path>Aircraft/AirCrane/Models/Interior/Pedestal/Instruments/extention/extention.xml</path>
+    <offsets>
+      <x-m>  0.69 </x-m>
+      <y-m> -0.11  </y-m>
+      <z-m> -0.37271 </z-m>
+      <pitch-deg> 8 </pitch-deg>
+    </offsets>
+  </model>
+
+</PropertyList>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+
+  <path>instlightspanel.ac</path>
+
+  <animation>
+    <object-name>base</object-name>
+    <object-name>knob-non-flight</object-name>
+    <object-name>knob-pilot-flight</object-name>
+    <object-name>knob-inst-scndry</object-name>
+    <object-name>pilotfanbase</object-name>
+    <object-name>switchpilotfan</object-name>
+  </animation>
+
+  <effect>
+    <inherits-from>Aircraft/AirCrane/Models/Effects/Interior/cockpit-interior</inherits-from>
+    <object-name>base</object-name>
+    <object-name>knob-non-flight</object-name>
+    <object-name>knob-pilot-flight</object-name>
+    <object-name>knob-inst-scndry</object-name>
+    <object-name>pilotfanbase</object-name>
+    <object-name>switchpilotfan</object-name>
+  </effect>
+
+  <animation>
+    <type>knob</type>
+    <object-name>knob-pilot-flight</object-name>
+    <property>controls/lighting/luminosite-lights</property>
+    <factor>-300</factor>
+    <offset-deg>0</offset-deg>
+    <center>
+      <x-m> 0.00574 </x-m>
+      <y-m> 0.03913 </y-m>
+      <z-m> 0.02780 </z-m>
+    </center>
+    <axis>
+      <x> 1 </x>
+      <y> 0 </y>
+      <z> 0 </z>
+    </axis>
+    <action>
+      <repeatable>true</repeatable>
+      <binding>
+        <command>property-adjust</command>
+        <property>controls/lighting/luminosite-lights</property>
+        <factor>0.10</factor>
+        <min>0</min>
+        <max>1</max>
+        <wrap>0</wrap>
+      </binding>
+    </action>
+    <hovered>
+      <binding>
+        <command>set-tooltip</command>
+        <tooltip-id>light-control</tooltip-id>
+        <label>Light Instr: %s</label>
+        <property>controls/lighting/luminosite-lights</property>
+      </binding>
+    </hovered>
+  </animation>
+
+</PropertyList>

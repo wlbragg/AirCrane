@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+
+  <path>overhead.ac</path>
+
+  <animation>
+    <object-name>base</object-name>
+  </animation>
+
+  <effect>
+    <inherits-from>Aircraft/AirCrane/Models/Effects/Interior/cockpit-interior</inherits-from>
+    <object-name>base</object-name>
+  </effect>
+
+  <model>
+    <path>Aircraft/AirCrane/Models/Interior/Overhead/Instruments/empty/all-empty.xml</path>
+  </model>
+
+  <model>
+    <path>Aircraft/AirCrane/Models/Interior/Overhead/Instruments/quadrent/quadrent.xml</path>
+    <offsets>
+      <x-m> -0.36918 </x-m>
+      <y-m> -0.00263 </y-m>
+      <z-m> -0.07506 </z-m>
+      <pitch-deg> 51.26 </pitch-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/AirCrane/Models/Interior/Overhead/Instruments/auxheat/auxheat.xml</path>
+    <offsets>
+      <x-m>  0.15814 </x-m>
+      <y-m> -0.27613 </y-m>
+      <z-m>  0.00915 </z-m>
+      <pitch-deg> 87 </pitch-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/AirCrane/Models/Interior/Overhead/Instruments/elt/elt.xml</path>
+    <offsets>
+      <x-m>  0.23592 </x-m>
+      <y-m> -0.27594 </y-m>
+      <z-m>  0.01241 </z-m>
+      <pitch-deg> 87 </pitch-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/AirCrane/Models/Interior/Overhead/Instruments/dome/dome.xml</path>
+    <offsets>
+      <x-m> 0.26343 </x-m>
+      <y-m> 0.00508 </y-m>
+      <z-m> 0.00864 </z-m>
+      <pitch-deg> 88 </pitch-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/AirCrane/Models/Interior/Overhead/Instruments/sheartest/sheartest.xml</path>
+    <offsets>
+      <x-m> -0.10998 </x-m>
+      <y-m> -0.27853 </y-m>
+      <z-m> -0.00500 </z-m>
+      <pitch-deg> 87 </pitch-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/AirCrane/Models/Interior/Overhead/Instruments/internallight/internallight.xml</path>
+    <offsets>
+      <x-m>  0.01461 </x-m>
+      <y-m> -0.27749 </y-m>
+      <z-m>  0.00158 </z-m>
+      <pitch-deg> 87 </pitch-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/AirCrane/Models/Interior/Overhead/Instruments/instlightspanel/instlightspanel.xml</path>
+    <offsets>
+      <x-m> -0.17829 </x-m>
+      <y-m>  0.09055 </y-m>
+      <z-m> -0.00993 </z-m>
+      <pitch-deg> 87 </pitch-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/AirCrane/Models/Interior/Overhead/Instruments/overspeed/overspeed.xml</path>
+    <offsets>
+      <x-m> -0.18238 </x-m>
+      <y-m> -0.09587 </y-m>
+      <z-m> -0.01007 </z-m>
+      <pitch-deg> 87 </pitch-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/AirCrane/Models/Interior/Overhead/Instruments/panelcannon/panelcannon.xml</path>
+    <offsets>
+      <x-m>  0.11260 </x-m>
+      <y-m> -0.09290 </y-m>
+      <z-m>  0.00691 </z-m>
+      <pitch-deg> 87 </pitch-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/AirCrane/Models/Interior/Overhead/Instruments/wiper/wiper.xml</path>
+    <offsets>
+      <x-m> 0.07718 </x-m>
+      <y-m> 0.09281 </y-m>
+      <z-m> 0.00365 </z-m>
+      <pitch-deg> 87 </pitch-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/AirCrane/Models/Interior/Overhead/Instruments/firetest/firetest.xml</path>
+    <offsets>
+      <x-m> -0.18694 </x-m>
+      <y-m> -0.27918 </y-m>
+      <z-m> -0.00955 </z-m>
+      <pitch-deg> 87 </pitch-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/AirCrane/Models/Interior/Overhead/Instruments/app/app.xml</path>
+    <offsets>
+      <x-m> -0.042953 </x-m>
+      <y-m> -0.094200 </y-m>
+      <z-m> -0.002663 </z-m>
+      <pitch-deg> 87 </pitch-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/AirCrane/Models/Interior/Overhead/Instruments/omcp/omcp.xml</path>
+    <offsets>
+      <x-m> -0.04227 </x-m>
+      <y-m>  0.09179 </y-m>
+      <z-m> -0.00286 </z-m>
+      <pitch-deg> 87 </pitch-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/AirCrane/Models/Interior/Overhead/Instruments/afcsf/afcsf.xml</path>
+    <offsets>
+      <x-m> 0.17398 </x-m>
+      <y-m> 0.09322 </y-m>
+      <z-m> 0.00919 </z-m>
+      <pitch-deg> 87 </pitch-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/AirCrane/Models/Interior/Overhead/Instruments/brake/brake.xml</path>
+    <offsets>
+      <x-m> -0.01540 </x-m>
+      <y-m> -0.44611 </y-m>
+      <z-m>  0.01941 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/AirCrane/Models/Interior/Overhead/Instruments/quadrentlight/all-lightquadrent.xml</path>
+  </model>
+
+  <model>
+    <path>Aircraft/AirCrane/Models/Interior/Overhead/Instruments/ext/ext.xml</path>
+    <offsets>
+      <x-m> -0.32826 </x-m>
+      <y-m>  0.40481 </y-m>
+      <z-m> -0.06566 </z-m>
+      <pitch-deg> 46 </pitch-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/AirCrane/Models/Interior/Overhead/Instruments/no1acpri/no1acpri.xml</path>
+    <offsets>
+      <x-m> -0.20166 </x-m>
+      <y-m>  0.31306 </y-m>
+      <z-m> -0.02918 </z-m>
+      <pitch-deg> 85 </pitch-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/AirCrane/Models/Interior/Overhead/Instruments/no2acpri/no2acpri.xml</path>
+    <offsets>
+      <x-m> -0.20285 </x-m>
+      <y-m>  0.49778 </y-m>
+      <z-m> -0.02918 </z-m>
+      <pitch-deg> 85 </pitch-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/AirCrane/Models/Interior/Overhead/Instruments/no1dcpri/no1dcpri.xml</path>
+    <offsets>
+      <x-m>  0.09675 </x-m>
+      <y-m>  0.31389 </y-m>
+      <z-m> -0.00225 </z-m>
+      <pitch-deg> 85 </pitch-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/AirCrane/Models/Interior/Overhead/Instruments/no2dcpri/no2dcpri.xml</path>
+    <offsets>
+      <x-m>  0.09526 </x-m>
+      <y-m>  0.49830 </y-m>
+      <z-m> -0.00196 </z-m>
+      <pitch-deg> 85 </pitch-deg>
+    </offsets>
+  </model>
+
+</PropertyList>

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 
 <PropertyList>
-  
+
   <path>water-system.ac</path>
-  
+
   <animation>
     <!-- Objets opaques -->
     <object-name>tank</object-name>
@@ -63,12 +63,12 @@
     <object-name>cachesfss</object-name>
     <object-name>tankdockpins</object-name>
     <object-name>flexhoserelease</object-name>
-    
+
     <!-- Transparence -->
   </animation>
 
   <effect>
-    <inherits-from>Aircraft/Generic/Effects/Fuselagereflect</inherits-from>
+    <inherits-from>Aircraft/AirCrane/Models/Effects/Exterior/bumpspec-water</inherits-from>
     <object-name>tank</object-name>
     <object-name>tankleftdoor</object-name>
     <object-name>tankrightdoor</object-name>
@@ -79,36 +79,6 @@
     <object-name>ramscoopconnector</object-name>
     <object-name>ramscoopdock</object-name>
     <object-name>ramscoopjoint</object-name>
-    <object-name>flexfillhose.001</object-name>
-    <object-name>flexfillhose.002</object-name>
-    <object-name>flexfillhose.003</object-name>
-    <object-name>flexfillhose.004</object-name>
-    <object-name>flexfillhose.005</object-name>
-    <object-name>flexfillhose.006</object-name>
-    <object-name>flexfillhose.007</object-name>
-    <object-name>flexfillhose.008</object-name>
-    <object-name>flexfillhose.009</object-name>
-    <object-name>flexfillhose.010</object-name>
-    <object-name>flexfillhose.011</object-name>
-    <object-name>flexfillhose.012</object-name>
-    <object-name>flexfillhose.013</object-name>
-    <object-name>flexfillhose.014</object-name>
-    <object-name>flexfillhose.015</object-name>
-    <object-name>flexfillhose.016</object-name>
-    <object-name>flexfillhose.017</object-name>
-    <object-name>flexfillhose.018</object-name>
-    <object-name>flexfillhose.019</object-name>
-    <object-name>flexfillhose.020</object-name>
-    <object-name>flexfillhose.021</object-name>
-    <object-name>flexfillhose.022</object-name>
-    <object-name>flexfillhose.023</object-name>
-    <object-name>flexfillhose.024</object-name>
-    <object-name>flexfillhose.025</object-name>
-    <object-name>flexfillhose.026</object-name>
-    <object-name>flexfillhose.027</object-name>
-    <object-name>flexfillhose.028</object-name>
-    <object-name>flexfillhose.029</object-name>
-    <object-name>flexfillhose.030</object-name>
     <object-name>flexfillhoseconnector</object-name>
     <object-name>flexfillhoseend</object-name>
     <object-name>controlboxfor</object-name>
@@ -119,15 +89,13 @@
     <object-name>watercannonjointal</object-name>
     <object-name>watercannonjointar</object-name>
     <object-name>watercannon</object-name>
-    <object-name>watercannonhose</object-name>
     <object-name>watercannonframe</object-name>
     <object-name>watercannonhydraulic</object-name>
-    <object-name>cablesfss</object-name>
     <object-name>cachesfss</object-name>
     <object-name>tankdockpins</object-name>
     <object-name>flexhoserelease</object-name>
   </effect>
-  
+
   <animation>
     <type>select</type>
     <object-name>tank</object-name>
@@ -191,7 +159,7 @@
       <property>sim/model/firetank/enabled</property>
     </condition>
   </animation>
-  
+
   <animation>
     <type>select</type>
     <object-name>watercannon</object-name>
@@ -212,7 +180,7 @@
       <z-m>  -2.971 </z-m>
     </offsets>
   </model>
-  
+
   <!-- Water drop -->
   <model>
     <path>Aircraft/AirCrane/Models/Effects/particles/waterdrop.xml</path>
@@ -222,7 +190,7 @@
       <z-m> -2.959 </z-m>
     </offsets>
   </model>
-  
+
   <!-- Snorkel splash  -->
   <model>
     <path>Aircraft/AirCrane/Models/Effects/particles/snorkelsplash.xml</path>
@@ -232,7 +200,7 @@
       <z-m> -1.45 </z-m>
     </offsets>
   </model>
-  
+
   <!-- Ramscoop wake -->
   <model>
     <path>Aircraft/AirCrane/Models/Effects/particles/ramscoopwake.xml</path>
@@ -242,7 +210,7 @@
       <z-m>  0.000 </z-m>
     </offsets>
   </model>
-  
+
   <!-- Flex Hose Animation -->
   <animation>
     <name>FlexFill01</name>
@@ -278,7 +246,7 @@
     <object-name>flexfillhose.030</object-name>
     <object-name>flexfillhoseend</object-name>
   </animation>
-  
+
   <animation>
     <name>FlexFill02</name>
     <object-name>flexfillhose.002</object-name>
@@ -345,7 +313,7 @@
     <object-name>flexfillhose.030</object-name>
     <object-name>flexfillhoseend</object-name>
   </animation>
-  
+
   <animation>
     <name>FlexFill04</name>
     <object-name>flexfillhose.004</object-name>
@@ -377,7 +345,7 @@
     <object-name>flexfillhose.030</object-name>
     <object-name>flexfillhoseend</object-name>
   </animation>
-  
+
   <animation>
     <name>FlexFill05</name>
     <object-name>flexfillhose.005</object-name>
@@ -408,7 +376,7 @@
     <object-name>flexfillhose.030</object-name>
     <object-name>flexfillhoseend</object-name>
   </animation>
-  
+
   <animation>
     <name>FlexFill06</name>
     <object-name>flexfillhose.006</object-name>
@@ -438,7 +406,7 @@
     <object-name>flexfillhose.030</object-name>
     <object-name>flexfillhoseend</object-name>
   </animation>
-  
+
   <animation>
     <name>FlexFill07</name>
     <object-name>flexfillhose.007</object-name>
@@ -467,7 +435,7 @@
     <object-name>flexfillhose.030</object-name>
     <object-name>flexfillhoseend</object-name>
   </animation>
-  
+
   <animation>
     <name>FlexFill08</name>
     <object-name>flexfillhose.008</object-name>
@@ -495,7 +463,7 @@
     <object-name>flexfillhose.030</object-name>
     <object-name>flexfillhoseend</object-name>
   </animation>
-  
+
   <animation>
     <name>FlexFill09</name>
     <object-name>flexfillhose.009</object-name>
@@ -522,7 +490,7 @@
     <object-name>flexfillhose.030</object-name>
     <object-name>flexfillhoseend</object-name>
   </animation>
-  
+
   <animation>
     <name>FlexFill10</name>
     <object-name>flexfillhose.010</object-name>
@@ -548,7 +516,7 @@
     <object-name>flexfillhose.030</object-name>
     <object-name>flexfillhoseend</object-name>
   </animation>
-  
+
   <animation>
     <name>FlexFill11</name>
     <object-name>flexfillhose.011</object-name>
@@ -573,7 +541,7 @@
     <object-name>flexfillhose.030</object-name>
     <object-name>flexfillhoseend</object-name>
   </animation>
-  
+
   <animation>
     <name>FlexFill12</name>
     <object-name>flexfillhose.012</object-name>
@@ -597,7 +565,7 @@
     <object-name>flexfillhose.030</object-name>
     <object-name>flexfillhoseend</object-name>
   </animation>
-  
+
   <animation>
     <name>FlexFill13</name>
     <object-name>flexfillhose.013</object-name>
@@ -620,7 +588,7 @@
     <object-name>flexfillhose.030</object-name>
     <object-name>flexfillhoseend</object-name>
   </animation>
-  
+
   <animation>
     <name>FlexFill14</name>
     <object-name>flexfillhose.014</object-name>
@@ -642,7 +610,7 @@
     <object-name>flexfillhose.030</object-name>
     <object-name>flexfillhoseend</object-name>
   </animation>
-  
+
   <animation>
     <name>FlexFill15</name>
     <object-name>flexfillhose.015</object-name>
@@ -663,7 +631,7 @@
     <object-name>flexfillhose.030</object-name>
     <object-name>flexfillhoseend</object-name>
   </animation>
-  
+
   <animation>
     <name>FlexFill16</name>
     <object-name>flexfillhose.016</object-name>
@@ -683,7 +651,7 @@
     <object-name>flexfillhose.030</object-name>
     <object-name>flexfillhoseend</object-name>
   </animation>
-  
+
   <animation>
     <name>FlexFill17</name>
     <object-name>flexfillhose.017</object-name>
@@ -702,7 +670,7 @@
     <object-name>flexfillhose.030</object-name>
     <object-name>flexfillhoseend</object-name>
   </animation>
-  
+
   <animation>
     <name>FlexFill18</name>
     <object-name>flexfillhose.018</object-name>
@@ -720,7 +688,7 @@
     <object-name>flexfillhose.030</object-name>
     <object-name>flexfillhoseend</object-name>
   </animation>
-  
+
   <animation>
     <name>FlexFill19</name>
     <object-name>flexfillhose.019</object-name>
@@ -737,7 +705,7 @@
     <object-name>flexfillhose.030</object-name>
     <object-name>flexfillhoseend</object-name>
   </animation>
-  
+
   <animation>
     <name>FlexFill20</name>
     <object-name>flexfillhose.020</object-name>
@@ -753,7 +721,7 @@
     <object-name>flexfillhose.030</object-name>
     <object-name>flexfillhoseend</object-name>
   </animation>
-  
+
   <animation>
     <name>FlexFill21</name>
     <object-name>flexfillhose.021</object-name>
@@ -768,7 +736,7 @@
     <object-name>flexfillhose.030</object-name>
     <object-name>flexfillhoseend</object-name>
   </animation>
-  
+
   <animation>
     <name>FlexFill22</name>
     <object-name>flexfillhose.022</object-name>
@@ -782,7 +750,7 @@
     <object-name>flexfillhose.030</object-name>
     <object-name>flexfillhoseend</object-name>
   </animation>
-  
+
   <animation>
     <name>FlexFill23</name>
     <object-name>flexfillhose.023</object-name>
@@ -795,7 +763,7 @@
     <object-name>flexfillhose.030</object-name>
     <object-name>flexfillhoseend</object-name>
   </animation>
-  
+
   <animation>
     <name>FlexFill24</name>
     <object-name>flexfillhose.024</object-name>
@@ -807,7 +775,7 @@
     <object-name>flexfillhose.030</object-name>
     <object-name>flexfillhoseend</object-name>
   </animation>
-  
+
   <animation>
     <name>FlexFill25</name>
     <object-name>flexfillhose.025</object-name>
@@ -818,7 +786,7 @@
     <object-name>flexfillhose.030</object-name>
     <object-name>flexfillhoseend</object-name>
   </animation>
-  
+
   <animation>
     <name>FlexFill26</name>
     <object-name>flexfillhose.026</object-name>
@@ -828,7 +796,7 @@
     <object-name>flexfillhose.030</object-name>
     <object-name>flexfillhoseend</object-name>
   </animation>
-  
+
   <animation>
     <name>FlexFill27</name>
     <object-name>flexfillhose.027</object-name>
@@ -837,7 +805,7 @@
     <object-name>flexfillhose.030</object-name>
     <object-name>flexfillhoseend</object-name>
   </animation>
-  
+
   <animation>
     <name>FlexFill28</name>
     <object-name>flexfillhose.028</object-name>
@@ -845,25 +813,25 @@
     <object-name>flexfillhose.030</object-name>
     <object-name>flexfillhoseend</object-name>
   </animation>
-  
+
   <animation>
     <name>FlexFill29</name>
     <object-name>flexfillhose.029</object-name>
     <object-name>flexfillhose.030</object-name>
     <object-name>flexfillhoseend</object-name>
   </animation>
-  
+
   <animation>
     <name>FlexFill30</name>
     <object-name>flexfillhose.030</object-name>
     <object-name>flexfillhoseend</object-name>
   </animation>
-  
+
   <animation>
     <name>FlexFill31</name>
     <object-name>flexfillhoseend</object-name>
   </animation>
-  
+
   <!-- Flex Hose Rotation Docked-->
   <animation>
     <type>rotate</type>
@@ -876,7 +844,7 @@
       </greater-than>
     </condition>
     <factor>-8.5</factor>
-    <offset-deg>0</offset-deg>   
+    <offset-deg>0</offset-deg>
     <center>
       <x-m>-4.80865</x-m>
       <y-m>-0.45683</y-m>
@@ -888,7 +856,7 @@
       <z>.10</z>
     </axis>
   </animation>
-  
+
   <animation>
     <type>rotate</type>
     <object-name>FlexFill02</object-name>
@@ -900,7 +868,7 @@
       </greater-than>
     </condition>
     <factor>-8.5</factor>
-    <offset-deg>0</offset-deg>   
+    <offset-deg>0</offset-deg>
     <center>
       <x-m>-4.80865</x-m>
       <y-m>-0.45683</y-m>
@@ -912,7 +880,7 @@
       <z>.10</z>
     </axis>
   </animation>
-  
+
   <animation>
     <type>rotate</type>
     <object-name>FlexFill03</object-name>
@@ -924,7 +892,7 @@
       </greater-than>
     </condition>
     <factor>-8.5</factor>
-    <offset-deg>0</offset-deg>   
+    <offset-deg>0</offset-deg>
     <center>
       <x-m>-4.80865</x-m>
       <y-m>-0.45683</y-m>
@@ -936,7 +904,7 @@
       <z>.10</z>
     </axis>
   </animation>
-  
+
   <animation>
     <type>rotate</type>
     <object-name>FlexFill04</object-name>
@@ -948,7 +916,7 @@
       </greater-than>
     </condition>
     <factor>-8.5</factor>
-    <offset-deg>0</offset-deg>   
+    <offset-deg>0</offset-deg>
     <center>
       <x-m>-4.80865</x-m>
       <y-m>-0.45683</y-m>
@@ -960,7 +928,7 @@
       <z>.10</z>
     </axis>
   </animation>
-  
+
   <animation>
     <type>rotate</type>
     <object-name>FlexFill05</object-name>
@@ -972,7 +940,7 @@
       </greater-than>
     </condition>
     <factor>-8.5</factor>
-    <offset-deg>0</offset-deg>   
+    <offset-deg>0</offset-deg>
     <center>
       <x-m>-4.80865</x-m>
       <y-m>-0.45683</y-m>
@@ -984,7 +952,7 @@
       <z>.10</z>
     </axis>
   </animation>
-  
+
   <animation>
     <type>rotate</type>
     <object-name>FlexFill06</object-name>
@@ -996,7 +964,7 @@
       </greater-than>
     </condition>
     <factor>-8.5</factor>
-    <offset-deg>0</offset-deg>   
+    <offset-deg>0</offset-deg>
     <center>
       <x-m>-4.80865</x-m>
       <y-m>-0.45683</y-m>
@@ -1008,7 +976,7 @@
       <z>.10</z>
     </axis>
   </animation>
-  
+
   <animation>
     <type>rotate</type>
     <object-name>FlexFill07</object-name>
@@ -1020,7 +988,7 @@
       </greater-than>
     </condition>
     <factor>-8.5</factor>
-    <offset-deg>0</offset-deg>   
+    <offset-deg>0</offset-deg>
     <center>
       <x-m>-4.80865</x-m>
       <y-m>-0.45683</y-m>
@@ -1032,7 +1000,7 @@
       <z>.10</z>
     </axis>
   </animation>
-  
+
   <animation>
     <type>rotate</type>
     <object-name>FlexFill08</object-name>
@@ -1044,7 +1012,7 @@
       </greater-than>
     </condition>
     <factor>-4.75</factor>
-    <offset-deg>0</offset-deg>   
+    <offset-deg>0</offset-deg>
     <center>
       <x-m>-4.80865</x-m>
       <y-m>-0.45683</y-m>
@@ -1056,7 +1024,7 @@
       <z>.10</z>
     </axis>
   </animation>
-  
+
   <animation>
     <type>rotate</type>
     <object-name>FlexFill09</object-name>
@@ -1068,7 +1036,7 @@
       </greater-than>
     </condition>
     <factor>-4.75</factor>
-    <offset-deg>0</offset-deg>   
+    <offset-deg>0</offset-deg>
     <center>
       <x-m>-4.80865</x-m>
       <y-m>-0.45683</y-m>
@@ -1080,7 +1048,7 @@
       <z>.10</z>
     </axis>
   </animation>
-  
+
   <animation>
     <type>rotate</type>
     <object-name>FlexFill10</object-name>
@@ -1092,7 +1060,7 @@
       </greater-than>
     </condition>
     <factor>-4.75</factor>
-    <offset-deg>0</offset-deg>   
+    <offset-deg>0</offset-deg>
     <center>
       <x-m>-4.80865</x-m>
       <y-m>-0.45683</y-m>
@@ -1104,7 +1072,7 @@
       <z>.10</z>
     </axis>
   </animation>
-  
+
   <animation>
     <type>rotate</type>
     <object-name>FlexFill11</object-name>
@@ -1116,7 +1084,7 @@
       </greater-than>
     </condition>
     <factor>-4.75</factor>
-    <offset-deg>0</offset-deg>   
+    <offset-deg>0</offset-deg>
     <center>
       <x-m>-4.80865</x-m>
       <y-m>-0.45683</y-m>
@@ -1128,7 +1096,7 @@
       <z>.10</z>
     </axis>
   </animation>
-  
+
   <animation>
     <type>rotate</type>
     <object-name>FlexFill12</object-name>
@@ -1140,7 +1108,7 @@
       </greater-than>
     </condition>
     <factor>-4.75</factor>
-    <offset-deg>0</offset-deg>   
+    <offset-deg>0</offset-deg>
     <center>
       <x-m>-4.80865</x-m>
       <y-m>-0.45683</y-m>
@@ -1152,7 +1120,7 @@
       <z>.10</z>
     </axis>
   </animation>
-  
+
   <animation>
     <type>rotate</type>
     <object-name>FlexFill13</object-name>
@@ -1164,7 +1132,7 @@
       </greater-than>
     </condition>
     <factor>-4.75</factor>
-    <offset-deg>0</offset-deg>   
+    <offset-deg>0</offset-deg>
     <center>
       <x-m>-4.80865</x-m>
       <y-m>-0.45683</y-m>
@@ -1176,7 +1144,7 @@
       <z>.10</z>
     </axis>
   </animation>
-  
+
   <animation>
     <type>rotate</type>
     <object-name>FlexFill14</object-name>
@@ -1188,7 +1156,7 @@
       </greater-than>
     </condition>
     <factor>-4.75</factor>
-    <offset-deg>0</offset-deg>   
+    <offset-deg>0</offset-deg>
     <center>
       <x-m>-4.80865</x-m>
       <y-m>-0.45683</y-m>
@@ -1200,7 +1168,7 @@
       <z>.10</z>
     </axis>
   </animation>
-  
+
   <animation>
     <type>rotate</type>
     <object-name>FlexFill15</object-name>
@@ -1212,7 +1180,7 @@
       </greater-than>
     </condition>
     <factor>-4.75</factor>
-    <offset-deg>0</offset-deg>   
+    <offset-deg>0</offset-deg>
     <center>
       <x-m>-4.80865</x-m>
       <y-m>-0.45683</y-m>
@@ -1224,7 +1192,7 @@
       <z>.10</z>
     </axis>
   </animation>
-  
+
   <animation>
     <type>rotate</type>
     <object-name>FlexFill16</object-name>
@@ -1236,7 +1204,7 @@
       </greater-than>
     </condition>
     <factor>-4.75</factor>
-    <offset-deg>0</offset-deg>   
+    <offset-deg>0</offset-deg>
     <center>
       <x-m>-4.80865</x-m>
       <y-m>-0.45683</y-m>
@@ -1248,7 +1216,7 @@
       <z>.10</z>
     </axis>
   </animation>
-  
+
   <animation>
     <type>rotate</type>
     <object-name>FlexFill17</object-name>
@@ -1260,7 +1228,7 @@
       </greater-than>
     </condition>
     <factor>-4.75</factor>
-    <offset-deg>0</offset-deg>   
+    <offset-deg>0</offset-deg>
     <center>
       <x-m>-4.80865</x-m>
       <y-m>-0.45683</y-m>
@@ -1272,7 +1240,7 @@
       <z>.10</z>
     </axis>
   </animation>
-  
+
   <animation>
     <type>rotate</type>
     <object-name>FlexFill18</object-name>
@@ -1284,7 +1252,7 @@
       </greater-than>
     </condition>
     <factor>-4.75</factor>
-    <offset-deg>0</offset-deg>   
+    <offset-deg>0</offset-deg>
     <center>
       <x-m>-4.80865</x-m>
       <y-m>-0.45683</y-m>
@@ -1296,7 +1264,7 @@
       <z>.10</z>
     </axis>
   </animation>
-  
+
   <animation>
     <type>rotate</type>
     <object-name>FlexFill19</object-name>
@@ -1308,7 +1276,7 @@
       </greater-than>
     </condition>
     <factor>-4.75</factor>
-    <offset-deg>0</offset-deg>   
+    <offset-deg>0</offset-deg>
     <center>
       <x-m>-4.80865</x-m>
       <y-m>-0.45683</y-m>
@@ -1320,7 +1288,7 @@
       <z>.10</z>
     </axis>
   </animation>
-  
+
   <animation>
     <type>rotate</type>
     <object-name>FlexFill20</object-name>
@@ -1332,7 +1300,7 @@
       </greater-than>
     </condition>
     <factor>-4.75</factor>
-    <offset-deg>0</offset-deg>   
+    <offset-deg>0</offset-deg>
     <center>
       <x-m>-4.80865</x-m>
       <y-m>-0.45683</y-m>
@@ -1344,7 +1312,7 @@
       <z>.10</z>
     </axis>
   </animation>
-  
+
   <animation>
     <type>rotate</type>
     <object-name>FlexFill21</object-name>
@@ -1356,7 +1324,7 @@
       </greater-than>
     </condition>
     <factor>-4.75</factor>
-    <offset-deg>0</offset-deg>   
+    <offset-deg>0</offset-deg>
     <center>
       <x-m>-4.80865</x-m>
       <y-m>-0.45683</y-m>
@@ -1368,7 +1336,7 @@
       <z>.10</z>
     </axis>
   </animation>
-  
+
   <animation>
     <type>rotate</type>
     <object-name>FlexFill22</object-name>
@@ -1380,7 +1348,7 @@
       </greater-than>
     </condition>
     <factor>-4.75</factor>
-    <offset-deg>0</offset-deg>   
+    <offset-deg>0</offset-deg>
     <center>
       <x-m>-4.80865</x-m>
       <y-m>-0.45683</y-m>
@@ -1392,7 +1360,7 @@
       <z>.10</z>
     </axis>
   </animation>
-  
+
   <animation>
     <type>rotate</type>
     <object-name>FlexFill23</object-name>
@@ -1404,7 +1372,7 @@
       </greater-than>
     </condition>
     <factor>-4.75</factor>
-    <offset-deg>0</offset-deg>   
+    <offset-deg>0</offset-deg>
     <center>
       <x-m>-4.80865</x-m>
       <y-m>-0.45683</y-m>
@@ -1416,7 +1384,7 @@
       <z>.10</z>
     </axis>
   </animation>
-  
+
   <animation>
     <type>rotate</type>
     <object-name>FlexFill24</object-name>
@@ -1428,7 +1396,7 @@
       </greater-than>
     </condition>
     <factor>-4.75</factor>
-    <offset-deg>0</offset-deg>   
+    <offset-deg>0</offset-deg>
     <center>
       <x-m>-4.80865</x-m>
       <y-m>-0.45683</y-m>
@@ -1440,7 +1408,7 @@
       <z>.10</z>
     </axis>
   </animation>
-  
+
   <animation>
     <type>rotate</type>
     <object-name>FlexFill25</object-name>
@@ -1452,7 +1420,7 @@
       </greater-than>
     </condition>
     <factor>-4.75</factor>
-    <offset-deg>0</offset-deg>   
+    <offset-deg>0</offset-deg>
     <center>
       <x-m>-4.80865</x-m>
       <y-m>-0.45683</y-m>
@@ -1464,7 +1432,7 @@
       <z>.10</z>
     </axis>
   </animation>
-  
+
   <animation>
     <type>rotate</type>
     <object-name>FlexFill26</object-name>
@@ -1476,7 +1444,7 @@
       </greater-than>
     </condition>
     <factor>-4.75</factor>
-    <offset-deg>0</offset-deg>   
+    <offset-deg>0</offset-deg>
     <center>
       <x-m>-4.80865</x-m>
       <y-m>-0.45683</y-m>
@@ -1488,7 +1456,7 @@
       <z>.10</z>
     </axis>
   </animation>
-  
+
   <animation>
     <type>rotate</type>
     <object-name>FlexFill27</object-name>
@@ -1500,7 +1468,7 @@
       </greater-than>
     </condition>
     <factor>-4.75</factor>
-    <offset-deg>0</offset-deg>   
+    <offset-deg>0</offset-deg>
     <center>
       <x-m>-4.80865</x-m>
       <y-m>-0.45683</y-m>
@@ -1512,7 +1480,7 @@
       <z>.10</z>
     </axis>
   </animation>
-  
+
   <animation>
     <type>rotate</type>
     <object-name>FlexFill28</object-name>
@@ -1524,7 +1492,7 @@
       </greater-than>
     </condition>
     <factor>-4.75</factor>
-    <offset-deg>0</offset-deg>   
+    <offset-deg>0</offset-deg>
     <center>
       <x-m>-4.80865</x-m>
       <y-m>-0.45683</y-m>
@@ -1536,7 +1504,7 @@
       <z>.10</z>
     </axis>
   </animation>
-  
+
   <animation>
     <type>rotate</type>
     <object-name>FlexFill29</object-name>
@@ -1548,7 +1516,7 @@
       </greater-than>
     </condition>
     <factor>-4.75</factor>
-    <offset-deg>0</offset-deg>   
+    <offset-deg>0</offset-deg>
     <center>
       <x-m>-4.80865</x-m>
       <y-m>-0.45683</y-m>
@@ -1560,7 +1528,7 @@
       <z>.10</z>
     </axis>
   </animation>
-  
+
   <animation>
     <type>rotate</type>
     <object-name>FlexFill30</object-name>
@@ -1572,7 +1540,7 @@
       </greater-than>
     </condition>
     <factor>-4.75</factor>
-    <offset-deg>0</offset-deg>   
+    <offset-deg>0</offset-deg>
     <center>
       <x-m>-4.80865</x-m>
       <y-m>-0.45683</y-m>
@@ -1584,7 +1552,7 @@
       <z>.10</z>
     </axis>
   </animation>
-  
+
   <animation>
     <type>rotate</type>
     <object-name>FlexFill31</object-name>
@@ -1596,7 +1564,7 @@
       </greater-than>
     </condition>
     <factor>-4.75</factor>
-    <offset-deg>0</offset-deg>   
+    <offset-deg>0</offset-deg>
     <center>
       <x-m>-4.80865</x-m>
       <y-m>-0.45683</y-m>
@@ -1608,7 +1576,7 @@
       <z>.10</z>
     </axis>
   </animation>
-  
+
   <!-- Flex Hose Rotation Pitch -->
   <animation>
     <type>rotate</type>
@@ -1620,7 +1588,7 @@
       </not>
     </condition>
     <factor>1</factor>
-    <offset-deg>0</offset-deg>   
+    <offset-deg>0</offset-deg>
     <center>
       <x-m>-4.80865</x-m>
       <y-m>-0.45683</y-m>
@@ -1632,7 +1600,7 @@
       <z>.10</z>
     </axis>
   </animation>
-  
+
   <animation>
     <type>rotate</type>
     <object-name>FlexFill02</object-name>
@@ -1643,7 +1611,7 @@
       </not>
     </condition>
     <factor>1</factor>
-    <offset-deg>0</offset-deg>   
+    <offset-deg>0</offset-deg>
     <center>
       <x-m>-4.80865</x-m>
       <y-m>-0.45683</y-m>
@@ -1655,7 +1623,7 @@
       <z>.10</z>
     </axis>
   </animation>
-  
+
   <animation>
     <type>rotate</type>
     <object-name>FlexFill03</object-name>
@@ -1666,7 +1634,7 @@
       </not>
     </condition>
     <factor>1</factor>
-    <offset-deg>0</offset-deg>   
+    <offset-deg>0</offset-deg>
     <center>
       <x-m>-4.80865</x-m>
       <y-m>-0.45683</y-m>
@@ -1678,7 +1646,7 @@
       <z>.10</z>
     </axis>
   </animation>
-  
+
   <animation>
     <type>rotate</type>
     <object-name>FlexFill04</object-name>
@@ -1689,7 +1657,7 @@
       </not>
     </condition>
     <factor>1</factor>
-    <offset-deg>0</offset-deg>   
+    <offset-deg>0</offset-deg>
     <center>
       <x-m>-4.80865</x-m>
       <y-m>-0.45683</y-m>
@@ -1701,7 +1669,7 @@
       <z>.10</z>
     </axis>
   </animation>
-  
+
   <animation>
     <type>rotate</type>
     <object-name>FlexFill05</object-name>
@@ -1712,7 +1680,7 @@
       </not>
     </condition>
     <factor>1</factor>
-    <offset-deg>0</offset-deg>   
+    <offset-deg>0</offset-deg>
     <center>
       <x-m>-4.80865</x-m>
       <y-m>-0.45683</y-m>
@@ -1724,7 +1692,7 @@
       <z>.10</z>
     </axis>
   </animation>
-  
+
   <animation>
     <type>rotate</type>
     <object-name>FlexFill06</object-name>
@@ -1735,7 +1703,7 @@
       </not>
     </condition>
     <factor>1</factor>
-    <offset-deg>0</offset-deg>   
+    <offset-deg>0</offset-deg>
     <center>
       <x-m>-4.80865</x-m>
       <y-m>-0.45683</y-m>
@@ -1747,7 +1715,7 @@
       <z>.10</z>
     </axis>
   </animation>
-  
+
   <animation>
     <type>rotate</type>
     <object-name>FlexFill07</object-name>
@@ -1758,7 +1726,7 @@
       </not>
     </condition>
     <factor>1</factor>
-    <offset-deg>0</offset-deg>   
+    <offset-deg>0</offset-deg>
     <center>
       <x-m>-4.80865</x-m>
       <y-m>-0.45683</y-m>
@@ -1770,7 +1738,7 @@
       <z>.10</z>
     </axis>
   </animation>
-  
+
   <animation>
     <type>rotate</type>
     <object-name>FlexFill08</object-name>
@@ -1781,7 +1749,7 @@
       </not>
     </condition>
     <factor>1</factor>
-    <offset-deg>0</offset-deg>   
+    <offset-deg>0</offset-deg>
     <center>
       <x-m>-4.80865</x-m>
       <y-m>-0.45683</y-m>
@@ -1793,7 +1761,7 @@
       <z>.10</z>
     </axis>
   </animation>
-  
+
   <animation>
     <type>rotate</type>
     <object-name>FlexFill09</object-name>
@@ -1804,7 +1772,7 @@
       </not>
     </condition>
     <factor>1</factor>
-    <offset-deg>0</offset-deg>   
+    <offset-deg>0</offset-deg>
     <center>
       <x-m>-4.80865</x-m>
       <y-m>-0.45683</y-m>
@@ -1816,7 +1784,7 @@
       <z>.10</z>
     </axis>
   </animation>
-  
+
   <animation>
     <type>rotate</type>
     <object-name>FlexFill10</object-name>
@@ -1827,7 +1795,7 @@
       </not>
     </condition>
     <factor>1</factor>
-    <offset-deg>0</offset-deg>   
+    <offset-deg>0</offset-deg>
     <center>
       <x-m>-4.80865</x-m>
       <y-m>-0.45683</y-m>
@@ -1839,7 +1807,7 @@
       <z>.10</z>
     </axis>
   </animation>
-  
+
   <animation>
     <type>rotate</type>
     <object-name>FlexFill11</object-name>
@@ -1850,7 +1818,7 @@
       </not>
     </condition>
     <factor>1</factor>
-    <offset-deg>0</offset-deg>   
+    <offset-deg>0</offset-deg>
     <center>
       <x-m>-4.80865</x-m>
       <y-m>-0.45683</y-m>
@@ -1862,7 +1830,7 @@
       <z>.10</z>
     </axis>
   </animation>
-  
+
   <animation>
     <type>rotate</type>
     <object-name>FlexFill12</object-name>
@@ -1873,7 +1841,7 @@
       </not>
     </condition>
     <factor>1</factor>
-    <offset-deg>0</offset-deg>   
+    <offset-deg>0</offset-deg>
     <center>
       <x-m>-4.80865</x-m>
       <y-m>-0.45683</y-m>
@@ -1885,7 +1853,7 @@
       <z>.10</z>
     </axis>
   </animation>
-  
+
   <animation>
     <type>rotate</type>
     <object-name>FlexFill13</object-name>
@@ -1896,7 +1864,7 @@
       </not>
     </condition>
     <factor>1</factor>
-    <offset-deg>0</offset-deg>   
+    <offset-deg>0</offset-deg>
     <center>
       <x-m>-4.80865</x-m>
       <y-m>-0.45683</y-m>
@@ -1908,7 +1876,7 @@
       <z>.10</z>
     </axis>
   </animation>
-  
+
   <animation>
     <type>rotate</type>
     <object-name>FlexFill14</object-name>
@@ -1919,7 +1887,7 @@
       </not>
     </condition>
     <factor>1</factor>
-    <offset-deg>0</offset-deg>   
+    <offset-deg>0</offset-deg>
     <center>
       <x-m>-4.80865</x-m>
       <y-m>-0.45683</y-m>
@@ -1931,7 +1899,7 @@
       <z>.10</z>
     </axis>
   </animation>
-  
+
   <animation>
     <type>rotate</type>
     <object-name>FlexFill15</object-name>
@@ -1942,7 +1910,7 @@
       </not>
     </condition>
     <factor>1</factor>
-    <offset-deg>0</offset-deg>   
+    <offset-deg>0</offset-deg>
     <center>
       <x-m>-4.80865</x-m>
       <y-m>-0.45683</y-m>
@@ -1954,7 +1922,7 @@
       <z>.10</z>
     </axis>
   </animation>
-  
+
   <animation>
     <type>rotate</type>
     <object-name>FlexFill16</object-name>
@@ -1965,7 +1933,7 @@
       </not>
     </condition>
     <factor>1</factor>
-    <offset-deg>0</offset-deg>   
+    <offset-deg>0</offset-deg>
     <center>
       <x-m>-4.80865</x-m>
       <y-m>-0.45683</y-m>
@@ -1977,7 +1945,7 @@
       <z>.10</z>
     </axis>
   </animation>
-  
+
   <animation>
     <type>rotate</type>
     <object-name>FlexFill17</object-name>
@@ -1988,7 +1956,7 @@
       </not>
     </condition>
     <factor>1</factor>
-    <offset-deg>0</offset-deg>   
+    <offset-deg>0</offset-deg>
     <center>
       <x-m>-4.80865</x-m>
       <y-m>-0.45683</y-m>
@@ -2000,7 +1968,7 @@
       <z>.10</z>
     </axis>
   </animation>
-  
+
   <animation>
     <type>rotate</type>
     <object-name>FlexFill18</object-name>
@@ -2011,7 +1979,7 @@
       </not>
     </condition>
     <factor>1</factor>
-    <offset-deg>0</offset-deg>   
+    <offset-deg>0</offset-deg>
     <center>
       <x-m>-4.80865</x-m>
       <y-m>-0.45683</y-m>
@@ -2023,7 +1991,7 @@
       <z>.10</z>
     </axis>
   </animation>
-  
+
   <animation>
     <type>rotate</type>
     <object-name>FlexFill19</object-name>
@@ -2034,7 +2002,7 @@
       </not>
     </condition>
     <factor>1</factor>
-    <offset-deg>0</offset-deg>   
+    <offset-deg>0</offset-deg>
     <center>
       <x-m>-4.80865</x-m>
       <y-m>-0.45683</y-m>
@@ -2046,7 +2014,7 @@
       <z>.10</z>
     </axis>
   </animation>
-  
+
   <animation>
     <type>rotate</type>
     <object-name>FlexFill20</object-name>
@@ -2057,7 +2025,7 @@
       </not>
     </condition>
     <factor>1</factor>
-    <offset-deg>0</offset-deg>   
+    <offset-deg>0</offset-deg>
     <center>
       <x-m>-4.80865</x-m>
       <y-m>-0.45683</y-m>
@@ -2069,7 +2037,7 @@
       <z>.10</z>
     </axis>
   </animation>
-  
+
   <animation>
     <type>rotate</type>
     <object-name>FlexFill21</object-name>
@@ -2080,7 +2048,7 @@
       </not>
     </condition>
     <factor>1</factor>
-    <offset-deg>0</offset-deg>   
+    <offset-deg>0</offset-deg>
     <center>
       <x-m>-4.80865</x-m>
       <y-m>-0.45683</y-m>
@@ -2092,7 +2060,7 @@
       <z>.10</z>
     </axis>
   </animation>
-  
+
   <animation>
     <type>rotate</type>
     <object-name>FlexFill22</object-name>
@@ -2103,7 +2071,7 @@
       </not>
     </condition>
     <factor>1</factor>
-    <offset-deg>0</offset-deg>   
+    <offset-deg>0</offset-deg>
     <center>
       <x-m>-4.80865</x-m>
       <y-m>-0.45683</y-m>
@@ -2115,7 +2083,7 @@
       <z>.10</z>
     </axis>
   </animation>
-  
+
   <animation>
     <type>rotate</type>
     <object-name>FlexFill23</object-name>
@@ -2126,7 +2094,7 @@
       </not>
     </condition>
     <factor>1</factor>
-    <offset-deg>0</offset-deg>   
+    <offset-deg>0</offset-deg>
     <center>
       <x-m>-4.80865</x-m>
       <y-m>-0.45683</y-m>
@@ -2138,7 +2106,7 @@
       <z>.10</z>
     </axis>
   </animation>
-  
+
   <animation>
     <type>rotate</type>
     <object-name>FlexFill24</object-name>
@@ -2149,7 +2117,7 @@
       </not>
     </condition>
     <factor>1</factor>
-    <offset-deg>0</offset-deg>   
+    <offset-deg>0</offset-deg>
     <center>
       <x-m>-4.80865</x-m>
       <y-m>-0.45683</y-m>
@@ -2161,7 +2129,7 @@
       <z>.10</z>
     </axis>
   </animation>
-  
+
   <animation>
     <type>rotate</type>
     <object-name>FlexFill25</object-name>
@@ -2172,7 +2140,7 @@
       </not>
     </condition>
     <factor>1</factor>
-    <offset-deg>0</offset-deg>   
+    <offset-deg>0</offset-deg>
     <center>
       <x-m>-4.80865</x-m>
       <y-m>-0.45683</y-m>
@@ -2184,7 +2152,7 @@
       <z>.10</z>
     </axis>
   </animation>
-  
+
   <animation>
     <type>rotate</type>
     <object-name>FlexFill26</object-name>
@@ -2195,7 +2163,7 @@
       </not>
     </condition>
     <factor>1</factor>
-    <offset-deg>0</offset-deg>   
+    <offset-deg>0</offset-deg>
     <center>
       <x-m>-4.80865</x-m>
       <y-m>-0.45683</y-m>
@@ -2207,7 +2175,7 @@
       <z>.10</z>
     </axis>
   </animation>
-  
+
   <animation>
     <type>rotate</type>
     <object-name>FlexFill27</object-name>
@@ -2218,7 +2186,7 @@
       </not>
     </condition>
     <factor>1</factor>
-    <offset-deg>0</offset-deg>   
+    <offset-deg>0</offset-deg>
     <center>
       <x-m>-4.80865</x-m>
       <y-m>-0.45683</y-m>
@@ -2230,7 +2198,7 @@
       <z>.10</z>
     </axis>
   </animation>
-  
+
   <animation>
     <type>rotate</type>
     <object-name>FlexFill28</object-name>
@@ -2241,7 +2209,7 @@
       </not>
     </condition>
     <factor>1</factor>
-    <offset-deg>0</offset-deg>   
+    <offset-deg>0</offset-deg>
     <center>
       <x-m>-4.80865</x-m>
       <y-m>-0.45683</y-m>
@@ -2253,7 +2221,7 @@
       <z>.10</z>
     </axis>
   </animation>
-  
+
   <animation>
     <type>rotate</type>
     <object-name>FlexFill29</object-name>
@@ -2264,7 +2232,7 @@
       </not>
     </condition>
     <factor>1</factor>
-    <offset-deg>0</offset-deg>   
+    <offset-deg>0</offset-deg>
     <center>
       <x-m>-4.80865</x-m>
       <y-m>-0.45683</y-m>
@@ -2276,7 +2244,7 @@
       <z>.10</z>
     </axis>
   </animation>
-  
+
   <animation>
     <type>rotate</type>
     <object-name>FlexFill30</object-name>
@@ -2287,7 +2255,7 @@
       </not>
     </condition>
     <factor>1</factor>
-    <offset-deg>0</offset-deg>   
+    <offset-deg>0</offset-deg>
     <center>
       <x-m>-4.80865</x-m>
       <y-m>-0.45683</y-m>
@@ -2299,7 +2267,7 @@
       <z>.10</z>
     </axis>
   </animation>
-  
+
   <animation>
     <type>rotate</type>
     <object-name>FlexFill31</object-name>
@@ -2310,7 +2278,7 @@
       </not>
     </condition>
     <factor>1</factor>
-    <offset-deg>0</offset-deg>   
+    <offset-deg>0</offset-deg>
     <center>
       <x-m>-4.80865</x-m>
       <y-m>-0.45683</y-m>
@@ -2322,7 +2290,7 @@
       <z>.10</z>
     </axis>
   </animation>
-  
+
   <!-- Flex Hose Rotation Roll -->
   <animation>
     <type>rotate</type>
@@ -2334,7 +2302,7 @@
       </not>
     </condition>
     <factor>1</factor>
-    <offset-deg>0</offset-deg>   
+    <offset-deg>0</offset-deg>
     <center>
       <x-m>-4.80865</x-m>
       <y-m>-0.45683</y-m>
@@ -2346,7 +2314,7 @@
       <z>.10</z>
     </axis>
   </animation>
-  
+
   <animation>
     <type>rotate</type>
     <object-name>FlexFill02</object-name>
@@ -2357,7 +2325,7 @@
       </not>
     </condition>
     <factor>1</factor>
-    <offset-deg>0</offset-deg>   
+    <offset-deg>0</offset-deg>
     <center>
       <x-m>-4.80865</x-m>
       <y-m>-0.45683</y-m>
@@ -2369,7 +2337,7 @@
       <z>.10</z>
     </axis>
   </animation>
-  
+
   <animation>
     <type>rotate</type>
     <object-name>FlexFill03</object-name>
@@ -2380,7 +2348,7 @@
       </not>
     </condition>
     <factor>1</factor>
-    <offset-deg>0</offset-deg>   
+    <offset-deg>0</offset-deg>
     <center>
       <x-m>-4.80865</x-m>
       <y-m>-0.45683</y-m>
@@ -2392,7 +2360,7 @@
       <z>.10</z>
     </axis>
   </animation>
-  
+
   <animation>
     <type>rotate</type>
     <object-name>FlexFill04</object-name>
@@ -2403,7 +2371,7 @@
       </not>
     </condition>
     <factor>1</factor>
-    <offset-deg>0</offset-deg>   
+    <offset-deg>0</offset-deg>
     <center>
       <x-m>-4.80865</x-m>
       <y-m>-0.45683</y-m>
@@ -2415,7 +2383,7 @@
       <z>.10</z>
     </axis>
   </animation>
-  
+
   <animation>
     <type>rotate</type>
     <object-name>FlexFill05</object-name>
@@ -2426,7 +2394,7 @@
       </not>
     </condition>
     <factor>1</factor>
-    <offset-deg>0</offset-deg>   
+    <offset-deg>0</offset-deg>
     <center>
       <x-m>-4.80865</x-m>
       <y-m>-0.45683</y-m>
@@ -2438,7 +2406,7 @@
       <z>.10</z>
     </axis>
   </animation>
-  
+
   <animation>
     <type>rotate</type>
     <object-name>FlexFill06</object-name>
@@ -2449,7 +2417,7 @@
       </not>
     </condition>
     <factor>1</factor>
-    <offset-deg>0</offset-deg>   
+    <offset-deg>0</offset-deg>
     <center>
       <x-m>-4.80865</x-m>
       <y-m>-0.45683</y-m>
@@ -2461,7 +2429,7 @@
       <z>.10</z>
     </axis>
   </animation>
-  
+
   <animation>
     <type>rotate</type>
     <object-name>FlexFill07</object-name>
@@ -2472,7 +2440,7 @@
       </not>
     </condition>
     <factor>1</factor>
-    <offset-deg>0</offset-deg>   
+    <offset-deg>0</offset-deg>
     <center>
       <x-m>-4.80865</x-m>
       <y-m>-0.45683</y-m>
@@ -2484,7 +2452,7 @@
       <z>.10</z>
     </axis>
   </animation>
-  
+
   <animation>
     <type>rotate</type>
     <object-name>FlexFill08</object-name>
@@ -2495,7 +2463,7 @@
       </not>
     </condition>
     <factor>1</factor>
-    <offset-deg>0</offset-deg>   
+    <offset-deg>0</offset-deg>
     <center>
       <x-m>-4.80865</x-m>
       <y-m>-0.45683</y-m>
@@ -2507,7 +2475,7 @@
       <z>.10</z>
     </axis>
   </animation>
-  
+
   <animation>
     <type>rotate</type>
     <object-name>FlexFill09</object-name>
@@ -2518,7 +2486,7 @@
       </not>
     </condition>
     <factor>1</factor>
-    <offset-deg>0</offset-deg>   
+    <offset-deg>0</offset-deg>
     <center>
       <x-m>-4.80865</x-m>
       <y-m>-0.45683</y-m>
@@ -2530,7 +2498,7 @@
       <z>.10</z>
     </axis>
   </animation>
-  
+
   <animation>
     <type>rotate</type>
     <object-name>FlexFill10</object-name>
@@ -2541,7 +2509,7 @@
       </not>
     </condition>
     <factor>1</factor>
-    <offset-deg>0</offset-deg>   
+    <offset-deg>0</offset-deg>
     <center>
       <x-m>-4.80865</x-m>
       <y-m>-0.45683</y-m>
@@ -2553,7 +2521,7 @@
       <z>.10</z>
     </axis>
   </animation>
-  
+
   <animation>
     <type>rotate</type>
     <object-name>FlexFill11</object-name>
@@ -2564,7 +2532,7 @@
       </not>
     </condition>
     <factor>1</factor>
-    <offset-deg>0</offset-deg>   
+    <offset-deg>0</offset-deg>
     <center>
       <x-m>-4.80865</x-m>
       <y-m>-0.45683</y-m>
@@ -2576,7 +2544,7 @@
       <z>.10</z>
     </axis>
   </animation>
-  
+
   <animation>
     <type>rotate</type>
     <object-name>FlexFill12</object-name>
@@ -2587,7 +2555,7 @@
       </not>
     </condition>
     <factor>1</factor>
-    <offset-deg>0</offset-deg>   
+    <offset-deg>0</offset-deg>
     <center>
       <x-m>-4.80865</x-m>
       <y-m>-0.45683</y-m>
@@ -2599,7 +2567,7 @@
       <z>.10</z>
     </axis>
   </animation>
-  
+
   <animation>
     <type>rotate</type>
     <object-name>FlexFill13</object-name>
@@ -2610,7 +2578,7 @@
       </not>
     </condition>
     <factor>1</factor>
-    <offset-deg>0</offset-deg>   
+    <offset-deg>0</offset-deg>
     <center>
       <x-m>-4.80865</x-m>
       <y-m>-0.45683</y-m>
@@ -2622,7 +2590,7 @@
       <z>.10</z>
     </axis>
   </animation>
-  
+
   <animation>
     <type>rotate</type>
     <object-name>FlexFill14</object-name>
@@ -2633,7 +2601,7 @@
       </not>
     </condition>
     <factor>1</factor>
-    <offset-deg>0</offset-deg>   
+    <offset-deg>0</offset-deg>
     <center>
       <x-m>-4.80865</x-m>
       <y-m>-0.45683</y-m>
@@ -2645,7 +2613,7 @@
       <z>.10</z>
     </axis>
   </animation>
-  
+
   <animation>
     <type>rotate</type>
     <object-name>FlexFill15</object-name>
@@ -2656,7 +2624,7 @@
       </not>
     </condition>
     <factor>1</factor>
-    <offset-deg>0</offset-deg>   
+    <offset-deg>0</offset-deg>
     <center>
       <x-m>-4.80865</x-m>
       <y-m>-0.45683</y-m>
@@ -2668,7 +2636,7 @@
       <z>.10</z>
     </axis>
   </animation>
-  
+
   <animation>
     <type>rotate</type>
     <object-name>FlexFill16</object-name>
@@ -2679,7 +2647,7 @@
       </not>
     </condition>
     <factor>1</factor>
-    <offset-deg>0</offset-deg>   
+    <offset-deg>0</offset-deg>
     <center>
       <x-m>-4.80865</x-m>
       <y-m>-0.45683</y-m>
@@ -2691,7 +2659,7 @@
       <z>.10</z>
     </axis>
   </animation>
-  
+
   <animation>
     <type>rotate</type>
     <object-name>FlexFill17</object-name>
@@ -2702,7 +2670,7 @@
       </not>
     </condition>
     <factor>1</factor>
-    <offset-deg>0</offset-deg>   
+    <offset-deg>0</offset-deg>
     <center>
       <x-m>-4.80865</x-m>
       <y-m>-0.45683</y-m>
@@ -2714,7 +2682,7 @@
       <z>.10</z>
     </axis>
   </animation>
-  
+
   <animation>
     <type>rotate</type>
     <object-name>FlexFill18</object-name>
@@ -2725,7 +2693,7 @@
       </not>
     </condition>
     <factor>1</factor>
-    <offset-deg>0</offset-deg>   
+    <offset-deg>0</offset-deg>
     <center>
       <x-m>-4.80865</x-m>
       <y-m>-0.45683</y-m>
@@ -2737,7 +2705,7 @@
       <z>.10</z>
     </axis>
   </animation>
-  
+
   <animation>
     <type>rotate</type>
     <object-name>FlexFill19</object-name>
@@ -2748,7 +2716,7 @@
       </not>
     </condition>
     <factor>1</factor>
-    <offset-deg>0</offset-deg>   
+    <offset-deg>0</offset-deg>
     <center>
       <x-m>-4.80865</x-m>
       <y-m>-0.45683</y-m>
@@ -2760,7 +2728,7 @@
       <z>.10</z>
     </axis>
   </animation>
-  
+
   <animation>
     <type>rotate</type>
     <object-name>FlexFill20</object-name>
@@ -2771,7 +2739,7 @@
       </not>
     </condition>
     <factor>1</factor>
-    <offset-deg>0</offset-deg>   
+    <offset-deg>0</offset-deg>
     <center>
       <x-m>-4.80865</x-m>
       <y-m>-0.45683</y-m>
@@ -2783,7 +2751,7 @@
       <z>.10</z>
     </axis>
   </animation>
-  
+
   <animation>
     <type>rotate</type>
     <object-name>FlexFill21</object-name>
@@ -2794,7 +2762,7 @@
       </not>
     </condition>
     <factor>1</factor>
-    <offset-deg>0</offset-deg>   
+    <offset-deg>0</offset-deg>
     <center>
       <x-m>-4.80865</x-m>
       <y-m>-0.45683</y-m>
@@ -2806,7 +2774,7 @@
       <z>.10</z>
     </axis>
   </animation>
-  
+
   <animation>
     <type>rotate</type>
     <object-name>FlexFill22</object-name>
@@ -2817,7 +2785,7 @@
       </not>
     </condition>
     <factor>1</factor>
-    <offset-deg>0</offset-deg>   
+    <offset-deg>0</offset-deg>
     <center>
       <x-m>-4.80865</x-m>
       <y-m>-0.45683</y-m>
@@ -2829,7 +2797,7 @@
       <z>.10</z>
     </axis>
   </animation>
-  
+
   <animation>
     <type>rotate</type>
     <object-name>FlexFill23</object-name>
@@ -2840,7 +2808,7 @@
       </not>
     </condition>
     <factor>1</factor>
-    <offset-deg>0</offset-deg>   
+    <offset-deg>0</offset-deg>
     <center>
       <x-m>-4.80865</x-m>
       <y-m>-0.45683</y-m>
@@ -2852,7 +2820,7 @@
       <z>.10</z>
     </axis>
   </animation>
-  
+
   <animation>
     <type>rotate</type>
     <object-name>FlexFill24</object-name>
@@ -2863,7 +2831,7 @@
       </not>
     </condition>
     <factor>1</factor>
-    <offset-deg>0</offset-deg>   
+    <offset-deg>0</offset-deg>
     <center>
       <x-m>-4.80865</x-m>
       <y-m>-0.45683</y-m>
@@ -2875,7 +2843,7 @@
       <z>.10</z>
     </axis>
   </animation>
-  
+
   <animation>
     <type>rotate</type>
     <object-name>FlexFill25</object-name>
@@ -2886,7 +2854,7 @@
       </not>
     </condition>
     <factor>1</factor>
-    <offset-deg>0</offset-deg>   
+    <offset-deg>0</offset-deg>
     <center>
       <x-m>-4.80865</x-m>
       <y-m>-0.45683</y-m>
@@ -2898,7 +2866,7 @@
       <z>.10</z>
     </axis>
   </animation>
-  
+
   <animation>
     <type>rotate</type>
     <object-name>FlexFill26</object-name>
@@ -2909,7 +2877,7 @@
       </not>
     </condition>
     <factor>1</factor>
-    <offset-deg>0</offset-deg>   
+    <offset-deg>0</offset-deg>
     <center>
       <x-m>-4.80865</x-m>
       <y-m>-0.45683</y-m>
@@ -2921,7 +2889,7 @@
       <z>.10</z>
     </axis>
   </animation>
-  
+
   <animation>
     <type>rotate</type>
     <object-name>FlexFill27</object-name>
@@ -2932,7 +2900,7 @@
       </not>
     </condition>
     <factor>1</factor>
-    <offset-deg>0</offset-deg>   
+    <offset-deg>0</offset-deg>
     <center>
       <x-m>-4.80865</x-m>
       <y-m>-0.45683</y-m>
@@ -2944,7 +2912,7 @@
       <z>.10</z>
     </axis>
   </animation>
-  
+
   <animation>
     <type>rotate</type>
     <object-name>FlexFill28</object-name>
@@ -2955,7 +2923,7 @@
       </not>
     </condition>
     <factor>1</factor>
-    <offset-deg>0</offset-deg>   
+    <offset-deg>0</offset-deg>
     <center>
       <x-m>-4.80865</x-m>
       <y-m>-0.45683</y-m>
@@ -2967,7 +2935,7 @@
       <z>.10</z>
     </axis>
   </animation>
-  
+
   <animation>
     <type>rotate</type>
     <object-name>FlexFill29</object-name>
@@ -2978,7 +2946,7 @@
       </not>
     </condition>
     <factor>1</factor>
-    <offset-deg>0</offset-deg>   
+    <offset-deg>0</offset-deg>
     <center>
       <x-m>-4.80865</x-m>
       <y-m>-0.45683</y-m>
@@ -2990,7 +2958,7 @@
       <z>.10</z>
     </axis>
   </animation>
-  
+
   <animation>
     <type>rotate</type>
     <object-name>FlexFill30</object-name>
@@ -3001,7 +2969,7 @@
       </not>
     </condition>
     <factor>1</factor>
-    <offset-deg>0</offset-deg>   
+    <offset-deg>0</offset-deg>
     <center>
       <x-m>-4.80865</x-m>
       <y-m>-0.45683</y-m>
@@ -3013,7 +2981,7 @@
       <z>.10</z>
     </axis>
   </animation>
-  
+
   <animation>
     <type>rotate</type>
     <object-name>FlexFill31</object-name>
@@ -3024,7 +2992,7 @@
       </not>
     </condition>
     <factor>1</factor>
-    <offset-deg>0</offset-deg>   
+    <offset-deg>0</offset-deg>
     <center>
       <x-m>-4.80865</x-m>
       <y-m>-0.45683</y-m>
@@ -3069,7 +3037,7 @@
         <property>sim/model/firetank/deployflexhose/position-norm</property>
       </not>
     </condition>
-    <factor>.20</factor>  
+    <factor>.20</factor>
     <center>
       <x-m>-4.80865</x-m>
       <y-m>-0.45683</y-m>
@@ -3081,7 +3049,7 @@
       <z>0</z>
     </axis>
   </animation>
-  
+
   <animation>
     <type>rotate</type>
     <object-name>FlexFill03</object-name>
@@ -3103,7 +3071,7 @@
       <z>0</z>
     </axis>
   </animation>
-  
+
   <animation>
     <type>rotate</type>
     <object-name>FlexFill04</object-name>
@@ -3192,7 +3160,7 @@
       <z>0</z>
     </axis>
   </animation>
-  
+
   <animation>
     <type>rotate</type>
     <object-name>FlexFill03</object-name>
@@ -3214,7 +3182,7 @@
       <z>0</z>
     </axis>
   </animation>
-  
+
   <animation>
     <type>rotate</type>
     <object-name>FlexFill04</object-name>
@@ -3267,7 +3235,7 @@
     <object-name>ramscoophingebottom</object-name>
     <property>sim/model/firetank/deployramscoop/position-norm</property>
     <factor>45</factor>
-    <offset-deg>0</offset-deg>   
+    <offset-deg>0</offset-deg>
     <center>
       <x-m>-4.82533 </x-m>
       <y-m> 0.47627</y-m>
@@ -3279,14 +3247,14 @@
       <z>0</z>
     </axis>
   </animation>
-  
+
   <animation>
     <type>rotate</type>
     <object-name>ramscoophingetop</object-name>
     <object-name>ramscoophingepin</object-name>
     <property>sim/model/firetank/deployramscoop/position-norm</property>
     <factor>15</factor>
-    <offset-deg>0</offset-deg>   
+    <offset-deg>0</offset-deg>
     <center>
       <x-m>-4.99164</x-m>
       <y-m> 0.45812</y-m>
@@ -3319,7 +3287,7 @@
     <object-name>watercannon</object-name>
     <property>sim/model/watercannon/position-deg</property>
     <factor>1</factor>
-    <offset-deg>0</offset-deg>   
+    <offset-deg>0</offset-deg>
     <center>
       <x-m>-10.0103 </x-m>
       <y-m>-1.31365</y-m>
@@ -3338,7 +3306,7 @@
     <object-name>watercannonhose</object-name>
     <property>sim/model/watercannon/position-deg</property>
     <factor>-.866</factor>
-    <offset-deg>0</offset-deg>   
+    <offset-deg>0</offset-deg>
     <center>
       <x-m>-4.67529</x-m>
       <y-m> 0.18986</y-m>

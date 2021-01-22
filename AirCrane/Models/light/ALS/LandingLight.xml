@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+ <PropertyList>
+
+  <path>landing-light.ac</path>
+  <nopreview/>
+
+  <!-- Landing Light ALS-->
+  <animation>
+    <type>select</type>
+    <object-name>landinglightals</object-name>
+    <condition>
+      <property>/sim/model/aircrane/lighting/landing-light</property>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>flash</type>
+    <object-name>landinglightals</object-name>
+    <center>
+      <x-m>-9.96423</x-m>
+      <y-m>-0.00191</y-m>
+      <z-m>-2.79107</z-m>
+    </center>
+    <axis>
+      <x>-1</x>
+      <y>0</y>
+      <z>-0.1</z>
+    </axis>
+    <power>8</power>
+    <factor>6</factor>
+    <offset>0</offset>
+    <two-sides type="bool">false</two-sides>
+    <min>0.5</min>
+    <max>80</max>
+  </animation>
+
+</PropertyList>

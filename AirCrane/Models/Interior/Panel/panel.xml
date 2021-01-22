@@ -2,911 +2,636 @@
 
 <PropertyList>
 
-    <path>panel.ac</path>
-    <texture-path>../../../Models/Interior/Panel</texture-path>
-
-    <effect>
-      <inherits-from>Models/Effects/interior/frametexture</inherits-from>
-      <object-name>panel1</object-name>
-      <object-name>panel2</object-name>
-      <object-name>panel3</object-name>
-      <object-name>panel4</object-name>
-    </effect>
-
-    <effect>
-      <inherits-from>Models/Effects/interior/cockpit-interior-shadows</inherits-from>
-      <object-name>fire</object-name>
-      <object-name>caution</object-name>
-      <object-name>fuelpumpplate</object-name>
-      <object-name>cpplate</object-name>
-      <object-name>afpno1</object-name>
-      <object-name>afpn1base</object-name>
-      <object-name>afpno2</object-name>
-      <object-name>afpn2base</object-name>
-      <object-name>cpswitch</object-name>
-      <object-name>cpswitchbase</object-name>
-      <object-name>panelhori</object-name>
-      <object-name>panelscrews</object-name>
-      <object-name>t5switch</object-name>
-      <object-name>t5plate</object-name>
-      <object-name>t5switchbase</object-name>
-      <object-name>hydplate</object-name>
-      <object-name>oilplate</object-name>
-      <object-name>xoilplate</object-name>
-      <object-name>xoilplate1</object-name>
-      <object-name>xoilplate2</object-name>
-      <object-name>infoplate1</object-name>
-      <object-name>cws</object-name>
-      <object-name>cplamptest</object-name>
-      <object-name>cplamptestbase</object-name>
-      <object-name>fgtbase</object-name>
-      <object-name>fgtbtn</object-name>
-      <object-name>cws</object-name>
-      <object-name>cwsboard</object-name>
-
-      <object-name>cws-1-eng-anti-ice</object-name>
-      <object-name>cws-1-eng-anti-ice-on</object-name>
-      <object-name>cws-1-eng-chip</object-name>
-      <object-name>cws-1-eng-fuel-bypass</object-name>
-      <object-name>cws-1-eng-oil-press</object-name>
-      <object-name>cws-1-eng-starter-on</object-name>
-      <object-name>cws-1-eng-t5</object-name>
-      <object-name>cws-1-fuel-press</object-name>
-      <object-name>cws-1-gen</object-name>
-      <object-name>cws-1-rect</object-name>
-      <object-name>cws-1st-stage-servo</object-name>
-      <object-name>cws-1st-stage-servo-press</object-name>
-      <object-name>cws-1st-stg-tl-rotor-servo</object-name>
-      <object-name>cws-2-eng-anti-ice</object-name>
-      <object-name>cws-2-eng-anti-ice-on</object-name>
-      <object-name>cws-2-eng-chip</object-name>
-      <object-name>cws-2-eng-fuel-bypass</object-name>
-      <object-name>cws-2-eng-oil-press</object-name>
-      <object-name>cws-2-eng-starter-on</object-name>
-      <object-name>cws-2-eng-t5</object-name>
-      <object-name>cws-2-fuel-press</object-name>
-      <object-name>cws-2-gen</object-name>
-      <object-name>cws-2-rect</object-name>
-      <object-name>cws-2nd-stage-servo</object-name>
-      <object-name>cws-2nd-stage-servo-press</object-name>
-      <object-name>cws-afcs-off</object-name>
-      <object-name>cws-afcs-servo-press</object-name>
-      <object-name>cws-aft-fuel-low</object-name>
-      <object-name>cws-app-on</object-name>
-      <object-name>cws-aux-fuel-press</object-name>
-      <object-name>cws-chip-inter-trans</object-name>
-      <object-name>cws-chip-main-trans</object-name>
-      <object-name>cws-chip-tail-trans</object-name>
-      <object-name>cws-ext-power-connected</object-name>
-      <object-name>cws-fuel-temp-low</object-name>
-      <object-name>cws-fwd-fuel-low</object-name>
-      <object-name>cws-hoist-oil-hot</object-name>
-      <object-name>cws-hoist-overspeed</object-name>
-      <object-name>cws-hoist-shear-armed</object-name>
-      <object-name>cws-inter-trans-oil-press</object-name>
-      <object-name>cws-left-pilot-pitot-heat</object-name>
-      <object-name>cws-left-pilot-turn-slip</object-name>
-      <object-name>cws-oil-cooler</object-name>
-      <object-name>cws-parking-brake-on</object-name>
-      <object-name>cws-rear-control-engaged</object-name>
-      <object-name>cws-right-pilot-pitot-heat</object-name>
-      <object-name>cws-right-pilot-turn-slip</object-name>
-      <object-name>cws-rotor-brake-on</object-name>
-      <object-name>cws-rotor-brake-press</object-name>
-      <object-name>cws-trans-oil-hot</object-name>
-      <object-name>cws-trans-oil-press</object-name>
-    </effect>
-
-    <effect>
-      <inherits-from>Models/Effects/interior/interior-glass-reflection-front</inherits-from>
-      <object-name>cwsglass</object-name>
-    </effect>
-
-    <!-- ai -->
-    <model>
-      <path>Aircraft/AirCrane/Models/Interior/Panel/Instruments/ai/ai.xml</path>
-      <offsets>
-        <x-m>0.0</x-m>
-        <y-m>0.0</y-m>
-        <z-m>0.0</z-m>
-      </offsets>
-    </model>
-
-    <!-- adi -->
-    <model>
-      <path>Aircraft/AirCrane/Models/Interior/Panel/Instruments/adi/adi.xml</path>
-      <offsets>
-        <x-m>0.0</x-m>
-        <y-m>0.0</y-m>
-        <z-m>0.0</z-m>
-      </offsets>
-    </model>
-
-    <!-- asi -->
-    <model>
-      <path>Aircraft/AirCrane/Models/Interior/Panel/Instruments/asi/asi.xml</path>
-      <offsets>
-        <x-m>0</x-m>
-        <y-m>0</y-m>
-        <z-m>0</z-m>
-      </offsets>
-    </model>
-
-    <!-- alt -->
-    <model>
-      <path>Aircraft/AirCrane/Models/Interior/Panel/Instruments/alt/alt.xml</path>
-      <offsets>
-        <x-m> 0.0 </x-m>
-        <y-m> 0.0 </y-m>
-        <z-m> 0.0 </z-m>
-      </offsets>
-    </model>
-
-    <!-- chcl -->
-    <model>
-      <path>Aircraft/AirCrane/Models/Interior/Panel/Instruments/chcl/chcl.xml</path>
-      <offsets>
-        <x-m> 0.0 </x-m>
-        <y-m> 0.0 </y-m>
-        <z-m> 0.0 </z-m>
-      </offsets>
-    </model>
-
-    <!-- digital-clock-left -->
-    <model>
-      <path>Aircraft/AirCrane/Models/Interior/Panel/Instruments/digitalclock/digital-clock-left.xml</path>
-      <offsets>
-        <x-m> 0.0 </x-m>
-        <y-m> 0.0 </y-m>
-        <z-m> 0.0 </z-m>
-      </offsets>
-    </model>
-
-    <!-- digital-clock-right -->
-    <model>
-      <path>Aircraft/AirCrane/Models/Interior/Panel/Instruments/digitalclock/digital-clock-right.xml</path>
-      <offsets>
-        <x-m> 0.0 </x-m>
-        <y-m> 0.0 </y-m>
-        <z-m> 0.0 </z-m>
-      </offsets>
-    </model>
-
-    <!-- fuel -->
-    <model>
-      <path>Aircraft/AirCrane/Models/Interior/Panel/Instruments/fuel/fuel.xml</path>
-      <offsets>
-        <x-m> 0.0 </x-m>
-        <y-m> 0.0 </y-m>
-        <z-m> 0.0 </z-m>
-      </offsets>
-    </model>
-
-    <!-- engtemp -->
-    <model>
-      <path>Aircraft/AirCrane/Models/Interior/Panel/Instruments/engtemp/engtemp.xml</path>
-      <offsets>
-        <x-m> 0.0 </x-m>
-        <y-m> 0.0 </y-m>
-        <z-m> 0.0 </z-m>
-      </offsets>
-    </model>
-
-    <!-- fuelflow -->
-    <model>
-      <path>Aircraft/AirCrane/Models/Interior/Panel/Instruments/fuel/fuelflow.xml</path>
-      <offsets>
-        <x-m> 0.0 </x-m>
-        <y-m> 0.0 </y-m>
-        <z-m> 0.0 </z-m>
-      </offsets>
-    </model>
-
-    <!-- fuelpress -->
-    <model>
-      <path>Aircraft/AirCrane/Models/Interior/Panel/Instruments/fuel/fuelpress.xml</path>
-      <offsets>
-        <x-m> 0.0 </x-m>
-        <y-m> 0.0 </y-m>
-        <z-m> 0.0 </z-m>
-      </offsets>
-    </model>
-
-    <!-- gdsi -->
-    <model>
-      <path>Aircraft/AirCrane/Models/Interior/Panel/Instruments/gdsi/gdsi.xml</path>
-      <offsets>
-        <x-m> 0.0 </x-m>
-        <y-m> 0.0 </y-m>
-        <z-m> 0.0 </z-m>
-      </offsets>
-    </model>
-
-    <!-- ggt -->
-    <model>
-      <path>Aircraft/AirCrane/Models/Interior/Panel/Instruments/ggt/ggt.xml</path>
-      <offsets>
-        <x-m> 0.0 </x-m>
-        <y-m> 0.0 </y-m>
-        <z-m> 0.0 </z-m>
-      </offsets>
-    </model>
-
-    <!-- hydrfst-->
-    <model>
-      <path>Aircraft/AirCrane/Models/Interior/Panel/Instruments/hydrfst/hydrfst.xml</path>
-      <offsets>
-        <x-m> 0.0 </x-m>
-        <y-m> 0.0 </y-m>
-        <z-m> 0.0 </z-m>
-      </offsets>
-    </model>
-
-    <!-- hydrsnd -->
-    <model>
-      <path>Aircraft/AirCrane/Models/Interior/Panel/Instruments/hydrsnd/hydrsnd.xml</path>
-      <offsets>
-        <x-m> 0.0 </x-m>
-        <y-m> 0.0 </y-m>
-        <z-m> 0.0 </z-m>
-      </offsets>
-    </model>
-
-    <!-- hydrutil -->
-    <model>
-      <path>Aircraft/AirCrane/Models/Interior/Panel/Instruments/hydrutil/hydrutil.xml</path>
-      <offsets>
-        <x-m> 0.0 </x-m>
-        <y-m> 0.0 </y-m>
-        <z-m> 0.0 </z-m>
-      </offsets>
-    </model>
-
-    <!-- oilpressure -->
-    <model>
-      <path>Aircraft/AirCrane/Models/Interior/Panel/Instruments/oil/oilpressure.xml</path>
-      <offsets>
-        <x-m> 0.0 </x-m>
-        <y-m> 0.0 </y-m>
-        <z-m> 0.0 </z-m>
-      </offsets>
-    </model>
-
-    <!-- oiltemp -->
-    <model>
-      <path>Aircraft/AirCrane/Models/Interior/Panel/Instruments/oil/oiltemp.xml</path>
-      <offsets>
-        <x-m> 0.0 </x-m>
-        <y-m> 0.0 </y-m>
-        <z-m> 0.0 </z-m>
-      </offsets>
-    </model>
-
-    <!-- xmsnoilpressure -->
-    <model>
-      <path>Aircraft/AirCrane/Models/Interior/Panel/Instruments/oil/xoilpressure.xml</path>
-      <offsets>
-        <x-m> 0.0 </x-m>
-        <y-m> 0.0 </y-m>
-        <z-m> 0.0 </z-m>
-      </offsets>
-    </model>
-
-    <!-- xmsnoiltemp -->
-    <model>
-      <path>Aircraft/AirCrane/Models/Interior/Panel/Instruments/oil/xoiltemp.xml</path>
-      <offsets>
-        <x-m> 0.0 </x-m>
-        <y-m> 0.0 </y-m>
-        <z-m> 0.0 </z-m>
-      </offsets>
-    </model>
-
-    <!-- pi -->
-    <model>
-      <path>Aircraft/AirCrane/Models/Interior/Panel/Instruments/pi/pi.xml</path>
-      <offsets>
-        <x-m> 0.0 </x-m>
-        <y-m> 0.0 </y-m>
-        <z-m> 0.0 </z-m>
-      </offsets>
-    </model>
-
-    <!-- rmi -->
-    <model>
-      <path>Aircraft/AirCrane/Models/Interior/Panel/Instruments/rmi/rmi.xml</path>
-      <offsets>
-        <x-m> 0.0 </x-m>
-        <y-m> 0.0 </y-m>
-        <z-m> 0.0 </z-m>
-      </offsets>
-    </model>
-
-    <!-- rotorpcnt -->
-    <model>
-      <path>Aircraft/AirCrane/Models/Interior/Panel/Instruments/rotorpcnt/rotorpcnt.xml</path>
-      <offsets>
-        <x-m>0</x-m>
-        <y-m>0</y-m>
-        <z-m>0</z-m>
-      </offsets>
-    </model>
-
-    <!-- torque percent -->
-    <model>
-      <path>Aircraft/AirCrane/Models/Interior/Panel/Instruments/torquepcnt/torquepcnt.xml</path>
-      <offsets>
-        <x-m>0</x-m>
-        <y-m>0</y-m>
-        <z-m>0</z-m>
-      </offsets>
-    </model>
-
-    <!-- turn -->
-    <model>
-      <path>Aircraft/AirCrane/Models/Interior/Panel/Instruments/turn/turn.xml</path>
-      <offsets>
-        <x-m>0</x-m>
-        <y-m>0</y-m>
-        <z-m>0</z-m>
-      </offsets>
-    </model>
-
-    <!-- vor -->
-    <model>
-      <path>Aircraft/AirCrane/Models/Interior/Panel/Instruments/vor/vor.xml</path>
-      <offsets>
-        <x-m>0</x-m>
-        <y-m>0</y-m>
-        <z-m>0</z-m>
-      </offsets>
-    </model>
-
-    <!-- vsi -->
-    <model>
-      <path>Aircraft/AirCrane/Models/Interior/Panel/Instruments/vsi/vsi.xml</path>
-      <offsets>
-        <x-m> 0.0 </x-m>
-        <y-m> 0.0 </y-m>
-        <z-m> 0.0 </z-m>
-      </offsets>
-    </model>
-
-    <!-- wl -->
-    <model>
-      <path>Aircraft/AirCrane/Models/Interior/Panel/Instruments/wl/wl.xml</path>
-      <offsets>
-        <x-m> 0.0 </x-m>
-        <y-m> 0.0 </y-m>
-        <z-m> 0.0 </z-m>
-      </offsets>
-    </model>
-
-    <!-- wt -->
-    <model>
-      <path>Aircraft/AirCrane/Models/Interior/Panel/Instruments/wt/wt.xml</path>
-      <offsets>
-        <x-m> 0.0 </x-m>
-        <y-m> 0.0 </y-m>
-        <z-m> 0.0 </z-m>
-      </offsets>
-    </model>
-
-    <!-- tank qty -->
-    <model>
-      <path>Aircraft/AirCrane/Models/Interior/Panel/Instruments/tankqty/tankqty.xml</path>
-      <offsets>
-        <x-m> 0.0 </x-m>
-        <y-m> 0.0 </y-m>
-        <z-m> 0.0 </z-m>
-      </offsets>
-    </model>
-
-	  <model>	
-		  <path>Aircraft/AirCrane/Models/Interior/Panel/Instruments/compass/compass.xml</path>
-		  <offsets>
-			  <x-m>-9.330</x-m>
-			  <y-m> 0.000</y-m>
-			  <z-m>-1.220</z-m>
-			  <pitch-deg>0</pitch-deg>
-		  </offsets>
-	  </model>
-
-    <!-- horizontalpanel -->
-
-    <!-- tank volume round gauge unused -->
-    <!-- <model>
-      <path>Aircraft/AirCrane/Models/Interior/Panel/Instruments/tankvol/tank_vol.xml</path>
-      <condition>
-        <property>sim/model/firetank/enabled</property>
-      </condition>
-      <offsets>
-        <x-m> -8.98988 </x-m>
-        <y-m> -0.21988 </y-m>
-        <z-m> -1.79078 </z-m>
-        <pitch-deg>-82</pitch-deg>
-      </offsets>
-    </model> -->
-
-    <!-- tank control -->
-    <model>
-      <path>Aircraft/AirCrane/Models/Interior/Panel/Instruments/tankctrl/tankctrl.xml</path>
-      <offsets>
-        <x-m> 0.0 </x-m>
-        <y-m> 0.0 </y-m>
-        <z-m> 0.0 </z-m>
-      </offsets>
-    </model>
-
-    <!-- power panel -->
-    <model>
-      <path>Aircraft/AirCrane/Models/Interior/Panel/Instruments/power/power.xml</path>
-      <offsets>
-        <x-m> 0.0 </x-m>
-        <y-m> 0.0 </y-m>
-        <z-m> 0.0 </z-m>
-      </offsets>
-    </model>
-
-    <!-- afcs panel E-->
-    <model>
-      <path>Aircraft/AirCrane/Models/Interior/Panel/AFCS/afcs-e.xml</path>
-      <condition>
-        <not>
-          <property>sim/model/aircrane/model-f</property>
-        </not>
-      </condition>
-      <offsets>
-        <x-m> 0.0 </x-m>
-        <y-m> 0.0 </y-m>
-        <z-m> 0.0 </z-m>
-      </offsets>
-    </model>
-
-    <!-- afcs panel F-->
-    <model>
-      <path>Aircraft/AirCrane/Models/Interior/Panel/AFCS/afcs-f.xml</path>
-      <condition>
-        <property>sim/model/aircrane/model-f</property>
-      </condition>
-      <offsets>
-        <x-m> 0.0 </x-m>
-        <y-m> 0.0 </y-m>
-        <z-m> 0.0 </z-m>
-      </offsets>
-    </model>
-
-    <!-- fuel panel -->
-    <model>
-      <path>Aircraft/AirCrane/Models/Interior/Panel/fuel.xml</path>
-      <offsets>
-        <x-m> 0.0 </x-m>
-        <y-m> 0.0 </y-m>
-        <z-m> 0.0 </z-m>
-      </offsets>
-    </model>
-
-    <!-- hoist control panel -->
-    <model>
-      <path>Aircraft/AirCrane/Models/Interior/Panel/HoistCtrl/hoistctrl.xml</path>
-      <offsets>
-        <x-m> 0.0 </x-m>
-        <y-m> 0.0 </y-m>
-        <z-m> 0.0 </z-m>
-      </offsets>
-    </model>
-
-    <!-- pedal adjust panel -->
-    <model>
-      <path>Aircraft/AirCrane/Models/Interior/Panel/PedalAdjust/pedaladjust.xml</path>
-      <offsets>
-        <x-m> 0.0 </x-m>
-        <y-m> 0.0 </y-m>
-        <z-m> 0.0 </z-m>
-      </offsets>
-    </model>
-
-    <!-- rotor brake panel -->
-    <model>
-      <path>Aircraft/AirCrane/Models/Interior/Panel/RotorBrake/rotorbrake.xml</path>
-      <offsets>
-        <x-m> 0.0 </x-m>
-        <y-m> 0.0 </y-m>
-        <z-m> 0.0 </z-m>
-      </offsets>
-    </model>
-
-    <!-- CWS bright -->
-    <animation>
-        <type>material</type>
-        <!--object-name>cwstestpanel</object-name-->
-        <object-name>cws-1-eng-anti-ice</object-name>
-        <object-name>cws-1-eng-anti-ice-on</object-name>
-        <object-name>cws-1-eng-chip</object-name>
-        <object-name>cws-1-eng-fuel-bypass</object-name>
-        <object-name>cws-1-eng-oil-press</object-name>
-        <object-name>cws-1-eng-starter-on</object-name>
-        <object-name>cws-1-eng-t5</object-name>
-        <object-name>cws-1-fuel-press</object-name>
-        <object-name>cws-1-gen</object-name>
-        <object-name>cws-1-rect</object-name>
-        <object-name>cws-1st-stage-servo</object-name>
-        <object-name>cws-1st-stage-servo-press</object-name>
-        <object-name>cws-1st-stg-tl-rotor-servo</object-name>
-        <object-name>cws-2-eng-anti-ice</object-name>
-        <object-name>cws-2-eng-anti-ice-on</object-name>
-        <object-name>cws-2-eng-chip</object-name>
-        <object-name>cws-2-eng-fuel-bypass</object-name>
-        <object-name>cws-2-eng-oil-press</object-name>
-        <object-name>cws-2-eng-starter-on</object-name>
-        <object-name>cws-2-eng-t5</object-name>
-        <object-name>cws-2-fuel-press</object-name>
-        <object-name>cws-2-gen</object-name>
-        <object-name>cws-2-rect</object-name>
-        <object-name>cws-2nd-stage-servo</object-name>
-        <object-name>cws-2nd-stage-servo-press</object-name>
-        <object-name>cws-afcs-off</object-name>
-        <object-name>cws-afcs-servo-press</object-name>
-        <object-name>cws-aft-fuel-low</object-name>
-        <object-name>cws-app-on</object-name>
-        <object-name>cws-aux-fuel-press</object-name>
-        <object-name>cws-chip-inter-trans</object-name>
-        <object-name>cws-chip-main-trans</object-name>
-        <object-name>cws-chip-tail-trans</object-name>
-        <object-name>cws-ext-power-connected</object-name>
-        <object-name>cws-fuel-temp-low</object-name>
-        <object-name>cws-fwd-fuel-low</object-name>
-        <object-name>cws-hoist-oil-hot</object-name>
-        <object-name>cws-hoist-overspeed</object-name>
-        <object-name>cws-hoist-shear-armed</object-name>
-        <object-name>cws-inter-trans-oil-press</object-name>
-        <object-name>cws-left-pilot-pitot-heat</object-name>
-        <object-name>cws-left-pilot-turn-slip</object-name>
-        <object-name>cws-oil-cooler</object-name>
-        <object-name>cws-parking-brake-on</object-name>
-        <object-name>cws-rear-control-engaged</object-name>
-        <object-name>cws-right-pilot-pitot-heat</object-name>
-        <object-name>cws-right-pilot-turn-slip</object-name>
-        <object-name>cws-rotor-brake-on</object-name>
-        <object-name>cws-rotor-brake-press</object-name>
-        <object-name>cws-trans-oil-hot</object-name>
-        <object-name>cws-trans-oil-press</object-name>
-        <emission>
-            <red>  1</red>
-            <green>1</green>
-            <blue> 1</blue>
-            <factor-prop>/sim/model/aircrane/lighting/cws-bright</factor-prop>
-        </emission>
-    </animation>
-
-    <animation>
-        <type>slider</type>
-        <object-name>cplamptest</object-name>
-        <property>controls/switches/cws-test</property>
-        <repeatable>false</repeatable>
-        <factor>0.002</factor>
-        <axis>
-            <x>-1</x>
-            <y>0</y>
-            <z>0</z>
-        </axis>
-        <action>
-            <repeatable>false</repeatable>
-            <binding>
-                <command>nasal</command>
-                <script>
-                    setprop("/controls/switches/cws-test", 1);
-                </script>
-            </binding>
-        </action>
-        <release>
-            <binding>
-                <command>nasal</command>
-                <script>
-                    setprop("/controls/switches/cws-test", 0);
-                    aircrane.click("avionics");
-                </script>
-            </binding>
-        </release>
-        <hovered>
-            <binding>
-                <command>set-tooltip</command>
-                <tooltip-id>cplamptest</tooltip-id>
-                <label>CWS Test: %s</label>
-                <mapping>on-off</mapping>
-                <property>controls/switches/cws-test</property>
-            </binding>
-        </hovered>
-    </animation>
-
-    <animation>
-        <type>pick</type>
-        <object-name>cpswitch</object-name>
-        <visible>true</visible>
-        <action>
-            <button>0</button>
-            <repeatable>false</repeatable>
-            <binding>
-                <command>property-toggle</command>
-                <property>controls/switches/cws-bright</property>
-            </binding>
-        </action>
-        <release>
-          <binding>
-            <command>property-assign</command>
-            <property>controls/switches/cws-bright</property>
-            <value>0</value>
-          </binding>
-        </release>
-        <hovered>
-            <binding>
-                <command>set-tooltip</command>
-                <tooltip-id>cpswitch</tooltip-id>
-                <label>CWS Brightness: %s</label>
-                <mapping>Dim-Bright</mapping>
-                <property>controls/switches/cws-bright</property>
-            </binding>
-        </hovered>
-    </animation>
-    <animation>
-        <type>rotate</type>
-        <object-name>cpswitch</object-name>
-        <property>controls/switches/cws-bright</property>
-        <factor>-45</factor>
-        <offset-deg>20</offset-deg>
-        <center>
-          <x-m>-9.37678</x-m>
-          <y-m>-0.256186</y-m>
-          <z-m>-1.65109</z-m>
-        </center>
-        <axis>
-          <x>0.0</x>
-          <y>1.0</y>
-          <z>0.0</z>
-        </axis>
-    </animation>
+  <path>panel.ac</path>
 
   <animation>
-    <type>select</type>
-    <object-name>cws-1-eng-anti-ice</object-name>
-    <object-name>cws-1-eng-anti-ice-on</object-name>
-    <object-name>cws-1-eng-chip</object-name>
-    <object-name>cws-1-eng-fuel-bypass</object-name>
-    <!--object-name>cws-1-eng-oil-press</object-name-->
-    <object-name>cws-1-eng-starter-on</object-name>
-    <object-name>cws-1-eng-t5</object-name>
-    <!--object-name>cws-1-fuel-press</object-name-->
-    <!--object-name>cws-1-gen</object-name-->
-    <!--object-name>cws-1-rect</object-name-->
-    <!--object-name>cws-1st-stage-servo</object-name-->
-    <!--object-name>cws-1st-stage-servo-press</object-name-->
-    <!--object-name>cws-1st-stg-tl-rotor-servo</object-name-->
-    <object-name>cws-2-eng-anti-ice</object-name>
-    <object-name>cws-2-eng-anti-ice-on</object-name>
-    <object-name>cws-2-eng-chip</object-name>
-    <object-name>cws-2-eng-fuel-bypass</object-name>
-    <!--object-name>cws-2-eng-oil-press</object-name-->
-    <object-name>cws-2-eng-starter-on</object-name>
-    <object-name>cws-2-eng-t5</object-name>
-    <!--object-name>cws-2-fuel-press</object-name-->
-    <!--object-name>cws-2-gen</object-name-->
-    <!--object-name>cws-2-rect</object-name-->
-    <!--object-name>cws-2nd-stage-servo</object-name-->
-    <!--object-name>cws-2nd-stage-servo-press</object-name-->
-    <object-name>cws-afcs-off</object-name>
-    <!--object-name>cws-afcs-servo-press</object-name-->
-    <object-name>cws-aft-fuel-low</object-name>
-    <!--object-name>cws-app-on</object-name-->
-    <object-name>cws-aux-fuel-press</object-name>
-    <object-name>cws-chip-inter-trans</object-name>
-    <object-name>cws-chip-main-trans</object-name>
-    <object-name>cws-chip-tail-trans</object-name>
-    <object-name>cws-ext-power-connected</object-name>
-    <object-name>cws-fuel-temp-low</object-name>
-    <object-name>cws-fwd-fuel-low</object-name>
-    <object-name>cws-hoist-oil-hot</object-name>
-    <object-name>cws-hoist-overspeed</object-name>
-    <object-name>cws-hoist-shear-armed</object-name>
-    <!--object-name>cws-inter-trans-oil-press</object-name-->
-    <object-name>cws-left-pilot-pitot-heat</object-name>
-    <object-name>cws-left-pilot-turn-slip</object-name>
-    <object-name>cws-oil-cooler</object-name>
-    <object-name>cws-parking-brake-on</object-name>
-    <object-name>cws-rear-control-engaged</object-name>
-    <object-name>cws-right-pilot-pitot-heat</object-name>
-    <object-name>cws-right-pilot-turn-slip</object-name>
-    <object-name>cws-rotor-brake-press</object-name>
-    <object-name>cws-trans-oil-hot</object-name>
-    <!--object-name>cws-trans-oil-press</object-name-->
-    <condition>
-        <property>/systems/electrical/outputs/cws-test-power</property>
-    </condition>
+    <!-- Objets opaques -->
+    <object-name>panel1</object-name>
+    <object-name>panel2</object-name>
+    <object-name>panel3</object-name>
+    <object-name>panel4</object-name>
+    <object-name>panelscrews</object-name>
+    <object-name>t5plate</object-name>
+    <object-name>weightplate</object-name>
+    <object-name>fire</object-name>
+    <object-name>firescrews</object-name>
+    <object-name>caution</object-name>
+    <object-name>cautionscrews</object-name>
+    <object-name>fuelpumpplate</object-name>
+    <object-name>hydplate</object-name>
+    <object-name>infoplate1</object-name>
+    <object-name>cpplate</object-name>
+    <object-name>oilplate</object-name>
+    <object-name>xoilplate</object-name>
+    <object-name>xoilplate1</object-name>
+    <object-name>xoilplate2</object-name>
+    <object-name>c14gyroplate</object-name>
   </animation>
 
-  <animation>
-    <type>select</type>
-    <object-name>cws-1-gen</object-name>
-    <condition>
-        <or>
-            <property>/systems/electrical/outputs/cws-gen-1</property>
-            <property>/systems/electrical/outputs/cws-test-power</property>
-        </or>
-    </condition>
-  </animation>
+  <effect>
+    <inherits-from>Aircraft/AirCrane/Models/Effects/Interior/cockpit-interior</inherits-from>
+    <object-name>panel1</object-name>
+    <object-name>panel2</object-name>
+    <object-name>panel3</object-name>
+    <object-name>panel4</object-name>
+    <object-name>panelscrews</object-name>
+    <object-name>t5plate</object-name>
+    <object-name>weightplate</object-name>
+    <object-name>fire</object-name>
+    <object-name>firescrews</object-name>
+    <object-name>caution</object-name>
+    <object-name>cautionscrews</object-name>
+    <object-name>fuelpumpplate</object-name>
+    <object-name>hydplate</object-name>
+    <object-name>infoplate1</object-name>
+    <object-name>cpplate</object-name>
+    <object-name>oilplate</object-name>
+    <object-name>xoilplate</object-name>
+    <object-name>xoilplate1</object-name>
+    <object-name>xoilplate2</object-name>
+    <object-name>c14gyroplate</object-name>
+  </effect>
 
-  <animation>
-    <type>select</type>
-    <object-name>cws-2-gen</object-name>
-    <condition>
-        <or>
-            <property>/systems/electrical/outputs/cws-gen-2</property>
-            <property>/systems/electrical/outputs/cws-test-power</property>
-        </or>
-    </condition>
-  </animation>
+  <!-- Switch -->
+  <model>
+    <path>Aircraft/AirCrane/Models/Interior/Panel/Instruments/switch/afpno1.xml</path>
+    <offsets>
+      <x-m> -0.01165 </x-m>
+      <y-m> -0.38402 </y-m>
+      <z-m>  0.13815 </z-m>
+      <pitch-deg> -5.7 </pitch-deg>
+    </offsets>
+  </model>
 
-  <animation>
-    <type>select</type>
-    <object-name>cws-1-rect</object-name>
-    <condition>
-        <or>
-            <property>/systems/electrical/outputs/cws-rect-1</property>
-            <property>/systems/electrical/outputs/cws-test-power</property>
-        </or>
-    </condition>
-  </animation>
+  <model>
+    <path>Aircraft/AirCrane/Models/Interior/Panel/Instruments/switch/afpno2.xml</path>
+    <offsets>
+      <x-m> -0.01110 </x-m>
+      <y-m> -0.31659 </y-m>
+      <z-m>  0.13844 </z-m>
+      <pitch-deg> -5.7 </pitch-deg>
+    </offsets>
+  </model>
 
-  <animation>
-    <type>select</type>
-    <object-name>cws-2-rect</object-name>
-    <condition>
-        <or>
-            <property>/systems/electrical/outputs/cws-rect-2</property>
-            <property>/systems/electrical/outputs/cws-test-power</property>
-        </or>
-    </condition>
-  </animation>
+  <model>
+    <path>Aircraft/AirCrane/Models/Interior/Panel/Instruments/switch/t5switch.xml</path>
+    <offsets>
+      <x-m>  0.02000 </x-m>
+      <y-m> -0.58675 </y-m>
+      <z-m> -0.17369 </z-m>
+      <pitch-deg> -5.7 </pitch-deg>
+    </offsets>
+  </model>
 
-  <animation>
-    <type>select</type>
-    <object-name>cws-app-on</object-name>
-    <condition>
-        <or>
-            <property>/systems/electrical/outputs/cws-app-on</property>
-            <property>/systems/electrical/outputs/cws-test-power</property>
-        </or>
-    </condition>
-  </animation>
+  <model>
+    <path>Aircraft/AirCrane/Models/Interior/Panel/Instruments/switch/cpswitch.xml</path>
+    <offsets>
+      <x-m>  0.01686 </x-m>
+      <y-m> -0.25595 </y-m>
+      <z-m> -0.14256 </z-m>
+      <pitch-deg> -5.7 </pitch-deg>
+    </offsets>
+  </model>
 
-  <animation>
-    <type>select</type>
-    <object-name>cws-rotor-brake-on</object-name>
-    <condition>
-        <or>
-            <property>/systems/electrical/outputs/cws-rotor-brake-on</property>
-            <property>/systems/electrical/outputs/cws-test-power</property>
-        </or>
-    </condition>
-  </animation>
+  <model>
+    <path>Aircraft/AirCrane/Models/Interior/Panel/Instruments/switch/c14gyro1.xml</path>
+    <offsets>
+      <x-m>  0.01971 </x-m>
+      <y-m>  0.60769 </y-m>
+      <z-m> -0.1744 </z-m>
+      <pitch-deg> -5.7 </pitch-deg>
+    </offsets>
+  </model>
 
-  <animation>
-    <type>select</type>
-    <object-name>cws-trans-oil-press</object-name>
-    <object-name>cws-1-eng-oil-press</object-name>
-    <object-name>cws-inter-trans-oil-press</object-name>
-    <object-name>cws-2-eng-oil-press</object-name>
-    <object-name>cws-1st-stage-servo</object-name>
-    <object-name>cws-2nd-stage-servo</object-name>
-    <object-name>cws-1st-stg-tl-rotor-servo</object-name>
-    <object-name>cws-afcs-servo-press</object-name>
-    <object-name>cws-1-fuel-press</object-name>
-    <object-name>cws-2-fuel-press</object-name>
-    <object-name>cws-1st-stage-servo-press</object-name>
-    <object-name>cws-2nd-stage-servo-press</object-name>
-    <condition>
-        <and>
-          <property>/systems/electrical/outputs/cws-power</property>
-          <or>
-              <less-than>
-                <property>/sim/model/aircrane/engine</property>
-                <value>0.08</value>
-              </less-than>
-              <property>/systems/electrical/outputs/cws-test-power</property>
-          </or>
-        </and>
-    </condition>
-  </animation>
+  <model>
+    <path>Aircraft/AirCrane/Models/Interior/Panel/Instruments/switch/c14gyro2.xml</path>
+    <offsets>
+      <x-m>  0.01976 </x-m>
+      <y-m>  0.64957 </y-m>
+      <z-m> -0.17327 </z-m>
+      <pitch-deg> -5.7 </pitch-deg>
+    </offsets>
+  </model>
 
-    <!-- AUX Fuel Tank Pump 1 "Switch" -->
-    <animation>
-        <type>knob</type>
-        <object-name>afpno1</object-name>
-        <property>/controls/fuel/afpno1</property>
-        <factor>-30</factor>
-        <offset-deg>0</offset-deg>
-        <center>
-            <x-m>-9.40529</x-m>
-            <y-m>-0.384263</y-m>
-            <z-m>-1.37037</z-m>
-        </center>
-        <axis>
-            <x>0</x>
-            <y>1</y>
-            <z>0</z>
-        </axis>
-        <action>
-            <binding>
-                <command>property-adjust</command>
-                <property>/controls/fuel/afpno1</property>
-                <factor>1</factor>
-                <min>0</min>
-                <max>1</max>
-                <wrap>false</wrap>
-            </binding>
-            <binding>
-                <command>nasal</command>
-                <script>aircrane.click("avionics")</script>
-            </binding>
-        </action>
-        <hovered>
-            <binding>
-                <command>set-tooltip</command>
-                <tooltip-id>afpno1</tooltip-id>
-                <label>AUX Fuel Tank Pump 1: %s</label>
-                <property>/controls/fuel/afpno1</property>
-                <mapping>nasal</mapping>
-                <script>
-                    var modes = ['Off', 'On'];
-                    return modes[arg[0]];
-                </script>
-            </binding>
-        </hovered>
-    </animation>
+  <!-- Button -->
+  <model>
+    <path>Aircraft/AirCrane/Models/Interior/Panel/Instruments/switch/cplamptest.xml</path>
+    <offsets>
+      <x-m>  0.01651 </x-m>
+      <y-m> -0.20715 </y-m>
+      <z-m> -0.14242 </z-m>
+      <pitch-deg> -5.7 </pitch-deg>
+    </offsets>
+  </model>
 
-    <!-- AUX Fuel Tank Pump 2 "Switch" -->
-    <animation>
-        <type>knob</type>
-        <object-name>afpno2</object-name>
-        <property>/controls/fuel/afpno2</property>
-        <factor>-30</factor>
-        <offset-deg>0</offset-deg>
-        <center>
-            <x-m>-9.40529</x-m>
-            <y-m>-0.316833</y-m>
-            <z-m>-1.37009</z-m>
-        </center>
-        <axis>
-            <x>0</x>
-            <y>1</y>
-            <z>0</z>
-        </axis>
-        <action>
-            <binding>
-                <command>property-adjust</command>
-                <property>/controls/fuel/afpno2</property>
-                <factor>1</factor>
-                <min>0</min>
-                <max>1</max>
-                <wrap>false</wrap>
-            </binding>
-            <binding>
-                <command>nasal</command>
-                <script>aircrane.click("avionics")</script>
-            </binding>
-        </action>
-        <hovered>
-            <binding>
-                <command>set-tooltip</command>
-                <tooltip-id>afpno2</tooltip-id>
-                <label>AUX Fuel Tank Pump 2: %s</label>
-                <property>/controls/fuel/afpno2</property>
-                <mapping>nasal</mapping>
-                <script>
-                    var modes = ['Off', 'On'];
-                    return modes[arg[0]];
-                </script>
-            </binding>
-        </hovered>
-    </animation>
+  <model>
+    <path>Aircraft/AirCrane/Models/Interior/Panel/Instruments/switch/fgtbtn.xml</path>
+    <offsets>
+      <x-m>  0.01651 </x-m>
+      <y-m> -0.20715 </y-m>
+      <z-m> -0.14242 </z-m>
+      <pitch-deg> -5.7 </pitch-deg>
+    </offsets>
+  </model>
+
+  <!-- Warning -->
+  <model>
+    <path>Aircraft/AirCrane/Models/Interior/Panel/Instruments/cws/cws.xml</path>
+    <offsets>
+      <x-m> -0.003 </x-m>
+      <y-m> -0.231 </y-m>
+      <z-m>  0.031 </z-m>
+      <pitch-deg> -5.7 </pitch-deg>
+    </offsets>
+  </model>
+
+  <!-- ai -->
+  <model>
+    <path>Aircraft/AirCrane/Models/Interior/Panel/Instruments/ai/ai.xml</path>
+    <offsets>
+      <x-m> -0.00572 </x-m>
+      <y-m> -0.34795 </y-m>
+      <z-m>  0.04751 </z-m>
+      <pitch-deg> -6 </pitch-deg>
+    </offsets>
+  </model>
+
+  <!-- adi -->
+  <model>
+    <path>Aircraft/AirCrane/Models/Interior/Panel/Instruments/adi/adi.xml</path>
+    <offsets>
+      <x-m> -0.00368 </x-m>
+      <y-m>  0.60187 </y-m>
+      <z-m>  0.05157 </z-m>
+      <pitch-deg> -6 </pitch-deg>
+    </offsets>
+  </model>
+
+  <!-- asi -->
+  <model>
+    <path>Aircraft/AirCrane/Models/Interior/Panel/Instruments/asi/asi.xml</path>
+    <offsets>
+      <x-m> -0.00604 </x-m>
+      <y-m>  0.47446 </y-m>
+      <z-m>  0.06048 </z-m>
+      <pitch-deg> -6 </pitch-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/AirCrane/Models/Interior/Panel/Instruments/asi/asi.xml</path>
+    <offsets>
+      <x-m> -0.00604 </x-m>
+      <y-m> -0.72424 </y-m>
+      <z-m>  0.06719 </z-m>
+      <pitch-deg> -6 </pitch-deg>
+    </offsets>
+  </model>
+
+  <!-- alt -->
+  <model>
+    <path>Aircraft/AirCrane/Models/Interior/Panel/Instruments/alt/alt.xml</path>
+    <offsets>
+      <x-m> -0.00997 </x-m>
+      <y-m>  0.72759 </y-m>
+      <z-m>  0.05650 </z-m>
+      <pitch-deg> -6 </pitch-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/AirCrane/Models/Interior/Panel/Instruments/alt/alt.xml</path>
+    <offsets>
+      <x-m> -0.00754 </x-m>
+      <y-m> -0.45872 </y-m>
+      <z-m>  0.07150 </z-m>
+      <pitch-deg> -6 </pitch-deg>
+    </offsets>
+  </model>
+
+  <!-- chcl -->
+  <model>
+    <path>Aircraft/AirCrane/Models/Interior/Panel/Instruments/chcl/chcl.xml</path>
+    <offsets>
+      <x-m> -0.01604 </x-m>
+      <y-m>  0.20465 </y-m>
+      <z-m>  0.15275 </z-m>
+      <pitch-deg> -6 </pitch-deg>
+    </offsets>
+  </model>
+
+  <!-- digital-clock-left -->
+  <model>
+    <path>Aircraft/AirCrane/Models/Interior/Panel/Instruments/digitalclock/digitalclock.xml</path>
+    <offsets>
+      <x-m>  0.01247 </x-m>
+      <y-m> -0.34934 </y-m>
+      <z-m> -0.17384 </z-m>
+      <pitch-deg> -6 </pitch-deg>
+    </offsets>
+  </model>
+
+  <!-- digital-clock-right -->
+  <model>
+    <path>Aircraft/AirCrane/Models/Interior/Panel/Instruments/digitalclock/digitalclock.xml</path>
+    <offsets>
+      <x-m>  0.01239 </x-m>
+      <y-m>  0.36955 </y-m>
+      <z-m> -0.17448 </z-m>
+      <pitch-deg> -6 </pitch-deg>
+    </offsets>
+  </model>
+
+  <!-- fuel -->
+  <model>
+    <path>Aircraft/AirCrane/Models/Interior/Panel/Instruments/fuel/fuelfwd.xml</path>
+    <offsets>
+      <x-m> -0.00044 </x-m>
+      <y-m> -0.11646 </y-m>
+      <z-m>  0.01177 </z-m>
+      <pitch-deg> -6 </pitch-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/AirCrane/Models/Interior/Panel/Instruments/fuel/fuelaft.xml</path>
+    <offsets>
+      <x-m>  0.00750 </x-m>
+      <y-m> -0.11639 </y-m>
+      <z-m> -0.06534 </z-m>
+      <pitch-deg> -6 </pitch-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/AirCrane/Models/Interior/Panel/Instruments/fuel/fuelaux.xml</path>
+    <offsets>
+      <x-m>  0.01571 </x-m>
+      <y-m> -0.11633 </y-m>
+      <z-m> -0.14276 </z-m>
+      <pitch-deg> -6 </pitch-deg>
+    </offsets>
+  </model>
+
+  <!-- fuelflow -->
+  <model>
+    <path>Aircraft/AirCrane/Models/Interior/Panel/Instruments/fuel/fuelflowfwd.xml</path>
+    <offsets>
+      <x-m> -0.00459 </x-m>
+      <y-m>  0.09950 </y-m>
+      <z-m>  0.05323 </z-m>
+      <pitch-deg> -6 </pitch-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/AirCrane/Models/Interior/Panel/Instruments/fuel/fuelflowaft.xml</path>
+    <offsets>
+      <x-m> -0.00438 </x-m>
+      <y-m> -0.00145 </y-m>
+      <z-m>  0.05327 </z-m>
+      <pitch-deg> -6 </pitch-deg>
+    </offsets>
+  </model>
+
+  <!-- fuelpress -->
+  <model>
+    <path>Aircraft/AirCrane/Models/Interior/Panel/Instruments/fuel/fuelpressfwd.xml</path>
+    <offsets>
+      <x-m>  0.00068 </x-m>
+      <y-m>  0.10076 </y-m>
+      <z-m> -0.01652 </z-m>
+      <pitch-deg> -6 </pitch-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/AirCrane/Models/Interior/Panel/Instruments/fuel/fuelpressaft.xml</path>
+    <offsets>
+      <x-m>  0.00098 </x-m>
+      <y-m> -0.00376 </y-m>
+      <z-m> -0.01670 </z-m>
+      <pitch-deg> -6 </pitch-deg>
+    </offsets>
+  </model>
+
+  <!-- engtemp -->
+  <model>
+    <path>Aircraft/AirCrane/Models/Interior/Panel/Instruments/engtemp/engtemp.xml</path>
+    <offsets>
+      <x-m> -0.01167 </x-m>
+      <y-m>  0.09952 </y-m>
+      <z-m>  0.11601 </z-m>
+      <pitch-deg> -6 </pitch-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/AirCrane/Models/Interior/Panel/Instruments/engtemp/engtemp.xml</path>
+    <offsets>
+      <x-m> -0.01137 </x-m>
+      <y-m> -0.00140 </y-m>
+      <z-m>  0.11621 </z-m>
+      <pitch-deg> -6 </pitch-deg>
+    </offsets>
+  </model>
+
+  <!-- gdsi -->
+  <model>
+    <path>Aircraft/AirCrane/Models/Interior/Panel/Instruments/gdsi/gdsi.xml</path>
+    <offsets>
+      <x-m>  0.00520 </x-m>
+      <y-m>  0.20464 </y-m>
+      <z-m> -0.05810 </z-m>
+      <pitch-deg> -6 </pitch-deg>
+    </offsets>
+  </model>
+
+  <!-- ggt -->
+  <model>
+    <path>Aircraft/AirCrane/Models/Interior/Panel/Instruments/ggt/ggt1.xml</path>
+    <offsets>
+      <x-m> -0.01782 </x-m>
+      <y-m> -0.00141 </y-m>
+      <z-m>  0.17859 </z-m>
+      <pitch-deg> -6 </pitch-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/AirCrane/Models/Interior/Panel/Instruments/ggt/ggt2.xml</path>
+    <offsets>
+      <x-m> -0.01763 </x-m>
+      <y-m>  0.09954 </y-m>
+      <z-m>  0.17872 </z-m>
+      <pitch-deg> -6 </pitch-deg>
+    </offsets>
+  </model>
+
+  <!-- hydrfst-->
+  <model>
+    <path>Aircraft/AirCrane/Models/Interior/Panel/Instruments/hydr/hydrfst.xml</path>
+    <offsets>
+      <x-m> -0.01863 </x-m>
+      <y-m> -0.10836 </y-m>
+      <z-m>  0.18044 </z-m>
+      <pitch-deg> -6 </pitch-deg>
+    </offsets>
+  </model>
+
+  <!-- hydrsnd -->
+  <model>
+    <path>Aircraft/AirCrane/Models/Interior/Panel/Instruments/hydr/hydrsnd.xml</path>
+    <offsets>
+      <x-m> -0.01333 </x-m>
+      <y-m> -0.10837 </y-m>
+      <z-m>  0.12751 </z-m>
+      <pitch-deg> -6 </pitch-deg>
+    </offsets>
+  </model>
+
+  <!-- hydrutil -->
+  <model>
+    <path>Aircraft/AirCrane/Models/Interior/Panel/Instruments/hydrutil/hydrutil.xml</path>
+    <offsets>
+      <x-m> -0.00796 </x-m>
+      <y-m> -0.10844 </y-m>
+      <z-m>  0.07454 </z-m>
+      <pitch-deg> -6 </pitch-deg>
+    </offsets>
+  </model>
+
+  <!-- oilpressure -->
+  <model>
+    <path>Aircraft/AirCrane/Models/Interior/Panel/Instruments/oil/oilpressure.xml</path>
+    <offsets>
+      <x-m>  0.01664 </x-m>
+      <y-m>  0.09939 </y-m>
+      <z-m> -0.15079 </z-m>
+      <pitch-deg> -6 </pitch-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/AirCrane/Models/Interior/Panel/Instruments/oil/oilpressure.xml</path>
+    <offsets>
+      <x-m>  0.01680 </x-m>
+      <y-m> -0.00158 </y-m>
+      <z-m> -0.15092 </z-m>
+      <pitch-deg> -6 </pitch-deg>
+    </offsets>
+  </model>
+
+  <!-- oiltemp -->
+  <model>
+    <path>Aircraft/AirCrane/Models/Interior/Panel/Instruments/oil/oiltemp.xml</path>
+    <offsets>
+      <x-m>  0.01019 </x-m>
+      <y-m>  0.09937 </y-m>
+      <z-m> -0.08708 </z-m>
+      <pitch-deg> -6 </pitch-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/AirCrane/Models/Interior/Panel/Instruments/oil/oiltemp.xml</path>
+    <offsets>
+      <x-m>  0.01057 </x-m>
+      <y-m> -0.00159 </y-m>
+      <z-m> -0.08721 </z-m>
+      <pitch-deg> -6 </pitch-deg>
+    </offsets>
+  </model>
+
+  <!-- xmsnoilpressure -->
+  <model>
+    <path>Aircraft/AirCrane/Models/Interior/Panel/Instruments/oil/xoilpressure.xml</path>
+    <offsets>
+      <x-m>  0.01472 </x-m>
+      <y-m>  0.23815 </y-m>
+      <z-m> -0.15266 </z-m>
+      <pitch-deg> -6 </pitch-deg>
+    </offsets>
+  </model>
+
+  <!-- xmsnoiltemp -->
+  <model>
+    <path>Aircraft/AirCrane/Models/Interior/Panel/Instruments/oil/xoiltemp.xml</path>
+    <offsets>
+      <x-m>  0.01472 </x-m>
+      <y-m>  0.17381 </y-m>
+      <z-m> -0.15266 </z-m>
+      <pitch-deg> -6 </pitch-deg>
+    </offsets>
+  </model>
+
+  <!-- pi -->
+  <model>
+    <path>Aircraft/AirCrane/Models/Interior/Panel/Instruments/pi/pi.xml</path>
+    <offsets>
+      <x-m> -0.01506 </x-m>
+      <y-m>  0.36685 </y-m>
+      <z-m>  0.12507 </z-m>
+      <pitch-deg> -6 </pitch-deg>
+    </offsets>
+  </model>
+
+  <!-- rmi -->
+  <model>
+    <path>Aircraft/AirCrane/Models/Interior/Panel/Instruments/rmi/rmi.xml</path>
+    <offsets>
+      <x-m>  0.00780 </x-m>
+      <y-m>  0.60107 </y-m>
+      <z-m> -0.07541 </z-m>
+      <pitch-deg> -6 </pitch-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/AirCrane/Models/Interior/Panel/Instruments/rmi/rmi.xml</path>
+    <offsets>
+      <x-m>  0.01000 </x-m>
+      <y-m> -0.58718 </y-m>
+      <z-m> -0.09507 </z-m>
+      <pitch-deg> -6 </pitch-deg>
+    </offsets>
+  </model>
+
+  <!-- rotorpcnt -->
+  <model>
+    <path>Aircraft/AirCrane/Models/Interior/Panel/Instruments/rotorpcnt/rotorpcnt.xml</path>
+    <offsets>
+      <x-m>  0.01664 </x-m>
+      <y-m>  0.47430 </y-m>
+      <z-m> -0.15645 </z-m>
+      <pitch-deg> -6 </pitch-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/AirCrane/Models/Interior/Panel/Instruments/rotorpcnt/rotorpcnt.xml</path>
+    <offsets>
+      <x-m>  0.01538 </x-m>
+      <y-m> -0.72307 </y-m>
+      <z-m> -0.14459 </z-m>
+      <pitch-deg> -6 </pitch-deg>
+    </offsets>
+  </model>
+
+  <!-- torque percent -->
+  <model>
+    <path>Aircraft/AirCrane/Models/Interior/Panel/Instruments/torquepcnt/torquepcnt.xml</path>
+    <offsets>
+      <x-m>  0.00507 </x-m>
+      <y-m>  0.47372 </y-m>
+      <z-m> -0.04666 </z-m>
+      <pitch-deg> -6 </pitch-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/AirCrane/Models/Interior/Panel/Instruments/torquepcnt/torquepcnt.xml</path>
+    <offsets>
+      <x-m>  0.00540 </x-m>
+      <y-m> -0.72327 </y-m>
+      <z-m> -0.03790 </z-m>
+      <pitch-deg> -6 </pitch-deg>
+    </offsets>
+  </model>
+
+  <!-- turn -->
+  <model>
+    <path>Aircraft/AirCrane/Models/Interior/Panel/Instruments/turn/turn.xml</path>
+    <offsets>
+      <x-m>  0.01478 </x-m>
+      <y-m>  0.73101 </y-m>
+      <z-m> -0.14742 </z-m>
+      <pitch-deg> -6 </pitch-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/AirCrane/Models/Interior/Panel/Instruments/turn/turn.xml</path>
+    <offsets>
+      <x-m>  0.01382 </x-m>
+      <y-m> -0.45974 </y-m>
+      <z-m> -0.13435 </z-m>
+      <pitch-deg> -6 </pitch-deg>
+    </offsets>
+  </model>
+
+  <!-- vor -->
+  <model>
+    <path>Aircraft/AirCrane/Models/Interior/Panel/Instruments/vor/vor.xml</path>
+    <offsets>
+      <x-m> -0.00255 </x-m>
+      <y-m>  0.36681 </y-m>
+      <z-m>  0.01773 </z-m>
+      <pitch-deg> -6 </pitch-deg>
+    </offsets>
+  </model>
+
+  <!-- vsi -->
+  <model>
+    <path>Aircraft/AirCrane/Models/Interior/Panel/Instruments/vsi/vsi.xml</path>
+    <offsets>
+      <x-m>  0.00207 </x-m>
+      <y-m>  0.72823 </y-m>
+      <z-m> -0.04666 </z-m>
+      <pitch-deg> -6 </pitch-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/AirCrane/Models/Interior/Panel/Instruments/vsi/vsi.xml</path>
+    <offsets>
+      <x-m>  0.00374 </x-m>
+      <y-m> -0.45974 </y-m>
+      <z-m> -0.03739 </z-m>
+      <pitch-deg> -6 </pitch-deg>
+    </offsets>
+  </model>
+
+  <!-- wl -->
+  <model>
+    <path>Aircraft/AirCrane/Models/Interior/Panel/Instruments/wl/wl.xml</path>
+    <offsets>
+      <x-m> -0.00669 </x-m>
+      <y-m>  0.20461 </y-m>
+      <z-m>  0.04937 </z-m>
+      <pitch-deg> -6 </pitch-deg>
+    </offsets>
+  </model>
+
+  <!-- wt -->
+  <model>
+    <path>Aircraft/AirCrane/Models/Interior/Panel/Instruments/wt/wt.xml</path>
+    <offsets>
+      <x-m>  0.00873 </x-m>
+      <y-m>  0.36889 </y-m>
+      <z-m> -0.08552 </z-m>
+      <pitch-deg> -6 </pitch-deg>
+    </offsets>
+  </model>
+
+  <!-- tank qty -->
+  <model>
+    <path>Aircraft/AirCrane/Models/Interior/Panel/Instruments/tankqty/tankqty.xml</path>
+    <offsets>
+      <x-m> -0.00329 </x-m>
+      <y-m> -0.58977 </y-m>
+      <z-m>  0.06134 </z-m>
+      <pitch-deg> -6 </pitch-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/AirCrane/Models/Interior/Panel/Instruments/compass/compass.xml</path>
+    <offsets>
+      <x-m> 0.026 </x-m>
+      <y-m> 0.000 </y-m>
+      <z-m> 0.293 </z-m>
+    </offsets>
+  </model>
 
 </PropertyList>

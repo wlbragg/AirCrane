@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+
+  <!-- ================================================================== -->
+  <!-- Basic Lighting                                                     -->
+  <!-- ================================================================== -->
+  <model>
+    <name>beaconaft</name>
+    <path>Aircraft/AirCrane/Models/light/DEFAULT/Beaconaft.xml</path>
+  </model>
+
+  <!--animation>
+    <type>select</type>
+    <object-name>beaconaft</object-name>
+    <condition>
+      <not><property>/sim/rendering/shaders/skydome</property></not>
+    </condition>
+  </animation-->
+
+  <!-- ================================================================== -->
+  <!-- ALS Lighting - using Basic lighting for Beacon                     -->                                               -->
+  <!-- ================================================================== -->
+  <!--model>
+    <name>beaconaftALS</name>
+    <path>Aircraft/AirCrane/Models/light/ALS/Beaconaft.xml</path>
+  </model>
+
+  <animation>
+    <type>select</type>
+    <object-name>beaconaftALS</object-name>
+    <condition>
+      <property>/sim/rendering/shaders/skydome</property>
+    </condition>
+  </animation-->
+
+</PropertyList>

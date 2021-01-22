@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+  <name>LifeFlightKHWD</name>
+  <description>A simple life flight mission. Fly approximate heading of 95. Look for smoke at a mile or two out from the airport.</description>
+  <timeofday>morning</timeofday>
+  <presets>
+    <airport-id>KHWD</airport-id>
+    <on-ground>1</on-ground>
+    <runway>H1</runway>
+    <altitude-ft>-9999</altitude-ft>
+    <latitude-deg>-9999</latitude-deg>
+    <longitude-deg>-9999</longitude-deg>
+  </presets>
+
+  <models>
+	<model>
+		<path>Models/Transport/van_silver.ac</path>
+		<longitude-deg>-122.12226415</longitude-deg>
+		<latitude-deg>37.65714988</latitude-deg>
+		<elevation-ft>28.0670</elevation-ft>
+		<heading-deg>0</heading-deg>
+		<pitch-deg>0</pitch-deg>
+		<roll-deg>0</roll-deg>
+	</model>
+	<model>
+		<path>Models/Transport/van_blue_dirty.ac</path>
+		<longitude-deg>-122.09153702</longitude-deg>
+		<latitude-deg>37.64942859</latitude-deg>
+		<elevation-ft>55</elevation-ft>
+		<heading-deg>0</heading-deg>
+		<pitch-deg>0</pitch-deg>
+		<roll-deg>280</roll-deg>
+	</model>
+	<model>
+		<path>Models/Effects/smoke_small_slow5000.xml</path>
+		<longitude-deg>-122.09153702</longitude-deg>
+		<latitude-deg>37.64942859</latitude-deg>
+		<elevation-ft>52.4935</elevation-ft>
+		<heading-deg>0</heading-deg>
+		<pitch-deg>0</pitch-deg>
+		<roll-deg>0</roll-deg>
+	</model>
+  </models>
+  
+  <targets>
+	<helipad>
+		<longitude-deg>-122.12232384</longitude-deg>
+		<latitude-deg>37.65731982</latitude-deg>
+	</helipad>
+	<van>
+		<longitude-deg>-122.09153702</longitude-deg>
+		<latitude-deg>37.64942859</latitude-deg>
+	</van>
+  </targets>
+  
+  <init>
+    <set>
+		<property>/environment/weather-scenario</property>
+		<value>Fair weather</value>
+	</set>
+  </init>
+  
+  <!--These 3 steps are to tell the user information about the tutorial-->
+  <step>
+	<message>A van has crashed on a road near KHWD.</message>
+	<wait>5</wait>
+  </step>
+  
+  <step>
+	<message>Locate the van and land near it to allow paramedics to recover injured people.</message>
+	<wait>5</wait>
+  </step>
+  
+  <step>
+	<message>Then return to the helipad at KHWD where a vehicle is waiting to take them to a hospital.</message>
+	<wait>5</wait>
+  </step>
+  
+  <!--This step checks that the helicopter is taking off-->
+  <step>
+	<message></message>
+	<error>
+		<message>Takeoff and locate the  vehicle</message>
+		<condition>
+			<less-than>
+				<property>/position/altitude-ft</property>
+				<value>35</value>
+			</less-than>
+		</condition>
+	</error>
+	<exit>
+		<condition>
+			<greater-than>
+				<property>/position/altitude-ft</property>
+				<value>35</value>
+			</greater-than>
+		</condition>
+	</exit>
+  </step>
+  
+  <!--This step checks that the helicopter is close enough to the van to load people from the van-->
+  <step>
+	<message></message>
+	<error>
+		<condition>
+			<greater-than>
+				<property>/sim/tutorials/targets/van/distance-m</property>
+				<value>100</value>
+			</greater-than>
+		</condition>
+	</error>
+	<error>
+		<condition>
+			<greater-than>
+				<property>/position/altitude-ft</property>
+				<value>65</value>
+			</greater-than>
+		</condition>
+	</error>
+	<exit>
+		<and>
+			<condition>
+				<less-than>
+					<property>/position/altitude-ft</property>
+					<value>65</value>
+				</less-than>
+			</condition>
+			<condition>
+				<less-than>
+					<property>/sim/tutorials/targets/van/distance-m</property>
+					<value>100</value>
+				</less-than>
+			</condition>
+		</and>
+	</exit>
+  </step>
+  
+  <!--This step checks that the helicopter is stationary-->
+  <step>
+	<message></message>
+	<error>
+		<message>Remain stationary so people can board the helicopter</message>
+		<condition>
+			<greater-than>
+				<property>/velocities/groundspeed-kt</property>
+				<value>1</value>
+			</greater-than>
+		</condition>
+	</error>
+	<exit>
+		<condition>
+			<less-than>
+				<property>/velocities/groundspeed-kt</property>
+				<value>1</value>
+			</less-than>
+		</condition>
+	</exit>
+  </step>
+  
+  <step>
+	<message>Wait while people are loaded</message>
+	<wait>10</wait>
+  </step>
+  
+  <!--This step adds weight to the helicopter to represent people boarding-->
+  <step>
+	<message></message>
+	<set>
+		<property>/sim/weight[3]/weight-lb</property>
+		<value type="int">160</value>
+	</set>
+	<set>
+		<property>/sim/weight[2]/weight-lb</property>
+		<value type="int">200</value>
+	</set>
+	<set>
+		<property>/environment/weather-scenario</property>
+		<value>CAT lllb minimum</value>
+	</set>
+  </step>
+  
+  <step>
+	<message>Return to KHWD helipad</message>
+  </step>
+  
+  <!--This step checks if the pilot is at KHWD helipad-->
+  <step>
+	<message></message>
+	<error>
+		<condition>
+			<greater-than>
+				<property>/sim/tutorials/targets/helipad/distance-m</property>
+				<value>20</value>
+			</greater-than>
+		</condition>
+	</error>
+	<error>
+		<condition>
+			<greater-than>
+				<property>/position/altitude-ft</property>
+				<value>35</value>
+			</greater-than>
+		</condition>
+	</error>
+	<exit>
+		<and>
+			<condition>
+				<less-than>
+					<property>/position/altitude-ft</property>
+					<value>35</value>
+				</less-than>
+			</condition>
+			<condition>
+				<less-than>
+					<property>/sim/tutorials/targets/helipad/distance-m</property>
+					<value>20</value>
+				</less-than>
+			</condition>
+		</and>
+	</exit>
+  </step>
+  
+  <!--This step checks that the helicopter is stationary-->
+  <step>
+	<message></message>
+	<error>
+		<message>Remain stationary so people can leave the helicopter</message>
+		<condition>
+			<greater-than>
+				<property>/velocities/groundspeed-kt</property>
+				<value>1</value>
+			</greater-than>
+		</condition>
+	</error>
+	<exit>
+		<condition>
+			<less-than>
+				<property>/velocities/groundspeed-kt</property>
+				<value>1</value>
+			</less-than>
+		</condition>
+	</exit>
+  </step>
+  
+  <step>
+	<message></message>
+	<wait>10</wait>
+  </step>
+  
+  <!--This step unloads the weight from the helicopter-->
+  <step>
+	<message></message>
+	<set>
+		<property>/sim/weight[3]/weight-lb</property>
+		<value type="int">0</value>
+	</set>
+	<set>
+		<property>/sim/weight[2]/weight-lb</property>
+		<value type="int">0</value>
+	</set>
+  </step>
+  
+  <step>
+	<message>Mission Completed</message>
+  </step>
+  
+  <end>
+    <message>Mission completed</message>
+  </end>
+</PropertyList>

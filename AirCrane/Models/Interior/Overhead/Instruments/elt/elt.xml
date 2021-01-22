@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+
+  <path>elt.ac</path>
+
+  <animation>
+    <object-name>base</object-name>
+    <object-name>elt-on</object-name>
+    <object-name>elt-off</object-name>
+    <object-name>eltswitch</object-name>
+  </animation>
+
+  <effect>
+    <inherits-from>Aircraft/AirCrane/Models/Effects/Interior/cockpit-interior</inherits-from>
+    <object-name>base</object-name>
+    <object-name>elt-on</object-name>
+    <object-name>elt-off</object-name>
+    <object-name>eltswitch</object-name>
+  </effect>
+
+  <!-- ELT "Switch" -->
+  <animation>
+    <type>knob</type>
+    <object-name>eltswitch</object-name>
+    <property>/controls/electronics/eltswitch</property>
+    <factor>-30</factor>
+    <offset-deg>0</offset-deg>
+    <center>
+      <x-m>  0.00533 </x-m>
+      <y-m> -0.00208 </y-m>
+      <z-m> -0.00236 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+    <action>
+      <binding>
+        <command>property-adjust</command>
+        <property>/controls/electronics/eltswitch</property>
+        <factor>1</factor>
+        <min>0</min>
+        <max>1</max>
+        <wrap>false</wrap>
+      </binding>
+      <binding>
+        <command>nasal</command>
+        <script>aircrane.click("avionics")</script>
+      </binding>
+    </action>
+    <hovered>
+      <binding>
+        <command>set-tooltip</command>
+        <tooltip-id>eltswitch</tooltip-id>
+        <label>ELT: %s</label>
+        <property>/controls/electronics/eltswitch</property>
+        <mapping>nasal</mapping>
+        <script>
+          var modes = ['Off', 'On'];
+          return modes[arg[0]];
+        </script>
+      </binding>
+    </hovered>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>elt-on</object-name>
+    <condition>
+      <property>/controls/electronics/eltswitch</property>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>material</type>
+    <object-name>elt-on</object-name>
+    <emission>
+      <factor-prop>/controls/electronics/eltswitch</factor-prop>
+      <red>   0.7 </red>
+      <green> 0.5 </green>
+      <blue>  0.5 </blue>
+    </emission>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>elt-off</object-name>
+    <condition>
+      <not>
+        <property>/controls/electronics/eltswitch</property>
+      </not>
+    </condition>
+  </animation>
+
+</PropertyList>
