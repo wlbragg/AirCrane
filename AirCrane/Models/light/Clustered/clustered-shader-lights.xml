@@ -226,7 +226,8 @@
     <!-- Procedural Strobe Light -->
     <animation>
         <type>select</type>
-		<object-name>strobe</object-name>
+		<object-name>strobel</object-name>
+		<object-name>strober</object-name>
         <nopreview/>
 		<condition>
 			<and>
@@ -237,13 +238,18 @@
     </animation>
 
 	<light>
-		<name>strobe</name>
-		<type>point</type>
+		<name>strober</name>
+		<type>spot</type>
 		<position>
 			<x-m>  3.246000 </x-m>
-			<y-m> -0.229943 </y-m>
-			<z-m>  0.100174 </z-m>
+			<y-m> 0.27 </y-m>
+			<z-m>  0.200174 </z-m>
 		</position>
+		<direction>
+			<lookat-x-m>3.3</lookat-x-m>
+			<lookat-y-m>5 </lookat-y-m>
+			<lookat-z-m>1</lookat-z-m>
+		</direction>
 		<ambient>
 			<r>1</r>
 			<g>1</g>
@@ -267,6 +273,55 @@
 			<l>0.92</l>
 			<q>2.40</q>
 		</attenuation>
+		<spot-exponent>.5</spot-exponent>
+		<spot-cutoff>89</spot-cutoff>
+		<range-m>30</range-m>
+		<debug-color>
+			<r>1</r>
+			<g>1</g>
+			<b>1</b>
+			<a>1</a>
+		</debug-color>
+	</light>
+
+	<light>
+		<name>strobel</name>
+		<type>spot</type>
+		<position>
+			<x-m>  3.246000 </x-m>
+			<y-m> -0.27 </y-m>
+			<z-m>  0.200174 </z-m>
+		</position>
+		<direction>
+			<lookat-x-m>3.3</lookat-x-m>
+			<lookat-y-m>-5 </lookat-y-m>
+			<lookat-z-m>1</lookat-z-m>
+		</direction>
+		<ambient>
+			<r>1</r>
+			<g>1</g>
+			<b>1</b>
+			<a>1</a>
+		</ambient>
+		<diffuse>
+			<r>1</r>
+			<g>1</g>
+			<b>1</b>
+			<a>1</a>
+		</diffuse>
+		<specular>
+			<r>1</r>
+			<g>1</g>
+			<b>1</b>
+			<a>1</a>
+		</specular>
+		<attenuation>
+			<c>1.0 </c>
+			<l>0.92</l>
+			<q>2.40</q>
+		</attenuation>
+		<spot-exponent>.5</spot-exponent>
+		<spot-cutoff>89</spot-cutoff>
 		<range-m>30</range-m>
 		<debug-color>
 			<r>1</r>

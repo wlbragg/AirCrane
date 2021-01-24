@@ -90,7 +90,7 @@
             </grain>
           </interior>
         </effects>
-		<model-f type="bool">false</model-f>
+		    <model-f type="bool">false</model-f>
       </aircrane>
       <hitch>
         <openhook type="bool">false</openhook>
@@ -206,6 +206,12 @@
           <roll31  type="double">0.0</roll31>
         </flexhose>
       </firetank>
+      <extendedcab>
+          <enabled type="bool">false</enabled>
+      </extendedcab>
+      <tandemwheels>
+          <enabled type="bool">false</enabled>
+      </tandemwheels>
       <garmin196-visible type="bool">false</garmin196-visible>
     </model>
 
@@ -360,13 +366,13 @@
     <electrical>
       <file>Aircraft/AirCrane/Nasal/electrical.nas</file>
     </electrical>
-    <fcs>
+    <!--fcs>
       <file>Aircraft/AirCrane/Nasal/fcs-management.nas</file>
       <file>Aircraft/Generic/helicopter-fcs.nas</file>
     </fcs>
     <garmin196>
       <file>Aircraft/Instruments-3d/garmin196/garmin196.nas</file>
-    </garmin196>
+    </garmin196-->
     <disintegration>
       <file>Aircraft/AirCrane/Nasal/disintegration.nas</file>
     </disintegration>

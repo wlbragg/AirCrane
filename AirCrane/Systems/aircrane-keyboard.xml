@@ -172,7 +172,7 @@
       <binding>
         <command>nasal</command>
         <script>
-          if (!getprop("sim/model/firetank/opentankdoors")) {
+          if (getprop("sim/model/firetank/opentankdoors") == 0) {
             if (getprop("sim/model/firetank/quantity") > 0) {
               setprop("sim/model/firetank/opentankdoors", 1);
             } else {

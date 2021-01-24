@@ -114,6 +114,16 @@ var autostart = func (msg=1) {
   engines(1);
   afcs_servo.setValue(1);
   afcs.setValue(1);
+  # === lighting ===
+  setprop("controls/lighting/beaconfwd-light-switch", 1);
+  setprop("controls/lighting/beaconaft-light-switch", 1);
+  setprop("controls/lighting/nav-light-switch", 1);
+  setprop("controls/lighting/strobe-light-switch", 1);
+  # Landing light if needed
+  var light_level = 1-getprop("/rendering/scene/diffuse/red");
+  if (light_level > .6) {
+    setprop("controls/lighting/landing-light-switch", 1);
+  }
 };
 
 var app_startup = func {

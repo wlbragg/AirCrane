@@ -116,9 +116,6 @@
 
 	<model>
 	  <variant type="int">0</variant>
-      <aircrane>
-		<model-f type="bool">false</model-f>
-      </aircrane>
 	</model>
 
   </sim>

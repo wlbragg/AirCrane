@@ -22,8 +22,10 @@
   <path>/controls/switches/cws-bright</path>
   <path>/sim/model/occupants</path>
   <path>/rotors/main/bladesvisible</path>
-  <path>/sim/model/aircrane/model-f</path>
   <path>/controls/lighting/luminosite-lights</path>
+  <path>/sim/model/aircrane/model-f</path>
+  <path>/sim/model/extendedcab/enabled</path>
+  <path>/sim/model/tandemwheels/enabled</path>
   <!--
   <path>/sim/model/aircrane/effects/als-shadow</path>
   <path>/sim/model/aircrane/effects/shadow</path>

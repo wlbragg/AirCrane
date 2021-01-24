@@ -3,23 +3,7 @@
 <!-- <PropertyList include="load-unload.xml"> -->
 <PropertyList>
 
-  <!--path>aircrane.ac</path-->
-
-  <model>
-    <path>aircrane-f.ac</path>
-    <condition>
-		<property>sim/model/aircrane/model-f</property>
-    </condition>
-  </model>
-
-  <model>
-    <path>aircrane-e.ac</path>
-    <condition>
-		<not>
-			<property>sim/model/aircrane/model-f</property>
-		</not>    
-    </condition>
-  </model>
+  <path>aircrane.ac</path>
 
   <!-- MP sound call -->
   <sound>
@@ -75,17 +59,13 @@
     <object-name>fuselage</object-name>
     <object-name>porteG</object-name>
     <object-name>porteD</object-name>
-    <object-name>reardoor</object-name>
-    <object-name>startboarddoor</object-name>
     <object-name>antennes</object-name>
     <object-name>rebords</object-name>
     <object-name>supportlight</object-name>
     <object-name>axeAH</object-name>
     <object-name>axeAB</object-name>
-    <object-name>axeGH</object-name>
-    <object-name>axeGB</object-name>
     <object-name>axeDH</object-name>
-    <object-name>axeDB</object-name>
+    <object-name>axeGH</object-name>
     <object-name>articuleAH</object-name>
     <object-name>articuleAB</object-name>
     <object-name>articuleGH</object-name>
@@ -107,14 +87,11 @@
     <object-name>supportaileron</object-name>
     <object-name>lampetail</object-name>
     <object-name>tankpins</object-name>
-    <object-name>steppanel</object-name>
     <object-name>winchcover</object-name>
-
     <object-name>landinglampbase</object-name>
     <object-name>spotlampbase</object-name>
     <object-name>lightlanding</object-name>
     <object-name>lightspot</object-name>
-
     <object-name>axetail</object-name>
     <object-name>supports</object-name>
     <object-name>tampons</object-name>
@@ -127,17 +104,38 @@
     <object-name>cables1</object-name>
     <object-name>cables2</object-name>
     <object-name>cables3</object-name>
-    <object-name>roueG</object-name>
-    <object-name>roueD</object-name>
     <object-name>roueA</object-name>
     <object-name>echelles</object-name>
+
+    <!-- Extended Cab -->
+    <object-name>fuselageF</object-name>
+    <object-name>echellesF</object-name>
+    <object-name>reardoorF</object-name>
+    <object-name>startboarddoorF</object-name>
+    <object-name>steppanelF</object-name>
+
+    <!-- Regular Cab -->
+    <object-name>fuselageE</object-name>
+    <object-name>echelleE</object-name>
+    <object-name>reardoorE</object-name>
+    <object-name>steppanelE</object-name>
+
+    <!-- Single Wheels -->
+    <object-name>roueG</object-name>
+    <object-name>roueD</object-name>
+    <object-name>axeDB</object-name>
+    <object-name>axeGB</object-name>
+
+    <!-- Tandem Wheels -->
+    <object-name>roueGT</object-name>
+    <object-name>roueDT</object-name>
+    <object-name>axeGBT</object-name>
+    <object-name>axeDBT</object-name>
 
     <!-- Transparence -->
     <object-name>vitres</object-name>
     <object-name>vitresporteG</object-name>
     <object-name>vitresporteD</object-name>
-    <object-name>vitresreardoor</object-name>
-    <object-name>vitresstarboard</object-name>
     <object-name>lampeG</object-name>
     <object-name>lampeD</object-name>
     <object-name>BeaconA</object-name>
@@ -145,6 +143,15 @@
     <object-name>BeaconOffF</object-name>
     <object-name>lampeW</object-name>
     <object-name>lampstrobe</object-name>
+
+    <!-- Glass Extended Cab -->
+    <object-name>vitreF</object-name>
+    <object-name>vitresreardoorF</object-name>
+    <object-name>vitresstarboardF</object-name>
+
+    <!-- Glass Regular Cab -->
+    <object-name>vitreE</object-name>
+    <object-name>vitresreardoorE</object-name>
   </animation>
 
   <animation>
@@ -152,17 +159,13 @@
     <object-name>fuselage</object-name>
     <object-name>porteG</object-name>
     <object-name>porteD</object-name>
-    <object-name>reardoor</object-name>
-    <object-name>startboarddoor</object-name>
     <object-name>antennes</object-name>
     <object-name>rebords</object-name>
     <object-name>supportlight</object-name>
     <object-name>axeAH</object-name>
     <object-name>axeAB</object-name>
     <object-name>axeGH</object-name>
-    <object-name>axeGB</object-name>
     <object-name>axeDH</object-name>
-    <object-name>axeDB</object-name>
     <object-name>articuleAH</object-name>
     <object-name>articuleAB</object-name>
     <object-name>articuleGH</object-name>
@@ -184,12 +187,9 @@
     <object-name>supportaileron</object-name>
     <object-name>lampetail</object-name>
     <object-name>tankpins</object-name>
-    <object-name>steppanel</object-name>
     <object-name>winchcover</object-name>
-
     <object-name>landinglampbase</object-name>
     <object-name>spotlampbase</object-name>
-
     <object-name>axetail</object-name>
     <object-name>supports</object-name>
     <object-name>tampons</object-name>
@@ -202,10 +202,33 @@
     <object-name>cables1</object-name>
     <object-name>cables2</object-name>
     <object-name>cables3</object-name>
-    <object-name>roueG</object-name>
-    <object-name>roueD</object-name>
     <object-name>roueA</object-name>
     <object-name>echelles</object-name>
+
+    <!-- Extended Cab -->
+    <object-name>fuselageF</object-name>
+    <object-name>echellesF</object-name>
+    <object-name>reardoorF</object-name>
+    <object-name>startboarddoorF</object-name>
+    <object-name>steppanelF</object-name>
+
+    <!-- Regular Cab -->
+    <object-name>fuselageE</object-name>
+    <object-name>echelleE</object-name>
+    <object-name>reardoorE</object-name>
+    <object-name>steppanelE</object-name>
+
+    <!-- Single Wheels -->
+    <object-name>roueG</object-name>
+    <object-name>roueD</object-name>
+    <object-name>axeDB</object-name>
+    <object-name>axeGB</object-name>
+
+    <!-- Tandem Wheels -->
+    <object-name>roueGT</object-name>
+    <object-name>roueDT</object-name>
+    <object-name>axeGBT</object-name>
+    <object-name>axeDBT</object-name>
 
     <property-base>sim/model/livery/</property-base>
     <texture-prop>texture</texture-prop>
@@ -233,6 +256,13 @@
     <object-name>axeGB</object-name>
     <object-name>axeDH</object-name>
     <object-name>axeDB</object-name>
+    <object-name>axeGBT</object-name>
+    <object-name>axeDBT</object-name>
+    <object-name>roueA</object-name>
+    <object-name>roueG</object-name>
+    <object-name>roueD</object-name>
+    <object-name>roueGT</object-name>
+    <object-name>roueDT</object-name>
     <object-name>articuleAH</object-name>
     <object-name>articuleAB</object-name>
     <object-name>articuleGH</object-name>
@@ -254,12 +284,18 @@
     <object-name>supportaileron</object-name>
     <object-name>lampetail</object-name>
     <object-name>tankpins</object-name>
-    <object-name>steppanel</object-name>
     <object-name>winchcover</object-name>
     <object-name>landinglampbase</object-name>
     <object-name>spotlampbase</object-name>
     <object-name>lightlanding</object-name>
     <object-name>lightspot</object-name>
+    <object-name>fuselageF</object-name>
+    <object-name>reardoorF</object-name>
+    <object-name>startboarddoorF</object-name>
+    <object-name>steppanelF</object-name>
+    <object-name>fuselageE</object-name>
+    <object-name>reardoorE</object-name>
+    <object-name>steppanelE</object-name>
   </effect>
 
   <!-- working for Compositor -->
@@ -269,8 +305,15 @@
     <object-name>vitresporteG</object-name>
     <object-name>vitresporteD</object-name>
     <object-name>vitresInt</object-name>
-    <object-name>vitresreardoor</object-name>
-    <object-name>vitresstarboard</object-name>
+
+    <!-- Glass Mode F -->
+    <object-name>vitreF</object-name>
+    <object-name>vitresreardoorF</object-name>
+    <object-name>vitresstarboardF</object-name>
+    <!-- Glass Mode E -->
+    <object-name>vitreE</object-name>
+    <object-name>vitresreardoorE</object-name>
+
     <object-name>lampeG</object-name>
     <object-name>lampeD</object-name>
     <object-name>BeaconA</object-name>
@@ -279,6 +322,56 @@
     <object-name>lampeW</object-name>
     <object-name>lampstrobe</object-name>
   </effect>
+
+  <animation>
+    <type>select</type>
+    <condition>
+      <property>sim/model/extendedcab/enabled</property>
+    </condition>
+    <object-name>fuselageF</object-name>
+    <object-name>reardoorF</object-name>
+    <object-name>startboarddoorF</object-name>
+    <object-name>steppanelF</object-name>
+    <object-name>echellesF</object-name>
+    <object-name>vitreF</object-name>
+    <object-name>vitresreardoorF</object-name>
+    <object-name>vitresstarboardF</object-name>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <condition>
+      <not><property>sim/model/extendedcab/enabled</property></not>
+    </condition>
+    <object-name>fuselageE</object-name>
+    <object-name>reardoorE</object-name>
+    <object-name>steppanelE</object-name>
+    <object-name>echelleE</object-name>
+    <object-name>vitreE</object-name>
+    <object-name>vitresreardoorE</object-name>
+  </animation>
+
+<animation>
+    <type>select</type>
+    <condition>
+      <property>sim/model/tandemwheels/enabled</property>
+    </condition>
+    <object-name>axeGBT</object-name>
+    <object-name>axeDBT</object-name>
+    <object-name>roueGT</object-name>
+    <object-name>roueDT</object-name>
+  </animation>
+
+<animation>
+    <type>select</type>
+    <condition>
+      <not><property>sim/model/tandemwheels/enabled</property></not>
+    </condition>
+    <object-name>axeGB</object-name>
+    <object-name>axeDB</object-name>
+    <object-name>roueG</object-name>
+    <object-name>roueD</object-name>
+  </animation>
 
   <!-- Rotor principale -->
   <model>
@@ -493,6 +586,7 @@
   <animation>
     <name>RoueGauche</name>
     <object-name>roueG</object-name>
+    <object-name>roueGT</object-name>
     <object-name>axeGB</object-name>
     <object-name>articuleGB</object-name>
   </animation>
@@ -500,6 +594,7 @@
   <animation>
     <name>RoueDroite</name>
     <object-name>roueD</object-name>
+    <object-name>roueT</object-name>
     <object-name>axeDB</object-name>
     <object-name>articuleDB</object-name>
   </animation>
@@ -804,14 +899,14 @@
 
   <!-- Starboard Door -->
   <animation>
-    <name>StarboardDoor</name>
-    <object-name>vitresstarboard</object-name>
-    <object-name>startboarddoor</object-name>
+    <name>StarboardDoorF</name>
+    <object-name>vitresstarboardF</object-name>
+    <object-name>startboarddoorF</object-name>
   </animation>
 
   <animation>
     <type>pick</type>
-    <object-name>StarboardDoor</object-name>
+    <object-name>StarboardDoorF</object-name>
     <visible>true</visible>
     <action>
       <button>0</button>
@@ -825,7 +920,7 @@
 
   <animation>
     <type>rotate</type>
-    <object-name>StarboardDoor</object-name>
+    <object-name>StarboardDoorF</object-name>
     <property>sim/model/door-positions/starboard/position-norm</property>
     <factor> -110 </factor>
     <axis>
@@ -838,16 +933,16 @@
     </axis>
   </animation>
 
-  <!-- Rear Door -->
+  <!-- Rear Door F-->
   <animation>
-    <name>EngineerDoor</name>
-    <object-name>vitresreardoor</object-name>
-    <object-name>reardoor</object-name>
+    <name>EngineerDoorF</name>
+    <object-name>vitresreardoorF</object-name>
+    <object-name>reardoorF</object-name>
   </animation>
 
   <animation>
     <type>pick</type>
-    <object-name>EngineerDoor</object-name>
+    <object-name>EngineerDoorF</object-name>
     <visible>true</visible>
     <action>
       <button>0</button>
@@ -861,10 +956,7 @@
 
   <animation>
     <type>rotate</type>
-    <object-name>EngineerDoor</object-name>
-    <condition>
-		<property>sim/model/aircrane/model-f</property>
-    </condition>
+    <object-name>EngineerDoorF</object-name>
     <property>sim/model/door-positions/engineer/position-norm</property>
     <factor> -170 </factor>
     <axis>
@@ -877,14 +969,30 @@
     </axis>
   </animation>
 
+  <!-- Rear Door E-->
+  <animation>
+    <name>EngineerDoorE</name>
+    <object-name>vitresreardoorE</object-name>
+    <object-name>reardoorE</object-name>
+  </animation>
+
+  <animation>
+    <type>pick</type>
+    <object-name>EngineerDoorE</object-name>
+    <visible>true</visible>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>nasal</command>
+        <script>doors.engineer.toggle();</script>
+      </binding>
+    </action>
+  </animation>
+
   <animation>
     <type>rotate</type>
-    <object-name>EngineerDoor</object-name>
-    <condition>
-		<not>
-			<property>sim/model/aircrane/model-f</property>
-		</not>
-    </condition>
+    <object-name>EngineerDoorE</object-name>
     <property>sim/model/door-positions/engineer/position-norm</property>
     <factor> -170 </factor>
     <axis>
@@ -897,9 +1005,10 @@
     </axis>
   </animation>
 
+  <!-- Steppanel F -->
   <animation>
     <type>pick</type>
-    <object-name>steppanel</object-name>
+    <object-name>steppanelF</object-name>
     <visible>true</visible>
     <action>
       <button>0</button>
@@ -913,9 +1022,32 @@
 
   <animation>
     <type>select</type>
-    <object-name>steppanel</object-name>
+    <object-name>steppanelF</object-name>
     <condition>
-		<property>sim/model/steppanel/enabled</property>
+      <property>sim/model/steppanel/enabled</property>
+    </condition>
+  </animation>
+
+  <!-- Steppanel E -->
+  <animation>
+    <type>pick</type>
+    <object-name>steppanelE</object-name>
+    <visible>true</visible>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>nasal</command>
+        <script>setprop("/sim/model/steppanel/enabled", 0);</script>
+      </binding>
+    </action>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>steppanelE</object-name>
+    <condition>
+      <property>sim/model/steppanel/enabled</property>
     </condition>
   </animation>
 

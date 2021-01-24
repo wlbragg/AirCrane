@@ -2,24 +2,7 @@
 
 <PropertyList>
 
-  <!--path>interior.ac</path-->
-
-  <!-- Interior -->
-  <model>
-    <path>interior-f.ac</path>
-    <condition>
-        <property>sim/model/aircrane/model-f</property>
-    </condition>
-  </model>
-
-  <model>
-    <path>interior-e.ac</path>
-    <condition>
-		<not>
-			<property>sim/model/aircrane/model-f</property>
-		</not>
-    </condition>
-  </model>
+  <path>interior.ac</path>
 
   <animation>
     <!-- Objets opaques -->
@@ -29,41 +12,79 @@
     <object-name>floor</object-name>
     <object-name>reposepieds</object-name>
     <object-name>accoudoir</object-name>
-    <object-name>barre</object-name>
     <object-name>gruesiege1</object-name>
     <object-name>gruesiege2</object-name>
-    <object-name>grueinstr</object-name>
     <object-name>plaque</object-name>
     <object-name>intporteG</object-name>
     <object-name>intporteD</object-name>
-    <object-name>winchcomp</object-name>
     <object-name>harness</object-name>
+
+    <!-- Model E -->
+    <object-name>interieurE</object-name>
+    <object-name>tourE</object-name>
+    <object-name>planchetE</object-name>
+    <object-name>grueinstrE</object-name>
+    <object-name>intreardoorE</object-name>
+
+    <!-- Model F -->
+    <object-name>interieurF</object-name>
+    <object-name>tourF</object-name>
+    <object-name>floorF</object-name>
+    <object-name>planchetF</object-name>
+    <object-name>tourF</object-name>
+    <object-name>barreF</object-name>
+    <object-name>grueinstrF</object-name>
+    <object-name>intreardoorF</object-name>
+    <object-name>intstarboarddoorF</object-name>
 
     <!-- Objets transparents -->
     <object-name>intvitres</object-name>
     <object-name>intvitresporteG</object-name>
     <object-name>intvitresporteD</object-name>
-    <object-name>intvitresstarboard</object-name>
-    <object-name>intvitresreardoor</object-name>
+
+    <!-- Glass model E -->
+    <object-name>intvitreE</object-name>
+    <object-name>intvitresreardoorE</object-name>
+
+    <!-- Glass model F -->
+    <object-name>intvitreF</object-name>
+    <object-name>intvitresreardoorF</object-name>
+    <object-name>intvitresstarboardF</object-name>
   </animation>
 
   <effect>
     <inherits-from>Aircraft/AirCrane/Models/Effects/Interior/cockpit-interior</inherits-from>
+    <!-- Objets opaques -->
     <object-name>interieur</object-name>
     <object-name>tour</object-name>
     <object-name>planchet</object-name>
     <object-name>floor</object-name>
     <object-name>reposepieds</object-name>
     <object-name>accoudoir</object-name>
-    <object-name>barre</object-name>
     <object-name>gruesiege1</object-name>
     <object-name>gruesiege2</object-name>
-    <object-name>grueinstr</object-name>
     <object-name>plaque</object-name>
     <object-name>intporteG</object-name>
     <object-name>intporteD</object-name>
-    <object-name>winchcomp</object-name>
     <object-name>harness</object-name>
+
+    <!-- Model E -->
+    <object-name>interieurE</object-name>
+    <object-name>tourE</object-name>
+    <object-name>planchetE</object-name>
+    <object-name>grueinstrE</object-name>
+    <object-name>intreardoorE</object-name>
+
+    <!-- Model F -->
+    <object-name>interieurF</object-name>
+    <object-name>tourF</object-name>
+    <object-name>floorF</object-name>
+    <object-name>planchetF</object-name>
+    <object-name>tourF</object-name>
+    <object-name>barreF</object-name>
+    <object-name>grueinstrF</object-name>
+    <object-name>intreardoorF</object-name>
+    <object-name>intstarboarddoorF</object-name>
   </effect>
 
   <!-- working for Compositor -->
@@ -72,9 +93,47 @@
     <object-name>intvitres</object-name>
     <object-name>intvitresporteG</object-name>
     <object-name>intvitresporteD</object-name>
-    <object-name>intvitresstarboard</object-name>
-    <object-name>intvitresreardoor</object-name>
+    <!-- Glass model E -->
+    <object-name>intvitreE</object-name>
+    <object-name>intvitresreardoorE</object-name>
+    <!-- Glass model F -->
+    <object-name>intvitreF</object-name>
+    <object-name>intvitresreardoorF</object-name>
+    <object-name>intvitresstarboardF</object-name>
   </effect>
+
+  <animation>
+    <type>select</type>
+    <condition>
+      <property>sim/model/extendedcab/enabled</property>
+    </condition>
+    <object-name>interieurF</object-name>
+    <object-name>tourF</object-name>
+    <object-name>floorF</object-name>
+    <object-name>planchetF</object-name>
+    <object-name>tourF</object-name>
+    <object-name>barreF</object-name>
+    <object-name>grueinstrF</object-name>
+    <object-name>intreardoorF</object-name>
+    <object-name>intstarboarddoorF</object-name>
+    <object-name>intvitreF</object-name>
+    <object-name>intvitresreardoorF</object-name>
+    <object-name>intvitresstarboardF</object-name>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <condition>
+      <not><property>sim/model/extendedcab/enabled</property></not>
+    </condition>
+    <object-name>interieurE</object-name>
+    <object-name>tourE</object-name>
+    <object-name>planchetE</object-name>
+    <object-name>grueinstrE</object-name>
+    <object-name>intreardoorE</object-name>
+    <object-name>intvitreE</object-name>
+    <object-name>intvitresreardoorE</object-name>
+  </animation>
 
   <!-- Panel -->
   <model>
@@ -296,7 +355,7 @@
     <type>rotate</type>
     <object-name>IntEngineer</object-name>
     <condition>
-		<property>sim/model/aircrane/model-f</property>
+		<property>sim/aircrane/model-f</property>
     </condition>
     <property>sim/model/door-positions/engineer/position-norm</property>
     <factor> -170 </factor>
@@ -315,7 +374,7 @@
     <object-name>IntEngineer</object-name>
     <condition>
 		<not>
-			<property>sim/model/aircrane/model-f</property>
+			<property>sim/aircrane/model-f</property>
 		</not>
     </condition>
     <property>sim/model/door-positions/engineer/position-norm</property>

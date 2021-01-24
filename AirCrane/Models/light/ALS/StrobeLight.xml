@@ -49,7 +49,10 @@
     <type>select</type>
     <object-name>strobe_light</object-name>
     <condition>
-      <property>/sim/model/aircrane/lighting/strobe-light</property>
+		<and>
+			<property>/sim/model/lights/sbc1/state</property>
+			<property>/sim/model/aircrane/lighting/strobe-light</property>
+		</and>
     </condition>
   </animation>
 

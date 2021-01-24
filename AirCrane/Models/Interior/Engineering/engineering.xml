@@ -24,7 +24,7 @@
     <path>Aircraft/AirCrane/Models/Interior/Engineering/Instruments/oi/oip.xml</path>
     <!--condition>
       <not>
-        <property>sim/model/aircrane/model-f</property>
+        <property>sim/aircrane/model-f</property>
       </not>
     </condition-->
     <offsets>
@@ -39,7 +39,7 @@
     <path>Aircraft/AirCrane/Models/Interior/Engineering/Instruments/oi/oir.xml</path>
     <!--condition>
       <not>
-        <property>sim/model/aircrane/model-f</property>
+        <property>sim/aircrane/model-f</property>
       </not>
     </condition-->
     <offsets>

@@ -20,7 +20,7 @@
 
   <animation>
     <type>select</type>
-    <object-name>cabelguardmount</object-name>
+    <object-name>cableguardmount</object-name>
     <object-name>cableguardbottom</object-name>
     <object-name>cableguardtop</object-name>
     <condition>

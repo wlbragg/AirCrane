@@ -118,9 +118,6 @@
 
 	<model>
 	  <variant type="int">1</variant>
-      <aircrane>
-		<model-f type="bool">true</model-f>
-      </aircrane>
 	</model>
 
   </sim>

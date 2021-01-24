@@ -17,7 +17,7 @@
     <pointing_y type="float">-0.70710678</pointing_y>
     <pointing_z type="float">0.0</pointing_z>
     <is_directional type="bool">false</is_directional>
-    <is_strobe type="bool">true</is_strobe>
+    <!--is_strobe type="bool">true</is_strobe-->
     <inner_angle type="float">0.5</inner_angle>
     <outer_angle type="float">0.34202014</outer_angle>
     <zero_angle type="float">0.017452406437</zero_angle>
