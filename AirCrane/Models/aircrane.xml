@@ -408,16 +408,6 @@
     </specular>
   </animation>
 
-  <!-- Une ombre pour OSG -->
-  <model>
-    <path>Aircraft/AirCrane/Models/Effects/shadows/shadow.xml</path>
-    <offsets>
-      <x-m>  0.00 </x-m>
-      <y-m>  0.00 </y-m>
-      <z-m> -3.85 </z-m>
-    </offsets>
-  </model>
-
   <!-- Cable Guard -->
   <model>
     <path>Aircraft/AirCrane/Models/Cable-Guard/cableguard.xml</path>

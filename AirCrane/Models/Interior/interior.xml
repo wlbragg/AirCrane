@@ -296,14 +296,14 @@
 
   <!-- Starboard Door -->
   <animation>
-    <name>IntStarboardDoor</name>
-    <object-name>intvitresstarboard</object-name>
-    <object-name>intstarboarddoor</object-name>
+    <name>IntStarboardDoorF</name>
+    <object-name>intvitresstarboardF</object-name>
+    <object-name>intstarboarddoorF</object-name>
   </animation>
 
   <animation>
     <type>pick</type>
-    <object-name>IntStarboardDoor</object-name>
+    <object-name>IntStarboardDoorF</object-name>
     <visible>true</visible>
     <action>
       <button>0</button>
@@ -317,7 +317,7 @@
 
   <animation>
     <type>rotate</type>
-    <object-name>IntStarboardDoor</object-name>
+    <object-name>IntStarboardDoorF</object-name>
     <property>sim/model/door-positions/starboard/position-norm</property>
     <factor> -110 </factor>
     <axis>
@@ -330,16 +330,16 @@
     </axis>
   </animation>
 
-  <!-- Rear Door -->
+  <!-- Rear Door F -->
   <animation>
-    <name>IntEngineer</name>
-    <object-name>intreardoor</object-name>
-    <object-name>intvitresreardoor</object-name>
+    <name>IntEngineerF</name>
+    <object-name>intreardoorF</object-name>
+    <object-name>intvitresreardoorF</object-name>
   </animation>
 
   <animation>
     <type>pick</type>
-    <object-name>IntEngineer</object-name>
+    <object-name>IntEngineerF</object-name>
     <visible>true</visible>
     <action>
       <button>0</button>
@@ -353,15 +353,12 @@
 
   <animation>
     <type>rotate</type>
-    <object-name>IntEngineer</object-name>
-    <condition>
-		<property>sim/aircrane/model-f</property>
-    </condition>
+    <object-name>IntEngineerF</object-name>
     <property>sim/model/door-positions/engineer/position-norm</property>
     <factor> -170 </factor>
     <axis>
       <x1-m> -7.01647 </x1-m>
-      <y1-m>  0.665   </y1-m>
+      <y1-m>  0.66500 </y1-m>
       <z1-m> -1.11658 </z1-m>
       <x2-m> -7.01653 </x2-m>
       <y2-m>  0.66501 </y2-m>
@@ -369,14 +366,30 @@
     </axis>
   </animation>
 
+  <!-- Rear Door E-->
+  <animation>
+    <name>IntEngineerDoorE</name>
+    <object-name>vitresreardoorE</object-name>
+    <object-name>intreardoorE</object-name>
+  </animation>
+
+  <animation>
+    <type>pick</type>
+    <object-name>IntEngineerDoorE</object-name>
+    <visible>true</visible>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>nasal</command>
+        <script>doors.engineer.toggle();</script>
+      </binding>
+    </action>
+  </animation>
+
   <animation>
     <type>rotate</type>
-    <object-name>IntEngineer</object-name>
-    <condition>
-		<not>
-			<property>sim/aircrane/model-f</property>
-		</not>
-    </condition>
+    <object-name>IntEngineerDoorE</object-name>
     <property>sim/model/door-positions/engineer/position-norm</property>
     <factor> -170 </factor>
     <axis>
