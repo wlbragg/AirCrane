@@ -29,7 +29,7 @@
   </animation>
 
   <effect>
-    <inherits-from>Aircraft/AirCrane/Models/Effects/Interior/cockpit-interior</inherits-from>
+    <inherits-from>Aircraft/AirCrane/Models/Effects/Interior/lm-interior-panel</inherits-from>
     <object-name>panel1</object-name>
     <object-name>panel2</object-name>
     <object-name>panel3</object-name>
@@ -84,7 +84,7 @@
   </model>
 
   <model>
-    <path>Aircraft/AirCrane/Models/Interior/Panel/Instruments/switch/cpswitch.xml</path>
+    <path>Aircraft/AirCrane/Models/Interior/Panel/Instruments/switch/cwsswitch.xml</path>
     <offsets>
       <x-m>  0.01686 </x-m>
       <y-m> -0.25595 </y-m>
@@ -113,9 +113,9 @@
     </offsets>
   </model>
 
-  <!-- Button -->
+  <!-- CWS test button-->
   <model>
-    <path>Aircraft/AirCrane/Models/Interior/Panel/Instruments/switch/cplamptest.xml</path>
+    <path>Aircraft/AirCrane/Models/Interior/Panel/Instruments/switch/cwslamptest.xml</path>
     <offsets>
       <x-m>  0.01651 </x-m>
       <y-m> -0.20715 </y-m>
@@ -124,17 +124,7 @@
     </offsets>
   </model>
 
-  <model>
-    <path>Aircraft/AirCrane/Models/Interior/Panel/Instruments/switch/fgtbtn.xml</path>
-    <offsets>
-      <x-m>  0.01651 </x-m>
-      <y-m> -0.20715 </y-m>
-      <z-m> -0.14242 </z-m>
-      <pitch-deg> -5.7 </pitch-deg>
-    </offsets>
-  </model>
-
-  <!-- Warning -->
+  <!-- CWS panel-->
   <model>
     <path>Aircraft/AirCrane/Models/Interior/Panel/Instruments/cws/cws.xml</path>
     <offsets>

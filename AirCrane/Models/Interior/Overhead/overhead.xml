@@ -51,8 +51,8 @@
     <path>Aircraft/AirCrane/Models/Interior/Overhead/Instruments/dome/dome.xml</path>
     <offsets>
       <x-m> 0.26343 </x-m>
-      <y-m> 0.00508 </y-m>
-      <z-m> 0.00864 </z-m>
+      <y-m> 0.00150 </y-m>
+      <z-m> 0.01431 </z-m>
       <pitch-deg> 88 </pitch-deg>
     </offsets>
   </model>

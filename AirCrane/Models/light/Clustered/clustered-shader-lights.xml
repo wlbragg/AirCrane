@@ -588,6 +588,63 @@
 		</debug-color>
 	</light>
 
+
+	<!-- Dome Light -->
+    <animation>
+        <type>select</type>
+        <object-name>RedDomeLight</object-name>
+        <nopreview/>
+        <condition>
+			<property>/sim/debug/dome-light</property>
+        </condition>
+    </animation>
+	<light>
+		<name>RedDomeLight</name>
+		<type>spot</type>
+		<position>
+			<x-m>-8.353   </x-m>
+			<y-m> 0.04911 </y-m>
+			<z-m>-0.597592</z-m>
+		</position>
+		<direction>
+			<lookat-x-m>-8.7</lookat-x-m>
+			<lookat-y-m> 0.0</lookat-y-m>
+			<lookat-z-m>-1.0</lookat-z-m>
+		</direction>
+		<ambient>
+			<r>1</r>
+			<g>0.1</g>
+			<b>0.1</b>
+			<a>1</a>
+		</ambient>
+		<diffuse>
+			<r>1</r>
+			<g>0.1</g>
+			<b>0.1</b>
+			<a>1</a>
+		</diffuse>
+		<specular>
+			<r>1</r>
+			<g>0.1</g>
+			<b>0.1</b>
+			<a>1</a>
+		</specular>
+		<attenuation>
+			<c>1.0</c>
+			<l>2.32</l>
+			<q>6.0</q>
+		</attenuation>
+		<spot-exponent>100</spot-exponent>
+		<spot-cutoff>40</spot-cutoff>
+		<range-m>1.55</range-m>
+		<debug-color>
+			<r>1</r>
+			<g>0</g>
+			<b>0</b>
+			<a>1</a>
+		</debug-color>
+	</light>
+
     <animation>
         <type>noshadow</type>
         <object-name>landinglight</object-name>
@@ -600,6 +657,7 @@
 		<object-name>strobe</object-name>
 		<object-name>ProceduralLandingLight</object-name>
 		<object-name>ProceduralSpotLight</object-name>
+		<object-name>RedDomeLight</object-name>
     </animation>
 
 </PropertyList>

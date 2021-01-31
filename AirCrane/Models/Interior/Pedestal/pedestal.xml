@@ -11,8 +11,10 @@
   </animation>
 
   <effect>
-    <inherits-from>Aircraft/AirCrane/Models/Effects/Interior/cockpit-interior</inherits-from>
+    <inherits-from>Aircraft/AirCrane/Models/Effects/Interior/lm-interior-pedestal</inherits-from>
     <object-name>panel3</object-name>
+  </effect>  <effect>
+    <inherits-from>Aircraft/AirCrane/Models/Effects/Interior/lm-interior-base</inherits-from>
     <object-name>panel4</object-name>
   </effect>
 
