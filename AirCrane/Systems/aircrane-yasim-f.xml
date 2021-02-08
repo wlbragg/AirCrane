@@ -206,8 +206,8 @@ Powerplant: 2 × Pratt & Whitney T73-P-700 turboshaft engines, 4,800 shp (3,600 k
 		sfric="1.5"
         dfric="0.8"
         stiction="1">
-        <control-input  control="CASTERING" axis="/controls/gear/wheellock" src0=" 0" src1="1" dst0=" 1"   dst1="0"/>
-		<control-input axis="/controls/gear/brake-parking" control="BRAKE"/>
+        <control-input control="CASTERING" axis="/controls/gear/wheellock" src0=" 0" src1="1" dst0=" 1"   dst1="0"/>
+		<control-input control="BRAKE" axis="/controls/gear/brake-parking"/>
   </gear>
 
   <!-- left gear -->

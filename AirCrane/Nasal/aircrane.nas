@@ -650,6 +650,12 @@ setlistener("/sim/signals/fdm-initialized", func {
 
   setprop("instrumentation/comm/volume", 0);
 
+  # Use Nasal to make some properties persistent. <aircraft-data> does
+  # not work reliably.
+  aircraft.data.add("/sim/model/cableguard/enabled");
+  aircraft.data.add("/sim/model/winchcover/enabled");
+  aircraft.data.load();
+
   main_loop();
 });
 
@@ -717,6 +723,13 @@ setlistener("/sim/model/aircrane/cockpit/rotorbrake-handle-animation", func (nod
     aircrane.pumpRotorBrake();
   }
 }, 0, 0);
+
+setlistener("/controls/gear/brake-left", func () {
+  setprop("controls/gear/brake-parking", 0);
+}, 0, 1);
+setlistener("/controls/gear/brake-right", func () {
+  setprop("controls/gear/brake-parking", 0);
+}, 0, 1);
 
 setlistener("controls/switches/eng1-n1-start", func (node) {
   if (node.getValue() and engine_one.getValue() == 0 and app_running.getValue()) {

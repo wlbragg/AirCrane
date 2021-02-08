@@ -44,7 +44,7 @@
         <property>/controls/gear/brake-parking</property>
         <factor>-0.06</factor>
         <axis>
-			<x1-m> 0.022417</x1-m>
+			      <x1-m> 0.022417</x1-m>
             <y1-m>-0.095776</y1-m>
             <z1-m> 0.074   </z1-m>
             <x2-m> 0.022417</x2-m>
@@ -58,7 +58,7 @@
         <property>/controls/gear/brake-parking</property>
         <factor>-45</factor>
         <axis>
-			<x1-m> 0.022417</x1-m>
+			      <x1-m> 0.022417</x1-m>
             <y1-m>-0.095776</y1-m>
             <z1-m> 0.074   </z1-m>
             <x2-m> 0.022417</x2-m>
@@ -111,7 +111,7 @@
         <type>translate</type>
         <object-name>wheellock-handle</object-name>
         <property>/controls/gear/wheellock</property>
-        <factor>0.01</factor>
+        <factor>-0.01</factor>
         <axis>
 			<x1-m> 0.022399</x1-m>
             <y1-m> 0.10276 </y1-m>

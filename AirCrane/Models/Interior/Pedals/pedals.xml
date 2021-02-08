@@ -50,7 +50,7 @@
     <object-name>Rboot6</object-name>
   </effect>
 
-  <!--===== Left Co-Pilot Pedals =====-->
+  <!--===== Left Pedal =====-->
   <animation>
     <type>rotate</type>
     <object-name>LpedalRod</object-name>
@@ -75,9 +75,9 @@
     <property>controls/flight/rudder</property>
     <factor>-27</factor>
     <center>
-      <x-m>  0.02093 </x-m>
-      <y-m> -0.74716 </y-m>
-      <z-m>  0.07729 </z-m>
+      <x-m>-0.008571 </x-m>
+      <y-m>-0.07426 </y-m>
+      <z-m> 0.128228 </z-m>
     </center>
     <axis>
       <x> 0 </x>
@@ -86,7 +86,7 @@
     </axis>
   </animation>
 
-  <!--===== Right Co-Pilot Pedals =====-->
+  <!--===== Right Pedal =====-->
   <animation>
     <type>rotate</type>
     <object-name>Rpedal</object-name>
@@ -122,7 +122,7 @@
     </axis>
   </animation>
 
-  <!--===== Left Co-Pilot Boot =====-->
+  <!--===== Left Boot =====-->
   <animation>
     <type>rotate</type>
     <object-name>Lboot6</object-name>
@@ -297,7 +297,7 @@
     </axis>
   </animation>
 
-  <!--===== Right Co-Pilot Boot =====-->
+  <!--===== Right Boot =====-->
   <animation>
     <type>rotate</type>
     <object-name>Rboot6</object-name>
@@ -464,6 +464,40 @@
       <x-m>  0.03181 </x-m>
       <y-m>  0.00000 </y-m>
       <z-m> -0.04140 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>Lpedal</object-name>
+    <property>controls/gear/brake-left</property>
+    <factor>-10</factor>
+    <center>
+      <x-m>-0.008571 </x-m>
+      <y-m>-0.07426 </y-m>
+      <z-m> 0.128228 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>Rpedal</object-name>
+    <property>controls/gear/brake-right</property>
+    <factor>-10</factor>
+    <center>
+      <x-m> -0.00363 </x-m>
+      <y-m> -0.52092 </y-m>
+      <z-m>  0.13079 </z-m>
     </center>
     <axis>
       <x> 0 </x>

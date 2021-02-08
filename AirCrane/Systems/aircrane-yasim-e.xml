@@ -207,8 +207,8 @@ Powerplant: 2 × Pratt & Whitney JFTD12-4A (T73-P-1) turboshaft engines, 4,500 sh
 		sfric="1.5"
         dfric="0.8"
         stiction="1">
-        <control-input  control="CASTERING" axis="/controls/gear/wheellock" src0=" 0" src1="1" dst0=" 1"   dst1="0"/>
-		<control-input axis="/controls/gear/brake-parking" control="BRAKE"/>
+        <control-input control="CASTERING" axis="/controls/gear/wheellock" src0=" 0" src1="1" dst0=" 1"   dst1="0"/>
+		<control-input control="BRAKE" axis="/controls/gear/brake-parking"/>
   </gear>
 
   <!-- left gear -->

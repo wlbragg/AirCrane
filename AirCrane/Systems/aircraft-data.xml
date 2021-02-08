@@ -26,9 +26,5 @@
   <path>/sim/model/aircrane/model-f</path>
   <path>/sim/model/extendedcab/enabled</path>
   <path>/sim/model/tandemwheels/enabled</path>
-  <!--
-  <path>/sim/model/aircrane/effects/als-shadow</path>
-  <path>/sim/model/aircrane/effects/shadow</path>
-  -->
 
 </PropertyList>
