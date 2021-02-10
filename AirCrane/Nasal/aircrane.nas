@@ -650,8 +650,11 @@ setlistener("/sim/signals/fdm-initialized", func {
 
   setprop("instrumentation/comm/volume", 0);
 
-  # Use Nasal to make some properties persistent. <aircraft-data> does
-  # not work reliably.
+  settimer(func {
+    setprop("/systems/fuel/temp-start-calc", 1);
+  }, 10);
+
+  # Use Nasal to make some properties persistent. <aircraft-data> does not work reliably.
   aircraft.data.add("/sim/model/cableguard/enabled");
   aircraft.data.add("/sim/model/winchcover/enabled");
   aircraft.data.load();

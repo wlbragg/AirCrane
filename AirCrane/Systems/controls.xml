@@ -205,6 +205,10 @@
         <cb-tank-qty type="bool">1</cb-tank-qty>
         <cb-cws type="bool">1</cb-cws>
         <cb-app-cont type="bool">1</cb-app-cont>
+        <cb-fuel-heat-eng1 type="bool">1</cb-fuel-heat-eng1>
+        <cb-fuel-heat-eng2 type="bool">1</cb-fuel-heat-eng2>
+        <cb-fuel-heat type="bool">1</cb-fuel-heat>
+
       </main-left>
 
       <main-left-xover>
@@ -225,7 +229,6 @@
         <cb-dc-dg1 type="bool">1</cb-dc-dg1>
         <cb-dc-ap type="bool">1</cb-dc-ap>
         <cb-dc-phone type="bool">1</cb-dc-phone>
-
         <cb-dc-voice-adv type="bool">1</cb-dc-voice-adv>
       </main-left-xover>
 
@@ -253,13 +256,11 @@
         <cb-engine-oilp-right type="bool">1</cb-engine-oilp-right>
         <cb-engine-oilt-right type="bool">1</cb-engine-oilt-right>
         <cb-right-starter type="bool">1</cb-right-starter>
-
         <cb-dc-dme2 type="bool">1</cb-dc-dme2>
         <cb-dc-xpdr2 type="bool">1</cb-dc-xpdr2>
         <cb-dc-adf2 type="bool">1</cb-dc-adf2>
         <cb-dc-comm3 type="bool">1</cb-dc-comm3>
         <cb-dc-audio2 type="bool">1</cb-dc-audio2>
-
         <cb-dc-warn type="bool">1</cb-dc-warn>
         <cb-dc-nav-area type="bool">1</cb-dc-nav-area>
         <cb-dc-gpws type="bool">1</cb-dc-gpws>
@@ -270,6 +271,13 @@
         <cb-dc-radar type="bool">1</cb-dc-radar>
         <cb-dc-fd2 type="bool">1</cb-dc-fd2>
         <cb-dc-rmi2 type="bool">1</cb-dc-rmi2>
+
+        <cb-tank-qty type="bool">1</cb-tank-qty>
+        <cb-cws type="bool">1</cb-cws>
+        <cb-app-cont type="bool">1</cb-app-cont>
+        <cb-fuel-heat-eng1 type="bool">1</cb-fuel-heat-eng1>
+        <cb-fuel-heat-eng2 type="bool">1</cb-fuel-heat-eng2>
+        <cb-fuel-heat type="bool">1</cb-fuel-heat>
       </main-right>
 
       <main-right-xover>

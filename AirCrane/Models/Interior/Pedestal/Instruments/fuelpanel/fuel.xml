@@ -49,7 +49,7 @@
   <animation>
     <type>knob</type>
     <object-name>fuelheatereng1</object-name>
-    <property>/controls/fuel/fuelheatereng1</property>
+    <property>/controls/switches/fuelheatereng1</property>
     <factor>-45</factor>
     <offset-deg>20</offset-deg>
     <center>
@@ -65,7 +65,7 @@
     <action>
       <binding>
         <command>property-adjust</command>
-        <property>/controls/fuel/fuelheatereng1</property>
+        <property>/controls/switches/fuelheatereng1</property>
         <factor>1</factor>
         <min>0</min>
         <max>1</max>
@@ -81,7 +81,7 @@
         <command>set-tooltip</command>
         <tooltip-id>fuelheatereng1</tooltip-id>
         <label>Eng 1 Fuel Heat: %s</label>
-        <property>/controls/fuel/fuelheatereng1</property>
+        <property>/controls/switches/fuelheatereng1</property>
         <mapping>nasal</mapping>
         <script>
           var modes = ['Off', 'On'];
@@ -95,7 +95,7 @@
   <animation>
     <type>knob</type>
     <object-name>fuelheatereng2</object-name>
-    <property>/controls/fuel/fuelheatereng2</property>
+    <property>/controls/switches/fuelheatereng2</property>
     <factor>-45</factor>
     <offset-deg>20</offset-deg>
     <center>
@@ -111,7 +111,7 @@
     <action>
       <binding>
         <command>property-adjust</command>
-        <property>/controls/fuel/fuelheatereng2</property>
+        <property>/controls/switches/fuelheatereng2</property>
         <factor>1</factor>
         <min>0</min>
         <max>1</max>
@@ -127,7 +127,7 @@
         <command>set-tooltip</command>
         <tooltip-id>fuelheatereng2</tooltip-id>
         <label>Eng 2 Fuel Heat: %s</label>
-        <property>/controls/fuel/fuelheatereng2</property>
+        <property>/controls/switches/fuelheatereng2</property>
         <mapping>nasal</mapping>
         <script>
           var modes = ['Off', 'On'];
@@ -141,7 +141,7 @@
   <animation>
     <type>knob</type>
     <object-name>fuelxfeed</object-name>
-    <property>/controls/fuel/fuelxfeed</property>
+    <property>/controls/switches/fuelxfeed</property>
     <factor>-45</factor>
     <offset-deg>20</offset-deg>
     <center>
@@ -157,7 +157,7 @@
     <action>
       <binding>
         <command>property-adjust</command>
-        <property>/controls/fuel/fuelxfeed</property>
+        <property>/controls/switches/fuelxfeed</property>
         <factor>1</factor>
         <min>0</min>
         <max>1</max>
@@ -173,7 +173,7 @@
         <command>set-tooltip</command>
         <tooltip-id>fuelxfeed</tooltip-id>
         <label>X-Feed: %s</label>
-        <property>/controls/fuel/fuelxfeed</property>
+        <property>/controls/switches/fuelxfeed</property>
         <mapping>nasal</mapping>
         <script>
           var modes = ['Close', 'Open'];
@@ -187,7 +187,7 @@
   <animation>
     <type>knob</type>
     <object-name>fuelpump1eng1</object-name>
-    <property>/controls/fuel/fuelpump1eng1</property>
+    <property>/controls/switches/fuelpump1eng1</property>
     <factor>-30</factor>
     <offset-deg>0</offset-deg>
     <center>
@@ -203,7 +203,7 @@
     <action>
       <binding>
         <command>property-adjust</command>
-        <property>/controls/fuel/fuelpump1eng1</property>
+        <property>/controls/switches/fuelpump1eng1</property>
         <factor>1</factor>
         <min>0</min>
         <max>1</max>
@@ -219,7 +219,7 @@
         <command>set-tooltip</command>
         <tooltip-id>fuelpump1eng1</tooltip-id>
         <label>FWD Fuel Tank Pump 1: %s</label>
-        <property>/controls/fuel/fuelpump1eng1</property>
+        <property>/controls/switches/fuelpump1eng1</property>
         <mapping>nasal</mapping>
         <script>
           var modes = ['Off', 'On'];
@@ -233,7 +233,7 @@
   <animation>
     <type>knob</type>
     <object-name>fuelpump2eng1</object-name>
-    <property>/controls/fuel/fuelpump2eng1</property>
+    <property>/controls/switches/fuelpump2eng1</property>
     <factor>-30</factor>
     <offset-deg>0</offset-deg>
     <center>
@@ -249,7 +249,7 @@
     <action>
       <binding>
         <command>property-adjust</command>
-        <property>/controls/fuel/fuelpump2eng1</property>
+        <property>/controls/switches/fuelpump2eng1</property>
         <factor>1</factor>
         <min>0</min>
         <max>1</max>
@@ -265,7 +265,7 @@
         <command>set-tooltip</command>
         <tooltip-id>fuelpump2eng1</tooltip-id>
         <label>FWD Fuel Tank Pump 2: %s</label>
-        <property>/controls/fuel/fuelpump2eng1</property>
+        <property>/controls/switches/fuelpump2eng1</property>
         <mapping>nasal</mapping>
         <script>
           var modes = ['Off', 'On'];
@@ -279,7 +279,7 @@
   <animation>
     <type>knob</type>
     <object-name>fuelpump1eng2</object-name>
-    <property>/controls/fuel/fuelpump1eng2</property>
+    <property>/controls/switches/fuelpump1eng2</property>
     <factor>-30</factor>
     <offset-deg>0</offset-deg>
     <center>
@@ -295,7 +295,7 @@
     <action>
       <binding>
         <command>property-adjust</command>
-        <property>/controls/fuel/fuelpump1eng2</property>
+        <property>/controls/switches/fuelpump1eng2</property>
         <factor>1</factor>
         <min>0</min>
         <max>1</max>
@@ -311,7 +311,7 @@
         <command>set-tooltip</command>
         <tooltip-id>fuelpump1eng2</tooltip-id>
         <label>AFT Fuel Tank Pump 1: %s</label>
-        <property>/controls/fuel/fuelpump1eng2</property>
+        <property>/controls/switches/fuelpump1eng2</property>
         <mapping>nasal</mapping>
         <script>
           var modes = ['Off', 'On'];
@@ -325,7 +325,7 @@
   <animation>
     <type>knob</type>
     <object-name>fuelpump2eng2</object-name>
-    <property>/controls/fuel/fuelpump2eng2</property>
+    <property>/controls/switches/fuelpump2eng2</property>
     <factor>-30</factor>
     <offset-deg>0</offset-deg>
     <center>
@@ -341,7 +341,7 @@
     <action>
       <binding>
         <command>property-adjust</command>
-        <property>/controls/fuel/fuelpump2eng2</property>
+        <property>/controls/switches/fuelpump2eng2</property>
         <factor>1</factor>
         <min>0</min>
         <max>1</max>
@@ -357,7 +357,7 @@
         <command>set-tooltip</command>
         <tooltip-id>fuelpump2eng2</tooltip-id>
         <label>AFT Fuel Tank Pump 2: %s</label>
-        <property>/controls/fuel/fuelpump2eng2</property>
+        <property>/controls/switches/fuelpump2eng2</property>
         <mapping>nasal</mapping>
         <script>
           var modes = ['Off', 'On'];

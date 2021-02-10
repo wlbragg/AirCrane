@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+
+  <filter>
+      <name>Fuel Temp Heat Fwd Tank Eng 1</name>
+      <type>noise-spike</type>
+      <max-rate-of-change>.5</max-rate-of-change>
+      <enable>
+          <condition>
+              <and>
+                <not>
+                  <property>/sim/freeze/replay-state</property>
+                </not>
+                <property>/systems/fuel/temp-start-calc</property>
+              </and>
+          </condition>
+      </enable>
+      <input>
+          <expression>
+            <sum>
+              <product>
+                <property>/systems/fuel/temp-fwd-heat-on</property>
+                <product>
+                  <property>/controls/switches/fuelheatereng1</property>
+                  <value>60</value>
+                </product>
+              </product>
+              <property>/environment/temperature-degf</property>
+            </sum>
+          </expression>
+          <max>60</max>
+      </input>
+      <output>
+        <property>/systems/fuel/temp-fwd-heat</property>
+      </output>
+  </filter>
+
+  <filter>
+      <name>Fuel Temp Cool Fwd Tank Eng 1</name>
+      <type>noise-spike</type>
+      <max-rate-of-change>.001</max-rate-of-change>
+      <enable>
+          <condition>
+              <and>
+                <not>
+                  <property>/sim/freeze/replay-state</property>
+                </not>
+                <not>
+                  <property>/controls/switches/fuelheatereng1</property>
+                </not>
+                <property>/systems/fuel/temp-start-calc</property>
+              </and>
+          </condition>
+      </enable>
+      <input>
+        <property>/systems/fuel/temp-fwd-heat</property>
+      </input>
+      <output>
+        <property>/systems/fuel/temp-fwd-heat</property>
+      </output>
+  </filter>
+
+  <filter>
+      <name>Fuel Temp Heat Aft Tank Eng 2</name>
+      <type>noise-spike</type>
+      <max-rate-of-change>.5</max-rate-of-change>
+      <enable>
+          <condition>
+              <and>
+                <not>
+                  <property>/sim/freeze/replay-state</property>
+                </not>
+                <property>/systems/fuel/temp-start-calc</property>
+              </and>
+          </condition>
+      </enable>
+      <input>
+          <expression>
+            <sum>
+              <product>
+                <property>/systems/fuel/temp-aft-heat-on</property>
+                <product>
+                  <property>/controls/switches/fuelheatereng2</property>
+                  <value>60</value>
+                </product>
+              </product>
+              <property>/environment/temperature-degf</property>
+            </sum>
+          </expression>
+          <max>60</max>
+      </input>
+      <output>
+        <property>/systems/fuel/temp-aft-heat</property>
+      </output>
+  </filter>
+
+  <filter>
+      <name>Fuel Temp Cool Aft Tank Eng 2</name>
+      <type>noise-spike</type>
+      <max-rate-of-change>.001</max-rate-of-change>
+      <enable>
+          <condition>
+              <and>
+                <not>
+                  <property>/sim/freeze/replay-state</property>
+                </not>
+                <not>
+                  <property>/controls/switches/fuelheatereng2</property>
+                </not>
+                <property>/systems/fuel/temp-start-calc</property>
+              </and>
+          </condition>
+      </enable>
+      <input>
+        <property>/systems/fuel/temp-aft-heat</property>
+      </input>
+      <output>
+        <property>/systems/fuel/temp-aft-heat</property>
+      </output>
+  </filter>
+
+  <!--filter>
+      <name>Fuel Temp Aux Tank</name>
+      <type>noise-spike</type>
+      <max-rate-of-change>.016</max-rate-of-change>
+      <enable>
+          <condition>
+              <and>
+                <not>
+                  <property>/sim/freeze/replay-state</property>
+                </not>
+                <property>/systems/fuel/temp-start-calc</property>
+              </and>
+          </condition>
+      </enable>
+      <input>
+          <expression>
+            <sum>
+              <product>
+                <property>/controls/switches/fuelheatereng3</property>
+                <value>60</value>
+              </product>
+              <property>/environment/temperature-degf</property>
+            </sum>
+          </expression>
+          <max>60</max>
+      </input>
+      <output>
+          <property>/systems/fuel/temp-aux</property>
+      </output>
+  </filter-->
+
+  <!--logic>
+    <name>Fuel Temp</name>
+    <input>
+      <and>
+        <property>/environment/temperature-degf</property>
+        <equals>
+          <property>/controls/electric/engine[0]/generator-sw</property>
+          <value>-1</value>
+        </equals>
+      </and>
+    </input>
+    <output>
+      <property>systems/fuel/temp</property>
+    </output>
+  </logic-->
+
+	<!--system name="Fuel Temp">
+
+		<channel name="fuel-temp">
+
+			<integrator name="systems/fuel/temp">
+				<input>/environment/temperature-degf</input-->
+
+				<!-- This is the constant that controls how fast
+					 (or slow) the temperature can change.
+				-->
+				<!--c1>0.020</c1>
+			</integrator>
+
+		</channel>
+
+    <channel name="carburetor">
+
+        <fcs_function name="Carb heat on causes RPM drop on 160 HP engine">
+            <function>
+                <ifthen>
+                    <property>/controls/anti-ice/engine[0]/carb-heat</property>
+                    <value>0.475</value>
+                    <value>0.15185</value>
+                </ifthen>
+            </function>
+            <output>/fdm/jsbsim/propulsion/engine[0]/air-intake-impedance-factor</output>
+        </fcs_function>
+
+        <fcs_function name="Carb heat on causes RPM drop on 180 HP engine">
+            <function>
+                <ifthen>
+                    <property>/controls/anti-ice/engine[1]/carb-heat</property>
+                    <value>0.475</value>
+                    <value>0.15185</value>
+                </ifthen>
+            </function>
+            <output>/fdm/jsbsim/propulsion/engine[1]/air-intake-impedance-factor</output>
+        </fcs_function>
+
+    </channel>
+
+	</system-->
+
+  <!--filter>
+  <name>Environment Temperature Power</name>
+  <type>gain</type>
+  <input>
+  <condition>
+  <greater-than>
+  <property>/systems/electrical/outputs/instr-ignition-switch</property>
+  <value>12.0</value>
+  </greater-than>
+  </condition>
+  <value>1</value>
+  </input>
+  <input>
+  <value>0.0</value>
+  </input>
+  <output>
+  <property>instrumentation/iat/power</property>
+  </output>
+  </filter>
+-->
+
+</PropertyList>

@@ -4,7 +4,7 @@
 
   <!-- Pilot seat -->
   <model>
-    <path>Aircraft/AirCrane/Models/Interior/Seats/seat.xml</path>
+    <path>Aircraft/AirCrane/Models/Interior/Seats/seatr.xml</path>
     <offsets>
       <x-m> -8.72346 </x-m>
       <y-m>  0.59661 </y-m>
@@ -14,7 +14,7 @@
 
   <!-- Copilot seat -->
   <model>
-    <path>Aircraft/AirCrane/Models/Interior/Seats/seat.xml</path>
+    <path>Aircraft/AirCrane/Models/Interior/Seats/seatl.xml</path>
     <offsets>
       <x-m> -8.72346 </x-m>
       <y-m> -0.59661 </y-m>

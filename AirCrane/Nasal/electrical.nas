@@ -266,19 +266,17 @@ var init_electrical = func{
     append(cbs_main_left, "light-advisory");
     append(cbs_main_left, "light-indirect");
     append(cbs_main_left, "entertainment");
-#    append(cbs_main_left, "light-tail"); ### not installed (also known as logo-light)
+#   append(cbs_main_left, "light-tail"); ### not installed (also known as logo-light)
     append(cbs_main_left, "engine-fan-left");
     append(cbs_main_left, "engine-turbine-left");
     append(cbs_main_left, "light-panel-left");
     append(cbs_main_left, "left-inverter");
     append(cbs_main_left, "sys-aoa");
-    append(cbs_main_left, "anti-ice-aoa");
     append(cbs_main_left, "warn-batt");
     append(cbs_main_left, "env-fan");
     append(cbs_main_left, "rec-voice");
     append(cbs_main_left, "inst-clock-left");
     append(cbs_main_left, "light-panel-el");
-    append(cbs_main_left, "anti-ice-engine-left");
     append(cbs_main_left, "sys-engine-sync");
     append(cbs_main_left, "engine-fire-left");
     append(cbs_main_left, "engine-shutoff-left");
@@ -298,7 +296,6 @@ var init_electrical = func{
     append(cbs_main_left, "engine-oilp-left");
     append(cbs_main_left, "engine-oilt-left");
     append(cbs_main_left, "sys-pitch-trim");
-    append(cbs_main_left, "anti-ice-pitot-left");
     append(cbs_main_left, "sys-skid-ctrl");
     append(cbs_main_left, "env-normalp");
     append(cbs_main_left, "left-xover");
@@ -307,9 +304,13 @@ var init_electrical = func{
     append(cbs_main_left, "env-temp");
     append(cbs_main_left, "sys-thrustrev-left");
     append(cbs_main_left, "warn-lts1");
+    append(cbs_main_left, "sys-flap-motor");
+
+    append(cbs_main_left, "anti-ice-engine-left");
+    append(cbs_main_left, "anti-ice-aoa");
+    append(cbs_main_left, "anti-ice-pitot-left");
     append(cbs_main_left, "anti-ice-bleedair-ws");
     append(cbs_main_left, "anti-ice-bleedair-ws-temp");
-    append(cbs_main_left, "sys-flap-motor");
 
     append(cbs_main_left, "afcs1");
     append(cbs_main_left, "afcs2");
@@ -318,17 +319,20 @@ var init_electrical = func{
     append(cbs_main_left, "bar-alt");
     append(cbs_main_left, "stick-trim");
     append(cbs_main_left, "yaw");
+    append(cbs_main_left, "tank-qty");
+    append(cbs_main_left, "cws");
+    append(cbs_main_left, "app-cont");
+    append(cbs_main_left, "fuel-heat-eng1");
+    append(cbs_main_left, "fuel-heat-eng2");
+    append(cbs_main_left, "fuel-heat");
 
+######## USING ##########
     append(cbs_main_left, "landing-light");
     append(cbs_main_left, "spot-light");
     append(cbs_main_left, "beaconfwd-light");
     append(cbs_main_left, "beaconaft-light");
     append(cbs_main_left, "nav-lights");
     append(cbs_main_left, "strobe-light");
-
-    append(cbs_main_left, "tank-qty");
-    append(cbs_main_left, "cws");
-    append(cbs_main_left, "app-cont");
 
     append(cbs_main_left_xover, "dc-nav1");
     append(cbs_main_left_xover, "dc-adf1");
@@ -380,24 +384,33 @@ var init_electrical = func{
     append(cbs_main_right, "dc-fd2");
     append(cbs_main_right, "dc-rmi2");
 
+######## USING ##########
+    append(cbs_main_right, "tank-qty");
+    append(cbs_main_right, "cws");
+    append(cbs_main_right, "app-cont");
+    append(cbs_main_right, "fuel-heat-eng1");
+    append(cbs_main_right, "fuel-heat-eng2");
+    append(cbs_main_right, "fuel-heat");
+
     append(cbs_main_right_xover, "light-panel-center");
     append(cbs_main_right_xover, "light-panel-right");
-    append(cbs_main_right_xover, "anti-ice-alcohol");
     append(cbs_main_right_xover, "inst-ralt");
     append(cbs_main_right_xover, "inst-clock-right");
     append(cbs_main_right_xover, "env-emerp");
-    append(cbs_main_right_xover, "anti-ice-engine-right");
     append(cbs_main_right_xover, "engine-fire-right");
     append(cbs_main_right_xover, "engine-shutoff-right");
     append(cbs_main_right_xover, "inst-flt-hr");
     append(cbs_main_right_xover, "engine-ign-left");
     append(cbs_main_right_xover, "warn-speed");
-    append(cbs_main_right_xover, "anti-ice-pitot-right");
-    append(cbs_main_right_xover, "anti-ice-surface");
     append(cbs_main_right_xover, "sys-thrustrev-right");
     append(cbs_main_right_xover, "warn-lts2");
     append(cbs_main_right_xover, "fuel-boost-left");
     append(cbs_main_right_xover, "sys-equip-cool");
+
+    append(cbs_main_right_xover, "anti-ice-pitot-right");
+    append(cbs_main_right_xover, "anti-ice-surface");
+    append(cbs_main_right_xover, "anti-ice-alcohol");
+    append(cbs_main_right_xover, "anti-ice-engine-right");
 
     append(cbs_ac_115v, "ac-ap");
     append(amp_ac_115v, 1);

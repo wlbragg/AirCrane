@@ -299,6 +299,130 @@
     </output>
   </logic>
 
+  <logic>
+    <name>1 Bell Temp Low (fwd)</name>
+    <input>
+      <and>
+        <less-than>
+          <property>systems/electrical/outputs/main-left/fuel-heat-eng1</property>
+          <value>31.5</value>
+        </less-than>
+        <greater-than>
+          <property>systems/electrical/outputs/main-left/fuel-heat-eng1</property>
+          <value>20.0</value>
+        </greater-than>
+        <less-than>
+          <property>/systems/fuel/temp-fwd-heat</property>
+          <value>35</value>
+        </less-than>
+      </and>
+    </input>
+    <input>
+      <value>0.0</value>
+    </input>
+    <output>
+      <property>/systems/fuel/temp-fwd-heat-low</property>
+    </output>
+  </logic>
+
+  <logic>
+    <name>2 Bell Temp Low (aft)</name>
+    <input>
+      <and>
+        <less-than>
+          <property>systems/electrical/outputs/main-left/fuel-heat-eng2</property>
+          <value>31.5</value>
+        </less-than>
+        <greater-than>
+          <property>systems/electrical/outputs/main-left/fuel-heat-eng2</property>
+          <value>20.0</value>
+        </greater-than>
+        <less-than>
+          <property>/systems/fuel/temp-aft-heat</property>
+          <value>35</value>
+        </less-than>
+      </and>
+    </input>
+    <input>
+      <value>0.0</value>
+    </input>
+    <output>
+      <property>/systems/fuel/temp-aft-heat-low</property>
+    </output>
+  </logic>
+
+  <logic>
+    <name>Fuel Temp Low</name>
+    <input>
+      <and>
+        <less-than>
+          <property>systems/electrical/outputs/main-left/fuel-heat</property>
+          <value>31.5</value>
+        </less-than>
+        <greater-than>
+          <property>systems/electrical/outputs/main-left/fuel-heat</property>
+          <value>20.0</value>
+        </greater-than>
+        <less-than>
+         <property>/environment/temperature-degf</property>
+          <value>35</value>
+        </less-than>
+      </and>
+    </input>
+    <input>
+      <value>0.0</value>
+    </input>
+    <output>
+      <property>/systems/fuel/temp-heat-low</property>
+    </output>
+  </logic>
+
+  <logic>
+    <name>Temp Fwd Heat On</name>
+    <input>
+      <and>
+        <less-than>
+          <property>systems/electrical/outputs/main-left/fuel-heat-eng1</property>
+          <value>31.5</value>
+        </less-than>
+        <greater-than>
+          <property>systems/electrical/outputs/main-left/fuel-heat-eng1</property>
+          <value>20.0</value>
+        </greater-than>
+        <property>controls/switches/fuelheatereng1</property>
+      </and>
+    </input>
+    <input>
+      <value>0.0</value>
+    </input>
+    <output>
+      <property>/systems/fuel/temp-fwd-heat-on</property>
+    </output>
+  </logic>
+
+  <logic>
+    <name>Temp Aft Heat On</name>
+    <input>
+      <and>
+        <less-than>
+          <property>systems/electrical/outputs/main-left/fuel-heat-eng2</property>
+          <value>31.5</value>
+        </less-than>
+        <greater-than>
+          <property>systems/electrical/outputs/main-left/fuel-heat-eng2</property>
+          <value>20.0</value>
+        </greater-than>
+        <property>controls/switches/fuelheatereng2</property>
+      </and>
+    </input>
+    <input>
+      <value>0.0</value>
+    </input>
+    <output>
+      <property>/systems/fuel/temp-aft-heat-on</property>
+    </output>
+  </logic>
+
   <!-- ######################################## -->
   <!-- ##### Caution - Warning (Non -CWS) ##### -->
   <!-- ######################################## -->

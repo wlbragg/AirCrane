@@ -242,6 +242,10 @@
         <property-rule n="103">
           <path>Aircraft/AirCrane/Systems/afcs.xml</path>
         </property-rule>
+
+        <property-rule n="104">
+          <path>Aircraft/AirCrane/Systems/fuel.xml</path>
+        </property-rule>
     </systems>
 
     <multiplay>
@@ -339,6 +343,12 @@
         <!--app-running type="float">0</app-running-->
       </outputs>
     </electrical>
+    <fuel>
+      <temp-fwd type="float">0</temp-fwd>
+      <temp-aft type="float">0</temp-aft>
+      <temp-aux type="float">0</temp-aux>
+      <temp-start-calc type="bool">false</temp-start-calc>
+    </fuel>
   </systems>
 
   <nasal>

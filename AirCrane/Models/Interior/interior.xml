@@ -53,7 +53,7 @@
   </animation>
 
   <effect>
-    <inherits-from>Aircraft/AirCrane/Models/Effects/Interior/cockpit-interior</inherits-from>
+    <inherits-from>Aircraft/AirCrane/Models/Effects/Interior/lm-interior</inherits-from>
     <!-- Objets opaques -->
     <object-name>interieur</object-name>
     <object-name>tour</object-name>
@@ -67,7 +67,10 @@
     <object-name>intporteG</object-name>
     <object-name>intporteD</object-name>
     <object-name>harness</object-name>
+  </effect>
 
+  <effect>
+    <inherits-from>Aircraft/AirCrane/Models/Effects/Interior/cockpit-interior</inherits-from>
     <!-- Model E -->
     <object-name>interieurE</object-name>
     <object-name>tourE</object-name>
@@ -134,6 +137,19 @@
     <object-name>intvitreE</object-name>
     <object-name>intvitresreardoorE</object-name>
   </animation>
+
+    <model>
+        <name>domered</name>
+        <path>Aircraft/AirCrane/Models/Effects/Interior/procedural_light_dome_red.xml</path>
+        <offsets>
+            <x-m>-8.356</x-m>
+            <y-m> 0.049</y-m>
+            <z-m>-0.605</z-m>
+        </offsets>
+        <condition>
+			<property>/sim/model/lightmap/dome-red/factor</property>
+        </condition>
+    </model>
 
   <!-- Panel -->
   <model>

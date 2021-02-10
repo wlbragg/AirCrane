@@ -30,4 +30,44 @@
     </emission>
   </animation>
 
+    <animation>
+        <type>slider</type>
+        <object-name>button</object-name>
+        <property>controls/switches/cws-test</property>
+        <repeatable>false</repeatable>
+        <factor>0.002</factor>
+        <axis>
+            <x>-1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+        <action>
+            <repeatable>false</repeatable>
+            <binding>
+                <command>nasal</command>
+                <script>
+                    setprop("/controls/switches/cws-test", 1);
+                </script>
+            </binding>
+        </action>
+        <release>
+            <binding>
+                <command>nasal</command>
+                <script>
+                    setprop("/controls/switches/cws-test", 0);
+                    aircrane.click("avionics");
+                </script>
+            </binding>
+        </release>
+        <hovered>
+            <binding>
+                <command>set-tooltip</command>
+                <tooltip-id>cplamptest</tooltip-id>
+                <label>CWS Test: %s</label>
+                <mapping>on-off</mapping>
+                <property>controls/switches/cws-test</property>
+            </binding>
+        </hovered>
+    </animation>
+
 </PropertyList>
