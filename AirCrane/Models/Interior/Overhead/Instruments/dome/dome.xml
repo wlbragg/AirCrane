@@ -76,7 +76,7 @@
         <property>controls/switches/dome</property>
         <mapping>nasal</mapping>
         <script>
-          var modes = ['Red', 'Off', 'White'];
+          var modes = ['Off', 'White', 'Red'];
           return modes[arg[0]];
         </script>
       </binding>
