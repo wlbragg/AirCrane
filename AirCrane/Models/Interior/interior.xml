@@ -4,54 +4,6 @@
 
   <path>interior.ac</path>
 
-  <animation>
-    <!-- Objets opaques -->
-    <object-name>interieur</object-name>
-    <object-name>tour</object-name>
-    <object-name>planchet</object-name>
-    <object-name>floor</object-name>
-    <object-name>reposepieds</object-name>
-    <object-name>accoudoir</object-name>
-    <object-name>gruesiege1</object-name>
-    <object-name>gruesiege2</object-name>
-    <object-name>plaque</object-name>
-    <object-name>intporteG</object-name>
-    <object-name>intporteD</object-name>
-    <object-name>harness</object-name>
-
-    <!-- Model E -->
-    <object-name>interieurE</object-name>
-    <object-name>tourE</object-name>
-    <object-name>planchetE</object-name>
-    <object-name>grueinstrE</object-name>
-    <object-name>intreardoorE</object-name>
-
-    <!-- Model F -->
-    <object-name>interieurF</object-name>
-    <object-name>tourF</object-name>
-    <object-name>floorF</object-name>
-    <object-name>planchetF</object-name>
-    <object-name>tourF</object-name>
-    <object-name>barreF</object-name>
-    <object-name>grueinstrF</object-name>
-    <object-name>intreardoorF</object-name>
-    <object-name>intstarboarddoorF</object-name>
-
-    <!-- Objets transparents -->
-    <object-name>intvitres</object-name>
-    <object-name>intvitresporteG</object-name>
-    <object-name>intvitresporteD</object-name>
-
-    <!-- Glass model E -->
-    <object-name>intvitreE</object-name>
-    <object-name>intvitresreardoorE</object-name>
-
-    <!-- Glass model F -->
-    <object-name>intvitreF</object-name>
-    <object-name>intvitresreardoorF</object-name>
-    <object-name>intvitresstarboardF</object-name>
-  </animation>
-
   <effect>
     <inherits-from>Aircraft/AirCrane/Models/Effects/Interior/lm-interior</inherits-from>
     <!-- Objets opaques -->
@@ -90,18 +42,21 @@
     <object-name>intstarboarddoorF</object-name>
   </effect>
 
-  <!-- working for Compositor -->
   <effect>
-    <inherits-from>Effects/model-transparent</inherits-from>
+    <inherits-from>Aircraft/AirCrane/Models/Effects/Interior/interior-glass-reflection-front</inherits-from>
     <object-name>intvitres</object-name>
-    <object-name>intvitresporteG</object-name>
-    <object-name>intvitresporteD</object-name>
     <!-- Glass model E -->
     <object-name>intvitreE</object-name>
     <object-name>intvitresreardoorE</object-name>
     <!-- Glass model F -->
     <object-name>intvitreF</object-name>
     <object-name>intvitresreardoorF</object-name>
+  </effect>
+
+  <effect>
+    <inherits-from>Aircraft/AirCrane/Models/Effects/Interior/interior-glass-reflection-side</inherits-from>
+    <object-name>intvitresporteG</object-name>
+    <object-name>intvitresporteD</object-name>
     <object-name>intvitresstarboardF</object-name>
   </effect>
 
@@ -385,8 +340,9 @@
   <!-- Rear Door E-->
   <animation>
     <name>IntEngineerDoorE</name>
-    <object-name>vitresreardoorE</object-name>
+    <object-name>intvitresreardoorE</object-name>
     <object-name>intreardoorE</object-name>
+
   </animation>
 
   <animation>

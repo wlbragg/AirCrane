@@ -325,6 +325,7 @@ var init_electrical = func{
     append(cbs_main_left, "fuel-heat-eng1");
     append(cbs_main_left, "fuel-heat-eng2");
     append(cbs_main_left, "fuel-heat");
+    append(cbs_main_left, "interior-dome");
 
 ######## USING ##########
     append(cbs_main_left, "landing-light");
@@ -391,6 +392,7 @@ var init_electrical = func{
     append(cbs_main_right, "fuel-heat-eng1");
     append(cbs_main_right, "fuel-heat-eng2");
     append(cbs_main_right, "fuel-heat");
+    append(cbs_main_right, "interior-dome");
 
     append(cbs_main_right_xover, "light-panel-center");
     append(cbs_main_right_xover, "light-panel-right");

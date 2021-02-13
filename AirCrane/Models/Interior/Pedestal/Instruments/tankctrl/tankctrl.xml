@@ -4,27 +4,6 @@
 
   <path>tankctrl.ac</path>
 
-  <animation>
-    <object-name>base</object-name>
-    <object-name>knob-quantity</object-name>
-    <object-name>knob-coverage</object-name>
-    <object-name>knob-foam</object-name>
-    <object-name>toggle-arm</object-name>
-    <object-name>toggle-hyd-snorkel</object-name>
-    <object-name>toggle-foam</object-name>
-    <object-name>toggle-sea-snorkel</object-name>
-    <object-name>indicator-test</object-name>
-    <object-name>indicator-teston</object-name>
-    <object-name>indicator-go</object-name>
-    <object-name>indicator-goon</object-name>
-    <object-name>indicator-hyd-snorkel</object-name>
-    <object-name>indicator-hyd-snorkelon</object-name>
-    <object-name>indicator-foam</object-name>
-    <object-name>indicator-foamon</object-name>
-    <object-name>indicator-low-hyd-pres</object-name>
-    <object-name>indicator-low-hyd-preson</object-name>
-  </animation>
-
   <effect>
     <inherits-from>Aircraft/AirCrane/Models/Effects/Interior/cockpit-interior</inherits-from>
     <object-name>base</object-name>

@@ -4,16 +4,6 @@
 
   <path>apprpmper.ac</path>
 
-  <animation>
-    <object-name>fond</object-name>
-    <object-name>face</object-name>
-    <object-name>cover</object-name>
-    <object-name>crew</object-name>
-    <object-name>needle</object-name>
-
-    <object-name>glass</object-name>
-  </animation>
-
   <effect>
     <inherits-from>Aircraft/AirCrane/Models/Effects/Interior/cockpit-interior</inherits-from>
     <object-name>fond</object-name>
@@ -25,7 +15,7 @@
 
   <effect>
     <inherits-from>Aircraft/AirCrane/Models/Effects/Interior/interior-glass-reflection-panel-front</inherits-from>
-    <object-name>glass</object-name>
+    <object-name>vitre</object-name>
   </effect>
 
   <animation>

@@ -2,15 +2,6 @@
 
 <PropertyList>
 
-  <path>/sim/model/aircrane/persistent</path>
-  <path>/sim/model/aircrane/currentlat</path>
-  <path>/sim/model/aircrane/currentlon</path>
-  <path>/sim/model/aircrane/currentalt</path>
-  <path>/sim/model/aircrane/currenthead</path>
-  <path>/sim/model/aircrane/currentpitch</path>
-  <path>/sim/model/aircrane/currentroll</path>
-  <path>/sim/model/aircrane/currentvsfps</path>
-  <path>/sim/model/aircrane/currenteqnt</path>
   <path>/sim/model/aircrane/effects/particles/enabled</path>
   <path>/sim/model/firetank/enabled</path>
   <path>/sim/model/watercannon/enabled</path>

@@ -91,6 +91,9 @@
           </interior>
         </effects>
 		    <model-f type="bool">false</model-f>
+        <lighting>
+          <cws-bright type="int">0</cws-bright>
+        </lighting>
       </aircrane>
       <hitch>
         <openhook type="bool">false</openhook>
@@ -98,9 +101,6 @@
       <cableguard>
         <enabled type="bool">false</enabled>
       </cableguard>
-      <lighting>
-        <cws-bright type="int">0</cws-bright>
-      </lighting>
       <steppanel>
         <enabled type="bool">false</enabled>
       </steppanel>

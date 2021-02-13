@@ -298,14 +298,12 @@
     <object-name>steppanelE</object-name>
   </effect>
 
-  <!-- working for Compositor -->
   <effect>
-    <inherits-from>Aircraft/AirCrane/Models/Effects/Exterior/glass</inherits-from>
+    <inherits-from>Aircraft/AirCrane/Models/Effects/Exterior/exterior-glass-reflection</inherits-from>
     <object-name>vitres</object-name>
     <object-name>vitresporteG</object-name>
     <object-name>vitresporteD</object-name>
     <object-name>vitresInt</object-name>
-
     <!-- Glass Mode F -->
     <object-name>vitreF</object-name>
     <object-name>vitresreardoorF</object-name>
@@ -313,7 +311,10 @@
     <!-- Glass Mode E -->
     <object-name>vitreE</object-name>
     <object-name>vitresreardoorE</object-name>
+  </effect>
 
+  <effect>
+    <inherits-from>Effects/model-transparent</inherits-from>
     <object-name>lampeG</object-name>
     <object-name>lampeD</object-name>
     <object-name>BeaconA</object-name>

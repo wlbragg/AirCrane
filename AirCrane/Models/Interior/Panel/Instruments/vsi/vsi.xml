@@ -24,6 +24,25 @@
     <object-name>vitre</object-name>
   </effect>
 
+  <!--animation>
+    <type>material</type>
+    <object-name>vitre</object-name>
+	<diffuse>
+		<red>0.1</red>
+		<green>0.1</green>
+		<blue>0.1</blue>
+	</diffuse>
+	<specular>
+		<red>0.25</red>
+		<green>0.25</green>
+		<blue>0.25</blue>
+	</specular>
+	<transparency>
+		<alpha-prop>/environment/aircraft-effects/panel-glass-reflection</alpha-prop>
+		<factor>0.2</factor>
+	</transparency>
+  </animation-->
+
   <animation>
     <type>material</type>
     <object-name>face</object-name>

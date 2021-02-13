@@ -140,6 +140,72 @@
     </output>
   </logic>
 
+  <filter>
+    <name>Interior Glass Glare Factor Combined</name>
+    <type>gain</type>
+    <gain>.5</gain>
+    <input>
+      <!--
+      <expression>
+        <sum>
+          <property>/sim/model/lightmap/dome/factor-glassglare</property>
+          <property>/sim/model/lightmap/post/factor-glassglare</property>
+          <property>/sim/model/lightmap/flood/factor-glassglare</property>
+        </sum>
+      </expression>
+      -->
+      <property>/rendering/scene/diffuse/red</property>
+      <min>0.1</min>
+      <max>0.9</max>
+    </input>
+    <output>/environment/aircraft-effects/panel-glass-reflection</output>
+  </filter>
+
+  <logic>
+    <name>Interior Dome White</name>
+    <input>
+      <and>
+        <less-than>
+          <property>/systems/electrical/outputs/main-left/interior-dome</property>
+          <value>31.5</value>
+        </less-than>
+        <greater-than>
+          <property>/systems/electrical/outputs/main-left/interior-dome</property>
+          <value>20.0</value>
+        </greater-than>
+		<equals>
+			<property>/controls/switches/dome</property>
+			<value>1</value>
+		</equals>
+      </and>
+    </input>
+    <output>
+      <property>/sim/model/lightmap/dome-white/factor</property>
+    </output>
+  </logic>
+  <logic>
+    <name>Interior Dome Red</name>
+    <input>
+      <and>
+        <less-than>
+          <property>/systems/electrical/outputs/main-left/interior-dome</property>
+          <value>31.5</value>
+        </less-than>
+        <greater-than>
+          <property>/systems/electrical/outputs/main-left/interior-dome</property>
+          <value>20.0</value>
+        </greater-than>
+		<equals>
+			<property>/controls/switches/dome</property>
+			<value>-1</value>
+		</equals>
+      </and>
+    </input>
+    <output>
+      <property>/sim/model/lightmap/dome-red/factor</property>
+    </output>
+  </logic>
+
   <!-- Used for ALS procedural lights -->
   <!--
   <filter>
@@ -164,25 +230,5 @@
     <output>/sim/model/lightmap/flood/factor-glassglare</output>
   </filter>
   -->
-  <filter>
-    <name>Interior Glass Glare Factor Combined</name>
-    <type>gain</type>
-    <gain>1</gain>
-    <input>
-      <!--
-      <expression>
-        <sum>
-          <property>/sim/model/lightmap/dome/factor-glassglare</property>
-          <property>/sim/model/lightmap/post/factor-glassglare</property>
-          <property>/sim/model/lightmap/flood/factor-glassglare</property>
-        </sum>
-      </expression>
-      -->
-      <property>/rendering/scene/diffuse/red</property>
-      <min>0.1</min>
-      <max>0.9</max>
-    </input>
-    <output>/environment/aircraft-effects/panel-glass-reflection</output>
-  </filter>
 
 </PropertyList>

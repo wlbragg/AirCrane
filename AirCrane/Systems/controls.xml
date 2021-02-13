@@ -208,6 +208,7 @@
         <cb-fuel-heat-eng1 type="bool">1</cb-fuel-heat-eng1>
         <cb-fuel-heat-eng2 type="bool">1</cb-fuel-heat-eng2>
         <cb-fuel-heat type="bool">1</cb-fuel-heat>
+        <cb-interior-dome type="bool">1</cb-interior-dome>
 
       </main-left>
 
@@ -278,6 +279,7 @@
         <cb-fuel-heat-eng1 type="bool">1</cb-fuel-heat-eng1>
         <cb-fuel-heat-eng2 type="bool">1</cb-fuel-heat-eng2>
         <cb-fuel-heat type="bool">1</cb-fuel-heat>
+        <cb-interior-dome type="bool">1</cb-interior-dome>
       </main-right>
 
       <main-right-xover>
@@ -370,6 +372,7 @@
     <stick-trim type="bool">false</stick-trim>
     <stick-trim-cover type="bool">false</stick-trim-cover>
     <yaw type="bool">false</yaw>
+    <dome type="int">0</dome>
     <spring-switch>
       <afcs-servo type="int">0</afcs-servo>
       <afcs type="int">0</afcs>
