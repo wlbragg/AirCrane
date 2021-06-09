@@ -177,8 +177,7 @@
               setprop("sim/model/firetank/opentankdoors", 1);
             } else {
               screen.log.write("Quantity set to safe!");
-            } else {
-              setprop("sim/model/firetank/opentankdoors", 0);
+            }
           }
         </script>
       </binding>
