@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 
-<!--S-64E Skycrane v02/17/2009 20:45
+<!--S-64F Skycrane v06/09/2021
   Max Gross weight: 42000 lbs
   Max Hook Weight: 20000 lbs
 
@@ -20,7 +20,7 @@
   airfoil: naca 0011
 
   2 Pratt and Whitney jftd12a-4a
-  max power 9000 shp ( ca. 7000 kw)
+  max power 9600 shp ( ca. 7000 kw)
   limit to 5400 shp (ca. 4200 kw)
 
 

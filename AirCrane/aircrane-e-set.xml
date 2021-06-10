@@ -4,7 +4,7 @@
 
   <sim>
 
-    <description>AirCrane S-64E (Yasim)</description>
+    <description>AirCrane S-64E 9000x2 (Yasim)</description>
     <author>BARANGER Emmanuel (3D/FDM), Heiko Schulz (FDM), Wayne Bragg (Utility 3D and Systems, Effects)</author>
 
     <aircraft-version>2020.4-git</aircraft-version>
