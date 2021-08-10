@@ -4,14 +4,8 @@
 
   <path>pedaladjust.ac</path>
 
-  <animation>
-    <object-name>base</object-name>
-    <object-name>pedaladjustleft</object-name>
-    <object-name>pedaladjustright</object-name>
-  </animation>
-
   <effect>
-    <inherits-from>Aircraft/AirCrane/Models/Effects/Interior/cockpit-interior</inherits-from>
+    <inherits-from>Aircraft/AirCrane/Models/Effects/Interior/lm-interior-pedaladjust</inherits-from>
     <object-name>base</object-name>
     <object-name>pedaladjustleft</object-name>
     <object-name>pedaladjustright</object-name>

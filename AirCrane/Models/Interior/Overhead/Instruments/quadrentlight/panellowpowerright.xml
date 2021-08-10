@@ -2,21 +2,21 @@
 
 <PropertyList>
 
-  <path>lightquadrent.ac</path>
+  <path>panellowpowerlightright.ac</path>
 
   <animation>
     <object-name>pate</object-name>
     <object-name>redbase</object-name>
-    <object-name>redon</object-name>
-    <object-name>redoff</object-name>
+    <object-name>redon-r</object-name>
+    <object-name>redoff-r</object-name>
   </animation>
 
   <effect>
     <inherits-from>Aircraft/AirCrane/Models/Effects/Interior/cockpit-interior</inherits-from>
     <object-name>pate</object-name>
     <object-name>redbase</object-name>
-    <object-name>redon</object-name>
-    <object-name>redoff</object-name>
+    <object-name>redon-r</object-name>
+    <object-name>redoff-r</object-name>
   </effect>
 
 </PropertyList>

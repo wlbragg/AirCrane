@@ -4,28 +4,8 @@
 
   <path>fuel.ac</path>
 
-  <animation>
-    <object-name>base</object-name>
-    <object-name>fuelheatereng1</object-name>
-    <object-name>fuelpumptest</object-name>
-    <object-name>fuelheatereng2</object-name>
-    <object-name>fuelxfeed</object-name>
-    <object-name>fail-fwd-tnk-pump1-off</object-name>
-    <object-name>fail-fwd-tnk-pump2-off</object-name>
-    <object-name>fail-aft-tnk-pump1-off</object-name>
-    <object-name>fail-aft-tnk-pump2-off</object-name>
-    <object-name>fail-fwd-tnk-pump1-on</object-name>
-    <object-name>fail-fwd-tnk-pump2-on</object-name>
-    <object-name>fail-aft-tnk-pump1-on</object-name>
-    <object-name>fail-aft-tnk-pump2-on</object-name>
-    <object-name>fuelpump1eng1</object-name>
-    <object-name>fuelpump2eng1</object-name>
-    <object-name>fuelpump1eng2</object-name>
-    <object-name>fuelpump2eng2</object-name>
-  </animation>
-
   <effect>
-    <inherits-from>Aircraft/AirCrane/Models/Effects/Interior/cockpit-interior</inherits-from>
+    <inherits-from>Aircraft/AirCrane/Models/Effects/Interior/lm-interior-fuelpanel</inherits-from>
     <object-name>base</object-name>
     <object-name>fuelheatereng1</object-name>
     <object-name>fuelpumptest</object-name>

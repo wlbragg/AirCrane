@@ -4,7 +4,7 @@
 
   <!-- Pilot pedals -->
   <model>
-    <path>Aircraft/AirCrane/Models/Interior/Pedals/pedals.xml</path>
+    <path>Aircraft/AirCrane/Models/Interior/Pedals/pedalsl.xml</path>
     <offsets>
       <x-m> -0.00094 </x-m>
       <y-m>  0.64160 </y-m>
@@ -14,7 +14,7 @@
 
   <!-- Copilot pedals -->
   <model>
-    <path>Aircraft/AirCrane/Models/Interior/Pedals/pedals.xml</path>
+    <path>Aircraft/AirCrane/Models/Interior/Pedals/pedalsr.xml</path>
     <offsets>
       <x-m> -0.00094 </x-m>
       <y-m> -0.64046 </y-m>

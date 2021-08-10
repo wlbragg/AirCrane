@@ -4,22 +4,8 @@
 
   <path>afcs-e.ac</path>
 
-  <animation>
-    <object-name>base</object-name>
-    <object-name>afcs</object-name>
-    <object-name>baralt</object-name>
-    <object-name>rolltrim</object-name>
-    <object-name>cgtrim</object-name>
-    <object-name>yawtrim</object-name>
-    <object-name>baroff</object-name>
-    <object-name>baron</object-name>
-    <object-name>afcsservo</object-name>
-    <object-name>sticktrimcover</object-name>
-    <object-name>sticktrim</object-name>
-  </animation>
-
   <effect>
-    <inherits-from>Aircraft/AirCrane/Models/Effects/Interior/cockpit-interior</inherits-from>
+    <inherits-from>Aircraft/AirCrane/Models/Effects/Interior/lm-interior-afcs-e</inherits-from>
     <object-name>base</object-name>
     <object-name>afcs</object-name>
     <object-name>baralt</object-name>

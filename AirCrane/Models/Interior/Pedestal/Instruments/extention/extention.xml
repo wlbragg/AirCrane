@@ -4,24 +4,8 @@
 
   <path>extention.ac</path>
 
-  <animation>
-    <object-name>parkingbrake-base</object-name>
-    <object-name>parkingbrake-handle</object-name>
-    <object-name>pedestal-extention</object-name>
-    <object-name>placard</object-name>
-    <object-name>wheellock-base</object-name>
-    <object-name>wheellock-handle</object-name>
-    <object-name>base</object-name>
-    <object-name>portboot1</object-name>
-    <object-name>portboot2</object-name>
-    <object-name>portboot3</object-name>
-    <object-name>portboot4</object-name>
-    <object-name>portboot5</object-name>
-    <object-name>portboot6</object-name>
-  </animation>
-
   <effect>
-    <inherits-from>Aircraft/AirCrane/Models/Effects/Interior/cockpit-interior</inherits-from>
+    <inherits-from>Aircraft/AirCrane/Models/Effects/Interior/lm-interior-extention</inherits-from>
     <object-name>parkingbrake-base</object-name>
     <object-name>parkingbrake-handle</object-name>
     <object-name>pedestal-extention</object-name>

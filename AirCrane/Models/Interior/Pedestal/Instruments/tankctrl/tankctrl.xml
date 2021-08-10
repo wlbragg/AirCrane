@@ -5,7 +5,7 @@
   <path>tankctrl.ac</path>
 
   <effect>
-    <inherits-from>Aircraft/AirCrane/Models/Effects/Interior/cockpit-interior</inherits-from>
+    <inherits-from>Aircraft/AirCrane/Models/Effects/Interior/lm-interior-tankctrl</inherits-from>
     <object-name>base</object-name>
     <object-name>knob-quantity</object-name>
     <object-name>knob-coverage</object-name>

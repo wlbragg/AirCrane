@@ -4,31 +4,8 @@
 
   <path>pedals.ac</path>
 
-  <animation>
-    <!-- Objets opaques -->
-    <object-name>base</object-name>
-
-    <object-name>LpedalRod</object-name>
-    <object-name>Lpedal</object-name>
-    <object-name>Lboot1</object-name>
-    <object-name>Lboot2</object-name>
-    <object-name>Lboot3</object-name>
-    <object-name>Lboot4</object-name>
-    <object-name>Lboot5</object-name>
-    <object-name>Lboot6</object-name>
-
-    <object-name>RpedalRod</object-name>
-    <object-name>Rpedal</object-name>
-    <object-name>Rboot1</object-name>
-    <object-name>Rboot2</object-name>
-    <object-name>Rboot3</object-name>
-    <object-name>Rboot4</object-name>
-    <object-name>Rboot5</object-name>
-    <object-name>Rboot6</object-name>
-  </animation>
-
   <effect>
-    <inherits-from>Aircraft/AirCrane/Models/Effects/Interior/cockpit-interior</inherits-from>
+    <inherits-from>Aircraft/AirCrane/Models/Effects/Interior/lm-interior-pedalsr</inherits-from>
     <object-name>base</object-name>
 
     <object-name>LpedalRod</object-name>

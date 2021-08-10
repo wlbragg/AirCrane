@@ -4,16 +4,6 @@
 
   <path>seats.ac</path>
 
-  <animation>
-    <!-- Objets opaques -->
-    <object-name>seat1</object-name>
-    <object-name>seat2</object-name>
-    <object-name>seat3</object-name>
-    <object-name>seat4</object-name>
-    <object-name>seat5</object-name>
-    <object-name>seatplate</object-name>
-  </animation>
-
   <effect>
     <inherits-from>Aircraft/AirCrane/Models/Effects/Interior/lm-interior-seatl</inherits-from>
     <object-name>seat1</object-name>

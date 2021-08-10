@@ -4,20 +4,8 @@
 
   <path>afcs-f.ac</path>
 
-  <animation>
-    <object-name>base</object-name>
-    <object-name>afcs1</object-name>
-    <object-name>afcs2</object-name>
-    <object-name>afcsfault</object-name>
-    <object-name>baralt</object-name>
-    <object-name>sticktrim</object-name>
-    <object-name>yaw</object-name>
-    <object-name>afcsservo</object-name>
-    <object-name>yawtrim</object-name>
-  </animation>
-
   <effect>
-    <inherits-from>Aircraft/AirCrane/Models/Effects/Interior/cockpit-interior</inherits-from>
+    <inherits-from>Aircraft/AirCrane/Models/Effects/Interior/lm-interior-afcs-f</inherits-from>
     <object-name>base</object-name>
     <object-name>afcs1</object-name>
     <object-name>afcs2</object-name>

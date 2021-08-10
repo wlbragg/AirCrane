@@ -4,12 +4,8 @@
 
   <path>overhead.ac</path>
 
-  <animation>
-    <object-name>base</object-name>
-  </animation>
-
   <effect>
-    <inherits-from>Aircraft/AirCrane/Models/Effects/Interior/cockpit-interior</inherits-from>
+    <inherits-from>Aircraft/AirCrane/Models/Effects/Interior/lm-interior-overhead-base</inherits-from>
     <object-name>base</object-name>
   </effect>
 
@@ -68,7 +64,7 @@
   </model>
 
   <model>
-    <path>Aircraft/AirCrane/Models/Interior/Overhead/Instruments/internallight/internallight.xml</path>
+    <path>Aircraft/AirCrane/Models/Interior/Overhead/Instruments/extlightspanel/extlightspanel.xml</path>
     <offsets>
       <x-m>  0.01461 </x-m>
       <y-m> -0.27749 </y-m>

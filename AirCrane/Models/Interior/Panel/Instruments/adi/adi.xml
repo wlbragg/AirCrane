@@ -4,23 +4,8 @@
 
   <path>adi.ac</path>
 
-  <animation>
-    <object-name>fond</object-name>
-    <object-name>RollKnob</object-name>
-    <object-name>PitchKnob</object-name>
-    <object-name>InkyDepths</object-name>
-    <object-name>W</object-name>
-    <object-name>Ball</object-name>
-    <object-name>Face</object-name>
-    <object-name>ATTFlag</object-name>
-    <object-name>RollIndicator</object-name>
-    <object-name>TurnIndicator</object-name>
-
-    <object-name>vitre</object-name>
-  </animation>
-
   <effect>
-    <inherits-from>Aircraft/AirCrane/Models/Effects/Interior/cockpit-interior</inherits-from>
+    <inherits-from>Aircraft/AirCrane/Models/Effects/Interior/lm-interior-adi</inherits-from>
     <object-name>fond</object-name>
     <object-name>RollKnob</object-name>
     <object-name>PitchKnob</object-name>
@@ -32,7 +17,7 @@
     <object-name>RollIndicator</object-name>
     <object-name>TurnIndicator</object-name>
   </effect>
-
+ 
   <effect>
     <inherits-from>Aircraft/AirCrane/Models/Effects/Interior/interior-glass-reflection-panel-front</inherits-from>
     <object-name>vitre</object-name>

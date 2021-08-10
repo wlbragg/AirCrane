@@ -4,15 +4,8 @@
 
   <path>hoistctrl.ac</path>
 
-  <animation>
-    <object-name>base</object-name>
-    <object-name>knobhoistcntrl</object-name>
-    <object-name>emgshearcover</object-name>
-    <object-name>emgshear</object-name>
-  </animation>
-
   <effect>
-    <inherits-from>Aircraft/AirCrane/Models/Effects/Interior/cockpit-interior</inherits-from>
+    <inherits-from>Aircraft/AirCrane/Models/Effects/Interior/lm-interior-hoistcntl</inherits-from>
     <object-name>base</object-name>
     <object-name>knobhoistcntrl</object-name>
     <object-name>emgshearcover</object-name>

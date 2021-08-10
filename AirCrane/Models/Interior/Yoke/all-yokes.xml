@@ -4,7 +4,7 @@
 
   <!-- Pilot yoke -->
   <model>
-    <path>Aircraft/AirCrane/Models/Interior/Yoke/yoke.xml</path>
+    <path>Aircraft/AirCrane/Models/Interior/Yoke/yoker.xml</path>
     <offsets>
       <x-m> -9.11749 </x-m>
       <y-m>  0.57674 </y-m>
@@ -14,7 +14,7 @@
 
   <!-- Copilot yoke -->
   <model>
-    <path>Aircraft/AirCrane/Models/Interior/Yoke/yoke.xml</path>
+    <path>Aircraft/AirCrane/Models/Interior/Yoke/yokel.xml</path>
     <offsets>
       <x-m> -9.11749 </x-m>
       <y-m> -0.57674 </y-m>

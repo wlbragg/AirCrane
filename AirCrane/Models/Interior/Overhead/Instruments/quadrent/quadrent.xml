@@ -4,30 +4,8 @@
 
   <path>quadrent.ac</path>
 
-  <animation>
-    <object-name>controlquadrant</object-name>
-    <object-name>controlquadrantplates</object-name>
-    <object-name>wire</object-name>
-    <object-name>n1leverlstart</object-name>
-    <object-name>n1leverrstart</object-name>
-    <object-name>cqscrews</object-name>
-    <object-name>redonl</object-name>
-    <object-name>redoffl</object-name>
-    <object-name>redonr</object-name>
-    <object-name>redoffr</object-name>
-    <object-name>fuelshutoffl</object-name>
-    <object-name>fuelshutoffr</object-name>
-    <object-name>n1leverl</object-name>
-    <object-name>n1leverr</object-name>
-    <object-name>fire</object-name>
-    <object-name>redbase</object-name>
-
-    <object-name>n1leverlplastic</object-name>
-    <object-name>n1leverrplastic</object-name>
-  </animation>
-
   <effect>
-    <inherits-from>Aircraft/AirCrane/Models/Effects/Interior/cockpit-interior</inherits-from>
+    <inherits-from>Aircraft/AirCrane/Models/Effects/Interior/lm-interior-quadrent</inherits-from>
     <object-name>controlquadrant</object-name>
     <object-name>controlquadrantplates</object-name>
     <object-name>wire</object-name>

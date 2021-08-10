@@ -5,17 +5,8 @@
 
   <path>tank_vol.ac</path>
 
-  <animation>
-    <object-name>fond</object-name>
-    <object-name>face</object-name>
-    <object-name>needle</object-name>
-    <object-name>needle2</object-name>
-
-    <object-name>vitre</object-name>
-  </animation>
-
   <effect>
-    <inherits-from>Aircraft/AirCrane/Models/Effects/Interior/cockpit-interior</inherits-from>
+    <inherits-from>Aircraft/AirCrane/Models/Effects/Interior/lm-interior-tankvol</inherits-from>
     <object-name>fond</object-name>
     <object-name>face</object-name>
     <object-name>needle</object-name>

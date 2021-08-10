@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+
+  <path>panellowpowerlightleft.ac</path>
+
+  <animation>
+    <object-name>pate</object-name>
+    <object-name>redbase</object-name>
+    <object-name>redon-l</object-name>
+    <object-name>redoff-l</object-name>
+  </animation>
+
+  <effect>
+    <inherits-from>Aircraft/AirCrane/Models/Effects/Interior/cockpit-interior</inherits-from>
+    <object-name>pate</object-name>
+    <object-name>redbase</object-name>
+    <object-name>redon-l</object-name>
+    <object-name>redoff-l</object-name>
+  </effect>
+
+</PropertyList>

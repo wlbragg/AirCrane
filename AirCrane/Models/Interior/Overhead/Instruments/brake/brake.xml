@@ -10,19 +10,8 @@
 
   <path>brake.ac</path>
 
-  <animation>
-    <object-name>connector</object-name>
-    <object-name>rotorbrakehandle</object-name>
-    <object-name>hydcase</object-name>
-    <object-name>hydpiston</object-name>
-    <object-name>hydrod</object-name>
-    <object-name>pins</object-name>
-    <object-name>pivot</object-name>
-    <object-name>hydline</object-name>
-  </animation>
-
   <effect>
-    <inherits-from>Aircraft/AirCrane/Models/Effects/Interior/cockpit-interior</inherits-from>
+    <inherits-from>Aircraft/AirCrane/Models/Effects/Interior/lm-interior-rotorbrake</inherits-from>
     <object-name>connector</object-name>
     <object-name>rotorbrakehandle</object-name>
     <object-name>hydcase</object-name>

@@ -4,17 +4,8 @@
 
   <path>instlightspanel.ac</path>
 
-  <animation>
-    <object-name>base</object-name>
-    <object-name>knob-non-flight</object-name>
-    <object-name>knob-pilot-flight</object-name>
-    <object-name>knob-inst-scndry</object-name>
-    <object-name>pilotfanbase</object-name>
-    <object-name>switchpilotfan</object-name>
-  </animation>
-
   <effect>
-    <inherits-from>Aircraft/AirCrane/Models/Effects/Interior/cockpit-interior</inherits-from>
+    <inherits-from>Aircraft/AirCrane/Models/Effects/Interior/lm-interior-instlightspanel</inherits-from>
     <object-name>base</object-name>
     <object-name>knob-non-flight</object-name>
     <object-name>knob-pilot-flight</object-name>

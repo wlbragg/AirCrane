@@ -4,29 +4,8 @@
 
   <path>power.ac</path>
 
-  <animation>
-    <object-name>base</object-name>
-    <object-name>cabin-vent</object-name>
-    <object-name>eps</object-name>
-    <object-name>antiice</object-name>
-    <object-name>pitot</object-name>
-    <object-name>pod-power</object-name>
-    <object-name>tailskid</object-name>
-    <object-name>lvjack-l</object-name>
-    <object-name>lvjack-r</object-name>
-    <object-name>master-bat</object-name>
-    <object-name>gen-1</object-name>
-    <object-name>gen-2</object-name>
-    <object-name>rect-1</object-name>
-    <object-name>rect-2</object-name>
-    <object-name>ext-power</object-name>
-    <object-name>inverter</object-name>
-    <object-name>ignition-1</object-name>
-    <object-name>ignition-2</object-name>
-  </animation>
-
   <effect>
-    <inherits-from>Aircraft/AirCrane/Models/Effects/Interior/cockpit-interior</inherits-from>
+    <inherits-from>Aircraft/AirCrane/Models/Effects/Interior/lm-interior-power</inherits-from>
     <object-name>base</object-name>
     <object-name>cabin-vent</object-name>
     <object-name>eps</object-name>

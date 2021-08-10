@@ -4,15 +4,8 @@
 
   <path>rotorbrake.ac</path>
 
-  <animation>
-    <object-name>base</object-name>
-    <object-name>switchrotorbrake</object-name>
-    <object-name>rotorbrakeoff</object-name>
-    <object-name>rotorbrakeon</object-name>
-  </animation>
-
   <effect>
-    <inherits-from>Aircraft/AirCrane/Models/Effects/Interior/cockpit-interior</inherits-from>
+    <inherits-from>Aircraft/AirCrane/Models/Effects/Interior/lm-interior-rotorbrakepanel</inherits-from>
     <object-name>base</object-name>
     <object-name>switchrotorbrake</object-name>
     <object-name>rotorbrakeoff</object-name>

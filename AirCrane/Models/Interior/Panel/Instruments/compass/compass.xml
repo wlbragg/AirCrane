@@ -4,16 +4,8 @@
 
   <path>compass.ac</path>
 
-  <animation>
-    <object-name>fond</object-name>
-    <object-name>face</object-name>
-    <object-name>lubber</object-name>
-
-    <object-name>vitre</object-name>
-  </animation>
-
   <effect>
-    <inherits-from>Aircraft/AirCrane/Models/Effects/Interior/cockpit-interior</inherits-from>
+    <inherits-from>Aircraft/AirCrane/Models/Effects/Interior/lm-interior-compass</inherits-from>
     <object-name>fond</object-name>
     <object-name>face</object-name>
     <object-name>lubber</object-name>

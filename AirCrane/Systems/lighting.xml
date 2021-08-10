@@ -183,6 +183,7 @@
       <property>/sim/model/lightmap/dome-white/factor</property>
     </output>
   </logic>
+
   <logic>
     <name>Interior Dome Red</name>
     <input>

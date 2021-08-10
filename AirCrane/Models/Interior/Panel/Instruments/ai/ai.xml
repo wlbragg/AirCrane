@@ -4,29 +4,9 @@
 
   <path>ai.ac</path>
 
-  <animation>
-    <object-name>fond</object-name>
-    <object-name>bouton</object-name>
-    <object-name>face</object-name>
-    <object-name>AttitudeBall</object-name>
-    <object-name>barre</object-name>
-    <object-name>barre1</object-name>
-    <object-name>barre2</object-name>
-    <object-name>gs-scale</object-name>
-    <object-name>ring-slip</object-name>
-    <object-name>course-flag</object-name>
-    <object-name>slip-ball</object-name>
-    <object-name>nav-pitch-steering-ba</object-name>
-    <object-name>nav-yaw-steering-bar</object-name>
-    <object-name>bank-index</object-name>
-    <object-name>ils-flags</object-name>
-
-    <object-name>vitre</object-name>
-  </animation>
-
   <effect>
-    <inherits-from>Aircraft/AirCrane/Models/Effects/Interior/cockpit-interior</inherits-from>
-    <object-name>fond</object-name>
+    <inherits-from>Aircraft/AirCrane/Models/Effects/Interior/lm-interior-ai</inherits-from>
+	<object-name>fond</object-name>
     <object-name>bouton</object-name>
     <object-name>face</object-name>
     <object-name>AttitudeBall</object-name>

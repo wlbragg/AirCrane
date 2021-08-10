@@ -4,22 +4,8 @@
 
   <path>yoke.ac</path>
 
-  <animation>
-    <object-name>manche</object-name>
-    <object-name>btn1</object-name>
-    <object-name>btn2</object-name>
-    <object-name>btn3</object-name>
-    <object-name>chapeau</object-name>
-    <object-name>boot1</object-name>
-    <object-name>boot2</object-name>
-    <object-name>boot3</object-name>
-    <object-name>boot4</object-name>
-    <object-name>boot5</object-name>
-    <object-name>boot6</object-name>
-  </animation>
-
   <effect>
-    <inherits-from>Aircraft/AirCrane/Models/Effects/Interior/cockpit-interior</inherits-from>
+    <inherits-from>Aircraft/AirCrane/Models/Effects/Interior/lm-interior-yokel</inherits-from>
     <object-name>manche</object-name>
     <object-name>btn1</object-name>
     <object-name>btn2</object-name>
@@ -40,12 +26,6 @@
     <object-name>btn2</object-name>
     <object-name>btn3</object-name>
     <object-name>chapeau</object-name>
-    <!--object-name>boot1</object-name>
-    <object-name>boot2</object-name>
-    <object-name>boot3</object-name>
-    <object-name>boot4</object-name>
-    <object-name>boot5</object-name>
-    <object-name>boot6</object-name-->
   </animation>
 
   <animation>

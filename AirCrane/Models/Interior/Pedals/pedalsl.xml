@@ -1,0 +1,486 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+
+  <path>pedals.ac</path>
+
+  <effect>
+    <inherits-from>Aircraft/AirCrane/Models/Effects/Interior/lm-interior-pedalsl</inherits-from>
+    <object-name>base</object-name>
+
+    <object-name>LpedalRod</object-name>
+    <object-name>Lpedal</object-name>
+    <object-name>Lboot1</object-name>
+    <object-name>Lboot2</object-name>
+    <object-name>Lboot3</object-name>
+    <object-name>Lboot4</object-name>
+    <object-name>Lboot5</object-name>
+    <object-name>Lboot6</object-name>
+
+    <object-name>RpedalRod</object-name>
+    <object-name>Rpedal</object-name>
+    <object-name>Rboot1</object-name>
+    <object-name>Rboot2</object-name>
+    <object-name>Rboot3</object-name>
+    <object-name>Rboot4</object-name>
+    <object-name>Rboot5</object-name>
+    <object-name>Rboot6</object-name>
+  </effect>
+
+  <!--===== Left Pedal =====-->
+  <animation>
+    <type>rotate</type>
+    <object-name>LpedalRod</object-name>
+    <object-name>Lpedal</object-name>
+    <property>controls/flight/rudder</property>
+    <factor>27</factor>
+    <center>
+      <x-m>  0.02093 </x-m>
+      <y-m>  0.00000 </y-m>
+      <z-m> -0.04680 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>Lpedal</object-name>
+    <property>controls/flight/rudder</property>
+    <factor>-27</factor>
+    <center>
+      <x-m>-0.008571 </x-m>
+      <y-m>-0.07426 </y-m>
+      <z-m> 0.128228 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+
+  <!--===== Right Pedal =====-->
+  <animation>
+    <type>rotate</type>
+    <object-name>Rpedal</object-name>
+    <object-name>RpedalRod</object-name>
+    <property>controls/flight/rudder</property>
+    <factor>-27</factor>
+    <center>
+      <x-m>  0.03181 </x-m>
+      <y-m>  0.000000 </y-m>
+      <z-m> -0.04140 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>Rpedal</object-name>
+    <property>controls/flight/rudder</property>
+    <factor>27</factor>
+    <center>
+      <x-m> -0.00363 </x-m>
+      <y-m> -0.52092 </y-m>
+      <z-m>  0.13079 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+
+  <!--===== Left Boot =====-->
+  <animation>
+    <type>rotate</type>
+    <object-name>Lboot6</object-name>
+    <property>controls/flight/rudder</property>
+    <factor>27</factor>
+    <center>
+      <x-m>  0.02093 </x-m>
+      <y-m>  0.00000 </y-m>
+      <z-m> -0.04680 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>Lboot6</object-name>
+    <property>controls/flight/rudder</property>
+    <offset-deg>5</offset-deg>
+    <factor>-27</factor>
+    <center>
+      <x-m>  0.02093 </x-m>
+      <y-m>  0.00000 </y-m>
+      <z-m> -0.04680 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>Lboot5</object-name>
+    <property>controls/flight/rudder</property>
+    <factor>27</factor>
+    <center>
+      <x-m>  0.02093 </x-m>
+      <y-m>  0.00000 </y-m>
+      <z-m> -0.04680 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>Lboot5</object-name>
+    <property>controls/flight/rudder</property>
+    <offset-deg>0</offset-deg>
+    <factor>-20</factor>
+    <center>
+      <x-m>  0.02093 </x-m>
+      <y-m>  0.00000 </y-m>
+      <z-m> -0.04680 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>Lboot4</object-name>
+    <property>controls/flight/rudder</property>
+    <factor>27</factor>
+    <center>
+      <x-m>  0.02093 </x-m>
+      <y-m>  0.00000 </y-m>
+      <z-m> -0.04680 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>Lboot4</object-name>
+    <property>controls/flight/rudder</property>
+    <offset-deg>0</offset-deg>
+    <factor>-8</factor>
+    <center>
+      <x-m>  0.02093 </x-m>
+      <y-m>  0.00000 </y-m>
+      <z-m> -0.04680 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>Lboot3</object-name>
+    <property>controls/flight/rudder</property>
+    <factor>27</factor>
+    <center>
+      <x-m>  0.02093 </x-m>
+      <y-m>  0.00000 </y-m>
+      <z-m> -0.04680 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>Lboot3</object-name>
+    <property>controls/flight/rudder</property>
+    <offset-deg>0</offset-deg>
+    <factor>-4</factor>
+    <center>
+      <x-m>  0.02093 </x-m>
+      <y-m>  0.00000 </y-m>
+      <z-m> -0.04680 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>Lboot2</object-name>
+    <property>controls/flight/rudder</property>
+    <factor>27</factor>
+    <center>
+      <x-m>  0.02093 </x-m>
+      <y-m>  0.00000 </y-m>
+      <z-m> -0.04680 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>Lboot1</object-name>
+    <property>controls/flight/rudder</property>
+    <factor>27</factor>
+    <center>
+      <x-m>  0.02093 </x-m>
+      <y-m>  0.00000 </y-m>
+      <z-m> -0.04680 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+
+  <!--===== Right Boot =====-->
+  <animation>
+    <type>rotate</type>
+    <object-name>Rboot6</object-name>
+    <property>controls/flight/rudder</property>
+    <factor>-27</factor>
+    <center>
+      <x-m>  0.03181 </x-m>
+      <y-m>  0.00000 </y-m>
+      <z-m> -0.04140 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>Rboot6</object-name>
+    <property>controls/flight/rudder</property>
+    <offset-deg>-5</offset-deg>
+    <factor>27</factor>
+    <center>
+      <x-m>  0.03181 </x-m>
+      <y-m>  0.00000 </y-m>
+      <z-m> -0.04140 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>Rboot5</object-name>
+    <property>controls/flight/rudder</property>
+    <factor>-27</factor>
+    <center>
+      <x-m>  0.03181 </x-m>
+      <y-m>  0.00000 </y-m>
+      <z-m> -0.04140 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>Rboot5</object-name>
+    <property>controls/flight/rudder</property>
+    <offset-deg>0</offset-deg>
+    <factor>20</factor>
+    <center>
+      <x-m>  0.03181 </x-m>
+      <y-m>  0.00000 </y-m>
+      <z-m> -0.04140 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>Rboot4</object-name>
+    <property>controls/flight/rudder</property>
+    <factor>-27</factor>
+    <center>
+      <x-m>  0.03181 </x-m>
+      <y-m>  0.00000 </y-m>
+      <z-m> -0.04140 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>Rboot4</object-name>
+    <property>controls/flight/rudder</property>
+    <offset-deg>0</offset-deg>
+    <factor>8</factor>
+    <center>
+      <x-m>  0.03181 </x-m>
+      <y-m>  0.00000 </y-m>
+      <z-m> -0.04140 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>Rboot3</object-name>
+    <property>controls/flight/rudder</property>
+    <factor>-27</factor>
+    <center>
+      <x-m>  0.03181 </x-m>
+      <y-m>  0.00000 </y-m>
+      <z-m> -0.04140 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>Rboot3</object-name>
+    <property>controls/flight/rudder</property>
+    <offset-deg>0</offset-deg>
+    <factor>4</factor>
+    <center>
+      <x-m>  0.03181 </x-m>
+      <y-m>  0.00000 </y-m>
+      <z-m> -0.04140 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>Rboot2</object-name>
+    <property>controls/flight/rudder</property>
+    <factor>-27</factor>
+    <center>
+      <x-m>  0.03181 </x-m>
+      <y-m>  0.00000 </y-m>
+      <z-m> -0.04140 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>Rboot1</object-name>
+    <property>controls/flight/rudder</property>
+    <factor>-27</factor>
+    <center>
+      <x-m>  0.03181 </x-m>
+      <y-m>  0.00000 </y-m>
+      <z-m> -0.04140 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>Lpedal</object-name>
+    <property>controls/gear/brake-left</property>
+    <factor>-10</factor>
+    <center>
+      <x-m>-0.008571 </x-m>
+      <y-m>-0.07426 </y-m>
+      <z-m> 0.128228 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>Rpedal</object-name>
+    <property>controls/gear/brake-right</property>
+    <factor>-10</factor>
+    <center>
+      <x-m> -0.00363 </x-m>
+      <y-m> -0.52092 </y-m>
+      <z-m>  0.13079 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+
+</PropertyList>

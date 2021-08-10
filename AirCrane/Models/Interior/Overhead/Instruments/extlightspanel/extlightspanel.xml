@@ -2,23 +2,10 @@
 
 <PropertyList>
 
-  <path>internallight.ac</path>
-
-  <animation>
-    <object-name>base</object-name>
-    <object-name>knob-left-pilot-inst</object-name>
-    <object-name>knob-consol</object-name>
-    <object-name>lightsbase</object-name>
-    <object-name>switchnav</object-name>
-    <object-name>switchstrobe</object-name>
-    <object-name>switchacolfwd</object-name>
-    <object-name>switchacolaft</object-name>
-    <object-name>switchlanding</object-name>
-    <object-name>switchspot</object-name>
-  </animation>
+  <path>extlightspanel.ac</path>
 
   <effect>
-    <inherits-from>Aircraft/AirCrane/Models/Effects/Interior/cockpit-interior</inherits-from>
+    <inherits-from>Aircraft/AirCrane/Models/Effects/Interior/lm-interior-extlightspanel</inherits-from>
     <object-name>base</object-name>
     <object-name>knob-left-pilot-inst</object-name>
     <object-name>knob-consol</object-name>

@@ -180,7 +180,7 @@
 
   <!-- alt -->
   <model>
-    <path>Aircraft/AirCrane/Models/Interior/Panel/Instruments/alt/alt.xml</path>
+    <path>Aircraft/AirCrane/Models/Interior/Panel/Instruments/alt/altl.xml</path>
     <offsets>
       <x-m> -0.00997 </x-m>
       <y-m>  0.72759 </y-m>
@@ -190,7 +190,7 @@
   </model>
 
   <model>
-    <path>Aircraft/AirCrane/Models/Interior/Panel/Instruments/alt/alt.xml</path>
+    <path>Aircraft/AirCrane/Models/Interior/Panel/Instruments/alt/altr.xml</path>
     <offsets>
       <x-m> -0.00754 </x-m>
       <y-m> -0.45872 </y-m>

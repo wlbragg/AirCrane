@@ -4,12 +4,8 @@
 
   <path>empty3.ac</path>
 
-  <animation>
-    <object-name>base</object-name>
-  </animation>
-
   <effect>
-    <inherits-from>Aircraft/AirCrane/Models/Effects/Interior/cockpit-interior</inherits-from>
+    <inherits-from>Aircraft/AirCrane/Models/Effects/Interior/lm-interior-oempty3</inherits-from>
     <object-name>base</object-name>
   </effect>
 

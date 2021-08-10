@@ -657,6 +657,8 @@ setlistener("/sim/signals/fdm-initialized", func {
   # Use Nasal to make some properties persistent. <aircraft-data> does not work reliably.
   aircraft.data.add("/sim/model/cableguard/enabled");
   aircraft.data.add("/sim/model/winchcover/enabled");
+  aircraft.data.add("/sim/model/occupants");
+  aircraft.data.add("/controls/lighting/luminosite-lights");
   aircraft.data.load();
 
   main_loop();

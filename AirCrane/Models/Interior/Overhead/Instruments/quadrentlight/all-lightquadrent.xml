@@ -3,7 +3,7 @@
 <PropertyList>
 
   <model>
-    <path>Aircraft/AirCrane/Models/Interior/Overhead/Instruments/quadrentlight/lightquadrent.xml</path>
+    <path>Aircraft/AirCrane/Models/Interior/Overhead/Instruments/quadrentlight/panellowpowerleft.xml</path>
     <offsets>
       <x-m> -0.75856 </x-m>
       <y-m> -0.14974 </y-m>
@@ -12,12 +12,78 @@
   </model>
 
   <model>
-    <path>Aircraft/AirCrane/Models/Interior/Overhead/Instruments/quadrentlight/lightquadrent.xml</path>
+    <path>Aircraft/AirCrane/Models/Interior/Overhead/Instruments/quadrentlight/panellowpowerright.xml</path>
     <offsets>
       <x-m> -0.75856 </x-m>
       <y-m>  0.14974 </y-m>
       <z-m> -0.68735 </z-m>
     </offsets>
   </model>
+
+  <animation>
+    <type>select</type>
+    <object-name>redoff-l</object-name>
+    <condition>
+      <equals>
+        <property>systems/electrical/outputs/eng1-underspeed</property>
+        <value>0</value>
+      </equals>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>redon-l</object-name>
+    <condition>
+      <equals>
+        <property>systems/electrical/outputs/eng1-underspeed</property>
+        <value>1</value>
+      </equals>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>redoff-r</object-name>
+    <condition>
+      <equals>
+        <property>systems/electrical/outputs/eng2-underspeed</property>
+        <value>0</value>
+      </equals>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>redon-r</object-name>
+    <condition>
+      <equals>
+        <property>systems/electrical/outputs/eng2-underspeed</property>
+        <value>1</value>
+      </equals>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>material</type>
+    <object-name>redon-l</object-name>
+    <emission>
+      <factor-prop>systems/electrical/outputs/eng1-underspeed</factor-prop>
+      <red>   0.7 </red>
+      <green> 0.5 </green>
+      <blue>  0.5 </blue>
+    </emission>
+  </animation>
+
+  <animation>
+    <type>material</type>
+    <object-name>redon-r</object-name>
+    <emission>
+      <factor-prop>systems/electrical/outputs/eng2-underspeed</factor-prop>
+      <red>   0.7 </red>
+      <green> 0.5 </green>
+      <blue>  0.5 </blue>
+    </emission>
+  </animation>
 
 </PropertyList>
