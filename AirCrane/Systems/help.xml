@@ -68,5 +68,9 @@
     <name>W</name>
     <desc>Winch extend</desc>
   </key>
+  <key>
+    <name>Shft+Ctrl+Click</name>
+    <desc>Start Fire</desc>
+  </key>
   
 </PropertyList>

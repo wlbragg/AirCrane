@@ -82,8 +82,8 @@ var master_bat = props.globals.getNode("controls/electric/battery-bus-switch", 1
 var generator_1 = props.globals.getNode("controls/electric/engine[0]/generator-sw", 1);
 var generator_2 = props.globals.getNode("controls/electric/engine[1]/generator-sw", 1);
 
-var rectifier_1 = props.globals.getNode("controls/electric/rect-1", 1);
-var rectifier_2 = props.globals.getNode("controls/electric/rect-2", 1);
+var rectifier_1 = props.globals.getNode("controls/switches/rect-1", 1);
+var rectifier_2 = props.globals.getNode("controls/switches/rect-2", 1);
 
 var afcs = props.globals.getNode("controls/switches/afcs", 1);
 var afcs_servo = props.globals.getNode("controls/switches/afcs-servo", 1);

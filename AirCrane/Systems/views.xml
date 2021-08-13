@@ -8,32 +8,15 @@
     <name>Right Pilot Seat View</name>
     <internal type="bool" archive="y">true</internal>
     <config>
-      <x-offset-m archive="y" type="double">0.520</x-offset-m>
-      <y-offset-m archive="y" type="double">-1.22</y-offset-m>
-      <z-offset-m archive="y" type="double">-8.668</z-offset-m>
+      <x-offset-m archive="y" type="double"> 0.567</x-offset-m>
+      <y-offset-m archive="y" type="double">-1.012</y-offset-m>
+      <z-offset-m archive="y" type="double">-8.646</z-offset-m>
       <pitch-offset-deg type="double">0</pitch-offset-deg>
       <default-field-of-view-deg type="double">100</default-field-of-view-deg>
     </config>
   </view>
 
   <view n="100">
-    <name>Left Pilot Seat View</name>
-    <type>lookfrom</type>
-    <internal archive="y">true</internal>
-    <config>
-      <!--dynamic-view type="bool">true</dynamic-view-->
-      <from-model type="bool">true</from-model>
-	    <from-model-idx type="int">0</from-model-idx>
-      <ground-level-nearplane-m type="double">0.5f</ground-level-nearplane-m>
-      <x-offset-m archive="y" type="double">-0.520</x-offset-m> <!--right-->
-      <y-offset-m archive="y" type="double">-1.08</y-offset-m> <!--up-->
-      <z-offset-m archive="y" type="double">-8.668</z-offset-m> <!--back-->
-      <pitch-offset-deg type="double">0</pitch-offset-deg>
-      <default-field-of-view-deg type="double">120</default-field-of-view-deg>
-    </config>
-  </view>
-
-  <view n="101">
     <name>Aft Pilot Seat View</name>
     <type>lookfrom</type>
     <internal archive="y">true</internal>
@@ -46,8 +29,25 @@
       <y-offset-m archive="y" type="double">-1.665</y-offset-m> <!--up-->
       <z-offset-m archive="y" type="double">-7.735</z-offset-m> <!--back-->
       <pitch-offset-deg type="double">0</pitch-offset-deg>
-      <default-field-of-view-deg type="double">110</default-field-of-view-deg>
-      <heading-offset-deg type="double">180</heading-offset-deg>
+      <default-field-of-view-deg type="double">120</default-field-of-view-deg>
+      <heading-offset-deg type="double">190.125</heading-offset-deg>
+    </config>
+  </view>
+
+  <view n="101">
+    <name>Left Pilot Seat View</name>
+    <type>lookfrom</type>
+    <internal archive="y">true</internal>
+    <config>
+      <!--dynamic-view type="bool">true</dynamic-view-->
+      <from-model type="bool">true</from-model>
+	    <from-model-idx type="int">0</from-model-idx>
+      <ground-level-nearplane-m type="double">0.5f</ground-level-nearplane-m>
+      <x-offset-m archive="y" type="double">-0.567</x-offset-m> <!--right-->
+      <y-offset-m archive="y" type="double">-1.012</y-offset-m> <!--up-->
+      <z-offset-m archive="y" type="double">-8.646</z-offset-m> <!--back-->
+      <pitch-offset-deg type="double">0</pitch-offset-deg>
+      <default-field-of-view-deg type="double">100</default-field-of-view-deg>
     </config>
   </view>
 
