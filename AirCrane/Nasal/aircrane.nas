@@ -659,6 +659,7 @@ setlistener("/sim/signals/fdm-initialized", func {
   aircraft.data.add("/sim/model/winchcover/enabled");
   aircraft.data.add("/sim/model/occupants");
   aircraft.data.add("/controls/lighting/luminosite-lights");
+  aircraft.data.add("/sim/model/firetank/enabled");
   aircraft.data.load();
 
   main_loop();
