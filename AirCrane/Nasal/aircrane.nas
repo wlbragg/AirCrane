@@ -20,7 +20,8 @@ aircraft.timer.new("/sim/time/hobbs/helicopter", nil).start();
 
 # ======================================================================= engines/rotor
 var state = props.globals.getNode("sim/model/aircrane/state");
-var engine = props.globals.getNode("sim/model/aircrane/engine");
+# engine-rpm should eventually change to engines/engine[]/rpm if even related to rpm
+var engine = props.globals.getNode("engines/engine-rpm");
 var rotor = props.globals.getNode("controls/engines/engine/magnetos");
 var rotor_rpm = props.globals.getNode("rotors/main/rpm");
 var tail_rpm = props.globals.getNode("rotors/tail/rpm");
@@ -32,8 +33,8 @@ var stall = props.globals.getNode("rotors/main/stall", 1);
 var stall_filtered = props.globals.getNode("rotors/main/stall-filtered", 1);
 var torque_sound_filtered = props.globals.getNode("rotors/gear/torque-sound-filtered", 1);
 
-var engine_one = props.globals.getNode("sim/model/aircrane/engines/one/n1", 1);
-var engine_two = props.globals.getNode("sim/model/aircrane/engines/two/n1", 1);
+var engine_one = props.globals.getNode("engines/one/n1", 1);
+var engine_two = props.globals.getNode("engines/two/n1", 1);
 var ignition_one = props.globals.getNode("controls/switches/ignition-1", 1);
 var ignition_two = props.globals.getNode("controls/switches/ignition-2", 1);
 var eng1_start = props.globals.getNode("controls/switches/eng1-n1-start", 1);
@@ -602,9 +603,6 @@ var main_loop = func {
   rotor_wash_loop();
   flexhose_animation();
 
-  #trueGrndElevFt = geo.elevation(latNode.getValue(), lonNode.getValue()) * 3.28;
-  #aircraftTrueAgl.setValue(trueGrndElevFt);
-
   settimer(main_loop, 0);
 }
 
@@ -612,11 +610,6 @@ var crashed = 0;
 var variant = nil;
 var doors = nil;
 var config_dialog = nil;
-
-#var lonNode = props.globals.getNode("position/longitude-deg", 1);
-#var latNode = props.globals.getNode("position/latitude-deg", 1);
-#var trueGrndElevFt = 0;
-#var aircraftTrueAgl = props.globals.getNode("position/true-agl-ft", 1);
 
 # initialization
 setlistener("/sim/signals/fdm-initialized", func {
@@ -701,29 +694,6 @@ setlistener("/sim/freeze/replay-state", func {
   }
 });
 
-# firebug fire starter ctrl+shift+leftmouseclick
-setlistener("/sim/signals/click", func {
-  if (__kbd.shift.getBoolValue()) {
-    var click_pos = geo.click_position();
-    if (__kbd.ctrl.getBoolValue()) {
-      wildfire.ignite(click_pos);
-    }
-  }
-});
-
-# Listen for impact of released payload
-setlistener("/sim/ai/aircraft/impact/retardant", func (n) {
-  #print("Retardant impact!");
-  var node = props.globals.getNode(n.getValue());
-  var pos  = geo.Coord.new().set_latlon
-                 (node.getNode("impact/latitude-deg").getValue(),
-                  node.getNode("impact/longitude-deg").getValue(),
-                  node.getNode("impact/elevation-m").getValue());
-  # The arguments are: position, radius and volume (currently unused).
-  wildfire.resolve_foam_drop(pos, 10, 0);
-  #wildfire.resolve_retardant_drop(pos, 10, 0);
-});
-
 setlistener("/sim/model/aircrane/cockpit/rotorbrake-handle-animation", func (node) {
   if (node.getValue() == 1) {
     aircrane.pumpRotorBrake();
@@ -788,11 +758,11 @@ var enableOSD = func {
   var right = screen.display.new(-300, 10);
 
   left.add("/sim/model/aircrane/state");
-  left.add("/sim/model/aircrane/engine");
+  left.add("/engines/engine-rpm");
   left.add("/controls/engines/engine/magnetos");
   left.add("/controls/engines/engine[0]/throttle");
-  left.add("/sim/model/aircrane/engines/one/n1");
-  left.add("/sim/model/aircrane/engines/two/n1");
+  left.add("/engines/one/n1");
+  left.add("/engines/two/n1");
   left.add("/controls/switches/ignition-1");
   left.add("/controls/switches/ignition-2");
   left.add("/controls/switches/eng1-n1-start");
@@ -801,8 +771,8 @@ var enableOSD = func {
   left.add("/systems/electrical/outputs/eng2-underspeed");
   left.add("/controls/engines/engine[0]/starter");
   left.add("/controls/engines/engine[1]/starter");
-  left.add("/sim/model/aircrane/engines/one/starting");
-  left.add("/sim/model/aircrane/engines/two/starting");
+  left.add("/engines/one/starting");
+  left.add("/engines/two/starting");
 
   left.add("/rotors/main/rpm");
   left.add("/rotors/tail/rpm");

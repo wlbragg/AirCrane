@@ -28,7 +28,7 @@
     <input>
       <expression>
         <product>
-          <property>sim/model/aircrane/engines/one/n1</property>
+          <property>engines/one/n1</property>
           <value>200</value>
         </product>
       </expression>
@@ -43,7 +43,7 @@
     <input>
       <expression>
         <product>
-          <property>sim/model/aircrane/engines/two/n1</property>
+          <property>engines/two/n1</property>
           <value>200</value>
         </product>
       </expression>

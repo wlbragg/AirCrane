@@ -2,336 +2,350 @@
 
 <PropertyList>
 
-  <sim include="views.xml">
+	<sim include="views.xml">
 
-    <fuel-fraction>0.8</fuel-fraction>
+		<fuel-fraction>0.8</fuel-fraction>
 
-    <startup>
-      <splash-texture>Aircraft/AirCrane/aircrane-splash.png</splash-texture>
-    </startup>
+		<startup>
+		  <splash-texture>Aircraft/AirCrane/aircrane-splash.png</splash-texture>
+		</startup>
 
-    <sound>
-      <path>Aircraft/AirCrane/Sounds/aircrane-sound.xml</path>
-      <click-avionics type="bool">false</click-avionics>
-      <click-button-down type="bool">false</click-button-down>
-      <click-button-up type="bool">false</click-button-up>
-      <click-knob type="bool">false</click-knob>
-      <click-cover type="bool">false</click-cover>
-      <click-pos-x type="double">-12.21132</click-pos-x>
-      <click-pos-y type="double"> -0.03679</click-pos-y>
-      <click-pos-z type="double"> -0.83401</click-pos-z>
-    </sound>
+		<sound>
+		  <path>Aircraft/AirCrane/Sounds/aircrane-sound.xml</path>
+		  <click-avionics type="bool">false</click-avionics>
+		  <click-button-down type="bool">false</click-button-down>
+		  <click-button-up type="bool">false</click-button-up>
+		  <click-knob type="bool">false</click-knob>
+		  <click-cover type="bool">false</click-cover>
+		  <click-pos-x type="double">-12.21132</click-pos-x>
+		  <click-pos-y type="double"> -0.03679</click-pos-y>
+		  <click-pos-z type="double"> -0.83401</click-pos-z>
+		</sound>
 
-    <model>
-      <path archive="y">Aircraft/AirCrane/Models/aircrane.xml</path>
-      <occupants type="bool">true</occupants>
-      <livery>
-        <file type="string">default</file>
-        <index type="int">0</index>
-      </livery>
-      <aircrane>
-        <!--app>
-        <running type="int">-1</running>
-        <starting type="bool">false</starting>
-        </app-->
-        <state type="int">-2</state>
-        <engine type="float">0</engine>
-        <engines>
-          <one>
+		<model>
+		  <path archive="y">Aircraft/AirCrane/Models/aircrane.xml</path>
+		  <occupants type="bool">true</occupants>
+		  <livery>
+			<file type="string">default</file>
+			<index type="int">0</index>
+		  </livery>
+		  <aircrane>
+			<!--app>
+			<running type="int">-1</running>
+			<starting type="bool">false</starting>
+			</app-->
+			<state type="int">-2</state>
+			<rotor-step-deg type="float">-1</rotor-step-deg>
+			<main-rpm-pct type="float">0</main-rpm-pct>
+			<tail-rpm-pct type="float">0</tail-rpm-pct>
+			<xmsn-oil-temp type="float">0</xmsn-oil-temp>
+			<xmsn-oil-pressure type="float">0</xmsn-oil-pressure>
+			<oil-temp type="float">0</oil-temp>
+			<oil-pressure type="float">0</oil-pressure>
+			<hydraulic-fst type="float">0</hydraulic-fst>
+			<hydraulic-snd type="float">0</hydraulic-snd>
+			<hydraulic-util type="float">0</hydraulic-util>
+			<engtemp type="float">0</engtemp>
+			<ggt type="float">0</ggt>
+			<!--tank>
+			<pump>
+			<overtemp type="bool">0</overtemp>
+			</pump>
+			</tank-->
+			<effects>
+			  <particles>
+				<rotorwash>
+				  <enabled type="bool">true</enabled>
+				  <redcombinedstart type="float">.3</redcombinedstart>
+				  <greencombinedstart type="float">.3</greencombinedstart>
+				  <bluecombinedstart type="float">.3</bluecombinedstart>
+				  <redcombinedend type="float">.5</redcombinedend>
+				  <greencombinedend type="float">.5</greencombinedend>
+				  <bluecombinedend type="float">.5</bluecombinedend>
+				</rotorwash>
+				<enabled type="bool">true</enabled>
+				<redcombined type="float">0</redcombined>
+				<greencombined type="float">0</greencombined>
+				<bluecombined type="float">0</bluecombined>
+			  </particles>
+			  <shadow type="bool">false</shadow>
+			  <interior>
+				<grain>
+				  <frame type="int">300</frame>
+				  <floor type="int">150</floor>
+				  <wall type="int">200</wall>
+				  <seal type="int">400</seal>
+				</grain>
+			  </interior>
+			</effects>
+				<model-f type="bool">false</model-f>
+			<lighting>
+			  <cws-bright type="int">0</cws-bright>
+			</lighting>
+		  </aircrane>
+		  <hitch>
+			<openhook type="bool">false</openhook>
+		  </hitch>
+		  <cableguard>
+			<enabled type="bool">false</enabled>
+		  </cableguard>
+		  <steppanel>
+			<enabled type="bool">false</enabled>
+		  </steppanel>
+		  <winchcover>
+			<enabled type="bool">true</enabled>
+		  </winchcover>
+		  <watercannon>
+			<enabled type="bool">true</enabled>
+			<tank-volume type="float">0</tank-volume>
+			<tank-weight type="float">0</tank-weight>
+			<position-deg type="float">0</position-deg>
+			<snorkel-depth type="float">0</snorkel-depth>
+			<togglecannonpitch type="int">0</togglecannonpitch>
+		  </watercannon>
+		  <firetank>
+			<enabled type="bool">false</enabled>
+			<deployflexhose type="float">1</deployflexhose>
+			<deployramscoop type="float">0</deployramscoop>
+			<opencannonvalve type="bool">0</opencannonvalve>
+			<opentankdoors type="bool">0</opentankdoors>
+			<foam type="bool">0</foam>
+			<arm type="bool">0</arm>
+			<lowhydpres type="bool">0</lowhydpres>
+			<test type="bool">0</test>
+			<quantity type="int">0</quantity>
+			<coverage type="int">0</coverage>
+			<foamconcentrate type="int">0</foamconcentrate>
+			<droprate type="int">300</droprate><!-- for particles only -->
+			<watercannonparticlectrl type="bool">false</watercannonparticlectrl>
+			<watercannonretardantctrl type="bool">false</watercannonretardantctrl>
+			<waterdropparticlectrl type="bool">false</waterdropparticlectrl>
+			<waterdropretardantctrl type="bool">false</waterdropretardantctrl>
+			<flexhose>
+			  <flex-force type="double">0.08</flex-force>
+			  <factor type="double">0.22</factor>
+			  <offset type="double">-2.9</offset>
+			  <bendforce type="int">15</bendforce>
+			  <damping type="double">0.6</damping>
+			  <stiffness type="double">9.0</stiffness>
+			  <hosehitsground type="bool">true</hosehitsground>
+			  <correction type="double">0.1</correction>
+			  <pitch1  type="double">0.0</pitch1>
+			  <pitch2  type="double">0.0</pitch2>
+			  <pitch3  type="double">0.0</pitch3>
+			  <pitch4  type="double">0.0</pitch4>
+			  <pitch5  type="double">0.0</pitch5>
+			  <pitch6  type="double">0.0</pitch6>
+			  <pitch7  type="double">0.0</pitch7>
+			  <pitch8  type="double">0.0</pitch8>
+			  <pitch9  type="double">0.0</pitch9>
+			  <pitch10 type="double">0.0</pitch10>
+			  <pitch11 type="double">0.0</pitch11>
+			  <pitch12 type="double">0.0</pitch12>
+			  <pitch13 type="double">0.0</pitch13>
+			  <pitch14 type="double">0.0</pitch14>
+			  <pitch15 type="double">0.0</pitch15>
+			  <pitch16 type="double">0.0</pitch16>
+			  <pitch17 type="double">0.0</pitch17>
+			  <pitch18 type="double">0.0</pitch18>
+			  <pitch19 type="double">0.0</pitch19>
+			  <pitch20 type="double">0.0</pitch20>
+			  <pitch21 type="double">0.0</pitch21>
+			  <pitch22 type="double">0.0</pitch22>
+			  <pitch23 type="double">0.0</pitch23>
+			  <pitch24 type="double">0.0</pitch24>
+			  <pitch25 type="double">0.0</pitch25>
+			  <pitch26 type="double">0.0</pitch26>
+			  <pitch27 type="double">0.0</pitch27>
+			  <pitch28 type="double">0.0</pitch28>
+			  <pitch29 type="double">0.0</pitch29>
+			  <pitch30 type="double">0.0</pitch30>
+			  <pitch31 type="double">0.0</pitch31>
+			  <roll1   type="double">0.0</roll1>
+			  <roll2   type="double">0.0</roll2>
+			  <roll3   type="double">0.0</roll3>
+			  <roll4   type="double">0.0</roll4>
+			  <roll5   type="double">0.0</roll5>
+			  <roll6   type="double">0.0</roll6>
+			  <roll7   type="double">0.0</roll7>
+			  <roll8   type="double">0.0</roll8>
+			  <roll9   type="double">0.0</roll9>
+			  <roll10  type="double">0.0</roll10>
+			  <roll11  type="double">0.0</roll11>
+			  <roll12  type="double">0.0</roll12>
+			  <roll13  type="double">0.0</roll13>
+			  <roll14  type="double">0.0</roll14>
+			  <roll15  type="double">0.0</roll15>
+			  <roll16  type="double">0.0</roll16>
+			  <roll17  type="double">0.0</roll17>
+			  <roll18  type="double">0.0</roll18>
+			  <roll19  type="double">0.0</roll19>
+			  <roll20  type="double">0.0</roll20>
+			  <roll21  type="double">0.0</roll21>
+			  <roll22  type="double">0.0</roll22>
+			  <roll23  type="double">0.0</roll23>
+			  <roll24  type="double">0.0</roll24>
+			  <roll25  type="double">0.0</roll25>
+			  <roll26  type="double">0.0</roll26>
+			  <roll27  type="double">0.0</roll27>
+			  <roll28  type="double">0.0</roll28>
+			  <roll29  type="double">0.0</roll29>
+			  <roll30  type="double">0.0</roll30>
+			  <roll31  type="double">0.0</roll31>
+			</flexhose>
+		  </firetank>
+		  <extendedcab>
+			  <enabled type="bool">false</enabled>
+		  </extendedcab>
+		  <tandemwheels>
+			  <enabled type="bool">false</enabled>
+		  </tandemwheels>
+		  <garmin196-visible type="bool">false</garmin196-visible>
+		</model>
+
+		<submodels>
+		  <serviceable type="bool">true</serviceable>
+		  <path>Aircraft/AirCrane/Models/submodels.xml</path>
+		</submodels>
+
+		<systems>
+			<path>Aircraft/AirCrane/Systems/systems.xml</path>
+
+			<autopilot n="0">
+				<path>Aircraft/AirCrane/Systems/engineering-station.xml</path>
+			</autopilot>
+
+			<property-rule n="100">
+			  <path>Aircraft/AirCrane/Systems/lighting.xml</path>
+			</property-rule>
+
+			<property-rule n="101">
+			  <path>Aircraft/AirCrane/Systems/model-effects.xml</path>
+			</property-rule>
+
+			<property-rule n="102">
+			  <path>Aircraft/AirCrane/Systems/electrical.xml</path>
+			</property-rule>
+
+			<property-rule n="103">
+			  <path>Aircraft/AirCrane/Systems/afcs.xml</path>
+			</property-rule>
+
+			<property-rule n="104">
+			  <path>Aircraft/AirCrane/Systems/fuel.xml</path>
+			</property-rule>
+		</systems>
+
+		<multiplay>
+		  <chat_display>1</chat_display>
+		  <generic>
+			<int   n="0"  type="int">0</int>
+			<int   n="1"  type="int">0</int>
+			<int   n="2"  type="int">0</int>
+			<int   n="3"  type="int">0</int>
+			<int   n="4"  type="int">0</int>
+			<int   n="5"  type="int">0</int>
+
+			<int   n="11" alias="/sim/model/aircrane/lighting/beaconfwd/enabled"/>
+			<int   n="12" alias="/sim/model/aircrane/lighting/beaconaft/enabled"/>
+			<int   n="13" alias="/sim/model/aircrane/lighting/strobe/enabled"/>
+			<int   n="14" alias="/sim/model/aircrane/lighting/nav-lights"/>
+			<int   n="15" alias="/sim/model/aircrane/lighting/spot-light"/>
+			<int   n="16" alias="/sim/model/aircrane/lighting/landing-light"/>
+
+			<float n="0" alias="/sim/model/door-positions/crew/position-norm"/>
+			<float n="1" alias="/sim/model/door-positions/passenger/position-norm"/>
+			<!--float n="2" alias="/position/gear-agl-m"/-->
+			<float n="2" alias="/position/true-agl-ft"/>
+			<float n="3" alias="/position/altitude-ft">0</float>
+			<float n="4" alias="/engines/engine[0]/rpm"/>
+			<float n="5" alias="/sim/model/firetank/deployramscoop/position-norm"/>
+			<float n="6" alias="/sim/model/firetank/deployflexhose/position-norm"/>
+			<float n="7" alias="/sim/model/door-positions/engineer/position-norm"/>
+			<float n="8" alias="/sim/model/door-positions/starboard/position-norm"/>
+			<float n="9" alias="/sim/model/hitch/hitchhook/position-norm"/>
+			<float n="10" alias="/sim/model/hitch/hitchstop/position-norm"/>
+			<!-- For Bombable -->
+			<int type="int" n="10" alias="controls/armament/trigger">0</int>
+			<string n="9" type="string" />
+		  </generic>
+		</multiplay>
+
+		<weight n="0">
+		  <name>Pilot</name>
+		  <weight-lb>180</weight-lb>
+		  <max-lb>300</max-lb>
+		</weight>
+
+		<weight n="1">
+		  <name>Co-Pilot</name>
+		  <weight-lb>180</weight-lb>
+		  <max-lb>300</max-lb>
+		</weight>
+
+		<weight n="2">
+		  <name>Right Passenger</name>
+		  <weight-lb>0</weight-lb>
+		  <max-lb>300</max-lb>
+		</weight>
+
+		<weight n="3">
+		  <name>Load</name>
+		  <weight-lb>0</weight-lb>
+		  <max-lb>20000</max-lb>
+		</weight>
+
+		<aircraft-data include="aircraft-data.xml"/>
+
+		<help include="help.xml"/>
+
+		<menubar include="../Dialogs/aircrane-menu.xml"/>
+
+		<flight-recorder include="flight-recorder.xml"/>
+
+		<instrumentation include="instrumentation.xml"/>
+
+	</sim>
+
+	<input include="aircrane-keyboard.xml"/>
+
+	<environment include="environment.xml"/>
+
+	<controls include="controls.xml"/>
+
+	<rotors include="rotors.xml"/>
+
+	<consumables include="consumables.xml"/>
+
+	<instrumentation include="instrumentation2.xml"/>
+
+	<tutorials include="Aircraft/AirCrane/Tutorials/AirCraneTutorials.xml"/>
+
+    <engines>
+        <engine-rpm type="float">0</engine-rpm>
+        <!--engines-online type="float">0</engines-online-->
+        <one>
             <n1-indent type="int">0</n1-indent>
             <n1 type="float">0</n1>
-          </one>
-          <two>
+        </one>
+        <two>
             <n1-indent type="int">0</n1-indent>
             <n1 type="float">0</n1>
-          </two>
-          <engines-online type="float">0</engines-online>
-        </engines>
-        <rotor-step-deg type="float">-1</rotor-step-deg>
-        <main-rpm-pct type="float">0</main-rpm-pct>
-        <tail-rpm-pct type="float">0</tail-rpm-pct>
-        <xmsn-oil-temp type="float">0</xmsn-oil-temp>
-        <xmsn-oil-pressure type="float">0</xmsn-oil-pressure>
-        <oil-temp type="float">0</oil-temp>
-        <oil-pressure type="float">0</oil-pressure>
-        <hydraulic-fst type="float">0</hydraulic-fst>
-        <hydraulic-snd type="float">0</hydraulic-snd>
-        <hydraulic-util type="float">0</hydraulic-util>
-        <engtemp type="float">0</engtemp>
-        <ggt type="float">0</ggt>
-        <!--tank>
-        <pump>
-        <overtemp type="bool">0</overtemp>
-        </pump>
-        </tank-->
-        <effects>
-          <particles>
-            <rotorwash>
-              <enabled type="bool">true</enabled>
-              <redcombinedstart type="float">.3</redcombinedstart>
-              <greencombinedstart type="float">.3</greencombinedstart>
-              <bluecombinedstart type="float">.3</bluecombinedstart>
-              <redcombinedend type="float">.5</redcombinedend>
-              <greencombinedend type="float">.5</greencombinedend>
-              <bluecombinedend type="float">.5</bluecombinedend>
-            </rotorwash>
-            <enabled type="bool">true</enabled>
-            <redcombined type="float">0</redcombined>
-            <greencombined type="float">0</greencombined>
-            <bluecombined type="float">0</bluecombined>
-          </particles>
-          <shadow type="bool">false</shadow>
-          <interior>
-            <grain>
-              <frame type="int">300</frame>
-              <floor type="int">150</floor>
-              <wall type="int">200</wall>
-              <seal type="int">400</seal>
-            </grain>
-          </interior>
-        </effects>
-		    <model-f type="bool">false</model-f>
-        <lighting>
-          <cws-bright type="int">0</cws-bright>
-        </lighting>
-      </aircrane>
-      <hitch>
-        <openhook type="bool">false</openhook>
-      </hitch>
-      <cableguard>
-        <enabled type="bool">false</enabled>
-      </cableguard>
-      <steppanel>
-        <enabled type="bool">false</enabled>
-      </steppanel>
-      <winchcover>
-        <enabled type="bool">true</enabled>
-      </winchcover>
-      <watercannon>
-        <enabled type="bool">true</enabled>
-        <tank-volume type="float">0</tank-volume>
-        <tank-weight type="float">0</tank-weight>
-        <position-deg type="float">0</position-deg>
-        <snorkel-depth type="float">0</snorkel-depth>
-        <togglecannonpitch type="int">0</togglecannonpitch>
-      </watercannon>
-      <firetank>
-        <enabled type="bool">false</enabled>
-        <deployflexhose type="float">1</deployflexhose>
-        <deployramscoop type="float">0</deployramscoop>
-        <opencannonvalve type="bool">0</opencannonvalve>
-        <opentankdoors type="bool">0</opentankdoors>
-        <foam type="bool">0</foam>
-        <arm type="bool">0</arm>
-        <lowhydpres type="bool">0</lowhydpres>
-        <test type="bool">0</test>
-        <quantity type="int">0</quantity>
-        <coverage type="int">0</coverage>
-        <foamconcentrate type="int">0</foamconcentrate>
-        <droprate type="int">300</droprate><!-- for particles only -->
-        <watercannonparticlectrl type="bool">false</watercannonparticlectrl>
-        <watercannonretardantctrl type="bool">false</watercannonretardantctrl>
-        <waterdropparticlectrl type="bool">false</waterdropparticlectrl>
-        <waterdropretardantctrl type="bool">false</waterdropretardantctrl>
-        <flexhose>
-          <flex-force type="double">0.08</flex-force>
-          <factor type="double">0.22</factor>
-          <offset type="double">-2.6</offset>
-          <bendforce type="int">15</bendforce>
-          <damping type="double">0.6</damping>
-          <stiffness type="double">9.0</stiffness>
-          <hosehitsground type="bool">true</hosehitsground>
-          <correction type="double">0.7</correction>
-          <pitch1  type="double">0.0</pitch1>
-          <pitch2  type="double">0.0</pitch2>
-          <pitch3  type="double">0.0</pitch3>
-          <pitch4  type="double">0.0</pitch4>
-          <pitch5  type="double">0.0</pitch5>
-          <pitch6  type="double">0.0</pitch6>
-          <pitch7  type="double">0.0</pitch7>
-          <pitch8  type="double">0.0</pitch8>
-          <pitch9  type="double">0.0</pitch9>
-          <pitch10 type="double">0.0</pitch10>
-          <pitch11 type="double">0.0</pitch11>
-          <pitch12 type="double">0.0</pitch12>
-          <pitch13 type="double">0.0</pitch13>
-          <pitch14 type="double">0.0</pitch14>
-          <pitch15 type="double">0.0</pitch15>
-          <pitch16 type="double">0.0</pitch16>
-          <pitch17 type="double">0.0</pitch17>
-          <pitch18 type="double">0.0</pitch18>
-          <pitch19 type="double">0.0</pitch19>
-          <pitch20 type="double">0.0</pitch20>
-          <pitch21 type="double">0.0</pitch21>
-          <pitch22 type="double">0.0</pitch22>
-          <pitch23 type="double">0.0</pitch23>
-          <pitch24 type="double">0.0</pitch24>
-          <pitch25 type="double">0.0</pitch25>
-          <pitch26 type="double">0.0</pitch26>
-          <pitch27 type="double">0.0</pitch27>
-          <pitch28 type="double">0.0</pitch28>
-          <pitch29 type="double">0.0</pitch29>
-          <pitch30 type="double">0.0</pitch30>
-          <pitch31 type="double">0.0</pitch31>
-          <roll1   type="double">0.0</roll1>
-          <roll2   type="double">0.0</roll2>
-          <roll3   type="double">0.0</roll3>
-          <roll4   type="double">0.0</roll4>
-          <roll5   type="double">0.0</roll5>
-          <roll6   type="double">0.0</roll6>
-          <roll7   type="double">0.0</roll7>
-          <roll8   type="double">0.0</roll8>
-          <roll9   type="double">0.0</roll9>
-          <roll10  type="double">0.0</roll10>
-          <roll11  type="double">0.0</roll11>
-          <roll12  type="double">0.0</roll12>
-          <roll13  type="double">0.0</roll13>
-          <roll14  type="double">0.0</roll14>
-          <roll15  type="double">0.0</roll15>
-          <roll16  type="double">0.0</roll16>
-          <roll17  type="double">0.0</roll17>
-          <roll18  type="double">0.0</roll18>
-          <roll19  type="double">0.0</roll19>
-          <roll20  type="double">0.0</roll20>
-          <roll21  type="double">0.0</roll21>
-          <roll22  type="double">0.0</roll22>
-          <roll23  type="double">0.0</roll23>
-          <roll24  type="double">0.0</roll24>
-          <roll25  type="double">0.0</roll25>
-          <roll26  type="double">0.0</roll26>
-          <roll27  type="double">0.0</roll27>
-          <roll28  type="double">0.0</roll28>
-          <roll29  type="double">0.0</roll29>
-          <roll30  type="double">0.0</roll30>
-          <roll31  type="double">0.0</roll31>
-        </flexhose>
-      </firetank>
-      <extendedcab>
-          <enabled type="bool">false</enabled>
-      </extendedcab>
-      <tandemwheels>
-          <enabled type="bool">false</enabled>
-      </tandemwheels>
-      <garmin196-visible type="bool">false</garmin196-visible>
-    </model>
+        </two>
 
-    <submodels>
-      <serviceable type="bool">true</serviceable>
-      <path>Aircraft/AirCrane/Models/submodels.xml</path>
-    </submodels>
-
-    <systems>
-        <path>Aircraft/AirCrane/Systems/systems.xml</path>
-
-        <autopilot n="0">
-            <path>Aircraft/AirCrane/Systems/engineering-station.xml</path>
-        </autopilot>
-
-        <property-rule n="100">
-          <path>Aircraft/AirCrane/Systems/lighting.xml</path>
-        </property-rule>
-
-        <property-rule n="101">
-          <path>Aircraft/AirCrane/Systems/model-effects.xml</path>
-        </property-rule>
-
-        <property-rule n="102">
-          <path>Aircraft/AirCrane/Systems/electrical.xml</path>
-        </property-rule>
-
-        <property-rule n="103">
-          <path>Aircraft/AirCrane/Systems/afcs.xml</path>
-        </property-rule>
-
-        <property-rule n="104">
-          <path>Aircraft/AirCrane/Systems/fuel.xml</path>
-        </property-rule>
-    </systems>
-
-    <multiplay>
-      <chat_display>1</chat_display>
-      <generic>
-        <int   n="0"  type="int">0</int>
-        <int   n="1"  type="int">0</int>
-        <int   n="2"  type="int">0</int>
-        <int   n="3"  type="int">0</int>
-        <int   n="4"  type="int">0</int>
-        <int   n="5"  type="int">0</int>
-
-        <int   n="11" alias="/sim/model/aircrane/lighting/beaconfwd/enabled"/>
-        <int   n="12" alias="/sim/model/aircrane/lighting/beaconaft/enabled"/>
-        <int   n="13" alias="/sim/model/aircrane/lighting/strobe/enabled"/>
-        <int   n="14" alias="/sim/model/aircrane/lighting/nav-lights"/>
-        <int   n="15" alias="/sim/model/aircrane/lighting/spot-light"/>
-        <int   n="16" alias="/sim/model/aircrane/lighting/landing-light"/>
-
-        <float n="0" alias="/sim/model/door-positions/crew/position-norm"/>
-        <float n="1" alias="/sim/model/door-positions/passenger/position-norm"/>
-        <!--float n="2" alias="/position/gear-agl-m"/-->
-        <float n="2" alias="/position/true-agl-ft"/>
-        <float n="3" alias="/position/altitude-ft">0</float>
-        <float n="4" alias="/engines/engine[0]/rpm"/>
-        <float n="5" alias="/sim/model/firetank/deployramscoop/position-norm"/>
-        <float n="6" alias="/sim/model/firetank/deployflexhose/position-norm"/>
-        <float n="7" alias="/sim/model/door-positions/engineer/position-norm"/>
-        <float n="8" alias="/sim/model/door-positions/starboard/position-norm"/>
-        <float n="9" alias="/sim/model/hitch/hitchhook/position-norm"/>
-        <float n="10" alias="/sim/model/hitch/hitchstop/position-norm"/>
-        <!-- For Bombable -->
-        <int type="int" n="10" alias="controls/armament/trigger">0</int>
-        <string n="9" type="string" />
-      </generic>
-    </multiplay>
-
-    <weight n="0">
-      <name>Pilot</name>
-      <weight-lb>180</weight-lb>
-      <max-lb>300</max-lb>
-    </weight>
-
-    <weight n="1">
-      <name>Co-Pilot</name>
-      <weight-lb>180</weight-lb>
-      <max-lb>300</max-lb>
-    </weight>
-
-    <weight n="2">
-      <name>Right Passenger</name>
-      <weight-lb>0</weight-lb>
-      <max-lb>300</max-lb>
-    </weight>
-
-    <weight n="3">
-      <name>Load</name>
-      <weight-lb>0</weight-lb>
-      <max-lb>20000</max-lb>
-    </weight>
-
-    <aircraft-data include="aircraft-data.xml"/>
-
-    <help include="help.xml"/>
-
-    <menubar include="../Dialogs/aircrane-menu.xml"/>
-
-    <flight-recorder include="flight-recorder.xml"/>
-
-    <instrumentation include="instrumentation.xml"/>
-
-  </sim>
-
-  <input include="aircrane-keyboard.xml"/>
-
-  <environment include="environment.xml"/>
-
-  <controls include="controls.xml"/>
-
-  <rotors include="rotors.xml"/>
-
-  <consumables include="consumables.xml"/>
-
-  <instrumentation include="instrumentation2.xml"/>
-
-  <tutorials include="Aircraft/AirCrane/Tutorials/AirCraneTutorials.xml"/>
+<engine n="0">
+<fuel-flow-pph type="float">0.0</fuel-flow-pph>
+<n1-actual type="float">0.0</n1-actual>
+<n2-actual type="float">0.0</n2-actual>
+<state type="int">0</state>
+</engine>
+<engine n="1">
+<fuel-flow-pph type="float">0.0</fuel-flow-pph>
+<n1-actual type="float">0.0</n1-actual>
+<n2-actual type="float">0.0</n2-actual>
+<state type="int">0</state>
+</engine>
+    </engines>
 
   <systems>
     <electrical>
@@ -348,6 +362,20 @@
       <temp-aft type="float">0</temp-aft>
       <temp-aux type="float">0</temp-aux>
       <temp-start-calc type="bool">false</temp-start-calc>
+
+<tank n="0">
+    <fuel-press type="int">0</fuel-press>
+</tank>
+<tank n="1">
+    <fuel-press type="int">0</fuel-press>
+</tank>
+<tank n="2">
+    <fuel-press type="int">0</fuel-press>
+</tank>
+<tank n="3">
+    <fuel-press type="int">0</fuel-press>
+</tank>
+
     </fuel>
   </systems>
 
@@ -380,9 +408,9 @@
       <file>Aircraft/AirCrane/Nasal/fcs-management.nas</file>
       <file>Aircraft/Generic/helicopter-fcs.nas</file>
     </fcs>
-    <garmin196>
+    <!--garmin196>
       <file>Aircraft/Instruments-3d/garmin196/garmin196.nas</file>
-    </garmin196>
+    </garmin196-->
     <disintegration>
       <file>Aircraft/AirCrane/Nasal/disintegration.nas</file>
     </disintegration>
@@ -390,5 +418,5 @@
       <file>Nasal/clock.nas</file>
     </clock>
   </nasal>
-
+<rate-of-change type="float">.1</rate-of-change>
 </PropertyList>

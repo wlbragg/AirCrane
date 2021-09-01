@@ -39,7 +39,7 @@
   <filter>
       <name>Fuel Temp Cool Fwd Tank Eng 1</name>
       <type>noise-spike</type>
-      <max-rate-of-change>.001</max-rate-of-change>
+      <max-rate-of-change>.005</max-rate-of-change>
       <enable>
           <condition>
               <and>
@@ -98,7 +98,7 @@
   <filter>
       <name>Fuel Temp Cool Aft Tank Eng 2</name>
       <type>noise-spike</type>
-      <max-rate-of-change>.001</max-rate-of-change>
+      <max-rate-of-change>.005</max-rate-of-change>
       <enable>
           <condition>
               <and>
@@ -119,6 +119,97 @@
         <property>/systems/fuel/temp-aft-heat</property>
       </output>
   </filter>
+
+  <filter>
+      <name>Fwd Fuel Tank Fill Range</name>
+      <type>noise-spike</type>
+      <max-rate-of-change>100</max-rate-of-change>
+      <enable>
+          <condition>
+            <not>
+              <property>/sim/freeze/replay-state</property>
+            </not>
+          </condition>
+      </enable>
+      <input>
+        <property>/consumables/fuel/fwd/level-lbs</property>
+      </input>
+      <output>
+        <property>/consumables/fuel/fwd/level-lbs-indicated</property>
+      </output>
+  </filter>
+  <filter>
+      <name>Aft Fuel Tank Fill Range</name>
+      <type>noise-spike</type>
+      <max-rate-of-change>100</max-rate-of-change>
+      <enable>
+          <condition>
+            <not>
+              <property>/sim/freeze/replay-state</property>
+            </not>
+          </condition>
+      </enable>
+      <input>
+        <property>/consumables/fuel/aft/level-lbs</property>
+      </input>
+      <output>
+        <property>/consumables/fuel/aft/level-lbs-indicated</property>
+      </output>
+  </filter>
+  <filter>
+      <name>Aux Fuel Tank Fill Range</name>
+      <type>noise-spike</type>
+      <max-rate-of-change>100</max-rate-of-change>
+      <enable>
+          <condition>
+            <not>
+              <property>/sim/freeze/replay-state</property>
+            </not>
+          </condition>
+      </enable>
+      <input>
+        <property>/consumables/fuel/aux/level-lbs</property>
+      </input>
+      <output>
+        <property>/consumables/fuel/aux/level-lbs-indicated</property>
+      </output>
+  </filter>
+
+<!--filter>
+        <name>Tank 0 Indicated Level</name>
+        <type>exponential</type>
+        <filter-time>3.0</filter-time>
+        <input>
+            <condition>
+                <and>
+                    <greater-than>
+                        <property>/systems/electrical/outputs/instr-ignition-switch</property>
+                        <value>12.0</value>
+                    </greater-than>
+                    <property>/consumables/fuel/tank[0]/selected</property>
+                </and>
+            </condition>
+            <property>/consumables/fuel/tank[0]/level-gal_us</property>
+        </input>
+        <input>
+            <condition>
+                <and>
+                    <greater-than>
+                        <property>/systems/electrical/outputs/instr-ignition-switch</property>
+                        <value>12.0</value>
+                    </greater-than>
+                    <property>/consumables/fuel/tank[2]/selected</property>
+                </and>
+            </condition>
+            <property>/consumables/fuel/tank[2]/level-gal_us</property>
+        </input>
+        <input>
+            <value>0.0</value>
+        </input>
+        <output>
+            <property>/consumables/fuel/tank[0]/indicated-level-gal_us</property>
+        </output>
+    </filter-->
 
   <!--filter>
       <name>Fuel Temp Aux Tank</name>
@@ -167,20 +258,20 @@
     </output>
   </logic-->
 
-	<!--system name="Fuel Temp">
+    <!--system name="Fuel Temp">
 
-		<channel name="fuel-temp">
+        <channel name="fuel-temp">
 
-			<integrator name="systems/fuel/temp">
-				<input>/environment/temperature-degf</input-->
+            <integrator name="systems/fuel/temp">
+                <input>/environment/temperature-degf</input-->
 
-				<!-- This is the constant that controls how fast
-					 (or slow) the temperature can change.
-				-->
-				<!--c1>0.020</c1>
-			</integrator>
+                <!-- This is the constant that controls how fast
+                     (or slow) the temperature can change.
+                -->
+                <!--c1>0.020</c1>
+            </integrator>
 
-		</channel>
+        </channel>
 
     <channel name="carburetor">
 
@@ -208,7 +299,7 @@
 
     </channel>
 
-	</system-->
+    </system-->
 
   <!--filter>
   <name>Environment Temperature Power</name>

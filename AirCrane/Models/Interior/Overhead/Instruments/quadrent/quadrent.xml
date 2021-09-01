@@ -183,7 +183,7 @@
     <type>knob</type>
     <object-name>n1leverl</object-name>
     <object-name>n1leverlplastic</object-name>
-    <property>/sim/model/aircrane/engines/one/n1</property>
+    <property>/engines/one/n1</property>
     <factor>80</factor>
     <center>
       <x-m>  0.01717 </x-m>
@@ -200,13 +200,13 @@
       <!--
       condition>
         <not>
-          <property>/sim/model/aircrane/engines/one/n1-indent</property>
+          <property>/engines/one/n1-indent</property>
         </not>
       </condition>
       -->
       <binding>
         <command>property-adjust</command>
-        <property>/sim/model/aircrane/engines/one/n1</property>
+        <property>/engines/one/n1</property>
         <factor>.05</factor>
         <min>0</min>
         <max>.5</max>
@@ -215,8 +215,8 @@
       <binding>
         <command>nasal</command>
         <script>
-          var n1_state = getprop("/sim/model/aircrane/engines/one/n1");
-          if (n1_state == .15) setprop("/sim/model/aircrane/engines/one/n1-indent", 1);
+          var n1_state = getprop("/engines/one/n1");
+          if (n1_state == .15) setprop("/engines/one/n1-indent", 1);
           if (!n1_state) setprop("/consumables/fuel/shutoff/lever/left", 0);
           aircrane.click("avionics");
         </script>
@@ -228,7 +228,7 @@
         <tooltip-id>eng1-n1</tooltip-id>
         <label>Engine 1 N1:  %3d</label>
 		<mapping>percent</mapping>
-        <property>sim/model/aircrane/engines/one/n1</property>
+        <property>engines/one/n1</property>
       </binding>
     </hovered>
   </animation>
@@ -236,7 +236,7 @@
   <animation>
     <type>rotate</type>
     <object-name>n1leverlstart</object-name>
-    <property>/sim/model/aircrane/engines/one/n1</property>
+    <property>/engines/one/n1</property>
     <factor>60</factor>
     <center>
       <x-m>  0.01717 </x-m>
@@ -260,7 +260,7 @@
       <repeatable>false</repeatable>
       <binding>
         <command>property-assign</command>
-        <property>/sim/model/aircrane/engines/one/n1-indent</property>
+        <property>/engines/one/n1-indent</property>
         <value>0</value>
       </binding>
     </action>
@@ -269,7 +269,7 @@
         <command>set-tooltip</command>
         <tooltip-id>eng1-n1-indent</tooltip-id>
         <label>Engine 1 N1 Indent:(%1d)</label>
-        <property>/sim/model/aircrane/engines/one/n1-indent</property>
+        <property>/engines/one/n1-indent</property>
       </binding>
     </hovered>
   </animation>
@@ -278,7 +278,7 @@
     <type>translate</type>
     <object-name>n1leverl</object-name>
     <object-name>n1leverlplastic</object-name>
-    <property>/sim/model/aircrane/engines/one/n1-indent</property>
+    <property>/engines/one/n1-indent</property>
     <factor>-0.0057</factor>
     <axis>
       <x> 0.75 </x>
@@ -336,7 +336,7 @@
     <type>knob</type>
     <object-name>n1leverr</object-name>
     <object-name>n1leverrplastic</object-name>
-    <property>/sim/model/aircrane/engines/two/n1</property>
+    <property>/engines/two/n1</property>
     <factor>80</factor>
     <center>
       <x-m>  0.01717 </x-m>
@@ -353,13 +353,13 @@
       <!--
       condition>
         <not>
-          <property>/sim/model/aircrane/engines/two/n1-indent</property>
+          <property>/engines/two/n1-indent</property>
         </not>
       </condition>
       -->
       <binding>
         <command>property-adjust</command>
-        <property>/sim/model/aircrane/engines/two/n1</property>
+        <property>/engines/two/n1</property>
         <factor>.05</factor>
         <min>0</min>
         <max>.5</max>
@@ -368,8 +368,8 @@
       <binding>
         <command>nasal</command>
         <script>
-          var n1_state = getprop("/sim/model/aircrane/engines/two/n1");
-          if (n1_state == "0.15") setprop("/sim/model/aircrane/engines/two/n1-indent", 1);
+          var n1_state = getprop("/engines/two/n1");
+          if (n1_state == "0.15") setprop("/engines/two/n1-indent", 1);
           if (!n1_state) setprop("/consumables/fuel/shutoff/lever/right", 0);
           aircrane.click("avionics");
         </script>
@@ -381,7 +381,7 @@
         <tooltip-id>eng2-n1</tooltip-id>
         <label>Engine 2 N1: %3d</label>
 		<mapping>percent</mapping>
-        <property>/sim/model/aircrane/engines/two/n1</property>
+        <property>/engines/two/n1</property>
       </binding>
     </hovered>
   </animation>
@@ -389,7 +389,7 @@
   <animation>
     <type>rotate</type>
     <object-name>n1leverrstart</object-name>
-    <property>/sim/model/aircrane/engines/two/n1</property>
+    <property>/engines/two/n1</property>
     <factor>60</factor>
     <center>
       <x-m>  0.01717 </x-m>
@@ -413,7 +413,7 @@
       <repeatable>false</repeatable>
       <binding>
         <command>property-assign</command>
-        <property>/sim/model/aircrane/engines/two/n1-indent</property>
+        <property>/engines/two/n1-indent</property>
         <value>0</value>
       </binding>
     </action>
@@ -422,7 +422,7 @@
         <command>set-tooltip</command>
         <tooltip-id>eng2-n1-indent</tooltip-id>
         <label>Engine 2 N1 Indent:(%1d)</label>
-        <property>/sim/model/aircrane/engines/two/n1-indent</property>
+        <property>/engines/two/n1-indent</property>
       </binding>
     </hovered>
   </animation>
@@ -431,7 +431,7 @@
     <type>translate</type>
     <object-name>n1leverr</object-name>
     <object-name>n1leverrplastic</object-name>
-    <property>/sim/model/aircrane/engines/two/n1-indent</property>
+    <property>/engines/two/n1-indent</property>
     <factor>-0.0057</factor>
     <axis>
       <x> 0.75 </x>

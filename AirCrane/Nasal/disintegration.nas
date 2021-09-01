@@ -71,7 +71,7 @@ var partsList = partsNode.getChildren();
   );
 
   setprop("/disintegration/parts/"~name~"/vY", severity * getprop("/disintegration/parts/"~name~"/vY-base") + globalVZ * math.cos(pitch) * math.sin(roll) );
-  etprop("/disintegration/parts/"~name~"/vZ", severity * getprop("/disintegration/parts/"~name~"/vZ-base") + globalVZ * math.cos(pitch) * math.cos(roll) );
+  setprop("/disintegration/parts/"~name~"/vZ", severity * getprop("/disintegration/parts/"~name~"/vZ-base") + globalVZ * math.cos(pitch) * math.cos(roll) );
 
   var velX = getprop("/disintegration/parts/"~name~"/vX") * math.sin(pitch);
   var velY = getprop("/disintegration/parts/"~name~"/vY") * math.cos(pitch) * math.sin(roll);

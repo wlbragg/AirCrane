@@ -365,7 +365,7 @@
         </greater-than>
         <less-than>
          <property>/environment/temperature-degf</property>
-          <value>35</value>
+          <value>33.98</value>
         </less-than>
       </and>
     </input>

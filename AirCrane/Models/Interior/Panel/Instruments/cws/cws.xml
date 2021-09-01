@@ -303,7 +303,7 @@
         <property>/systems/electrical/outputs/cws-power</property>
         <or>
           <less-than>
-            <property>/sim/model/aircrane/engine</property>
+            <property>/engines/engine-rpm</property>
             <value>0.08</value>
           </less-than>
           <property>/systems/electrical/outputs/cws-test-power</property>
