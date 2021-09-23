@@ -408,9 +408,9 @@
       <file>Aircraft/AirCrane/Nasal/fcs-management.nas</file>
       <file>Aircraft/Generic/helicopter-fcs.nas</file>
     </fcs>
-    <!--garmin196>
+    <garmin196>
       <file>Aircraft/Instruments-3d/garmin196/garmin196.nas</file>
-    </garmin196-->
+    </garmin196>
     <disintegration>
       <file>Aircraft/AirCrane/Nasal/disintegration.nas</file>
     </disintegration>
