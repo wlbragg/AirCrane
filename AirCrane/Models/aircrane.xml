@@ -387,10 +387,12 @@
       </and>
     </condition>
     <offsets>
-      <x-m> -9.379080 </x-m>
-      <y-m>  0.476044 </y-m>
-      <z-m> -1.255300 </z-m>
-      <heading-deg> -13 </heading-deg>
+      <x-m> -9.00 </x-m>
+      <y-m>  0.75 </y-m>
+      <z-m> -0.84 </z-m>
+      <heading-deg>-35</heading-deg>
+      <roll-deg>   -15 </roll-deg>
+      <pitch-deg>  20 </pitch-deg>
     </offsets>
   </model>
 
@@ -407,10 +409,12 @@
       </and>
     </condition>
     <offsets>
-      <x-m> -9.36025 </x-m>
-      <y-m> -0.20100 </y-m>
-      <z-m> -1.21999 </z-m>
-      <heading-deg> -3 </heading-deg>
+      <x-m> -9.00 </x-m>
+      <y-m> -0.75 </y-m>
+      <z-m> -0.84 </z-m>
+      <heading-deg>25</heading-deg>
+      <roll-deg>   15 </roll-deg>
+      <pitch-deg>  20 </pitch-deg>
     </offsets>
   </model>
 

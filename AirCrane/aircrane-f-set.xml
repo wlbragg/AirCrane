@@ -7,7 +7,7 @@
     <variant-of>aircrane-e</variant-of>
 
     <description>AirCrane S-64F 9600x2 (Yasim)</description>
-    <author>BARANGER Emmanuel (3D/FDM), Heiko Schulz (FDM), Wayne Bragg (Utility 3D and Systems, Effects)</author>
+    <author>BARANGER Emmanuel (3D/FDM), Heiko Schulz (FDM), Wayne Bragg (Utility/3D/Systems/Effects)</author>
 
     <aircraft-version>2020.4-git</aircraft-version>
     <status>alpha</status>
