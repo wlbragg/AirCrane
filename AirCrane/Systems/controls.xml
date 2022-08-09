@@ -389,4 +389,8 @@
     <temp-mode type="int">0</temp-mode>
   </thermometer>
 
+  <flight>
+	<collective-to-yaw type="bool">1</collective-to-yaw>
+  </flight>
+
 </PropertyList>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+    Copyright (c) 2015 Wayne Bragg
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 2 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+-->
+
+<PropertyList>
+
+    <filter>
+        <name>Collective to Yaw Couple</name>
+        <!--update-interval-secs type="double">0.1</update-interval-secs-->
+        <type>gain</type>
+        <gain>1.0</gain>
+		<enable>
+			<prop>/controls/flight/collective-to-yaw</prop>
+		</enable>
+        <input>
+            <expression>
+				<sum>
+					<property>/controls/flight/rudder</property>
+					<table>
+						<property>/controls/engines/engine[0]/throttle</property>
+						<entry><ind> 0.00 </ind><dep> -1.00 </dep></entry>
+						<entry><ind> 0.50 </ind><dep> -0.50 </dep></entry>
+						<entry><ind> 1.00 </ind><dep>  0.00 </dep></entry>
+					</table>
+				</sum>
+            </expression>
+			<min>-1.0</min>
+            <max> 1.0</max>
+        </input>
+        <output>
+            <property>/controls/flight/fcs/yaw</property>
+        </output>
+	</filter>
+	
+	</PropertyList>

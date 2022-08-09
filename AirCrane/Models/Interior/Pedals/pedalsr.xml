@@ -4,6 +4,11 @@
 
   <path>pedals.ac</path>
 
+    <params>
+        <!--rudder>/controls/flight/rudder</rudder-->
+		<rudder>/controls/flight/fcs/yaw</rudder>
+    </params>
+
   <effect>
     <inherits-from>Aircraft/AirCrane/Models/Effects/Interior/lm-interior-pedalsr</inherits-from>
     <object-name>base</object-name>
@@ -32,7 +37,7 @@
     <type>rotate</type>
     <object-name>LpedalRod</object-name>
     <object-name>Lpedal</object-name>
-    <property>controls/flight/rudder</property>
+    <property alias="/params/rudder"/>
     <factor>27</factor>
     <center>
       <x-m>  0.02093 </x-m>
@@ -49,7 +54,7 @@
   <animation>
     <type>rotate</type>
     <object-name>Lpedal</object-name>
-    <property>controls/flight/rudder</property>
+    <property alias="/params/rudder"/>
     <factor>-27</factor>
     <center>
       <x-m>-0.008571 </x-m>
@@ -68,7 +73,7 @@
     <type>rotate</type>
     <object-name>Rpedal</object-name>
     <object-name>RpedalRod</object-name>
-    <property>controls/flight/rudder</property>
+    <property alias="/params/rudder"/>
     <factor>-27</factor>
     <center>
       <x-m>  0.03181 </x-m>
@@ -85,7 +90,7 @@
   <animation>
     <type>rotate</type>
     <object-name>Rpedal</object-name>
-    <property>controls/flight/rudder</property>
+    <property alias="/params/rudder"/>
     <factor>27</factor>
     <center>
       <x-m> -0.00363 </x-m>
@@ -103,7 +108,7 @@
   <animation>
     <type>rotate</type>
     <object-name>Lboot6</object-name>
-    <property>controls/flight/rudder</property>
+    <property alias="/params/rudder"/>
     <factor>27</factor>
     <center>
       <x-m>  0.02093 </x-m>
@@ -120,7 +125,7 @@
   <animation>
     <type>rotate</type>
     <object-name>Lboot6</object-name>
-    <property>controls/flight/rudder</property>
+    <property alias="/params/rudder"/>
     <offset-deg>5</offset-deg>
     <factor>-27</factor>
     <center>
@@ -138,7 +143,7 @@
   <animation>
     <type>rotate</type>
     <object-name>Lboot5</object-name>
-    <property>controls/flight/rudder</property>
+    <property alias="/params/rudder"/>
     <factor>27</factor>
     <center>
       <x-m>  0.02093 </x-m>
@@ -155,7 +160,7 @@
   <animation>
     <type>rotate</type>
     <object-name>Lboot5</object-name>
-    <property>controls/flight/rudder</property>
+    <property alias="/params/rudder"/>
     <offset-deg>0</offset-deg>
     <factor>-20</factor>
     <center>
@@ -173,7 +178,7 @@
   <animation>
     <type>rotate</type>
     <object-name>Lboot4</object-name>
-    <property>controls/flight/rudder</property>
+    <property alias="/params/rudder"/>
     <factor>27</factor>
     <center>
       <x-m>  0.02093 </x-m>
@@ -190,7 +195,7 @@
   <animation>
     <type>rotate</type>
     <object-name>Lboot4</object-name>
-    <property>controls/flight/rudder</property>
+    <property alias="/params/rudder"/>
     <offset-deg>0</offset-deg>
     <factor>-8</factor>
     <center>
@@ -208,7 +213,7 @@
   <animation>
     <type>rotate</type>
     <object-name>Lboot3</object-name>
-    <property>controls/flight/rudder</property>
+    <property alias="/params/rudder"/>
     <factor>27</factor>
     <center>
       <x-m>  0.02093 </x-m>
@@ -225,7 +230,7 @@
   <animation>
     <type>rotate</type>
     <object-name>Lboot3</object-name>
-    <property>controls/flight/rudder</property>
+    <property alias="/params/rudder"/>
     <offset-deg>0</offset-deg>
     <factor>-4</factor>
     <center>
@@ -243,7 +248,7 @@
   <animation>
     <type>rotate</type>
     <object-name>Lboot2</object-name>
-    <property>controls/flight/rudder</property>
+    <property alias="/params/rudder"/>
     <factor>27</factor>
     <center>
       <x-m>  0.02093 </x-m>
@@ -260,7 +265,7 @@
   <animation>
     <type>rotate</type>
     <object-name>Lboot1</object-name>
-    <property>controls/flight/rudder</property>
+    <property alias="/params/rudder"/>
     <factor>27</factor>
     <center>
       <x-m>  0.02093 </x-m>
@@ -278,7 +283,7 @@
   <animation>
     <type>rotate</type>
     <object-name>Rboot6</object-name>
-    <property>controls/flight/rudder</property>
+    <property alias="/params/rudder"/>
     <factor>-27</factor>
     <center>
       <x-m>  0.03181 </x-m>
@@ -295,7 +300,7 @@
   <animation>
     <type>rotate</type>
     <object-name>Rboot6</object-name>
-    <property>controls/flight/rudder</property>
+    <property alias="/params/rudder"/>
     <offset-deg>-5</offset-deg>
     <factor>27</factor>
     <center>
@@ -313,7 +318,7 @@
   <animation>
     <type>rotate</type>
     <object-name>Rboot5</object-name>
-    <property>controls/flight/rudder</property>
+    <property alias="/params/rudder"/>
     <factor>-27</factor>
     <center>
       <x-m>  0.03181 </x-m>
@@ -330,7 +335,7 @@
   <animation>
     <type>rotate</type>
     <object-name>Rboot5</object-name>
-    <property>controls/flight/rudder</property>
+    <property alias="/params/rudder"/>
     <offset-deg>0</offset-deg>
     <factor>20</factor>
     <center>
@@ -348,7 +353,7 @@
   <animation>
     <type>rotate</type>
     <object-name>Rboot4</object-name>
-    <property>controls/flight/rudder</property>
+    <property alias="/params/rudder"/>
     <factor>-27</factor>
     <center>
       <x-m>  0.03181 </x-m>
@@ -365,7 +370,7 @@
   <animation>
     <type>rotate</type>
     <object-name>Rboot4</object-name>
-    <property>controls/flight/rudder</property>
+    <property alias="/params/rudder"/>
     <offset-deg>0</offset-deg>
     <factor>8</factor>
     <center>
@@ -383,7 +388,7 @@
   <animation>
     <type>rotate</type>
     <object-name>Rboot3</object-name>
-    <property>controls/flight/rudder</property>
+    <property alias="/params/rudder"/>
     <factor>-27</factor>
     <center>
       <x-m>  0.03181 </x-m>
@@ -400,7 +405,7 @@
   <animation>
     <type>rotate</type>
     <object-name>Rboot3</object-name>
-    <property>controls/flight/rudder</property>
+    <property alias="/params/rudder"/>
     <offset-deg>0</offset-deg>
     <factor>4</factor>
     <center>
@@ -418,7 +423,7 @@
   <animation>
     <type>rotate</type>
     <object-name>Rboot2</object-name>
-    <property>controls/flight/rudder</property>
+    <property alias="/params/rudder"/>
     <factor>-27</factor>
     <center>
       <x-m>  0.03181 </x-m>
@@ -435,7 +440,7 @@
   <animation>
     <type>rotate</type>
     <object-name>Rboot1</object-name>
-    <property>controls/flight/rudder</property>
+    <property alias="/params/rudder"/>
     <factor>-27</factor>
     <center>
       <x-m>  0.03181 </x-m>

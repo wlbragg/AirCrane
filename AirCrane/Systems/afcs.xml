@@ -61,7 +61,6 @@
     </reference>
     <output>
       <prop>/controls/engines/engine[0]/throttle</prop>
-
     </output>
     <config>
       <Kp>-1.0</Kp>        <!-- proportional gain -->
@@ -142,16 +141,19 @@
     <name>Heading Hold (DG based) Stage 1</name>
     <debug>false</debug>
     <enable>
-      <prop>/controls/switches/yaw</prop>
+		<and>
+			<prop>/controls/switches/afcs-servo</prop>
+			<prop>/controls/switches/afcs</prop>
+		</and>
     </enable>
     <input>
-      <prop>/orientation/heading-deg</prop>
+      <prop>/controls/knobs/yaw-trim</prop>
     </input>
     <reference>
-      <prop>/orientation/heading-deg</prop>
+      <prop>/controls/knobs/yaw-trim</prop>
     </reference>
     <output>
-      <prop>/autopilot/internal/target-yaw-rate-fps</prop>
+      <prop>/controls/flight/fcs/yaw</prop>
     </output>
     <config>
       <Kp>1</Kp>          <!-- proportional gain -->
@@ -166,7 +168,10 @@
     <name>Heading Change (DG based) Stage 2</name>
     <debug>false</debug>
     <enable>
-      <prop>/controls/switches/yaw</prop>
+		<and>
+			<prop>/controls/switches/afcs-servo</prop>
+			<prop>/controls/switches/afcs</prop>
+		</and>
     </enable>
     <input>
       <prop>/orientation/yaw-rate-degps</prop>

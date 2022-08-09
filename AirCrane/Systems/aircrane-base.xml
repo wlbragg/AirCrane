@@ -215,6 +215,14 @@
 				<path>Aircraft/AirCrane/Systems/engineering-station.xml</path>
 			</autopilot>
 
+			<autopilot n="1">
+				<path>Aircraft/AirCrane/Systems/fcs.xml</path>
+			</autopilot>
+
+			<autopilot n="2">
+			  <path>Aircraft/AirCrane/Systems/afcs.xml</path>
+			</autopilot>
+
 			<property-rule n="100">
 			  <path>Aircraft/AirCrane/Systems/lighting.xml</path>
 			</property-rule>
@@ -225,10 +233,6 @@
 
 			<property-rule n="102">
 			  <path>Aircraft/AirCrane/Systems/electrical.xml</path>
-			</property-rule>
-
-			<property-rule n="103">
-			  <path>Aircraft/AirCrane/Systems/afcs.xml</path>
 			</property-rule>
 
 			<property-rule n="104">
