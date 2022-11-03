@@ -56,15 +56,6 @@
       </binding>
     </checkbox>
     <checkbox>
-		<halign>left</halign>
-		<label>Enable Instrument Illumination</label>
-		<property>controls/lighting/luminosite-lights</property>
-		<live>true</live>
-		<binding>
-			<command>dialog-apply</command>
-		</binding>
-    </checkbox>
-    <checkbox>
       <halign>left</halign>
       <label>Human models</label>
       <property>/sim/model/occupants</property>

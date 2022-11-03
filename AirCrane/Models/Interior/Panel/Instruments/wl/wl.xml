@@ -42,17 +42,17 @@
   <animation>
     <type>rotate</type>
     <object-name>needle</object-name>
-    <property>/sim/weight[3]/weight-lb</property>
+    <property>sim/weight[3]/weight-lb</property>
     <interpolation>
-      <entry><ind> -99999 </ind><dep>    1 </dep></entry>
-      <entry><ind>      0 </ind><dep>    0 </dep></entry>
-      <entry><ind>   5000 </ind><dep>  -42 </dep></entry>
-      <entry><ind>  10000 </ind><dep>  -84 </dep></entry>
-      <entry><ind>  15000 </ind><dep> -128 </dep></entry>
-      <entry><ind>  20000 </ind><dep> -172 </dep></entry>
-      <entry><ind>  25000 </ind><dep> -216 </dep></entry>
-      <entry><ind>  30000 </ind><dep> -259 </dep></entry>
-      <entry><ind>  99999 </ind><dep> -300 </dep></entry>
+      <entry><ind> -99999 </ind><dep>  -1 </dep></entry>
+      <entry><ind>      0 </ind><dep>   0 </dep></entry>
+      <entry><ind>   5000 </ind><dep>  42 </dep></entry>
+      <entry><ind>  10000 </ind><dep>  84 </dep></entry>
+      <entry><ind>  15000 </ind><dep> 128 </dep></entry>
+      <entry><ind>  20000 </ind><dep> 172 </dep></entry>
+      <entry><ind>  25000 </ind><dep> 216 </dep></entry>
+      <entry><ind>  30000 </ind><dep> 259 </dep></entry>
+      <entry><ind>  99999 </ind><dep> 300 </dep></entry>
     </interpolation>
     <axis>
       <x> -1 </x>

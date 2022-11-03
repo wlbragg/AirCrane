@@ -51,4 +51,13 @@
     <output>/instrumentation/ggt/ggt-two-n1</output>
   </filter>
 
+  <filter>
+    <name>Retardant Link for Cargo Tow Compatibility</name>
+    <type>gain</type>
+    <input>
+     <property>sim/model/firetank/watercannonretardantctrl</property>
+    </input>
+    <output>controls/drop/trigger</output>
+  </filter>
+
 </PropertyList>
