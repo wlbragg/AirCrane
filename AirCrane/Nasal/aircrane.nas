@@ -670,6 +670,47 @@ var toggle_flashlight = func {
     }
 };
 
+############## Windshield Wipers ################
+var clean_timer = maketimer(.15, func {
+	setprop("/environment/aircraft-effects/use-wipers", 1);
+	clean_timer.stop();
+});
+
+var wiper_timer = maketimer(1, func {
+    var wipers_position = getprop("/controls/electric/wipers/position-norm");
+    var use_wipers = getprop("/environment/aircraft-effects/use-wipers");
+	var wiper_speed = getprop("/controls/knobs/knob-wiper");
+    if (wipers_position <= 0) {
+        setprop("/environment/aircraft-effects/use-wipers", 0);
+		interpolate("/controls/electric/wipers/position-norm", 1, 0.3);
+    } else if (wipers_position >= 1){
+        setprop("/environment/aircraft-effects/use-wipers", 0);
+		interpolate("/controls/electric/wipers/position-norm", 0, 0.3);
+    }
+	if (wiper_speed == 1)
+		clean_timer.restart(.15);
+	else
+		clean_timer.restart(.01);
+});
+
+setlistener("/controls/knobs/knob-wiper", func(v) {
+    if(v.getValue() == 1) {
+		wiper_timer.restart(1);
+    }
+	if(v.getValue() == 2){
+		wiper_timer.restart(.5);
+	}
+	if(v.getValue() == 0){
+		wiper_timer.stop();
+		setprop("/environment/aircraft-effects/use-wipers", 0);
+	}
+	if(v.getValue() == -1){
+		wiper_timer.stop();
+		setprop("/environment/aircraft-effects/use-wipers", 0);
+		interpolate("/controls/electric/wipers/position-norm", 0, 0.3);
+	}
+});
+
 setlistener("/sim/signals/reinit", func {
   cmdarg().getBoolValue() and return;
   cprint("32;1", "reinit");

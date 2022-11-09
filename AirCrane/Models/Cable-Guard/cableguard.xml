@@ -2,6 +2,19 @@
 
 <PropertyList>
 
+	<nasal>
+        <load>
+            var rplayer = cmdarg();
+			rplayer.initNode("sim/multiplay/generic/bool[5]", 0, "BOOL");
+        </load>
+        <unload>
+        </unload>
+    </nasal>
+
+    <params>
+		<cableguard>sim/multiplay/generic/bool[5]</cableguard>
+    </params>
+
   <path>cableguard.ac</path>
 
   <animation>
@@ -24,7 +37,7 @@
     <object-name>cableguardbottom</object-name>
     <object-name>cableguardtop</object-name>
     <condition>
-      <property>sim/model/cableguard/enabled</property>
+	  <property alias="/params/cableguard"/>
     </condition>
   </animation>
 

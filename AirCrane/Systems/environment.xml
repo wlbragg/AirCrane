@@ -4,7 +4,7 @@
 
   <aircraft-effects>
     <splash-vector-z type="float">-1</splash-vector-z>
-    <panel-glass-reflection type="float">0.0</panel-glass-reflection>
+    <panel-glass-reflection type="float">1.0</panel-glass-reflection>
   </aircraft-effects>
   <terrain-dust-factor type="double">0.0</terrain-dust-factor>
 

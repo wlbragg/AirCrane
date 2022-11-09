@@ -2,19 +2,118 @@
 
 <PropertyList>
 
-  <path>wiper.ac</path>
+	<path>wiper.ac</path>
 
-  <animation>
-    <object-name>base</object-name>
-    <object-name>knob-wiper</object-name>
+	<animation>
+		<object-name>base</object-name>
+		<object-name>knob-wiper</object-name>
+		<object-name>switchwasher</object-name>
+	</animation>
+
+	<effect>
+		<inherits-from>Aircraft/AirCrane/Models/Effects/Interior/cockpit-interior</inherits-from>
+		<object-name>base</object-name>
+		<object-name>knob-wiper</object-name>
+		<object-name>switchwasher</object-name>
+	</effect>
+
+    <animation>
+    <type>pick</type>
     <object-name>switchwasher</object-name>
+    <visible>true</visible>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>property-toggle</command>
+        <property>controls/switches/switchwasher</property>
+      </binding>
+      <binding>
+        <command>nasal</command>
+        <script>
+          var switch_washer = getprop("controls/switches/switchwasher");
+          #if (!switch_washer) aircrane.app_stop();
+          aircrane.click("avionics");
+        </script>
+      </binding>
+    </action>
+    <hovered>
+      <binding>
+        <command>set-tooltip</command>
+        <tooltip-id>switchwasher</tooltip-id>
+        <label>Washer Switch: %s</label>
+        <property>controls/switches/switchwasher</property>
+        <mapping>nasal</mapping>
+        <script>
+          var modes = ['Off', 'On'];
+          return modes[arg[0]];
+        </script>
+      </binding>
+    </hovered>
   </animation>
 
-  <effect>
-    <inherits-from>Aircraft/AirCrane/Models/Effects/Interior/cockpit-interior</inherits-from>
-    <object-name>base</object-name>
-    <object-name>knob-wiper</object-name>
+  <animation>
+    <type>rotate</type>
     <object-name>switchwasher</object-name>
-  </effect>
+    <property>controls/switches/switchwasher</property>
+    <factor>-45</factor>
+    <offset-deg>10</offset-deg>
+    <center>
+      <x-m> 0.004917</x-m>
+      <y-m> 0.06704 </y-m>
+      <z-m>-0.000723</z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+
+    <animation>
+    <type>knob</type>
+    <object-name>knob-wiper</object-name>
+    <property>controls/knobs/knob-wiper</property>
+	<offset-deg>0</offset-deg>
+    <factor>-60</factor>
+	<axis>
+		<x1-m> 0.006719</x1-m>
+		<y1-m>-0.019713</y1-m>
+		<z1-m> 0.001108</z1-m>
+		<x2-m> 0.009478</x2-m>
+		<y2-m>-0.019701</y2-m>
+		<z2-m> 0.001115</z2-m>
+	</axis>
+    <action>
+      <repeatable>true</repeatable>
+      <binding>
+        <command>property-adjust</command>
+        <property>controls/knobs/knob-wiper</property>
+        <factor>1</factor>
+        <min>-1</min>
+        <max>2</max>
+        <wrap>0</wrap>
+      </binding>
+	  <binding>
+        <command>nasal</command>
+        <script>
+          aircrane.click("avionics");
+        </script>
+      </binding>
+    </action>
+    <hovered>
+      <binding>
+		<command>set-tooltip</command>
+		<tooltip-id>wiper-control</tooltip-id>
+		<label>Wiper: %s</label>
+		<property>controls/knobs/knob-wiper</property>
+		<mapping>nasal</mapping>
+		<script>
+			var modes = ['High', 'Low', 'Park', 'Off'];
+			return modes[arg[0]];
+		</script>
+      </binding>
+    </hovered>
+  </animation>
 
 </PropertyList>

@@ -2,27 +2,30 @@
 
  <PropertyList>
 
+	<nasal>
+		<load>
+			var rplayer = cmdarg();
+			rplayer.initNode("sim/multiplay/generic/bool[15]", 0, "BOOL");
+		</load>
+		<unload>
+		</unload>
+	</nasal>
+
+    <params>
+		<landing-lights>sim/multiplay/generic/bool[15]</landing-lights>
+    </params>
+	
    <path>light-cone.ac</path>
    <nopreview/>
 
    <animation>
-     <!--object-name>Cone</object-name>
-     <object-name>Cone-texture</object-name-->
      <object-name>Light</object-name>
    </animation>
 
    <animation>
      <type>noshadow</type>
-     <!--object-name>Cone</object-name>
-     <object-name>Cone-texture</object-name-->
      <object-name>Light</object-name>
    </animation>
-
-   <!--effect>
-     <inherits-from>Effects/model-transparent</inherits-from>
-     <object-name>Cone</object-name>
-     <object-name>Cone-texture</object-name>
-   </effect-->
 
    <animation>
      <type>material</type>
@@ -36,11 +39,9 @@
 
    <animation>
     <type>select</type>
-    <!--object-name>Cone</object-name>
-    <object-name>Cone-texture</object-name-->
     <object-name>Light</object-name>
     <condition>
-      <property>/sim/model/aircrane/lighting/landing-light</property>
+	  <property alias="/params/landing-lights"/>
     </condition>
   </animation>
 

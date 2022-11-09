@@ -2,6 +2,19 @@
 
 <PropertyList>
 
+	<nasal>
+		<load>
+			var rplayer = cmdarg();
+			rplayer.initNode("sim/multiplay/generic/bool[13]", 0, "BOOL");
+		</load>
+		<unload>
+		</unload>
+	</nasal>
+
+    <params>
+		<nav-lights>sim/multiplay/generic/bool[13]</nav-lights>
+    </params>
+
   <path>RedLight.ac</path>
   <nopreview/>
 
@@ -57,7 +70,7 @@
     <type>select</type>
     <object-name>Light</object-name>
     <condition>
-      <property>/sim/model/aircrane/lighting/nav-lights</property>
+      <property alias="/params/nav-lights"/>
     </condition>
   </animation>
 

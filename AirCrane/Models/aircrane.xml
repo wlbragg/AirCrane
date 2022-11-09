@@ -12,47 +12,50 @@
 
   <nasal>
     <load>
-      <![CDATA[
-        var livery_update = aircraft.livery_update.new("Aircraft/AirCrane/Models/Liveries", 10);
-      ]]>
+		<![CDATA[
+		var livery_update = aircraft.livery_update.new("Aircraft/AirCrane/Models/Liveries", 10);
+		]]>
 
-      var self = cmdarg();
+		var self = cmdarg();
+		var float_0 = self.getNode("sim/multiplay/generic/float[0]", 1);
+		var float_1 = self.getNode("sim/multiplay/generic/float[1]", 1);
+		var float_7 = self.getNode("sim/multiplay/generic/float[7]", 1);
+		var float_8 = self.getNode("sim/multiplay/generic/float[8]", 1);
 
-      var float_0 = self.getNode("sim/multiplay/generic/float[0]", 1);
-      var float_1 = self.getNode("sim/multiplay/generic/float[1]", 1);
-      var float_2 = self.getNode("sim/multiplay/generic/float[5]", 1);
-      var float_3 = self.getNode("sim/multiplay/generic/float[6]", 1);
-      var float_7 = self.getNode("sim/multiplay/generic/float[7]", 1);
-      var float_8 = self.getNode("sim/multiplay/generic/float[8]", 1);
+		var crew_door = self.getNode("sim/model/door-positions/crew/position-norm", 1);
+		var passenger_door = self.getNode("sim/model/door-positions/passenger/position-norm", 1);
+		var engineer_door = self.getNode("sim/model/door-positions/engineer/position-norm", 1);
+		var starboard_door = self.getNode("sim/model/door-positions/starboard/position-norm", 1);
 
-      var crew_door = self.getNode("sim/model/door-positions/crew/position-norm", 1);
-      var passenger_door = self.getNode("sim/model/door-positions/passenger/position-norm", 1);
-      var engineer_door = self.getNode("sim/model/door-positions/engineer/position-norm", 1);
-      var starboard_door = self.getNode("sim/model/door-positions/starboard/position-norm", 1);
-      var ram_scoop = self.getNode("sim/model/firetank/deployramscoop/position-norm", 1);
-      var flex_hose = self.getNode("sim/model/firetank/deployflexhose/position-norm", 1);
+		crew_door.alias(float_0);
+		passenger_door.alias(float_1);
+		engineer_door.alias(float_7);
+		starboard_door.alias(float_8);
 
-      crew_door.alias(float_0);
-      passenger_door.alias(float_1);
-      ram_scoop.alias(float_2);
-      flex_hose.alias(float_3);
-      engineer_door.alias(float_7);
-      starboard_door.alias(float_8);
+		var rplayer = cmdarg();
+		rplayer.initNode("sim/multiplay/generic/bool[0]", 0, "BOOL");
+		rplayer.initNode("sim/multiplay/generic/bool[1]", 0, "BOOL");
+		rplayer.initNode("sim/multiplay/generic/bool[4]", 0, "BOOL");
+		rplayer.initNode("sim/multiplay/generic/bool[6]", 0, "BOOL");
     </load>
 
     <unload>
-      <![CDATA[
-        livery_update.stop();
-      ]]>
-      crew_door.unalias(float_0);
-      passenger_door.unalias(float_1);
-      ram_scoop.unalias(float_2);
-      flex_hose.unalias(float_3);
-      engineer_door.unalias(float_7);
-      starboard_door.unalias(float_8);
-
+		<![CDATA[
+		livery_update.stop();
+		]]>
+		crew_door.unalias(float_0);
+		passenger_door.unalias(float_1);
+		engineer_door.unalias(float_7);
+		starboard_door.unalias(float_8);
     </unload>
   </nasal>
+
+    <params>
+		<extendedcab>sim/multiplay/generic/bool[0]</extendedcab>
+		<tandemwheels>sim/multiplay/generic/bool[1]</tandemwheels>
+		<winchcover>sim/multiplay/generic/bool[4]</winchcover>
+		<steppanel>sim/multiplay/generic/bool[6]</steppanel>
+    </params>
 
   <animation>
     <type>material</type>
@@ -203,7 +206,7 @@
     <object-name>vitres</object-name>
     <object-name>vitresporteG</object-name>
     <object-name>vitresporteD</object-name>
-    <object-name>vitresInt</object-name>
+    <!--object-name>vitresInt</object-name-->
     <!-- Glass Mode F -->
     <object-name>vitreF</object-name>
     <object-name>vitresreardoorF</object-name>
@@ -227,7 +230,7 @@
   <animation>
     <type>select</type>
     <condition>
-      <property>sim/model/extendedcab/enabled</property>
+		<property alias="/params/extendedcab"/>
     </condition>
     <object-name>fuselageF</object-name>
     <object-name>reardoorF</object-name>
@@ -242,7 +245,9 @@
   <animation>
     <type>select</type>
     <condition>
-      <not><property>sim/model/extendedcab/enabled</property></not>
+      <not>
+		<property alias="/params/extendedcab"/>
+	  </not>
     </condition>
     <object-name>fuselageE</object-name>
     <object-name>reardoorE</object-name>
@@ -252,10 +257,10 @@
     <object-name>vitresreardoorE</object-name>
   </animation>
 
-<animation>
+  <animation>
     <type>select</type>
     <condition>
-      <property>sim/model/tandemwheels/enabled</property>
+	  <property alias="/params/tandemwheels"/>
     </condition>
     <object-name>axeGBT</object-name>
     <object-name>axeDBT</object-name>
@@ -263,10 +268,12 @@
     <object-name>roueDT</object-name>
   </animation>
 
-<animation>
+  <animation>
     <type>select</type>
     <condition>
-      <not><property>sim/model/tandemwheels/enabled</property></not>
+      <not>
+		<property alias="/params/tandemwheels"/>
+	  </not>
     </condition>
     <object-name>axeGB</object-name>
     <object-name>axeDB</object-name>
@@ -361,6 +368,13 @@
       <blue-prop>emission/blue</blue-prop>
     </emission>
   </animation>
+
+  <model>
+    <path>Aircraft/AirCrane/Models/Wipers/wiperL.xml</path>
+  </model>
+  <model>
+    <path>Aircraft/AirCrane/Models/Wipers/wiperR.xml</path>
+  </model>
 
   <!-- Interior -->
   <model>
@@ -919,7 +933,8 @@
     <type>select</type>
     <object-name>steppanelF</object-name>
     <condition>
-      <property>sim/model/steppanel/enabled</property>
+      <!--property>sim/model/steppanel/enabled</property-->
+	  <property alias="/params/steppanel"/>
     </condition>
   </animation>
 
@@ -942,7 +957,8 @@
     <type>select</type>
     <object-name>steppanelE</object-name>
     <condition>
-      <property>sim/model/steppanel/enabled</property>
+      <!--property>sim/model/steppanel/enabled</property-->
+	  <property alias="/params/steppanel"/>
     </condition>
   </animation>
 
@@ -966,7 +982,8 @@
     <type>select</type>
     <object-name>winchcover</object-name>
     <condition>
-      <property>sim/model/winchcover/enabled</property>
+      <!--property>sim/model/winchcover/enabled</property-->
+	  <property alias="/params/winchcover"/>
     </condition>
   </animation>
 

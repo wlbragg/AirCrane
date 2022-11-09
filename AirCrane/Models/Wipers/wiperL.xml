@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+
+	<nasal>
+        <load>
+            var rplayer = cmdarg();
+			rplayer.initNode("sim/multiplay/generic/float[12]", 0, "FLOAT");
+        </load>
+        <unload>
+        </unload>
+    </nasal>
+
+    <params>
+		<wipers_position_norm>sim/multiplay/generic/float[12]</wipers_position_norm>
+    </params>
+
+    <path>wiperL.ac</path>
+
+    <effect>
+        <inherits-from>Aircraft/AirCrane/Models/Effects/Exterior/bumpspec-fuselage</inherits-from>
+        <object-name>wiperArmL</object-name>
+        <object-name>wiperArmPinL</object-name>
+        <object-name>wiperBladeL</object-name>
+		<object-name>wiperL</object-name>
+        <object-name>wiperMotorL</object-name>
+    </effect>
+
+    <animation>
+        <type>rotate</type>
+        <object-name>wiperBladeL</object-name>
+		<object-name>wiperL</object-name>
+		<object-name>wiperArmPinL</object-name>
+		<property alias="/params/wipers_position_norm"/>
+        <factor>-75.0</factor>
+		<axis>
+			<x1-m>-9.60069 </x1-m>
+			<y1-m>-0.475439</y1-m>
+			<z1-m>-1.40648 </z1-m>
+			<x2-m>-9.63201 </x2-m>
+			<y2-m>-0.480849</y2-m>
+			<z2-m>-1.37977 </z2-m>
+		</axis>
+    </animation>
+
+    <animation>
+        <type>rotate</type>
+        <object-name>wiperArmL</object-name>
+        <property alias="/params/wipers_position_norm"/>
+        <factor>-75.0</factor>
+		<axis>
+			<x1-m>-9.60069 </x1-m>
+			<y1-m>-0.475439</y1-m>
+			<z1-m>-1.40648 </z1-m>
+			<x2-m>-9.63201 </x2-m>
+			<y2-m>-0.480849</y2-m>
+			<z2-m>-1.37977 </z2-m>
+		</axis>
+    </animation>
+
+    <animation>
+        <type>rotate</type>
+        <object-name>wiperBladeL</object-name>
+		<object-name>wiperL</object-name>
+        <object-name>wiperArmPinL</object-name>
+        <property alias="/params/wipers_position_norm"/>
+        <factor>75.0</factor>
+		<axis>
+			<x1-m>-9.41776 </x1-m>
+			<y1-m>-0.240985</y1-m>
+			<z1-m>-1.08529 </z1-m>
+			<x2-m>-9.42682 </x2-m>
+			<y2-m>-0.241001</y2-m>
+			<z2-m>-1.07868 </z2-m>
+		</axis>
+    </animation>
+
+    <animation>
+        <type>rotate</type>
+        <object-name>wiperBladeL</object-name>
+		<object-name>wiperL</object-name>
+        <property alias="/params/wipers_position_norm"/>
+        <factor>10.0</factor>
+		<axis>
+			<x1-m>-9.42691 </x1-m>
+			<y1-m>-0.239061</y1-m>
+			<z1-m>-1.0788  </z1-m>
+			<x2-m>-9.42673 </x2-m>
+			<y2-m>-0.24294</y2-m>
+			<z2-m>-1.07857 </z2-m>
+		</axis>
+    </animation>
+</PropertyList>

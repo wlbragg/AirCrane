@@ -2,6 +2,33 @@
 
 <PropertyList>
 
+	<nasal>
+		<load>
+			var rplayer = cmdarg();
+			rplayer.initNode("sim/multiplay/generic/bool[8]", 0, "BOOL");
+			rplayer.initNode("sim/multiplay/generic/bool[9]", 0, "BOOL");
+			rplayer.initNode("sim/multiplay/generic/bool[10]", 0, "BOOL");
+			rplayer.initNode("sim/multiplay/generic/bool[11]", 0, "BOOL");
+			rplayer.initNode("sim/multiplay/generic/bool[12]", 0, "BOOL");
+			rplayer.initNode("sim/multiplay/generic/bool[13]", 0, "BOOL");
+			rplayer.initNode("sim/multiplay/generic/bool[14]", 0, "BOOL");
+			rplayer.initNode("sim/multiplay/generic/bool[15]", 0, "BOOL");
+		</load>
+		<unload>
+		</unload>
+	</nasal>
+
+    <params>
+		<strobe-state>sim/multiplay/generic/bool[8]</strobe-state>
+		<beacon-state>sim/multiplay/generic/bool[9]</beacon-state>
+		<beaconfwd-light>sim/multiplay/generic/bool[10]</beaconfwd-light>
+		<beaconaft-light>sim/multiplay/generic/bool[11]</beaconaft-light>
+		<strobe-light>sim/multiplay/generic/bool[12]</strobe-light>
+		<nav-lights>sim/multiplay/generic/bool[13]</nav-lights>
+		<spot-light>sim/multiplay/generic/bool[14]</spot-light>
+		<landing-light>sim/multiplay/generic/bool[15]</landing-light>
+    </params>
+
     <!-- ================================================================== -->
     <!-- Procedural Clustered Shading Lighting                              -->
     <!-- ================================================================== -->
@@ -12,7 +39,7 @@
 		<object-name>ProceduralLandingLight</object-name>
         <nopreview/>
         <condition>
-            <property>/sim/model/aircrane/lighting/landing-light</property>
+			<property alias="/params/landing-light"/>
         </condition>
     </animation>
 	<light>
@@ -68,7 +95,7 @@
         <object-name>ProceduralSpotLight</object-name>
         <nopreview/>
         <condition>
-			<property>/sim/model/aircrane/lighting/spot-light</property>
+			<property alias="/params/spot-light"/>
         </condition>
     </animation>
 	<light>
@@ -126,8 +153,8 @@
         <nopreview/>
 		<condition>
 			<and>
-				<property>/sim/model/lights/sbc1/state</property>
-				<property>/sim/model/aircrane/lighting/strobe-light</property>
+				<property alias="/params/strobe-state"/>
+				<property alias="/params/strobe-light"/>
 			</and>
 		</condition>
     </animation>
@@ -231,7 +258,7 @@
 		<type>select</type>
 		<object-name>beaconlightfwd</object-name>
 		<condition>
-			<property>/sim/model/aircrane/lighting/beaconfwd-light</property>
+			<property alias="/params/beaconfwd-light"/>
 		</condition>
 	</animation>
 
@@ -272,7 +299,7 @@
 			<q>3.60</q>
 		</attenuation>
 		<dim-factor>
-			<property>/sim/model/lights/beacon/state</property>
+				<property alias="/params/beacon-state"/>
 		</dim-factor>
 		<spot-exponent>.5</spot-exponent>
 		<spot-cutoff>89</spot-cutoff>
@@ -290,7 +317,7 @@
 		<type>select</type>
 		<object-name>beaconlightaft</object-name>
 		<condition>
-			<property>/sim/model/aircrane/lighting/beaconaft-light</property>
+			<property alias="/params/beaconaft-light"/>
 		</condition>
 	</animation>
 	 
@@ -326,7 +353,7 @@
 			<q>3.60</q>
 		</attenuation>
 		<dim-factor>
-			<property>/sim/model/lights/beacon/state</property>
+			<property alias="/params/beacon-state"/>
 		</dim-factor>
 		<range-m>10</range-m>
 		<debug-color>
@@ -344,7 +371,7 @@
 		<object-name>navlightred</object-name>
 		<object-name>navlightgreen</object-name>
 		<condition>
-			<property>/sim/model/aircrane/lighting/nav-lights</property>
+			<property alias="/params/nav-lights"/>
 		</condition>
 	</animation>
 
@@ -484,7 +511,7 @@
 	</light>
 
 
-	<!-- Dome Light -->
+	<!-- Dome Light
     <animation>
         <type>select</type>
         <object-name>RedDomeLight</object-name>
@@ -538,7 +565,7 @@
 			<b>0</b>
 			<a>1</a>
 		</debug-color>
-	</light>
+	</light> -->
 
     <animation>
         <type>noshadow</type>
@@ -552,7 +579,7 @@
 		<object-name>strobe</object-name>
 		<object-name>ProceduralLandingLight</object-name>
 		<object-name>ProceduralSpotLight</object-name>
-		<object-name>RedDomeLight</object-name>
+		<!--object-name>RedDomeLight</object-name-->
     </animation>
 
 </PropertyList>

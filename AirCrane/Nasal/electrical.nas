@@ -311,7 +311,9 @@ var init_electrical = func{
     append(cbs_main_left, "anti-ice-pitot-left");
     append(cbs_main_left, "anti-ice-bleedair-ws");
     append(cbs_main_left, "anti-ice-bleedair-ws-temp");
-
+	
+	# Windshield wipers
+	
     append(cbs_main_left, "afcs1");
     append(cbs_main_left, "afcs2");
     append(cbs_main_left, "afcs-servo");

@@ -340,12 +340,18 @@
       </emer>
 
     </circuit-breakers>
+	
+	<wipers>
+		<position-norm type="float">0</position-norm>
+	</wipers>
+	
   </electric>
 
   <knobs>
     <yaw-trim type="float">0</yaw-trim>
     <roll-trim type="float">0</roll-trim>
     <cg-trim type="float">0</cg-trim>
+	<knob-wiper type="float">-1</knob-wiper>
   </knobs>
 
   <switches>

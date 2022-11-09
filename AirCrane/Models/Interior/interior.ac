@@ -98029,6 +98029,8 @@ name "intvitreE"
 data 9
 intvitreE
 crease 30.0
+texture "glass-trans-texture-dummy.png"
+texrep 1 1
 numvert 209
 -7.51807 -2.7024 1.00606
 -7.52069 -2.70605 1.00519
@@ -99438,6 +99440,8 @@ name "intvitreF"
 data 9
 intvitreF
 crease 30.0
+texture "glass-trans-texture-dummy.png"
+texrep 1 1
 numvert 139
 -7.51807 -2.7024 1.00606
 -7.52069 -2.70605 1.00519
@@ -100331,6 +100335,8 @@ name "intvitres"
 data 9
 intvitres
 crease 30.0
+texture "glass-trans-texture-dummy.png"
+texrep 1 1
 numvert 248
 -8.88403 -0.63487 0.77603
 -8.89072 -0.6975 0.86204
@@ -101821,6 +101827,8 @@ name "intvitresporteD"
 data 15
 intvitresporteD
 crease 30.0
+texture "glass-trans-texture-dummy.png"
+texrep 1 1
 numvert 485
 -8.5898 -1.10422 -1.38924
 -8.61878 -1.11036 -1.39114
@@ -105690,6 +105698,8 @@ name "intvitresporteG"
 data 15
 intvitresporteG
 crease 30.0
+texture "glass-trans-texture-dummy.png"
+texrep 1 1
 numvert 487
 -8.5896 -1.26219 1.51059
 -8.58903 -1.27141 1.51059
@@ -109590,6 +109600,8 @@ name "intvitresreardoorE"
 data 18
 intvitresreardoorE
 crease 30.0
+texture "glass-trans-texture-dummy.png"
+texrep 1 1
 numvert 16
 -7.63385 -1.80303 -0.6852
 -7.63298 -1.80303 -0.35442
@@ -109656,6 +109668,8 @@ name "intvitresreardoorF"
 data 18
 intvitresreardoorF
 crease 30.0
+texture "glass-trans-texture-dummy.png"
+texrep 1 1
 numvert 16
 -7.05725 -1.20522 -0.19364
 -7.05773 -1.1627 -0.23616
@@ -109722,6 +109736,8 @@ name "intvitresstarboardF"
 data 19
 intvitresstarboardF
 crease 30.0
+texture "glass-trans-texture-dummy.png"
+texrep 1 1
 numvert 24
 -7.21016 -2.28569 -1.05886
 -7.15527 -2.23079 -1.0615

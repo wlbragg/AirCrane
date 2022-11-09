@@ -2,6 +2,27 @@
 
 <PropertyList>
 
+	<nasal>
+        <load>
+            var rplayer = cmdarg();
+			rplayer.initNode("sim/multiplay/generic/float[5]", 0, "FLOAT");
+			rplayer.initNode("sim/multiplay/generic/float[6]", 0, "FLOAT");
+			rplayer.initNode("sim/multiplay/generic/float[11]", 0, "FLOAT");
+			rplayer.initNode("sim/multiplay/generic/bool[2]", 0, "BOOL");
+			rplayer.initNode("sim/multiplay/generic/bool[3]", 0, "BOOL");
+        </load>
+        <unload>
+        </unload>
+    </nasal>
+
+    <params>
+		<ramscoop_position_norm>sim/multiplay/generic/float[5]</ramscoop_position_norm>
+		<flexhose_position_norm>sim/multiplay/generic/float[6]</flexhose_position_norm>
+		<watercannon_position_deg>sim/multiplay/generic/float[11]</watercannon_position_deg>
+		<firetank>sim/multiplay/generic/bool[2]</firetank>
+		<watercannon>sim/multiplay/generic/bool[3]</watercannon>
+    </params>
+
   <path>water-system.ac</path>
 
   <animation>
@@ -156,7 +177,7 @@
     <object-name>tankdockpins</object-name>
     <object-name>flexhoserelease</object-name>
     <condition>
-      <property>sim/model/firetank/enabled</property>
+	  <property alias="/params/firetank"/>
     </condition>
   </animation>
 
@@ -166,8 +187,8 @@
     <object-name>watercannonhose</object-name>
     <object-name>watercannonframe</object-name>
     <condition>
-      <property>sim/model/watercannon/enabled</property>
-      <property>sim/model/firetank/enabled</property>
+	  <property alias="/params/watercannon"/>
+	  <property alias="/params/firetank"/>
     </condition>
   </animation>
 
@@ -836,10 +857,10 @@
   <animation>
     <type>rotate</type>
     <object-name>FlexFill01</object-name>
-    <property>sim/model/firetank/deployflexhose/position-norm</property>
+	<property alias="/params/flexhose_position_norm"/>
     <condition>
       <greater-than>
-        <property>sim/model/firetank/deployflexhose/position-norm</property>
+		<property alias="/params/flexhose_position_norm"/>
         <value>0</value>
       </greater-than>
     </condition>
@@ -860,10 +881,10 @@
   <animation>
     <type>rotate</type>
     <object-name>FlexFill02</object-name>
-    <property>sim/model/firetank/deployflexhose/position-norm</property>
+	<property alias="/params/flexhose_position_norm"/>
     <condition>
       <greater-than>
-        <property>sim/model/firetank/deployflexhose/position-norm</property>
+		<property alias="/params/flexhose_position_norm"/>
         <value>0</value>
       </greater-than>
     </condition>
@@ -884,10 +905,10 @@
   <animation>
     <type>rotate</type>
     <object-name>FlexFill03</object-name>
-    <property>sim/model/firetank/deployflexhose/position-norm</property>
+	<property alias="/params/flexhose_position_norm"/>
     <condition>
       <greater-than>
-        <property>sim/model/firetank/deployflexhose/position-norm</property>
+		<property alias="/params/flexhose_position_norm"/>
         <value>0</value>
       </greater-than>
     </condition>
@@ -908,10 +929,10 @@
   <animation>
     <type>rotate</type>
     <object-name>FlexFill04</object-name>
-    <property>sim/model/firetank/deployflexhose/position-norm</property>
+	<property alias="/params/flexhose_position_norm"/>
     <condition>
       <greater-than>
-        <property>sim/model/firetank/deployflexhose/position-norm</property>
+		<property alias="/params/flexhose_position_norm"/>
         <value>0</value>
       </greater-than>
     </condition>
@@ -932,10 +953,10 @@
   <animation>
     <type>rotate</type>
     <object-name>FlexFill05</object-name>
-    <property>sim/model/firetank/deployflexhose/position-norm</property>
+	<property alias="/params/flexhose_position_norm"/>
     <condition>
       <greater-than>
-        <property>sim/model/firetank/deployflexhose/position-norm</property>
+		<property alias="/params/flexhose_position_norm"/>
         <value>0</value>
       </greater-than>
     </condition>
@@ -956,10 +977,10 @@
   <animation>
     <type>rotate</type>
     <object-name>FlexFill06</object-name>
-    <property>sim/model/firetank/deployflexhose/position-norm</property>
+    <property alias="/params/flexhose_position_norm"/>
     <condition>
       <greater-than>
-        <property>sim/model/firetank/deployflexhose/position-norm</property>
+        <property alias="/params/flexhose_position_norm"/>
         <value>0</value>
       </greater-than>
     </condition>
@@ -980,10 +1001,10 @@
   <animation>
     <type>rotate</type>
     <object-name>FlexFill07</object-name>
-    <property>sim/model/firetank/deployflexhose/position-norm</property>
+    <property alias="/params/flexhose_position_norm"/>
     <condition>
       <greater-than>
-        <property>sim/model/firetank/deployflexhose/position-norm</property>
+        <property alias="/params/flexhose_position_norm"/>
         <value>0</value>
       </greater-than>
     </condition>
@@ -1004,10 +1025,10 @@
   <animation>
     <type>rotate</type>
     <object-name>FlexFill08</object-name>
-    <property>sim/model/firetank/deployflexhose/position-norm</property>
+    <property alias="/params/flexhose_position_norm"/>
     <condition>
       <greater-than>
-        <property>sim/model/firetank/deployflexhose/position-norm</property>
+        <property alias="/params/flexhose_position_norm"/>
         <value>0</value>
       </greater-than>
     </condition>
@@ -1028,10 +1049,10 @@
   <animation>
     <type>rotate</type>
     <object-name>FlexFill09</object-name>
-    <property>sim/model/firetank/deployflexhose/position-norm</property>
+    <property alias="/params/flexhose_position_norm"/>
     <condition>
       <greater-than>
-        <property>sim/model/firetank/deployflexhose/position-norm</property>
+        <property alias="/params/flexhose_position_norm"/>
         <value>0</value>
       </greater-than>
     </condition>
@@ -1052,10 +1073,10 @@
   <animation>
     <type>rotate</type>
     <object-name>FlexFill10</object-name>
-    <property>sim/model/firetank/deployflexhose/position-norm</property>
+    <property alias="/params/flexhose_position_norm"/>
     <condition>
       <greater-than>
-        <property>sim/model/firetank/deployflexhose/position-norm</property>
+        <property alias="/params/flexhose_position_norm"/>
         <value>0</value>
       </greater-than>
     </condition>
@@ -1076,10 +1097,10 @@
   <animation>
     <type>rotate</type>
     <object-name>FlexFill11</object-name>
-    <property>sim/model/firetank/deployflexhose/position-norm</property>
+    <property alias="/params/flexhose_position_norm"/>
     <condition>
       <greater-than>
-        <property>sim/model/firetank/deployflexhose/position-norm</property>
+        <property alias="/params/flexhose_position_norm"/>
         <value>0</value>
       </greater-than>
     </condition>
@@ -1100,10 +1121,10 @@
   <animation>
     <type>rotate</type>
     <object-name>FlexFill12</object-name>
-    <property>sim/model/firetank/deployflexhose/position-norm</property>
+    <property alias="/params/flexhose_position_norm"/>
     <condition>
       <greater-than>
-        <property>sim/model/firetank/deployflexhose/position-norm</property>
+        <property alias="/params/flexhose_position_norm"/>
         <value>0</value>
       </greater-than>
     </condition>
@@ -1124,10 +1145,10 @@
   <animation>
     <type>rotate</type>
     <object-name>FlexFill13</object-name>
-    <property>sim/model/firetank/deployflexhose/position-norm</property>
+    <property alias="/params/flexhose_position_norm"/>
     <condition>
       <greater-than>
-        <property>sim/model/firetank/deployflexhose/position-norm</property>
+        <property alias="/params/flexhose_position_norm"/>
         <value>0</value>
       </greater-than>
     </condition>
@@ -1148,10 +1169,10 @@
   <animation>
     <type>rotate</type>
     <object-name>FlexFill14</object-name>
-    <property>sim/model/firetank/deployflexhose/position-norm</property>
+    <property alias="/params/flexhose_position_norm"/>
     <condition>
       <greater-than>
-        <property>sim/model/firetank/deployflexhose/position-norm</property>
+        <property alias="/params/flexhose_position_norm"/>
         <value>0</value>
       </greater-than>
     </condition>
@@ -1172,10 +1193,10 @@
   <animation>
     <type>rotate</type>
     <object-name>FlexFill15</object-name>
-    <property>sim/model/firetank/deployflexhose/position-norm</property>
+    <property alias="/params/flexhose_position_norm"/>
     <condition>
       <greater-than>
-        <property>sim/model/firetank/deployflexhose/position-norm</property>
+        <property alias="/params/flexhose_position_norm"/>
         <value>0</value>
       </greater-than>
     </condition>
@@ -1196,10 +1217,10 @@
   <animation>
     <type>rotate</type>
     <object-name>FlexFill16</object-name>
-    <property>sim/model/firetank/deployflexhose/position-norm</property>
+    <property alias="/params/flexhose_position_norm"/>
     <condition>
       <greater-than>
-        <property>sim/model/firetank/deployflexhose/position-norm</property>
+        <property alias="/params/flexhose_position_norm"/>
         <value>0</value>
       </greater-than>
     </condition>
@@ -1220,10 +1241,10 @@
   <animation>
     <type>rotate</type>
     <object-name>FlexFill17</object-name>
-    <property>sim/model/firetank/deployflexhose/position-norm</property>
+    <property alias="/params/flexhose_position_norm"/>
     <condition>
       <greater-than>
-        <property>sim/model/firetank/deployflexhose/position-norm</property>
+        <property alias="/params/flexhose_position_norm"/>
         <value>0</value>
       </greater-than>
     </condition>
@@ -1244,10 +1265,10 @@
   <animation>
     <type>rotate</type>
     <object-name>FlexFill18</object-name>
-    <property>sim/model/firetank/deployflexhose/position-norm</property>
+    <property alias="/params/flexhose_position_norm"/>
     <condition>
       <greater-than>
-        <property>sim/model/firetank/deployflexhose/position-norm</property>
+        <property alias="/params/flexhose_position_norm"/>
         <value>0</value>
       </greater-than>
     </condition>
@@ -1268,10 +1289,10 @@
   <animation>
     <type>rotate</type>
     <object-name>FlexFill19</object-name>
-    <property>sim/model/firetank/deployflexhose/position-norm</property>
+    <property alias="/params/flexhose_position_norm"/>
     <condition>
       <greater-than>
-        <property>sim/model/firetank/deployflexhose/position-norm</property>
+        <property alias="/params/flexhose_position_norm"/>
         <value>0</value>
       </greater-than>
     </condition>
@@ -1292,10 +1313,10 @@
   <animation>
     <type>rotate</type>
     <object-name>FlexFill20</object-name>
-    <property>sim/model/firetank/deployflexhose/position-norm</property>
+    <property alias="/params/flexhose_position_norm"/>
     <condition>
       <greater-than>
-        <property>sim/model/firetank/deployflexhose/position-norm</property>
+        <property alias="/params/flexhose_position_norm"/>
         <value>0</value>
       </greater-than>
     </condition>
@@ -1316,10 +1337,10 @@
   <animation>
     <type>rotate</type>
     <object-name>FlexFill21</object-name>
-    <property>sim/model/firetank/deployflexhose/position-norm</property>
+    <property alias="/params/flexhose_position_norm"/>
     <condition>
       <greater-than>
-        <property>sim/model/firetank/deployflexhose/position-norm</property>
+        <property alias="/params/flexhose_position_norm"/>
         <value>0</value>
       </greater-than>
     </condition>
@@ -1340,10 +1361,10 @@
   <animation>
     <type>rotate</type>
     <object-name>FlexFill22</object-name>
-    <property>sim/model/firetank/deployflexhose/position-norm</property>
+    <property alias="/params/flexhose_position_norm"/>
     <condition>
       <greater-than>
-        <property>sim/model/firetank/deployflexhose/position-norm</property>
+        <property alias="/params/flexhose_position_norm"/>
         <value>0</value>
       </greater-than>
     </condition>
@@ -1364,10 +1385,10 @@
   <animation>
     <type>rotate</type>
     <object-name>FlexFill23</object-name>
-    <property>sim/model/firetank/deployflexhose/position-norm</property>
+    <property alias="/params/flexhose_position_norm"/>
     <condition>
       <greater-than>
-        <property>sim/model/firetank/deployflexhose/position-norm</property>
+        <property alias="/params/flexhose_position_norm"/>
         <value>0</value>
       </greater-than>
     </condition>
@@ -1388,10 +1409,10 @@
   <animation>
     <type>rotate</type>
     <object-name>FlexFill24</object-name>
-    <property>sim/model/firetank/deployflexhose/position-norm</property>
+    <property alias="/params/flexhose_position_norm"/>
     <condition>
       <greater-than>
-        <property>sim/model/firetank/deployflexhose/position-norm</property>
+        <property alias="/params/flexhose_position_norm"/>
         <value>0</value>
       </greater-than>
     </condition>
@@ -1412,10 +1433,10 @@
   <animation>
     <type>rotate</type>
     <object-name>FlexFill25</object-name>
-    <property>sim/model/firetank/deployflexhose/position-norm</property>
+    <property alias="/params/flexhose_position_norm"/>
     <condition>
       <greater-than>
-        <property>sim/model/firetank/deployflexhose/position-norm</property>
+        <property alias="/params/flexhose_position_norm"/>
         <value>0</value>
       </greater-than>
     </condition>
@@ -1436,10 +1457,10 @@
   <animation>
     <type>rotate</type>
     <object-name>FlexFill26</object-name>
-    <property>sim/model/firetank/deployflexhose/position-norm</property>
+    <property alias="/params/flexhose_position_norm"/>
     <condition>
       <greater-than>
-        <property>sim/model/firetank/deployflexhose/position-norm</property>
+        <property alias="/params/flexhose_position_norm"/>
         <value>0</value>
       </greater-than>
     </condition>
@@ -1460,10 +1481,10 @@
   <animation>
     <type>rotate</type>
     <object-name>FlexFill27</object-name>
-    <property>sim/model/firetank/deployflexhose/position-norm</property>
+    <property alias="/params/flexhose_position_norm"/>
     <condition>
       <greater-than>
-        <property>sim/model/firetank/deployflexhose/position-norm</property>
+        <property alias="/params/flexhose_position_norm"/>
         <value>0</value>
       </greater-than>
     </condition>
@@ -1484,10 +1505,10 @@
   <animation>
     <type>rotate</type>
     <object-name>FlexFill28</object-name>
-    <property>sim/model/firetank/deployflexhose/position-norm</property>
+    <property alias="/params/flexhose_position_norm"/>
     <condition>
       <greater-than>
-        <property>sim/model/firetank/deployflexhose/position-norm</property>
+        <property alias="/params/flexhose_position_norm"/>
         <value>0</value>
       </greater-than>
     </condition>
@@ -1508,10 +1529,10 @@
   <animation>
     <type>rotate</type>
     <object-name>FlexFill29</object-name>
-    <property>sim/model/firetank/deployflexhose/position-norm</property>
+    <property alias="/params/flexhose_position_norm"/>
     <condition>
       <greater-than>
-        <property>sim/model/firetank/deployflexhose/position-norm</property>
+        <property alias="/params/flexhose_position_norm"/>
         <value>0</value>
       </greater-than>
     </condition>
@@ -1532,10 +1553,10 @@
   <animation>
     <type>rotate</type>
     <object-name>FlexFill30</object-name>
-    <property>sim/model/firetank/deployflexhose/position-norm</property>
+    <property alias="/params/flexhose_position_norm"/>
     <condition>
       <greater-than>
-        <property>sim/model/firetank/deployflexhose/position-norm</property>
+        <property alias="/params/flexhose_position_norm"/>
         <value>0</value>
       </greater-than>
     </condition>
@@ -1556,10 +1577,10 @@
   <animation>
     <type>rotate</type>
     <object-name>FlexFill31</object-name>
-    <property>sim/model/firetank/deployflexhose/position-norm</property>
+    <property alias="/params/flexhose_position_norm"/>
     <condition>
       <greater-than>
-        <property>sim/model/firetank/deployflexhose/position-norm</property>
+        <property alias="/params/flexhose_position_norm"/>
         <value>0</value>
       </greater-than>
     </condition>
@@ -1584,7 +1605,7 @@
     <property>sim/model/firetank/flexhose/pitch1</property>
     <condition>
       <not>
-        <property>sim/model/firetank/deployflexhose/position-norm</property>
+        <property alias="/params/flexhose_position_norm"/>
       </not>
     </condition>
     <factor>1</factor>
@@ -1607,7 +1628,7 @@
     <property>sim/model/firetank/flexhose/pitch2</property>
     <condition>
       <not>
-        <property>sim/model/firetank/deployflexhose/position-norm</property>
+        <property alias="/params/flexhose_position_norm"/>
       </not>
     </condition>
     <factor>1</factor>
@@ -1630,7 +1651,7 @@
     <property>sim/model/firetank/flexhose/pitch3</property>
     <condition>
       <not>
-        <property>sim/model/firetank/deployflexhose/position-norm</property>
+        <property alias="/params/flexhose_position_norm"/>
       </not>
     </condition>
     <factor>1</factor>
@@ -1653,7 +1674,7 @@
     <property>sim/model/firetank/flexhose/pitch4</property>
     <condition>
       <not>
-        <property>sim/model/firetank/deployflexhose/position-norm</property>
+        <property alias="/params/flexhose_position_norm"/>
       </not>
     </condition>
     <factor>1</factor>
@@ -1676,7 +1697,7 @@
     <property>sim/model/firetank/flexhose/pitch5</property>
     <condition>
       <not>
-        <property>sim/model/firetank/deployflexhose/position-norm</property>
+        <property alias="/params/flexhose_position_norm"/>
       </not>
     </condition>
     <factor>1</factor>
@@ -1699,7 +1720,7 @@
     <property>sim/model/firetank/flexhose/pitch6</property>
     <condition>
       <not>
-        <property>sim/model/firetank/deployflexhose/position-norm</property>
+        <property alias="/params/flexhose_position_norm"/>
       </not>
     </condition>
     <factor>1</factor>
@@ -1722,7 +1743,7 @@
     <property>sim/model/firetank/flexhose/pitch7</property>
     <condition>
       <not>
-        <property>sim/model/firetank/deployflexhose/position-norm</property>
+        <property alias="/params/flexhose_position_norm"/>
       </not>
     </condition>
     <factor>1</factor>
@@ -1745,7 +1766,7 @@
     <property>sim/model/firetank/flexhose/pitch8</property>
     <condition>
       <not>
-        <property>sim/model/firetank/deployflexhose/position-norm</property>
+        <property alias="/params/flexhose_position_norm"/>
       </not>
     </condition>
     <factor>1</factor>
@@ -1768,7 +1789,7 @@
     <property>sim/model/firetank/flexhose/pitch9</property>
     <condition>
       <not>
-        <property>sim/model/firetank/deployflexhose/position-norm</property>
+        <property alias="/params/flexhose_position_norm"/>
       </not>
     </condition>
     <factor>1</factor>
@@ -1791,7 +1812,7 @@
     <property>sim/model/firetank/flexhose/pitch10</property>
     <condition>
       <not>
-        <property>sim/model/firetank/deployflexhose/position-norm</property>
+        <property alias="/params/flexhose_position_norm"/>
       </not>
     </condition>
     <factor>1</factor>
@@ -1814,7 +1835,7 @@
     <property>sim/model/firetank/flexhose/pitch11</property>
     <condition>
       <not>
-        <property>sim/model/firetank/deployflexhose/position-norm</property>
+        <property alias="/params/flexhose_position_norm"/>
       </not>
     </condition>
     <factor>1</factor>
@@ -1837,7 +1858,7 @@
     <property>sim/model/firetank/flexhose/pitch12</property>
     <condition>
       <not>
-        <property>sim/model/firetank/deployflexhose/position-norm</property>
+        <property alias="/params/flexhose_position_norm"/>
       </not>
     </condition>
     <factor>1</factor>
@@ -1860,7 +1881,7 @@
     <property>sim/model/firetank/flexhose/pitch13</property>
     <condition>
       <not>
-        <property>sim/model/firetank/deployflexhose/position-norm</property>
+        <property alias="/params/flexhose_position_norm"/>
       </not>
     </condition>
     <factor>1</factor>
@@ -1883,7 +1904,7 @@
     <property>sim/model/firetank/flexhose/pitch14</property>
     <condition>
       <not>
-        <property>sim/model/firetank/deployflexhose/position-norm</property>
+        <property alias="/params/flexhose_position_norm"/>
       </not>
     </condition>
     <factor>1</factor>
@@ -1906,7 +1927,7 @@
     <property>sim/model/firetank/flexhose/pitch15</property>
     <condition>
       <not>
-        <property>sim/model/firetank/deployflexhose/position-norm</property>
+        <property alias="/params/flexhose_position_norm"/>
       </not>
     </condition>
     <factor>1</factor>
@@ -1929,7 +1950,7 @@
     <property>sim/model/firetank/flexhose/pitch16</property>
     <condition>
       <not>
-        <property>sim/model/firetank/deployflexhose/position-norm</property>
+        <property alias="/params/flexhose_position_norm"/>
       </not>
     </condition>
     <factor>1</factor>
@@ -1952,7 +1973,7 @@
     <property>sim/model/firetank/flexhose/pitch17</property>
     <condition>
       <not>
-        <property>sim/model/firetank/deployflexhose/position-norm</property>
+        <property alias="/params/flexhose_position_norm"/>
       </not>
     </condition>
     <factor>1</factor>
@@ -1975,7 +1996,7 @@
     <property>sim/model/firetank/flexhose/pitch18</property>
     <condition>
       <not>
-        <property>sim/model/firetank/deployflexhose/position-norm</property>
+        <property alias="/params/flexhose_position_norm"/>
       </not>
     </condition>
     <factor>1</factor>
@@ -1998,7 +2019,7 @@
     <property>sim/model/firetank/flexhose/pitch19</property>
     <condition>
       <not>
-        <property>sim/model/firetank/deployflexhose/position-norm</property>
+        <property alias="/params/flexhose_position_norm"/>
       </not>
     </condition>
     <factor>1</factor>
@@ -2021,7 +2042,7 @@
     <property>sim/model/firetank/flexhose/pitch20</property>
     <condition>
       <not>
-        <property>sim/model/firetank/deployflexhose/position-norm</property>
+        <property alias="/params/flexhose_position_norm"/>
       </not>
     </condition>
     <factor>1</factor>
@@ -2044,7 +2065,7 @@
     <property>sim/model/firetank/flexhose/pitch21</property>
     <condition>
       <not>
-        <property>sim/model/firetank/deployflexhose/position-norm</property>
+        <property alias="/params/flexhose_position_norm"/>
       </not>
     </condition>
     <factor>1</factor>
@@ -2067,7 +2088,7 @@
     <property>sim/model/firetank/flexhose/pitch22</property>
     <condition>
       <not>
-        <property>sim/model/firetank/deployflexhose/position-norm</property>
+        <property alias="/params/flexhose_position_norm"/>
       </not>
     </condition>
     <factor>1</factor>
@@ -2090,7 +2111,7 @@
     <property>sim/model/firetank/flexhose/pitch23</property>
     <condition>
       <not>
-        <property>sim/model/firetank/deployflexhose/position-norm</property>
+        <property alias="/params/flexhose_position_norm"/>
       </not>
     </condition>
     <factor>1</factor>
@@ -2113,7 +2134,7 @@
     <property>sim/model/firetank/flexhose/pitch24</property>
     <condition>
       <not>
-        <property>sim/model/firetank/deployflexhose/position-norm</property>
+        <property alias="/params/flexhose_position_norm"/>
       </not>
     </condition>
     <factor>1</factor>
@@ -2136,7 +2157,7 @@
     <property>sim/model/firetank/flexhose/pitch25</property>
     <condition>
       <not>
-        <property>sim/model/firetank/deployflexhose/position-norm</property>
+        <property alias="/params/flexhose_position_norm"/>
       </not>
     </condition>
     <factor>1</factor>
@@ -2159,7 +2180,7 @@
     <property>sim/model/firetank/flexhose/pitch26</property>
     <condition>
       <not>
-        <property>sim/model/firetank/deployflexhose/position-norm</property>
+        <property alias="/params/flexhose_position_norm"/>
       </not>
     </condition>
     <factor>1</factor>
@@ -2182,7 +2203,7 @@
     <property>sim/model/firetank/flexhose/pitch27</property>
     <condition>
       <not>
-        <property>sim/model/firetank/deployflexhose/position-norm</property>
+        <property alias="/params/flexhose_position_norm"/>
       </not>
     </condition>
     <factor>1</factor>
@@ -2205,7 +2226,7 @@
     <property>sim/model/firetank/flexhose/pitch28</property>
     <condition>
       <not>
-        <property>sim/model/firetank/deployflexhose/position-norm</property>
+        <property alias="/params/flexhose_position_norm"/>
       </not>
     </condition>
     <factor>1</factor>
@@ -2228,7 +2249,7 @@
     <property>sim/model/firetank/flexhose/pitch29</property>
     <condition>
       <not>
-        <property>sim/model/firetank/deployflexhose/position-norm</property>
+        <property alias="/params/flexhose_position_norm"/>
       </not>
     </condition>
     <factor>1</factor>
@@ -2251,7 +2272,7 @@
     <property>sim/model/firetank/flexhose/pitch30</property>
     <condition>
       <not>
-        <property>sim/model/firetank/deployflexhose/position-norm</property>
+        <property alias="/params/flexhose_position_norm"/>
       </not>
     </condition>
     <factor>1</factor>
@@ -2274,7 +2295,7 @@
     <property>sim/model/firetank/flexhose/pitch31</property>
     <condition>
       <not>
-        <property>sim/model/firetank/deployflexhose/position-norm</property>
+        <property alias="/params/flexhose_position_norm"/>
       </not>
     </condition>
     <factor>1</factor>
@@ -2298,7 +2319,7 @@
     <property>sim/model/firetank/flexhose/roll1</property>
     <condition>
       <not>
-        <property>sim/model/firetank/deployflexhose/position-norm</property>
+        <property alias="/params/flexhose_position_norm"/>
       </not>
     </condition>
     <factor>1</factor>
@@ -2321,7 +2342,7 @@
     <property>sim/model/firetank/flexhose/roll2</property>
     <condition>
       <not>
-        <property>sim/model/firetank/deployflexhose/position-norm</property>
+        <property alias="/params/flexhose_position_norm"/>
       </not>
     </condition>
     <factor>1</factor>
@@ -2344,7 +2365,7 @@
     <property>sim/model/firetank/flexhose/roll3</property>
     <condition>
       <not>
-        <property>sim/model/firetank/deployflexhose/position-norm</property>
+        <property alias="/params/flexhose_position_norm"/>
       </not>
     </condition>
     <factor>1</factor>
@@ -2367,7 +2388,7 @@
     <property>sim/model/firetank/flexhose/roll4</property>
     <condition>
       <not>
-        <property>sim/model/firetank/deployflexhose/position-norm</property>
+        <property alias="/params/flexhose_position_norm"/>
       </not>
     </condition>
     <factor>1</factor>
@@ -2390,7 +2411,7 @@
     <property>sim/model/firetank/flexhose/roll5</property>
     <condition>
       <not>
-        <property>sim/model/firetank/deployflexhose/position-norm</property>
+        <property alias="/params/flexhose_position_norm"/>
       </not>
     </condition>
     <factor>1</factor>
@@ -2413,7 +2434,7 @@
     <property>sim/model/firetank/flexhose/roll6</property>
     <condition>
       <not>
-        <property>sim/model/firetank/deployflexhose/position-norm</property>
+        <property alias="/params/flexhose_position_norm"/>
       </not>
     </condition>
     <factor>1</factor>
@@ -2436,7 +2457,7 @@
     <property>sim/model/firetank/flexhose/roll7</property>
     <condition>
       <not>
-        <property>sim/model/firetank/deployflexhose/position-norm</property>
+        <property alias="/params/flexhose_position_norm"/>
       </not>
     </condition>
     <factor>1</factor>
@@ -2459,7 +2480,7 @@
     <property>sim/model/firetank/flexhose/roll8</property>
     <condition>
       <not>
-        <property>sim/model/firetank/deployflexhose/position-norm</property>
+        <property alias="/params/flexhose_position_norm"/>
       </not>
     </condition>
     <factor>1</factor>
@@ -2482,7 +2503,7 @@
     <property>sim/model/firetank/flexhose/roll9</property>
     <condition>
       <not>
-        <property>sim/model/firetank/deployflexhose/position-norm</property>
+        <property alias="/params/flexhose_position_norm"/>
       </not>
     </condition>
     <factor>1</factor>
@@ -2505,7 +2526,7 @@
     <property>sim/model/firetank/flexhose/roll10</property>
     <condition>
       <not>
-        <property>sim/model/firetank/deployflexhose/position-norm</property>
+        <property alias="/params/flexhose_position_norm"/>
       </not>
     </condition>
     <factor>1</factor>
@@ -2528,7 +2549,7 @@
     <property>sim/model/firetank/flexhose/roll11</property>
     <condition>
       <not>
-        <property>sim/model/firetank/deployflexhose/position-norm</property>
+        <property alias="/params/flexhose_position_norm"/>
       </not>
     </condition>
     <factor>1</factor>
@@ -2551,7 +2572,7 @@
     <property>sim/model/firetank/flexhose/roll12</property>
     <condition>
       <not>
-        <property>sim/model/firetank/deployflexhose/position-norm</property>
+        <property alias="/params/flexhose_position_norm"/>
       </not>
     </condition>
     <factor>1</factor>
@@ -2574,7 +2595,7 @@
     <property>sim/model/firetank/flexhose/roll13</property>
     <condition>
       <not>
-        <property>sim/model/firetank/deployflexhose/position-norm</property>
+        <property alias="/params/flexhose_position_norm"/>
       </not>
     </condition>
     <factor>1</factor>
@@ -2597,7 +2618,7 @@
     <property>sim/model/firetank/flexhose/roll14</property>
     <condition>
       <not>
-        <property>sim/model/firetank/deployflexhose/position-norm</property>
+        <property alias="/params/flexhose_position_norm"/>
       </not>
     </condition>
     <factor>1</factor>
@@ -2620,7 +2641,7 @@
     <property>sim/model/firetank/flexhose/roll15</property>
     <condition>
       <not>
-        <property>sim/model/firetank/deployflexhose/position-norm</property>
+        <property alias="/params/flexhose_position_norm"/>
       </not>
     </condition>
     <factor>1</factor>
@@ -2643,7 +2664,7 @@
     <property>sim/model/firetank/flexhose/roll16</property>
     <condition>
       <not>
-        <property>sim/model/firetank/deployflexhose/position-norm</property>
+        <property alias="/params/flexhose_position_norm"/>
       </not>
     </condition>
     <factor>1</factor>
@@ -2666,7 +2687,7 @@
     <property>sim/model/firetank/flexhose/roll17</property>
     <condition>
       <not>
-        <property>sim/model/firetank/deployflexhose/position-norm</property>
+        <property alias="/params/flexhose_position_norm"/>
       </not>
     </condition>
     <factor>1</factor>
@@ -2689,7 +2710,7 @@
     <property>sim/model/firetank/flexhose/roll18</property>
     <condition>
       <not>
-        <property>sim/model/firetank/deployflexhose/position-norm</property>
+        <property alias="/params/flexhose_position_norm"/>
       </not>
     </condition>
     <factor>1</factor>
@@ -2712,7 +2733,7 @@
     <property>sim/model/firetank/flexhose/roll19</property>
     <condition>
       <not>
-        <property>sim/model/firetank/deployflexhose/position-norm</property>
+        <property alias="/params/flexhose_position_norm"/>
       </not>
     </condition>
     <factor>1</factor>
@@ -2735,7 +2756,7 @@
     <property>sim/model/firetank/flexhose/roll20</property>
     <condition>
       <not>
-        <property>sim/model/firetank/deployflexhose/position-norm</property>
+        <property alias="/params/flexhose_position_norm"/>
       </not>
     </condition>
     <factor>1</factor>
@@ -2758,7 +2779,7 @@
     <property>sim/model/firetank/flexhose/roll21</property>
     <condition>
       <not>
-        <property>sim/model/firetank/deployflexhose/position-norm</property>
+        <property alias="/params/flexhose_position_norm"/>
       </not>
     </condition>
     <factor>1</factor>
@@ -2781,7 +2802,7 @@
     <property>sim/model/firetank/flexhose/roll22</property>
     <condition>
       <not>
-        <property>sim/model/firetank/deployflexhose/position-norm</property>
+        <property alias="/params/flexhose_position_norm"/>
       </not>
     </condition>
     <factor>1</factor>
@@ -2804,7 +2825,7 @@
     <property>sim/model/firetank/flexhose/roll23</property>
     <condition>
       <not>
-        <property>sim/model/firetank/deployflexhose/position-norm</property>
+        <property alias="/params/flexhose_position_norm"/>
       </not>
     </condition>
     <factor>1</factor>
@@ -2827,7 +2848,7 @@
     <property>sim/model/firetank/flexhose/roll24</property>
     <condition>
       <not>
-        <property>sim/model/firetank/deployflexhose/position-norm</property>
+        <property alias="/params/flexhose_position_norm"/>
       </not>
     </condition>
     <factor>1</factor>
@@ -2850,7 +2871,7 @@
     <property>sim/model/firetank/flexhose/roll25</property>
     <condition>
       <not>
-        <property>sim/model/firetank/deployflexhose/position-norm</property>
+        <property alias="/params/flexhose_position_norm"/>
       </not>
     </condition>
     <factor>1</factor>
@@ -2873,7 +2894,7 @@
     <property>sim/model/firetank/flexhose/roll26</property>
     <condition>
       <not>
-        <property>sim/model/firetank/deployflexhose/position-norm</property>
+        <property alias="/params/flexhose_position_norm"/>
       </not>
     </condition>
     <factor>1</factor>
@@ -2896,7 +2917,7 @@
     <property>sim/model/firetank/flexhose/roll27</property>
     <condition>
       <not>
-        <property>sim/model/firetank/deployflexhose/position-norm</property>
+        <property alias="/params/flexhose_position_norm"/>
       </not>
     </condition>
     <factor>1</factor>
@@ -2919,7 +2940,7 @@
     <property>sim/model/firetank/flexhose/roll28</property>
     <condition>
       <not>
-        <property>sim/model/firetank/deployflexhose/position-norm</property>
+        <property alias="/params/flexhose_position_norm"/>
       </not>
     </condition>
     <factor>1</factor>
@@ -2942,7 +2963,7 @@
     <property>sim/model/firetank/flexhose/roll29</property>
     <condition>
       <not>
-        <property>sim/model/firetank/deployflexhose/position-norm</property>
+        <property alias="/params/flexhose_position_norm"/>
       </not>
     </condition>
     <factor>1</factor>
@@ -2965,7 +2986,7 @@
     <property>sim/model/firetank/flexhose/roll30</property>
     <condition>
       <not>
-        <property>sim/model/firetank/deployflexhose/position-norm</property>
+        <property alias="/params/flexhose_position_norm"/>
       </not>
     </condition>
     <factor>1</factor>
@@ -2988,7 +3009,7 @@
     <property>sim/model/firetank/flexhose/roll31</property>
     <condition>
       <not>
-        <property>sim/model/firetank/deployflexhose/position-norm</property>
+        <property alias="/params/flexhose_position_norm"/>
       </not>
     </condition>
     <factor>1</factor>
@@ -3012,7 +3033,7 @@
     <property>orientation/roll-deg</property>
     <condition>
       <not>
-        <property>sim/model/firetank/deployflexhose/position-norm</property>
+        <property alias="/params/flexhose_position_norm"/>
       </not>
     </condition>
     <factor>.20</factor>
@@ -3034,7 +3055,7 @@
     <property>orientation/roll-deg</property>
     <condition>
       <not>
-        <property>sim/model/firetank/deployflexhose/position-norm</property>
+        <property alias="/params/flexhose_position_norm"/>
       </not>
     </condition>
     <factor>.20</factor>
@@ -3056,7 +3077,7 @@
     <property>orientation/roll-deg</property>
     <condition>
       <not>
-        <property>sim/model/firetank/deployflexhose/position-norm</property>
+        <property alias="/params/flexhose_position_norm"/>
       </not>
     </condition>
     <factor>.20</factor>
@@ -3078,7 +3099,7 @@
     <property>orientation/roll-deg</property>
     <condition>
       <not>
-        <property>sim/model/firetank/deployflexhose/position-norm</property>
+        <property alias="/params/flexhose_position_norm"/>
       </not>
     </condition>
     <factor>.20</factor>
@@ -3100,7 +3121,7 @@
     <property>orientation/roll-deg</property>
     <condition>
       <not>
-        <property>sim/model/firetank/deployflexhose/position-norm</property>
+        <property alias="/params/flexhose_position_norm"/>
       </not>
     </condition>
     <factor>.20</factor>
@@ -3123,7 +3144,7 @@
     <property>orientation/pitch-deg</property>
     <condition>
       <not>
-        <property>sim/model/firetank/deployflexhose/position-norm</property>
+        <property alias="/params/flexhose_position_norm"/>
       </not>
     </condition>
     <factor>-.20</factor>
@@ -3145,7 +3166,7 @@
     <property>orientation/pitch-deg</property>
     <condition>
       <not>
-        <property>sim/model/firetank/deployflexhose/position-norm</property>
+        <property alias="/params/flexhose_position_norm"/>
       </not>
     </condition>
     <factor>-.20</factor>
@@ -3167,7 +3188,7 @@
     <property>orientation/pitch-deg</property>
     <condition>
       <not>
-        <property>sim/model/firetank/deployflexhose/position-norm</property>
+        <property alias="/params/flexhose_position_norm"/>
       </not>
     </condition>
     <factor>-.20</factor>
@@ -3189,7 +3210,7 @@
     <property>orientation/pitch-deg</property>
     <condition>
       <not>
-        <property>sim/model/firetank/deployflexhose/position-norm</property>
+        <property alias="/params/flexhose_position_norm"/>
       </not>
     </condition>
     <factor>-.20</factor>
@@ -3211,7 +3232,7 @@
     <property>orientation/pitch-deg</property>
     <condition>
       <not>
-        <property>sim/model/firetank/deployflexhose/position-norm</property>
+        <property alias="/params/flexhose_position_norm"/>
       </not>
     </condition>
     <factor>-.20</factor>
@@ -3233,7 +3254,7 @@
     <object-name>ramscoopconnector</object-name>
     <object-name>ramscoop</object-name>
     <object-name>ramscoophingebottom</object-name>
-    <property>sim/model/firetank/deployramscoop/position-norm</property>
+    <property alias="/params/ramscoop_position_norm"/>
     <factor>45</factor>
     <offset-deg>0</offset-deg>
     <center>
@@ -3252,7 +3273,8 @@
     <type>rotate</type>
     <object-name>ramscoophingetop</object-name>
     <object-name>ramscoophingepin</object-name>
-    <property>sim/model/firetank/deployramscoop/position-norm</property>
+    <property alias="/params/ramscoop_position_norm"/>
+	ramscoop_position_norm
     <factor>15</factor>
     <offset-deg>0</offset-deg>
     <center>
@@ -3271,7 +3293,7 @@
   <animation>
    <type>translate</type>
    <object-name>watercannonhydraulic</object-name>
-   <property>sim/model/watercannon/position-deg</property>
+   <property alias="/params/watercannon_position_deg"/>
    <factor>-0.043</factor>
    <offset-m>0</offset-m>
    <axis>
@@ -3285,7 +3307,7 @@
   <animation>
     <type>rotate</type>
     <object-name>watercannon</object-name>
-    <property>sim/model/watercannon/position-deg</property>
+    <property alias="/params/watercannon_position_deg"/>
     <factor>1</factor>
     <offset-deg>0</offset-deg>
     <center>
@@ -3304,7 +3326,7 @@
   <animation>
     <type>rotate</type>
     <object-name>watercannonhose</object-name>
-    <property>sim/model/watercannon/position-deg</property>
+    <property alias="/params/watercannon_position_deg"/>
     <factor>-.866</factor>
     <offset-deg>0</offset-deg>
     <center>
@@ -3323,10 +3345,10 @@
   <animation>
    <type>translate</type>
    <object-name>watercannonhose</object-name>
-   <property>sim/model/watercannon/position-deg</property>
+   <property alias="/params/watercannon_position_deg"/>
    <condition>
       <less-than-equals>
-        <property>sim/model/watercannon/position-deg</property>
+        <property alias="/params/watercannon_position_deg"/>
         <value>0</value>
       </less-than-equals>
     </condition>
@@ -3343,10 +3365,10 @@
   <animation>
    <type>translate</type>
    <object-name>watercannonhose</object-name>
-   <property>sim/model/watercannon/position-deg</property>
+   <property alias="/params/watercannon_position_deg"/>
    <condition>
       <less-than-equals>
-        <property>sim/model/watercannon/position-deg</property>
+        <property alias="/params/watercannon_position_deg"/>
         <value>0</value>
       </less-than-equals>
     </condition>

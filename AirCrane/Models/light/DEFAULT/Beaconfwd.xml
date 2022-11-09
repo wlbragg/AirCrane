@@ -2,6 +2,21 @@
 
 <PropertyList>
 
+	<nasal>
+		<load>
+			var rplayer = cmdarg();
+			rplayer.initNode("sim/multiplay/generic/bool[9]", 0, "BOOL");
+			rplayer.initNode("sim/multiplay/generic/bool[10]", 0, "BOOL");
+		</load>
+		<unload>
+		</unload>
+	</nasal>
+
+    <params>
+		<beacon-state>sim/multiplay/generic/bool[9]</beacon-state>
+		<beeconfwd-light>sim/multiplay/generic/bool[10]</beaconfwd-light>
+    </params>
+	
   <path>RedLight.ac</path>
   <nopreview/>
 
@@ -58,8 +73,8 @@
     <object-name>Light</object-name>
     <condition>
 		<and>
-			<property>/sim/model/lights/beacon/state</property>
-			<property>/sim/model/aircrane/lighting/beaconfwd-light</property>
+			<property alias="/params/beacon-state"/>
+			<property alias="/params/beaconfwd-light"/>
 		</and>
     </condition>
   </animation>

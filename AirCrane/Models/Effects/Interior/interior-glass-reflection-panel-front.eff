@@ -9,7 +9,7 @@
         <texture n="3">
 	        <type>cubemap</type>
           <images>
-		        <positive-x>Models/Effects/Interior/glassreflect4.png</positive-x>
+		    <positive-x>Models/Effects/Interior/glassreflect4.png</positive-x>
             <negative-x>Models/Effects/Interior/glassreflect2.png</negative-x>
             <positive-y>Models/Effects/Interior/glassreflect1.png</positive-y>
             <negative-y>Models/Effects/Interior/glassreflect3.png</negative-y>

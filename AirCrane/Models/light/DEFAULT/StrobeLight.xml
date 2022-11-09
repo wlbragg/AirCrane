@@ -2,6 +2,21 @@
 
 <PropertyList>
 
+	<nasal>
+		<load>
+			var rplayer = cmdarg();
+			rplayer.initNode("sim/multiplay/generic/bool[8]", 0, "BOOL");
+			rplayer.initNode("sim/multiplay/generic/bool[12]", 0, "BOOL");
+		</load>
+		<unload>
+		</unload>
+	</nasal>
+
+    <params>
+		<strobe-state>sim/multiplay/generic/bool[8]</strobe-state>
+		<strobe-light>sim/multiplay/generic/bool[12]</strobe-light>
+    </params>
+
   <path>WhiteLight.ac</path>
   <nopreview/>
 
@@ -32,7 +47,7 @@
     <type>select</type>
     <object-name>Light</object-name>
     <condition>
-      <property>/sim/model/lights/sbc1/state</property>
+      <property alias="/params/strobe-state"/>
     </condition>
   </animation>
 
@@ -51,8 +66,8 @@
     <object-name>Light</object-name>
     <condition>
 		<and>
-			<property>/sim/model/lights/sbc1/state</property>
-			<property>/sim/model/aircrane/lighting/strobe-light</property>
+			<property alias="/params/strobe-state"/>
+			<property alias="/params/strobe-light"/>
 		</and>
     </condition>
   </animation>
