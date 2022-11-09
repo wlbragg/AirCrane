@@ -275,22 +275,22 @@
 
 			<string n="9" type="string" />
 			
-            <bool n="0" alias="/sim/model/extendedcab/enabled"/>
-            <bool n="1" alias="/sim/model/tandemwheels/enabled"/>
-			<bool n="2" alias="/sim/model/firetank/enabled"/>
-            <bool n="3" alias="/sim/model/watercannon/enabled"/>
-			<bool n="4" alias="/sim/model/winchcover/enabled"/>
-            <bool n="5" alias="/sim/model/cableguard/enabled"/>
-			<bool n="6" alias="/sim/model/steppanel/enabled"/>
-			
-			<bool   n="8" alias="/sim/model/lights/sbc1/state"/>
-			<bool   n="9" alias="/sim/model/aircrane/lighting/beacon/state"/>
-			<bool   n="10" alias="/sim/model/aircrane/lighting/beaconfwd-light"/>
-			<bool   n="11" alias="/sim/model/aircrane/lighting/beaconaft-light"/>
-			<bool   n="12" alias="/sim/model/aircrane/lighting/strobe-light"/>
-			<bool   n="13" alias="/sim/model/aircrane/lighting/nav-lights"/>
-			<bool   n="14" alias="/sim/model/aircrane/lighting/spot-light"/>
-			<bool   n="15" alias="/sim/model/aircrane/lighting/landing-light"/>
+            <bool n="0"  alias="/sim/model/extendedcab/enabled"/>
+            <bool n="1"  alias="/sim/model/tandemwheels/enabled"/>
+			<bool n="2"  alias="/sim/model/firetank/enabled"/>
+            <bool n="3"  alias="/sim/model/watercannon/enabled"/>
+			<bool n="4"  alias="/sim/model/winchcover/enabled"/>
+            <bool n="5"  alias="/sim/model/cableguard/enabled"/>
+			<bool n="6"  alias="/sim/model/steppanel/enabled"/>
+
+			<bool n="8"  alias="/sim/model/lights/sbc1/state"/>
+			<bool n="9"  alias="/sim/model/lights/beacon/enabled"/>
+			<bool n="10" alias="/sim/model/aircrane/lighting/beaconfwd-light"/>
+			<bool n="11" alias="/sim/model/aircrane/lighting/beaconaft-light"/>
+			<bool n="12" alias="/sim/model/aircrane/lighting/strobe-light"/>
+			<bool n="13" alias="/sim/model/aircrane/lighting/nav-lights"/>
+			<bool n="14" alias="/sim/model/aircrane/lighting/spot-light"/>
+			<bool n="15" alias="/sim/model/aircrane/lighting/landing-light"/>
 			
 		  </generic>
 		</multiplay>

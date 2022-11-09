@@ -16,7 +16,7 @@
 		<beacon-state>sim/multiplay/generic/bool[9]</beacon-state>
 		<beaconaft-light>sim/multiplay/generic/bool[11]</beaconaft-light>
     </params>
-	
+
   <path>RedLight.ac</path>
   <nopreview/>
 

@@ -5,6 +5,7 @@
 	<nasal>
 		<load>
 			var rplayer = cmdarg();
+			rplayer.initNode("sim/multiplay/generic/bool[7]", 0, "BOOL");
 			rplayer.initNode("sim/multiplay/generic/bool[8]", 0, "BOOL");
 			rplayer.initNode("sim/multiplay/generic/bool[9]", 0, "BOOL");
 			rplayer.initNode("sim/multiplay/generic/bool[10]", 0, "BOOL");
@@ -299,7 +300,7 @@
 			<q>3.60</q>
 		</attenuation>
 		<dim-factor>
-				<property alias="/params/beacon-state"/>
+			<property alias="/params/beacon-state"/>
 		</dim-factor>
 		<spot-exponent>.5</spot-exponent>
 		<spot-cutoff>89</spot-cutoff>
