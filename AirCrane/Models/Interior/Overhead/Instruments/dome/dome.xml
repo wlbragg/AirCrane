@@ -4,49 +4,11 @@
 
   <path>dome.ac</path>
 
-  <effect>
-    <inherits-from>Aircraft/AirCrane/Models/Effects/Interior/lm-interior-domelights</inherits-from>
-    <object-name>base</object-name>
-    <object-name>plaques</object-name>
-    <object-name>switchbase</object-name>
-    <object-name>switch</object-name>
-  </effect>
-
-  <effect>
-    <inherits-from>Aircraft/AirCrane/Models/Effects/Interior/cockpit-interior</inherits-from>
-    <object-name>domelightred</object-name>
-    <object-name>domelightwhite</object-name>
-    <object-name>lightonwhite</object-name>
-    <object-name>lightonred</object-name>
-  </effect>
-
-  <animation>
-  <type>material</type>
-	<object-name>lightonred</object-name>
-      <emission>
-          <red>  0.9</red>
-          <green>0.7</green>
-          <blue> 0.7</blue>
-          <factor-prop>/sim/model/lightmap/dome-red/factor</factor-prop>
-      </emission>
-  </animation>
-
-  <animation>
-  <type>material</type>
-	<object-name>lightonwhite</object-name>
-      <emission>
-          <red>  0.9</red>
-          <green>0.9</green>
-          <blue> 0.9</blue>
-          <factor-prop>/sim/model/lightmap/dome-white/factor</factor-prop>
-      </emission>
-  </animation>
-
   <animation>
     <type>knob</type>
     <object-name>switch</object-name>
     <property>controls/switches/dome</property>
-    <factor>30</factor>
+    <factor>60</factor>
     <center>
       <x-m> 0.025307</x-m>
       <y-m>-0.114315</y-m>
@@ -86,5 +48,43 @@
       </binding>
     </hovered>
   </animation>
+
+  <animation>
+    <type>material</type>
+	<object-name>lightonred</object-name>
+      <emission>
+          <red>  0.9</red>
+          <green>0.7</green>
+          <blue> 0.7</blue>
+          <factor-prop>/sim/model/lightmap/dome-red/factor</factor-prop>
+      </emission>
+  </animation>
+
+  <animation>
+  <type>material</type>
+	<object-name>lightonwhite</object-name>
+      <emission>
+          <red>  0.9</red>
+          <green>0.9</green>
+          <blue> 0.9</blue>
+          <factor-prop>/sim/model/lightmap/dome-white/factor</factor-prop>
+      </emission>
+  </animation>
+
+  <effect>
+    <inherits-from>Aircraft/AirCrane/Models/Effects/Interior/lm-interior-domelights</inherits-from>
+    <object-name>base</object-name>
+    <object-name>plaques</object-name>
+    <object-name>switchbase</object-name>
+    <object-name>switch</object-name>
+  </effect>
+
+  <effect>
+    <inherits-from>Aircraft/AirCrane/Models/Effects/Interior/cockpit-interior</inherits-from>
+    <object-name>domelightred</object-name>
+    <object-name>domelightwhite</object-name>
+    <object-name>lightonwhite</object-name>
+    <object-name>lightonred</object-name>
+  </effect>
 
 </PropertyList>

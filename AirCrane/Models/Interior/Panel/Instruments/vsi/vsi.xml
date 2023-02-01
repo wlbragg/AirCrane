@@ -13,7 +13,7 @@
   </animation>
 
   <effect>
-    <inherits-from>Aircraft/AirCrane/Models/Effects/Interior/cockpit-interior</inherits-from>
+    <inherits-from>Aircraft/AirCrane/Models/Effects/Interior/lm-interior-vsi-r</inherits-from>
     <object-name>fond</object-name>
     <object-name>face</object-name>
     <object-name>needle</object-name>

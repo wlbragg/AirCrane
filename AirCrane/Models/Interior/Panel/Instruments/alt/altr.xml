@@ -4,41 +4,6 @@
 
   <path>alt.ac</path>
 
-  <effect>
-    <inherits-from>Aircraft/AirCrane/Models/Effects/Interior/lm-interior-altr</inherits-from>
-    <object-name>fond</object-name>
-    <object-name>face</object-name>
-    <object-name>inhg</object-name>
-    <object-name>needle10000</object-name>
-    <object-name>needle1000</object-name>
-    <object-name>needle100</object-name>
-    <object-name>disk</object-name>
-  </effect>
-
-  <effect>
-    <inherits-from>Aircraft/AirCrane/Models/Effects/Interior/interior-glass-reflection-panel-front</inherits-from>
-    <object-name>vitre</object-name>
-  </effect>
-
-  <animation>
-    <type>material</type>
-    <object-name>face</object-name>
-    <object-name>inhg</object-name>
-    <object-name>needle10000</object-name>
-    <object-name>needle1000</object-name>
-    <object-name>needle100</object-name>
-    <object-name>disk</object-name>
-    <condition>
-      <property>controls/electric/battery-bus-switch</property>
-    </condition>
-    <emission>
-      <factor-prop>controls/lighting/luminosite-lights</factor-prop>
-      <red>   0.50 </red>
-      <green> 0.40 </green>
-      <blue>  0.30 </blue>
-    </emission>
-  </animation>
-
   <animation>
     <type>rotate</type>
     <object-name>needle100</object-name>
@@ -110,7 +75,7 @@
     <type>knob</type>
     <object-name>disk</object-name>
     <property>/instrumentation/altimeter/setting-inhg</property>
-    <factor>-800</factor>
+    <factor>-1600</factor>
     <center>
       <x-m>  0.01408 </x-m>
       <y-m> -0.03969 </y-m>
@@ -140,5 +105,40 @@
       </binding>
     </hovered>
   </animation>
+
+  <animation>
+    <type>material</type>
+    <object-name>face</object-name>
+    <object-name>inhg</object-name>
+    <object-name>needle10000</object-name>
+    <object-name>needle1000</object-name>
+    <object-name>needle100</object-name>
+    <object-name>disk</object-name>
+    <condition>
+      <property>controls/electric/battery-bus-switch</property>
+    </condition>
+    <emission>
+      <factor-prop>controls/lighting/luminosite-lights</factor-prop>
+      <red>   0.50 </red>
+      <green> 0.40 </green>
+      <blue>  0.30 </blue>
+    </emission>
+  </animation>
+
+  <effect>
+    <inherits-from>Aircraft/AirCrane/Models/Effects/Interior/lm-interior-altr</inherits-from>
+    <object-name>fond</object-name>
+    <object-name>face</object-name>
+    <object-name>inhg</object-name>
+    <object-name>needle10000</object-name>
+    <object-name>needle1000</object-name>
+    <object-name>needle100</object-name>
+    <object-name>disk</object-name>
+  </effect>
+
+  <effect>
+    <inherits-from>Aircraft/AirCrane/Models/Effects/Interior/interior-glass-reflection-panel-front</inherits-from>
+    <object-name>vitre</object-name>
+  </effect>
 
 </PropertyList>

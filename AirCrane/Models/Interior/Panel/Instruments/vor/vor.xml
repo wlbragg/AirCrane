@@ -14,65 +14,6 @@
 
   <path>vor.ac</path>
 
-  <animation>
-    <object-name>fond</object-name>
-    <object-name>face</object-name>
-    <object-name>ring</object-name>
-    <object-name>disk</object-name>
-    <object-name>LocalizerNeedle</object-name>
-    <object-name>GlideslopeNeedle</object-name>
-    <object-name>GS_in_range</object-name>
-    <object-name>GS_out_of_range</object-name>
-    <object-name>TO</object-name>
-    <object-name>FR</object-name>
-    <object-name>NAV</object-name>
-
-    <object-name>vitre</object-name>
-  </animation>
-
-  <effect>
-    <inherits-from>Aircraft/AirCrane/Models/Effects/Interior/cockpit-interior</inherits-from>
-    <object-name>fond</object-name>
-    <object-name>face</object-name>
-    <object-name>ring</object-name>
-    <object-name>disk</object-name>
-    <object-name>LocalizerNeedle</object-name>
-    <object-name>GlideslopeNeedle</object-name>
-    <object-name>GS_in_range</object-name>
-    <object-name>GS_out_of_range</object-name>
-    <object-name>TO</object-name>
-    <object-name>FR</object-name>
-    <object-name>NAV</object-name>
-  </effect>
-
-  <effect>
-    <inherits-from>Aircraft/AirCrane/Models/Effects/Interior/interior-glass-reflection-panel-front</inherits-from>
-    <object-name>vitre</object-name>
-  </effect>
-
-  <animation>
-    <type>material</type>
-    <object-name>face</object-name>
-    <object-name>ring</object-name>
-    <object-name>disk</object-name>
-    <object-name>LocalizerNeedle</object-name>
-    <object-name>GlideslopeNeedle</object-name>
-    <object-name>GS_in_range</object-name>
-    <object-name>GS_out_of_range</object-name>
-    <object-name>TO</object-name>
-    <object-name>FR</object-name>
-    <object-name>NAV</object-name>
-    <condition>
-      <property>controls/electric/battery-bus-switch</property>
-    </condition>
-    <emission>
-      <factor-prop>controls/lighting/luminosite-lights</factor-prop>
-      <red>   0.50 </red>
-      <green> 0.40 </green>
-      <blue>  0.30 </blue>
-    </emission>
-  </animation>
-
   <!--
   <model>
     <name>vor-led</name>
@@ -187,7 +128,7 @@
     <type>knob</type>
     <object-name>disk</object-name>
     <property>/instrumentation/nav[0]/radials/selected-deg</property>
-    <factor>-8</factor>
+    <factor>-16</factor>
     <center>
       <x-m>  0.01395 </x-m>
       <y-m> -0.03847 </y-m>
@@ -219,5 +160,64 @@
       </binding>
     </hovered>
   </animation>
+
+  <animation>
+    <type>material</type>
+    <object-name>face</object-name>
+    <object-name>ring</object-name>
+    <object-name>disk</object-name>
+    <object-name>LocalizerNeedle</object-name>
+    <object-name>GlideslopeNeedle</object-name>
+    <object-name>GS_in_range</object-name>
+    <object-name>GS_out_of_range</object-name>
+    <object-name>TO</object-name>
+    <object-name>FR</object-name>
+    <object-name>NAV</object-name>
+    <condition>
+      <property>controls/electric/battery-bus-switch</property>
+    </condition>
+    <emission>
+      <factor-prop>controls/lighting/luminosite-lights</factor-prop>
+      <red>   0.50 </red>
+      <green> 0.40 </green>
+      <blue>  0.30 </blue>
+    </emission>
+  </animation>
+
+  <animation>
+    <object-name>fond</object-name>
+    <object-name>face</object-name>
+    <object-name>ring</object-name>
+    <object-name>disk</object-name>
+    <object-name>LocalizerNeedle</object-name>
+    <object-name>GlideslopeNeedle</object-name>
+    <object-name>GS_in_range</object-name>
+    <object-name>GS_out_of_range</object-name>
+    <object-name>TO</object-name>
+    <object-name>FR</object-name>
+    <object-name>NAV</object-name>
+
+    <object-name>vitre</object-name>
+  </animation>
+
+  <effect>
+    <inherits-from>Aircraft/AirCrane/Models/Effects/Interior/cockpit-interior</inherits-from>
+    <object-name>fond</object-name>
+    <object-name>face</object-name>
+    <object-name>ring</object-name>
+    <object-name>disk</object-name>
+    <object-name>LocalizerNeedle</object-name>
+    <object-name>GlideslopeNeedle</object-name>
+    <object-name>GS_in_range</object-name>
+    <object-name>GS_out_of_range</object-name>
+    <object-name>TO</object-name>
+    <object-name>FR</object-name>
+    <object-name>NAV</object-name>
+  </effect>
+
+  <effect>
+    <inherits-from>Aircraft/AirCrane/Models/Effects/Interior/interior-glass-reflection-panel-front</inherits-from>
+    <object-name>vitre</object-name>
+  </effect>
 
 </PropertyList>

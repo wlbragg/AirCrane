@@ -4,14 +4,6 @@
 
   <path>rotorbrake.ac</path>
 
-  <effect>
-    <inherits-from>Aircraft/AirCrane/Models/Effects/Interior/lm-interior-rotorbrakepanel</inherits-from>
-    <object-name>base</object-name>
-    <object-name>switchrotorbrake</object-name>
-    <object-name>rotorbrakeoff</object-name>
-    <object-name>rotorbrakeon</object-name>
-  </effect>
-
   <animation>
     <type>select</type>
     <object-name>rotorbrakeoff</object-name>
@@ -54,29 +46,10 @@
   </animation>
 
   <animation>
-    <type>material</type>
-    <object-name>rotorbrakeon</object-name>
-    <condition>
-      <and>
-        <equals>
-          <property>/systems/electrical/outputs/rotorbrake</property>
-          <value>-1</value>
-        </equals>
-        <property>/systems/electrical/outputs/digital-display</property>
-      </and>
-    </condition>
-    <emission>
-      <red>   1 </red>
-      <green> 0 </green>
-      <blue>  0 </blue>
-    </emission>
-  </animation>
-
-  <animation>
     <type>knob</type>
     <object-name>switchrotorbrake</object-name>
     <property>systems/electrical/outputs/rotorbrake</property>
-    <factor>25</factor>
+    <factor>50</factor>
     <center>
       <x-m>  0.00516 </x-m>
       <y-m> -0.01268 </y-m>
@@ -121,5 +94,32 @@
       </binding>
     </hovered>
   </animation>
+
+  <animation>
+    <type>material</type>
+    <object-name>rotorbrakeon</object-name>
+    <condition>
+      <and>
+        <equals>
+          <property>/systems/electrical/outputs/rotorbrake</property>
+          <value>-1</value>
+        </equals>
+        <property>/systems/electrical/outputs/digital-display</property>
+      </and>
+    </condition>
+    <emission>
+      <red>   1 </red>
+      <green> 0 </green>
+      <blue>  0 </blue>
+    </emission>
+  </animation>
+
+  <effect>
+    <inherits-from>Aircraft/AirCrane/Models/Effects/Interior/lm-interior-rotorbrakepanel</inherits-from>
+    <object-name>base</object-name>
+    <object-name>switchrotorbrake</object-name>
+    <object-name>rotorbrakeoff</object-name>
+    <object-name>rotorbrakeon</object-name>
+  </effect>
 
 </PropertyList>

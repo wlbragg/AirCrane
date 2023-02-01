@@ -4,38 +4,17 @@
 
   <path>buttonW.ac</path>
 
-  <animation>
-    <object-name>base</object-name>
-    <object-name>button</object-name>
-  </animation>
-
-  <effect>
-    <inherits-from>Aircraft/AirCrane/Models/Effects/Interior/cockpit-interior</inherits-from>
-    <object-name>base</object-name>
-    <object-name>button</object-name>
-  </effect>
-
-  <animation>
-    <type>material</type>
-    <object-name>base</object-name>
-    <object-name>button</object-name>
-    <condition>
-      <property>controls/electric/battery-bus-switch</property>
-    </condition>
-    <emission>
-      <factor-prop>controls/lighting/luminosite-lights</factor-prop>
-      <red>   0.50 </red>
-      <green> 0.40 </green>
-      <blue>  0.30 </blue>
-    </emission>
-  </animation>
+	<animation>
+		<object-name>base</object-name>
+		<object-name>button</object-name>
+	</animation>
 
     <animation>
         <type>slider</type>
         <object-name>button</object-name>
         <property>controls/switches/cws-test</property>
         <repeatable>false</repeatable>
-        <factor>0.002</factor>
+        <factor>0.004</factor>
         <axis>
             <x>-1</x>
             <y>0</y>
@@ -69,5 +48,26 @@
             </binding>
         </hovered>
     </animation>
+
+	<animation>
+		<type>material</type>
+		<object-name>base</object-name>
+		<object-name>button</object-name>
+		<condition>
+		  <property>controls/electric/battery-bus-switch</property>
+		</condition>
+		<emission>
+		  <factor-prop>controls/lighting/luminosite-lights</factor-prop>
+		  <red>   0.50 </red>
+		  <green> 0.40 </green>
+		  <blue>  0.30 </blue>
+		</emission>
+	</animation>
+
+	<effect>
+		<inherits-from>Aircraft/AirCrane/Models/Effects/Interior/cockpit-interior</inherits-from>
+		<object-name>base</object-name>
+		<object-name>button</object-name>
+	</effect>
 
 </PropertyList>
