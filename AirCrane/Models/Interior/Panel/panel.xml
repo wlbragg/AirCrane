@@ -326,9 +326,9 @@
     </offsets>
   </model>
 
-  <!-- gdsi -->
+  <!-- gsdi -->
   <model>
-    <path>Aircraft/AirCrane/Models/Interior/Panel/Instruments/gdsi/gdsi.xml</path>
+    <path>Aircraft/AirCrane/Models/Interior/Panel/Instruments/gsdi/gsdi.xml</path>
     <offsets>
       <x-m>  0.00520 </x-m>
       <y-m>  0.20464 </y-m>

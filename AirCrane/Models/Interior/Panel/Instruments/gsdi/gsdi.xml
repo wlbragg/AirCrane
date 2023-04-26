@@ -3,7 +3,7 @@
 <!-- Based on Gerard Robin work -->
 <PropertyList>
 
-  <path>gdsi.ac</path>
+  <path>gsdi.ac</path>
 
   <animation>
     <object-name>fond</object-name>
@@ -49,43 +49,6 @@
   </animation>
 
   <animation>
-    <type>rotate</type>
-    <object-name>IndicU</object-name>
-    <property>instrumentation/gsdi/drift-u-kt</property>
-    <interpolation>
-      <entry><ind> -50 </ind><dep>  19 </dep></entry>
-      <entry><ind> -20 </ind><dep>  15 </dep></entry> <!--10/7.5-->
-      <entry><ind>   0 </ind><dep>   0 </dep></entry>
-      <entry><ind>  20 </ind><dep> -15 </dep></entry>
-      <entry><ind>  50 </ind><dep> -19 </dep></entry>
-    </interpolation>
-    <axis>
-      <x> 1 </x>
-      <y> 0 </y>
-      <z> 0 </z>
-    </axis>
-  </animation>
-
-  <animation>
-    <type>rotate</type>
-    <object-name>IndicV</object-name>
-    <property>instrumentation/gsdi/drift-v-kt</property>
-    <interpolation>
-      <entry><ind> -50 </ind><dep> -19 </dep></entry>
-      <entry><ind> -20 </ind><dep> -15 </dep></entry>
-      <entry><ind>   0 </ind><dep>   0 </dep></entry>
-      <entry><ind>  20 </ind><dep>  15 </dep></entry>
-      <entry><ind>  50 </ind><dep>  19 </dep></entry>
-    </interpolation>
-    <axis>
-      <x> 1 </x>
-      <y> 0 </y>
-      <z> 0 </z>
-    </axis>
-  </animation>
-
-  <!--
-  <animation>
     <type>translate</type>
     <object-name>IndicU</object-name>
     <property>instrumentation/gsdi/drift-u-kt</property>
@@ -116,5 +79,5 @@
       <z> 0 </z>
     </axis>
   </animation>
-  -->
+
 </PropertyList>

@@ -41,7 +41,12 @@
         <number>0</number>
         <static-pressure>/systems/static/pressure-inhg</static-pressure>
     </encoder>
-   
+
+    <gsdi>
+        <name>gsdi</name>
+        <number>0</number>
+    </gsdi>
+
     <marker-beacon>
         <name>marker-beacon</name>
         <number>0</number>
@@ -78,10 +83,5 @@
         <number>0</number>
         <static-pressure>/systems/static/pressure-inhg</static-pressure>
     </vertical-speed-indicator>
-    
-    <gsdi>
-        <name>gsdi</name>
-        <number>0</number>
-    </gsdi>
-  
+
 </PropertyList>

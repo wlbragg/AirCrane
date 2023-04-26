@@ -107,6 +107,7 @@
     <object-name>cables3</object-name>
     <object-name>roueA</object-name>
     <object-name>echelles</object-name>
+	<object-name>rotortail</object-name>
 
     <!-- Extended Cab -->
     <object-name>fuselageF</object-name>
@@ -199,6 +200,7 @@
     <object-name>fuselageE</object-name>
     <object-name>reardoorE</object-name>
     <object-name>steppanelE</object-name>
+	<object-name>rotortail</object-name>
   </effect>
 
   <effect>

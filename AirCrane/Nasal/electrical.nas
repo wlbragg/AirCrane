@@ -35,10 +35,10 @@ var load_ballance         = props.globals.initNode("systems/electrical/supplier/
 var switch_batt           = props.globals.getNode("controls/electric/battery-bus-switch",0);
 var switch_av             = props.globals.getNode("controls/electric/avionics-switch",0);
 var switch_inv            = props.globals.getNode("controls/electric/inverter-switch",0);
-var gen1_ready            = props.globals.getNode("controls/electric/engine[0]/generator-ready",0);
+var gen1_ready            = props.globals.getNode("controls/electric/engine[0]/generator",0);
 var gen1_switch           = props.globals.getNode("controls/electric/engine[0]/generator-sw",0);
 var gen1_start            = props.globals.getNode("controls/engines/engine[0]/starter",0);
-var gen2_ready            = props.globals.getNode("controls/electric/engine[1]/generator-ready",0);
+var gen2_ready            = props.globals.getNode("controls/electric/engine[1]/generator",0);
 var gen2_switch           = props.globals.getNode("controls/electric/engine[1]/generator-sw",0);
 var gen2_start            = props.globals.getNode("controls/engines/engine[1]/starter",0);
 
@@ -222,8 +222,8 @@ var External = {
 #####################################################
 
 var battery = Battery.new(0,24,80,40,7.0);
-var alternator1 = Alternator.new(0,"controls/electric/engine[0]/generator-ready","rotors/main/rpm",45.0,28.0,400.0);
-var alternator2 = Alternator.new(1,"controls/electric/engine[1]/generator-ready","rotors/main/rpm",45.0,28.0,400.0);
+var alternator1 = Alternator.new(0,"controls/electric/engine[0]/generator","rotors/main/rpm",45.0,28.0,400.0);
+var alternator2 = Alternator.new(1,"controls/electric/engine[1]/generator","rotors/main/rpm",45.0,28.0,400.0);
 var alternator3 = Alternator.new(2,"controls/electric/engine[2]/app-ready","rotors/main/rpm",45.0,28.0,400.0); #APP
 var external = External.new("controls/electric/external-power",26.0,1200.0);
 
@@ -311,9 +311,9 @@ var init_electrical = func{
     append(cbs_main_left, "anti-ice-pitot-left");
     append(cbs_main_left, "anti-ice-bleedair-ws");
     append(cbs_main_left, "anti-ice-bleedair-ws-temp");
-	
-	# Windshield wipers
-	
+    
+    # Windshield wipers
+    
     append(cbs_main_left, "afcs1");
     append(cbs_main_left, "afcs2");
     append(cbs_main_left, "afcs-servo");

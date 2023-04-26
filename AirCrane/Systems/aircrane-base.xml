@@ -215,13 +215,13 @@
 				<path>Aircraft/AirCrane/Systems/engineering-station.xml</path>
 			</autopilot>
 
-			<!--autopilot n="1">
+			<autopilot n="1">
 				<path>Aircraft/AirCrane/Systems/fcs.xml</path>
-			</autopilot-->
+			</autopilot>
 
-			<!--autopilot n="2">
+			<autopilot n="2">
 			  <path>Aircraft/AirCrane/Systems/afcs.xml</path>
-			</autopilot-->
+			</autopilot>
 
 			<property-rule n="100">
 			  <path>Aircraft/AirCrane/Systems/lighting.xml</path>
@@ -327,7 +327,9 @@
 
 		<flight-recorder include="flight-recorder.xml"/>
 
-		<instrumentation include="instrumentation.xml"/>
+		<instrumentation>
+			<path>Aircraft/AirCrane/Systems/instrumentation.xml</path>
+		</instrumentation>
 
 	</sim>
 
@@ -341,7 +343,7 @@
 
 	<consumables include="consumables.xml"/>
 
-	<instrumentation include="instrumentation2.xml"/>
+	<instrumentation include="instrumentation-init.xml"/>
 
 	<tutorials include="Aircraft/AirCrane/Tutorials/AirCraneTutorials.xml"/>
 
@@ -357,90 +359,90 @@
             <n1 type="float">0</n1>
         </two>
 
-<engine n="0">
-<fuel-flow-pph type="float">0.0</fuel-flow-pph>
-<n1-actual type="float">0.0</n1-actual>
-<n2-actual type="float">0.0</n2-actual>
-<state type="int">0</state>
-</engine>
-<engine n="1">
-<fuel-flow-pph type="float">0.0</fuel-flow-pph>
-<n1-actual type="float">0.0</n1-actual>
-<n2-actual type="float">0.0</n2-actual>
-<state type="int">0</state>
-</engine>
+		<engine n="0">
+			<fuel-flow-pph type="float">0.0</fuel-flow-pph>
+			<n1-actual type="float">0.0</n1-actual>
+			<n2-actual type="float">0.0</n2-actual>
+			<state type="int">0</state>
+		</engine>
+		<engine n="1">
+			<fuel-flow-pph type="float">0.0</fuel-flow-pph>
+			<n1-actual type="float">0.0</n1-actual>
+			<n2-actual type="float">0.0</n2-actual>
+			<state type="int">0</state>
+		</engine>
     </engines>
 
-  <systems>
-    <electrical>
-      <outputs>
-        <digital-display type="float">0</digital-display>
-        <eng1-underspeed type="int">0</eng1-underspeed>
-        <eng2-underspeed type="int">0</eng2-underspeed>
-        <rotorbrake type="int">0</rotorbrake>
-        <!--app-running type="float">0</app-running-->
-      </outputs>
-    </electrical>
-    <fuel>
-      <temp-fwd type="float">0</temp-fwd>
-      <temp-aft type="float">0</temp-aft>
-      <temp-aux type="float">0</temp-aux>
-      <temp-start-calc type="bool">false</temp-start-calc>
+	  <systems>
+		<electrical>
+		  <outputs>
+			<digital-display type="float">0</digital-display>
+			<eng1-underspeed type="int">0</eng1-underspeed>
+			<eng2-underspeed type="int">0</eng2-underspeed>
+			<rotorbrake type="int">0</rotorbrake>
+			<!--app-running type="float">0</app-running-->
+		  </outputs>
+		</electrical>
+		<fuel>
+			<temp-fwd type="float">0</temp-fwd>
+			<temp-aft type="float">0</temp-aft>
+			<temp-aux type="float">0</temp-aux>
+			<temp-start-calc type="bool">false</temp-start-calc>
 
-<tank n="0">
-    <fuel-press type="int">0</fuel-press>
-</tank>
-<tank n="1">
-    <fuel-press type="int">0</fuel-press>
-</tank>
-<tank n="2">
-    <fuel-press type="int">0</fuel-press>
-</tank>
-<tank n="3">
-    <fuel-press type="int">0</fuel-press>
-</tank>
+			<tank n="0">
+				<fuel-press type="int">0</fuel-press>
+			</tank>
+			<tank n="1">
+				<fuel-press type="int">0</fuel-press>
+			</tank>
+			<tank n="2">
+				<fuel-press type="int">0</fuel-press>
+			</tank>
+			<tank n="3">
+				<fuel-press type="int">0</fuel-press>
+			</tank>
 
-    </fuel>
-  </systems>
+		</fuel>
+	  </systems>
 
-  <nasal>
-    <updateloop>
-      <file>Aircraft/Generic/updateloop.nas</file>
-    </updateloop>
-    <doors>
-      <file>Aircraft/AirCrane/Nasal/doors.nas</file>
-    </doors>
-    <js>
-      <file>Nasal/js.nas</file>
-    </js>
-    <aircrane>
-      <file>Aircraft/AirCrane/Nasal/immat.nas</file>
-      <file>Aircraft/AirCrane/Nasal/light.nas</file>
-      <file>Aircraft/AirCrane/Nasal/aircrane.nas</file>
-      <file>Aircraft/AirCrane/Nasal/liveries.nas</file>
-      <file>Aircraft/AirCrane/Nasal/rotorwash.nas</file>
-      <file>Aircraft/AirCrane/Nasal/hoseanimation.nas</file>
-      <file>Aircraft/AirCrane/Nasal/tankoperations.nas</file>
-      <file>Aircraft/AirCrane/Nasal/engine.nas</file>
-      <file>Aircraft/AirCrane/Nasal/dialogs.nas</file>
-      <file>Aircraft/AirCrane/Nasal/sound.nas</file>
-    </aircrane>
-    <electrical>
-      <file>Aircraft/AirCrane/Nasal/electrical.nas</file>
-    </electrical>
-    <fcs>
-      <file>Aircraft/AirCrane/Nasal/fcs-management.nas</file>
-      <file>Aircraft/Generic/helicopter-fcs.nas</file>
-    </fcs>
-    <garmin196>
-      <file>Aircraft/Instruments-3d/garmin196/garmin196.nas</file>
-    </garmin196>
-    <disintegration>
-      <file>Aircraft/AirCrane/Nasal/disintegration.nas</file>
-    </disintegration>
-    <clock>
-      <file>Nasal/clock.nas</file>
-    </clock>
-  </nasal>
-<rate-of-change type="float">.1</rate-of-change>
+	  <nasal>
+		<updateloop>
+		  <file>Aircraft/Generic/updateloop.nas</file>
+		</updateloop>
+		<doors>
+		  <file>Aircraft/AirCrane/Nasal/doors.nas</file>
+		</doors>
+		<js>
+		  <file>Nasal/js.nas</file>
+		</js>
+		<aircrane>
+		  <file>Aircraft/AirCrane/Nasal/immat.nas</file>
+		  <file>Aircraft/AirCrane/Nasal/light.nas</file>
+		  <file>Aircraft/AirCrane/Nasal/aircrane.nas</file>
+		  <file>Aircraft/AirCrane/Nasal/liveries.nas</file>
+		  <file>Aircraft/AirCrane/Nasal/rotorwash.nas</file>
+		  <file>Aircraft/AirCrane/Nasal/hoseanimation.nas</file>
+		  <file>Aircraft/AirCrane/Nasal/tankoperations.nas</file>
+		  <file>Aircraft/AirCrane/Nasal/engine.nas</file>
+		  <file>Aircraft/AirCrane/Nasal/dialogs.nas</file>
+		  <file>Aircraft/AirCrane/Nasal/sound.nas</file>
+		</aircrane>
+		<electrical>
+		  <file>Aircraft/AirCrane/Nasal/electrical.nas</file>
+		</electrical>
+		<fcs>
+		  <file>Aircraft/AirCrane/Nasal/fcs-management.nas</file>
+		  <file>Aircraft/Generic/helicopter-fcs.nas</file>
+		</fcs>
+		<garmin196>
+		  <file>Aircraft/Instruments-3d/garmin196/garmin196.nas</file>
+		</garmin196>
+		<disintegration>
+		  <file>Aircraft/AirCrane/Nasal/disintegration.nas</file>
+		</disintegration>
+		<clock>
+		  <file>Nasal/clock.nas</file>
+		</clock>
+	  </nasal>
+	<rate-of-change type="float">.1</rate-of-change>
 </PropertyList>

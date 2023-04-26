@@ -6,15 +6,26 @@
     <name>Generator 1 Ready</name>
     <input>
       <and>
-        <property>/controls/engines/engine[0]/running</property>
+        <property>controls/engines/engine[0]/running</property>
         <equals>
-          <property>/controls/electric/engine[0]/generator-sw</property>
+          <property>controls/electric/engine[0]/generator-sw</property>
           <value>-1</value>
         </equals>
+        <greater-than>
+            <!--
+            Use this until I break it out into two different turbines,
+            each with their own N1/N2 values.
+            rotors/main/rpm = 4,500
+            engines/engine-rpm = 0.243 (both @ 15%)
+            engines/engine-rpm = 0.121 (one @ 15%)
+            -->
+          <property>engines/engine-rpm</property>
+          <value>0.121</value>
+        </greater-than>
       </and>
     </input>
     <output>
-      <property>controls/electric/engine[0]/generator-ready</property>
+      <property>controls/electric/engine[0]/generator</property>
     </output>
   </logic>
 
@@ -22,22 +33,33 @@
     <name>Generator 2 Ready</name>
     <input>
       <and>
-        <property>/controls/engines/engine[1]/running</property>
+        <property>controls/engines/engine[1]/running</property>
         <equals>
-          <property>/controls/electric/engine[1]/generator-sw</property>
+          <property>controls/electric/engine[1]/generator-sw</property>
           <value>-1</value>
         </equals>
+        <greater-than>
+            <!--
+            Use this until I break it out into two different turbines,
+            each with their own N1/N2 values.
+            rotors/main/rpm = 4,500
+            engines/engine-rpm = 0.243 (both @ 15%)
+            engines/engine-rpm = 0.121 (one @ 15%)
+            -->
+          <property>engines/engine-rpm</property>
+          <value>0.121</value>
+        </greater-than>
       </and>
     </input>
     <output>
-      <property>controls/electric/engine[1]/generator-ready</property>
+      <property>controls/electric/engine[1]/generator</property>
     </output>
   </logic>
 
   <logic>
     <name>APP Ready</name>
     <input>
-      <property>/controls/engines/engine[2]/running</property>
+      <property>controls/engines/engine[2]/running</property>
     </input>
     <output>
       <property>controls/electric/engine[2]/app-ready</property>
@@ -49,10 +71,10 @@
     <input>
       <and>
         <or>
-          <property>/controls/electric/engine[1]/generator-ready</property>
-          <property>/controls/electric/engine[1]/generator-ready</property>
+          <property>controls/electric/engine[0]/generator</property>
+          <property>controls/electric/engine[1]/generator</property>
         </or>
-        <property>/controls/switches/rect-1</property>
+        <property>controls/switches/rect-1</property>
       </and>
     </input>
     <input>
@@ -68,10 +90,10 @@
     <input>
       <and>
         <or>
-          <property>/controls/electric/engine[1]/generator-ready</property>
-          <property>/controls/electric/engine[1]/generator-ready</property>
+          <property>controls/electric/engine[0]/generator</property>
+          <property>controls/electric/engine[1]/generator</property>
         </or>
-        <property>/controls/switches/rect-2</property>
+        <property>controls/switches/rect-2</property>
       </and>
     </input>
     <input>
@@ -148,20 +170,20 @@
     <input>
       <condition>
         <equals>
-          <property>/controls/thermometer/temp-mode</property>
+          <property>controls/thermometer/temp-mode</property>
           <value>1</value>
         </equals>
       </condition>
-      <property>/environment/temperature-degc</property>
+      <property>environment/temperature-degc</property>
     </input>
     <input>
       <condition>
         <equals>
-          <property>/controls/thermometer/temp-mode</property>
+          <property>controls/thermometer/temp-mode</property>
           <value>0</value>
         </equals>
       </condition>
-      <property>/environment/temperature-degc</property>
+      <property>environment/temperature-degc</property>
     </input>
     <output>
       <property>sim/model/aircrane/environment/air-temperature</property>
@@ -177,11 +199,11 @@
     <input>
       <and>
         <less-than>
-          <property>/systems/electrical/outputs/main-left/cws</property>
+          <property>systems/electrical/outputs/main-left/cws</property>
           <value>31.5</value>
         </less-than>
         <greater-than>
-          <property>/systems/electrical/outputs/main-left/cws</property>
+          <property>systems/electrical/outputs/main-left/cws</property>
           <value>20.0</value>
         </greater-than>
       </and>
@@ -198,8 +220,8 @@
     <name>CWS Test Switch Power</name>
     <input>
       <and>
-        <property>/systems/electrical/outputs/cws-power</property>
-        <property>/controls/switches/cws-test</property>
+        <property>systems/electrical/outputs/cws-power</property>
+        <property>controls/switches/cws-test</property>
       </and>
     </input>
     <input>
@@ -215,7 +237,7 @@
     <type>gain</type>
     <input>
       <condition>
-        <property>/controls/switches/cws-bright</property>
+        <property>controls/switches/cws-bright</property>
       </condition>
       <value>1</value>
     </input>
@@ -231,9 +253,9 @@
     <name>CWS Gen 1</name>
     <input>
       <and>
-        <property>/systems/electrical/outputs/cws-power</property>
+        <property>systems/electrical/outputs/cws-power</property>
         <not>
-          <property>/controls/electric/engine[0]/generator-sw</property>
+          <property>controls/electric/engine[0]/generator-sw</property>
         </not>
       </and>
     </input>
@@ -249,9 +271,9 @@
     <name>CWS Gen 2</name>
     <input>
       <and>
-        <property>/systems/electrical/outputs/cws-power</property>
+        <property>systems/electrical/outputs/cws-power</property>
         <not>
-          <property>/controls/electric/engine[1]/generator-sw</property>
+          <property>controls/electric/engine[1]/generator-sw</property>
         </not>
       </and>
     </input>
@@ -259,7 +281,7 @@
       <value>0.0</value>
     </input>
     <output>
-      <property>/systems/electrical/outputs/cws-gen-2</property>
+      <property>systems/electrical/outputs/cws-gen-2</property>
     </output>
   </logic>
 
@@ -267,9 +289,9 @@
     <name>CWS Rectifier 1</name>
     <input>
       <and>
-        <property>/systems/electrical/outputs/cws-power</property>
+        <property>systems/electrical/outputs/cws-power</property>
         <not>
-          <property>/controls/switches/rect-1</property>
+          <property>controls/switches/rect-1</property>
         </not>
       </and>
     </input>
@@ -285,9 +307,9 @@
     <name>CWS Rectifier 2</name>
     <input>
       <and>
-        <property>/systems/electrical/outputs/cws-power</property>
+        <property>systems/electrical/outputs/cws-power</property>
         <not>
-          <property>/controls/switches/rect-2</property>
+          <property>controls/switches/rect-2</property>
         </not>
       </and>
     </input>
@@ -312,7 +334,7 @@
           <value>20.0</value>
         </greater-than>
         <less-than>
-          <property>/systems/fuel/temp-fwd-heat</property>
+          <property>systems/fuel/temp-fwd-heat</property>
           <value>35</value>
         </less-than>
       </and>
@@ -321,7 +343,7 @@
       <value>0.0</value>
     </input>
     <output>
-      <property>/systems/fuel/temp-fwd-heat-low</property>
+      <property>systems/fuel/temp-fwd-heat-low</property>
     </output>
   </logic>
 
@@ -338,7 +360,7 @@
           <value>20.0</value>
         </greater-than>
         <less-than>
-          <property>/systems/fuel/temp-aft-heat</property>
+          <property>systems/fuel/temp-aft-heat</property>
           <value>35</value>
         </less-than>
       </and>
@@ -347,7 +369,7 @@
       <value>0.0</value>
     </input>
     <output>
-      <property>/systems/fuel/temp-aft-heat-low</property>
+      <property>systems/fuel/temp-aft-heat-low</property>
     </output>
   </logic>
 
@@ -364,7 +386,7 @@
           <value>20.0</value>
         </greater-than>
         <less-than>
-         <property>/environment/temperature-degf</property>
+         <property>environment/temperature-degf</property>
           <value>33.98</value>
         </less-than>
       </and>
@@ -373,7 +395,7 @@
       <value>0.0</value>
     </input>
     <output>
-      <property>/systems/fuel/temp-heat-low</property>
+      <property>systems/fuel/temp-heat-low</property>
     </output>
   </logic>
 
@@ -396,7 +418,7 @@
       <value>0.0</value>
     </input>
     <output>
-      <property>/systems/fuel/temp-fwd-heat-on</property>
+      <property>systems/fuel/temp-fwd-heat-on</property>
     </output>
   </logic>
 
@@ -419,7 +441,7 @@
       <value>0.0</value>
     </input>
     <output>
-      <property>/systems/fuel/temp-aft-heat-on</property>
+      <property>systems/fuel/temp-aft-heat-on</property>
     </output>
   </logic>
 
@@ -439,7 +461,7 @@
           <property>systems/electrical/outputs/main-left/app-cont</property>
           <value>20.0</value>
         </greater-than>
-        <property>/controls/switches/app-master</property>
+        <property>controls/switches/app-master</property>
       </and>
     </input>
     <input>
@@ -454,8 +476,8 @@
     <name>CWS APP On</name>
     <input>
       <and>
-        <property>/systems/electrical/outputs/cws-power</property>
-        <property>/systems/electrical/outputs/app-power</property>
+        <property>systems/electrical/outputs/cws-power</property>
+        <property>systems/electrical/outputs/app-power</property>
       </and>
     </input>
     <input>
@@ -470,8 +492,8 @@
     <name>CWS Rotor Brake On</name>
     <input>
       <and>
-        <property>/systems/electrical/outputs/cws-power</property>
-        <property>/systems/electrical/outputs/rotorbrake</property>
+        <property>systems/electrical/outputs/cws-power</property>
+        <property>systems/electrical/outputs/rotorbrake</property>
       </and>
     </input>
     <input>
@@ -489,16 +511,16 @@
     <input>
       <and>
         <not>
-          <property>/controls/engines/engine[2]/running</property>
+          <property>controls/engines/engine[2]/running</property>
         </not>
-        <property>/systems/electrical/outputs/app-power</property>
+        <property>systems/electrical/outputs/app-power</property>
       </and>
     </input>
     <input>
       <value>0.0</value>
     </input>
     <output>
-      <property>/systems/electrical/outputs/app-overspeed-on</property>
+      <property>systems/electrical/outputs/app-overspeed-on</property>
     </output>
   </logic>
 
@@ -507,9 +529,9 @@
     <input>
       <and>
         <not>
-          <property>/controls/engines/engine[2]/running</property>
+          <property>controls/engines/engine[2]/running</property>
         </not>
-        <property>/systems/electrical/outputs/app-power</property>
+        <property>systems/electrical/outputs/app-power</property>
       </and>
     </input>
     <input>
@@ -525,9 +547,9 @@
     <input>
       <and>
         <not>
-          <property>/controls/engines/engine[2]/running</property>
+          <property>controls/engines/engine[2]/running</property>
         </not>
-        <property>/systems/electrical/outputs/app-power</property>
+        <property>systems/electrical/outputs/app-power</property>
       </and>
     </input>
     <input>

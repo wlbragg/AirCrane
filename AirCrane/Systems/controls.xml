@@ -93,16 +93,16 @@
     <engine n="0">
       <starter-btn type="bool">false</starter-btn>
       <generator-sw type="int">0</generator-sw>
-      <generator-ready type="bool">0</generator-ready>
+      <generator type="bool">0</generator>
     </engine>
     <engine n="1">
       <starter-btn type="bool">false</starter-btn>
       <generator-sw type="int">0</generator-sw>
-      <generator-ready type="bool">0</generator-ready>
+      <generator type="bool">0</generator>
     </engine>
     <engine n="2">
       <generator-sw type="int">1</generator-sw>
-      <generator-ready type="bool">0</generator-ready>
+      <generator type="bool">0</generator>
     </engine>
     <fuel-sel type="int">0</fuel-sel>
 

@@ -60,6 +60,9 @@ Empty weight: 19,800 lb (8,981 kg)
 Max takeoff weight: 47,000 lb (21,319 kg)
 Powerplant: 2 × Pratt & Whitney T73-P-700 turboshaft engines, 4,800 shp (3,600 kW) each
 
+N1 - Gas producer (compressor and N1 turbine) speed given in percent. At 100% the N1 RPM is 16,030.
+N2 - Free turbine speed given in percent. At 100% the free turbine speed is 9000 RPM.
+
 -->
 <airplane mass="19800" version="YASIM_VERSION_CURRENT">
 
@@ -153,7 +156,8 @@ Powerplant: 2 × Pratt & Whitney T73-P-700 turboshaft engines, 4,800 shp (3,600 k
   </rotor>
 
   <!-- only the engine power below is a known good value -->
-  <rotorgear max-power-engine="9600"
+  <rotorgear max-power-engine-real="9600"
+             max-power-engine="9600"
              max-power-rotor-brake="1100"
              rotorgear-friction="3.7"
              engine-prop-factor="0.01"
@@ -203,11 +207,11 @@ Powerplant: 2 × Pratt & Whitney T73-P-700 turboshaft engines, 4,800 shp (3,600 k
         compression="0.2"
         spring="1.1"
         damp="1.4"
-		sfric="1.5"
+        sfric="1.5"
         dfric="0.8"
         stiction="1">
         <control-input control="CASTERING" axis="/controls/gear/wheellock" src0=" 0" src1="1" dst0=" 1"   dst1="0"/>
-		<control-input control="BRAKE" axis="/controls/gear/brake-parking"/>
+        <control-input control="BRAKE" axis="/controls/gear/brake-parking"/>
   </gear>
 
   <!-- left gear -->

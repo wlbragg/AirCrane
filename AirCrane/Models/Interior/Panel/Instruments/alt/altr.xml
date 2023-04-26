@@ -7,9 +7,8 @@
   <animation>
     <type>rotate</type>
     <object-name>needle100</object-name>
-    <property>/position/altitude-agl-ft</property>
-    <!-- <property>/instrumentation/altimeter/indicated-altitude-ft</property> -->
-    <factor>0.36</factor>
+    <property>/instrumentation/altimeter/indicated-altitude-ft</property>
+    <factor>-0.36</factor>
     <axis>
       <x> 1 </x>
       <y> 0 </y>
@@ -20,9 +19,8 @@
   <animation>
     <type>rotate</type>
     <object-name>needle1000</object-name>
-    <property>/position/altitude-agl-ft</property>
-    <!-- <property>/instrumentation/altimeter/indicated-altitude-ft</property> -->
-    <factor>0.036</factor>
+    <property>/instrumentation/altimeter/indicated-altitude-ft</property>
+    <factor>-0.036</factor>
     <axis>
       <x> 1 </x>
       <y> 0 </y>
@@ -33,9 +31,8 @@
   <animation>
     <type>rotate</type>
     <object-name>needle10000</object-name>
-    <property>/position/altitude-agl-ft</property>
-    <!-- <property>/instrumentation/altimeter/indicated-altitude-ft</property> -->
-    <factor>0.0036</factor>
+    <property>/instrumentation/altimeter/indicated-altitude-ft</property>
+    <factor>-0.0036</factor>
     <axis>
       <x> 1 </x>
       <y> 0 </y>
