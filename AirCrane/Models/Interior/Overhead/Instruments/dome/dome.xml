@@ -8,7 +8,7 @@
     <type>knob</type>
     <object-name>switch</object-name>
     <property>controls/switches/dome</property>
-    <factor>60</factor>
+    <factor>40</factor>
     <center>
       <x-m> 0.025307</x-m>
       <y-m>-0.114315</y-m>
@@ -16,7 +16,7 @@
     </center>
     <axis>
       <x> 0 </x>
-      <y> 1 </y>
+      <y> -1 </y>
       <z> 0 </z>
     </axis>
     <action>

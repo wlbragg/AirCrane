@@ -4573,8 +4573,6 @@ name "vitre"
 data 5
 vitre
 crease 30.0
-texture "gsdi.png"
-texrep 1 1
 numvert 33
 0.01062 -0.00107 -0.04382
 0.01056 0.00747 -0.04296

@@ -136,8 +136,10 @@
         }
 
         if(me.MODE == 0){
-            me.HR.setValue(getprop("/instrumentation/clock/local-hour"));
-            me.MN.setValue(getprop("/instrumentation/clock/indicated-min"));
+            #me.HR.setValue(getprop("/instrumentation/clock/local-hour"));
+            #me.MN.setValue(getprop("/instrumentation/clock/indicated-min"));
+			me.HR.setValue(getprop("/sim/time/real/hour"));
+            me.MN.setValue(getprop("/instrumentation/clock/lc2/indicated-min"));
         }elsif(me.MODE==1){
             me.HR.setValue(me.ET_HR.getValue());
             me.MN.setValue(me.ET_MN.getValue());
