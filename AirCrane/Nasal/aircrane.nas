@@ -21,7 +21,7 @@ aircraft.timer.new("/sim/time/hobbs/helicopter", nil).start();
 # ======================================================================= engines/rotor
 var state = props.globals.getNode("sim/model/aircrane/state");
 # engine-rpm should eventually change to engines/engine[]/rpm if even related to rpm
-var engine = props.globals.getNode("engines/engine-rpm");
+var engine_rpm = props.globals.getNode("engines/engine-rpm");
 var rotor = props.globals.getNode("controls/engines/engine/magnetos");
 var rotor_rpm = props.globals.getNode("rotors/main/rpm");
 var tail_rpm = props.globals.getNode("rotors/tail/rpm");
@@ -161,11 +161,83 @@ var update_rpm_percents = func {
   tail_rpm_pct.setValue(892/tail_rpm.getValue());
 }
 
-var update_fuel_lbs = func {
-  fwd_level_lbs.setValue(tank1_level_lbs.getValue()+tank2_level_lbs.getValue());
-  aft_level_lbs.setValue(tank3_level_lbs.getValue()+tank4_level_lbs.getValue());
-  aux_level_lbs.setValue(tank4_level_lbs.getValue());
-  #var total_fuel_level_lbs = fwd_level_lbs + aft_level_lbs + aux_level_lbs;
+# fuel ==============================================================
+
+var update_fuel_lbs = func(dt) {
+
+	var x1 = 0.0;
+	var x2 = 0.8107;
+	var y1 = 0;
+	var y2 = 2400;
+	var gph = y1 + ((engine_rpm.getValue() - x1) / (x2 - x1)) * (y2 - y1);
+
+	var current_fuel_amount_tank0 = tank1_level_lbs.getValue();
+	var current_fuel_amount_tank1 = tank2_level_lbs.getValue();
+	var current_fuel_amount_tank2 = tank3_level_lbs.getValue();
+	var current_fuel_amount_tank3 = tank4_level_lbs.getValue();
+	var current_fuel_amount_tank4 = tank5_level_lbs.getValue();
+
+	if ((eng1_running.getValue() and engines_configured(0)) and (!eng2_running.getValue() or !engines_configured(1))) {
+		tank1_level_lbs.setValue(current_fuel_amount_tank0 - (dt * gph / 3600));
+		tank2_level_lbs.setValue(current_fuel_amount_tank1 - (dt * gph / 3600));
+	}
+	if ((eng2_running.getValue() and engines_configured(1)) and (!eng1_running.getValue() or !engines_configured(0))) {
+		tank3_level_lbs.setValue(current_fuel_amount_tank2 - (dt * gph / 3600));
+		tank4_level_lbs.setValue(current_fuel_amount_tank3 - (dt * gph / 3600));
+	}
+	if ((eng1_running.getValue() and engines_configured(0)) and (eng2_running.getValue() and engines_configured(1))) {
+		tank1_level_lbs.setValue(current_fuel_amount_tank0 - ((dt * gph / 3600)/2));
+		tank2_level_lbs.setValue(current_fuel_amount_tank1 - ((dt * gph / 3600)/2));
+		tank3_level_lbs.setValue(current_fuel_amount_tank2 - ((dt * gph / 3600)/2));
+		tank4_level_lbs.setValue(current_fuel_amount_tank3 - ((dt * gph / 3600)/2));
+	}
+
+	#tank5_level_lbs.setValue(current_fuel_amount-tank4 - ((dt * gph / 3600)/4));
+
+	fwd_level_lbs.setValue(tank1_level_lbs.getValue()+tank2_level_lbs.getValue());
+	aft_level_lbs.setValue(tank3_level_lbs.getValue()+tank4_level_lbs.getValue());
+	aux_level_lbs.setValue(tank5_level_lbs.getValue());
+
+#var eng1_running = props.globals.getNode("controls/engines/engine[0]/running", 1);
+#var eng2_running = props.globals.getNode("controls/engines/engine[1]/running", 1);
+#var eng1_starting = props.globals.getNode("controls/engines/engine[0]/starting", 1);
+#var eng2_starting = props.globals.getNode("controls/engines/engine[1]/starting", 1);
+#var eng1_shutdown = props.globals.getNode("controls/engines/engine[0]/shutdown", 1);
+#var eng2_shutdown = props.globals.getNode("controls/engines/engine[1]/shutdown", 1);
+#var app_fuel = props.globals.getNode("controls/switches/app-fuel", 1);
+#var app_running = props.globals.getNode("controls/engines/engine[2]/running", 1);
+#var app_shutdown = props.globals.getNode("controls/engines/engine[2]/shutdown", 1);
+#var fuel_shutoff_left = props.globals.getNode("consumables/fuel/shutoff/lever/left", 1);
+#var fuel_shutoff_right = props.globals.getNode("consumables/fuel/shutoff/lever/right", 1);
+#var engine_one = props.globals.getNode("engines/one/n1", 1);
+#var engine_two = props.globals.getNode("engines/two/n1", 1);
+#engines/engine[0]/fuel-consumed-lbs
+#engines/engine[0]/fuel-flow-pph
+#engines/engine[1]/fuel-consumed-lbs
+#engines/engine[1]/fuel-flow-pph
+
+#APP
+#250 pounds per hour.
+#Turbines
+#Full Power
+#1,200 pounds per hour * 2 turbines = 2,400 pounds per hour
+#Idle
+#450 pounds per hour * 2 turbines = 900 pounds per hour
+
+#engines/engine-rpm
+#1 Turbine Idle Start = 0.1216
+#2 Turbines Idle Start= 0.2432
+#1 Turbine Full Power = 0.5270
+#2 Turbines Full Power = 0.8107
+
+# density = 6.682 lb/gal [Flight Manual Section 9.2] not from aircrane
+# avtur/JET A-1/JP-8 not from aircrane
+#var FUEL_DENSITY = getprop("/consumables/fuel/tank/density-ppg"); # pound per gallon
+#var GAL2LB = FUEL_DENSITY;
+#var LB2GAL = 1 / GAL2LB;
+#var KG2GAL = KG2LB * LB2GAL;
+#var GAL2KG = 1 / KG2GAL;
+
 }
 
 # state:
@@ -183,14 +255,14 @@ var update_state = func {
     state.setValue(new_state);
     if (new_state == (1)) {
       settimer(func { update_state(2) }, 2);
-      interpolate(engine, 0.03, 0.1, 0.002, 0.3, 0.02, 0.1, 0.003, 0.7, 0.03, 0.1, 0.01, 0.7);
+      interpolate(engine_rpm, 0.03, 0.1, 0.002, 0.3, 0.02, 0.1, 0.003, 0.7, 0.03, 0.1, 0.01, 0.7);
     } else {
       if (new_state == (2)) {
         settimer(func { update_state(3) }, 3);
         rotor.setValue(1);
         max_rel_torque.setValue(0.01);
         target_rel_rpm.setValue(0.002);
-        interpolate(engine, 0.05, 0.2, 0.03, 1, 0.07, 0.1, 0.04, 0.9, 0.02, 0.5);
+        interpolate(engine_rpm, 0.05, 0.2, 0.03, 1, 0.07, 0.1, 0.04, 0.9, 0.02, 0.5);
       } else {
         if (new_state == (3)) {
           if (rotor_rpm.getValue() > 100) {
@@ -198,12 +270,12 @@ var update_state = func {
             max_rel_torque.setValue(1);
             target_rel_rpm.setValue(1.03);
             state.setValue(5);
-            interpolate(engine, 1.03, 10);
+            interpolate(engine_rpm, 1.03, 10);
           } else {
             settimer(func { update_state(4) }, 7);
             max_rel_torque.setValue(0.05);
             target_rel_rpm.setValue(0.02);
-            interpolate(engine, 0.07, 0.1, 0.03, 0.25, 0.075, 0.2, 0.08, 1, 0.06,2);
+            interpolate(engine_rpm, 0.07, 0.1, 0.03, 0.25, 0.075, 0.2, 0.08, 1, 0.06,2);
           }
         } else {
           if (new_state == (4)) {
@@ -224,16 +296,21 @@ var update_state = func {
 
 var engines_configured = func(x) {
   var configuration = 0;
-  var fuel = fwd_level_lbs.getValue() + aft_level_lbs.getValue() + aux_level_lbs.getValue();
-  var fuel_levers = fuel_shutoff_left.getValue() + fuel_shutoff_right.getValue();
+  var fuel = 0;
+  #account for aux_level_lbs.getValue();
+  var fuel_levers = 0;
   var ignition = 0;
 
-  if (x == 0)
+  if (x == 0) {
     ignition = ignition_one.getValue();
-  if (x == 1)
+	fuel = fwd_level_lbs.getValue();
+	fuel_levers = fuel_shutoff_left.getValue()
+  }
+  if (x == 1) {
     ignition = ignition_two.getValue();
-  if (x == 2)
-    ignition = ignition_one.getValue() + ignition_two.getValue();
+	fuel = aft_level_lbs.getValue();
+	fuel_levers = fuel_shutoff_right.getValue()
+  }
 
   configuration = fuel_levers * ignition * fuel;
 
@@ -252,7 +329,7 @@ var engines = func {
     state.setValue(0);
     eng1_running.setValue(0);
     eng2_running.setValue(0);
-    interpolate(engine, 0, 4);
+    interpolate(engine_rpm, 0, 4);
   }
 }
 
@@ -293,7 +370,7 @@ var update_engine = func {
     if (state.getValue() > 3 ) {
       #max_rel_torque.setValue(1*engines_online);
       target_rel_rpm.setValue(1.03*engines_online);
-      interpolate (engine,  clamp( rotor_rpm.getValue() / 235 , 0.05, target_rel_rpm.getValue() ), 0.25 );
+      interpolate (engine_rpm,  clamp( rotor_rpm.getValue() / 235 , 0.05, target_rel_rpm.getValue() ), 0.25 );
     } else {
       state.setValue(1);
       update_state(2);
@@ -597,7 +674,8 @@ var main_loop = func {
   update_engine();
 
   update_rpm_percents();
-  update_fuel_lbs();
+  update_fuel_lbs(dt);
+
   update_engparams();
 
   rotor_wash_loop();

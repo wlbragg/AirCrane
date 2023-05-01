@@ -398,10 +398,6 @@
 			<tank n="2">
 				<fuel-press type="int">0</fuel-press>
 			</tank>
-			<tank n="3">
-				<fuel-press type="int">0</fuel-press>
-			</tank>
-
 		</fuel>
 	  </systems>
 

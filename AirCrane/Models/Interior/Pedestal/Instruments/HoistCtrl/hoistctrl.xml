@@ -16,7 +16,7 @@
   <animation>
     <type>knob</type>
     <object-name>knobhoistcntrl</object-name>
-    <property>controls/hoist-control</property>
+    <property>controls/switches/hoist-control</property>
     <factor>-60</factor>
     <offset-deg>0</offset-deg>
     <center>
@@ -33,7 +33,7 @@
       <repeatable>true</repeatable>
       <binding>
         <command>property-adjust</command>
-        <property>controls/hoist-control</property>
+        <property>controls/switches/hoist-control</property>
         <factor>1</factor>
         <min>0</min>
         <max>3</max>
@@ -49,7 +49,7 @@
         <command>set-tooltip</command>
         <tooltip-id>hoist-control</tooltip-id>
         <label>Hoist Control: %s</label>
-        <property>controls/hoist-control</property>
+        <property>controls/switches/hoist-control</property>
         <mapping>nasal</mapping>
         <script>
           var modes = ['Off', 'Left Pilot', 'Right Pilot', 'Aft'];
@@ -63,7 +63,7 @@
   <animation>
     <type>knob</type>
     <object-name>emgshear</object-name>
-    <property>/controls/emgshear</property>
+    <property>controls/switches/emgshear</property>
     <factor>-45</factor>
     <offset-deg>0</offset-deg>
     <center>
@@ -79,7 +79,7 @@
     <action>
       <binding>
         <command>property-adjust</command>
-        <property>/controls/emgshear</property>
+        <property>controls/switches/emgshear</property>
         <factor>1</factor>
         <min>0</min>
         <max>1</max>
@@ -95,7 +95,7 @@
         <command>set-tooltip</command>
         <tooltip-id>emg-shear-sw-tch</tooltip-id>
         <label>Emergency Shear: %s</label>
-        <property>/controls/emgshear</property>
+        <property>controls/switches/emgshear</property>
         <mapping>nasal</mapping>
         <script>
           var modes = ['ARM', 'SHEAR'];
@@ -109,7 +109,7 @@
   <animation>
     <type>knob</type>
     <object-name>emgshearcover</object-name>
-    <property>/controls/emgshearcover</property>
+    <property>controls/switches/emgshearcover</property>
     <factor>-70</factor>
     <offset-deg>0</offset-deg>
     <center>
@@ -125,7 +125,7 @@
     <action>
       <binding>
         <command>property-adjust</command>
-        <property>/controls/emgshearcover</property>
+        <property>controls/switches/emgshearcover</property>
         <factor>1</factor>
         <min>0</min>
         <max>1</max>
@@ -141,7 +141,7 @@
         <command>set-tooltip</command>
         <tooltip-id>emgshearcover</tooltip-id>
         <label>Emergancy Shear Cover</label>
-        <property>/controls/emgshearcover</property>
+        <property>controls/switches/emgshearcover</property>
       </binding>
     </hovered>
   </animation>

@@ -251,10 +251,11 @@ N2 - Free turbine speed given in percent. At 100% the free turbine speed is 9000
         dfric="1">
   </gear>
 
-  <tank x=" 2.6" y=" 0.7" z="-0.31" capacity="1351"/>
-  <tank x="-2.6" y="-0.7" z="-0.31" capacity="734"/>
-  <tank x=" 2.6" y=" 0.0" z="-0.31" capacity="851"/>
-  <tank x="-2.6" y=" 0.0" z="-0.31" capacity="904"/>
+  <tank x=" -4.60" y=" 0.7" z="-0.31" capacity="1362"/>
+  <tank x=" -3.60" y="-0.7" z="-0.31" capacity="1362"/>
+  <tank x=" -1.70" y=" 0.0" z="-0.31" capacity="1362"/>
+  <tank x=" -0.70" y=" 0.0" z="-0.31" capacity="1362"/>
+  <tank x="  0.60" y=" 0.0" z="-0.31" capacity="2688"/>
 
   <!-- <ballast x="-0.7" y="0.0" z="-1.0" mass="450"/> -->
 

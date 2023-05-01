@@ -15,7 +15,7 @@
   <animation>
     <type>knob</type>
     <object-name>pedaladjustleft</object-name>
-    <property>controls/pedaladjustleft</property>
+    <property>controls/switches/pedaladjustleft</property>
     <factor>30</factor>
     <center>
       <x-m> -0.00256 </x-m>
@@ -31,7 +31,7 @@
       <repeatable>false</repeatable>
       <binding>
         <command>property-adjust</command>
-        <property>controls/pedaladjustleft</property>
+        <property>controls/switches/pedaladjustleft</property>
         <factor>1</factor>
         <min>-1</min>
         <max> 1</max>
@@ -57,7 +57,7 @@
         <command>set-tooltip</command>
         <tooltip-id>pedaladjustleft</tooltip-id>
         <label>Adjust Left Pedal: %s</label>
-        <property>controls/pedaladjustleft</property>
+        <property>controls/switches/pedaladjustleft</property>
       </binding>
     </hovered>
   </animation>
@@ -66,7 +66,7 @@
   <animation>
     <type>knob</type>
     <object-name>pedaladjustright</object-name>
-    <property>controls/pedaladjustright</property>
+    <property>controls/switches/pedaladjustright</property>
     <factor>30</factor>
     <center>
       <x-m> -0.00256 </x-m>
@@ -82,7 +82,7 @@
       <repeatable>false</repeatable>
       <binding>
         <command>property-adjust</command>
-        <property>controls/pedaladjustright</property>
+        <property>controls/switches/pedaladjustright</property>
         <factor>1</factor>
         <min>-1</min>
         <max> 1</max>
@@ -108,7 +108,7 @@
         <command>set-tooltip</command>
         <tooltip-id>pedaladjustright</tooltip-id>
         <label>Adjust Right Pedal: %s</label>
-        <property>controls/pedaladjustright</property>
+        <property>controls/switches/pedaladjustright</property>
       </binding>
     </hovered>
   </animation>

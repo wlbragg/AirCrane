@@ -63,7 +63,7 @@
 
   <gear>
     <brake-parking type="int">1</brake-parking>
-	<wheellock type="int">1</wheellock>
+    <wheellock type="int">1</wheellock>
   </gear>
 
   <rotor>
@@ -340,18 +340,18 @@
       </emer>
 
     </circuit-breakers>
-	
-	<wipers>
-		<position-norm type="float">0</position-norm>
-	</wipers>
-	
+
+    <wipers>
+        <position-norm type="float">0</position-norm>
+    </wipers>
+
   </electric>
 
   <knobs>
     <yaw-trim type="float">0</yaw-trim>
     <roll-trim type="float">0</roll-trim>
     <cg-trim type="float">0</cg-trim>
-	<knob-wiper type="float">-1</knob-wiper>
+    <knob-wiper type="float">-1</knob-wiper>
   </knobs>
 
   <switches>
@@ -379,6 +379,11 @@
     <stick-trim-cover type="bool">false</stick-trim-cover>
     <yaw type="bool">false</yaw>
     <dome type="int">0</dome>
+    <emgshear type="bool">false</emgshear>
+    <emgshearcover type="bool">false</emgshearcover>
+    <hoist-control type="bool">false</hoist-control>
+    <pedaladjustleft type="bool">false</pedaladjustleft>
+    <pedaladjustright type="bool">false</pedaladjustright>
     <spring-switch>
       <afcs-servo type="int">0</afcs-servo>
       <afcs type="int">0</afcs>
@@ -396,7 +401,7 @@
   </thermometer>
 
   <flight>
-	<collective-to-yaw type="bool">1</collective-to-yaw>
+    <collective-to-yaw type="bool">1</collective-to-yaw>
   </flight>
 
 </PropertyList>
