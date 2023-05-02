@@ -151,10 +151,6 @@ N2 - Free turbine speed given in percent. At 100% the free turbine speed is 9000
          rotor-correction-factor="0.9">
          <control-input control="COLLECTIVE" axis="/controls/flight/fcs/yaw" invert="true"   src0="-1.0" src1="1.0" dst0="-0.66" dst1="0.66"/>
          <control-input control="COLLECTIVE" axis="/controls/flight/fcs/tail-rotor/throttle" src0="-1.0" src1="1.0" dst0="-1.00" dst1="1.00"/>
-<!--
-         <control-input control="COLLECTIVE" axis="/controls/flight/fcs/yaw" invert="true" src0="-1.0" src1="1.0" dst0="-0.66" dst1=" 0.66"/>
-         <control-input control="COLLECTIVE" axis="/controls/engines/engine[0]/throttle"   src0=" 0.0" src1="0.6" dst0=" 0.45" dst1="-0.50"/>
--->
   </rotor>
 
   <!-- only the engine power below is a known good value -->

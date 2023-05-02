@@ -113,6 +113,17 @@
     </offsets>
   </model>
 
+  <!-- AUX Fuel test button-->
+  <model>
+    <path>Aircraft/AirCrane/Models/Interior/Panel/Instruments/switch/auxtanktest.xml</path>
+    <offsets>
+      <x-m>  0.027 </x-m>
+      <y-m> -0.160 </y-m>
+      <z-m> -0.156 </z-m>
+      <pitch-deg> -5.7 </pitch-deg>
+    </offsets>
+  </model>
+
   <!-- CWS test button-->
   <model>
     <path>Aircraft/AirCrane/Models/Interior/Panel/Instruments/switch/cwslamptest.xml</path>

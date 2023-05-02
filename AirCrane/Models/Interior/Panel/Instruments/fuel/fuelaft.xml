@@ -8,7 +8,9 @@
     <object-name>fond</object-name>
     <object-name>face</object-name>
     <object-name>needle</object-name>
-
+	<object-name>bug</object-name>
+	<object-name>knob</object-name>
+	
     <object-name>vitre</object-name>
   </animation>
 
@@ -17,6 +19,8 @@
     <object-name>fond</object-name>
     <object-name>face</object-name>
     <object-name>needle</object-name>
+	<object-name>bug</object-name>
+	<object-name>knob</object-name>
   </effect>
 
   <effect>
@@ -28,6 +32,7 @@
     <type>material</type>
     <object-name>face</object-name>
     <object-name>needle</object-name>
+	<object-name>bug</object-name>
     <condition>
       <property>controls/electric/battery-bus-switch</property>
     </condition>
@@ -44,22 +49,70 @@
     <object-name>needle</object-name>
     <property>consumables/fuel/aft/level-lbs</property>
     <interpolation>
-      <entry><ind> -999 </ind><dep>    1 </dep></entry>
-      <entry><ind>    0 </ind><dep>    0 </dep></entry>
-      <entry><ind>  500 </ind><dep>  -47 </dep></entry>
-      <entry><ind> 1000 </ind><dep>  -93 </dep></entry>
-      <entry><ind> 1500 </ind><dep> -141 </dep></entry>
-      <entry><ind> 2000 </ind><dep> -187 </dep></entry>
-      <entry><ind> 2500 </ind><dep> -233 </dep></entry>
-      <entry><ind> 3000 </ind><dep> -279 </dep></entry>
-      <entry><ind> 3300 </ind><dep> -307 </dep></entry>
-      <entry><ind> 4000 </ind><dep> -308 </dep></entry>
+      <entry><ind> -1  		</ind><dep>   1</dep></entry>
+      <entry><ind>  0  		</ind><dep>   0</dep></entry>
+      <entry><ind>  1650	</ind><dep>-150</dep></entry>
+	  <entry><ind>  3300	</ind><dep>-310</dep></entry>
+      <entry><ind>  3301  	</ind><dep>-311</dep></entry>
     </interpolation>
     <axis>
       <x> 1 </x>
       <y> 0 </y>
       <z> 0 </z>
     </axis>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>bug</object-name>
+    <property>consumables/fuel/aft/fuel-limit-bug</property>
+    <interpolation>
+      <entry><ind> -1  		</ind><dep>   1</dep></entry>
+      <entry><ind>  0  		</ind><dep>   0</dep></entry>
+      <entry><ind>  1.515	</ind><dep>-150</dep></entry>
+	  <entry><ind>  3.3		</ind><dep>-310</dep></entry>
+      <entry><ind>  3.4  	</ind><dep>-311</dep></entry>
+    </interpolation>
+    <axis>
+      <x> 1 </x>
+      <y> 0 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>knob</type>
+    <object-name>knob</object-name>
+    <property>/consumables/fuel/aft/fuel-limit-bug</property>
+    <factor>.01</factor>
+    <!--center>
+      <x-m>  0.00991 </x-m>
+      <y-m>  0.02788 </y-m>
+      <z-m> -0.02804 </z-m>
+    </center-->  
+    <axis>
+      <x> 1 </x>
+      <y> 0 </y>
+      <z> 0 </z>
+    </axis>
+    <action>
+      <binding>
+        <command>property-adjust</command>
+        <property>/consumables/fuel/aft/fuel-limit-bug</property>
+        <factor>0.01</factor>
+        <min>0</min>
+        <max>3.3</max>
+        <wrap>false</wrap>
+      </binding>
+    </action>
+    <hovered>
+      <binding>
+        <command>set-tooltip</command>
+        <tooltip-id>alt-setting</tooltip-id>
+        <label>Pressure Ratio: %1.1f</label>
+        <property>/consumables/fuel/aft/fuel-limit-bug</property>
+      </binding>
+    </hovered>
   </animation>
 
 </PropertyList>

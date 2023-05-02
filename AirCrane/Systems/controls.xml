@@ -365,6 +365,7 @@
     <app-start type="bool">false</app-start>
     <app-stop type="bool">false</app-stop>
     <app-fuel type="bool">false</app-fuel>
+    <aux-fuel-test type="bool">false</aux-fuel-test>
     <cws-test type="bool">false</cws-test>
     <cws-bright type="int">false</cws-bright>
     <rect-1 type="bool">false</rect-1>

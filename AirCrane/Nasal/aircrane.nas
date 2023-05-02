@@ -192,11 +192,19 @@ var update_fuel_lbs = func(dt) {
 		tank4_level_lbs.setValue(current_fuel_amount_tank3 - ((dt * gph / 3600)/2));
 	}
 
-	#tank5_level_lbs.setValue(current_fuel_amount-tank4 - ((dt * gph / 3600)/4));
+	#tank5_level_lbs.setValue(current_fuel_amount_tank4 - ((dt * gph / 3600)/4));
 
 	fwd_level_lbs.setValue(tank1_level_lbs.getValue()+tank2_level_lbs.getValue());
 	aft_level_lbs.setValue(tank3_level_lbs.getValue()+tank4_level_lbs.getValue());
 	aux_level_lbs.setValue(tank5_level_lbs.getValue());
+
+#both forward and aft tanks to one engine (during single engine operation)
+
+
+#both engines from one tank
+#crossfeed switch to X-FEED
+#both boost pump switches in the tank to be used in the PUMP position
+#both boost pump switches in the tank to be unused in the OFF position
 
 #var eng1_running = props.globals.getNode("controls/engines/engine[0]/running", 1);
 #var eng2_running = props.globals.getNode("controls/engines/engine[1]/running", 1);
@@ -340,14 +348,14 @@ var update_engine = func {
   #engine starting up
   if (eng1_starting.getValue() == 1) {
     #if (n1_percentage(0) < 5 and ignition_one.getValue()) pop();
-      if ((n1_percentage(0) > 29 and n1_percentage(0) < 45 ) and ignition_one.getValue() and app_running.getValue()) {
+      if ((n1_percentage(0) > 29 and n1_percentage(0) < 45 ) and ignition_one.getValue() and (app_running.getValue() or eng2_running.getValue())) {
         eng1_running.setValue(1);
         eng1_starting.setValue(0);
       } else return;
   }
   if (eng2_starting.getValue() == 1) {
     #if (n1_percentage(1) < 5 and ignition_two.getValue()) pop();
-      if ((n1_percentage(1) > 29 and n1_percentage(1) < 45 ) and ignition_two.getValue() and app_running.getValue()) {
+      if ((n1_percentage(1) > 29 and n1_percentage(1) < 45 ) and ignition_two.getValue() and (app_running.getValue() or eng1_running.getValue())) {
         eng2_running.setValue(1);
         eng2_starting.setValue(0);
       } else return;
@@ -827,7 +835,7 @@ setlistener("/controls/gear/brake-right", func () {
 }, 0, 1);
 
 setlistener("controls/switches/eng1-n1-start", func (node) {
-  if (node.getValue() and engine_one.getValue() == 0 and app_running.getValue()) {
+  if (node.getValue() and engine_one.getValue() == 0 and (app_running.getValue() or (eng2_running.getValue() and generator_2.getValue() == -1))) {
     state.setValue(-1);
     eng1_starting.setValue(1);
     settimer(func {
@@ -842,7 +850,7 @@ setlistener("controls/switches/eng1-n1-start", func (node) {
 }, 0, 0);
 
 setlistener("controls/switches/eng2-n1-start", func (node) {
-  if (node.getValue() and engine_two.getValue() == 0 and app_running.getValue()) {
+  if (node.getValue() and engine_two.getValue() == 0 and (app_running.getValue() or (eng1_running.getValue() and generator_1.getValue() == -1))) {
     state.setValue(-1);
     eng2_starting.setValue(1);
     settimer(func {
