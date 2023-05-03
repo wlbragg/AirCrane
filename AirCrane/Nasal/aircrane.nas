@@ -77,6 +77,14 @@ var aft_level_lbs = props.globals.getNode("consumables/fuel/aft/level-lbs", 1);
 var aux_level_lbs = props.globals.getNode("consumables/fuel/aux/level-lbs", 1);
 var fuel_shutoff_left = props.globals.getNode("consumables/fuel/shutoff/lever/left", 1);
 var fuel_shutoff_right = props.globals.getNode("consumables/fuel/shutoff/lever/right", 1);
+var aux_fuel_pump1 = props.globals.getNode("/controls/fuel/afpno1", 1);
+var aux_fuel_pump2 = props.globals.getNode("/controls/fuel/afpno2", 1);
+var fuel_pump_1_eng1 = props.globals.getNode("/controls/switches/fuelpump1eng1", 1);
+var fuel_pump_2_eng1 = props.globals.getNode("/controls/switches/fuelpump2eng1", 1);
+var fuel_pump_1_eng2 = props.globals.getNode("/controls/switches/fuelpump1eng2", 1);
+var fuel_pump_2_eng2 = props.globals.getNode("/controls/switches/fuelpump2eng2", 1);
+var fwd_fuel_limit_bug = props.globals.getNode("consumables/fuel/fwd/fuel-limit-bug", 1);
+var aft_fuel_limit_bug = props.globals.getNode("consumables/fuel/aft/fuel-limit-bug", 1);
 
 # ======================================================================= power
 var master_bat = props.globals.getNode("controls/electric/battery-bus-switch", 1);
@@ -115,6 +123,10 @@ var autostart = func (msg=1) {
   engines(1);
   afcs_servo.setValue(1);
   afcs.setValue(1);
+  fuel_pump_1_eng1.setValue(1);
+  fuel_pump_2_eng1.setValue(1);
+  fuel_pump_1_eng2.setValue(1);
+  fuel_pump_2_eng2.setValue(1);
   # === lighting ===
   setprop("controls/lighting/beaconfwd-light-switch", 1);
   setprop("controls/lighting/beaconaft-light-switch", 1);
@@ -165,41 +177,69 @@ var update_rpm_percents = func {
 
 var update_fuel_lbs = func(dt) {
 
-	var x1 = 0.0;
-	var x2 = 0.8107;
-	var y1 = 0;
-	var y2 = 2400;
-	var gph = y1 + ((engine_rpm.getValue() - x1) / (x2 - x1)) * (y2 - y1);
+    #APP
+    #73 pounds per hour.
+    #Turbines
+    #Full Power
+    #1,200 pounds per hour * 2 turbines = 2,400 pounds per hour
+    #Idle
+    #450 pounds per hour * 2 turbines = 900 pounds per hour
 
-	var current_fuel_amount_tank0 = tank1_level_lbs.getValue();
-	var current_fuel_amount_tank1 = tank2_level_lbs.getValue();
-	var current_fuel_amount_tank2 = tank3_level_lbs.getValue();
-	var current_fuel_amount_tank3 = tank4_level_lbs.getValue();
-	var current_fuel_amount_tank4 = tank5_level_lbs.getValue();
+    #engines/engine-rpm
+    #1 Turbine Idle Start = 0.1216
+    #2 Turbines Idle Start= 0.2432
+    #1 Turbine Full Power = 0.5270
+    #2 Turbines Full Power = 0.8107
 
-	if ((eng1_running.getValue() and engines_configured(0)) and (!eng2_running.getValue() or !engines_configured(1))) {
-		tank1_level_lbs.setValue(current_fuel_amount_tank0 - (dt * gph / 3600));
-		tank2_level_lbs.setValue(current_fuel_amount_tank1 - (dt * gph / 3600));
-	}
-	if ((eng2_running.getValue() and engines_configured(1)) and (!eng1_running.getValue() or !engines_configured(0))) {
-		tank3_level_lbs.setValue(current_fuel_amount_tank2 - (dt * gph / 3600));
-		tank4_level_lbs.setValue(current_fuel_amount_tank3 - (dt * gph / 3600));
-	}
-	if ((eng1_running.getValue() and engines_configured(0)) and (eng2_running.getValue() and engines_configured(1))) {
-		tank1_level_lbs.setValue(current_fuel_amount_tank0 - ((dt * gph / 3600)/2));
-		tank2_level_lbs.setValue(current_fuel_amount_tank1 - ((dt * gph / 3600)/2));
-		tank3_level_lbs.setValue(current_fuel_amount_tank2 - ((dt * gph / 3600)/2));
-		tank4_level_lbs.setValue(current_fuel_amount_tank3 - ((dt * gph / 3600)/2));
-	}
+    #main fuel flow
+    var x1 = 0.0;
+    var x2 = 0.8107;
+    var y1 = 0;
+    var y2 = 2400;
+    var gph = y1 + ((engine_rpm.getValue() - x1) / (x2 - x1)) * (y2 - y1);
 
-	#tank5_level_lbs.setValue(current_fuel_amount_tank4 - ((dt * gph / 3600)/4));
+    var current_fuel_amount_tank0 = tank1_level_lbs.getValue();
+    var current_fuel_amount_tank1 = tank2_level_lbs.getValue();
+    var current_fuel_amount_tank2 = tank3_level_lbs.getValue();
+    var current_fuel_amount_tank3 = tank4_level_lbs.getValue();
+    var current_fuel_amount_tank4 = tank5_level_lbs.getValue();
 
-	fwd_level_lbs.setValue(tank1_level_lbs.getValue()+tank2_level_lbs.getValue());
-	aft_level_lbs.setValue(tank3_level_lbs.getValue()+tank4_level_lbs.getValue());
-	aux_level_lbs.setValue(tank5_level_lbs.getValue());
+    if ((eng1_running.getValue() and engines_configured(0)) and (!eng2_running.getValue() or !engines_configured(1))) {
+        tank1_level_lbs.setValue(current_fuel_amount_tank0 - (dt * gph / 3600)/2);
+        tank2_level_lbs.setValue(current_fuel_amount_tank1 - (dt * gph / 3600)/2);
+    }
+    if ((eng2_running.getValue() and engines_configured(1)) and (!eng1_running.getValue() or !engines_configured(0))) {
+        tank3_level_lbs.setValue(current_fuel_amount_tank2 - (dt * gph / 3600)/2);
+        tank4_level_lbs.setValue(current_fuel_amount_tank3 - (dt * gph / 3600)/2);
+    }
+    if ((eng1_running.getValue() and engines_configured(0)) and (eng2_running.getValue() and engines_configured(1))) {
+        tank1_level_lbs.setValue(current_fuel_amount_tank0 - ((dt * gph / 3600)/4));
+        tank2_level_lbs.setValue(current_fuel_amount_tank1 - ((dt * gph / 3600)/4));
+        tank3_level_lbs.setValue(current_fuel_amount_tank2 - ((dt * gph / 3600)/4));
+        tank4_level_lbs.setValue(current_fuel_amount_tank3 - ((dt * gph / 3600)/4));
+    }
+    if (app_running.getValue()) {
+        tank3_level_lbs.setValue(current_fuel_amount_tank2 - (dt * 73 / 3600)/2);
+        tank4_level_lbs.setValue(current_fuel_amount_tank3 - (dt * 73 / 3600)/2);
+    }
+
+    if (aux_fuel_pump1.getValue() and (fwd_level_lbs.getValue() < (fwd_fuel_limit_bug.getValue() * 1000)) and (aux_level_lbs.getValue() > 23)) {
+        tank5_level_lbs.setValue(current_fuel_amount_tank4 - (dt * 8000 / 3600));
+        tank1_level_lbs.setValue(current_fuel_amount_tank0 + (dt * 8000 / 3600)/2);
+        tank2_level_lbs.setValue(current_fuel_amount_tank1 + (dt * 8000 / 3600)/2);
+    }else aux_fuel_pump1.setValue(0);
+    if (aux_fuel_pump2.getValue() and (aft_level_lbs.getValue() < (aft_fuel_limit_bug.getValue() * 1000)) and (aux_level_lbs.getValue() > 23)) {
+        current_fuel_amount_tank4 = tank5_level_lbs.getValue();
+        tank5_level_lbs.setValue(current_fuel_amount_tank4 - (dt * 8000 / 3600));
+        tank3_level_lbs.setValue(current_fuel_amount_tank2 + (dt * 8000 / 3600)/2);
+        tank4_level_lbs.setValue(current_fuel_amount_tank3 + (dt * 8000 / 3600)/2);
+    } else aux_fuel_pump2.setValue(0);
+
+    fwd_level_lbs.setValue(tank1_level_lbs.getValue()+tank2_level_lbs.getValue());
+    aft_level_lbs.setValue(tank3_level_lbs.getValue()+tank4_level_lbs.getValue());
+    aux_level_lbs.setValue(tank5_level_lbs.getValue());
 
 #both forward and aft tanks to one engine (during single engine operation)
-
 
 #both engines from one tank
 #crossfeed switch to X-FEED
@@ -223,20 +263,6 @@ var update_fuel_lbs = func(dt) {
 #engines/engine[0]/fuel-flow-pph
 #engines/engine[1]/fuel-consumed-lbs
 #engines/engine[1]/fuel-flow-pph
-
-#APP
-#250 pounds per hour.
-#Turbines
-#Full Power
-#1,200 pounds per hour * 2 turbines = 2,400 pounds per hour
-#Idle
-#450 pounds per hour * 2 turbines = 900 pounds per hour
-
-#engines/engine-rpm
-#1 Turbine Idle Start = 0.1216
-#2 Turbines Idle Start= 0.2432
-#1 Turbine Full Power = 0.5270
-#2 Turbines Full Power = 0.8107
 
 # density = 6.682 lb/gal [Flight Manual Section 9.2] not from aircrane
 # avtur/JET A-1/JP-8 not from aircrane
@@ -308,19 +334,23 @@ var engines_configured = func(x) {
   #account for aux_level_lbs.getValue();
   var fuel_levers = 0;
   var ignition = 0;
+  var fuel_pump = 0;
+
 
   if (x == 0) {
     ignition = ignition_one.getValue();
-	fuel = fwd_level_lbs.getValue();
-	fuel_levers = fuel_shutoff_left.getValue()
+    fuel = fwd_level_lbs.getValue();
+    fuel_levers = fuel_shutoff_left.getValue();
+    fuel_pump = fuel_pump_1_eng1.getValue() + fuel_pump_2_eng1.getValue();
   }
   if (x == 1) {
     ignition = ignition_two.getValue();
-	fuel = aft_level_lbs.getValue();
-	fuel_levers = fuel_shutoff_right.getValue()
+    fuel = aft_level_lbs.getValue();
+    fuel_levers = fuel_shutoff_right.getValue();
+    fuel_pump = fuel_pump_1_eng2.getValue() + fuel_pump_2_eng2.getValue();
   }
 
-  configuration = fuel_levers * ignition * fuel;
+  configuration = fuel_levers * ignition * fuel_pump * fuel;
 
   return configuration;
 }
@@ -758,43 +788,43 @@ var toggle_flashlight = func {
 
 ############## Windshield Wipers ################
 var clean_timer = maketimer(.15, func {
-	setprop("/environment/aircraft-effects/use-wipers", 1);
-	clean_timer.stop();
+    setprop("/environment/aircraft-effects/use-wipers", 1);
+    clean_timer.stop();
 });
 
 var wiper_timer = maketimer(1, func {
     var wipers_position = getprop("/controls/electric/wipers/position-norm");
     var use_wipers = getprop("/environment/aircraft-effects/use-wipers");
-	var wiper_speed = getprop("/controls/knobs/knob-wiper");
+    var wiper_speed = getprop("/controls/knobs/knob-wiper");
     if (wipers_position <= 0) {
         setprop("/environment/aircraft-effects/use-wipers", 0);
-		interpolate("/controls/electric/wipers/position-norm", 1, 0.3);
+        interpolate("/controls/electric/wipers/position-norm", 1, 0.3);
     } else if (wipers_position >= 1){
         setprop("/environment/aircraft-effects/use-wipers", 0);
-		interpolate("/controls/electric/wipers/position-norm", 0, 0.3);
+        interpolate("/controls/electric/wipers/position-norm", 0, 0.3);
     }
-	if (wiper_speed == 1)
-		clean_timer.restart(.15);
-	else
-		clean_timer.restart(.01);
+    if (wiper_speed == 1)
+        clean_timer.restart(.15);
+    else
+        clean_timer.restart(.01);
 });
 
 setlistener("/controls/knobs/knob-wiper", func(v) {
     if(v.getValue() == 1) {
-		wiper_timer.restart(1);
+        wiper_timer.restart(1);
     }
-	if(v.getValue() == 2){
-		wiper_timer.restart(.5);
-	}
-	if(v.getValue() == 0){
-		wiper_timer.stop();
-		setprop("/environment/aircraft-effects/use-wipers", 0);
-	}
-	if(v.getValue() == -1){
-		wiper_timer.stop();
-		setprop("/environment/aircraft-effects/use-wipers", 0);
-		interpolate("/controls/electric/wipers/position-norm", 0, 0.3);
-	}
+    if(v.getValue() == 2){
+        wiper_timer.restart(.5);
+    }
+    if(v.getValue() == 0){
+        wiper_timer.stop();
+        setprop("/environment/aircraft-effects/use-wipers", 0);
+    }
+    if(v.getValue() == -1){
+        wiper_timer.stop();
+        setprop("/environment/aircraft-effects/use-wipers", 0);
+        interpolate("/controls/electric/wipers/position-norm", 0, 0.3);
+    }
 });
 
 setlistener("/sim/signals/reinit", func {

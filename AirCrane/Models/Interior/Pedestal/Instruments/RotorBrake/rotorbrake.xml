@@ -76,7 +76,7 @@
           var brake = getprop("systems/electrical/outputs/rotorbrake");
           var pressure = getprop("controls/rotorbrake/rotorbrake");
           if(brake == -1) {
-            setprop("controls/rotor/brake", pressure * .1);
+            setprop("controls/rotor/brake", pressure * .05);
           }
           if(brake == 1) {
             setprop("controls/rotorbrake/rotorbrake", 0);

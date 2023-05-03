@@ -3,7 +3,7 @@ MATERIAL "DefaultWhite" rgb 1.000 1.000 1.000  amb 1.000 1.000 1.000  emis 0.000
 MATERIAL "glass" rgb 0.391 0.559 0.559  amb 1.000 1.000 1.000  emis 0.000 0.000 0.000  spec 0.567 0.666 0.686  shi 12 trans 0.800
 OBJECT world
 name "Blender_exporter_v2.26__cws.ac"
-kids 54
+kids 62
 OBJECT poly
 name "1-eng-anti-ice"
 data 14
@@ -530,6 +530,27 @@ refs 4
 1 0.290514 0.372744
 kids 0
 OBJECT poly
+name "4pt-jettison-armed"
+data 21
+hoist-shear-armed.002
+crease 30.0
+texture "cws.png"
+texrep 1 1
+numvert 4
+0.00238 -0.09741 -0.04886
+0.00239 -0.08987 -0.04886
+0.00243 -0.08987 -0.02618
+0.00242 -0.09741 -0.02618
+numsurf 1
+SURF 0X10
+mat 0
+refs 4
+2 0.290106 0.141833
+3 0.290019 0.11375
+0 0.376194 0.113477
+1 0.376278 0.14156
+kids 0
+OBJECT poly
 name "afcs-off"
 data 8
 afcs-off
@@ -545,10 +566,10 @@ numsurf 1
 SURF 0X10
 mat 0
 refs 4
-2 0.085513 0.930667
-3 0.022456 0.930879
-0 0.022393 0.912942
-1 0.085452 0.912748
+2 0.089204 0.938049
+3 0.016304 0.937646
+0 0.016241 0.912942
+1 0.089758 0.913363
 kids 0
 OBJECT poly
 name "afcs-servo-press"
@@ -593,6 +614,27 @@ refs 4
 1 0.197517 0.561454
 kids 0
 OBJECT poly
+name "app-hyd-press-low"
+data 21
+hoist-shear-armed.007
+crease 30.0
+texture "cws.png"
+texrep 1 1
+numvert 4
+0.00256 -0.10975 -0.02418
+0.00257 -0.10221 -0.02418
+0.00261 -0.10222 -0.0015
+0.0026 -0.10976 -0.0015
+numsurf 1
+SURF 0X10
+mat 0
+refs 4
+2 0.195867 0.094958
+3 0.195781 0.066875
+0 0.281955 0.066602
+1 0.28204 0.094685
+kids 0
+OBJECT poly
 name "app-on"
 data 6
 app-on
@@ -612,6 +654,49 @@ refs 4
 3 0.195156 0.113496
 0 0.280424 0.113209
 1 0.2805 0.141278
+kids 0
+OBJECT poly
+name "auto-hook-release"
+data 21
+hoist-shear-armed.003
+crease 30.0
+texture "cws.png"
+texrep 1 1
+numvert 12
+0.00238 -0.10986 -0.04918
+0.00239 -0.10232 -0.04918
+0.00243 -0.10232 -0.0265
+0.00242 -0.10986 -0.0265
+0.00238 -0.10975 -0.04886
+0.00239 -0.10221 -0.04886
+0.00243 -0.10222 -0.02618
+0.00242 -0.10976 -0.02618
+0.00238 -0.10975 -0.04886
+0.00239 -0.10221 -0.04886
+0.00243 -0.10222 -0.02618
+0.00242 -0.10976 -0.02618
+numsurf 3
+SURF 0X10
+mat 0
+refs 4
+2 0.290594 0.093981
+3 0.290508 0.065898
+0 0.376682 0.065625
+1 0.376766 0.093708
+SURF 0X10
+mat 0
+refs 4
+6 0.289129 0.093981
+7 0.289043 0.065898
+4 0.375217 0.065625
+5 0.375302 0.093708
+SURF 0X10
+mat 0
+refs 4
+10 0.289129 0.093981
+11 0.289043 0.065898
+8 0.375217 0.065625
+9 0.375302 0.093708
 kids 0
 OBJECT poly
 name "aux-fuel-press"
@@ -9180,10 +9265,10 @@ numsurf 1
 SURF 0X10
 mat 0
 refs 4
-2 0.202649 0.910376
-3 0.278721 0.910141
-0 0.278991 0.932024
-1 0.202924 0.932248
+2 0.202649 0.907915
+3 0.278721 0.90768
+0 0.278991 0.937561
+1 0.202924 0.937785
 kids 0
 OBJECT poly
 name "chip-tail-trans"
@@ -9205,6 +9290,27 @@ refs 4
 3 0.282214 0.814019
 0 0.282293 0.842086
 1 0.197109 0.8424
+kids 0
+OBJECT poly
+name "eaps-press"
+data 19
+hoist-overspeed.002
+crease 30.0
+texture "cws.png"
+texrep 1 1
+numvert 4
+0.00264 -0.00233 -0.02374
+0.00268 -0.00234 -0.00107
+0.00266 -0.00986 -0.00106
+0.00263 -0.00987 -0.02374
+numsurf 1
+SURF 0X10
+mat 0
+refs 4
+2 0.195451 0.442567
+3 0.280882 0.442256
+0 0.280964 0.470354
+1 0.195534 0.470626
 kids 0
 OBJECT poly
 name "ext-power-connected"
@@ -9270,6 +9376,27 @@ refs 4
 1 0.103998 0.561775
 kids 0
 OBJECT poly
+name "heater-hot"
+data 19
+hoist-overspeed.001
+crease 30.0
+texture "cws.png"
+texrep 1 1
+numvert 4
+0.00264 -0.04035 -0.02374
+0.00268 -0.04036 -0.00107
+0.00266 -0.04789 -0.00106
+0.00263 -0.0479 -0.02374
+numsurf 1
+SURF 0X10
+mat 0
+refs 4
+2 0.195451 0.299949
+3 0.280882 0.299638
+0 0.280964 0.327736
+1 0.195534 0.328008
+kids 0
+OBJECT poly
 name "hoist-oil-hot"
 data 13
 hoist-oil-hot
@@ -9313,8 +9440,8 @@ refs 4
 kids 0
 OBJECT poly
 name "hoist-shear-armed"
-data 17
-hoist-shear-armed
+data 21
+hoist-shear-armed.001
 crease 30.0
 texture "cws.png"
 texrep 1 1
@@ -9331,6 +9458,27 @@ refs 4
 3 0.196998 0.020374
 0 0.283172 0.020101
 1 0.283257 0.048184
+kids 0
+OBJECT poly
+name "hook-unlocked"
+data 17
+hoist-shear-armed
+crease 30.0
+texture "cws.png"
+texrep 1 1
+numvert 4
+0.00238 -0.12221 -0.04918
+0.00239 -0.11467 -0.04918
+0.00243 -0.11468 -0.0265
+0.00242 -0.12222 -0.0265
+numsurf 1
+SURF 0X10
+mat 0
+refs 4
+2 0.289364 0.047227
+3 0.289277 0.019144
+0 0.375452 0.018871
+1 0.375536 0.046954
 kids 0
 OBJECT poly
 name "inter-trans-oil-press"
@@ -9352,6 +9500,27 @@ refs 4
 3 0.187943 0.767617
 0 0.188023 0.7957
 1 0.102967 0.796004
+kids 0
+OBJECT poly
+name "isolation-valve-open"
+data 21
+hoist-shear-armed.008
+crease 30.0
+texture "cws.png"
+texrep 1 1
+numvert 4
+0.00256 -0.10975 0.00117
+0.00257 -0.10221 0.00117
+0.0026 -0.10222 0.02385
+0.0026 -0.10976 0.02385
+numsurf 1
+SURF 0X10
+mat 0
+refs 4
+2 0.105047 0.096423
+3 0.104961 0.06834
+0 0.191135 0.068067
+1 0.19122 0.09615
 kids 0
 OBJECT poly
 name "left-pilot-pitot-heat"
@@ -9541,6 +9710,27 @@ refs 4
 3 0.283122 0.767289
 0 0.283204 0.795386
 1 0.197705 0.795683
+kids 0
+OBJECT poly
+name "tail-skid-up"
+data 17
+fuel-temp-low.001
+crease 30.0
+texture "cws.png"
+texrep 1 1
+numvert 4
+0.00262 -0.07737 0.02392
+0.00261 -0.08491 0.02392
+0.00257 -0.0849 0.00125
+0.00258 -0.07736 0.00125
+numsurf 1
+SURF 0X10
+mat 0
+refs 4
+2 0.188452 0.159682
+3 0.188539 0.187775
+0 0.101808 0.188036
+1 0.101727 0.159957
 kids 0
 OBJECT poly
 name "trans-oil-hot"

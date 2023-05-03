@@ -75,8 +75,7 @@
       <binding>
         <command>nasal</command>
         <script>
-          var p = "/controls/rotor/brake";
-          setprop(p, !getprop(p));
+          setprop("/controls/rotor/brake", 0.834);
         </script>
       </binding>
     </key>
@@ -86,12 +85,12 @@
       <desc>Apply rotor brake</desc>
       <binding>
         <command>nasal</command>
-        <script>interpolate("/controls/rotor/brake", 1.0, 2)</script>
+        <script>interpolate("/controls/rotor/brake", 0,834, 2);</script>
       </binding>
       <mod-up>
         <binding>
           <command>nasal</command>
-          <script>interpolate("/controls/rotor/brake", 0.0, 2)</script>
+          <script>interpolate("/controls/rotor/brake", 0.0, 2);</script>
         </binding>
       </mod-up>
     </key>

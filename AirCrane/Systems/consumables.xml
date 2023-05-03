@@ -5,21 +5,22 @@
   <fuel>
     <aft>
       <level-lbs type="int">0</level-lbs>
-      <bug type="double">0</bug>
       <pressure type="double">0</pressure>
       <flow type="double">0</flow>
       <temp type="double">0</temp>
+      <fuel-limit-bug type="double">0</fuel-limit-bug>
     </aft>
     <fwd>
       <level-lbs type="int">0</level-lbs>
-      <bug type="double">0</bug>
       <pressure type="double">0</pressure>
       <flow type="double">0</flow>
       <temp type="double">0</temp>
+      <fuel-limit-bug type="double">0</fuel-limit-bug>
     </fwd>
     <aux>
       <level-lbs type="int">0</level-lbs>
       <temp type="double">0</temp>
+      <fuel-limit-bug type="double">0</fuel-limit-bug>
     </aux>
     <shutoff>
       <lever>

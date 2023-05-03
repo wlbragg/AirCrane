@@ -385,6 +385,10 @@
     <hoist-control type="bool">false</hoist-control>
     <pedaladjustleft type="bool">false</pedaladjustleft>
     <pedaladjustright type="bool">false</pedaladjustright>
+	<fuelpump1eng1 type="bool">false</fuelpump1eng1>
+	<fuelpump2eng1 type="bool">false</fuelpump2eng1>
+	<fuelpump1eng2 type="bool">false</fuelpump1eng2>
+	<fuelpump2eng2 type="bool">false</fuelpump2eng2>
     <spring-switch>
       <afcs-servo type="int">0</afcs-servo>
       <afcs type="int">0</afcs>

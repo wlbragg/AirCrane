@@ -59,6 +59,15 @@
     <object-name>app-on</object-name>
     <object-name>rear-control-engaged</object-name>
     <object-name>hoist-shear-armed</object-name>
+    <object-name>hook-unlocked</object-name>
+    <object-name>auto-hook-release</object-name>
+    <object-name>app-hyd-press-low</object-name>
+    <object-name>isolation-valve-open</object-name>
+    <object-name>4pt-jettison-armed</object-name>
+    <object-name>tail-skid-up</object-name>
+    <object-name>external-power-connected</object-name>
+	<object-name>heater-hot</object-name>
+    <object-name>eaps-press</object-name>
   </effect>
 
   <effect>
@@ -69,57 +78,66 @@
   <!-- CWS bright -->
   <animation>
     <type>material</type>
-    <object-name>1-eng-anti-ice</object-name>
-    <object-name>1-eng-anti-ice-on</object-name>
-    <object-name>1-eng-chip</object-name>
-    <object-name>1-eng-fuel-bypass</object-name>
-    <object-name>1-eng-oil-press</object-name>
-    <object-name>1-eng-starter-on</object-name>
-    <object-name>1-eng-t5</object-name>
-    <object-name>1-fuel-press</object-name>
-    <object-name>1-gen</object-name>
-    <object-name>1-rect</object-name>
-    <object-name>1st-stage-servo</object-name>
-    <object-name>1st-stage-servo-press</object-name>
-    <object-name>1st-stg-tl-rotor-servo</object-name>
-    <object-name>2-eng-anti-ice</object-name>
-    <object-name>2-eng-anti-ice-on</object-name>
-    <object-name>2-eng-chip</object-name>
-    <object-name>2-eng-fuel-bypass</object-name>
-    <object-name>2-eng-oil-press</object-name>
-    <object-name>2-eng-starter-on</object-name>
-    <object-name>2-eng-t5</object-name>
-    <object-name>2-fuel-press</object-name>
-    <object-name>2-gen</object-name>
-    <object-name>2-rect</object-name>
-    <object-name>2nd-stage-servo</object-name>
-    <object-name>2nd-stage-servo-press</object-name>
     <object-name>afcs-off</object-name>
-    <object-name>afcs-servo-press</object-name>
-    <object-name>aft-fuel-low</object-name>
-    <object-name>app-on</object-name>
-    <object-name>aux-fuel-press</object-name>
-    <object-name>chip-inter-trans</object-name>
     <object-name>chip-main-trans</object-name>
-    <object-name>chip-tail-trans</object-name>
-    <object-name>ext-power-connected</object-name>
-    <object-name>fuel-temp-low</object-name>
-    <object-name>fwd-fuel-low</object-name>
-    <object-name>hoist-oil-hot</object-name>
-    <object-name>hoist-overspeed</object-name>
-    <object-name>hoist-shear-armed</object-name>
-    <object-name>inter-trans-oil-press</object-name>
-    <object-name>left-pilot-pitot-heat</object-name>
-    <object-name>left-pilot-turn-slip</object-name>
-    <object-name>oil-cooler</object-name>
-    <object-name>parking-brake-on</object-name>
-    <object-name>rear-control-engaged</object-name>
-    <object-name>right-pilot-pitot-heat</object-name>
-    <object-name>right-pilot-turn-slip</object-name>
-    <object-name>rotor-brake-on</object-name>
-    <object-name>rotor-brake-press</object-name>
-    <object-name>trans-oil-hot</object-name>
+    <object-name>1-eng-chip</object-name>
     <object-name>trans-oil-press</object-name>
+    <object-name>chip-inter-trans</object-name>
+    <object-name>2-eng-chip</object-name>
+    <object-name>1-eng-t5</object-name>
+    <object-name>trans-oil-hot</object-name>
+    <object-name>chip-tail-trans</object-name>
+    <object-name>2-eng-t5</object-name>
+    <object-name>1-eng-oil-press</object-name>
+    <object-name>inter-trans-oil-press</object-name>
+    <object-name>rotor-brake-press</object-name>
+    <object-name>2-eng-oil-press</object-name>
+    <object-name>1st-stage-servo</object-name>
+    <object-name>2nd-stage-servo</object-name>
+    <object-name>1st-stg-tl-rotor-servo</object-name>
+    <object-name>afcs-servo-press</object-name>
+    <object-name>1-eng-fuel-bypass</object-name>
+    <object-name>1-gen</object-name>
+    <object-name>2-gen</object-name>
+    <object-name>2-eng-fuel-bypass</object-name>
+    <object-name>1-eng-anti-ice</object-name>
+    <object-name>1-rect</object-name>
+    <object-name>2-rect</object-name>
+    <object-name>2-eng-anti-ice</object-name>
+    <object-name>1-fuel-press</object-name>
+    <object-name>fwd-fuel-low</object-name>
+    <object-name>aft-fuel-low</object-name>
+    <object-name>2-fuel-press</object-name>
+    <object-name>aux-fuel-press</object-name>
+    <object-name>left-pilot-pitot-heat</object-name>
+    <object-name>right-pilot-pitot-heat</object-name>
+    <object-name>left-pilot-turn-slip</object-name>
+    <object-name>hoist-oil-hot</object-name>
+    <object-name>right-pilot-turn-slip</object-name>
+    <object-name>1st-stage-servo-press</object-name>
+    <object-name>oil-cooler</object-name>
+    <object-name>hoist-overspeed</object-name>
+    <object-name>2nd-stage-servo-press</object-name>
+    <object-name>1-eng-starter-on</object-name>
+    <object-name>ext-power-connected</object-name>
+    <object-name>parking-brake-on</object-name>
+    <object-name>2-eng-starter-on</object-name>
+    <object-name>1-eng-anti-ice-on</object-name>
+    <object-name>rotor-brake-on</object-name>
+    <object-name>2-eng-anti-ice-on</object-name>
+    <object-name>fuel-temp-low</object-name>
+    <object-name>app-on</object-name>
+    <object-name>rear-control-engaged</object-name>
+    <object-name>hoist-shear-armed</object-name>
+    <object-name>hook-unlocked</object-name>
+    <object-name>auto-hook-release</object-name>
+    <object-name>app-hyd-press-low</object-name>
+    <object-name>isolation-valve-open</object-name>
+    <object-name>4pt-jettison-armed</object-name>
+    <object-name>tail-skid-up</object-name>
+    <object-name>external-power-connected</object-name>
+	<object-name>heater-hot</object-name>
+    <object-name>eaps-press</object-name>
     <emission>
       <factor-prop>/sim/model/aircrane/lighting/cws-bright</factor-prop>
       <red>   1 </red>
@@ -136,30 +154,94 @@
     <object-name>2-eng-chip</object-name>
     <object-name>2-eng-starter-on</object-name>
     <object-name>2-eng-t5</object-name>
-    <object-name>afcs-off</object-name>
-    <object-name>aft-fuel-low</object-name>
-    <object-name>aux-fuel-press</object-name>
     <object-name>1-eng-fuel-bypass</object-name>
     <object-name>2-eng-fuel-bypass</object-name>
     <object-name>chip-inter-trans</object-name>
     <object-name>chip-main-trans</object-name>
     <object-name>chip-tail-trans</object-name>
     <object-name>ext-power-connected</object-name>
-    <object-name>fwd-fuel-low</object-name>
     <object-name>hoist-oil-hot</object-name>
     <object-name>hoist-overspeed</object-name>
     <object-name>hoist-shear-armed</object-name>
     <object-name>left-pilot-pitot-heat</object-name>
     <object-name>left-pilot-turn-slip</object-name>
     <object-name>oil-cooler</object-name>
-    <object-name>parking-brake-on</object-name>
     <object-name>rear-control-engaged</object-name>
     <object-name>right-pilot-pitot-heat</object-name>
     <object-name>right-pilot-turn-slip</object-name>
-    <object-name>rotor-brake-press</object-name>
     <object-name>trans-oil-hot</object-name>
+    <object-name>hook-unlocked</object-name>
+    <object-name>auto-hook-release</object-name>
+    <object-name>isolation-valve-open</object-name>
+    <object-name>4pt-jettison-armed</object-name>
+    <object-name>tail-skid-up</object-name>
+    <object-name>external-power-connected</object-name>
+	<object-name>heater-hot</object-name>
+    <object-name>eaps-press</object-name>
     <condition>
       <property>/systems/electrical/outputs/cws-test-power</property>
+    </condition>
+  </animation>
+
+  <!--animation>
+    <type>select</type>
+        <object-name>hook-unlocked</object-name>
+    <condition>
+      <or>
+		<equals>
+			<property>/sim/model/hitch/hitchhook</property>
+			<value>0</value>
+		</equals>
+        <property>/systems/electrical/outputs/cws-test-power</property>
+      </or>
+    </condition>
+  </animation-->
+
+  <animation>
+    <type>select</type>
+    <object-name>rotor-brake-on</object-name>
+    <condition>
+      <or>
+		<and>
+			<property>/systems/electrical/outputs/cws-rotor-brake-on</property>
+			<greater-than>
+				<property>/controls/rotor/brake</property>
+				<value>.8</value>
+			</greater-than>
+		</and>
+        <property>/systems/electrical/outputs/cws-test-power</property>
+      </or>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>rotor-brake-press</object-name>
+    <condition>
+      <or>
+        <and>
+			<property>/systems/electrical/outputs/cws-rotor-brake-on</property>
+			<greater-than>
+				<property>/controls/rotor/brake</property>
+				<value>.10</value>
+			</greater-than>
+		</and>
+        <property>/systems/electrical/outputs/cws-test-power</property>
+      </or>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>parking-brake-on</object-name>
+    <condition>
+      <or>
+		<and>
+			<property>systems/electrical/outputs/cws-power</property>
+			<property>/controls/gear/brake-parking</property>
+		</and>
+        <property>/systems/electrical/outputs/cws-test-power</property>
+      </or>
     </condition>
   </animation>
 
@@ -184,6 +266,45 @@
       </or>
     </condition>
   </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>fwd-fuel-low</object-name>
+    <condition>
+      <or>
+		<and>
+			<property>systems/electrical/outputs/cws-power</property>
+			<property>/systems/fuel/fwd-fuel-low</property>
+		</and>
+		<property>/systems/electrical/outputs/cws-test-power</property>
+      </or>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>aft-fuel-low</object-name>
+    <condition>
+      <or>
+        <and>
+			<property>systems/electrical/outputs/cws-power</property>
+			<property>/systems/fuel/aft-fuel-low</property>
+		</and>
+        <property>/systems/electrical/outputs/cws-test-power</property>
+      </or>
+    </condition>
+  </animation>
+
+  <!--animation>
+    <type>select</type>
+    <object-name>low-aux-fuel</object-name>
+    <condition>
+      <or>
+        <property>/systems/fuel/aux-fuel-low</property>
+        <property>/systems/electrical/outputs/cws-test-power</property>
+      </or>
+    </condition>
+  </animation-->
 
   <animation>
     <type>select</type>
@@ -267,7 +388,26 @@
     <object-name>app-on</object-name>
     <condition>
       <or>
-        <property>/systems/electrical/outputs/cws-app-on</property>
+		<and>
+			<property>/controls/engines/engine[2]/running</property>
+			<property>/systems/electrical/outputs/cws-app-on</property>
+		</and>
+		<property>/systems/electrical/outputs/cws-test-power</property>
+      </or>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>app-hyd-press-low</object-name>
+    <condition>
+      <or>
+		<and>
+			<not>
+				<property>/controls/engines/engine[2]/running</property>
+			</not>
+			<property>/systems/electrical/outputs/cws-app-on</property>
+		</and>
         <property>/systems/electrical/outputs/cws-test-power</property>
       </or>
     </condition>
@@ -275,12 +415,113 @@
 
   <animation>
     <type>select</type>
-    <object-name>rotor-brake-on</object-name>
+    <object-name>afcs-off</object-name>
     <condition>
       <or>
-        <property>/systems/electrical/outputs/cws-rotor-brake-on</property>
+		<and>
+			<property>systems/electrical/outputs/cws-power</property>
+			<not>
+				<and>
+					<property>/controls/switches/afcs-servo</property>
+					<property>/controls/switches/afcs</property>
+				</and>
+			</not>
+		</and>
         <property>/systems/electrical/outputs/cws-test-power</property>
       </or>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>afcs-servo-press</object-name>
+    <condition>
+      <and>
+        <property>/systems/electrical/outputs/cws-power</property>
+        <or>
+			<not>
+				<property>/controls/switches/afcs-servo</property>
+			</not>
+			<less-than>
+				<property>/engines/engine-rpm</property>
+				<value>0.08</value>
+			</less-than>
+          <property>/systems/electrical/outputs/cws-test-power</property>
+        </or>
+      </and>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>1-fuel-press</object-name>
+    <condition>
+      <and>
+        <property>/systems/electrical/outputs/cws-power</property>
+        <or>
+			<and>
+				<not>
+					<property>/controls/switches/fuelpump1eng1</property>
+				</not>
+				<not>
+					<property>/controls/switches/fuelpump2eng1</property>
+				</not>
+			</and>
+			<property>/systems/electrical/outputs/cws-test-power</property>
+        </or>
+      </and>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>2-fuel-press</object-name>
+    <condition>
+      <and>
+        <property>/systems/electrical/outputs/cws-power</property>
+        <or>
+			<and>
+				<not>
+					<property>/controls/switches/fuelpump1eng2</property>
+				</not>
+				<not>
+					<property>/controls/switches/fuelpump2eng2</property>
+				</not>
+			</and>
+			<property>/systems/electrical/outputs/cws-test-power</property>
+        </or>
+      </and>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>aux-fuel-press</object-name>
+    <condition>
+      <and>
+        <property>/systems/electrical/outputs/cws-power</property>
+        <or>
+			<and>
+				<less-than>
+					<property>/consumables/fuel/aux/level-lbs</property>
+					<value>23</value>
+				</less-than>
+				<or>
+					<property>/controls/fuel/afpno1</property>
+					<property>/controls/fuel/afpno2</property>
+				</or>
+			</and>
+			<and>
+				<not>
+					<property>/controls/fuel/afpno1</property>
+				</not>
+				<not>
+					<property>/controls/fuel/afpno2</property>
+				</not>
+			</and>
+			<property>/systems/electrical/outputs/cws-test-power</property>
+        </or>
+      </and>
     </condition>
   </animation>
 
@@ -293,9 +534,6 @@
     <object-name>1st-stage-servo</object-name>
     <object-name>2nd-stage-servo</object-name>
     <object-name>1st-stg-tl-rotor-servo</object-name>
-    <object-name>afcs-servo-press</object-name>
-    <object-name>1-fuel-press</object-name>
-    <object-name>2-fuel-press</object-name>
     <object-name>1st-stage-servo-press</object-name>
     <object-name>2nd-stage-servo-press</object-name>
     <condition>

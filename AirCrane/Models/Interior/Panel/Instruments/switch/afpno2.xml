@@ -15,7 +15,7 @@
     <object-name>switch</object-name>
     <property>/controls/fuel/afpno2</property>
     <factor>-60</factor>
-    <offset-deg>0</offset-deg>
+    <offset-deg>30</offset-deg>
     <axis>
       <x> 0 </x>
       <y> 1 </y>
