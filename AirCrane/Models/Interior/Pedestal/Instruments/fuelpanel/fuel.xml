@@ -216,9 +216,9 @@
         <property>/sim/model/lightmap/fuel-boost-pump1-eng1-red/factor</property>
     </condition>
     <emission>
-      <red>   1 </red>
-      <green> 0 </green>
-      <blue>  0 </blue>
+      <red>   0.5 </red>
+      <green> 0.0 </green>
+      <blue>  0.0 </blue>
     </emission>
   </animation>
 
@@ -275,9 +275,9 @@
         <property>/sim/model/lightmap/fuel-boost-pump2-eng1-red/factor</property>
     </condition>
     <emission>
-      <red>   .5 </red>
-      <green> 0 </green>
-      <blue>  0 </blue>
+      <red>   0.5 </red>
+      <green> 0.0 </green>
+      <blue>  0.0 </blue>
     </emission>
   </animation>
 
@@ -334,9 +334,9 @@
         <property>/sim/model/lightmap/fuel-boost-pump1-eng2-red/factor</property>
     </condition>
     <emission>
-      <red>   1 </red>
-      <green> 0 </green>
-      <blue>  0 </blue>
+      <red>   0.5 </red>
+      <green> 0.0 </green>
+      <blue>  0.0 </blue>
     </emission>
   </animation>
 
@@ -393,9 +393,9 @@
         <property>/sim/model/lightmap/fuel-boost-pump2-eng2-red/factor</property>
     </condition>
     <emission>
-      <red>   1 </red>
-      <green> 0 </green>
-      <blue>  0 </blue>
+      <red>   0.5 </red>
+      <green> 0.0 </green>
+      <blue>  0.0 </blue>
     </emission>
   </animation>
 
