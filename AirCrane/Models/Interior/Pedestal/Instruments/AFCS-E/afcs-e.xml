@@ -427,9 +427,12 @@
         <z-m> 0.0120</z-m>
     </offsets>
     <condition>
-        <not>
-            <property>/sim/model/lightmap/bar-alt-green/factor</property>
-        </not>
+		<and>
+			<not>
+				<property>/sim/model/lightmap/bar-alt-green/factor</property>
+			</not>
+			<property>systems/electrical/outputs/light-advisory</property>
+		</and>
     </condition>
   </model>
 
