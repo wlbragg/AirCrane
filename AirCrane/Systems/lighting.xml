@@ -33,7 +33,7 @@
           <property>/systems/electrical/outputs/landing-light</property>
           <value>20.0</value>
         </greater-than>
-		<property>/controls/lighting/landing-light-switch</property>
+        <property>/controls/lighting/landing-light-switch</property>
       </and>
     </input>
     <output>
@@ -53,7 +53,7 @@
           <property>/systems/electrical/outputs/spot-light</property>
           <value>20.0</value>
         </greater-than>
-		<property>/controls/lighting/spot-light-switch</property>
+        <property>/controls/lighting/spot-light-switch</property>
       </and>
     </input>
     <output>
@@ -173,10 +173,10 @@
           <property>/systems/electrical/outputs/main-left/interior-dome</property>
           <value>20.0</value>
         </greater-than>
-		<equals>
-			<property>/controls/switches/dome</property>
-			<value>1</value>
-		</equals>
+        <equals>
+            <property>/controls/switches/dome</property>
+            <value>1</value>
+        </equals>
       </and>
     </input>
     <output>
@@ -196,14 +196,152 @@
           <property>/systems/electrical/outputs/main-left/interior-dome</property>
           <value>20.0</value>
         </greater-than>
-		<equals>
-			<property>/controls/switches/dome</property>
-			<value>-1</value>
-		</equals>
+        <equals>
+            <property>/controls/switches/dome</property>
+            <value>-1</value>
+        </equals>
       </and>
     </input>
     <output>
       <property>/sim/model/lightmap/dome-red/factor</property>
+    </output>
+  </logic>
+
+  <logic>
+    <name>Interior AFCS1</name>
+    <input>
+      <and>
+        <less-than>
+          <property>/systems/electrical/outputs/main-left/afcs1</property>
+          <value>31.5</value>
+        </less-than>
+        <greater-than>
+          <property>/systems/electrical/outputs/main-left/afcs1</property>
+          <value>20.0</value>
+        </greater-than>
+        <equals>
+            <property>/controls/switches/afcs</property>
+            <value>1</value>
+        </equals>
+      </and>
+    </input>
+    <output>
+      <property>/sim/model/lightmap/afcs-green/factor</property>
+    </output>
+  </logic>
+
+  <logic>
+    <name>Interior Bar-Alt</name>
+    <input>
+      <and>
+        <less-than>
+          <property>/systems/electrical/outputs/main-left/bar-alt</property>
+          <value>31.5</value>
+        </less-than>
+        <greater-than>
+          <property>/systems/electrical/outputs/main-left/bar-alt</property>
+          <value>20.0</value>
+        </greater-than>
+        <equals>
+            <property>/controls/switches/bar-alt</property>
+            <value>1</value>
+        </equals>
+      </and>
+    </input>
+    <output>
+      <property>/sim/model/lightmap/bar-alt-green/factor</property>
+    </output>
+  </logic>
+
+  <logic>
+    <name>Interior Fuel Pump 1 Eng 1</name>
+    <input>
+      <and>
+        <less-than>
+          <property>/systems/electrical/outputs/main-left/fuel-boost-pump1-eng1</property>
+          <value>31.5</value>
+        </less-than>
+        <greater-than>
+          <property>/systems/electrical/outputs/main-left/fuel-boost-pump1-eng1</property>
+          <value>20.0</value>
+        </greater-than>
+        <equals>
+            <property>/controls/switches/fuelpump1eng1</property>
+            <value>0</value>
+        </equals>
+      </and>
+    </input>
+    <output>
+      <property>/sim/model/lightmap/fuel-boost-pump1-eng1-red/factor</property>
+    </output>
+  </logic>
+
+  <logic>
+    <name>Interior Fuel Pump 2 Eng 1</name>
+    <input>
+      <and>
+        <less-than>
+          <property>/systems/electrical/outputs/main-left/fuel-boost-pump2-eng1</property>
+          <value>31.5</value>
+        </less-than>
+        <greater-than>
+          <property>/systems/electrical/outputs/main-left/fuel-boost-pump2-eng1</property>
+          <value>20.0</value>
+        </greater-than>
+        <equals>
+            <property>/controls/switches/fuelpump2eng1</property>
+            <value>0</value>
+        </equals>
+      </and>
+    </input>
+    <output>
+      <property>/sim/model/lightmap/fuel-boost-pump2-eng1-red/factor</property>
+    </output>
+  </logic>
+
+  <logic>
+    <name>Interior Fuel Pump 1 Eng 2</name>
+    <input>
+      <and>
+        <less-than>
+          <property>/systems/electrical/outputs/main-left/fuel-boost-pump1-eng2</property>
+          <value>31.5</value>
+        </less-than>
+        <greater-than>
+          <property>/systems/electrical/outputs/main-left/fuel-boost-pump1-eng2</property>
+          <value>20.0</value>
+        </greater-than>
+        <equals>
+            <property>/controls/switches/fuelpump1eng2</property>
+            <value>0</value>
+        </equals>
+      </and>
+    </input>
+    <output>
+      <property>/sim/model/lightmap/fuel-boost-pump1-eng2-red/factor</property>
+    </output>
+  </logic>
+
+  <logic>
+    <name>Interior Fuel Pump 2 Eng 2</name>
+    <input>
+      <and>
+        <less-than>
+          <property>/systems/electrical/outputs/main-left/fuel-boost-pump2-eng2</property>
+          <value>31.5</value>
+        </less-than>
+        <greater-than>
+          <property>/systems/electrical/outputs/main-left/fuel-boost-pump2-eng2</property>
+          <value>20.0</value>
+        </greater-than>
+        <equals>
+            <property>/controls/switches/fuelpump2eng2</property>
+            <value>0</value>
+        </equals>
+      </and>
+    </input>
+    <output>
+      <property>/sim/model/lightmap/fuel-boost-pump2-eng2-red/factor</property>
     </output>
   </logic>
 

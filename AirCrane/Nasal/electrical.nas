@@ -260,7 +260,6 @@ var init_electrical = func{
     append(cbs_isol_right, "gen-voltage-right");
 
     append(cbs_main_left, "left-sense");
-    append(cbs_main_left, "fuel-boost-left");
     append(cbs_main_left, "annun-genoff-left");
     append(cbs_main_left, "light-recog-left");
     append(cbs_main_left, "light-advisory");
@@ -282,7 +281,6 @@ var init_electrical = func{
     append(cbs_main_left, "engine-shutoff-left");
     append(cbs_main_left, "sys-flap-ctrl");
     append(cbs_main_left, "rec-flight");
-    append(cbs_main_left, "fuel-boost-right");
     append(cbs_main_left, "engine-fuelflow-left");
     append(cbs_main_left, "engine-qty-left");
     append(cbs_main_left, "engine-ign-right");
@@ -328,6 +326,10 @@ var init_electrical = func{
     append(cbs_main_left, "fuel-heat-eng2");
     append(cbs_main_left, "fuel-heat");
     append(cbs_main_left, "interior-dome");
+    append(cbs_main_left, "fuel-boost-pump1-eng1");
+    append(cbs_main_left, "fuel-boost-pump2-eng1");
+    append(cbs_main_left, "fuel-boost-pump1-eng2");
+    append(cbs_main_left, "fuel-boost-pump2-eng2");
 
 ######## USING ##########
     append(cbs_main_left, "landing-light");

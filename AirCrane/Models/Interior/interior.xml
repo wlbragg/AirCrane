@@ -93,16 +93,160 @@
     <object-name>intvitresreardoorE</object-name>
   </animation>
 
+    <!-- procedural lighting -->
     <model>
-        <name>domered</name>
+        <name>dome-red</name>
         <path>Aircraft/AirCrane/Models/Effects/Interior/procedural_light_dome_red.xml</path>
         <offsets>
             <x-m>-8.356</x-m>
-            <y-m> 0.049</y-m>
-            <z-m>-0.605</z-m>
+            <y-m> 0.048791</y-m>
+            <z-m>-0.603</z-m>
         </offsets>
         <condition>
-			<property>/sim/model/lightmap/dome-red/factor</property>
+            <property>/sim/model/lightmap/dome-red/factor</property>
+        </condition>
+    </model>
+
+    <model>
+        <name>dome-white</name>
+        <path>Aircraft/AirCrane/Models/Effects/Interior/procedural_light_dome_white.xml</path>
+        <offsets>
+            <x-m>-8.356</x-m>
+            <y-m>-0.041165</y-m>
+            <z-m>-0.603</z-m>
+        </offsets>
+        <condition>
+            <property>/sim/model/lightmap/dome-white/factor</property>
+        </condition>
+    </model>
+
+    <model>
+        <name>afcs-green</name>
+        <path>Aircraft/AirCrane/Models/Effects/Interior/procedural_light_indicator_green.xml</path>
+        <offsets>
+            <x-m>-9.17851</x-m>
+            <y-m>-0.096264</y-m>
+            <z-m>-1.748</z-m>
+        </offsets>
+        <condition>
+            <property>/sim/model/lightmap/afcs-green/factor</property>
+        </condition>
+    </model>
+
+    <model>
+        <name>bar-alt-green</name>
+        <path>Aircraft/AirCrane/Models/Effects/Interior/procedural_light_indicator_green.xml</path>
+        <offsets>
+            <x-m>-9.1795</x-m>
+            <y-m>-0.062</y-m>
+            <z-m>-1.748</z-m>
+        </offsets>
+        <condition>
+            <property>/sim/model/lightmap/bar-alt-green/factor</property>
+        </condition>
+    </model>
+
+    <model>
+        <name>fuel-pump1-eng1-red</name>
+        <path>Aircraft/AirCrane/Models/Effects/Interior/procedural_light_indicator_red.xml</path>
+        <offsets>
+            <x-m>-9.2795</x-m>
+            <y-m>-0.1027</y-m>
+            <z-m>-1.731</z-m>
+        </offsets>
+        <condition>
+            <property>/sim/model/lightmap/fuel-boost-pump1-eng1-red/factor</property>
+        </condition>
+    </model>
+
+    <model>
+        <name>fuel-pump2-eng1-red</name>
+        <path>Aircraft/AirCrane/Models/Effects/Interior/procedural_light_indicator_red.xml</path>
+        <offsets>
+            <x-m>-9.2795</x-m>
+            <y-m>-0.061929</y-m>
+            <z-m>-1.73181</z-m>
+        </offsets>
+        <condition>
+            <property>/sim/model/lightmap/fuel-boost-pump2-eng1-red/factor</property>
+        </condition>
+    </model>
+
+    <model>
+        <name>fuel-pump1-eng2-red</name>
+        <path>Aircraft/AirCrane/Models/Effects/Interior/procedural_light_indicator_red.xml</path>
+        <offsets>
+            <x-m>-9.28114</x-m>
+            <y-m>-0.023212</y-m>
+            <z-m>-1.73148</z-m>
+        </offsets>
+        <condition>
+            <property>/sim/model/lightmap/fuel-boost-pump1-eng2-red/factor</property>
+        </condition>
+    </model>
+
+    <model>
+        <name>fuel-pump2-eng2-red</name>
+        <path>Aircraft/AirCrane/Models/Effects/Interior/procedural_light_indicator_red.xml</path>
+        <offsets>
+            <x-m>-9.28091</x-m>
+            <y-m> 0.018639</y-m>
+            <z-m>-1.73166</z-m>
+        </offsets>
+        <condition>
+            <property>/sim/model/lightmap/fuel-boost-pump2-eng2-red/factor</property>
+        </condition>
+    </model>
+
+    <model>
+        <name>low-turbine-pwr-eng1-red</name>
+        <path>Aircraft/AirCrane/Models/Effects/Interior/procedural_light_indicator_red.xml</path>
+        <offsets>
+            <x-m>-9.35388</x-m>
+            <y-m>-0.148719</y-m>
+            <z-m>-1.26984</z-m>
+        </offsets>
+        <condition>
+            <property>/systems/electrical/outputs/eng1-underspeed</property>
+        </condition>
+    </model>
+
+    <model>
+        <name>low-turbine-pwr-eng2-red</name>
+        <path>Aircraft/AirCrane/Models/Effects/Interior/procedural_light_indicator_red.xml</path>
+        <offsets>
+            <x-m>-9.3538</x-m>
+            <y-m> 0.150234</y-m>
+            <z-m>-1.26999</z-m>
+        </offsets>
+        <condition>
+            <property>/systems/electrical/outputs/eng2-underspeed</property>
+        </condition>
+    </model>
+
+    <model>
+        <name>low-turbine-pwr-quad-eng1-red</name>
+        <path>Aircraft/AirCrane/Models/Effects/Interior/procedural_light_sm_indicator_red.xml</path>
+        <offsets>
+            <x-m>-8.9217</x-m>
+            <y-m>-0.14998</y-m>
+            <z-m>-0.6410</z-m>
+        </offsets>
+        <condition>
+            <property>/systems/electrical/outputs/eng1-underspeed</property>
+        </condition>
+    </model>
+
+    <model>
+        <name>low-turbine-pwr-quad-eng2-red</name>
+        <path>Aircraft/AirCrane/Models/Effects/Interior/procedural_light_sm_indicator_red.xml</path>
+        <offsets>
+            <x-m>-8.921</x-m>
+            <y-m> 0.147651</y-m>
+            <z-m>-0.6425</z-m>
+        </offsets>
+        <condition>
+            <property>/systems/electrical/outputs/eng2-underspeed</property>
         </condition>
     </model>
 

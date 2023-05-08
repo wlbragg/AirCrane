@@ -142,15 +142,12 @@
       <cb-main-left-3 type="bool">1</cb-main-left-3>
 
       <main-left>
-        <!-- circuit-breakers on left main bus located in J-Box -->
         <cb-left-sense type="bool">1</cb-left-sense>
-        <cb-fuel-boost-left type="bool">1</cb-fuel-boost-left>
         <cb-annun-genoff-left type="bool">1</cb-annun-genoff-left>
         <cb-light-recog-left type="bool">1</cb-light-recog-left>
         <cb-light-advisory type="bool">1</cb-light-advisory>
         <cb-light-indirect type="bool">1</cb-light-indirect>
         <cb-entertainment type="bool">1</cb-entertainment>
-        <!-- circuit-breakers on left main bus located on left panel -->
         <cb-engine-fan-left type="bool">1</cb-engine-fan-left>
         <cb-engine-turbine-left type="bool">1</cb-engine-turbine-left>
         <cb-light-panel-left type="bool">1</cb-light-panel-left>
@@ -168,7 +165,6 @@
         <cb-engine-shutoff-left type="bool">1</cb-engine-shutoff-left>
         <cb-sys-flap-ctrl type="bool">1</cb-sys-flap-ctrl>
         <cb-rec-flight type="bool">1</cb-rec-flight>
-        <cb-fuel-boost-right type="bool">1</cb-fuel-boost-right>
         <cb-engine-fuelflow-left type="bool">1</cb-engine-fuelflow-left>
         <cb-engine-qty-left type="bool">1</cb-engine-qty-left>
         <cb-engine-ign-right type="bool">1</cb-engine-ign-right>
@@ -209,6 +205,12 @@
         <cb-fuel-heat-eng2 type="bool">1</cb-fuel-heat-eng2>
         <cb-fuel-heat type="bool">1</cb-fuel-heat>
         <cb-interior-dome type="bool">1</cb-interior-dome>
+        <cb-fuel-boost-pump1-eng1 type="bool">1</cb-fuel-boost-pump1-eng1>
+        <cb-fuel-boost-pump2-eng1 type="bool">1</cb-fuel-boost-pump2-eng1>
+        <cb-fuel-boost-pump1-eng2 type="bool">1</cb-fuel-boost-pump1-eng2>
+        <cb-fuel-boost-pump2-eng2 type="bool">1</cb-fuel-boost-pump2-eng2>
+        <cb-afcs1 type="bool">1</cb-afcs1>
+        <cb-bar-alt type="bool">1</cb-bar-alt>
 
       </main-left>
 
@@ -385,10 +387,10 @@
     <hoist-control type="bool">false</hoist-control>
     <pedaladjustleft type="bool">false</pedaladjustleft>
     <pedaladjustright type="bool">false</pedaladjustright>
-	<fuelpump1eng1 type="bool">false</fuelpump1eng1>
-	<fuelpump2eng1 type="bool">false</fuelpump2eng1>
-	<fuelpump1eng2 type="bool">false</fuelpump1eng2>
-	<fuelpump2eng2 type="bool">false</fuelpump2eng2>
+    <fuelpump1eng1 type="bool">false</fuelpump1eng1>
+    <fuelpump2eng1 type="bool">false</fuelpump2eng1>
+    <fuelpump1eng2 type="bool">false</fuelpump1eng2>
+    <fuelpump2eng2 type="bool">false</fuelpump2eng2>
     <spring-switch>
       <afcs-servo type="int">0</afcs-servo>
       <afcs type="int">0</afcs>

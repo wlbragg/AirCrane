@@ -209,6 +209,19 @@
     </hovered>
   </animation>
 
+  <animation>
+    <object-name>fail-fwd-tnk-pump1-on</object-name>
+    <type>material</type>
+    <condition>
+        <property>/sim/model/lightmap/fuel-boost-pump1-eng1-red/factor</property>
+    </condition>
+    <emission>
+      <red>   1 </red>
+      <green> 0 </green>
+      <blue>  0 </blue>
+    </emission>
+  </animation>
+
   <!-- FWD Tank Pump 2 "Switch" -->
   <animation>
     <type>knob</type>
@@ -253,6 +266,19 @@
         </script>
       </binding>
     </hovered>
+  </animation>
+
+  <animation>
+    <object-name>fail-fwd-tnk-pump2-on</object-name>
+    <type>material</type>
+    <condition>
+        <property>/sim/model/lightmap/fuel-boost-pump2-eng1-red/factor</property>
+    </condition>
+    <emission>
+      <red>   1 </red>
+      <green> 0 </green>
+      <blue>  0 </blue>
+    </emission>
   </animation>
 
   <!-- AFT Tank Pump 1 "Switch" -->
@@ -301,6 +327,19 @@
     </hovered>
   </animation>
 
+  <animation>
+    <object-name>fail-aft-tnk-pump1-on</object-name>
+    <type>material</type>
+    <condition>
+        <property>/sim/model/lightmap/fuel-boost-pump1-eng2-red/factor</property>
+    </condition>
+    <emission>
+      <red>   1 </red>
+      <green> 0 </green>
+      <blue>  0 </blue>
+    </emission>
+  </animation>
+
   <!-- AFT Fuel Tank Pump 2 "Switch" -->
   <animation>
     <type>knob</type>
@@ -345,6 +384,19 @@
         </script>
       </binding>
     </hovered>
+  </animation>
+
+  <animation>
+    <object-name>fail-aft-tnk-pump2-on</object-name>
+    <type>material</type>
+    <condition>
+        <property>/sim/model/lightmap/fuel-boost-pump2-eng2-red/factor</property>
+    </condition>
+    <emission>
+      <red>   1 </red>
+      <green> 0 </green>
+      <blue>  0 </blue>
+    </emission>
   </animation>
 
 </PropertyList>

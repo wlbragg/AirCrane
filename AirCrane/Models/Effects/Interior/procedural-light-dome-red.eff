@@ -5,7 +5,7 @@
     <inherits-from>Effects/procedural-light</inherits-from>
 
     <parameters>
-        <intensity_scale type="float"><use>/sim/model/lightmap/dome-white/factor</use></intensity_scale>
+        <intensity_scale type="float"><use>/sim/model/lightmap/dome-red/factor</use></intensity_scale>
         <light_color_base_r type="float">0.800</light_color_base_r>
         <light_color_base_g type="float">0.300</light_color_base_g>
         <light_color_base_b type="float">0.300</light_color_base_b>

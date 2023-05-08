@@ -65,14 +65,12 @@
       </binding>
     </hovered>
   </animation>
+
   <animation>
     <object-name>afcs</object-name>
     <type>material</type>
     <condition>
-      <and>
-        <property>/controls/switches/afcs</property>
-        <property>/systems/electrical/outputs/digital-display</property>
-      </and>
+        <property>/sim/model/lightmap/afcs-green/factor</property>
     </condition>
     <emission>
       <red>   0 </red>
@@ -132,33 +130,12 @@
     <object-name>baralt</object-name>
     <type>material</type>
     <condition>
-      <and>
-        <property>/controls/switches/bar-alt</property>
-        <property>/systems/electrical/outputs/digital-display</property>
-      </and>
+       <property>/sim/model/lightmap/bar-alt-green/factor</property>
     </condition>
     <emission>
       <red>   0 </red>
       <green> 1 </green>
       <blue>  1 </blue>
-    </emission>
-  </animation>
-
-  <animation>
-    <object-name>baroff</object-name>
-    <type>material</type>
-    <condition>
-      <and>
-        <not>
-          <property>/controls/switches/bar-alt</property>
-        </not>
-        <property>/systems/electrical/outputs/digital-display</property>
-      </and>
-    </condition>
-    <emission>
-      <red>   1 </red>
-      <green> 0 </green>
-      <blue>  0 </blue>
     </emission>
   </animation>
 

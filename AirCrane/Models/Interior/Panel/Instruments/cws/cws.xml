@@ -66,7 +66,7 @@
     <object-name>4pt-jettison-armed</object-name>
     <object-name>tail-skid-up</object-name>
     <object-name>external-power-connected</object-name>
-	<object-name>heater-hot</object-name>
+    <object-name>heater-hot</object-name>
     <object-name>eaps-press</object-name>
   </effect>
 
@@ -136,7 +136,7 @@
     <object-name>4pt-jettison-armed</object-name>
     <object-name>tail-skid-up</object-name>
     <object-name>external-power-connected</object-name>
-	<object-name>heater-hot</object-name>
+    <object-name>heater-hot</object-name>
     <object-name>eaps-press</object-name>
     <emission>
       <factor-prop>/sim/model/aircrane/lighting/cws-bright</factor-prop>
@@ -176,7 +176,7 @@
     <object-name>4pt-jettison-armed</object-name>
     <object-name>tail-skid-up</object-name>
     <object-name>external-power-connected</object-name>
-	<object-name>heater-hot</object-name>
+    <object-name>heater-hot</object-name>
     <object-name>eaps-press</object-name>
     <condition>
       <property>/systems/electrical/outputs/cws-test-power</property>
@@ -188,10 +188,10 @@
         <object-name>hook-unlocked</object-name>
     <condition>
       <or>
-		<equals>
-			<property>/sim/model/hitch/hitchhook</property>
-			<value>0</value>
-		</equals>
+        <equals>
+            <property>/sim/model/hitch/hitchhook</property>
+            <value>0</value>
+        </equals>
         <property>/systems/electrical/outputs/cws-test-power</property>
       </or>
     </condition>
@@ -202,13 +202,13 @@
     <object-name>rotor-brake-on</object-name>
     <condition>
       <or>
-		<and>
-			<property>/systems/electrical/outputs/cws-rotor-brake-on</property>
-			<greater-than>
-				<property>/controls/rotor/brake</property>
-				<value>.8</value>
-			</greater-than>
-		</and>
+        <and>
+            <property>/systems/electrical/outputs/cws-rotor-brake-on</property>
+            <greater-than>
+                <property>/controls/rotor/brake</property>
+                <value>.8</value>
+            </greater-than>
+        </and>
         <property>/systems/electrical/outputs/cws-test-power</property>
       </or>
     </condition>
@@ -220,12 +220,12 @@
     <condition>
       <or>
         <and>
-			<property>/systems/electrical/outputs/cws-rotor-brake-on</property>
-			<greater-than>
-				<property>/controls/rotor/brake</property>
-				<value>.10</value>
-			</greater-than>
-		</and>
+            <property>/systems/electrical/outputs/cws-rotor-brake-on</property>
+            <greater-than>
+                <property>/controls/rotor/brake</property>
+                <value>.10</value>
+            </greater-than>
+        </and>
         <property>/systems/electrical/outputs/cws-test-power</property>
       </or>
     </condition>
@@ -236,10 +236,10 @@
     <object-name>parking-brake-on</object-name>
     <condition>
       <or>
-		<and>
-			<property>systems/electrical/outputs/cws-power</property>
-			<property>/controls/gear/brake-parking</property>
-		</and>
+        <and>
+            <property>systems/electrical/outputs/cws-power</property>
+            <property>/controls/gear/brake-parking</property>
+        </and>
         <property>/systems/electrical/outputs/cws-test-power</property>
       </or>
     </condition>
@@ -272,11 +272,11 @@
     <object-name>fwd-fuel-low</object-name>
     <condition>
       <or>
-		<and>
-			<property>systems/electrical/outputs/cws-power</property>
-			<property>/systems/fuel/fwd-fuel-low</property>
-		</and>
-		<property>/systems/electrical/outputs/cws-test-power</property>
+        <and>
+            <property>systems/electrical/outputs/cws-power</property>
+            <property>/systems/fuel/fwd-fuel-low</property>
+        </and>
+        <property>/systems/electrical/outputs/cws-test-power</property>
       </or>
     </condition>
   </animation>
@@ -287,9 +287,9 @@
     <condition>
       <or>
         <and>
-			<property>systems/electrical/outputs/cws-power</property>
-			<property>/systems/fuel/aft-fuel-low</property>
-		</and>
+            <property>systems/electrical/outputs/cws-power</property>
+            <property>/systems/fuel/aft-fuel-low</property>
+        </and>
         <property>/systems/electrical/outputs/cws-test-power</property>
       </or>
     </condition>
@@ -388,11 +388,11 @@
     <object-name>app-on</object-name>
     <condition>
       <or>
-		<and>
-			<property>/controls/engines/engine[2]/running</property>
-			<property>/systems/electrical/outputs/cws-app-on</property>
-		</and>
-		<property>/systems/electrical/outputs/cws-test-power</property>
+        <and>
+            <property>/controls/engines/engine[2]/running</property>
+            <property>/systems/electrical/outputs/cws-app-on</property>
+        </and>
+        <property>/systems/electrical/outputs/cws-test-power</property>
       </or>
     </condition>
   </animation>
@@ -402,12 +402,12 @@
     <object-name>app-hyd-press-low</object-name>
     <condition>
       <or>
-		<and>
-			<not>
-				<property>/controls/engines/engine[2]/running</property>
-			</not>
-			<property>/systems/electrical/outputs/cws-app-on</property>
-		</and>
+        <and>
+            <not>
+                <property>/controls/engines/engine[2]/running</property>
+            </not>
+            <property>/systems/electrical/outputs/cws-app-on</property>
+        </and>
         <property>/systems/electrical/outputs/cws-test-power</property>
       </or>
     </condition>
@@ -418,15 +418,15 @@
     <object-name>afcs-off</object-name>
     <condition>
       <or>
-		<and>
-			<property>systems/electrical/outputs/cws-power</property>
-			<not>
-				<and>
-					<property>/controls/switches/afcs-servo</property>
-					<property>/controls/switches/afcs</property>
-				</and>
-			</not>
-		</and>
+        <and>
+            <property>systems/electrical/outputs/cws-power</property>
+            <not>
+                <and>
+                    <property>/controls/switches/afcs-servo</property>
+                    <property>/controls/switches/afcs</property>
+                </and>
+            </not>
+        </and>
         <property>/systems/electrical/outputs/cws-test-power</property>
       </or>
     </condition>
@@ -439,60 +439,104 @@
       <and>
         <property>/systems/electrical/outputs/cws-power</property>
         <or>
-			<not>
-				<property>/controls/switches/afcs-servo</property>
-			</not>
-			<less-than>
-				<property>/engines/engine-rpm</property>
-				<value>0.08</value>
-			</less-than>
+            <not>
+                <property>/controls/switches/afcs-servo</property>
+            </not>
+            <and>
+                <less-than>
+                    <property>/engines/engine-rpm</property>
+                    <value>0.08</value>
+                </less-than>
+                <or>
+                    <not>
+                        <property>controls/engines/engine[0]/running</property>
+                    </not>
+                    <not>
+                        <property>controls/engines/engine[0]/running</property>
+                    </not>
+                </or>
+            </and>
           <property>/systems/electrical/outputs/cws-test-power</property>
         </or>
       </and>
     </condition>
   </animation>
 
-  <animation>
+  <!--animation>
     <type>select</type>
     <object-name>1-fuel-press</object-name>
     <condition>
       <and>
         <property>/systems/electrical/outputs/cws-power</property>
         <or>
-			<and>
-				<not>
-					<property>/controls/switches/fuelpump1eng1</property>
-				</not>
-				<not>
-					<property>/controls/switches/fuelpump2eng1</property>
-				</not>
-			</and>
-			<property>/systems/electrical/outputs/cws-test-power</property>
+            <and>
+                <not>
+                    <property>/controls/switches/fuelpump1eng1</property>
+                </not>
+                <not>
+                    <property>/controls/switches/fuelpump2eng1</property>
+                </not>
+                <and>
+                    <not>
+                        <property>consumables/fuel/shutoff/lever/left</property>
+                    </not>
+                    <not>
+                        <property>/controls/switches/fuelxfeed</property>
+                    </not>
+                </and>
+            </and>
+            <and>
+                <or>
+                    <property>/controls/switches/fuelpump1eng1</property>
+                    <property>/controls/switches/fuelpump2eng1</property>
+                </or>
+                <not>
+                    <property>/controls/switches/fuelxfeed</property>
+                </not>
+            </and>
+            <property>/systems/electrical/outputs/cws-test-power</property>
         </or>
       </and>
     </condition>
-  </animation>
+  </animation-->
 
-  <animation>
+  <!--animation>
     <type>select</type>
     <object-name>2-fuel-press</object-name>
     <condition>
       <and>
         <property>/systems/electrical/outputs/cws-power</property>
         <or>
-			<and>
-				<not>
-					<property>/controls/switches/fuelpump1eng2</property>
-				</not>
-				<not>
-					<property>/controls/switches/fuelpump2eng2</property>
-				</not>
-			</and>
-			<property>/systems/electrical/outputs/cws-test-power</property>
+            <and>
+                <not>
+                    <property>/controls/switches/fuelpump1eng2</property>
+                </not>
+                <not>
+                    <property>/controls/switches/fuelpump2eng2</property>
+                </not>
+                <and>
+                    <not>
+                        <property>consumables/fuel/shutoff/lever/right</property>
+                    </not>
+                    <not>
+                        <property>/controls/switches/fuelxfeed</property>
+                    </not>
+                </and>
+            </and>
+            <and>
+                <or>
+                    <property>/controls/switches/fuelpump1eng2</property>
+                    <property>/controls/switches/fuelpump2eng2</property>
+                </or>
+                <not>
+                    <property>consumables/fuel/shutoff/lever/right</property>
+                </not>
+            </and>
+            <property>/systems/electrical/outputs/cws-test-power</property>
         </or>
       </and>
     </condition>
-  </animation>
+  </animation-->
 
   <animation>
     <type>select</type>
@@ -501,25 +545,25 @@
       <and>
         <property>/systems/electrical/outputs/cws-power</property>
         <or>
-			<and>
-				<less-than>
-					<property>/consumables/fuel/aux/level-lbs</property>
-					<value>23</value>
-				</less-than>
-				<or>
-					<property>/controls/fuel/afpno1</property>
-					<property>/controls/fuel/afpno2</property>
-				</or>
-			</and>
-			<and>
-				<not>
-					<property>/controls/fuel/afpno1</property>
-				</not>
-				<not>
-					<property>/controls/fuel/afpno2</property>
-				</not>
-			</and>
-			<property>/systems/electrical/outputs/cws-test-power</property>
+            <and>
+                <less-than>
+                    <property>/consumables/fuel/aux/level-lbs</property>
+                    <value>23</value>
+                </less-than>
+                <or>
+                    <property>/controls/fuel/afpno1</property>
+                    <property>/controls/fuel/afpno2</property>
+                </or>
+            </and>
+            <and>
+                <not>
+                    <property>/controls/fuel/afpno1</property>
+                </not>
+                <not>
+                    <property>/controls/fuel/afpno2</property>
+                </not>
+            </and>
+            <property>/systems/electrical/outputs/cws-test-power</property>
         </or>
       </and>
     </condition>
@@ -528,9 +572,7 @@
   <animation>
     <type>select</type>
     <object-name>trans-oil-press</object-name>
-    <object-name>1-eng-oil-press</object-name>
     <object-name>inter-trans-oil-press</object-name>
-    <object-name>2-eng-oil-press</object-name>
     <object-name>1st-stage-servo</object-name>
     <object-name>2nd-stage-servo</object-name>
     <object-name>1st-stg-tl-rotor-servo</object-name>
@@ -540,11 +582,67 @@
       <and>
         <property>/systems/electrical/outputs/cws-power</property>
         <or>
-          <less-than>
-            <property>/engines/engine-rpm</property>
-            <value>0.08</value>
-          </less-than>
-          <property>/systems/electrical/outputs/cws-test-power</property>
+            <and>
+                <less-than>
+                    <property>/engines/engine-rpm</property>
+                    <value>0.08</value>
+                </less-than>
+                <or>
+                    <not>
+                        <property>controls/engines/engine[0]/running</property>
+                    </not>
+                    <not>
+                        <property>controls/engines/engine[0]/running</property>
+                    </not>
+                </or>
+            </and>
+            <property>/systems/electrical/outputs/cws-test-power</property>
+        </or>
+      </and>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>1-eng-oil-press</object-name>
+    <condition>
+      <and>
+        <property>/systems/electrical/outputs/cws-power</property>
+        <or>
+            <and>
+                <less-than>
+                    <property>/engines/engine-rpm</property>
+                    <value>0.08</value>
+                </less-than>
+                <property>controls/engines/engine[0]/running</property>
+            </and>
+            <not>
+                <property>controls/engines/engine[0]/running</property>
+            </not>
+            <property>/systems/electrical/outputs/cws-test-power</property>
+        </or>
+      </and>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>2-eng-oil-press</object-name>
+    <condition>
+      <and>
+        <property>/systems/electrical/outputs/cws-power</property>
+        <or>
+            <and>
+                <less-than>
+                    <property>/engines/engine-rpm</property>
+                    <value>0.08</value>
+                </less-than>
+                <property>controls/engines/engine[1]/running</property>
+            </and>
+            <not>
+                <property>controls/engines/engine[1]/running</property>
+            </not>
+            <property>/systems/electrical/outputs/cws-test-power</property>
         </or>
       </and>
     </condition>
