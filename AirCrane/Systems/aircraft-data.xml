@@ -17,5 +17,8 @@
   <path>/sim/model/aircrane/model-f</path>
   <path>/sim/model/extendedcab/enabled</path>
   <path>/sim/model/tandemwheels/enabled</path>
+  <path>/consumables/fuel/fwd/fuel-limit-bug</path>
+  <path>/consumables/fuel/aft/fuel-limit-bug</path>
+  <path>/consumables/fuel/aux/fuel-limit-bug</path>
 
 </PropertyList>

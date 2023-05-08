@@ -399,4 +399,56 @@
     </emission>
   </animation>
 
+  <model>
+    <name>fuel-pump1-eng1</name>
+    <path>Aircraft/AirCrane/Models/Effects/Interior/procedural_light_indicator_red.xml</path>
+    <offsets>
+        <x-m> 0.011413</x-m>
+        <y-m>-0.057677</y-m>
+        <z-m> 0.021221</z-m>
+    </offsets>
+    <condition>
+        <property>/sim/model/lightmap/fuel-boost-pump1-eng1-red/factor</property>
+    </condition>
+  </model>
+
+  <model>
+    <name>fuel-pump2-eng1</name>
+    <path>Aircraft/AirCrane/Models/Effects/Interior/procedural_light_indicator_red.xml</path>
+    <offsets>
+        <x-m> 0.011334</x-m>
+        <y-m>-0.016803</y-m>
+        <z-m> 0.021394</z-m>
+    </offsets>
+    <condition>
+        <property>/sim/model/lightmap/fuel-boost-pump2-eng1-red/factor</property>
+    </condition>
+  </model>
+
+  <model>
+    <name>fuel-pump1-eng2</name>
+    <path>Aircraft/AirCrane/Models/Effects/Interior/procedural_light_indicator_red.xml</path>
+    <offsets>
+        <x-m> 0.011576</x-m>
+        <y-m> 0.021607</y-m>
+        <z-m> 0.021277</z-m>
+    </offsets>
+    <condition>
+        <property>/sim/model/lightmap/fuel-boost-pump1-eng2-red/factor</property>
+    </condition>
+  </model>
+
+  <model>
+    <name>fuel-pump2-eng2</name>
+    <path>Aircraft/AirCrane/Models/Effects/Interior/procedural_light_indicator_red.xml</path>
+    <offsets>
+        <x-m> 0.011242</x-m>
+        <y-m> 0.062381</y-m>
+        <z-m> 0.021408</z-m>
+    </offsets>
+    <condition>
+        <property>/sim/model/lightmap/fuel-boost-pump2-eng2-red/factor</property>
+    </condition>
+  </model>
+
 </PropertyList>

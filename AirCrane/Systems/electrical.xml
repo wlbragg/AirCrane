@@ -232,23 +232,6 @@
     </output>
   </logic>
 
-  <filter>
-    <name>CWS Brightness</name>
-    <type>gain</type>
-    <input>
-      <condition>
-        <property>controls/switches/cws-bright</property>
-      </condition>
-      <value>1</value>
-    </input>
-    <input>
-      <value>0.0</value>
-    </input>
-    <output>
-      <property>sim/model/aircrane/lighting/cws-bright</property>
-    </output>
-  </filter>
-
   <logic>
     <name>CWS Gen 1</name>
     <input>
@@ -557,6 +540,28 @@
     </input>
     <output>
       <property>systems/electrical/outputs/app-fire-on</property>
+    </output>
+  </logic>
+ 
+   <logic>
+    <name>Light Advisory Power</name>
+    <input>
+      <and>
+         <less-than>
+          <property>systems/electrical/outputs/main-left/light-advisory</property>
+          <value>31.5</value>
+        </less-than>
+        <greater-than>
+          <property>systems/electrical/outputs/main-left/light-advisory</property>
+          <value>20.0</value>
+        </greater-than>
+      </and>
+    </input>
+    <input>
+      <value>0.0</value>
+    </input>
+    <output>
+      <property>systems/electrical/outputs/light-advisory</property>
     </output>
   </logic>
 

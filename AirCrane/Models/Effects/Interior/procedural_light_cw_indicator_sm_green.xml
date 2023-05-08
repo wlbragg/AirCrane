@@ -6,7 +6,7 @@
     <nopreview/>
 
     <effect>
-        <inherits-from>procedural-light-indicator-green</inherits-from>
+        <inherits-from>procedural-light-cw-light-green</inherits-from>
         <object-name>procedural_light</object-name>
     </effect>
 
@@ -14,7 +14,7 @@
         <object-name>procedural_light</object-name>
         <type>scale</type>
         <x-offset>0.04</x-offset>
-        <y-offset>0.04</y-offset>
+        <y-offset>0.12</y-offset>
         <z-offset>0.04</z-offset>
     </animation>
 

@@ -71,6 +71,33 @@
       </emission>
   </animation>
 
+  <model>
+	<name>dome-red</name>
+	<path>Aircraft/AirCrane/Models/Effects/Interior/procedural_light_dome_red.xml</path>
+	<offsets>
+		<x-m> 0.031953</x-m>
+		<y-m> 0.047814</y-m>
+		<z-m>-0.006397</z-m>
+	</offsets>
+	<condition>
+		<property>/sim/model/lightmap/dome-red/factor</property>
+	</condition>
+  </model>
+
+  <model>
+	<name>dome-white</name>
+	<path>Aircraft/AirCrane/Models/Effects/Interior/procedural_light_dome_white.xml</path>
+	<offsets>
+		<x-m> 0.03368</x-m>
+		<y-m>-0.042622</y-m>
+		<z-m>-0.005997</z-m>
+	</offsets>
+	<condition>
+		<property>/sim/model/lightmap/dome-white/factor</property>
+	</condition>
+  </model>
+
+
   <effect>
     <inherits-from>Aircraft/AirCrane/Models/Effects/Interior/lm-interior-domelights</inherits-from>
     <object-name>base</object-name>

@@ -25,7 +25,7 @@
     <object-name>redoff-l</object-name>
     <condition>
       <equals>
-        <property>systems/electrical/outputs/eng1-underspeed</property>
+        <property>sim/model/lightmap/eng1-underspeed/factor</property>
         <value>0</value>
       </equals>
     </condition>
@@ -36,7 +36,7 @@
     <object-name>redon-l</object-name>
     <condition>
       <equals>
-        <property>systems/electrical/outputs/eng1-underspeed</property>
+        <property>sim/model/lightmap/eng1-underspeed/factor</property>
         <value>1</value>
       </equals>
     </condition>
@@ -47,7 +47,7 @@
     <object-name>redoff-r</object-name>
     <condition>
       <equals>
-        <property>systems/electrical/outputs/eng2-underspeed</property>
+        <property>sim/model/lightmap/eng2-underspeed/factor</property>
         <value>0</value>
       </equals>
     </condition>
@@ -58,7 +58,7 @@
     <object-name>redon-r</object-name>
     <condition>
       <equals>
-        <property>systems/electrical/outputs/eng2-underspeed</property>
+        <property>sim/model/lightmap/eng2-underspeed/factor</property>
         <value>1</value>
       </equals>
     </condition>
@@ -68,7 +68,7 @@
     <type>material</type>
     <object-name>redon-l</object-name>
     <emission>
-      <factor-prop>systems/electrical/outputs/eng1-underspeed</factor-prop>
+      <factor-prop>sim/model/lightmap/eng1-underspeed/factor</factor-prop>
       <red>   0.7 </red>
       <green> 0.5 </green>
       <blue>  0.5 </blue>
@@ -79,7 +79,7 @@
     <type>material</type>
     <object-name>redon-r</object-name>
     <emission>
-      <factor-prop>systems/electrical/outputs/eng2-underspeed</factor-prop>
+      <factor-prop>sim/model/lightmap/eng2-underspeed/factor</factor-prop>
       <red>   0.7 </red>
       <green> 0.5 </green>
       <blue>  0.5 </blue>

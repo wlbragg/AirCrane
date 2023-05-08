@@ -211,6 +211,7 @@
         <cb-fuel-boost-pump2-eng2 type="bool">1</cb-fuel-boost-pump2-eng2>
         <cb-afcs1 type="bool">1</cb-afcs1>
         <cb-bar-alt type="bool">1</cb-bar-alt>
+		<cb-light-advisory type="bool">1</cb-light-advisory>
 
       </main-left>
 

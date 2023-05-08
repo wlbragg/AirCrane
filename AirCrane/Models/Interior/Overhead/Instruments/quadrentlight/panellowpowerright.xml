@@ -19,4 +19,17 @@
     <object-name>redoff-r</object-name>
   </effect>
 
+  <model>
+    <name>low-turbine-pwr-eng2</name>
+    <path>Aircraft/AirCrane/Models/Effects/Interior/procedural_light_indicator_red.xml</path>
+    <offsets>
+        <x-m> 0.017929</x-m>
+        <y-m> 0.000846</y-m>
+        <z-m>-0.000803</z-m>
+    </offsets>
+    <condition>
+        <property>sim/model/lightmap/eng2-underspeed/factor</property>
+    </condition>
+  </model>
+
 </PropertyList>

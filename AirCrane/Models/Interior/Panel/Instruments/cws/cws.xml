@@ -213,6 +213,27 @@
       </or>
     </condition>
   </animation>
+  <model>
+    <name>rotor-brake-procedural</name>
+    <path>Aircraft/AirCrane/Models/Effects/Interior/procedural_light_cw_indicator_md_green.xml</path>
+    <offsets>
+        <x-m> 0.005</x-m>
+        <y-m> 0.012008</y-m>
+        <z-m>-0.081029</z-m>
+    </offsets>
+    <condition>
+        <or>
+            <and>
+                <property>/systems/electrical/outputs/cws-rotor-brake-on</property>
+                <greater-than>
+                    <property>/controls/rotor/brake</property>
+                    <value>.8</value>
+                </greater-than>
+            </and>
+            <property>/systems/electrical/outputs/cws-test-power</property>
+         </or>
+    </condition>
+  </model>
 
   <animation>
     <type>select</type>
@@ -230,6 +251,27 @@
       </or>
     </condition>
   </animation>
+  <model>
+    <name>roter-brake-press-procedural</name>
+    <path>Aircraft/AirCrane/Models/Effects/Interior/procedural_light_cw_indicator_md_yellow.xml</path>
+    <offsets>
+        <x-m> 0.005</x-m>
+        <y-m> 0.01212</y-m>
+        <z-m> 0.082653</z-m>
+    </offsets>
+    <condition>
+        <or>
+            <and>
+                <property>/systems/electrical/outputs/cws-rotor-brake-on</property>
+                <greater-than>
+                    <property>/controls/rotor/brake</property>
+                    <value>.10</value>
+                </greater-than>
+            </and>
+            <property>/systems/electrical/outputs/cws-test-power</property>
+        </or>
+    </condition>
+  </model>
 
   <animation>
     <type>select</type>
@@ -244,6 +286,24 @@
       </or>
     </condition>
   </animation>
+  <model>
+    <name>parking-brake-on-procedural</name>
+    <path>Aircraft/AirCrane/Models/Effects/Interior/procedural_light_cw_indicator_md_green.xml</path>
+    <offsets>
+        <x-m> 0.006</x-m>
+        <y-m> 0.01206</y-m>
+        <z-m>-0.068933</z-m>
+    </offsets>
+    <condition>
+        <or>
+            <and>
+                <property>systems/electrical/outputs/cws-power</property>
+                <property>/controls/gear/brake-parking</property>
+            </and>
+            <property>/systems/electrical/outputs/cws-test-power</property>
+         </or>
+    </condition>
+  </model>
 
   <animation>
     <type>select</type>
@@ -349,6 +409,21 @@
       </or>
     </condition>
   </animation>
+  <model>
+    <name>cws-gen1-procedural</name>
+    <path>Aircraft/AirCrane/Models/Effects/Interior/procedural_light_cw_indicator_md_green.xml</path>
+    <offsets>
+        <x-m> 0.005</x-m>
+        <y-m>-0.012123</y-m>
+        <z-m> 0.04587</z-m>
+    </offsets>
+    <condition>
+        <or>
+            <property>/systems/electrical/outputs/cws-gen-1</property>
+            <property>/systems/electrical/outputs/cws-test-power</property>
+        </or>
+    </condition>
+  </model>
 
   <animation>
     <type>select</type>
@@ -360,6 +435,21 @@
       </or>
     </condition>
   </animation>
+  <model>
+    <name>cws-gen2-procedural</name>
+    <path>Aircraft/AirCrane/Models/Effects/Interior/procedural_light_cw_indicator_md_green.xml</path>
+    <offsets>
+        <x-m> 0.005</x-m>
+        <y-m> 0.0124</y-m>
+        <z-m> 0.045326</z-m>
+    </offsets>
+    <condition>
+        <or>
+            <property>/systems/electrical/outputs/cws-gen-2</property>
+            <property>/systems/electrical/outputs/cws-test-power</property>
+        </or>
+    </condition>
+  </model>
 
   <animation>
     <type>select</type>
@@ -432,6 +522,30 @@
     </condition>
   </animation>
 
+    <model>
+        <name>afcs-off-procedural</name>
+        <path>Aircraft/AirCrane/Models/Effects/Interior/procedural_light_cw_indicator_sm_red.xml</path>
+        <offsets>
+            <x-m> 0.006</x-m>
+            <y-m>-0.037111</y-m>
+            <z-m> 0.118944</z-m>
+        </offsets>
+        <condition>
+            <or>
+                <and>
+                    <property>systems/electrical/outputs/cws-power</property>
+                    <not>
+                        <and>
+                            <property>/controls/switches/afcs-servo</property>
+                            <property>/controls/switches/afcs</property>
+                        </and>
+                    </not>
+                </and>
+                <property>/systems/electrical/outputs/cws-test-power</property>
+            </or>
+        </condition>
+    </model>
+
   <animation>
     <type>select</type>
     <object-name>afcs-servo-press</object-name>
@@ -462,7 +576,7 @@
     </condition>
   </animation>
 
-  <!--animation>
+  <animation>
     <type>select</type>
     <object-name>1-fuel-press</object-name>
     <condition>
@@ -476,16 +590,16 @@
                 <not>
                     <property>/controls/switches/fuelpump2eng1</property>
                 </not>
-                <and>
+                <!--and>
                     <not>
                         <property>consumables/fuel/shutoff/lever/left</property>
                     </not>
                     <not>
                         <property>/controls/switches/fuelxfeed</property>
                     </not>
-                </and>
+                </and-->
             </and>
-            <and>
+            <!--and>
                 <or>
                     <property>/controls/switches/fuelpump1eng1</property>
                     <property>/controls/switches/fuelpump2eng1</property>
@@ -493,14 +607,14 @@
                 <not>
                     <property>/controls/switches/fuelxfeed</property>
                 </not>
-            </and>
+            </and-->
             <property>/systems/electrical/outputs/cws-test-power</property>
         </or>
       </and>
     </condition>
-  </animation-->
+  </animation>
 
-  <!--animation>
+  <animation>
     <type>select</type>
     <object-name>2-fuel-press</object-name>
     <condition>
@@ -514,16 +628,16 @@
                 <not>
                     <property>/controls/switches/fuelpump2eng2</property>
                 </not>
-                <and>
+                <!--and>
                     <not>
                         <property>consumables/fuel/shutoff/lever/right</property>
                     </not>
                     <not>
                         <property>/controls/switches/fuelxfeed</property>
                     </not>
-                </and>
+                </and-->
             </and>
-            <and>
+            <!--and>
                 <or>
                     <property>/controls/switches/fuelpump1eng2</property>
                     <property>/controls/switches/fuelpump2eng2</property>
@@ -531,12 +645,12 @@
                 <not>
                     <property>consumables/fuel/shutoff/lever/right</property>
                 </not>
-            </and>
+            </and-->
             <property>/systems/electrical/outputs/cws-test-power</property>
         </or>
       </and>
     </condition>
-  </animation-->
+  </animation>
 
   <animation>
     <type>select</type>
@@ -592,7 +706,7 @@
                         <property>controls/engines/engine[0]/running</property>
                     </not>
                     <not>
-                        <property>controls/engines/engine[0]/running</property>
+                        <property>controls/engines/engine[1]/running</property>
                     </not>
                 </or>
             </and>
@@ -601,6 +715,8 @@
       </and>
     </condition>
   </animation>
+  
+  
 
   <animation>
     <type>select</type>

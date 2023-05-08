@@ -345,6 +345,58 @@
     </output>
   </logic>
 
+  <logic>
+    <name>Eng1 Underspeed</name>
+    <input>
+        <or>
+            <and>
+                <not>
+                    <property>controls/engines/engine[0]/running</property>
+                </not>
+                <property>systems/electrical/outputs/light-advisory</property>
+            </and>
+            <property>/systems/electrical/outputs/eng1-underspeed</property>
+        </or>
+    </input>
+    <output>
+      <property>/sim/model/lightmap/eng1-underspeed/factor</property>
+    </output>
+  </logic>
+
+  <logic>
+    <name>Eng2 Underspeed</name>
+    <input>
+        <or>
+            <and>
+                <not>
+                    <property>controls/engines/engine[1]/running</property>
+                </not>
+                <property>systems/electrical/outputs/light-advisory</property>
+            </and>
+            <property>/systems/electrical/outputs/eng1-underspeed</property>
+        </or>
+    </input>
+    <output>
+      <property>/sim/model/lightmap/eng2-underspeed/factor</property>
+    </output>
+  </logic>
+
+  <filter>
+    <name>CWS Procedural Strength</name>
+    <type>gain</type>
+    <gain>1</gain>
+    <input>
+      <expression>
+        <table>
+            <property>/controls/switches/cws-bright</property>
+            <entry><ind>1.0</ind><dep>0.45</dep></entry>
+            <entry><ind>0.0</ind><dep>0.35</dep></entry>
+        </table>
+      </expression>
+    </input>
+    <output>/sim/model/aircrane/lighting/cws-bright</output>
+  </filter>
+
   <!-- Used for ALS procedural lights -->
   <!--
   <filter>

@@ -35,7 +35,7 @@
     <object-name>redoffl</object-name>
     <condition>
       <equals>
-        <property>systems/electrical/outputs/eng1-underspeed</property>
+        <property>/sim/model/lightmap/eng1-underspeed/factor</property>
         <value>0</value>
       </equals>
     </condition>
@@ -46,7 +46,7 @@
     <object-name>redonl</object-name>
     <condition>
       <equals>
-        <property>systems/electrical/outputs/eng1-underspeed</property>
+        <property>sim/model/lightmap/eng1-underspeed/factor</property>
         <value>1</value>
       </equals>
     </condition>
@@ -57,7 +57,7 @@
     <object-name>redoffr</object-name>
     <condition>
       <equals>
-        <property>systems/electrical/outputs/eng2-underspeed</property>
+        <property>sim/model/lightmap/eng2-underspeed/factor</property>
         <value>0</value>
       </equals>
     </condition>
@@ -68,7 +68,7 @@
     <object-name>redonr</object-name>
     <condition>
       <equals>
-        <property>systems/electrical/outputs/eng2-underspeed</property>
+        <property>sim/model/lightmap/eng2-underspeed/factor</property>
         <value>1</value>
       </equals>
     </condition>
@@ -78,7 +78,7 @@
     <type>material</type>
     <object-name>redonl</object-name>
     <emission>
-      <factor-prop>systems/electrical/outputs/eng1-underspeed</factor-prop>
+      <factor-prop>sim/model/lightmap/eng1-underspeed/factor</factor-prop>
       <red>   0.7 </red>
       <green> 0.5 </green>
       <blue>  0.5 </blue>
@@ -89,12 +89,38 @@
     <type>material</type>
     <object-name>redonr</object-name>
     <emission>
-      <factor-prop>systems/electrical/outputs/eng2-underspeed</factor-prop>
+      <factor-prop>sim/model/lightmap/eng2-underspeed/factor</factor-prop>
       <red>   0.7 </red>
       <green> 0.5 </green>
       <blue>  0.5 </blue>
     </emission>
   </animation>
+
+  <model>
+    <name>low-turbine-pwr-quad-eng1</name>
+    <path>Aircraft/AirCrane/Models/Effects/Interior/procedural_light_indicator_red.xml</path>
+    <offsets>
+        <x-m> 0.025062</x-m>
+        <y-m>-0.147786</y-m>
+        <z-m> 0.057731</z-m>
+    </offsets>
+    <condition>
+        <property>sim/model/lightmap/eng1-underspeed/factor</property>
+    </condition>
+  </model>
+
+  <model>
+    <name>low-turbine-pwr-quad-eng2</name>
+    <path>Aircraft/AirCrane/Models/Effects/Interior/procedural_light_indicator_red.xml</path>
+    <offsets>
+        <x-m> 0.026894</x-m>
+        <y-m> 0.149898</y-m>
+        <z-m> 0.056639</z-m>
+    </offsets>
+    <condition>
+        <property>sim/model/lightmap/eng2-underspeed/factor</property>
+    </condition>
+  </model>
 
   <animation>
     <type>knob</type>
@@ -227,7 +253,7 @@
         <command>set-tooltip</command>
         <tooltip-id>eng1-n1</tooltip-id>
         <label>Engine 1 N1:  %3d</label>
-		<mapping>percent</mapping>
+        <mapping>percent</mapping>
         <property>engines/one/n1</property>
       </binding>
     </hovered>
@@ -310,11 +336,11 @@
         <tooltip-id>eng1-n1-start</tooltip-id>
         <label>Engine 1 N1: %s</label>
         <property>controls/switches/eng1-n1-start</property>
-		<mapping>nasal</mapping>
-		<script>
-			var modes = ['Neutral', 'Start'];
-			return modes[arg[0]];
-		</script>
+        <mapping>nasal</mapping>
+        <script>
+            var modes = ['Neutral', 'Start'];
+            return modes[arg[0]];
+        </script>
       </binding>
     </hovered>
   </animation>
@@ -380,7 +406,7 @@
         <command>set-tooltip</command>
         <tooltip-id>eng2-n1</tooltip-id>
         <label>Engine 2 N1: %3d</label>
-		<mapping>percent</mapping>
+        <mapping>percent</mapping>
         <property>/engines/two/n1</property>
       </binding>
     </hovered>
@@ -463,11 +489,11 @@
         <tooltip-id>eng2-n1-start</tooltip-id>
         <label>Engine 2 N1: %s</label>
         <property>controls/switches/eng2-n1-start</property>
-		<mapping>nasal</mapping>
-		<script>
-			var modes = ['Neutral', 'Start'];
-			return modes[arg[0]];
-		</script>
+        <mapping>nasal</mapping>
+        <script>
+            var modes = ['Neutral', 'Start'];
+            return modes[arg[0]];
+        </script>
       </binding>
     </hovered>
   </animation>
