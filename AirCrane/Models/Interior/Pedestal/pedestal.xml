@@ -28,7 +28,7 @@
     <path>Aircraft/AirCrane/Models/Interior/Pedestal/Instruments/AFCS-E/afcs-e.xml</path>
     <condition>
       <not>
-        <property>sim/aircrane/model-f</property>
+        <property>sim/model/variant</property>
       </not>
     </condition>
     <offsets>
@@ -43,7 +43,7 @@
   <model>
     <path>Aircraft/AirCrane/Models/Interior/Pedestal/Instruments/AFCS-F/afcs-f.xml</path>
     <condition>
-      <property>sim/aircrane/model-f</property>
+      <property>sim/model/variant</property>
     </condition>
     <offsets>
       <x-m>  0.24645 </x-m>
