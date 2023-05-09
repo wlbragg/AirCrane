@@ -65,7 +65,6 @@
     <object-name>isolation-valve-open</object-name>
     <object-name>4pt-jettison-armed</object-name>
     <object-name>tail-skid-up</object-name>
-    <object-name>external-power-connected</object-name>
     <object-name>heater-hot</object-name>
     <object-name>eaps-press</object-name>
   </effect>
@@ -135,7 +134,6 @@
     <object-name>isolation-valve-open</object-name>
     <object-name>4pt-jettison-armed</object-name>
     <object-name>tail-skid-up</object-name>
-    <object-name>external-power-connected</object-name>
     <object-name>heater-hot</object-name>
     <object-name>eaps-press</object-name>
     <emission>
@@ -149,10 +147,8 @@
   <animation>
     <type>select</type>
     <object-name>1-eng-chip</object-name>
-    <object-name>1-eng-starter-on</object-name>
     <object-name>1-eng-t5</object-name>
     <object-name>2-eng-chip</object-name>
-    <object-name>2-eng-starter-on</object-name>
     <object-name>2-eng-t5</object-name>
     <object-name>1-eng-fuel-bypass</object-name>
     <object-name>2-eng-fuel-bypass</object-name>
@@ -175,13 +171,337 @@
     <object-name>isolation-valve-open</object-name>
     <object-name>4pt-jettison-armed</object-name>
     <object-name>tail-skid-up</object-name>
-    <object-name>external-power-connected</object-name>
     <object-name>heater-hot</object-name>
     <object-name>eaps-press</object-name>
     <condition>
       <property>/systems/electrical/outputs/cws-test-power</property>
     </condition>
   </animation>
+
+  <model>
+    <name>1-eng-chip-procedural</name>
+    <path>Aircraft/AirCrane/Models/Effects/Interior/procedural_light_cw_indicator_md_red.xml</path>
+    <offsets>
+        <x-m> 0.006</x-m>
+        <y-m>-0.037339</y-m>
+        <z-m> 0.107399</z-m>
+    </offsets>
+    <condition>
+      <property>/systems/electrical/outputs/cws-test-power</property>
+    </condition>
+  </model>
+  <model>
+    <name>1-eng-t5-procedural</name>
+    <path>Aircraft/AirCrane/Models/Effects/Interior/procedural_light_cw_indicator_md_red.xml</path>
+    <offsets>
+        <x-m> 0.006</x-m>
+        <y-m>-0.03734</y-m>
+        <z-m> 0.095098</z-m>
+    </offsets>
+    <condition>
+      <property>/systems/electrical/outputs/cws-test-power</property>
+    </condition>
+  </model>
+  <model>
+    <name>2-eng-chip-procedural</name>
+    <path>Aircraft/AirCrane/Models/Effects/Interior/procedural_light_cw_indicator_md_red.xml</path>
+    <offsets>
+        <x-m> 0.006</x-m>
+        <y-m> 0.037266</y-m>
+        <z-m> 0.107735</z-m>
+    </offsets>
+    <condition>
+      <property>/systems/electrical/outputs/cws-test-power</property>
+    </condition>
+  </model>
+  <model>
+    <name>2-eng-t5-procedural</name>
+    <path>Aircraft/AirCrane/Models/Effects/Interior/procedural_light_cw_indicator_md_red.xml</path>
+    <offsets>
+        <x-m> 0.006</x-m>
+        <y-m> 0.037697</y-m>
+        <z-m> 0.095141</z-m>
+    </offsets>
+    <condition>
+      <property>/systems/electrical/outputs/cws-test-power</property>
+    </condition>
+  </model>
+  <model>
+    <name>1-eng-fuel-bypass-procedural</name>
+    <path>Aircraft/AirCrane/Models/Effects/Interior/procedural_light_cw_indicator_md_green.xml</path>
+    <offsets>
+        <x-m> 0.006</x-m>
+        <y-m>-0.037649</y-m>
+        <z-m> 0.045335</z-m>
+    </offsets>
+    <condition>
+      <property>/systems/electrical/outputs/cws-test-power</property>
+    </condition>
+  </model>
+  <model>
+    <name>2-eng-fuel-bypass-procedural</name>
+    <path>Aircraft/AirCrane/Models/Effects/Interior/procedural_light_cw_indicator_md_green.xml</path>
+    <offsets>
+        <x-m> 0.006</x-m>
+        <y-m> 0.037888</y-m>
+        <z-m> 0.045067</z-m>
+    </offsets>
+    <condition>
+      <property>/systems/electrical/outputs/cws-test-power</property>
+    </condition>
+  </model>
+  <model>
+    <name>chip-inter-trans-procedural</name>
+    <path>Aircraft/AirCrane/Models/Effects/Interior/procedural_light_cw_indicator_md_red.xml</path>
+    <offsets>
+        <x-m> 0.006</x-m>
+        <y-m> 0.012224</y-m>
+        <z-m> 0.107316</z-m>
+    </offsets>
+    <condition>
+      <property>/systems/electrical/outputs/cws-test-power</property>
+    </condition>
+  </model>
+  <model>
+    <name>chip-main-trans-procedural</name>
+    <path>Aircraft/AirCrane/Models/Effects/Interior/procedural_light_cw_indicator_md_red.xml</path>
+    <offsets>
+        <x-m> 0.006</x-m>
+        <y-m> 0.012063</y-m>
+        <z-m> 0.119383</z-m>
+    </offsets>
+    <condition>
+      <property>/systems/electrical/outputs/cws-test-power</property>
+    </condition>
+  </model>
+  <model>
+    <name>chip-tail-trans-procedural</name>
+    <path>Aircraft/AirCrane/Models/Effects/Interior/procedural_light_cw_indicator_md_red.xml</path>
+    <offsets>
+        <x-m> 0.006</x-m>
+        <y-m> 0.012526</y-m>
+        <z-m> 0.094334</z-m>
+    </offsets>
+    <condition>
+      <property>/systems/electrical/outputs/cws-test-power</property>
+    </condition>
+  </model>
+  <model>
+    <name>ext-power-connected-procedural</name>
+    <path>Aircraft/AirCrane/Models/Effects/Interior/procedural_light_cw_indicator_md_green.xml</path>
+    <offsets>
+        <x-m> 0.006</x-m>
+        <y-m>-0.012915</y-m>
+        <z-m>-0.069165</z-m>
+    </offsets>
+    <condition>
+      <property>/systems/electrical/outputs/cws-test-power</property>
+    </condition>
+  </model>
+  <model>
+    <name>hoist-oil-hot-procedural</name>
+    <path>Aircraft/AirCrane/Models/Effects/Interior/procedural_light_cw_indicator_md_yellow.xml</path>
+    <offsets>
+        <x-m> 0.006</x-m>
+        <y-m> 0.012864</y-m>
+        <z-m>-0.018541</z-m>
+    </offsets>
+    <condition>
+      <property>/systems/electrical/outputs/cws-test-power</property>
+    </condition>
+  </model>
+  <model>
+    <name>hoist-overspeed-procedural</name>
+    <path>Aircraft/AirCrane/Models/Effects/Interior/procedural_light_cw_indicator_md_yellow.xml</path>
+    <offsets>
+        <x-m> 0.006</x-m>
+        <y-m> 0.0121</y-m>
+        <z-m>-0.031379</z-m>
+    </offsets>
+    <condition>
+      <property>/systems/electrical/outputs/cws-test-power</property>
+    </condition>
+  </model>
+  <model>
+    <name>hoist-shear-armed-procedural</name>
+    <path>Aircraft/AirCrane/Models/Effects/Interior/procedural_light_cw_indicator_md_green.xml</path>
+    <offsets>
+        <x-m> 0.006</x-m>
+        <y-m> 0.01244</y-m>
+        <z-m>-0.11859</z-m>
+    </offsets>
+    <condition>
+      <property>/systems/electrical/outputs/cws-test-power</property>
+    </condition>
+  </model>
+  <model>
+    <name>left-pilot-pitot-heat-procedural</name>
+    <path>Aircraft/AirCrane/Models/Effects/Interior/procedural_light_cw_indicator_md_green.xml</path>
+    <offsets>
+        <x-m> 0.006</x-m>
+        <y-m>-0.037951</y-m>
+        <z-m>-0.005987</z-m>
+    </offsets>
+    <condition>
+      <property>/systems/electrical/outputs/cws-test-power</property>
+    </condition>
+  </model>
+  <model>
+    <name>left-pilot-turn-slip-procedural</name>
+    <path>Aircraft/AirCrane/Models/Effects/Interior/procedural_light_cw_indicator_md_green.xml</path>
+    <offsets>
+        <x-m> 0.006</x-m>
+        <y-m>-0.0375</y-m>
+        <z-m>-0.018972</z-m>
+    </offsets>
+    <condition>
+      <property>/systems/electrical/outputs/cws-test-power</property>
+    </condition>
+  </model>
+  <model>
+    <name>oil-cooler-procedural</name>
+    <path>Aircraft/AirCrane/Models/Effects/Interior/procedural_light_cw_indicator_md_green.xml</path>
+    <offsets>
+        <x-m> 0.006</x-m>
+        <y-m>-0.012932</y-m>
+        <z-m>-0.031596</z-m>
+    </offsets>
+    <condition>
+      <property>/systems/electrical/outputs/cws-test-power</property>
+    </condition>
+  </model>
+  <model>
+    <name>rear-control-engaged-procedural</name>
+    <path>Aircraft/AirCrane/Models/Effects/Interior/procedural_light_cw_indicator_md_green.xml</path>
+    <offsets>
+        <x-m> 0.006</x-m>
+        <y-m>-0.03761</y-m>
+        <z-m>-0.118708</z-m>
+    </offsets>
+    <condition>
+      <property>/systems/electrical/outputs/cws-test-power</property>
+    </condition>
+  </model>
+  <model>
+    <name>right-pilot-pitot-heat-procedural</name>
+    <path>Aircraft/AirCrane/Models/Effects/Interior/procedural_light_cw_indicator_md_green.xml</path>
+    <offsets>
+        <x-m> 0.006</x-m>
+        <y-m> 0.037733</y-m>
+        <z-m>-0.005959</z-m>
+    </offsets>
+    <condition>
+      <property>/systems/electrical/outputs/cws-test-power</property>
+    </condition>
+  </model>
+  <model>
+    <name>right-pilot-turn-slip-procedural</name>
+    <path>Aircraft/AirCrane/Models/Effects/Interior/procedural_light_cw_indicator_md_green.xml</path>
+    <offsets>
+        <x-m> 0.006</x-m>
+        <y-m> 0.037582</y-m>
+        <z-m>-0.018487</z-m>
+    </offsets>
+    <condition>
+      <property>/systems/electrical/outputs/cws-test-power</property>
+    </condition>
+  </model>
+  <model>
+    <name>trans-oil-hot-procedural</name>
+    <path>Aircraft/AirCrane/Models/Effects/Interior/procedural_light_cw_indicator_md_red.xml</path>
+    <offsets>
+        <x-m> 0.006</x-m>
+        <y-m>-0.012643</y-m>
+        <z-m> 0.094435</z-m>
+    </offsets>
+    <condition>
+      <property>/systems/electrical/outputs/cws-test-power</property>
+    </condition>
+  </model>
+  <model>
+    <name>hook-unlocked-procedural</name>
+    <path>Aircraft/AirCrane/Models/Effects/Interior/procedural_light_cw_indicator_md_green.xml</path>
+    <offsets>
+        <x-m> 0.006</x-m>
+        <y-m> 0.03793</y-m>
+        <z-m>-0.11837</z-m>
+    </offsets>
+    <condition>
+      <property>/systems/electrical/outputs/cws-test-power</property>
+    </condition>
+  </model>
+  <model>
+    <name>auto-hook-release-procedural</name>
+    <path>Aircraft/AirCrane/Models/Effects/Interior/procedural_light_cw_indicator_md_green.xml</path>
+    <offsets>
+        <x-m> 0.006</x-m>
+        <y-m> 0.037773</y-m>
+        <z-m>-0.105846</z-m>
+    </offsets>
+    <condition>
+      <property>/systems/electrical/outputs/cws-test-power</property>
+    </condition>
+  </model>
+  <model>
+    <name>isolation-valve-open-procedural</name>
+    <path>Aircraft/AirCrane/Models/Effects/Interior/procedural_light_cw_indicator_md_green.xml</path>
+    <offsets>
+        <x-m> 0.006</x-m>
+        <y-m>-0.012742</y-m>
+        <z-m>-0.106126</z-m>
+    </offsets>
+    <condition>
+      <property>/systems/electrical/outputs/cws-test-power</property>
+    </condition>
+  </model>
+  <model>
+    <name>4pt-jettison-armed-procedural</name>
+    <path>Aircraft/AirCrane/Models/Effects/Interior/procedural_light_cw_indicator_md_green.xml</path>
+    <offsets>
+        <x-m> 0.006</x-m>
+        <y-m> 0.037621</y-m>
+        <z-m>-0.093318</z-m>
+    </offsets>
+    <condition>
+      <property>/systems/electrical/outputs/cws-test-power</property>
+    </condition>
+  </model>
+  <model>
+    <name>tail-skid-up-procedural</name>
+    <path>Aircraft/AirCrane/Models/Effects/Interior/procedural_light_cw_indicator_md_green.xml</path>
+    <offsets>
+        <x-m> 0.006</x-m>
+        <y-m>-0.012593</y-m>
+        <z-m>-0.080618</z-m>
+    </offsets>
+    <condition>
+      <property>/systems/electrical/outputs/cws-test-power</property>
+    </condition>
+  </model>
+  <model>
+    <name>heater-hot-procedural</name>
+    <path>Aircraft/AirCrane/Models/Effects/Interior/procedural_light_cw_indicator_sm_green.xml</path>
+    <offsets>
+        <x-m> 0.006</x-m>
+        <y-m> 0.012396</y-m>
+        <z-m>-0.04452</z-m>
+    </offsets>
+    <condition>
+      <property>/systems/electrical/outputs/cws-test-power</property>
+    </condition>
+  </model>
+  <model>
+    <name>eaps-press-procedural</name>
+    <path>Aircraft/AirCrane/Models/Effects/Interior/procedural_light_cw_indicator_sm_green.xml</path>
+    <offsets>
+        <x-m> 0.006</x-m>
+        <y-m> 0.012404</y-m>
+        <z-m>-0.006471</z-m>
+    </offsets>
+    <condition>
+      <property>/systems/electrical/outputs/cws-test-power</property>
+    </condition>
+  </model>
 
   <!--animation>
     <type>select</type>
@@ -196,6 +516,58 @@
       </or>
     </condition>
   </animation-->
+
+  <animation>
+    <type>select</type>
+    <object-name>1-eng-starter-on</object-name>
+    <condition>
+      <or>
+        <property>/controls/engines/engine[0]/starting</property> 
+        <property>/systems/electrical/outputs/cws-test-power</property>
+      </or>
+    </condition>
+  </animation>
+  <model>
+    <name>1-eng-starter-on-procedural</name>
+    <path>Aircraft/AirCrane/Models/Effects/Interior/procedural_light_cw_indicator_md_green.xml</path>
+    <offsets>
+        <x-m> 0.006</x-m>
+        <y-m>-0.036965</y-m>
+        <z-m>-0.069657</z-m>
+    </offsets>
+    <condition>
+      <or>
+        <property>/controls/engines/engine[0]/starting</property> 
+        <property>/systems/electrical/outputs/cws-test-power</property>
+      </or>
+    </condition>
+  </model>
+
+  <animation>
+    <type>select</type>
+    <object-name>2-eng-starter-on</object-name>
+    <condition>
+      <or>
+        <property>/controls/engines/engine[1]/starting</property> 
+        <property>/systems/electrical/outputs/cws-test-power</property>
+      </or>
+    </condition>
+  </animation>
+  <model>
+    <name>2-eng-starter-on-procedural</name>
+    <path>Aircraft/AirCrane/Models/Effects/Interior/procedural_light_cw_indicator_md_green.xml</path>
+    <offsets>
+        <x-m> 0.006</x-m>
+        <y-m> 0.037699</y-m>
+        <z-m>-0.068843</z-m>
+    </offsets>
+    <condition>
+      <or>
+        <property>/controls/engines/engine[1]/starting</property> 
+        <property>/systems/electrical/outputs/cws-test-power</property>
+      </or>
+    </condition>
+  </model>
 
   <animation>
     <type>select</type>
@@ -217,7 +589,7 @@
     <name>rotor-brake-procedural</name>
     <path>Aircraft/AirCrane/Models/Effects/Interior/procedural_light_cw_indicator_md_green.xml</path>
     <offsets>
-        <x-m> 0.005</x-m>
+        <x-m> 0.006</x-m>
         <y-m> 0.012008</y-m>
         <z-m>-0.081029</z-m>
     </offsets>
@@ -255,7 +627,7 @@
     <name>roter-brake-press-procedural</name>
     <path>Aircraft/AirCrane/Models/Effects/Interior/procedural_light_cw_indicator_md_yellow.xml</path>
     <offsets>
-        <x-m> 0.005</x-m>
+        <x-m> 0.006</x-m>
         <y-m> 0.01212</y-m>
         <z-m> 0.082653</z-m>
     </offsets>
@@ -315,6 +687,21 @@
       </or>
     </condition>
   </animation>
+  <model>
+    <name>1-eng-anti-ice-procedural</name>
+    <path>Aircraft/AirCrane/Models/Effects/Interior/procedural_light_cw_indicator_md_green.xml</path>
+    <offsets>
+        <x-m> 0.006</x-m>
+        <y-m>-0.037321</y-m>
+        <z-m>-0.081437</z-m>
+    </offsets>
+    <condition>
+      <or>
+        <property>/systems/fuel/temp-fwd-heat-low</property>
+        <property>/systems/electrical/outputs/cws-test-power</property>
+      </or>
+    </condition>
+  </model>
 
   <animation>
     <type>select</type>
@@ -326,6 +713,21 @@
       </or>
     </condition>
   </animation>
+  <model>
+    <name>2-eng-anti-ice-procedural</name>
+    <path>Aircraft/AirCrane/Models/Effects/Interior/procedural_light_cw_indicator_md_green.xml</path>
+    <offsets>
+        <x-m> 0.006</x-m>
+        <y-m> 0.03775</y-m>
+        <z-m>-0.081115</z-m>
+    </offsets>
+    <condition>
+        <or>
+        <property>/systems/fuel/temp-aft-heat-low</property>
+        <property>/systems/electrical/outputs/cws-test-power</property>
+      </or>
+    </condition>
+  </model>
 
   <animation>
     <type>select</type>
@@ -340,6 +742,24 @@
       </or>
     </condition>
   </animation>
+  <model>
+    <name>fwd-fuel-low-procedural</name>
+    <path>Aircraft/AirCrane/Models/Effects/Interior/procedural_light_cw_indicator_md_yellow.xml</path>
+    <offsets>
+        <x-m> 0.006</x-m>
+        <y-m>-0.01287</y-m>
+        <z-m> 0.020025</z-m>
+    </offsets>
+    <condition>
+      <or>
+		<and>
+			<property>systems/electrical/outputs/cws-power</property>
+			<property>/systems/fuel/fwd-fuel-low</property>
+		</and>
+		<property>/systems/electrical/outputs/cws-test-power</property>
+      </or>
+    </condition>
+  </model>
 
   <animation>
     <type>select</type>
@@ -354,6 +774,24 @@
       </or>
     </condition>
   </animation>
+  <model>
+    <name>aft-fuel-low-procedural</name>
+    <path>Aircraft/AirCrane/Models/Effects/Interior/procedural_light_cw_indicator_md_yellow.xml</path>
+    <offsets>
+        <x-m> 0.006</x-m>
+        <y-m> 0.012017</y-m>
+        <z-m> 0.019655</z-m>
+    </offsets>
+    <condition>
+      <or>
+        <and>
+            <property>systems/electrical/outputs/cws-power</property>
+            <property>/systems/fuel/aft-fuel-low</property>
+        </and>
+        <property>/systems/electrical/outputs/cws-test-power</property>
+      </or>
+    </condition>
+  </model>
 
   <!--animation>
     <type>select</type>
@@ -376,6 +814,21 @@
       </or>
     </condition>
   </animation>
+  <model>
+    <name>aft-fuel-low-procedural</name>
+    <path>Aircraft/AirCrane/Models/Effects/Interior/procedural_light_cw_indicator_md_yellow.xml</path>
+    <offsets>
+        <x-m> 0.006</x-m>
+        <y-m>-0.012648</y-m>
+        <z-m>-0.093281</z-m>
+    </offsets>
+    <condition>
+      <or>
+        <property>/systems/fuel/temp-heat-low</property>
+        <property>/systems/electrical/outputs/cws-test-power</property>
+      </or>
+    </condition>
+  </model>
 
   <animation>
     <type>select</type>
@@ -387,6 +840,21 @@
       </or>
     </condition>
   </animation>
+  <model>
+    <name>1-eng-anti-ice-on-procedural</name>
+    <path>Aircraft/AirCrane/Models/Effects/Interior/procedural_light_cw_indicator_md_green.xml</path>
+    <offsets>
+        <x-m> 0.006</x-m>
+        <y-m>-0.037226</y-m>
+        <z-m> 0.032302</z-m>
+    </offsets>
+    <condition>
+      <or>
+        <property>/systems/fuel/temp-fwd-heat-on</property>
+        <property>/systems/electrical/outputs/cws-test-power</property>
+      </or>
+    </condition>
+  </model>
 
   <animation>
     <type>select</type>
@@ -398,6 +866,21 @@
       </or>
     </condition>
   </animation>
+  <model>
+    <name>2-eng-anti-ice-on-procedural</name>
+    <path>Aircraft/AirCrane/Models/Effects/Interior/procedural_light_cw_indicator_md_green.xml</path>
+    <offsets>
+        <x-m> 0.006</x-m>
+        <y-m> 0.037423</y-m>
+        <z-m> 0.032551</z-m>
+    </offsets>
+    <condition>
+      <or>
+        <property>/systems/fuel/temp-aft-heat-on</property>
+        <property>/systems/electrical/outputs/cws-test-power</property>
+      </or>
+    </condition>
+  </model>
 
   <animation>
     <type>select</type>
@@ -413,7 +896,7 @@
     <name>cws-gen1-procedural</name>
     <path>Aircraft/AirCrane/Models/Effects/Interior/procedural_light_cw_indicator_md_green.xml</path>
     <offsets>
-        <x-m> 0.005</x-m>
+        <x-m> 0.006</x-m>
         <y-m>-0.012123</y-m>
         <z-m> 0.04587</z-m>
     </offsets>
@@ -439,7 +922,7 @@
     <name>cws-gen2-procedural</name>
     <path>Aircraft/AirCrane/Models/Effects/Interior/procedural_light_cw_indicator_md_green.xml</path>
     <offsets>
-        <x-m> 0.005</x-m>
+        <x-m> 0.006</x-m>
         <y-m> 0.0124</y-m>
         <z-m> 0.045326</z-m>
     </offsets>
@@ -461,6 +944,21 @@
       </or>
     </condition>
   </animation>
+  <model>
+    <name>1-rect-procedural</name>
+    <path>Aircraft/AirCrane/Models/Effects/Interior/procedural_light_cw_indicator_md_green.xml</path>
+    <offsets>
+        <x-m> 0.006</x-m>
+        <y-m>-0.01271</y-m>
+        <z-m> 0.032192</z-m>
+    </offsets>
+    <condition>
+        <or>
+        <property>/systems/electrical/outputs/cws-rect-1</property>
+        <property>/systems/electrical/outputs/cws-test-power</property>
+      </or>
+    </condition>
+  </model>
 
   <animation>
     <type>select</type>
@@ -472,6 +970,21 @@
       </or>
     </condition>
   </animation>
+  <model>
+    <name>2-rect-procedural</name>
+    <path>Aircraft/AirCrane/Models/Effects/Interior/procedural_light_cw_indicator_md_green.xml</path>
+    <offsets>
+        <x-m> 0.006</x-m>
+        <y-m> 0.012222</y-m>
+        <z-m> 0.032521</z-m>
+    </offsets>
+    <condition>
+      <or>
+        <property>/systems/electrical/outputs/cws-rect-2</property>
+        <property>/systems/electrical/outputs/cws-test-power</property>
+      </or>
+    </condition>
+  </model>
 
   <animation>
     <type>select</type>
@@ -486,6 +999,24 @@
       </or>
     </condition>
   </animation>
+  <model>
+    <name>app-on-procedural</name>
+    <path>Aircraft/AirCrane/Models/Effects/Interior/procedural_light_cw_indicator_sm_green.xml</path>
+    <offsets>
+        <x-m> 0.006</x-m>
+        <y-m> 0.01269</y-m>
+        <z-m>-0.093384</z-m>
+    </offsets>
+    <condition>
+        <or>
+			<and>
+				<property>/controls/engines/engine[2]/running</property>
+				<property>/systems/electrical/outputs/cws-app-on</property>
+			</and>
+			<property>/systems/electrical/outputs/cws-test-power</property>
+      </or>
+    </condition>
+  </model>
 
   <animation>
     <type>select</type>
@@ -502,6 +1033,26 @@
       </or>
     </condition>
   </animation>
+  <model>
+    <name>app-hyd-press-procedural</name>
+    <path>Aircraft/AirCrane/Models/Effects/Interior/procedural_light_cw_indicator_md_green.xml</path>
+    <offsets>
+        <x-m> 0.006</x-m>
+        <y-m> 0.012815</y-m>
+        <z-m>-0.105747</z-m>
+    </offsets>
+    <condition>
+      <or>
+        <and>
+            <not>
+                <property>/controls/engines/engine[2]/running</property>
+            </not>
+            <property>/systems/electrical/outputs/cws-app-on</property>
+        </and>
+        <property>/systems/electrical/outputs/cws-test-power</property>
+      </or>
+    </condition>
+  </model>
 
   <animation>
     <type>select</type>
@@ -521,30 +1072,29 @@
       </or>
     </condition>
   </animation>
-
-    <model>
-        <name>afcs-off-procedural</name>
-        <path>Aircraft/AirCrane/Models/Effects/Interior/procedural_light_cw_indicator_sm_red.xml</path>
-        <offsets>
-            <x-m> 0.006</x-m>
-            <y-m>-0.037111</y-m>
-            <z-m> 0.118944</z-m>
-        </offsets>
-        <condition>
-            <or>
-                <and>
-                    <property>systems/electrical/outputs/cws-power</property>
-                    <not>
-                        <and>
-                            <property>/controls/switches/afcs-servo</property>
-                            <property>/controls/switches/afcs</property>
-                        </and>
-                    </not>
-                </and>
-                <property>/systems/electrical/outputs/cws-test-power</property>
-            </or>
-        </condition>
-    </model>
+  <model>
+	<name>afcs-off-procedural</name>
+	<path>Aircraft/AirCrane/Models/Effects/Interior/procedural_light_cw_indicator_sm_red.xml</path>
+	<offsets>
+		<x-m> 0.006</x-m>
+		<y-m>-0.037111</y-m>
+		<z-m> 0.118944</z-m>
+	</offsets>
+	<condition>
+		<or>
+			<and>
+				<property>systems/electrical/outputs/cws-power</property>
+				<not>
+					<and>
+						<property>/controls/switches/afcs-servo</property>
+						<property>/controls/switches/afcs</property>
+					</and>
+				</not>
+			</and>
+			<property>/systems/electrical/outputs/cws-test-power</property>
+		</or>
+	</condition>
+  </model>
 
   <animation>
     <type>select</type>
@@ -575,6 +1125,40 @@
       </and>
     </condition>
   </animation>
+  <model>
+	<name>afcs-servo-press-procedural</name>
+	<path>Aircraft/AirCrane/Models/Effects/Interior/procedural_light_cw_indicator_md_yellow.xml</path>
+	<offsets>
+		<x-m> 0.006</x-m>
+		<y-m> 0.011688</y-m>
+		<z-m> 0.057606</z-m>
+	</offsets>
+	<condition>
+		<and>
+        <property>/systems/electrical/outputs/cws-power</property>
+        <or>
+            <not>
+                <property>/controls/switches/afcs-servo</property>
+            </not>
+            <and>
+                <less-than>
+                    <property>/engines/engine-rpm</property>
+                    <value>0.08</value>
+                </less-than>
+                <or>
+                    <not>
+                        <property>controls/engines/engine[0]/running</property>
+                    </not>
+                    <not>
+                        <property>controls/engines/engine[0]/running</property>
+                    </not>
+                </or>
+            </and>
+          <property>/systems/electrical/outputs/cws-test-power</property>
+        </or>
+      </and>
+	</condition>
+  </model>
 
   <animation>
     <type>select</type>
@@ -613,6 +1197,48 @@
       </and>
     </condition>
   </animation>
+  <model>
+	<name>1-fuel-press-procedural</name>
+	<path>Aircraft/AirCrane/Models/Effects/Interior/procedural_light_cw_indicator_md_green.xml</path>
+	<offsets>
+		<x-m> 0.006</x-m>
+		<y-m>-0.037098</y-m>
+		<z-m> 0.019548</z-m>
+	</offsets>
+	<condition>
+      <and>
+        <property>/systems/electrical/outputs/cws-power</property>
+        <or>
+            <and>
+                <not>
+                    <property>/controls/switches/fuelpump1eng1</property>
+                </not>
+                <not>
+                    <property>/controls/switches/fuelpump2eng1</property>
+                </not>
+                <!--and>
+                    <not>
+                        <property>consumables/fuel/shutoff/lever/left</property>
+                    </not>
+                    <not>
+                        <property>/controls/switches/fuelxfeed</property>
+                    </not>
+                </and-->
+            </and>
+            <!--and>
+                <or>
+                    <property>/controls/switches/fuelpump1eng1</property>
+                    <property>/controls/switches/fuelpump2eng1</property>
+                </or>
+                <not>
+                    <property>/controls/switches/fuelxfeed</property>
+                </not>
+            </and-->
+            <property>/systems/electrical/outputs/cws-test-power</property>
+        </or>
+      </and>
+	</condition>
+  </model>
 
   <animation>
     <type>select</type>
@@ -651,6 +1277,48 @@
       </and>
     </condition>
   </animation>
+  <model>
+	<name>2-fuel-press-procedural</name>
+	<path>Aircraft/AirCrane/Models/Effects/Interior/procedural_light_cw_indicator_md_green.xml</path>
+	<offsets>
+		<x-m> 0.006</x-m>
+		<y-m> 0.037683</y-m>
+		<z-m> 0.019499</z-m>
+	</offsets>
+	<condition>
+      <and>
+        <property>/systems/electrical/outputs/cws-power</property>
+        <or>
+            <and>
+                <not>
+                    <property>/controls/switches/fuelpump1eng2</property>
+                </not>
+                <not>
+                    <property>/controls/switches/fuelpump2eng2</property>
+                </not>
+                <!--and>
+                    <not>
+                        <property>consumables/fuel/shutoff/lever/right</property>
+                    </not>
+                    <not>
+                        <property>/controls/switches/fuelxfeed</property>
+                    </not>
+                </and-->
+            </and>
+            <!--and>
+                <or>
+                    <property>/controls/switches/fuelpump1eng2</property>
+                    <property>/controls/switches/fuelpump2eng2</property>
+                </or>
+                <not>
+                    <property>consumables/fuel/shutoff/lever/right</property>
+                </not>
+            </and-->
+            <property>/systems/electrical/outputs/cws-test-power</property>
+        </or>
+      </and>
+	</condition>
+  </model>
 
   <animation>
     <type>select</type>
@@ -682,6 +1350,141 @@
       </and>
     </condition>
   </animation>
+  <model>
+	<name>aux-fuel-press-procedural</name>
+	<path>Aircraft/AirCrane/Models/Effects/Interior/procedural_light_cw_indicator_md_green.xml</path>
+	<offsets>
+		<x-m> 0.006</x-m>
+		<y-m>-0.01286</y-m>
+		<z-m> 0.007106</z-m>
+	</offsets>
+	<condition>
+      <and>
+        <property>/systems/electrical/outputs/cws-power</property>
+        <or>
+            <and>
+                <less-than>
+                    <property>/consumables/fuel/aux/level-lbs</property>
+                    <value>23</value>
+                </less-than>
+                <or>
+                    <property>/controls/fuel/afpno1</property>
+                    <property>/controls/fuel/afpno2</property>
+                </or>
+            </and>
+            <and>
+                <not>
+                    <property>/controls/fuel/afpno1</property>
+                </not>
+                <not>
+                    <property>/controls/fuel/afpno2</property>
+                </not>
+            </and>
+            <property>/systems/electrical/outputs/cws-test-power</property>
+        </or>
+      </and>
+	</condition>
+  </model>
+
+  <animation>
+    <type>select</type>
+    <object-name>1-eng-oil-press</object-name>
+    <condition>
+      <and>
+        <property>/systems/electrical/outputs/cws-power</property>
+        <or>
+            <and>
+                <less-than>
+                    <property>/engines/engine-rpm</property>
+                    <value>0.08</value>
+                </less-than>
+                <property>controls/engines/engine[0]/running</property>
+            </and>
+            <not>
+                <property>controls/engines/engine[0]/running</property>
+            </not>
+            <property>/systems/electrical/outputs/cws-test-power</property>
+        </or>
+      </and>
+    </condition>
+  </animation>
+  <model>
+	<name>1-eng-oil-press-procedural</name>
+	<path>Aircraft/AirCrane/Models/Effects/Interior/procedural_light_cw_indicator_md_red.xml</path>
+	<offsets>
+		<x-m> 0.006</x-m>
+		<y-m>-0.037201</y-m>
+		<z-m> 0.082198</z-m>
+	</offsets>
+	<condition>
+      <and>
+        <property>/systems/electrical/outputs/cws-power</property>
+        <or>
+            <and>
+                <less-than>
+                    <property>/engines/engine-rpm</property>
+                    <value>0.08</value>
+                </less-than>
+                <property>controls/engines/engine[0]/running</property>
+            </and>
+            <not>
+                <property>controls/engines/engine[0]/running</property>
+            </not>
+            <property>/systems/electrical/outputs/cws-test-power</property>
+        </or>
+      </and>
+	</condition>
+  </model>
+
+  <animation>
+    <type>select</type>
+    <object-name>2-eng-oil-press</object-name>
+    <condition>
+      <and>
+        <property>/systems/electrical/outputs/cws-power</property>
+        <or>
+            <and>
+                <less-than>
+                    <property>/engines/engine-rpm</property>
+                    <value>0.08</value>
+                </less-than>
+                <property>controls/engines/engine[1]/running</property>
+            </and>
+            <not>
+                <property>controls/engines/engine[1]/running</property>
+            </not>
+            <property>/systems/electrical/outputs/cws-test-power</property>
+        </or>
+      </and>
+    </condition>
+  </animation>
+  <model>
+	<name>2-eng-oil-press-procedural</name>
+	<path>Aircraft/AirCrane/Models/Effects/Interior/procedural_light_cw_indicator_md_red.xml</path>
+	<offsets>
+		<x-m> 0.006</x-m>
+		<y-m> 0.037447</y-m>
+		<z-m> 0.082168</z-m>
+	</offsets>
+	<condition>
+      <and>
+        <property>/systems/electrical/outputs/cws-power</property>
+        <or>
+            <and>
+                <less-than>
+                    <property>/engines/engine-rpm</property>
+                    <value>0.08</value>
+                </less-than>
+                <property>controls/engines/engine[1]/running</property>
+            </and>
+            <not>
+                <property>controls/engines/engine[1]/running</property>
+            </not>
+            <property>/systems/electrical/outputs/cws-test-power</property>
+        </or>
+      </and>
+	</condition>
+  </model>
 
   <animation>
     <type>select</type>
@@ -715,13 +1518,16 @@
       </and>
     </condition>
   </animation>
-  
-  
 
-  <animation>
-    <type>select</type>
-    <object-name>1-eng-oil-press</object-name>
-    <condition>
+  <model>
+	<name>trans-oil-press-procedural</name>
+	<path>Aircraft/AirCrane/Models/Effects/Interior/procedural_light_cw_indicator_md_red.xml</path>
+	<offsets>
+		<x-m> 0.006</x-m>
+		<y-m>-0.012532</y-m>
+		<z-m> 0.106921</z-m>
+	</offsets>
+	<condition>
       <and>
         <property>/systems/electrical/outputs/cws-power</property>
         <or>
@@ -730,21 +1536,29 @@
                     <property>/engines/engine-rpm</property>
                     <value>0.08</value>
                 </less-than>
-                <property>controls/engines/engine[0]/running</property>
+                <or>
+                    <not>
+                        <property>controls/engines/engine[0]/running</property>
+                    </not>
+                    <not>
+                        <property>controls/engines/engine[1]/running</property>
+                    </not>
+                </or>
             </and>
-            <not>
-                <property>controls/engines/engine[0]/running</property>
-            </not>
             <property>/systems/electrical/outputs/cws-test-power</property>
         </or>
       </and>
-    </condition>
-  </animation>
-
-  <animation>
-    <type>select</type>
-    <object-name>2-eng-oil-press</object-name>
-    <condition>
+	</condition>
+  </model>
+  <model>
+	<name>inter-trans-oil-press-procedural</name>
+	<path>Aircraft/AirCrane/Models/Effects/Interior/procedural_light_cw_indicator_md_red.xml</path>
+	<offsets>
+		<x-m> 0.006</x-m>
+		<y-m>-0.012148</y-m>
+		<z-m> 0.082272</z-m>
+	</offsets>
+	<condition>
       <and>
         <property>/systems/electrical/outputs/cws-power</property>
         <or>
@@ -753,15 +1567,174 @@
                     <property>/engines/engine-rpm</property>
                     <value>0.08</value>
                 </less-than>
-                <property>controls/engines/engine[1]/running</property>
+                <or>
+                    <not>
+                        <property>controls/engines/engine[0]/running</property>
+                    </not>
+                    <not>
+                        <property>controls/engines/engine[1]/running</property>
+                    </not>
+                </or>
             </and>
-            <not>
-                <property>controls/engines/engine[1]/running</property>
-            </not>
             <property>/systems/electrical/outputs/cws-test-power</property>
         </or>
       </and>
-    </condition>
-  </animation>
+	</condition>
+  </model>
+  <model>
+	<name>1st-stage-servo-procedural</name>
+	<path>Aircraft/AirCrane/Models/Effects/Interior/procedural_light_cw_indicator_md_yellow.xml</path>
+	<offsets>
+		<x-m> 0.006</x-m>
+		<y-m>-0.012583</y-m>
+		<z-m> 0.069626</z-m>
+	</offsets>
+	<condition>
+      <and>
+        <property>/systems/electrical/outputs/cws-power</property>
+        <or>
+            <and>
+                <less-than>
+                    <property>/engines/engine-rpm</property>
+                    <value>0.08</value>
+                </less-than>
+                <or>
+                    <not>
+                        <property>controls/engines/engine[0]/running</property>
+                    </not>
+                    <not>
+                        <property>controls/engines/engine[1]/running</property>
+                    </not>
+                </or>
+            </and>
+            <property>/systems/electrical/outputs/cws-test-power</property>
+        </or>
+      </and>
+	</condition>
+  </model>
+  <model>
+	<name>2nd-stage-servo-procedural</name>
+	<path>Aircraft/AirCrane/Models/Effects/Interior/procedural_light_cw_indicator_md_yellow.xml</path>
+	<offsets>
+		<x-m> 0.006</x-m>
+		<y-m> 0.012962</y-m>
+		<z-m> 0.070143</z-m>
+	</offsets>
+	<condition>
+      <and>
+        <property>/systems/electrical/outputs/cws-power</property>
+        <or>
+            <and>
+                <less-than>
+                    <property>/engines/engine-rpm</property>
+                    <value>0.08</value>
+                </less-than>
+                <or>
+                    <not>
+                        <property>controls/engines/engine[0]/running</property>
+                    </not>
+                    <not>
+                        <property>controls/engines/engine[1]/running</property>
+                    </not>
+                </or>
+            </and>
+            <property>/systems/electrical/outputs/cws-test-power</property>
+        </or>
+      </and>
+	</condition>
+  </model>
+  <model>
+	<name>1st-stg-tl-rotor-servo-procedural</name>
+	<path>Aircraft/AirCrane/Models/Effects/Interior/procedural_light_cw_indicator_md_yellow.xml</path>
+	<offsets>
+		<x-m> 0.006</x-m>
+		<y-m>-0.01273</y-m>
+		<z-m> 0.057399</z-m>
+	</offsets>
+	<condition>
+      <and>
+        <property>/systems/electrical/outputs/cws-power</property>
+        <or>
+            <and>
+                <less-than>
+                    <property>/engines/engine-rpm</property>
+                    <value>0.08</value>
+                </less-than>
+                <or>
+                    <not>
+                        <property>controls/engines/engine[0]/running</property>
+                    </not>
+                    <not>
+                        <property>controls/engines/engine[1]/running</property>
+                    </not>
+                </or>
+            </and>
+            <property>/systems/electrical/outputs/cws-test-power</property>
+        </or>
+      </and>
+	</condition>
+  </model>
+  <model>
+	<name>1st-stage-servo-press-procedural</name>
+	<path>Aircraft/AirCrane/Models/Effects/Interior/procedural_light_cw_indicator_md_yellow.xml</path>
+	<offsets>
+		<x-m> 0.006</x-m>
+		<y-m>-0.037623</y-m>
+		<z-m>-0.031174</z-m>
+	</offsets>
+	<condition>
+      <and>
+        <property>/systems/electrical/outputs/cws-power</property>
+        <or>
+            <and>
+                <less-than>
+                    <property>/engines/engine-rpm</property>
+                    <value>0.08</value>
+                </less-than>
+                <or>
+                    <not>
+                        <property>controls/engines/engine[0]/running</property>
+                    </not>
+                    <not>
+                        <property>controls/engines/engine[1]/running</property>
+                    </not>
+                </or>
+            </and>
+            <property>/systems/electrical/outputs/cws-test-power</property>
+        </or>
+      </and>
+	</condition>
+  </model>
+  <model>
+	<name>2st-stage-servo-press-procedural</name>
+	<path>Aircraft/AirCrane/Models/Effects/Interior/procedural_light_cw_indicator_md_yellow.xml</path>
+	<offsets>
+		<x-m> 0.006</x-m>
+		<y-m> 0.037432</y-m>
+		<z-m>-0.031164</z-m>
+	</offsets>
+	<condition>
+      <and>
+        <property>/systems/electrical/outputs/cws-power</property>
+        <or>
+            <and>
+                <less-than>
+                    <property>/engines/engine-rpm</property>
+                    <value>0.08</value>
+                </less-than>
+                <or>
+                    <not>
+                        <property>controls/engines/engine[0]/running</property>
+                    </not>
+                    <not>
+                        <property>controls/engines/engine[1]/running</property>
+                    </not>
+                </or>
+            </and>
+            <property>/systems/electrical/outputs/cws-test-power</property>
+        </or>
+      </and>
+	</condition>
+  </model>
 
 </PropertyList>
