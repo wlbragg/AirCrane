@@ -17,129 +17,6 @@
 -->
 <PropertyList>
 
-  <!-- Note: Properties in /systems/electrical/ are computed by
-             Nasal/electrical.nas during replay, thus do not need to be
-             recorded.
-  -->
-  <logic>
-    <name>Lighting Landing On/Off</name>
-    <input>
-      <and>
-        <less-than>
-          <property>/systems/electrical/outputs/landing-light</property>
-          <value>31.5</value>
-        </less-than>
-        <greater-than>
-          <property>/systems/electrical/outputs/landing-light</property>
-          <value>20.0</value>
-        </greater-than>
-        <property>/controls/lighting/landing-light-switch</property>
-      </and>
-    </input>
-    <output>
-      <property>/sim/model/aircrane/lighting/landing-light</property>
-    </output>
-  </logic>
-
-  <logic>
-    <name>Lighting Spot On/Off</name>
-    <input>
-      <and>
-        <less-than>
-          <property>/systems/electrical/outputs/spot-light</property>
-          <value>31.5</value>
-        </less-than>
-        <greater-than>
-          <property>/systems/electrical/outputs/spot-light</property>
-          <value>20.0</value>
-        </greater-than>
-        <property>/controls/lighting/spot-light-switch</property>
-      </and>
-    </input>
-    <output>
-      <property>/sim/model/aircrane/lighting/spot-light</property>
-    </output>
-  </logic>
-
-  <logic>
-    <name>Lighting Beacon FWD On/Off</name>
-    <input>
-      <and>
-        <less-than>
-          <property>/systems/electrical/outputs/beaconfwd-light</property>
-          <value>31.5</value>
-        </less-than>
-        <greater-than>
-          <property>/systems/electrical/outputs/beaconfwd-light</property>
-          <value>20.0</value>
-        </greater-than>
-        <property>/controls/lighting/beaconfwd-light-switch</property>
-      </and>
-    </input>
-    <output>
-      <property>/sim/model/aircrane/lighting/beaconfwd-light</property>
-    </output>
-  </logic>
-
-  <logic>
-    <name>Lighting Beacon AFT On/Off</name>
-    <input>
-      <and>
-        <less-than>
-          <property>/systems/electrical/outputs/beaconaft-light</property>
-          <value>31.5</value>
-        </less-than>
-        <greater-than>
-          <property>/systems/electrical/outputs/beaconaft-light</property>
-          <value>20.0</value>
-        </greater-than>
-        <property>/controls/lighting/beaconaft-light-switch</property>
-      </and>
-    </input>
-    <output>
-      <property>/sim/model/aircrane/lighting/beaconaft-light</property>
-    </output>
-  </logic>
-
-  <logic>
-    <name>Lighting Strobe On/Off</name>
-    <input>
-      <and>
-        <less-than>
-          <property>/systems/electrical/outputs/strobe-light</property>
-          <value>31.5</value>
-        </less-than>
-        <greater-than>
-          <property>/systems/electrical/outputs/strobe-light</property>
-          <value>20.0</value>
-        </greater-than>
-      </and>
-    </input>
-    <output>
-      <property>/sim/model/aircrane/lighting/strobe-light</property>
-    </output>
-  </logic>
-
-  <logic>
-    <name>Lighting Navigation On/Off</name>
-    <input>
-      <and>
-        <less-than>
-          <property>/systems/electrical/outputs/nav-lights</property>
-          <value>31.5</value>
-        </less-than>
-        <greater-than>
-          <property>/systems/electrical/outputs/nav-lights</property>
-          <value>20.0</value>
-        </greater-than>
-        <property>/controls/lighting/nav-light-switch</property>
-      </and>
-    </input>
-    <output>
-      <property>/sim/model/aircrane/lighting/nav-lights</property>
-    </output>
-  </logic>
-
   <filter>
     <name>Interior Glass Glare Factor Combined</name>
     <type>gain</type>
@@ -159,6 +36,58 @@
       <max>0.9</max>
     </input>
     <output>/environment/aircraft-effects/panel-glass-reflection</output>
+  </filter>
+
+  <logic>
+    <name>Eng1 Underspeed</name>
+    <input>
+        <or>
+            <and>
+                <not>
+                    <property>controls/engines/engine[0]/running</property>
+                </not>
+                <property>systems/electrical/outputs/light-advisory</property>
+            </and>
+            <property>/systems/electrical/outputs/eng1-underspeed</property>
+        </or>
+    </input>
+    <output>
+      <property>/sim/model/lightmap/eng1-underspeed/factor</property>
+    </output>
+  </logic>
+
+  <logic>
+    <name>Eng2 Underspeed</name>
+    <input>
+        <or>
+            <and>
+                <not>
+                    <property>controls/engines/engine[1]/running</property>
+                </not>
+                <property>systems/electrical/outputs/light-advisory</property>
+            </and>
+            <property>/systems/electrical/outputs/eng1-underspeed</property>
+        </or>
+    </input>
+    <output>
+      <property>/sim/model/lightmap/eng2-underspeed/factor</property>
+    </output>
+  </logic>
+
+  <filter>
+    <name>CWS Procedural Strength</name>
+    <type>gain</type>
+    <gain>1</gain>
+    <input>
+      <expression>
+        <table>
+            <property>/controls/switches/cws-bright</property>
+            <entry><ind>1.0</ind><dep>0.35</dep></entry>
+            <entry><ind>0.0</ind><dep>0.25</dep></entry>
+        </table>
+      </expression>
+    </input>
+    <output>/sim/model/aircrane/lighting/cws-bright</output>
   </filter>
 
   <logic>
@@ -346,56 +275,123 @@
   </logic>
 
   <logic>
-    <name>Eng1 Underspeed</name>
+    <name>Lighting Landing On/Off</name>
     <input>
-        <or>
-            <and>
-                <not>
-                    <property>controls/engines/engine[0]/running</property>
-                </not>
-                <property>systems/electrical/outputs/light-advisory</property>
-            </and>
-            <property>/systems/electrical/outputs/eng1-underspeed</property>
-        </or>
+      <and>
+        <less-than>
+          <property>/systems/electrical/outputs/landing-light</property>
+          <value>31.5</value>
+        </less-than>
+        <greater-than>
+          <property>/systems/electrical/outputs/landing-light</property>
+          <value>20.0</value>
+        </greater-than>
+        <property>/controls/lighting/landing-light-switch</property>
+      </and>
     </input>
     <output>
-      <property>/sim/model/lightmap/eng1-underspeed/factor</property>
+      <property>/sim/model/aircrane/lighting/landing-light</property>
     </output>
   </logic>
 
   <logic>
-    <name>Eng2 Underspeed</name>
+    <name>Lighting Spot On/Off</name>
     <input>
-        <or>
-            <and>
-                <not>
-                    <property>controls/engines/engine[1]/running</property>
-                </not>
-                <property>systems/electrical/outputs/light-advisory</property>
-            </and>
-            <property>/systems/electrical/outputs/eng1-underspeed</property>
-        </or>
+      <and>
+        <less-than>
+          <property>/systems/electrical/outputs/spot-light</property>
+          <value>31.5</value>
+        </less-than>
+        <greater-than>
+          <property>/systems/electrical/outputs/spot-light</property>
+          <value>20.0</value>
+        </greater-than>
+        <property>/controls/lighting/spot-light-switch</property>
+      </and>
     </input>
     <output>
-      <property>/sim/model/lightmap/eng2-underspeed/factor</property>
+      <property>/sim/model/aircrane/lighting/spot-light</property>
     </output>
   </logic>
 
-  <filter>
-    <name>CWS Procedural Strength</name>
-    <type>gain</type>
-    <gain>1</gain>
+  <logic>
+    <name>Lighting Beacon FWD On/Off</name>
     <input>
-      <expression>
-        <table>
-            <property>/controls/switches/cws-bright</property>
-            <entry><ind>1.0</ind><dep>0.35</dep></entry>
-            <entry><ind>0.0</ind><dep>0.25</dep></entry>
-        </table>
-      </expression>
+      <and>
+        <less-than>
+          <property>/systems/electrical/outputs/beaconfwd-light</property>
+          <value>31.5</value>
+        </less-than>
+        <greater-than>
+          <property>/systems/electrical/outputs/beaconfwd-light</property>
+          <value>20.0</value>
+        </greater-than>
+        <property>/controls/lighting/beaconfwd-light-switch</property>
+      </and>
     </input>
-    <output>/sim/model/aircrane/lighting/cws-bright</output>
-  </filter>
+    <output>
+      <property>/sim/model/aircrane/lighting/beaconfwd-light</property>
+    </output>
+  </logic>
+
+  <logic>
+    <name>Lighting Beacon AFT On/Off</name>
+    <input>
+      <and>
+        <less-than>
+          <property>/systems/electrical/outputs/beaconaft-light</property>
+          <value>31.5</value>
+        </less-than>
+        <greater-than>
+          <property>/systems/electrical/outputs/beaconaft-light</property>
+          <value>20.0</value>
+        </greater-than>
+        <property>/controls/lighting/beaconaft-light-switch</property>
+      </and>
+    </input>
+    <output>
+      <property>/sim/model/aircrane/lighting/beaconaft-light</property>
+    </output>
+  </logic>
+
+  <logic>
+    <name>Lighting Strobe On/Off</name>
+    <input>
+      <and>
+        <less-than>
+          <property>/systems/electrical/outputs/strobe-light</property>
+          <value>31.5</value>
+        </less-than>
+        <greater-than>
+          <property>/systems/electrical/outputs/strobe-light</property>
+          <value>20.0</value>
+        </greater-than>
+      </and>
+    </input>
+    <output>
+      <property>/sim/model/aircrane/lighting/strobe-light</property>
+    </output>
+  </logic>
+
+  <logic>
+    <name>Lighting Navigation On/Off</name>
+    <input>
+      <and>
+        <less-than>
+          <property>/systems/electrical/outputs/nav-lights</property>
+          <value>31.5</value>
+        </less-than>
+        <greater-than>
+          <property>/systems/electrical/outputs/nav-lights</property>
+          <value>20.0</value>
+        </greater-than>
+        <property>/controls/lighting/nav-light-switch</property>
+      </and>
+    </input>
+    <output>
+      <property>/sim/model/aircrane/lighting/nav-lights</property>
+    </output>
+  </logic>
 
   <!-- Used for ALS procedural lights -->
   <!--

@@ -297,7 +297,6 @@ var init_electrical = func{
     append(cbs_main_left, "sys-skid-ctrl");
     append(cbs_main_left, "env-normalp");
     append(cbs_main_left, "left-xover");
-    append(cbs_main_left, "sys-speed-brake");
     append(cbs_main_left, "inst-gyro-standby");
     append(cbs_main_left, "env-temp");
     append(cbs_main_left, "sys-thrustrev-left");
@@ -309,9 +308,9 @@ var init_electrical = func{
     append(cbs_main_left, "anti-ice-pitot-left");
     append(cbs_main_left, "anti-ice-bleedair-ws");
     append(cbs_main_left, "anti-ice-bleedair-ws-temp");
-    
+
     # Windshield wipers
-    
+
     append(cbs_main_left, "afcs1");
     append(cbs_main_left, "afcs2");
     append(cbs_main_left, "afcs-servo");
@@ -319,7 +318,6 @@ var init_electrical = func{
     append(cbs_main_left, "bar-alt");
     append(cbs_main_left, "stick-trim");
     append(cbs_main_left, "yaw");
-    append(cbs_main_left, "tank-qty");
     append(cbs_main_left, "cws");
     append(cbs_main_left, "app-cont");
     append(cbs_main_left, "fuel-heat-eng1");
@@ -330,6 +328,9 @@ var init_electrical = func{
     append(cbs_main_left, "fuel-boost-pump2-eng1");
     append(cbs_main_left, "fuel-boost-pump1-eng2");
     append(cbs_main_left, "fuel-boost-pump2-eng2");
+    append(cbs_main_left, "firetank-system");
+    append(cbs_main_left, "tank-qty");
+    append(cbs_main_left, "rotor-brake");
 
 ######## USING ##########
     append(cbs_main_left, "landing-light");
@@ -390,13 +391,27 @@ var init_electrical = func{
     append(cbs_main_right, "dc-rmi2");
 
 ######## USING ##########
-    append(cbs_main_right, "tank-qty");
+
+    append(cbs_main_right, "afcs1");
+    append(cbs_main_right, "afcs2");
+    append(cbs_main_right, "afcs-servo");
+    append(cbs_main_right, "afcs-fault");
+    append(cbs_main_right, "bar-alt");
+    append(cbs_main_right, "stick-trim");
+    append(cbs_main_right, "yaw");
     append(cbs_main_right, "cws");
     append(cbs_main_right, "app-cont");
     append(cbs_main_right, "fuel-heat-eng1");
     append(cbs_main_right, "fuel-heat-eng2");
     append(cbs_main_right, "fuel-heat");
     append(cbs_main_right, "interior-dome");
+    append(cbs_main_right, "fuel-boost-pump1-eng1");
+    append(cbs_main_right, "fuel-boost-pump2-eng1");
+    append(cbs_main_right, "fuel-boost-pump1-eng2");
+    append(cbs_main_right, "fuel-boost-pump2-eng2");
+    append(cbs_main_right, "firetank-system");
+    append(cbs_main_right, "tank-qty");
+    append(cbs_main_right, "rotor-brake");
 
     append(cbs_main_right_xover, "light-panel-center");
     append(cbs_main_right_xover, "light-panel-right");
@@ -553,7 +568,6 @@ var init_electrical = func{
     #append(lights_input, "light-cabin");
     #append(lights_output, "");
     #append(lights_power, 7.5);
-
 
     for (var i = 0 ; i < size(cbs_battery_hot) ; i += 1) {
         props.globals.initNode("/systems/electrical/users/battery-hot/"~cbs_battery_hot[i],0,"DOUBLE");

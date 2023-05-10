@@ -11,8 +11,8 @@
     <object-name>sysreadyon</object-name>
     <object-name>sysreadyoff</object-name>
     <object-name>tank-volume-glass</object-name>
-	<object-name>tank-volume-glass-bg</object-name>
-	<object-name>fond</object-name>
+    <object-name>tank-volume-glass-bg</object-name>
+    <object-name>fond</object-name>
 
     <object-name>vitre</object-name>
   </animation>
@@ -25,8 +25,8 @@
     <object-name>sysreadyon</object-name>
     <object-name>sysreadyoff</object-name>
     <object-name>tank-volume-glass</object-name>
-	<object-name>tank-volume-glass-bg</object-name>
-	<object-name>fond</object-name>
+    <object-name>tank-volume-glass-bg</object-name>
+    <object-name>fond</object-name>
   </effect>
 
   <effect>
@@ -57,7 +57,7 @@
       <not><property>sim/rendering/rembrandt/enabled</property></not>
     </condition>
     <emission>
-      <factor-prop>systems/electrical/outputs/digital-display</factor-prop>
+      <factor-prop>systems/electrical/outputs/firetank-system</factor-prop>
       <red>   1 </red>
       <green> 1 </green>
       <blue>  1 </blue>
@@ -68,10 +68,11 @@
     <type>select</type>
     <object-name>sysreadyon</object-name>
     <condition>
-      <greater-than>
-        <property>sim/weight[3]/weight-lb</property>
-        <value>0</value>
-      </greater-than>
+        <!--greater-than>
+            <property>sim/weight[3]/weight-lb</property>
+            <value>0</value>
+        </greater-than-->
+        <property>systems/electrical/outputs/firetank-system</property>
     </condition>
   </animation>
 
@@ -79,10 +80,13 @@
     <type>select</type>
     <object-name>sysreadyoff</object-name>
     <condition>
-      <less-than>
-        <property>sim/weight[3]/weight-lb</property>
-        <value>1</value>
-      </less-than>
+        <!--less-than>
+            <property>sim/weight[3]/weight-lb</property>
+            <value>1</value>
+        </less-than-->
+        <not>
+            <property>systems/electrical/outputs/firetank-system</property>
+        </not>
     </condition>
   </animation>
 

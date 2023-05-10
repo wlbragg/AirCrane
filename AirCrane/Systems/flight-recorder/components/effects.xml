@@ -37,11 +37,11 @@
 
   <signal>
     <type>float</type>
-    <property type="string">/sim/model/firetank/deployflexhose</property>
+    <property type="string">/sim/model/firetank/deploy-flexhose</property>
   </signal>
   <signal>
     <type>float</type>
-    <property type="string">/sim/model/firetank/deployramscoop</property>
+    <property type="string">/sim/model/firetank/deploy-ramscoop</property>
   </signal>
   <signal>
     <type>bool</type>

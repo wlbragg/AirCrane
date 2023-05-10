@@ -105,8 +105,8 @@
           </watercannon>
           <firetank>
             <enabled type="bool">false</enabled>
-            <deployflexhose type="float">1</deployflexhose>
-            <deployramscoop type="float">0</deployramscoop>
+            <deploy-flexhose type="float">1</deploy-flexhose>
+            <deploy-ramscoop type="float">0</deploy-ramscoop>
             <opencannonvalve type="bool">0</opencannonvalve>
             <opentankdoors type="bool">0</opentankdoors>
             <foam type="bool">0</foam>
@@ -376,7 +376,6 @@
       <systems>
         <electrical>
           <outputs>
-            <digital-display type="float">0</digital-display>
             <eng1-underspeed type="int">0</eng1-underspeed>
             <eng2-underspeed type="int">0</eng2-underspeed>
             <rotorbrake type="int">0</rotorbrake>

@@ -10,20 +10,20 @@
     <condition>
       <or>
         <equals>
-          <property>/systems/electrical/outputs/rotorbrake</property>
+          <property>/controls/switches/rotor-brake</property>
           <value>0</value>
         </equals>
         <equals>
-          <property>/systems/electrical/outputs/rotorbrake</property>
+          <property>/controls/switches/rotor-brake</property>
           <value>1</value>
         </equals>
         <and>
           <equals>
-            <property>/systems/electrical/outputs/rotorbrake</property>
+            <property>/controls/switches/rotor-brake</property>
             <value>-1</value>
           </equals>
           <equals>
-            <property>/systems/electrical/outputs/digital-display</property>
+            <property>/systems/electrical/outputs/rotor-brake</property>
             <value>0</value>
           </equals>
         </and>
@@ -37,10 +37,10 @@
     <condition>
       <and>
         <equals>
-          <property>systems/electrical/outputs/rotorbrake</property>
+          <property>/controls/switches/rotor-brake</property>
           <value>-1</value>
         </equals>
-        <property>/systems/electrical/outputs/digital-display</property>
+        <property>/systems/electrical/outputs/rotor-brake</property>
       </and>
     </condition>
   </animation>
@@ -48,7 +48,7 @@
   <animation>
     <type>knob</type>
     <object-name>switchrotorbrake</object-name>
-    <property>systems/electrical/outputs/rotorbrake</property>
+    <property>/controls/switches/rotor-brake</property>
     <factor>50</factor>
     <center>
       <x-m>  0.00516 </x-m>
@@ -64,7 +64,7 @@
       <repeatable>false</repeatable>
       <binding>
         <command>property-adjust</command>
-        <property>systems/electrical/outputs/rotorbrake</property>
+        <property>/controls/switches/rotor-brake</property>
         <factor>1</factor>
         <min> -1 </min>
         <max>  1 </max>
@@ -73,7 +73,7 @@
       <binding>
         <command>nasal</command>
         <script>
-          var brake = getprop("systems/electrical/outputs/rotorbrake");
+          var brake = getprop("/controls/switches/rotor-brake");
           var pressure = getprop("controls/rotorbrake/rotorbrake");
           if(brake == -1) {
             setprop("controls/rotor/brake", pressure * .05);
@@ -90,7 +90,7 @@
         <command>set-tooltip</command>
         <tooltip-id>rotorbrake</tooltip-id>
         <label>Rotor Brake: %s</label>
-        <property>systems/electrical/outputs/rotorbrake</property>
+        <property>controls/switches/rotor-brake</property>
       </binding>
     </hovered>
   </animation>
@@ -101,10 +101,10 @@
     <condition>
       <and>
         <equals>
-          <property>/systems/electrical/outputs/rotorbrake</property>
+          <property>/controls/switches/rotor-brake</property>
           <value>-1</value>
         </equals>
-        <property>/systems/electrical/outputs/digital-display</property>
+        <property>/systems/electrical/outputs/rotor-brake</property>
       </and>
     </condition>
     <emission>

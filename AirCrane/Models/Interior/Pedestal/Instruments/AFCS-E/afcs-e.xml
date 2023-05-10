@@ -7,8 +7,10 @@
   <effect>
     <inherits-from>Aircraft/AirCrane/Models/Effects/Interior/lm-interior-afcs-e</inherits-from>
     <object-name>base</object-name>
-    <object-name>afcs</object-name>
-    <object-name>baralt</object-name>
+    <object-name>afcson</object-name>
+    <object-name>afcsoff</object-name>
+    <object-name>baralton</object-name>
+    <object-name>baraltoff</object-name>
     <object-name>rolltrim</object-name>
     <object-name>cgtrim</object-name>
     <object-name>yawtrim</object-name>
@@ -22,7 +24,8 @@
   <!-- AFCS "Button" -->
   <animation>
     <type>slider</type>
-    <object-name>afcs</object-name>
+    <object-name>afcson</object-name>
+    <object-name>afcsoff</object-name>
     <property>/controls/switches/spring-switch/afcs</property>
     <factor>0.002</factor>
     <axis>
@@ -67,22 +70,40 @@
   </animation>
 
   <animation>
-    <object-name>afcs</object-name>
+    <type>select</type>
+    <object-name>afcson</object-name>
+    <condition>
+      <property>/sim/model/lightmap/afcs-green/factor</property>
+    </condition>
+  </animation>
+  <animation>
+    <object-name>afcson</object-name>
     <type>material</type>
     <condition>
         <property>/sim/model/lightmap/afcs-green/factor</property>
     </condition>
     <emission>
-      <red>   0 </red>
-      <green> 1 </green>
-      <blue>  1 </blue>
+      <red>   0.0 </red>
+      <green> 0.25 </green>
+      <blue>  0.25 </blue>
     </emission>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>afcsoff</object-name>
+    <condition>
+      <not>
+        <property>/sim/model/lightmap/afcs-green/factor</property>
+      </not>
+    </condition>
   </animation>
 
   <!-- BAR Alt "Button" -->
   <animation>
     <type>slider</type>
-    <object-name>baralt</object-name>
+    <object-name>baralton</object-name>
+    <object-name>baraltoff</object-name>
     <property>/controls/switches/spring-switch/bar-alt</property>
     <factor>0.002</factor>
     <axis>
@@ -127,16 +148,99 @@
   </animation>
 
   <animation>
-    <object-name>baralt</object-name>
+    <type>select</type>
+    <object-name>baralton</object-name>
+    <condition>
+      <property>/sim/model/lightmap/bar-alt-green/factor</property>
+    </condition>
+  </animation>
+  <animation>
+    <object-name>baralton</object-name>
     <type>material</type>
     <condition>
        <property>/sim/model/lightmap/bar-alt-green/factor</property>
     </condition>
     <emission>
-      <red>   0 </red>
-      <green> 1 </green>
-      <blue>  1 </blue>
+      <red>   0.0 </red>
+      <green> 0.25 </green>
+      <blue>  0.25 </blue>
     </emission>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>baraltoff</object-name>
+    <condition>
+      <not>
+        <property>/sim/model/lightmap/bar-alt-green/factor</property>
+      </not>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>baron</object-name>
+    <condition>
+      <and>
+        <less-than>
+          <property>/systems/electrical/outputs/main-left/bar-alt</property>
+          <value>31.5</value>
+        </less-than>
+        <greater-than>
+          <property>/systems/electrical/outputs/main-left/bar-alt</property>
+          <value>20.0</value>
+        </greater-than>
+        <not>
+          <property>/sim/model/lightmap/bar-alt-green/factor</property>
+        </not>
+      </and>
+    </condition>
+  </animation>
+  <animation>
+    <object-name>baron</object-name>
+    <type>material</type>
+    <condition>
+      <and>
+        <less-than>
+          <property>/systems/electrical/outputs/main-left/bar-alt</property>
+          <value>31.5</value>
+        </less-than>
+        <greater-than>
+          <property>/systems/electrical/outputs/main-left/bar-alt</property>
+          <value>20.0</value>
+        </greater-than>
+        <not>
+          <property>/sim/model/lightmap/bar-alt-green/factor</property>
+        </not>
+      </and>
+    </condition>
+    <emission>
+      <red>   0.5 </red>
+      <green> 0.0 </green>
+      <blue>  0.0 </blue>
+    </emission>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>baroff</object-name>
+    <condition>
+      <or>
+        <and>
+            <not>
+                <less-than>
+                  <property>/systems/electrical/outputs/main-left/bar-alt</property>
+                  <value>31.5</value>
+                </less-than>
+                <greater-than>
+                  <property>/systems/electrical/outputs/main-left/bar-alt</property>
+                  <value>20.0</value>
+                </greater-than>
+            </not>
+        </and>
+        <property>/sim/model/lightmap/bar-alt-green/factor</property>
+      </or>
+    </condition>
   </animation>
 
   <!-- Yaw Trim "Knob" -->
@@ -393,7 +497,7 @@
   </animation>
 
   <model>
-    <name>afcs-on</name>
+    <name>afcs-on-procedural</name>
     <path>Aircraft/AirCrane/Models/Effects/Interior/procedural_light_indicator_green.xml</path>
     <offsets>
         <x-m>-0.039234</x-m>
@@ -406,7 +510,7 @@
   </model>
 
   <model>
-    <name>bar-alt-on</name>
+    <name>bar-alt-on-procedural</name>
     <path>Aircraft/AirCrane/Models/Effects/Interior/procedural_light_indicator_green.xml</path>
     <offsets>
         <x-m>-0.039592</x-m>
@@ -419,20 +523,20 @@
   </model>
 
   <model>
-    <name>bar-alt-off</name>
+    <name>bar-off-procedural</name>
     <path>Aircraft/AirCrane/Models/Effects/Interior/procedural_light_indicator_red.xml</path>
     <offsets>
         <x-m>-0.007639</x-m>
         <y-m>-0.005541</y-m>
-        <z-m> 0.0120</z-m>
+        <z-m> 0.0110</z-m>
     </offsets>
     <condition>
-		<and>
-			<not>
-				<property>/sim/model/lightmap/bar-alt-green/factor</property>
-			</not>
-			<property>systems/electrical/outputs/light-advisory</property>
-		</and>
+        <and>
+            <not>
+                <property>/sim/model/lightmap/bar-alt-green/factor</property>
+            </not>
+            <property>systems/electrical/outputs/light-advisory</property>
+        </and>
     </condition>
   </model>
 

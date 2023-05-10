@@ -13,7 +13,6 @@
         <light_color_center_g type="float">0.6</light_color_center_g>
         <light_color_center_b type="float">0.7</light_color_center_b>
 
-     
         <is_directional type="bool">false</is_directional>
         <is_strobe type="bool">false</is_strobe>
     </parameters>

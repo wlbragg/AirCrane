@@ -182,7 +182,6 @@
         <cb-sys-skid-ctrl type="bool">1</cb-sys-skid-ctrl>
         <cb-env-normalp type="bool">1</cb-env-normalp>
         <cb-left-xover type="bool">1</cb-left-xover>
-        <cb-sys-speed-brake type="bool">1</cb-sys-speed-brake>
         <cb-inst-gyro-standby type="bool">1</cb-inst-gyro-standby>
         <cb-env-temp type="bool">1</cb-env-temp>
         <cb-sys-thrustrev-left type="bool">1</cb-sys-thrustrev-left>
@@ -198,7 +197,6 @@
         <cb-nav-lights type="bool">1</cb-nav-lights>
         <cb-spot-light type="bool">1</cb-spot-light>
 
-        <cb-tank-qty type="bool">1</cb-tank-qty>
         <cb-cws type="bool">1</cb-cws>
         <cb-app-cont type="bool">1</cb-app-cont>
         <cb-fuel-heat-eng1 type="bool">1</cb-fuel-heat-eng1>
@@ -211,8 +209,10 @@
         <cb-fuel-boost-pump2-eng2 type="bool">1</cb-fuel-boost-pump2-eng2>
         <cb-afcs1 type="bool">1</cb-afcs1>
         <cb-bar-alt type="bool">1</cb-bar-alt>
-		<cb-light-advisory type="bool">1</cb-light-advisory>
-
+        <cb-light-advisory type="bool">1</cb-light-advisory>
+        <cb-firetank-system type="bool">1</cb-firetank-system>
+        <cb-tank-qty type="bool">1</cb-tank-qty>
+         <cb-rotor-brake type="bool">1</cb-rotor-brake>
       </main-left>
 
       <main-left-xover>
@@ -276,13 +276,22 @@
         <cb-dc-fd2 type="bool">1</cb-dc-fd2>
         <cb-dc-rmi2 type="bool">1</cb-dc-rmi2>
 
-        <cb-tank-qty type="bool">1</cb-tank-qty>
         <cb-cws type="bool">1</cb-cws>
         <cb-app-cont type="bool">1</cb-app-cont>
         <cb-fuel-heat-eng1 type="bool">1</cb-fuel-heat-eng1>
         <cb-fuel-heat-eng2 type="bool">1</cb-fuel-heat-eng2>
         <cb-fuel-heat type="bool">1</cb-fuel-heat>
         <cb-interior-dome type="bool">1</cb-interior-dome>
+        <cb-fuel-boost-pump1-eng1 type="bool">1</cb-fuel-boost-pump1-eng1>
+        <cb-fuel-boost-pump2-eng1 type="bool">1</cb-fuel-boost-pump2-eng1>
+        <cb-fuel-boost-pump1-eng2 type="bool">1</cb-fuel-boost-pump1-eng2>
+        <cb-fuel-boost-pump2-eng2 type="bool">1</cb-fuel-boost-pump2-eng2>
+        <cb-afcs1 type="bool">1</cb-afcs1>
+        <cb-bar-alt type="bool">1</cb-bar-alt>
+        <cb-light-advisory type="bool">1</cb-light-advisory>
+        <cb-firetank-system type="bool">1</cb-firetank-system>
+        <cb-tank-qty type="bool">1</cb-tank-qty>
+        <cb-rotor-brake type="bool">1</cb-rotor-brake>
       </main-right>
 
       <main-right-xover>
@@ -392,6 +401,7 @@
     <fuelpump2eng1 type="bool">false</fuelpump2eng1>
     <fuelpump1eng2 type="bool">false</fuelpump1eng2>
     <fuelpump2eng2 type="bool">false</fuelpump2eng2>
+    <rotor-brake type="int">0</rotor-brake>
     <spring-switch>
       <afcs-servo type="int">0</afcs-servo>
       <afcs type="int">0</afcs>

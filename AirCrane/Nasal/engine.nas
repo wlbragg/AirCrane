@@ -8,7 +8,7 @@
 # Toggles the state of rotor brake pressure
 var pumpRotorBrake = func {
     var push = getprop("/controls/rotorbrake/rotorbrake-handle") or 0;
-    var brake = getprop("systems/electrical/outputs/rotorbrake");
+    var brake = getprop("controls/switches/rotor-brake");
 
     if (push) {
         var pump = getprop("/controls/rotorbrake/rotorbrake") or 0;

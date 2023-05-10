@@ -400,7 +400,7 @@
   </animation>
 
   <model>
-    <name>fuel-pump1-eng1</name>
+    <name>fuel-pump1-eng1-procedural</name>
     <path>Aircraft/AirCrane/Models/Effects/Interior/procedural_light_indicator_red.xml</path>
     <offsets>
         <x-m> 0.011413</x-m>
@@ -413,7 +413,7 @@
   </model>
 
   <model>
-    <name>fuel-pump2-eng1</name>
+    <name>fuel-pump2-eng1-procedural</name>
     <path>Aircraft/AirCrane/Models/Effects/Interior/procedural_light_indicator_red.xml</path>
     <offsets>
         <x-m> 0.011334</x-m>
@@ -426,7 +426,7 @@
   </model>
 
   <model>
-    <name>fuel-pump1-eng2</name>
+    <name>fuel-pump1-eng2-procedural</name>
     <path>Aircraft/AirCrane/Models/Effects/Interior/procedural_light_indicator_red.xml</path>
     <offsets>
         <x-m> 0.011576</x-m>
@@ -439,7 +439,7 @@
   </model>
 
   <model>
-    <name>fuel-pump2-eng2</name>
+    <name>fuel-pump2-eng2-procedural</name>
     <path>Aircraft/AirCrane/Models/Effects/Interior/procedural_light_indicator_red.xml</path>
     <offsets>
         <x-m> 0.011242</x-m>

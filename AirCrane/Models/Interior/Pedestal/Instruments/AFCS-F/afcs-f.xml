@@ -70,7 +70,7 @@
     <condition>
       <and>
         <property>/controls/switches/afcs-servo</property>
-        <property>/systems/electrical/outputs/digital-display</property>
+        <property>/sim/model/lightmap/afcs-green/factor</property>
       </and>
     </condition>
     <emission>
@@ -134,7 +134,7 @@
     <condition>
       <and>
         <property>/controls/switches/afcs-1</property>
-        <property>/systems/electrical/outputs/digital-display</property>
+        <property>/sim/model/lightmap/afcs-green/factor</property>
       </and>
     </condition>
     <emission>
@@ -197,7 +197,7 @@
     <condition>
       <and>
         <property>/controls/switches/afcs-2</property>
-        <property>/systems/electrical/outputs/digital-display</property>
+        <property>/sim/model/lightmap/afcs-green/factor</property>
       </and>
     </condition>
     <emission>
@@ -260,7 +260,7 @@
     <condition>
       <and>
         <property>/controls/switches/afcs-fault</property>
-        <property>/systems/electrical/outputs/digital-display</property>
+        <property>/sim/model/lightmap/afcs-green/factor</property>
       </and>
     </condition>
     <emission>
@@ -323,7 +323,7 @@
     <condition>
       <and>
         <property>/controls/switches/bar-alt</property>
-        <property>/systems/electrical/outputs/digital-display</property>
+        <property>/sim/model/lightmap/afcs-green/factor</property>
       </and>
     </condition>
     <emission>
@@ -387,7 +387,7 @@
     <condition>
       <and>
         <property>/controls/switches/stick-trim</property>
-        <property>/systems/electrical/outputs/digital-display</property>
+        <property>/sim/model/lightmap/afcs-green/factor</property>
       </and>
     </condition>
     <emission>
@@ -450,7 +450,7 @@
     <condition>
       <and>
         <property>/controls/switches/yaw</property>
-        <property>/systems/electrical/outputs/digital-display</property>
+        <property>/sim/model/lightmap/afcs-green/factor</property>
       </and>
     </condition>
     <emission>
