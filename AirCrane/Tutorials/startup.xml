@@ -1,0 +1,1159 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+    <name>Startup Procedure</name>
+
+    <description>
+This tutorial will teach you how to configure the AirCrane for Turbine Start and to Ready to Fly Configuration.
+    </description>
+
+    <audio-dir>Tutorials/startup</audio-dir>
+    <timeofday>morning</timeofday>
+    <step>
+        <set>
+            <property>/controls/gear/brake-parking</property>
+            <value>0</value>
+        </set>
+        <set>
+            <property>/controls/engines/engine[0]/magnetos</property>
+            <value>0</value>
+        </set>
+		<set>
+            <property>/controls/engines/engine[1]/magnetos</property>
+            <value>0</value>
+        </set>
+		<set>
+            <property>/controls/engines/engine[0]/throttle</property>
+            <value>1</value>
+        </set>
+		<set>
+            <property>/controls/engines/engine[1]/throttle</property>
+            <value>1</value>
+        </set>
+        <set>
+            <property>/controls/switches/ignition-1</property>
+            <value>0</value>
+        </set>
+		<set>
+            <property>/controls/switches/ignition-2</property>
+            <value>0</value>
+        </set>
+		<set>
+            <property>/controls/electric/engine[0]/generator-sw</property>
+            <value>0</value>
+        </set>
+		<set>
+            <property>/controls/electric/engine[1]/generator-sw</property>
+            <value>0</value>
+        </set>
+		<set>
+            <property>/controls/switches/app-master</property>
+            <value>0</value>
+        </set>
+		<set>
+            <property>/controls/switches/app-fuel</property>
+            <value>0</value>
+        </set>
+		<set>
+            <property>/controls/switches/app-start-20</property>
+            <value>0</value>
+        </set>
+		<set>
+            <property>/consumables/fuel/shutoff/lever/left</property>
+            <value>0</value>
+        </set>
+		<set>
+            <property>/consumables/fuel/shutoff/lever/right</property>
+            <value>0</value>
+        </set>
+		<set>
+            <property>/controls/switches/fuelpump1eng1</property>
+            <value>0</value>
+        </set>
+		<set>
+            <property>/controls/switches/fuelpump2eng1</property>
+            <value>0</value>
+        </set>
+		<set>
+            <property>/controls/switches/fuelpump1eng2</property>
+            <value>0</value>
+        </set>
+		<set>
+            <property>/controls/switches/fuelpump2eng2</property>
+            <value>0</value>
+        </set>
+		<set>
+            <property>/controls/switches/afcs</property>
+            <value>0</value>
+        </set>
+		<set>
+            <property>/controls/switches/afcs-servo</property>
+            <value>0</value>
+        </set>
+        <set>
+            <property>/instrumentation/adf/frequencies/selected-khz</property>
+            <value>332</value> <!-- PAHOA NDB -->
+        </set>
+        <set>
+            <property>/environment/weather-scenario</property>
+            <value>Fair weather</value>
+        </set>
+        <set>
+            <property>/consumables/fuel/tank[0]/selected</property>
+            <value>true</value>
+        </set>
+        <set>
+            <property>/consumables/fuel/tank[1]/selected</property>
+            <value>true</value>
+        </set>
+		<set>
+            <property>/consumables/fuel/tank[2]/selected</property>
+            <value>true</value>
+        </set>
+		<set>
+            <property>/consumables/fuel/tank[3]/selected</property>
+            <value>true</value>
+        </set>
+		<set>
+            <property>/consumables/fuel/tank[4]/selected</property>
+            <value>true</value>
+        </set>
+        <set>
+            <property>/controls/electric/battery-bus-switch</property>
+            <value>false</value>
+        </set>
+        <set>
+            <property>controls/lighting/beaconfwd-light-switch</property>
+            <value>false</value>
+        </set>
+        <set>
+            <property>controls/lighting/beaconaft-light-switch</property>
+            <value>false</value>
+        </set>
+        <set>
+            <property>controls/lighting/nav-light-switch</property>
+            <value>false</value>
+        </set>
+        <set>
+            <property>controls/lighting/strobe-light-switch</property>
+            <value>false</value>
+        </set>
+        <set>
+            <property>controls/lighting/landing-light-switch</property>
+            <value>false</value>
+        </set>
+        <set>
+            <property>controls/lighting/spot-light-switch</property>
+            <value>false</value>
+        </set>
+        <set>
+            <property>controls/lighting/luminosite-lights</property>
+            <value>0</value>
+        </set>
+        <set>
+            <property>/sim/model/door-positions/crew/position-norm</property>
+            <value>0</value>
+        </set>
+        <set>
+            <property>/sim/model/door-positions/starboard/position-norm</property>
+            <value>0</value>
+        </set>
+        <set>
+            <property>/controls/engines/active-engine</property>
+            <value>0</value>
+        </set>
+        <message>After finishing the Preflight Inspection you're now ready to learn how to start the turbines.</message>
+        <view>
+            <heading-offset-deg>354.8</heading-offset-deg>
+            <pitch-offset-deg>-5.6</pitch-offset-deg>
+            <roll-offset-deg>0.0</roll-offset-deg>
+            <x-offset-m>0.528</x-offset-m>
+            <y-offset-m>-0.891</y-offset-m>
+            <z-offset-m>-8.509</z-offset-m>
+            <field-of-view>100</field-of-view>
+        </view>
+        <wait>7</wait>
+    </step>
+
+    <step>
+        <message>Make sure the Parking Brake is set.</message>
+        <view>
+            <heading-offset-deg>85.175</heading-offset-deg>
+            <pitch-offset-deg>-54.433</pitch-offset-deg>
+            <roll-offset-deg>0.0</roll-offset-deg>
+            <x-offset-m>0.528</x-offset-m>
+            <y-offset-m>-0.891</y-offset-m>
+            <z-offset-m>-8.509</z-offset-m>
+            <field-of-view>55.167</field-of-view>
+        </view>
+        <!--marker>
+            <x-m>-8.67945</x-m>
+            <y-m>-0.190742</y-m>
+            <z-m>-1.87349</z-m>
+            <scale>3.4667</scale>
+        </marker-->
+        <error>
+            <message>Set the Parking Brake.</message>
+            <condition>
+                <not>
+                    <property>controls/gear/brake-parking</property>
+                </not>
+            </condition>
+        </error>
+        <exit>
+            <condition>
+                <property>controls/gear/brake-parking</property>
+            </condition>
+        </exit>
+    </step>
+
+    <!--step>
+        <message>Check that all circuit breakers are in.</message>
+        <set>
+            <property>/sim/model/hide-yoke</property>
+            <value>true</value>
+        </set>
+        <view>
+            <heading-offset-deg>1.2</heading-offset-deg>
+            <pitch-offset-deg>-23.0</pitch-offset-deg>
+            <roll-offset-deg>0.0</roll-offset-deg>
+            <x-offset-m>-0.2</x-offset-m>
+            <y-offset-m>-0.1</y-offset-m>
+            <z-offset-m>0.1</z-offset-m>
+            <field-of-view>42.4</field-of-view>
+        </view>
+        <error>
+            <message>Push the AUTOPILOT-breaker in.</message>
+            <condition>
+                <not>
+                    <property>/controls/circuit-breakers/autopilot</property>
+                </not>
+            </condition>
+        </error>
+        <error>
+            <message>Push the BCN LT-breaker in.</message>
+            <condition>
+                <not>
+                    <property>/controls/circuit-breakers/bcnlt</property>
+                </not>
+            </condition>
+        </error>
+        <error>
+            <message>Push the FLAP-breaker in.</message>
+            <condition>
+                <not>
+                    <property>/controls/circuit-breakers/flaps</property>
+                </not>
+            </condition>
+        </error>
+        <error>
+            <message>Push the INST-breaker in.</message>
+            <condition>
+                <not>
+                    <property>/controls/circuit-breakers/instr</property>
+                </not>
+            </condition>
+        </error>
+        <error>
+            <message>Push the INT LT-breaker in.</message>
+            <condition>
+                <not>
+                    <property>/controls/circuit-breakers/intlt</property>
+                </not>
+            </condition>
+        </error>
+        <error>
+            <message>Push the LDG LT-breaker in.</message>
+            <condition>
+                <not>
+                    <property>/controls/circuit-breakers/landing</property>
+                </not>
+            </condition>
+        </error>
+        <error>
+            <message>Push the ALT-breaker in.</message>
+            <condition>
+                <not>
+                    <property>/controls/circuit-breakers/master</property>
+                </not>
+            </condition>
+        </error>
+        <error>
+            <message>Push the NAV LT-breaker in.</message>
+            <condition>
+                <not>
+                    <property>/controls/circuit-breakers/navlt</property>
+                </not>
+            </condition>
+        </error>
+        <error>
+            <message>Push the PITOT HT-breaker in.</message>
+            <condition>
+                <not>
+                    <property>/controls/circuit-breakers/pitot-heat</property>
+                </not>
+            </condition>
+        </error>
+        <error>
+            <message>Push the RADIO 1-breaker in.</message>
+            <condition>
+                <not>
+                    <property>/controls/circuit-breakers/radio1</property>
+                </not>
+            </condition>
+        </error><error>
+            <message>Push the RADIO 2-breaker in.</message>
+            <condition>
+                <not>
+                    <property>/controls/circuit-breakers/radio2</property>
+                </not>
+            </condition>
+        </error><error>
+            <message>Push the RADIO 3-breaker in.</message>
+            <condition>
+                <not>
+                    <property>/controls/circuit-breakers/radio3</property>
+                </not>
+            </condition>
+        </error><error>
+            <message>Push the RADIO 4-breaker in.</message>
+            <condition>
+                <not>
+                    <property>/controls/circuit-breakers/radio4</property>
+                </not>
+            </condition>
+        </error><error>
+            <message>Push the RADIO 5-breaker in.</message>
+            <condition>
+                <not>
+                    <property>/controls/circuit-breakers/radio5</property>
+                </not>
+            </condition>
+        </error>
+        <error>
+            <message>Push the STRB LT-breaker in.</message>
+            <condition>
+                <not>
+                    <property>/controls/circuit-breakers/strobe</property>
+                </not>
+            </condition>
+        </error>
+        <error>
+            <message>Push the TURN COORD-breaker in.</message>
+            <condition>
+                <not>
+                    <property>/controls/circuit-breakers/turn-coordinator</property>
+                </not>
+            </condition>
+        </error>
+        <exit>
+            <condition>
+                <and>
+                    <property>/controls/circuit-breakers/aircond</property>
+                    <property>/controls/circuit-breakers/autopilot</property>
+                    <property>/controls/circuit-breakers/bcnlt</property>
+                    <property>/controls/circuit-breakers/flaps</property>
+                    <property>/controls/circuit-breakers/instr</property>
+                    <property>/controls/circuit-breakers/intlt</property>
+                    <property>/controls/circuit-breakers/landing</property>
+                    <property>/controls/circuit-breakers/master</property>
+                    <property>/controls/circuit-breakers/navlt</property>
+                    <property>/controls/circuit-breakers/pitot-heat</property>
+                    <property>/controls/circuit-breakers/radio1</property>
+                    <property>/controls/circuit-breakers/radio2</property>
+                    <property>/controls/circuit-breakers/radio3</property>
+                    <property>/controls/circuit-breakers/radio4</property>
+                    <property>/controls/circuit-breakers/radio5</property>
+                    <property>/controls/circuit-breakers/strobe</property>
+                    <property>/controls/circuit-breakers/turn-coordinator</property>
+                </and>
+            </condition>
+        </exit>
+    </step-->
+
+    <step>
+        <message>Turn on the Battery Power.</message>
+        <view>
+            <heading-offset-deg>58.925</heading-offset-deg>
+            <pitch-offset-deg>-50.599</pitch-offset-deg>
+            <roll-offset-deg>0.0</roll-offset-deg>
+            <x-offset-m>0.552</x-offset-m>
+            <y-offset-m>-0.891</y-offset-m>
+            <z-offset-m>-8.509</z-offset-m>
+            <field-of-view>35.902</field-of-view>
+        </view>
+        <error>
+            <message>Flip the Battery Switch On!</message>
+            <condition>
+                <not>
+                    <property>controls/electric/battery-bus-switch</property>
+                </not>
+            </condition>
+        </error>
+        <exit>
+            <condition>
+                <property>controls/electric/battery-bus-switch</property>
+            </condition>
+        </exit>
+    </step>
+
+    <step>
+        <message>Now it is time to Start the Auxiliary Power Plant.</message>
+        <view>
+            <heading-offset-deg>72.612</heading-offset-deg>
+            <pitch-offset-deg>26.900</pitch-offset-deg>
+            <roll-offset-deg>-50.0</roll-offset-deg>
+            <x-offset-m>0.538</x-offset-m>
+            <y-offset-m>-0.887</y-offset-m>
+            <z-offset-m>-8.509</z-offset-m>
+            <field-of-view>46.766</field-of-view>
+        </view>
+        <wait>3</wait>
+    </step>
+
+    <step>
+        <message>Turn on the APP Master Switch.</message>
+        <view>
+            <heading-offset-deg>79.875</heading-offset-deg>
+            <pitch-offset-deg>26.5</pitch-offset-deg>
+            <roll-offset-deg>-50.0</roll-offset-deg>
+            <x-offset-m>0.525</x-offset-m>
+            <y-offset-m>-0.887</y-offset-m>
+            <z-offset-m>-8.509</z-offset-m>
+            <field-of-view>30.681</field-of-view>
+        </view>
+        <error>
+            <message>Flip the Master APU Switch On!</message>
+            <condition>
+				<not>
+                    <property>/controls/switches/app-master</property>
+                </not>
+            </condition>
+        </error>
+        <exit>
+            <condition>
+				<property>/controls/switches/app-master</property>
+            </condition>
+        </exit>
+    </step>
+
+    <step>
+        <message>Turn on the APP Fuel Switch.</message>
+        <view>
+            <heading-offset-deg>72.8</heading-offset-deg>
+            <pitch-offset-deg>33.9</pitch-offset-deg>
+            <roll-offset-deg>-50.0</roll-offset-deg>
+            <x-offset-m>0.497</x-offset-m>
+            <y-offset-m>-0.899</y-offset-m>
+            <z-offset-m>-8.509</z-offset-m>
+            <field-of-view>30.681</field-of-view>
+        </view>
+        <error>
+            <message>Flip the APP Fuel Switch On!</message>
+            <condition>
+				<not>
+                    <property>/controls/switches/app-fuel</property>
+                </not>
+            </condition>
+        </error>
+        <exit>
+            <condition>
+				<property>/controls/switches/app-fuel</property>
+            </condition>
+        </exit>
+    </step>
+
+   <step>
+        <message>The "actual" APP Start Requires Holding Both the APP Start Button and the APP Start 20 Switch On Until the APP Pressuer Reads 20%.</message>
+        <view>
+            <heading-offset-deg>72.612</heading-offset-deg>
+            <pitch-offset-deg>26.900</pitch-offset-deg>
+            <roll-offset-deg>-50.0</roll-offset-deg>
+            <x-offset-m>0.538</x-offset-m>
+            <y-offset-m>-0.887</y-offset-m>
+            <z-offset-m>-8.509</z-offset-m>
+            <field-of-view>46.766</field-of-view>
+        </view>
+        <wait>3</wait>
+    </step>
+
+    <step>
+        <message>We Will Press Only the APP Start Button.</message>
+        <view>
+            <heading-offset-deg>76.312</heading-offset-deg>
+            <pitch-offset-deg>26</pitch-offset-deg>
+            <roll-offset-deg>-50.0</roll-offset-deg>
+            <x-offset-m>0.531</x-offset-m>
+            <y-offset-m>-0.887</y-offset-m>
+            <z-offset-m>-8.509</z-offset-m>
+            <field-of-view>30.681</field-of-view>
+        </view>
+        <error>
+            <message>Press and Hold the APP Start Button!</message>
+            <condition>
+				<not>
+                    <property>/controls/switches/app-start</property>
+                </not>
+            </condition>
+        </error>
+        <exit>
+            <condition>
+				<property>/controls/switches/app-start</property>
+            </condition>
+        </exit>
+    </step>
+
+   <step>
+        <message>Once the APP is Running All the APP Panel Lights Will Extinguish.</message>
+        <view>
+            <heading-offset-deg>70.125</heading-offset-deg>
+            <pitch-offset-deg>21.166</pitch-offset-deg>
+            <roll-offset-deg>-50.0</roll-offset-deg>
+            <x-offset-m>0.543</x-offset-m>
+            <y-offset-m>-0.887</y-offset-m>
+            <z-offset-m>-8.509</z-offset-m>
+            <field-of-view>24.345</field-of-view>
+        </view>
+        <wait>17</wait>
+    </step>
+
+    <step>
+        <message>Now Turn on the No.1 Engine Ignition Switch.</message>
+        <view>
+            <heading-offset-deg>59.437</heading-offset-deg>
+            <pitch-offset-deg>-55.833</pitch-offset-deg>
+            <roll-offset-deg>0.0</roll-offset-deg>
+            <x-offset-m>0.553</x-offset-m>
+            <y-offset-m>-0.887</y-offset-m>
+            <z-offset-m>-8.509</z-offset-m>
+            <field-of-view>26.882</field-of-view>
+        </view>
+        <error>
+            <message>Flip the No.1 Engine Ignition Switch On!</message>
+            <condition>
+                <not-equals>
+					<property>/controls/switches/ignition-1</property>
+					<value>-1</value>
+				</not-equals>
+            </condition>
+        </error>
+        <exit>
+            <condition>
+                <equals>
+					<property>/controls/switches/ignition-1</property>
+					<value>-1</value>
+				</equals>
+            </condition>
+        </exit>
+    </step>
+
+    <step>
+        <message>Turn On the No.1 Engine One Fuel Boost Pumps.</message>
+        <view>
+            <heading-offset-deg>39.937</heading-offset-deg>
+            <pitch-offset-deg>-41.5</pitch-offset-deg>
+            <roll-offset-deg>0.0</roll-offset-deg>
+            <x-offset-m>0.553</x-offset-m>
+            <y-offset-m>-0.887</y-offset-m>
+            <z-offset-m>-8.509</z-offset-m>
+            <field-of-view>22.788</field-of-view>
+        </view>
+        <error>
+            <message>Flip On Both the No.1 and No.2 Engine One Fuel Boost Pumps!</message>
+            <condition>
+				<and>
+					<not>
+						<property>/controls/switches/fuelpump1eng1</property>
+					</not>
+					<not>
+						<property>/controls/switches/fuelpump2eng1</property>
+					</not>
+				</and>
+            </condition>
+        </error>
+        <exit>
+            <condition>
+                <and>
+					<property>/controls/switches/fuelpump1eng1</property>
+					<property>/controls/switches/fuelpump2eng1</property>
+				</and>
+            </condition>
+        </exit>
+    </step>
+
+    <step>
+        <message>Verify You Have a Suffient Fuel Supply.</message>
+        <view>
+            <heading-offset-deg>36.562</heading-offset-deg>
+            <pitch-offset-deg>-31.66</pitch-offset-deg>
+            <roll-offset-deg>0.0</roll-offset-deg>
+            <x-offset-m>0.553</x-offset-m>
+            <y-offset-m>-0.887</y-offset-m>
+            <z-offset-m>-8.509</z-offset-m>
+            <field-of-view>22.788</field-of-view>
+        </view>
+        <wait>5</wait>
+    </step>
+
+    <step>
+        <message>Test the Caution and Warning Panel Indicator Lights.</message>
+        <view>
+            <heading-offset-deg>41.25</heading-offset-deg>
+            <pitch-offset-deg>-34.166</pitch-offset-deg>
+            <roll-offset-deg>0.0</roll-offset-deg>
+            <x-offset-m>0.553</x-offset-m>
+            <y-offset-m>-0.887</y-offset-m>
+            <z-offset-m>-8.509</z-offset-m>
+            <field-of-view>16.926</field-of-view>
+        </view>
+        <wait>2</wait>
+    </step>
+
+    <step>
+        <message>Turn the Bright/Dim Switch to Bright.</message>
+        <error>
+            <message>Flip On the Bright/Dim Switch to Bright!</message>
+            <condition>
+				<not>
+					<property>/controls/switches/cws-bright</property>
+				</not>
+            </condition>
+        </error>
+        <exit>
+            <condition>
+                <property>/controls/switches/cws-bright</property>
+            </condition>
+        </exit>
+    </step>
+
+    <step>
+        <message>Now Press and Hold the Lamp Test Button to Verify All the Indicator Lights Are Functional.</message>
+        <view>
+            <heading-offset-deg>41.25</heading-offset-deg>
+            <pitch-offset-deg>-27.166</pitch-offset-deg>
+            <roll-offset-deg>0.0</roll-offset-deg>
+            <x-offset-m>0.553</x-offset-m>
+            <y-offset-m>-0.887</y-offset-m>
+            <z-offset-m>-8.509</z-offset-m>
+            <field-of-view>24.345</field-of-view>
+        </view>
+        <error>
+            <message>Hold the Lamp Test Button Down!</message>
+            <condition>
+				<not>
+					<property>/controls/switches/cws-test</property>
+				</not>
+            </condition>
+        </error>
+        <exit>
+            <condition>
+                <property>/controls/switches/cws-test</property>
+            </condition>
+        </exit>
+    </step>
+
+    <step>
+        <message>Open the Left Fuel Shutoff Lever, "Red Knob".</message>
+        <view>
+            <heading-offset-deg>51.187</heading-offset-deg>
+            <pitch-offset-deg>19</pitch-offset-deg>
+            <roll-offset-deg>0.0</roll-offset-deg>
+            <x-offset-m>0.512</x-offset-m>
+            <y-offset-m>-0.904</y-offset-m>
+            <z-offset-m>-8.509</z-offset-m>
+            <field-of-view>45.612</field-of-view>
+        </view>
+        <error>
+            <message>The Number One Fuel Shutoff Lever Needs to be in the Down Position!</message>
+            <condition>
+				<not>
+					<property>/consumables/fuel/shutoff/lever/left</property>
+				</not>
+            </condition>
+        </error>
+        <exit>
+            <condition>
+                <property>/consumables/fuel/shutoff/lever/left</property>
+            </condition>
+        </exit>
+    </step>
+
+    <step>
+        <message>Press the Number One Engine Start Button.</message>
+        <view>
+            <heading-offset-deg>51.187</heading-offset-deg>
+            <pitch-offset-deg>19</pitch-offset-deg>
+            <roll-offset-deg>0.0</roll-offset-deg>
+            <x-offset-m>0.512</x-offset-m>
+            <y-offset-m>-0.904</y-offset-m>
+            <z-offset-m>-8.509</z-offset-m>
+            <field-of-view>45.612</field-of-view>
+        </view>
+        <error>
+            <message>You Must Press the Number One Engine Start Button, then quickly Proceed to the Next Step!</message>
+            <condition>
+				<not>
+					<property>/controls/switches/eng1-n1-start</property>
+				</not>
+            </condition>
+        </error>
+        <exit>
+            <condition>
+                <property>/controls/switches/eng1-n1-start</property>
+            </condition>
+        </exit>
+    </step>
+	
+    <step>
+        <message>Open the Engine One N1 Lever to 15%.</message>
+        <view>
+            <heading-offset-deg>51.187</heading-offset-deg>
+            <pitch-offset-deg>19</pitch-offset-deg>
+            <roll-offset-deg>0.0</roll-offset-deg>
+            <x-offset-m>0.512</x-offset-m>
+            <y-offset-m>-0.904</y-offset-m>
+            <z-offset-m>-8.509</z-offset-m>
+            <field-of-view>45.612</field-of-view>
+        </view>
+        <error>
+            <message>Advance the Engine One N1 Lever to 15% Now!</message>
+            <condition>
+				<or>
+					<greater-than>
+						<property>/engines/one/n1</property>
+						<value>0.16</value>
+					</greater-than>
+					<less-than>
+						<property>/engines/one/n1</property>
+						<value>0.14</value>
+					</less-than>
+				</or>
+            </condition>
+        </error>
+        <exit>
+            <condition>
+                <and>
+					<greater-than>
+						<property>/engines/one/n1</property>
+						<value>0.14</value>
+					</greater-than>
+					<less-than>
+						<property>/engines/one/n1</property>
+						<value>0.16</value>
+					</less-than>
+				</and>
+            </condition>
+        </exit>
+    </step>
+
+    <step>
+        <message>Wait for the Rotor to Spin Up.</message>
+        <view>
+            <heading-offset-deg>354.8</heading-offset-deg>
+            <pitch-offset-deg>-5.6</pitch-offset-deg>
+            <roll-offset-deg>0.0</roll-offset-deg>
+            <x-offset-m>0.528</x-offset-m>
+            <y-offset-m>-0.891</y-offset-m>
+            <z-offset-m>-8.509</z-offset-m>
+            <field-of-view>100</field-of-view>
+        </view>
+        <wait>7</wait>
+    </step>
+
+    <step>
+        <message>Once the Rotor Has "Spun Up" Advance the Engine One N1 Lever to Full.</message>
+        <view>
+            <heading-offset-deg>51.187</heading-offset-deg>
+            <pitch-offset-deg>19</pitch-offset-deg>
+            <roll-offset-deg>0.0</roll-offset-deg>
+            <x-offset-m>0.512</x-offset-m>
+            <y-offset-m>-0.904</y-offset-m>
+            <z-offset-m>-8.509</z-offset-m>
+            <field-of-view>45.612</field-of-view>
+        </view>
+        <error>
+            <message>Advance the Engine One N1 Lever to Full Now!</message>
+            <condition>
+				<less-than>
+					<property>/engines/one/n1</property>
+					<value>0.5</value>
+				</less-than>
+            </condition>
+        </error>
+        <exit>
+            <condition>
+                <greater-than>
+					<property>/engines/one/n1</property>
+					<value>0.49</value>
+				</greater-than>
+            </condition>
+        </exit>
+    </step>
+
+    <step>
+        <message>Shut Down the APP By Pressing the APP Stop Button.</message>
+	</step>
+
+    <step>
+        <message>We Will Use the Turbine One Generator to Start Turbine Number Two.</message>
+        <view>
+            <heading-offset-deg>76.312</heading-offset-deg>
+            <pitch-offset-deg>26</pitch-offset-deg>
+            <roll-offset-deg>-50.0</roll-offset-deg>
+            <x-offset-m>0.531</x-offset-m>
+            <y-offset-m>-0.887</y-offset-m>
+            <z-offset-m>-8.509</z-offset-m>
+            <field-of-view>30.681</field-of-view>
+        </view>
+        <error>
+            <message>Press the APP Stop Button and Shut off the APP Fuel Switch!</message>
+            <condition>
+				<and>
+					<not>
+						<property>/controls/switches/app-stop</property>
+					</not>
+					<property>/controls/switches/app-fuel</property>
+				</and>
+            </condition>
+        </error>
+        <exit>
+            <condition>
+				<and>
+					<property>/controls/switches/app-stop</property>
+					<not>
+						<property>/controls/switches/app-fuel</property>
+					</not>
+				</and>
+            </condition>
+        </exit>
+    </step>
+
+   <step>
+        <message>Turn On the Number One Turbine Generator Switch.</message>
+        <view>
+            <heading-offset-deg>55.5</heading-offset-deg>
+            <pitch-offset-deg>-52.166</pitch-offset-deg>
+            <roll-offset-deg>0.0</roll-offset-deg>
+            <x-offset-m>0.512</x-offset-m>
+            <y-offset-m>-0.904</y-offset-m>
+            <z-offset-m>-8.509</z-offset-m>
+            <field-of-view>22.788</field-of-view>
+        </view>
+        <error>
+            <message>Flip the Number One Turbine Generator Switch On!</message>
+			<condition>
+                <not-equals>
+					<property>/controls/electric/engine[0]/generator-sw</property>
+					<value>-1</value>
+				</not-equals>
+            </condition>
+        </error>
+        <exit>
+            <condition>
+                <equals>
+					<property>/controls/electric/engine[0]/generator-sw</property>
+					<value>-1</value>
+				</equals>
+            </condition>
+        </exit>
+    </step>
+
+    <step>
+        <message>Now Turn on the Number Two Engine Ignition Switch.</message>
+        <view>
+            <heading-offset-deg>59.437</heading-offset-deg>
+            <pitch-offset-deg>-55.833</pitch-offset-deg>
+            <roll-offset-deg>0.0</roll-offset-deg>
+            <x-offset-m>0.553</x-offset-m>
+            <y-offset-m>-0.887</y-offset-m>
+            <z-offset-m>-8.509</z-offset-m>
+            <field-of-view>26.882</field-of-view>
+        </view>
+        <error>
+            <message>Flip the Number Two Engine Ignition Switch On!</message>
+            <condition>
+                <not-equals>
+					<property>/controls/switches/ignition-2</property>
+					<value>-1</value>
+				</not-equals>
+            </condition>
+        </error>
+        <exit>
+            <condition>
+                <equals>
+					<property>/controls/switches/ignition-2</property>
+					<value>-1</value>
+				</equals>
+            </condition>
+        </exit>
+    </step>
+
+    <step>
+        <message>Turn On the Number Two Engine Fuel Boost Pumps.</message>
+        <view>
+            <heading-offset-deg>39.937</heading-offset-deg>
+            <pitch-offset-deg>-41.5</pitch-offset-deg>
+            <roll-offset-deg>0.0</roll-offset-deg>
+            <x-offset-m>0.553</x-offset-m>
+            <y-offset-m>-0.887</y-offset-m>
+            <z-offset-m>-8.509</z-offset-m>
+            <field-of-view>22.788</field-of-view>
+        </view>
+        <error>
+            <message>Flip On Both the No.1 and No.2 Engine Number Two Fuel Boost Pumps!</message>
+            <condition>
+				<and>
+					<not>
+						<property>/controls/switches/fuelpump1eng2</property>
+					</not>
+					<not>
+						<property>/controls/switches/fuelpump2eng2</property>
+					</not>
+				</and>
+            </condition>
+        </error>
+        <exit>
+            <condition>
+                <and>
+					<property>/controls/switches/fuelpump1eng2</property>
+					<property>/controls/switches/fuelpump2eng2</property>
+				</and>
+            </condition>
+        </exit>
+    </step>
+
+    <step>
+        <message>Open the Right Fuel Shutoff Lever, "Red Knob".</message>
+        <view>
+            <heading-offset-deg>51.187</heading-offset-deg>
+            <pitch-offset-deg>19</pitch-offset-deg>
+            <roll-offset-deg>0.0</roll-offset-deg>
+            <x-offset-m>0.512</x-offset-m>
+            <y-offset-m>-0.904</y-offset-m>
+            <z-offset-m>-8.509</z-offset-m>
+            <field-of-view>45.612</field-of-view>
+        </view>
+        <error>
+            <message>The Number Two Fuel Shutoff Lever Needs to be in the Down Position!</message>
+            <condition>
+				<not>
+					<property>/consumables/fuel/shutoff/lever/right</property>
+				</not>
+            </condition>
+        </error>
+        <exit>
+            <condition>
+                <property>/consumables/fuel/shutoff/lever/right</property>
+            </condition>
+        </exit>
+    </step>
+
+    <step>
+        <message>Press the Number Two Engine Start Button.</message>
+        <view>
+            <heading-offset-deg>51.187</heading-offset-deg>
+            <pitch-offset-deg>19</pitch-offset-deg>
+            <roll-offset-deg>0.0</roll-offset-deg>
+            <x-offset-m>0.512</x-offset-m>
+            <y-offset-m>-0.904</y-offset-m>
+            <z-offset-m>-8.509</z-offset-m>
+            <field-of-view>45.612</field-of-view>
+        </view>
+        <error>
+            <message>You Must Press the Number Two Engine Start Button, then quickly Proceed to the Next Step!</message>
+            <condition>
+				<not>
+					<property>/controls/switches/eng2-n1-start</property>
+				</not>
+            </condition>
+        </error>
+        <exit>
+            <condition>
+                <property>/controls/switches/eng2-n1-start</property>
+            </condition>
+        </exit>
+    </step>
+	
+    <step>
+        <message>Open the Engine Two N1 Lever to 15%.</message>
+        <view>
+            <heading-offset-deg>51.187</heading-offset-deg>
+            <pitch-offset-deg>19</pitch-offset-deg>
+            <roll-offset-deg>0.0</roll-offset-deg>
+            <x-offset-m>0.512</x-offset-m>
+            <y-offset-m>-0.904</y-offset-m>
+            <z-offset-m>-8.509</z-offset-m>
+            <field-of-view>45.612</field-of-view>
+        </view>
+        <error>
+            <message>Advance the Engine Two N1 Lever to 15% Now!</message>
+            <condition>
+				<or>
+					<greater-than>
+						<property>/engines/two/n1</property>
+						<value>0.16</value>
+					</greater-than>
+					<less-than>
+						<property>/engines/two/n1</property>
+						<value>0.14</value>
+					</less-than>
+				</or>
+            </condition>
+        </error>
+        <exit>
+            <condition>
+                <and>
+					<greater-than>
+						<property>/engines/two/n1</property>
+						<value>0.14</value>
+					</greater-than>
+					<less-than>
+						<property>/engines/two/n1</property>
+						<value>0.16</value>
+					</less-than>
+				</and>
+            </condition>
+        </exit>
+    </step>
+
+    <step>
+        <message>Wait for the Rotor to Spin Up.</message>
+        <view>
+            <heading-offset-deg>354.8</heading-offset-deg>
+            <pitch-offset-deg>-5.6</pitch-offset-deg>
+            <roll-offset-deg>0.0</roll-offset-deg>
+            <x-offset-m>0.528</x-offset-m>
+            <y-offset-m>-0.891</y-offset-m>
+            <z-offset-m>-8.509</z-offset-m>
+            <field-of-view>100</field-of-view>
+        </view>
+        <wait>7</wait>
+    </step>
+
+    <step>
+        <message>Once the Rotor Has "Spun Up" Advance the Engine Two N1 Lever to Full.</message>
+        <view>
+            <heading-offset-deg>51.187</heading-offset-deg>
+            <pitch-offset-deg>19</pitch-offset-deg>
+            <roll-offset-deg>0.0</roll-offset-deg>
+            <x-offset-m>0.512</x-offset-m>
+            <y-offset-m>-0.904</y-offset-m>
+            <z-offset-m>-8.509</z-offset-m>
+            <field-of-view>45.612</field-of-view>
+        </view>
+        <error>
+            <message>Advance the Engine Two N1 Lever to Full Now!</message>
+            <condition>
+				<less-than>
+					<property>/engines/two/n1</property>
+					<value>0.5</value>
+				</less-than>
+            </condition>
+        </error>
+        <exit>
+            <condition>
+                <greater-than>
+					<property>/engines/two/n1</property>
+					<value>0.49</value>
+				</greater-than>
+            </condition>
+        </exit>
+    </step>
+
+   <step>
+        <message>Turn On the Number Two Turbine Generator Switch.</message>
+        <view>
+            <heading-offset-deg>55.5</heading-offset-deg>
+            <pitch-offset-deg>-52.166</pitch-offset-deg>
+            <roll-offset-deg>0.0</roll-offset-deg>
+            <x-offset-m>0.512</x-offset-m>
+            <y-offset-m>-0.904</y-offset-m>
+            <z-offset-m>-8.509</z-offset-m>
+            <field-of-view>22.788</field-of-view>
+        </view>
+        <error>
+            <message>Flip the Number Two Turbine Generator Switch On!</message>
+            <condition>
+                <not-equals>
+					<property>/controls/electric/engine[1]/generator-sw</property>
+					<value>-1</value>
+				</not-equals>
+            </condition>
+        </error>
+        <exit>
+            <condition>
+                <equals>
+					<property>/controls/electric/engine[1]/generator-sw</property>
+					<value>-1</value>
+				</equals>
+            </condition>
+        </exit>
+    </step>
+
+    <step>
+        <message>Turn On the AFCS Servo Switch.</message>
+        <view>
+            <heading-offset-deg>36.8</heading-offset-deg>
+            <pitch-offset-deg>-45.76</pitch-offset-deg>
+            <roll-offset-deg>0.0</roll-offset-deg>
+            <x-offset-m>0.528</x-offset-m>
+            <y-offset-m>-0.891</y-offset-m>
+            <z-offset-m>-8.509</z-offset-m>
+            <field-of-view>17.937</field-of-view>
+        </view>
+        <error>
+            <message>Flip the AFCS Servo Switch On!</message>
+            <condition>
+				<not>
+					<property>/controls/switches/afcs-servo</property>
+				</not>
+            </condition>
+        </error>
+        <exit>
+            <condition>
+                <property>/controls/switches/afcs-servo</property>
+            </condition>
+        </exit>
+    </step>
+
+    <step>
+        <message>Press the Green AFCS Button Down.</message>
+        <view>
+            <heading-offset-deg>42.425</heading-offset-deg>
+            <pitch-offset-deg>-43.266</pitch-offset-deg>
+            <roll-offset-deg>0.0</roll-offset-deg>
+            <x-offset-m>0.528</x-offset-m>
+            <y-offset-m>-0.891</y-offset-m>
+            <z-offset-m>-8.509</z-offset-m>
+            <field-of-view>17.937</field-of-view>
+        </view>
+        <error>
+            <message>Press the AFCS Button to On!</message>
+            <condition>
+				<not>
+					<property>/controls/switches/afcs</property>
+				</not>
+            </condition>
+        </error>
+        <exit>
+            <condition>
+                <property>/controls/switches/afcs</property>
+            </condition>
+        </exit>
+    </step>
+
+    <step>
+        <message>The AirCrane Startup and Flight Configuration Lesson is complete. You are now ready to takeoff.</message>
+		        <view>
+            <heading-offset-deg>354.8</heading-offset-deg>
+            <pitch-offset-deg>-5.6</pitch-offset-deg>
+            <roll-offset-deg>0.0</roll-offset-deg>
+            <x-offset-m>0.528</x-offset-m>
+            <y-offset-m>-0.891</y-offset-m>
+            <z-offset-m>-8.509</z-offset-m>
+            <field-of-view>100</field-of-view>
+        </view>
+    </step>
+
+</PropertyList>

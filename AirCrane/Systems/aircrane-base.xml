@@ -327,6 +327,8 @@
 
         <flight-recorder include="flight-recorder.xml"/>
 
+        <tutorials include="Aircraft/AirCrane/Tutorials/AirCraneTutorials.xml"/>
+
         <instrumentation>
             <path>Aircraft/AirCrane/Systems/instrumentation.xml</path>
         </instrumentation>
@@ -344,8 +346,6 @@
     <consumables include="consumables.xml"/>
 
     <instrumentation include="instrumentation-init.xml"/>
-
-    <tutorials include="Aircraft/AirCrane/Tutorials/AirCraneTutorials.xml"/>
 
     <engines>
         <engine-rpm type="float">0</engine-rpm>

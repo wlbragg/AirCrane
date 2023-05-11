@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 
 <PropertyList>
+
   <tutorial include="LifeFlightKHWD.xml"/>
+  <tutorial include="startup.xml"/>
+
 </PropertyList>
