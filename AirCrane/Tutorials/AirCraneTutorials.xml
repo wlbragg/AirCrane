@@ -2,7 +2,7 @@
 
 <PropertyList>
 
-  <tutorial include="LifeFlightKHWD.xml"/>
   <tutorial include="startup.xml"/>
+  <tutorial include="transportlifeflightKHWD.xml"/>
 
 </PropertyList>

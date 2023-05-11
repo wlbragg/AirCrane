@@ -463,7 +463,7 @@
     </step>
 
    <step>
-        <message>The "actual" APP Start Requires Holding Both the APP Start Button and the APP Start 20 Switch On Until the APP Pressuer Reads 20%.</message>
+        <message>The "actual" APP Start Requires Holding Both the APP Start Button and the APP Start 20 Switch On Until the APP Pressure Reads 20%.</message>
         <view>
             <heading-offset-deg>72.612</heading-offset-deg>
             <pitch-offset-deg>26.900</pitch-offset-deg>
@@ -634,7 +634,7 @@
             <x-offset-m>0.553</x-offset-m>
             <y-offset-m>-0.887</y-offset-m>
             <z-offset-m>-8.509</z-offset-m>
-            <field-of-view>24.345</field-of-view>
+            <field-of-view>33.87</field-of-view>
         </view>
         <error>
             <message>Hold the Lamp Test Button Down!</message>
@@ -792,9 +792,12 @@
     <step>
         <message>Shut Down the APP By Pressing the APP Stop Button.</message>
     </step>
+	<step>
+		<message>We Will Use the Turbine One Generator to Start Turbine Number Two.</message>
+    </step>
 
     <step>
-        <message>We Will Use the Turbine One Generator to Start Turbine Number Two.</message>
+        <message>Shut off the APP Fuel Switch, Shut Off the APP Master Switch, then Press and hold the APP Stop Button!</message>
         <view>
             <heading-offset-deg>76.312</heading-offset-deg>
             <pitch-offset-deg>26</pitch-offset-deg>
@@ -805,7 +808,7 @@
             <field-of-view>30.681</field-of-view>
         </view>
         <error>
-            <message>Shut off the APP Fuel Switch, Press the APP Stop Button and then shut off the !</message>
+            <message>Flip Off the APP Fuel Switch, Flip Off the APP Master Switch, then Press and hold the APP Stop Button!</message>
             <condition>
                 <or>
                     <not>
@@ -813,7 +816,7 @@
                     </not>
                     <property>/controls/switches/app-fuel</property>
                     <property>/controls/switches/app-master</property>
-                <or>
+                </or>
             </condition>
         </error>
         <exit>
@@ -963,7 +966,7 @@
             <field-of-view>45.612</field-of-view>
         </view>
         <error>
-            <message>You Must Press the Number Two Engine Start Button, then quickly Proceed to the Next Step!</message>
+            <message>You Must Press and Hold Down the Number Two Engine Start Button, then quickly Proceed to the Next Step!</message>
             <condition>
                 <not>
                     <property>/controls/switches/eng2-n1-start</property>
@@ -1145,9 +1148,107 @@
         </exit>
     </step>
 
+	<step>
+        <message>We're Almost Ready to Fly. Lets Configure the Navigation Lights</message>
+        <view>
+            <heading-offset-deg>72.612</heading-offset-deg>
+            <pitch-offset-deg>26.900</pitch-offset-deg>
+            <roll-offset-deg>-50.0</roll-offset-deg>
+            <x-offset-m>0.538</x-offset-m>
+            <y-offset-m>-0.887</y-offset-m>
+            <z-offset-m>-8.509</z-offset-m>
+            <field-of-view>60.766</field-of-view>
+        </view>
+		 <wait>3</wait>
+    </step>
+
+    <step>
+        <message>Turn up the Left Pilot Instrumets Light.</message>
+        <view>
+            <heading-offset-deg>95.187</heading-offset-deg>
+            <pitch-offset-deg>28.165</pitch-offset-deg>
+            <roll-offset-deg>-50.0</roll-offset-deg>
+            <x-offset-m>0.506</x-offset-m>
+            <y-offset-m>-1.012</y-offset-m>
+            <z-offset-m>-8.646</z-offset-m>
+            <field-of-view>24.345</field-of-view>
+        </view>
+        <error>
+            <message>Dial up the Left Pilot Instrumets Light to Between 40-65%!</message>
+            <condition>
+				<or>
+					<less-than>
+						<property>/controls/lighting/luminosite-lights</property>
+						<value>.40</value>
+					</less-than>
+					<greater-than>
+						<property>/controls/lighting/luminosite-lights</property>
+						<value>.65</value>
+					</greater-than>
+				</or>
+            </condition>
+        </error>
+        <exit>
+            <condition>
+                <and>
+					<less-than>
+						<property>/controls/lighting/luminosite-lights</property>
+						<value>.66</value>
+					</less-than>
+					<greater-than>
+						<property>/controls/lighting/luminosite-lights</property>
+						<value>.39</value>
+					</greater-than>
+				</and>
+            </condition>
+        </exit>
+    </step>
+
+    <step>
+        <message>Turn On the Position Light, White (Aft), Fwd and Aft Anti Collision Lights.</message>
+        <view>
+            <heading-offset-deg>91.812</heading-offset-deg>
+            <pitch-offset-deg>28.165</pitch-offset-deg>
+            <roll-offset-deg>-90</roll-offset-deg>
+            <x-offset-m>0.513</x-offset-m>
+            <y-offset-m>-1.012</y-offset-m>
+            <z-offset-m>-8.646</z-offset-m>
+            <field-of-view>17.937</field-of-view>
+        </view>
+        <error>
+            <message>Flip All Four Extrernal Navigation Lights On!</message>
+            <condition>
+				<or>
+					<not>
+						<property>/controls/lighting/nav-light-switch</property>
+					</not>
+					<not>
+						<property>/controls/lighting/strobe-light-switch</property>
+					</not>
+					<not>
+						<property>/controls/lighting/beaconfwd-light-switch</property>
+					</not>
+					<not>
+						<property>/controls/lighting/beaconaft-light-switch</property>
+					</not>
+				</or>
+            </condition>
+        </error>
+        <exit>
+            <condition>
+				<and>
+					<property>/controls/lighting/nav-light-switch</property>
+					<property>/controls/lighting/strobe-light-switch</property>
+					<property>/controls/lighting/beaconfwd-light-switch</property>
+					<property>/controls/lighting/beaconaft-light-switch</property>
+				</and>
+            </condition>
+        </exit>
+    </step>
+
     <step>
         <message>The AirCrane Startup and Flight Configuration Lesson is complete. You are now ready to takeoff.</message>
-                <view>
+        <view>
             <heading-offset-deg>354.8</heading-offset-deg>
             <pitch-offset-deg>-5.6</pitch-offset-deg>
             <roll-offset-deg>0.0</roll-offset-deg>

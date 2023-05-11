@@ -263,7 +263,7 @@
     <type>rotate</type>
     <object-name>n1leverlstart</object-name>
     <property>/engines/one/n1</property>
-    <factor>60</factor>
+    <factor>80</factor>
     <center>
       <x-m>  0.01717 </x-m>
       <y-m>  0.00000 </y-m>
@@ -416,7 +416,7 @@
     <type>rotate</type>
     <object-name>n1leverrstart</object-name>
     <property>/engines/two/n1</property>
-    <factor>60</factor>
+    <factor>80</factor>
     <center>
       <x-m>  0.01717 </x-m>
       <y-m>  0.00000 </y-m>
