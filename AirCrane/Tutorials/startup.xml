@@ -1247,7 +1247,7 @@
     </step>
 
     <step>
-        <message>The AirCrane Startup and Flight Configuration Lesson is complete. You are now ready to takeoff.</message>
+        <message>The AirCrane Startup and Flight Configuration Lesson is Complete. You Are Now Ready For Takeoff.</message>
         <view>
             <heading-offset-deg>354.8</heading-offset-deg>
             <pitch-offset-deg>-5.6</pitch-offset-deg>
