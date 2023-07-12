@@ -1,4 +1,6 @@
 The AirCrane water system is used for multiple tasks. Two of the most common tasks including fire fighting, and ground erosion control.
+In order to use the fire fighting apparatus make sure the Cargo Towing Addon in not activated.
+The Bambi Bucket is availible using the Cargo Towing Addon.
 
 Filling the Tank
 
@@ -57,4 +59,3 @@ That is approximately 8 minutes on a full tank.
 The Water Cannon can be used to spray water, fire retardant or a mixture of water and ground cover seed.
 
 Toggle the Water Cannon on and off using the "k" key.
-

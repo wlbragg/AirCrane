@@ -192,7 +192,7 @@
     </condition>
   </animation>
 
-  <!-- Water cannon -->
+  <!-- Foam or Water cannon -->
   <model>
     <path>Aircraft/AirCrane/Models/Effects/particles/watercannon.xml</path>
     <offsets>
@@ -202,9 +202,29 @@
     </offsets>
   </model>
 
-  <!-- Water drop -->
+  <!-- Foam or Water drop -->
   <model>
     <path>Aircraft/AirCrane/Models/Effects/particles/waterdrop.xml</path>
+    <offsets>
+      <x-m> -2.283 </x-m>
+      <y-m>  0.059 </y-m>
+      <z-m> -2.959 </z-m>
+    </offsets>
+  </model>
+
+  <!-- Retardant cannon -->
+  <model>
+    <path>Aircraft/AirCrane/Models/Effects/particles/retardantcannon.xml</path>
+    <offsets>
+      <x-m> -11.700 </x-m>
+      <y-m>  -1.349 </y-m>
+      <z-m>  -2.971 </z-m>
+    </offsets>
+  </model>
+
+  <!-- Retardant drop -->
+  <model>
+    <path>Aircraft/AirCrane/Models/Effects/particles/retardantdrop.xml</path>
     <offsets>
       <x-m> -2.283 </x-m>
       <y-m>  0.059 </y-m>

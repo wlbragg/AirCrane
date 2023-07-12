@@ -367,7 +367,6 @@
   </knobs>
 
   <switches>
-    <master-avionics type="bool">false</master-avionics>
     <eng1-n1-start type="bool">false</eng1-n1-start>
     <eng2-n1-start type="bool">false</eng2-n1-start>
     <ignition-1 type="int">0</ignition-1>

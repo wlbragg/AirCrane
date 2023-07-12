@@ -26,10 +26,6 @@
     <property type="string">/controls/switches/master-alt</property>
   </signal>
 
-  <!-- Note: /controls/switches/master-avionics is set in
-       Aircraft/Generic/flightrecorder/components/controls.xml.
-  -->
-
   <!-- Passengers and baggage -->
   <signal>
     <type>float</type>

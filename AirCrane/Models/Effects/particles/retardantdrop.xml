@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+  
+  <!--params>
+    <release_payload>
+    <property>sim/multiplay/generic/int[17]</property>
+    </release_payload>
+  </params-->
+  
+  <particlesystem>
+    <name>waterdrop</name>
+    <type>normal</type>
+    <texture>smoke.png</texture>
+    
+    <emissive>false</emissive>
+    <lighting>false</lighting>
+    
+    <condition>
+      <property>sim/model/firetank/retardantdropparticlectrl</property>
+    </condition>
+    
+    <attach>world</attach>
+    <align>billboard</align>
+    
+    <placer>  
+      <type>segments</type>
+      <vertex>
+        <x-m> -2.28 </x-m>
+        <y-m>  0.00 </y-m>
+        <z-m>  0.00 </z-m>
+      </vertex>
+      <vertex>
+        <x-m>  0.00 </x-m>
+        <y-m>  0.00 </y-m>
+        <z-m>  0.00 </z-m>
+      </vertex>
+      <vertex>
+        <x-m>  2.28 </x-m>
+        <y-m>  0.00 </y-m>
+        <z-m>  0.00 </z-m>
+      </vertex>
+    </placer>
+    
+    <shooter>
+      <theta-min-deg>177</theta-min-deg>
+      <theta-max-deg>183</theta-max-deg>
+      <phi-min-deg> -2</phi-min-deg>
+      <phi-max-deg>  2</phi-max-deg>
+      <speed-mps>
+        <value>5.8</value>
+        <spread>3</spread>
+      </speed-mps>
+      <rotation-speed>
+        <x-min-deg-sec>-15 </x-min-deg-sec>
+        <y-min-deg-sec> 15 </y-min-deg-sec>
+        <z-min-deg-sec>-15 </z-min-deg-sec>
+        <x-max-deg-sec> 15 </x-max-deg-sec>
+        <y-max-deg-sec>-15 </y-max-deg-sec>
+        <z-max-deg-sec> 15 </z-max-deg-sec>
+      </rotation-speed>
+    </shooter>
+    
+    <counter>
+      <particles-per-sec>
+        <property>sim/model/firetank/droprate</property>
+        <spread>100</spread>
+      </particles-per-sec>
+    </counter>
+    
+    <particle>
+      <start>
+        <color>
+          <!--we need to make a filter using these properties + the static values so they work in all scene lighting-->
+		  <!--red>
+            <property>sim/model/aircrane/effects/particles/redcombined</property>
+          </red>
+          <green>
+            <property>sim/model/aircrane/effects/particles/greencombined</property>
+          </green>
+          <blue>
+            <property>sim/model/aircrane/effects/particles/bluecombined</property>
+          </blue-->
+		  <red><value>0.3</value></red>
+		  <green><value>0.1</value></green>
+		  <blue><value>0.1</value></blue>
+          <alpha>
+            <value>.1</value>
+          </alpha>
+        </color>
+        <size>
+          <value>.7</value>
+        </size>
+      </start>
+      <end>
+        <color>
+          <!--we need to make a filter using these properties + the static values so they work in all scene lighting-->
+		  <!--red>
+            <property>sim/model/aircrane/effects/particles/redcombined</property>
+          </red>
+          <green>
+            <property>sim/model/aircrane/effects/particles/greencombined</property>
+          </green>
+          <blue>
+            <property>sim/model/aircrane/effects/particles/bluecombined</property>
+          </blue-->
+		  <red><value>0.2</value></red>
+		  <green><value>0.1</value></green>
+		  <blue><value>0.1</value></blue>
+          <alpha>
+            <value>.01</value>
+          </alpha>
+        </color>
+        <size>
+          <value>4</value>
+        </size>
+      </end>
+      
+      <life-sec>
+        <value> 9</value>
+        <spread>4</spread>
+      </life-sec>
+      
+      <mass-kg> 50</mass-kg>
+      <radius-m> .5</radius-m>
+    </particle>
+    
+    <program>
+      <fluid>  water</fluid>
+      <gravity>true </gravity>
+      <wind>   true </wind>
+    </program>
+    
+  </particlesystem>
+  
+</PropertyList>

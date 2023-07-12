@@ -24,6 +24,11 @@ Crew                          :
 Some useful keys:
 =================
 
+Notes:
+=================
+In order to use the fire fighting apparatus make sure the Cargo Towing Addon in not activated.
+The Bambi Bucket is availible using the Cargo Towing Addon.
+
 Thanks
 ======
 Heiko SCHULZ for FDM

@@ -67,6 +67,7 @@ var volume = 0.0;
 var flow = 0.0;
 var cannonpitch = 0;
 
+#optimize using listeners VS loop where possible
 var tank_operations = func {
 
     var paused = getprop("sim/freeze/clock");
@@ -83,6 +84,7 @@ var tank_operations = func {
     var cannon = getprop("sim/model/watercannon/enabled");
     var cannonvalveopen = getprop("sim/model/firetank/opencannonvalve");
     var tankdooropen = getprop("sim/model/firetank/opentankdoors");
+    var foam = getprop("sim/model/firetank/foam");
     var hopperweight = getprop("sim/weight[3]/weight-lb");
     var scoopdown = getprop("sim/model/firetank/deployramscoop/position-norm");
     var sniffer = getprop("sim/model/firetank/deployflexhose/position-norm");
@@ -106,8 +108,17 @@ var tank_operations = func {
     setprop("/sim/model/aircrane/effects/particles/greencombined",  red_diffuse*.98);
     setprop("/sim/model/aircrane/effects/particles/bluecombined",   red_diffuse*1);
 
-    setprop("sim/model/firetank/waterdropparticlectrl", tankdooropen*hopperweight*particles);
-    setprop("sim/model/firetank/watercannonparticlectrl", cannonvalveopen*hopperweight*particles);
+    if (foam) {
+        setprop("sim/model/firetank/waterdropparticlectrl", tankdooropen*hopperweight*particles);
+        setprop("sim/model/firetank/watercannonparticlectrl", cannonvalveopen*hopperweight*particles);
+        setprop("sim/model/firetank/retardantdropparticlectrl", 0);
+        setprop("sim/model/firetank/retardantcannonparticlectrl", 0);
+    } else {
+        setprop("sim/model/firetank/retardantdropparticlectrl", tankdooropen*hopperweight*particles);
+        setprop("sim/model/firetank/retardantcannonparticlectrl", cannonvalveopen*hopperweight*particles);
+        setprop("sim/model/firetank/waterdropparticlectrl", 0);
+        setprop("sim/model/firetank/watercannonparticlectrl", 0);
+    }
 
     if (!overland and particles and altitude < 27.5 and (sniffer > 0 and sniffer < 1) and sniffer < normalized)
         setprop("sim/model/firetank/snorkelsplashparticlectrl", 1);

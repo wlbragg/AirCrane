@@ -52,10 +52,75 @@
   </filter>
 
   <filter>
-    <name>Retardant Link for Cargo Tow Compatibility</name>
+    <name>Retardant Cannon to Wildfire Trigger</name>
     <type>gain</type>
+	<enable>
+      <condition>
+          <property>sim/model/firetank/retardantcannonparticlectrl</property>
+      </condition>
+    </enable>
     <input>
-     <property>sim/model/firetank/watercannonretardantctrl</property>
+     <property>sim/model/firetank/retardantcannonparticlectrl</property>
+    </input>
+    <output>controls/drop/trigger</output>
+  </filter>
+  <filter>
+    <name>Retardant Drop to Wildfire Trigger</name>
+    <type>gain</type>
+	<enable>
+      <condition>
+          <property>sim/model/firetank/retardantdropparticlectrl</property>
+      </condition>
+    </enable>
+    <input>
+     <property>sim/model/firetank/retardantdropparticlectrl</property>
+    </input>
+    <output>controls/drop/trigger</output>
+  </filter>
+  <filter>
+    <name>Water or Foam Cannon to Wildfire Trigger</name>
+    <type>gain</type>
+	<enable>
+      <condition>
+		  <and>
+			<property>sim/model/firetank/watercannonparticlectrl</property>
+			<property>sim/model/firetank/foam</property>
+		  </and>
+      </condition>
+    </enable>
+    <input>
+     <property>sim/model/firetank/watercannonparticlectrl</property>
+    </input>
+    <output>controls/drop/trigger</output>
+  </filter>
+  <filter>
+    <name>Water or Foam Drop to Wildfire Trigger</name>
+    <type>gain</type>
+	<enable>
+      <condition>
+		 <and>
+           <property>sim/model/firetank/waterdropparticlectrl</property>
+		   <property>sim/model/firetank/foam</property>
+		 </and>
+      </condition>
+    </enable>
+    <input>
+     <property>sim/model/firetank/waterdropparticlectrl</property>
+    </input>
+    <output>controls/drop/trigger</output>
+  </filter>
+
+  <!-- This filter is required for the Cargo Towing Addon Bambi Bucket functionality. -->
+  <filter>
+    <name>Cargo Tow Bambi Bucket to Wildfire Trigger</name>
+    <type>gain</type>
+	<enable>
+      <condition>
+           <property>controls/switches/drop/trigger</property>
+      </condition>
+    </enable>
+    <input>
+     <property>controls/switches/drop/trigger</property>
     </input>
     <output>controls/drop/trigger</output>
   </filter>
