@@ -185,20 +185,25 @@
   <logic>
     <name>Interior Fuel Pump 1 Eng 1</name>
     <input>
-      <and>
-        <less-than>
-          <property>/systems/electrical/outputs/main-left/fuel-boost-pump1-eng1</property>
-          <value>31.5</value>
-        </less-than>
-        <greater-than>
-          <property>/systems/electrical/outputs/main-left/fuel-boost-pump1-eng1</property>
-          <value>20.0</value>
-        </greater-than>
-        <equals>
-            <property>/controls/switches/fuelpump1eng1</property>
-            <value>0</value>
-        </equals>
-      </and>
+        <and>
+            <or>
+                <and>
+                    <less-than>
+                      <property>/systems/electrical/outputs/main-left/fuel-boost-pump1-eng1</property>
+                      <value>31.5</value>
+                    </less-than>
+                    <greater-than>
+                      <property>/systems/electrical/outputs/main-left/fuel-boost-pump1-eng1</property>
+                      <value>20.0</value>
+                    </greater-than>
+                </and>
+                <property>systems/electrical/outputs/cabin-power</property>
+            </or>
+            <equals>
+                <property>/controls/switches/fuelpump1eng1</property>
+                <value>0</value>
+            </equals>
+        </and>
     </input>
     <output>
       <property>/sim/model/lightmap/fuel-boost-pump1-eng1-red/factor</property>
@@ -208,20 +213,25 @@
   <logic>
     <name>Interior Fuel Pump 2 Eng 1</name>
     <input>
-      <and>
-        <less-than>
-          <property>/systems/electrical/outputs/main-left/fuel-boost-pump2-eng1</property>
-          <value>31.5</value>
-        </less-than>
-        <greater-than>
-          <property>/systems/electrical/outputs/main-left/fuel-boost-pump2-eng1</property>
-          <value>20.0</value>
-        </greater-than>
-        <equals>
-            <property>/controls/switches/fuelpump2eng1</property>
-            <value>0</value>
-        </equals>
-      </and>
+        <and>
+            <or>
+                <and>
+                    <less-than>
+                      <property>/systems/electrical/outputs/main-left/fuel-boost-pump2-eng1</property>
+                      <value>31.5</value>
+                    </less-than>
+                    <greater-than>
+                      <property>/systems/electrical/outputs/main-left/fuel-boost-pump2-eng1</property>
+                      <value>20.0</value>
+                    </greater-than>
+                </and>
+                <property>systems/electrical/outputs/cabin-power</property>
+            </or>
+            <equals>
+                <property>/controls/switches/fuelpump2eng1</property>
+                <value>0</value>
+            </equals>
+        </and>
     </input>
     <output>
       <property>/sim/model/lightmap/fuel-boost-pump2-eng1-red/factor</property>
@@ -231,20 +241,25 @@
   <logic>
     <name>Interior Fuel Pump 1 Eng 2</name>
     <input>
-      <and>
-        <less-than>
-          <property>/systems/electrical/outputs/main-left/fuel-boost-pump1-eng2</property>
-          <value>31.5</value>
-        </less-than>
-        <greater-than>
-          <property>/systems/electrical/outputs/main-left/fuel-boost-pump1-eng2</property>
-          <value>20.0</value>
-        </greater-than>
-        <equals>
-            <property>/controls/switches/fuelpump1eng2</property>
-            <value>0</value>
-        </equals>
-      </and>
+        <and>
+            <or>
+                <and>
+                    <less-than>
+                      <property>/systems/electrical/outputs/main-left/fuel-boost-pump1-eng2</property>
+                      <value>31.5</value>
+                    </less-than>
+                    <greater-than>
+                      <property>/systems/electrical/outputs/main-left/fuel-boost-pump1-eng2</property>
+                      <value>20.0</value>
+                    </greater-than>
+                </and>
+                <property>systems/electrical/outputs/cabin-power</property>
+            </or>
+            <equals>
+                <property>/controls/switches/fuelpump1eng2</property>
+                <value>0</value>
+            </equals>
+        </and>
     </input>
     <output>
       <property>/sim/model/lightmap/fuel-boost-pump1-eng2-red/factor</property>
@@ -254,20 +269,25 @@
   <logic>
     <name>Interior Fuel Pump 2 Eng 2</name>
     <input>
-      <and>
-        <less-than>
-          <property>/systems/electrical/outputs/main-left/fuel-boost-pump2-eng2</property>
-          <value>31.5</value>
-        </less-than>
-        <greater-than>
-          <property>/systems/electrical/outputs/main-left/fuel-boost-pump2-eng2</property>
-          <value>20.0</value>
-        </greater-than>
-        <equals>
-            <property>/controls/switches/fuelpump2eng2</property>
-            <value>0</value>
-        </equals>
-      </and>
+        <and>
+            <or>
+                <and>
+                    <less-than>
+                      <property>/systems/electrical/outputs/main-left/fuel-boost-pump2-eng2</property>
+                      <value>31.5</value>
+                    </less-than>
+                    <greater-than>
+                      <property>/systems/electrical/outputs/main-left/fuel-boost-pump2-eng2</property>
+                      <value>20.0</value>
+                    </greater-than>
+                </and>
+                <property>systems/electrical/outputs/cabin-power</property>
+            </or>
+            <equals>
+                <property>/controls/switches/fuelpump2eng2</property>
+                <value>0</value>
+            </equals>
+        </and>
     </input>
     <output>
       <property>/sim/model/lightmap/fuel-boost-pump2-eng2-red/factor</property>

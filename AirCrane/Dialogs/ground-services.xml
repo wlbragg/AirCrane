@@ -1,0 +1,307 @@
+<?xml version="1.0"?>
+
+<!--
+ This program is free software; you can redistribute it and/or
+ modify it under the terms of the GNU General Public License as
+ published by the Free Software Foundation; either version 2 of the
+ License, or (at your option) any later version.
+
+ This program is distributed in the hope that it will be useful, but
+ WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ General Public License for more details.
+-->
+
+<PropertyList>
+
+    <name>ground-services</name>
+    <layout>vbox</layout>
+    <resizable>false</resizable>
+    <modal>false</modal>
+    <draggable>true</draggable>
+
+
+    <group>    
+        <layout>hbox</layout>
+        <empty><stretch>true</stretch></empty>
+        <text>
+            <label>Ground Services</label>
+        </text>        
+        <empty><stretch>true</stretch></empty>
+        <button>
+            <legend/>
+            <key>Esc</key>
+            <pref-width>16</pref-width>
+            <pref-height>16</pref-height>
+            <binding>
+                <command>dialog-close</command>
+            </binding>
+        </button>    
+    </group>
+    
+    <hrule/>
+
+    <group>
+        <layout>vbox</layout>
+        <padding>6</padding>
+        <group>
+            <layout>hbox</layout>
+            <text>
+                <label>Service Aircraft</label>
+            </text>
+        </group>
+        <checkbox>
+            <halign>left</halign>
+            <label>Enable left ladder </label>
+            <live>true</live>
+            <property>/sim/ladderL/enable</property>
+            <enable>
+                <less-than>
+                    <property>velocities/groundspeed-kt</property>
+                    <value>0.1</value>
+                </less-than>
+            </enable>
+            <binding>
+                <command>property-toggle</command>
+                <property>/sim/ladderL/enable</property>
+            </binding>
+            <binding>
+                <command>dialog-update</command>
+            </binding>
+        </checkbox>
+        <checkbox>
+            <halign>left</halign>
+            <label>Enable right ladder </label>
+            <live>true</live>
+            <property>/sim/ladderR/enable</property>
+            <enable>
+                <less-than>
+                    <property>velocities/groundspeed-kt</property>
+                    <value>0.1</value>
+                </less-than>
+            </enable>
+            <binding>
+                <command>property-toggle</command>
+                <property>/sim/ladderR/enable</property>
+            </binding>
+            <binding>
+                <command>dialog-update</command>
+            </binding>
+        </checkbox>
+
+        <hrule/>
+
+        <checkbox>
+            <halign>left</halign>
+            <label>Place left safety cones</label>
+            <live>true</live>
+            <property>/sim/coneL/enable</property>
+            <enable>
+                <less-than>
+                    <property>velocities/groundspeed-kt</property>
+                    <value>0.1</value>
+                </less-than>
+            </enable>
+            <binding>
+                <command>property-toggle</command>
+                <property>/sim/coneL/enable</property>
+            </binding>
+            <binding>
+                <command>dialog-update</command>
+            </binding>
+        </checkbox>
+
+        <checkbox>
+            <halign>left</halign>
+            <label>Place right safety cones</label>
+            <live>true</live>
+            <property>/sim/coneR/enable</property>
+            <enable>
+                <less-than>
+                    <property>velocities/groundspeed-kt</property>
+                    <value>0.1</value>
+                </less-than>
+            </enable>
+            <binding>
+                <command>property-toggle</command>
+                <property>/sim/coneR/enable</property>
+            </binding>
+            <binding>
+                <command>dialog-update</command>
+            </binding>
+        </checkbox>
+
+        <hrule/>
+
+        <group>
+            <layout>vbox</layout>
+            <padding>6</padding>
+            <checkbox>
+                <halign>left</halign>
+                <label>Place Ground Power Unit</label>
+                <live>true</live>
+                <property>/sim/gpu/enable</property>
+                <enable>
+                    <less-than>
+                        <property>velocities/groundspeed-kt</property>
+                        <value>0.1</value>
+                    </less-than>
+                </enable>
+                <binding>
+                    <command>property-toggle</command>
+                    <property>/sim/gpu/enable</property>
+                </binding>
+                <binding>
+                    <command>nasal</command>
+                    <script>
+                        if (!getprop("/sim/gpu/enable")) setprop("/controls/electric/external-power", 0);
+                    </script>
+                </binding>
+                <binding>
+                    <command>dialog-update</command>
+                </binding>
+            </checkbox>
+
+            <group>
+                <layout>hbox</layout>
+
+                <!-- Small left padding -->
+                <group>
+                    <layout>vbox</layout>
+                    <padding>6</padding>
+                </group>
+
+                <group>
+                    <layout>vbox</layout>
+                    <checkbox>
+                        <halign>left</halign>
+                        <label>Connect GPU to aircraft</label>
+                        <live>true</live>
+                        <property>/controls/electric/external-power</property>
+                        <enable>
+                            <property>/sim/gpu/enable</property>
+                        </enable>
+                        <binding>
+                            <command>property-toggle</command>
+                            <property>/controls/electric/external-power</property>
+                        </binding>
+                        <binding>
+                            <command>dialog-update</command>
+                        </binding>
+                    </checkbox>                        
+                    <text>
+                        <halign>left</halign>
+                        <label>Battery charge: xxxx %%</label>
+                        <format>Battery charge: %3.1f %%</format>
+                        <live>true</live>
+                        <property>systems/electrical/supplier/battery/percent-charged</property>
+                    </text>
+                </group>
+            </group>
+        </group>
+
+        <hrule/>
+
+        <group>
+            <layout>hbox</layout>
+
+            <checkbox>
+                <halign>left</halign>
+                <label>Fuel tank trailer</label>
+                <live>true</live>
+                <property>/sim/fueltanktrailer/enable</property>
+                <enable>
+                    <less-than>
+                        <property>velocities/groundspeed-kt</property>
+                        <value>0.1</value>
+                    </less-than>
+                </enable>
+                <binding>
+                    <command>property-toggle</command>
+                    <property>/sim/fueltanktrailer/enable</property>
+                </binding>
+                <binding>
+                    <command>dialog-update</command>
+                </binding>
+            </checkbox>
+                        
+            <button>
+                <halign>right</halign>
+                <legend>Add/remove fuel...</legend>
+                <live>true</live>                
+                <enable>
+                    <and>
+                        <not>
+                            <property>/sim/freeze/replay-state</property>
+                        </not>
+                        <less-than>
+                            <property>velocities/groundspeed-kt</property>
+                            <value>1.0</value>
+                        </less-than>
+                        <not>
+                            <property>/engines/active-engine/running</property>
+                        </not>
+                        <property>/sim/fueltanktrailer/enable</property>
+                    </and>
+                </enable>
+                <binding>
+                    <command>dialog-show</command>
+                    <dialog-name>fuel-tanks-dialog</dialog-name>
+                </binding>
+            </button>
+        </group>                
+
+        <hrule/>
+
+        <checkbox>
+            <halign>left</halign>
+            <label>External heater applied</label>
+            <live>true</live>
+            <property>/engines/external-heat/enabled</property>
+            <enable>
+                <and>
+                    <less-than>
+                        <property>velocities/groundspeed-kt</property>
+                        <value>0.1</value>
+                    </less-than>
+                    <less-than>
+                        <property>/engines/engine-rpm</property>
+                        <value>0.1</value>
+                    </less-than>
+                </and>
+            </enable>
+            <binding>
+                <command>property-toggle</command>
+                <property>/engines/external-heat/enabled</property>
+            </binding>
+            <binding>
+                <command>property-toggle</command>
+                <property>/sim/externalheater/enable</property>
+            </binding>
+            <binding>
+                <command>dialog-update</command>
+            </binding>
+        </checkbox>
+        <empty><stretch>true</stretch></empty>
+    </group>
+
+    <hrule/>
+
+    <group>
+        <layout>hbox</layout>
+        <default-padding>6</default-padding>
+
+        <empty><stretch>true</stretch></empty>
+
+        <button>
+            <legend>Close</legend>
+            <equal>true</equal>
+            <key>Esc</key>
+            <default>true</default>
+            <binding>
+                <command>dialog-close</command>
+            </binding>
+        </button>
+    </group>
+
+</PropertyList>

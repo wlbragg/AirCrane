@@ -33,6 +33,7 @@ var load_ballance         = props.globals.initNode("systems/electrical/supplier/
 
 # switches and relays
 var switch_batt           = props.globals.getNode("controls/electric/battery-bus-switch",0);
+var switch_ext            = props.globals.getNode("controls/switches/ext-power",0);
 var switch_av             = props.globals.getNode("controls/electric/avionics-switch",0);
 var switch_inv            = props.globals.getNode("controls/electric/inverter-switch",0);
 var gen1_ready            = props.globals.getNode("controls/electric/engine[0]/generator",0);

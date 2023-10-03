@@ -651,6 +651,23 @@
       <max-dist>5.0</max-dist>
     </switch>
 
+    <external-heater>
+        <name>external-preheater</name>
+        <mode>looped</mode>
+        <path>Sounds/preheater.wav</path>
+        <condition>
+            <property>/engines/external-heat/enabled</property>
+        </condition>
+        <delay-sec>1</delay-sec>
+        <position>
+            <x>-3.20</x>
+            <y>0.20</y>
+            <z>0</z>
+        </position>
+        <reference-dist>1.5</reference-dist>
+        <max-dist>200</max-dist>
+    </external-heater>
+
   </fx>
 
 </PropertyList>

@@ -39,7 +39,7 @@
     <object-name>tankpumpoton</object-name>
     <object-name>sysreadyon</object-name>
     <condition>
-      <property>controls/electric/battery-bus-switch</property>
+      <property>systems/electrical/outputs/cabin-power</property>
     </condition>
     <emission>
       <factor-prop>controls/lighting/luminosite-lights</factor-prop>

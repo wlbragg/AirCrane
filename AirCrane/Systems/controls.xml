@@ -76,8 +76,8 @@
   </rotorbrake>
 
   <electric>
-    <battery-switch type="bool">false</battery-switch>
     <battery-bus-switch type="int">0</battery-bus-switch>
+    <external-power type="int">0</external-power>
     <app-bus-switch type="int">0</app-bus-switch>
     <inverter-switch type="bool">1</inverter-switch>
     <avionics-switch type="bool">false</avionics-switch>
@@ -367,6 +367,7 @@
   </knobs>
 
   <switches>
+    <ext-power type="bool">false</ext-power>
     <eng1-n1-start type="bool">false</eng1-n1-start>
     <eng2-n1-start type="bool">false</eng2-n1-start>
     <ignition-1 type="int">0</ignition-1>

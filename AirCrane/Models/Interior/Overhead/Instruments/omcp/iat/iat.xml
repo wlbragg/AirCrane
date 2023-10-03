@@ -26,7 +26,7 @@
     <object-name>modeIAT</object-name>
     <object-name>modeOAT</object-name>
     <condition>
-      <property>controls/electric/battery-bus-switch</property>
+      <property>systems/electrical/outputs/cabin-power</property>
     </condition>
     <emission>
       <factor-prop>controls/lighting/luminosite-lights</factor-prop>

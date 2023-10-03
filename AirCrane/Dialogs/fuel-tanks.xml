@@ -1,0 +1,405 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+    <name>fuel-tanks-dialog</name>
+    <layout>vbox</layout>
+    <resizable>false</resizable>
+    <modal>false</modal>
+    <draggable>true</draggable>
+
+    <nasal>
+        <open>
+            # Fuel tanks being used
+            setprop("/consumables/fuel/fwd1/level-norm", getprop("/consumables/fuel/tank/level-norm"));
+            setprop("/consumables/fuel/fwd2/level-norm", getprop("/consumables/fuel/tank[1]/level-norm"));
+            setprop("/consumables/fuel/aft1/level-norm", getprop("/consumables/fuel/tank[2]/level-norm"));
+            setprop("/consumables/fuel/aft2/level-norm", getprop("/consumables/fuel/tank[3]/level-norm"));
+            setprop("/consumables/fuel/aux/level-norm", getprop("/consumables/fuel/tank[4]/level-norm"));
+            setprop("/consumables/fuel/fwd1/level-gal_us", getprop("/consumables/fuel/tank/level-gal_us"));
+            setprop("/consumables/fuel/fwd2/level-gal_us", getprop("/consumables/fuel/tank[1]/level-gal_us"));
+            setprop("/consumables/fuel/aft1/level-gal_us", getprop("/consumables/fuel/tank[2]/level-gal_us"));
+            setprop("/consumables/fuel/aft2/level-gal_us", getprop("/consumables/fuel/tank[3]/level-gal_us"));
+            setprop("/consumables/fuel/aux/level-gal_us", getprop("/consumables/fuel/tank[4]/level-gal_us"));
+            setprop("/consumables/fuel/fwd1/level-lbs", getprop("/consumables/fuel/tank/level-lbs"));
+            setprop("/consumables/fuel/fwd1/level-lbs", getprop("/consumables/fuel/tank[1]/level-lbs"));
+            setprop("/consumables/fuel/aft1/level-lbs", getprop("/consumables/fuel/tank[2]/level-lbs"));
+            setprop("/consumables/fuel/aft2/level-lbs", getprop("/consumables/fuel/tank[3]/level-lbs"));
+            setprop("/consumables/fuel/aux/level-lbs", getprop("/consumables/fuel/tank[4]/level-lbs"));
+            setprop("/consumables/fuel/fwd1/level-litres", getprop("/consumables/fuel/tank/level-litres"));
+            setprop("/consumables/fuel/fwd2/level-litres", getprop("/consumables/fuel/tank[1]/level-litres"));
+            setprop("/consumables/fuel/aft1/level-litres", getprop("/consumables/fuel/tank[2]/level-litres"));
+            setprop("/consumables/fuel/aft2/level-litres", getprop("/consumables/fuel/tank[3]/level-litres"));
+            setprop("/consumables/fuel/aux/level-litres", getprop("/consumables/fuel/tank[4]/level-litres"));
+        </open>
+    </nasal>
+
+    <group>
+        <layout>hbox</layout>
+
+        <empty><stretch>true</stretch></empty>
+        <text>
+            <label>Fuel Tanks</label>
+        </text>
+        <empty><stretch>true</stretch></empty>
+
+        <button>
+            <legend/>
+            <key>Esc</key>
+            <pref-width>16</pref-width>
+            <pref-height>16</pref-height>
+            <binding>
+                <command>dialog-close</command>
+            </binding>
+        </button>
+    </group>
+    
+    <hrule/>
+
+    <group>
+        <layout>hbox</layout>
+        <padding>6</padding>
+                
+        <group>
+            <layout>vbox</layout>
+            <text>
+                <label>Tank</label>
+                <halign>center</halign>
+            </text>
+            <text>
+                <label>Fwd Tank 1:</label>
+                <halign>left</halign>
+            </text>
+            <text>
+                <label>Fwd Tank 2:</label>
+                <halign>left</halign>
+            </text>
+            <text>
+                <label>Aft Tank 1:</label>
+                <halign>left</halign>
+            </text>
+            <text>
+                <label>Aft Tank 2:</label>
+                <halign>left</halign>
+            </text>
+            <text>
+                <label>Aux Tank:</label>
+                <halign>left</halign>
+            </text>
+            <text>
+                <label></label>
+            </text>
+        </group>
+            
+        <group>
+            <layout>vbox</layout>
+            <text>
+                <label></label>
+                <halign>left</halign>
+            </text>
+            <slider>
+                <name>fwd1-fuel-slider</name>
+                <min>0</min>
+                <max>1</max>
+                <live>true</live>
+                <enable>
+                    <and>
+                        <property>/gear/gear/wow</property>
+                        <property>/gear/gear[1]/wow</property>
+                        <property>/gear/gear[2]/wow</property>
+                        <less-than>
+                            <property>/engines/engine-rpm</property>
+                            <value>0.1</value>
+                        </less-than>
+                    </and>
+                </enable>
+                <property>/consumables/fuel/fwd1/level-norm</property>
+                <binding>
+                    <command>dialog-apply</command>
+                </binding>
+                <binding>
+                    <command>nasal</command>
+                    <script>
+                        setprop("/consumables/fuel/tank[0]/level-norm", getprop("/consumables/fuel/fwd1/level-norm"));
+                        setprop("/consumables/fuel/fwd1/level-gal_us", getprop("/consumables/fuel/tank[0]/level-gal_us"));
+                        setprop("/consumables/fuel/fwd1/level-lbs", getprop("/consumables/fuel/tank[0]/level-lbs"));
+                    </script>
+                </binding>
+            </slider>
+            <slider>
+                <name>fwd2-fuel-slider</name>
+                <min>0</min>
+                <max>1</max>
+                <live>true</live>
+                <enable>
+                    <and>
+                        <property>/gear/gear/wow</property>
+                        <property>/gear/gear[1]/wow</property>
+                        <property>/gear/gear[2]/wow</property>
+                        <less-than>
+                            <property>/engines/engine-rpm</property>
+                            <value>0.1</value>
+                        </less-than>
+                    </and>
+                </enable>
+                <property>/consumables/fuel/fwd2/level-norm</property>
+                <binding>
+                    <command>dialog-apply</command>
+                </binding>
+                <binding>
+                    <command>nasal</command>
+                    <script>
+                        setprop("/consumables/fuel/tank[1]/level-norm", getprop("/consumables/fuel/fwd2/level-norm"));
+                        setprop("/consumables/fuel/fwd2/level-gal_us", getprop("/consumables/fuel/tank[1]/level-gal_us"));
+                        setprop("/consumables/fuel/fwd2/level-lbs", getprop("/consumables/fuel/tank[1]/level-lbs"));
+                    </script>
+                </binding>
+            </slider>
+            <slider>
+                <name>aft1-fuel-slider</name>
+                <min>0</min>
+                <max>1</max>
+                <live>true</live>
+                <enable>
+                    <and>
+                        <property>/gear/gear/wow</property>
+                        <property>/gear/gear[1]/wow</property>
+                        <property>/gear/gear[2]/wow</property>
+                        <less-than>
+                            <property>/engines/engine-rpm</property>
+                            <value>0.1</value>
+                        </less-than>
+                    </and>
+                </enable>
+                <property>/consumables/fuel/aft1/level-norm</property>
+                <binding>
+                    <command>dialog-apply</command>
+                </binding>
+                <binding>
+                    <command>nasal</command>
+                    <script>
+                        setprop("/consumables/fuel/tank[2]/level-norm", getprop("/consumables/fuel/aft1/level-norm"));
+                        setprop("/consumables/fuel/aft1/level-gal_us", getprop("/consumables/fuel/tank[2]/level-gal_us"));
+                        setprop("/consumables/fuel/aft1/level-lbs", getprop("/consumables/fuel/tank[2]/level-lbs"));
+                    </script>
+                </binding>
+            </slider>
+            <slider>
+                <name>aft2-fuel-slider</name>
+                <min>0</min>
+                <max>1</max>
+                <live>true</live>
+                <enable>
+                    <and>
+                        <property>/gear/gear/wow</property>
+                        <property>/gear/gear[1]/wow</property>
+                        <property>/gear/gear[2]/wow</property>
+                        <less-than>
+                            <property>/engines/engine-rpm</property>
+                            <value>0.1</value>
+                        </less-than>
+                    </and>
+                </enable>
+                <property>/consumables/fuel/aft2/level-norm</property>
+                <binding>
+                    <command>dialog-apply</command>
+                </binding>
+                <binding>
+                    <command>nasal</command>
+                    <script>
+                        setprop("/consumables/fuel/tank[3]/level-norm", getprop("/consumables/fuel/aft2/level-norm"));
+                        setprop("/consumables/fuel/aft2/level-gal_us", getprop("/consumables/fuel/tank[3]/level-gal_us"));
+                        setprop("/consumables/fuel/aft2/level-lbs", getprop("/consumables/fuel/tank[3]/level-lbs"));
+                    </script>
+                </binding>
+            </slider>
+            <slider>
+                <name>aux-fuel-slider</name>
+                <min>0</min>
+                <max>1</max>
+                <live>true</live>
+                <enable>
+                    <and>
+                        <property>/gear/gear/wow</property>
+                        <property>/gear/gear[1]/wow</property>
+                        <property>/gear/gear[2]/wow</property>
+                        <less-than>
+                            <property>/engines/engine-rpm</property>
+                            <value>0.1</value>
+                        </less-than>
+                    </and>
+                </enable>
+                <property>/consumables/fuel/aux/level-norm</property>
+                <binding>
+                    <command>dialog-apply</command>
+                </binding>
+                <binding>
+                    <command>nasal</command>
+                    <script>
+                        setprop("/consumables/fuel/tank[4]/level-norm", getprop("/consumables/fuel/aux/level-norm"));
+                        setprop("/consumables/fuel/aux/level-gal_us", getprop("/consumables/fuel/tank[4]/level-gal_us"));
+                        setprop("/consumables/fuel/aux/level-lbs", getprop("/consumables/fuel/tank[4]/level-lbs"));
+                    </script>
+                </binding>
+            </slider>
+            <text>
+                <label>Total: </label>
+                <halign>right</halign>
+            </text>
+        </group>
+            
+        <group>
+            <layout>vbox</layout>
+            <text>
+                <label>Pounds</label>
+                <halign>left</halign>
+            </text>
+            <text>
+                <label>12345</label>
+                <halign>left</halign>
+                <format>%.1f</format>
+                <live>true</live>
+                <property>/consumables/fuel/tank/level-lbs</property>
+            </text>
+            <text>
+                <label>12345</label>
+                <halign>left</halign>
+                <format>%.1f</format>
+                <live>true</live>
+                <property>/consumables/fuel/tank[1]/level-lbs</property>
+            </text>
+            <text>
+                <label>12345</label>
+                <halign>left</halign>
+                <format>%.1f</format>
+                <live>true</live>
+                <property>/consumables/fuel/tank[2]/level-lbs</property>
+            </text>
+            <text>
+                <label>12345</label>
+                <halign>left</halign>
+                <format>%.1f</format>
+                <live>true</live>
+                <property>/consumables/fuel/tank[3]/level-lbs</property>
+            </text>
+            <text>
+                <label>12345</label>
+                <halign>left</halign>
+                <format>%.1f</format>
+                <live>true</live>
+                <property>/consumables/fuel/tank[4]/level-lbs</property>
+            </text>
+            <text>
+                <label>12345</label>
+                <halign>left</halign>
+                <format>%.1f</format>
+                <live>true</live>
+                <property>/consumables/fuel/total-fuel-lbs</property>
+            </text>
+        </group>
+        
+        <group>
+            <layout>vbox</layout>
+            <text>
+                <label>Gallons</label>
+                <halign>left</halign>
+            </text>
+            <text>
+                <label>12345</label>
+                <halign>left</halign>
+                <format>%.1f</format>
+                <live>true</live>
+                <property>/consumables/fuel/tank/level-gals</property>
+            </text>
+            <text>
+                <label>12345</label>
+                <halign>left</halign>
+                <format>%.1f</format>
+                <live>true</live>
+                <property>/consumables/fuel/tank[1]/level-gals</property>
+            </text>
+            <text>
+                <label>12345</label>
+                <halign>left</halign>
+                <format>%.1f</format>
+                <live>true</live>
+                <property>/consumables/fuel/tank[2]/level-gals</property>
+            </text>
+            <text>
+                <label>12345</label>
+                <halign>left</halign>
+                <format>%.1f</format>
+                <live>true</live>
+                <property>/consumables/fuel/tank[3]/level-gals</property>
+            </text>
+            <text>
+                <label>12345</label>
+                <halign>left</halign>
+                <format>%.1f</format>
+                <live>true</live>
+                <property>/consumables/fuel/tank[4]/level-gals</property>
+            </text>
+            <text>
+                <label>12345</label>
+                <halign>left</halign>
+                <format>%.1f</format>
+                <live>true</live>
+                <property>/consumables/fuel/total-fuel-gals</property>
+            </text>
+        </group>
+        
+    </group>
+
+    <group>
+        <layout>table</layout>
+        <text>
+            <row>0</row>
+            <col>0</col>
+            <visible>
+                <and>
+                    <property>/fdm/jsbsim/gear/wow</property>
+                    <property>/engines/active-engine/running</property>
+                </and>
+            </visible>
+            <color>
+                <red>0.9</red>
+                <green>0.1</green>
+                <blue>0.1</blue>
+            </color>
+            <label>Sliders disabled while engine is running!</label>
+        </text>
+        <text>
+            <row>0</row>
+            <col>0</col>
+            <visible>
+                <not>
+                   <property>/fdm/jsbsim/gear/wow</property>
+                </not>
+            </visible>
+            <color>
+                <red>0.9</red>
+                <green>0.1</green>
+                <blue>0.1</blue>
+            </color>
+            <label>Sliders disabled while in the air!</label>
+        </text>
+    </group>
+        
+    <hrule/>
+
+    <group>
+        <layout>hbox</layout>
+        <default-padding>6</default-padding>
+        <empty><stretch>true</stretch></empty>
+        <button>
+            <legend>Close</legend>
+            <equal>true</equal>
+            <key>Esc</key>
+            <default>true</default>
+            <binding>
+                <command>dialog-close</command>
+            </binding>
+        </button>
+    </group>
+
+</PropertyList>

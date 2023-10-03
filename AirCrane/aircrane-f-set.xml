@@ -100,6 +100,11 @@
         <path>Previews/aircrane-preview15.jpg</path>
         <splash type="bool">true</splash>
       </preview>
+	  <!--preview>
+        <type>exterior</type>
+        <path>Previews/aircrane-preview16.jpg</path>
+        <splash type="bool">true</splash>
+      </preview-->
     </previews>
 
     <tags>

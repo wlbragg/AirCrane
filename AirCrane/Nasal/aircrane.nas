@@ -90,6 +90,8 @@ var aft_fuel_limit_bug = props.globals.getNode("consumables/fuel/aft/fuel-limit-
 var master_bat = props.globals.getNode("controls/electric/battery-bus-switch", 1);
 var generator_1 = props.globals.getNode("controls/electric/engine[0]/generator-sw", 1);
 var generator_2 = props.globals.getNode("controls/electric/engine[1]/generator-sw", 1);
+var cabin_power = props.globals.getNode("systems/electrical/outputs/cabin-power", 1);
+var external_power = props.globals.getNode("systems/electrical/outputs/external-power", 1);
 
 var rectifier_1 = props.globals.getNode("controls/switches/rect-1", 1);
 var rectifier_2 = props.globals.getNode("controls/switches/rect-2", 1);
@@ -140,7 +142,7 @@ var autostart = func (msg=1) {
 };
 
 var app_startup = func {
-  var app_start_condition = app_start.getBoolValue() * app_master.getBoolValue() * master_bat.getValue();
+  var app_start_condition = app_start.getBoolValue() * app_master.getBoolValue() * cabin_power.getValue();
   if (app_start_condition) {
     app_starting.setValue(1);
     settimer(func {
@@ -378,14 +380,14 @@ var update_engine = func {
   #engine starting up
   if (eng1_starting.getValue() == 1) {
     #if (n1_percentage(0) < 5 and ignition_one.getValue()) pop();
-      if ((n1_percentage(0) > 29 and n1_percentage(0) < 45 ) and ignition_one.getValue() and (app_running.getValue() or eng2_running.getValue())) {
+      if ((n1_percentage(0) > 29 and n1_percentage(0) < 45 ) and ignition_one.getValue() and (app_running.getValue() or external_power.getValue() or eng2_running.getValue())) {
         eng1_running.setValue(1);
         eng1_starting.setValue(0);
       } else return;
   }
   if (eng2_starting.getValue() == 1) {
     #if (n1_percentage(1) < 5 and ignition_two.getValue()) pop();
-      if ((n1_percentage(1) > 29 and n1_percentage(1) < 45 ) and ignition_two.getValue() and (app_running.getValue() or eng1_running.getValue())) {
+      if ((n1_percentage(1) > 29 and n1_percentage(1) < 45 ) and ignition_two.getValue() and (app_running.getValue() or external_power.getValue() or eng1_running.getValue())) {
         eng2_running.setValue(1);
         eng2_starting.setValue(0);
       } else return;
@@ -865,7 +867,7 @@ setlistener("/controls/gear/brake-right", func () {
 }, 0, 1);
 
 setlistener("controls/switches/eng1-n1-start", func (node) {
-  if (node.getValue() and engine_one.getValue() == 0 and (app_running.getValue() or (eng2_running.getValue() and generator_2.getValue() == -1))) {
+  if (node.getValue() and engine_one.getValue() == 0 and (app_running.getValue() or external_power.getValue() or (eng2_running.getValue() and generator_2.getValue() == -1))) {
     state.setValue(-1);
     eng1_starting.setValue(1);
     settimer(func {
@@ -880,7 +882,7 @@ setlistener("controls/switches/eng1-n1-start", func (node) {
 }, 0, 0);
 
 setlistener("controls/switches/eng2-n1-start", func (node) {
-  if (node.getValue() and engine_two.getValue() == 0 and (app_running.getValue() or (eng1_running.getValue() and generator_1.getValue() == -1))) {
+  if (node.getValue() and engine_two.getValue() == 0 and (app_running.getValue() or external_power.getValue() or (eng1_running.getValue() and generator_1.getValue() == -1))) {
     state.setValue(-1);
     eng2_starting.setValue(1);
     settimer(func {
@@ -907,6 +909,58 @@ setlistener("controls/switches/app-stop", func (node) {
 }, 0, 0);
 
 #controls/switches/app-start
+
+############################################
+# Static objects
+############################################
+
+var StaticModel = {
+    new: func (name, file) {
+        var m = {
+            parents: [StaticModel],
+            model: nil,
+            model_file: file
+        };
+
+        setlistener("/sim/" ~ name ~ "/enable", func (node) {
+            if (node.getBoolValue()) {
+                m.add();
+            }
+            else {
+                m.remove();
+            }
+        });
+
+        return m;
+    },
+
+    add: func {
+        var manager = props.globals.getNode("/models", 1);
+        var i = 0;
+        for (; 1; i += 1) {
+            if (manager.getChild("model", i, 0) == nil) {
+                break;
+            }
+        }
+        var position = geo.aircraft_position().set_alt(getprop("/position/ground-elev-m"));
+        me.model = geo.put_model(me.model_file, position, getprop("/orientation/heading-deg"));
+    },
+
+    remove: func {
+        if (me.model != nil) {
+            me.model.remove();
+            me.model = nil;
+        }
+    }
+};
+
+StaticModel.new("coneR", "Aircraft/AirCrane/Models/Ground-Services/safety-cone/coneR.ac");
+StaticModel.new("coneL", "Aircraft/AirCrane/Models/Ground-Services/safety-cone/coneL.ac");
+StaticModel.new("gpu", "Aircraft/AirCrane/Models/Ground-Services/external-power/external-power.xml");
+StaticModel.new("ladderR", "Aircraft/AirCrane/Models/Ground-Services/ladder/ladderR.ac");
+StaticModel.new("ladderL", "Aircraft/AirCrane/Models/Ground-Services/ladder/ladderL.ac");
+StaticModel.new("fueltanktrailer", "Aircraft/AirCrane/Models/Ground-Services/fueltanktrailer/fueltanktrailer.ac");
+StaticModel.new("externalheater", "Aircraft/AirCrane/Models/Ground-Services/external-heater/RedDragonEnginePreHeater.ac");
 
 ###############################################################################
 # On-screen displays
