@@ -227,7 +227,7 @@
                         
             <button>
                 <halign>right</halign>
-                <legend>Add/remove fuel...</legend>
+                <legend>Fuel Levels</legend>
                 <live>true</live>                
                 <enable>
                     <and>
