@@ -4,7 +4,8 @@
 <PropertyList>
   
   <name>exterior</name>
-  <inherits-from>Effects/model-combined-deferred</inherits-from>
+  <!--inherits-from>Effects/model-combined-deferred</inherits-from-->
+  <inherits-from>Effects/model-pbr</inherits-from>
   <parameters>
     <rain-enabled type="int">2</rain-enabled>
     <lightmap-enabled type="int"> 0 </lightmap-enabled>
