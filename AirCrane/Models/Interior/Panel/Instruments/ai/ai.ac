@@ -5829,6 +5829,8 @@ name "vitre"
 data 5
 vitre
 crease 30.0
+texture "glass-alpha.png"
+texrep 1 1
 numvert 33
 0.01305 0.03445 -0.0345
 0.01304 0.04052 -0.02712

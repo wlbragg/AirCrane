@@ -3,6 +3,12 @@
 <PropertyList>
 
   <path>interior.ac</path>
+  
+  <effect>
+    <inherits-from>Aircraft/AirCrane/Models/Effects/Interior/cockpit-interior-floor</inherits-from>
+    <object-name>floor</object-name>
+	<object-name>floorF</object-name>
+  </effect>
 
   <effect>
     <inherits-from>Aircraft/AirCrane/Models/Effects/Interior/lm-interior</inherits-from>
@@ -10,7 +16,7 @@
     <object-name>interieur</object-name>
     <object-name>tour</object-name>
     <object-name>planchet</object-name>
-    <object-name>floor</object-name>
+    <!--object-name>floor</object-name-->
     <object-name>reposepieds</object-name>
     <object-name>accoudoir</object-name>
     <object-name>gruesiege1</object-name>
@@ -33,7 +39,7 @@
     <!-- Model F -->
     <object-name>interieurF</object-name>
     <object-name>tourF</object-name>
-    <object-name>floorF</object-name>
+    <!--object-name>floorF</object-name-->
     <object-name>planchetF</object-name>
     <object-name>tourF</object-name>
     <object-name>barreF</object-name>

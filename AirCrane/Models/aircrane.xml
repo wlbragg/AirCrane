@@ -105,7 +105,7 @@
     <object-name>cables1</object-name>
     <object-name>cables2</object-name>
     <object-name>cables3</object-name>
-    <object-name>roueA</object-name>
+    <object-name>roueARims</object-name>
     <object-name>echelles</object-name>
 	<object-name>rotortail</object-name>
 
@@ -123,14 +123,14 @@
     <object-name>steppanelE</object-name>
 
     <!-- Single Wheels -->
-    <object-name>roueG</object-name>
-    <object-name>roueD</object-name>
+    <object-name>roueGRims</object-name>
+    <object-name>roueDRims</object-name>
     <object-name>axeDB</object-name>
     <object-name>axeGB</object-name>
 
     <!-- Tandem Wheels -->
-    <object-name>roueGT</object-name>
-    <object-name>roueDT</object-name>
+    <object-name>roueGTRims</object-name>
+    <object-name>roueDTRims</object-name>
     <object-name>axeGBT</object-name>
     <object-name>axeDBT</object-name>
 
@@ -143,6 +143,15 @@
       <blue-prop>emission/blue</blue-prop>
     </emission>
   </animation>
+
+  <effect>
+    <inherits-from>Aircraft/AirCrane/Models/Effects/Exterior/bumpspec-wheels</inherits-from>
+    <object-name>roueA</object-name>
+    <object-name>roueG</object-name>
+    <object-name>roueD</object-name>
+    <object-name>roueGT</object-name>
+    <object-name>roueDT</object-name>
+  </effect>
 
   <effect>
     <inherits-from>Aircraft/AirCrane/Models/Effects/Exterior/bumpspec-fuselage</inherits-from>
@@ -162,11 +171,6 @@
     <object-name>axeDB</object-name>
     <object-name>axeGBT</object-name>
     <object-name>axeDBT</object-name>
-    <object-name>roueA</object-name>
-    <object-name>roueG</object-name>
-    <object-name>roueD</object-name>
-    <object-name>roueGT</object-name>
-    <object-name>roueDT</object-name>
     <object-name>articuleAH</object-name>
     <object-name>articuleAB</object-name>
     <object-name>articuleGH</object-name>
@@ -178,6 +182,11 @@
     <object-name>pate2</object-name>
     <object-name>pate3</object-name>
     <object-name>pate4</object-name>
+	<object-name>roueARims</object-name>
+    <object-name>roueGRims</object-name>
+    <object-name>roueDRims</object-name>
+    <object-name>roueGTRims</object-name>
+    <object-name>roueDTRims</object-name>
     <object-name>caches</object-name>
     <object-name>caches2</object-name>
     <object-name>caches3</object-name>
@@ -268,6 +277,8 @@
     <object-name>axeDBT</object-name>
     <object-name>roueGT</object-name>
     <object-name>roueDT</object-name>
+	<object-name>roueGTRims</object-name>
+    <object-name>roueDTRims</object-name>
   </animation>
 
   <animation>
@@ -281,6 +292,8 @@
     <object-name>axeDB</object-name>
     <object-name>roueG</object-name>
     <object-name>roueD</object-name>
+	<object-name>roueGRims</object-name>
+    <object-name>roueDRims</object-name>
   </animation>
 
   <!-- Rotor principale -->
@@ -463,6 +476,7 @@
   <animation>
     <name>EnsembleRoueAvant</name>
     <object-name>roueA</object-name>
+	<object-name>roueARims</object-name>
     <object-name>axeAH</object-name>
     <object-name>axeAB</object-name>
     <object-name>articuleAH</object-name>
@@ -490,6 +504,7 @@
   <animation>
     <name>RoueAvant</name>
     <object-name>roueA</object-name>
+	<object-name>roueARims</object-name>
     <object-name>axeAB</object-name>
     <object-name>articuleAB</object-name>
   </animation>
@@ -498,6 +513,8 @@
     <name>RoueGauche</name>
     <object-name>roueG</object-name>
     <object-name>roueGT</object-name>
+	<object-name>roueGRims</object-name>
+    <object-name>roueGTRims</object-name>
     <object-name>axeGB</object-name>
     <object-name>articuleGB</object-name>
   </animation>
@@ -506,6 +523,8 @@
     <name>RoueDroite</name>
     <object-name>roueD</object-name>
     <object-name>roueT</object-name>
+	<object-name>roueDRims</object-name>
+    <object-name>roueTRims</object-name>
     <object-name>axeDB</object-name>
     <object-name>articuleDB</object-name>
   </animation>
@@ -688,6 +707,7 @@
   <animation>
     <type>spin</type>
     <object-name>roueA</object-name>
+	<object-name>roueARims</object-name>
     <property>gear/gear[0]/rollspeed-ms</property>
     <factor> 30 </factor>
     <center>
@@ -705,7 +725,8 @@
   <animation>
     <type>spin</type>
     <object-name>roueG</object-name>
-    <property>gear/gear[1]/rollspeed-ms</property>
+    <object-name>roueGRims</object-name>
+	<property>gear/gear[1]/rollspeed-ms</property>
     <factor> 30 </factor>
     <center>
       <x-m> -1.144 </x-m>
@@ -722,6 +743,7 @@
   <animation>
     <type>spin</type>
     <object-name>roueD</object-name>
+	<object-name>roueDRims</object-name>
     <property>gear/gear[2]/rollspeed-ms</property>
     <factor> 30 </factor>
     <center>
@@ -1271,10 +1293,10 @@
     </axis>
   </animation>
 
-  <animation>
+  <!--animation>
     <name>wheelR</name>
     <object-name>roueD</object-name>
-  </animation>
+  </animation-->
 
   <animation>
     <name>gearR</name>
@@ -1476,10 +1498,10 @@
     </axis>
   </animation>
 
-  <animation>
+  <!--animation>
     <name>wheelN</name>
     <object-name>roueA</object-name>
-  </animation>
+  </animation-->
 
   <animation>
     <name>gearN</name>
