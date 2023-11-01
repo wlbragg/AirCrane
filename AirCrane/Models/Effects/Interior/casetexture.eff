@@ -3,10 +3,6 @@
     <name>casetexture</name>
 	<inherits-from>Aircraft/AirCrane/Models/Effects/Interior/cockpit-interior</inherits-from>
 	<parameters>
-
-		<metallic-factor type="float">1.0</metallic-factor>
-		<roughness-factor type="float">0.6</roughness-factor>
-
         <grain-texture-enabled type="int">1</grain-texture-enabled>
         <grain-magnification type="float"><use>sim/model/aircrane/effects/interior/grain/seal</use></grain-magnification>
         <texture n="7">

@@ -6,8 +6,34 @@
   
   <effect>
     <inherits-from>Aircraft/AirCrane/Models/Effects/Interior/cockpit-interior-floor</inherits-from>
-    <object-name>floor</object-name>
+    <!-- Model E -->
+	<object-name>floor</object-name>
+	<!-- Model F -->
 	<object-name>floorF</object-name>
+  </effect>
+
+  <effect>
+    <inherits-from>Aircraft/AirCrane/Models/Effects/Interior/cockpit-interior-metal</inherits-from>
+	<object-name>planchetMetal</object-name>
+	<object-name>reposepieds</object-name>
+	<!-- Model F -->
+	<object-name>barreF</object-name>
+  </effect>
+ 
+  <effect>
+    <inherits-from>Aircraft/AirCrane/Models/Effects/Interior/cockpit-interior-seats</inherits-from>
+	<object-name>gruesiege1</object-name>
+	<object-name>gruesiege2</object-name>
+  </effect>
+
+  <effect>
+    <inherits-from>Aircraft/AirCrane/Models/Effects/Interior/cockpit-interior-panels</inherits-from>
+	<object-name>accoudoir</object-name>
+	<object-name>seatbottom</object-name>
+	<!-- Model E -->
+	<object-name>grueinstrE</object-name>
+	<!-- Model F -->
+	<object-name>grueinstrF</object-name>
   </effect>
 
   <effect>
@@ -16,11 +42,11 @@
     <object-name>interieur</object-name>
     <object-name>tour</object-name>
     <object-name>planchet</object-name>
-    <!--object-name>floor</object-name-->
+    <!--object-name>floor</object-name>
     <object-name>reposepieds</object-name>
     <object-name>accoudoir</object-name>
     <object-name>gruesiege1</object-name>
-    <object-name>gruesiege2</object-name>
+    <object-name>gruesiege2</object-name-->
     <object-name>plaque</object-name>
     <object-name>intporteG</object-name>
     <object-name>intporteD</object-name>
@@ -33,7 +59,7 @@
     <object-name>interieurE</object-name>
     <object-name>tourE</object-name>
     <object-name>planchetE</object-name>
-    <object-name>grueinstrE</object-name>
+    <!--object-name>grueinstrE</object-name-->
     <object-name>intreardoorE</object-name>
 
     <!-- Model F -->
@@ -42,8 +68,8 @@
     <!--object-name>floorF</object-name-->
     <object-name>planchetF</object-name>
     <object-name>tourF</object-name>
-    <object-name>barreF</object-name>
-    <object-name>grueinstrF</object-name>
+    <!--object-name>barreF</object-name>
+    <object-name>grueinstrF</object-name-->
     <object-name>intreardoorF</object-name>
     <object-name>intstarboarddoorF</object-name>
   </effect>
