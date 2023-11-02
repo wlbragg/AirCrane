@@ -13,13 +13,17 @@
   </effect>
 
   <effect>
-    <inherits-from>Aircraft/AirCrane/Models/Effects/Interior/cockpit-interior-metal</inherits-from>
-	<object-name>planchetMetal</object-name>
+    <inherits-from>Aircraft/AirCrane/Models/Effects/Interior/cockpit-interior-metal-shiny</inherits-from>
 	<object-name>reposepieds</object-name>
 	<!-- Model F -->
 	<object-name>barreF</object-name>
   </effect>
- 
+
+  <effect>
+    <inherits-from>Aircraft/AirCrane/Models/Effects/Interior/cockpit-interior-metal</inherits-from>
+	<object-name>planchetMetal</object-name>
+  </effect>
+
   <effect>
     <inherits-from>Aircraft/AirCrane/Models/Effects/Interior/cockpit-interior-seats</inherits-from>
 	<object-name>gruesiege1</object-name>

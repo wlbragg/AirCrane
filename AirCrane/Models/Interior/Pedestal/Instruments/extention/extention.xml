@@ -5,12 +5,21 @@
   <path>extention.ac</path>
 
   <effect>
-    <inherits-from>Aircraft/AirCrane/Models/Effects/Interior/lm-interior-extention</inherits-from>
-    <object-name>parkingbrake-base</object-name>
-    <object-name>parkingbrake-handle</object-name>
+    <inherits-from>Aircraft/AirCrane/Models/Effects/Interior/lm-interior-extention-base</inherits-from>
     <object-name>pedestal-extention</object-name>
-    <object-name>placard</object-name>
+  </effect>
+
+  <effect>
+    <inherits-from>Aircraft/AirCrane/Models/Effects/Interior/lm-interior-extention-shiny-metal</inherits-from>
     <object-name>wheellock-base</object-name>
+	<object-name>parkingbrake-base</object-name>
+	<object-name>baseplate</object-name>
+  </effect>
+
+  <effect>
+    <inherits-from>Aircraft/AirCrane/Models/Effects/Interior/lm-interior-extention</inherits-from>
+    <object-name>parkingbrake-handle</object-name>
+    <object-name>placard</object-name>
     <object-name>wheellock-handle</object-name>
     <object-name>base</object-name>
     <object-name>portboot1</object-name>
