@@ -38,7 +38,7 @@
   </effect>
 
   <model>
-    <path>Aircraft/AirCrane/Models/Interior/Overhead/Instruments/app/egt/egt.xml</path>
+    <path>Aircraft/AirCrane/Models/Interior/Overhead/Instruments/app/apprpmper/apprpmper.xml</path>
     <offsets>
       <x-m>  0.001 </x-m>
       <y-m> -0.034 </y-m>
@@ -47,7 +47,7 @@
   </model>
 
   <model>
-    <path>Aircraft/AirCrane/Models/Interior/Overhead/Instruments/app/apprpmper/apprpmper.xml</path>
+    <path>Aircraft/AirCrane/Models/Interior/Overhead/Instruments/app/egt/egt.xml</path>
     <offsets>
       <x-m>  0.004 </x-m>
       <y-m> -0.034 </y-m>
