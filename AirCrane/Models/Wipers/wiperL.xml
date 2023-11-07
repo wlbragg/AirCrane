@@ -18,17 +18,25 @@
     <path>wiperL.ac</path>
 
     <effect>
-        <inherits-from>Aircraft/AirCrane/Models/Effects/Exterior/bumpspec-fuselage</inherits-from>
+        <inherits-from>Aircraft/AirCrane/Models/Effects/Exterior/bumpspec-wiper-worn-metal</inherits-from>
         <object-name>wiperArmL</object-name>
-        <object-name>wiperArmPinL</object-name>
-        <object-name>wiperBladeL</object-name>
 		<object-name>wiperL</object-name>
+    </effect>
+	<effect>
+        <inherits-from>Aircraft/AirCrane/Models/Effects/Exterior/bumpspec-wiper-worn-shiny-metal</inherits-from>
+        <object-name>wiperArmPinL</object-name>
         <object-name>wiperMotorL</object-name>
+		<object-name>wiperBladeLHolder</object-name>
+    </effect>
+	<effect>
+        <inherits-from>Aircraft/AirCrane/Models/Effects/Exterior/bumpspec-wiper-rubber</inherits-from>
+        <object-name>wiperBladeL</object-name>
     </effect>
 
     <animation>
         <type>rotate</type>
         <object-name>wiperBladeL</object-name>
+		<object-name>wiperBladeLHolder</object-name>
 		<object-name>wiperL</object-name>
 		<object-name>wiperArmPinL</object-name>
 		<property alias="/params/wipers_position_norm"/>
@@ -61,6 +69,7 @@
     <animation>
         <type>rotate</type>
         <object-name>wiperBladeL</object-name>
+		<object-name>wiperBladeLHolder</object-name>
 		<object-name>wiperL</object-name>
         <object-name>wiperArmPinL</object-name>
         <property alias="/params/wipers_position_norm"/>
@@ -78,6 +87,7 @@
     <animation>
         <type>rotate</type>
         <object-name>wiperBladeL</object-name>
+		<object-name>wiperBladeLHolder</object-name>
 		<object-name>wiperL</object-name>
         <property alias="/params/wipers_position_norm"/>
         <factor>10.0</factor>

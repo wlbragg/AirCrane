@@ -22,4 +22,13 @@
     </offsets>
   </model>
 
+  <!-- Engineer seat -->
+  <model>
+    <path>Aircraft/AirCrane/Models/Interior/Seats/seate.xml</path>
+    <offsets>
+      <x-m> -7.86928 </x-m>
+      <y-m> -0.539092 </y-m>
+      <z-m> -1.91228 </z-m>
+    </offsets>
+  </model>
 </PropertyList>

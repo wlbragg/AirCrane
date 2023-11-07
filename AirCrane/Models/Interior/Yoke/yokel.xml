@@ -5,13 +5,19 @@
   <path>yoke.ac</path>
 
   <effect>
-    <inherits-from>Aircraft/AirCrane/Models/Effects/Interior/lm-interior-yokel</inherits-from>
-    <object-name>manche</object-name>
-    <object-name>btn1</object-name>
-    <object-name>btn2</object-name>
-    <object-name>btn3</object-name>
-    <object-name>chapeau</object-name>
-    <object-name>boot1</object-name>
+    <inherits-from>Aircraft/AirCrane/Models/Effects/Interior/lm-interior-yokel-worn-shiny-metal</inherits-from>
+	<object-name>manchestick</object-name>
+	<object-name>basescrews</object-name>
+  </effect>	
+
+  <effect>
+    <inherits-from>Aircraft/AirCrane/Models/Effects/Interior/lm-interior-yokel-worn-metal</inherits-from>
+	<object-name>base</object-name>
+  </effect>
+ 
+   <effect>
+    <inherits-from>Aircraft/AirCrane/Models/Effects/Interior/lm-interior-yokel-leather</inherits-from>
+	<object-name>boot1</object-name>
     <object-name>boot2</object-name>
     <object-name>boot3</object-name>
     <object-name>boot4</object-name>
@@ -19,13 +25,31 @@
     <object-name>boot6</object-name>
   </effect>
 
+  <effect>
+    <inherits-from>Aircraft/AirCrane/Models/Effects/Interior/lm-interior-yokel-red-plastic</inherits-from>
+	<object-name>btn1</object-name>
+    <object-name>btn2</object-name>
+	<object-name>btn3</object-name>
+  </effect>
+
+  <effect>
+    <inherits-from>Aircraft/AirCrane/Models/Effects/Interior/lm-interior-yokel-grey-plastic</inherits-from>
+	<object-name>manche</object-name>
+  </effect>
+
+  <effect>
+    <inherits-from>Aircraft/AirCrane/Models/Effects/Interior/lm-interior-yokel-black-plastic</inherits-from>
+    <object-name>chapeau</object-name>
+  </effect>
+
   <animation>
 	<name>Yoke</name>
     <object-name>manche</object-name>
     <object-name>btn1</object-name>
     <object-name>btn2</object-name>
-    <object-name>btn3</object-name>
+	<object-name>btn3</object-name>
     <object-name>chapeau</object-name>
+	<object-name>manchestick</object-name>
   </animation>
 
   <animation>

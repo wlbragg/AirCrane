@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 
-<PropertyList>
+<PropertyList include="Aircraft/Generic/Human/Include/walker-include.xml">
 
     <sim include="views.xml">
 
@@ -327,6 +327,7 @@
 
         <flight-recorder include="flight-recorder.xml"/>
 
+		<checklists include="Aircraft/AirCrane/Systems/checklists.xml"/>
         <tutorials include="Aircraft/AirCrane/Tutorials/AirCraneTutorials.xml"/>
 
         <instrumentation>

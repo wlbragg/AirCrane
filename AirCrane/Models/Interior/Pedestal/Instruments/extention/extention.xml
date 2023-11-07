@@ -8,26 +8,48 @@
     <inherits-from>Aircraft/AirCrane/Models/Effects/Interior/lm-interior-extention-base</inherits-from>
     <object-name>pedestal-extention</object-name>
   </effect>
-
+ 
   <effect>
-    <inherits-from>Aircraft/AirCrane/Models/Effects/Interior/lm-interior-extention-shiny-metal</inherits-from>
-    <object-name>wheellock-base</object-name>
-	<object-name>parkingbrake-base</object-name>
-	<object-name>baseplate</object-name>
+    <inherits-from>Aircraft/AirCrane/Models/Effects/Interior/lm-interior-extention-scuffed-plastic</inherits-from>
+	<object-name>placard</object-name>
   </effect>
 
   <effect>
-    <inherits-from>Aircraft/AirCrane/Models/Effects/Interior/lm-interior-extention</inherits-from>
-    <object-name>parkingbrake-handle</object-name>
-    <object-name>placard</object-name>
-    <object-name>wheellock-handle</object-name>
-    <object-name>base</object-name>
+    <inherits-from>Aircraft/AirCrane/Models/Effects/Interior/lm-interior-extention-worn-metal</inherits-from>
+	<object-name>baseplate</object-name>
+	<object-name>parkingbrake-base-bolts</object-name>
+	<object-name>parkingbrake-handle</object-name>
+	<object-name>wheellock-handle</object-name>
+	<object-name>wheellock-handle-base-rod</object-name>
+  </effect>
+
+  <effect>
+    <inherits-from>Aircraft/AirCrane/Models/Effects/Interior/lm-interior-extention-worn-shiny-metal</inherits-from>
+	<object-name>parkingbrake-base</object-name>
+	<object-name>wheellock-handle-base</object-name>
+	<object-name>bolts</object-name>
+	<object-name>wheellock-base</object-name>
+	<object-name>wheellock-base-bolts</object-name>
+  </effect>
+
+  <effect>
+    <inherits-from>Aircraft/AirCrane/Models/Effects/Interior/lm-interior-extention-brushed-metal</inherits-from>
+	<object-name>parkingbrake-tube</object-name>
+	<object-name>wheellock-tube</object-name>
+	<object-name>wheellock-fastener</object-name>
+  </effect>
+
+  <effect>
+    <inherits-from>Aircraft/AirCrane/Models/Effects/Interior/lm-interior-extention-black-leather</inherits-from>
     <object-name>portboot1</object-name>
     <object-name>portboot2</object-name>
     <object-name>portboot3</object-name>
     <object-name>portboot4</object-name>
     <object-name>portboot5</object-name>
     <object-name>portboot6</object-name>
+	<object-name>starboot1</object-name>
+    <object-name>starboot2</object-name>
+    <object-name>starboot3</object-name>
   </effect>
 
    <!-- Parking Brake -->
@@ -89,20 +111,10 @@
    <!-- None Gear Lock -->
 
     <animation>
-        <name>assembly</name>
-        <object-name>wheellock-handle</object-name>
-		<object-name>wheellock-base</object-name>
-		<object-name>portboot1</object-name>
-		<object-name>portboot2</object-name>
-		<object-name>portboot3</object-name>
-		<object-name>portboot4</object-name>
-		<object-name>portboot5</object-name>
-		<object-name>portboot6</object-name>
-    </animation>
-
-    <animation>
         <type>translate</type>
         <object-name>wheellock-handle</object-name>
+		<object-name>wheellock-handle-base</object-name>
+		<object-name>wheellock-handle-base-rod</object-name>
         <property>/controls/gear/wheellock</property>
         <factor>-0.01</factor>
         <axis>
@@ -117,6 +129,8 @@
     <animation>
         <type>rotate</type>
         <object-name>wheellock-handle</object-name>
+		<object-name>wheellock-handle-base</object-name>
+		<object-name>wheellock-handle-base-rod</object-name>
         <property>/controls/gear/wheellock</property>
         <factor>-45</factor>
         <axis>
@@ -128,11 +142,11 @@
             <z2-m>-0.008485</z2-m>
         </axis>
     </animation>
-
     <animation>
         <type>rotate</type>
-        <object-name>assembly</object-name>
-        <property>/controls/gear/wheellock</property>
+		<object-name>wheellock-handle</object-name>
+		<object-name>wheellock-handle-base</object-name>
+		<object-name>wheellock-handle-base-rod</object-name>
         <factor>1.25</factor>
         <axis>
             <x>-0.57</x>
@@ -148,6 +162,8 @@
     <animation>
         <type>pick</type>
         <object-name>wheellock-handle</object-name>
+		<object-name>wheellock-handle-base</object-name>
+		<object-name>wheellock-handle-base-rod</object-name>
         <visible>true</visible>
         <action>
             <name>Select</name>

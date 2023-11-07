@@ -46,6 +46,7 @@
     <object-name>interieur</object-name>
     <object-name>tour</object-name>
     <object-name>planchet</object-name>
+	<object-name>planchetfloor</object-name>
     <!--object-name>floor</object-name>
     <object-name>reposepieds</object-name>
     <object-name>accoudoir</object-name>

@@ -9,7 +9,7 @@ name "cover"
 data 5
 cover
 crease 30.0
-texture "apprpmper.png"
+texture "egt.png"
 texrep 1 1
 numvert 41
 0.00363 -0.03138 -0.00581
@@ -384,7 +384,7 @@ name "crew"
 data 4
 crew
 crease 30.0
-texture "apprpmper.png"
+texture "egt.png"
 texrep 1 1
 numvert 132
 0.00345 -0.02515 0.02748
@@ -1486,7 +1486,7 @@ name "face"
 data 4
 face
 crease 30.0
-texture "apprpmper.png"
+texture "egt.png"
 texrep 1 1
 numvert 32
 0.00107 0.01267 0.02969
@@ -1708,7 +1708,7 @@ name "fond"
 data 4
 fond
 crease 30.0
-texture "apprpmper.png"
+texture "egt.png"
 texrep 1 1
 numvert 128
 0.00446 0.02833 0.01811
@@ -2518,7 +2518,7 @@ name "needle"
 data 6
 needle
 crease 30.0
-texture "apprpmper.png"
+texture "egt.png"
 texrep 1 1
 numvert 126
 0.00184 0.00871 0.00024

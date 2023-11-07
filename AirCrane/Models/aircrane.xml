@@ -156,6 +156,7 @@
   <effect>
     <inherits-from>Aircraft/AirCrane/Models/Effects/Exterior/bumpspec-fuselage</inherits-from>
     <object-name>fuselage</object-name>
+	<object-name>battdoor</object-name>
     <object-name>porteG</object-name>
     <object-name>porteD</object-name>
     <object-name>reardoor</object-name>

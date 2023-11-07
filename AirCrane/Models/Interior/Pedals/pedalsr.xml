@@ -10,20 +10,41 @@
     </params>
 
   <effect>
-    <inherits-from>Aircraft/AirCrane/Models/Effects/Interior/lm-interior-pedalsr</inherits-from>
+    <inherits-from>Aircraft/AirCrane/Models/Effects/Interior/lm-interior-pedalsr-worn-metal</inherits-from>
     <object-name>base</object-name>
+	<object-name>Lpedal</object-name>
+	<object-name>Rpedal</object-name>
+  </effect>	
 
+  <effect>
+    <inherits-from>Aircraft/AirCrane/Models/Effects/Interior/lm-interior-pedalsr-worn-shiny-metal</inherits-from>
+	<object-name>LpedalScrews</object-name>
+	<object-name>LpedalFoot</object-name>
     <object-name>LpedalRod</object-name>
-    <object-name>Lpedal</object-name>
+	<object-name>LpedalPlatetop</object-name>
+	<object-name>RpedalScrews</object-name>
+	<object-name>RpedalFoot</object-name>
+    <object-name>RpedalRod</object-name>
+	<object-name>RpedalPlatetop</object-name>
+	<object-name>baseScrews</object-name>
+  </effect>
+
+  <effect>
+    <inherits-from>Aircraft/AirCrane/Models/Effects/Interior/lm-interior-pedalsr-brushed-metal</inherits-from>  
+	<object-name>LpedalPlate</object-name>
+	<object-name>RpedalPlate</object-name>
+  </effect>
+
+  <effect>
+    <inherits-from>Aircraft/AirCrane/Models/Effects/Interior/lm-interior-pedalsr-leather</inherits-from>	
+	<object-name>LpedalPad</object-name>
     <object-name>Lboot1</object-name>
     <object-name>Lboot2</object-name>
     <object-name>Lboot3</object-name>
     <object-name>Lboot4</object-name>
     <object-name>Lboot5</object-name>
     <object-name>Lboot6</object-name>
-
-    <object-name>RpedalRod</object-name>
-    <object-name>Rpedal</object-name>
+	<object-name>RpedalPad</object-name>
     <object-name>Rboot1</object-name>
     <object-name>Rboot2</object-name>
     <object-name>Rboot3</object-name>
@@ -35,8 +56,13 @@
   <!--===== Left Pedal =====-->
   <animation>
     <type>rotate</type>
+	<object-name>LpedalScrews</object-name>
+	<object-name>LpedalFoot</object-name>
     <object-name>LpedalRod</object-name>
-    <object-name>Lpedal</object-name>
+	<object-name>LpedalPlatetop</object-name>
+	<object-name>LpedalPlate</object-name>
+	<object-name>LpedalPad</object-name>
+	<object-name>Lpedal</object-name>
     <property alias="/params/rudder"/>
     <factor>27</factor>
     <center>
@@ -53,7 +79,12 @@
 
   <animation>
     <type>rotate</type>
-    <object-name>Lpedal</object-name>
+	<object-name>LpedalScrews</object-name>
+	<object-name>LpedalFoot</object-name>
+	<object-name>LpedalPlatetop</object-name>
+	<object-name>LpedalPlate</object-name>
+	<object-name>LpedalPad</object-name>
+	<object-name>Lpedal</object-name>
     <property alias="/params/rudder"/>
     <factor>-27</factor>
     <center>
@@ -71,8 +102,13 @@
   <!--===== Right Pedal =====-->
   <animation>
     <type>rotate</type>
-    <object-name>Rpedal</object-name>
+	<object-name>RpedalScrews</object-name>
+	<object-name>RpedalFoot</object-name>
     <object-name>RpedalRod</object-name>
+	<object-name>RpedalPlatetop</object-name>
+	<object-name>RpedalPlate</object-name>
+	<object-name>RpedalPad</object-name>
+	<object-name>Rpedal</object-name>
     <property alias="/params/rudder"/>
     <factor>-27</factor>
     <center>
@@ -89,7 +125,12 @@
 
   <animation>
     <type>rotate</type>
-    <object-name>Rpedal</object-name>
+	<object-name>RpedalScrews</object-name>
+	<object-name>RpedalFoot</object-name>
+	<object-name>RpedalPlatetop</object-name>
+	<object-name>RpedalPlate</object-name>
+	<object-name>RpedalPad</object-name>
+	<object-name>Rpedal</object-name>
     <property alias="/params/rudder"/>
     <factor>27</factor>
     <center>
@@ -456,7 +497,12 @@
 
   <animation>
     <type>rotate</type>
-    <object-name>Lpedal</object-name>
+    <object-name>LpedalScrews</object-name>
+	<object-name>LpedalFoot</object-name>
+	<object-name>LpedalPlatetop</object-name>
+	<object-name>LpedalPlate</object-name>
+	<object-name>LpedalPad</object-name>
+	<object-name>Lpedal</object-name>
     <property>controls/gear/brake-left</property>
     <factor>-10</factor>
     <center>
@@ -473,7 +519,12 @@
 
   <animation>
     <type>rotate</type>
-    <object-name>Rpedal</object-name>
+    <object-name>RpedalScrews</object-name>
+	<object-name>RpedalFoot</object-name>
+	<object-name>RpedalPlatetop</object-name>
+	<object-name>RpedalPlate</object-name>
+	<object-name>RpedalPad</object-name>
+	<object-name>Rpedal</object-name>
     <property>controls/gear/brake-right</property>
     <factor>-10</factor>
     <center>

@@ -5,23 +5,30 @@
   <path>seats.ac</path>
 
   <effect>
-    <inherits-from>Aircraft/AirCrane/Models/Effects/Interior/lm-interior-seatr</inherits-from>
-    <object-name>seat3</object-name>
-    <object-name>seat4</object-name>
-    <object-name>seat5</object-name>
-    <object-name>seatplate</object-name>
-  </effect>
-
-  <effect>
-    <inherits-from>Aircraft/AirCrane/Models/Effects/Interior/lm-interior-seatr-metal</inherits-from>
+    <inherits-from>Aircraft/AirCrane/Models/Effects/Interior/lm-interior-seatr-brushed-metal</inherits-from>
     <object-name>seat1</object-name>
+	<object-name>seat4</object-name>
   </effect>
-
   <effect>
     <inherits-from>Aircraft/AirCrane/Models/Effects/Interior/lm-interior-seatr-leather</inherits-from>
     <object-name>seat2</object-name>
   </effect>
-
+  <effect>
+    <inherits-from>Aircraft/AirCrane/Models/Effects/Interior/lm-interior-seatr-polyester</inherits-from>
+    <object-name>seat3</object-name>
+  </effect>
+  <effect>
+    <inherits-from>Aircraft/AirCrane/Models/Effects/Interior/lm-interior-seatr-worn-shiny-metal</inherits-from>
+    <object-name>seat5</object-name>
+	<object-name>seatanchor</object-name>
+	<object-name>seatclamps</object-name>
+	<object-name>seatplatebolts</object-name>
+  </effect>
+  <effect>
+    <inherits-from>Aircraft/AirCrane/Models/Effects/Interior/lm-interior-seatr-worn-metal</inherits-from>
+    <object-name>seatplate</object-name>
+	<object-name>seatbolts</object-name>
+  </effect>
   <effect>
     <inherits-from>Aircraft/AirCrane/Models/Effects/Interior/lm-interior-seatr-panel</inherits-from>
     <object-name>seatbottom</object-name>
