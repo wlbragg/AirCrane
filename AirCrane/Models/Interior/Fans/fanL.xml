@@ -5,8 +5,44 @@
   <path>fanL.ac</path>
 
   <effect>
-    <inherits-from>Aircraft/AirCrane/Models/Effects/Interior/lm-interior-fanl</inherits-from>
+    <inherits-from>Aircraft/AirCrane/Models/Effects/Interior/lm-interior-fanl-white-plastic</inherits-from>
 	<object-name>fan</object-name>
   </effect>
+
+  <effect>
+    <inherits-from>Aircraft/AirCrane/Models/Effects/Interior/lm-interior-fanl-wiring-harness</inherits-from>
+	<object-name>fanWiring</object-name>
+  </effect>
+
+  <effect>
+    <inherits-from>Aircraft/AirCrane/Models/Effects/Interior/lm-interior-fanl-worn-metal</inherits-from>
+    <object-name>fanBase</object-name>
+  </effect>	
+
+  <effect>
+    <inherits-from>Aircraft/AirCrane/Models/Effects/Interior/lm-interior-fanl-worn-shiny-metal</inherits-from>
+	<object-name>fanBolts</object-name>
+	<object-name>fanRod</object-name>
+    <object-name>fanShroud</object-name>
+  </effect>
+
+  <animation>
+	<type>spin</type>
+	<object-name>fanBolts</object-name>
+	<object-name>fanRod</object-name>
+	<object-name>fan</object-name>
+	<property>controls/switches/switchpilotfan</property>
+	<factor>100</factor>
+	<axis>
+		<x>1</x>
+		<y>0</y>
+		<z>0</z>
+	</axis>
+	<center>
+		<x-m> 0.037505</x-m>
+		<y-m>-0.000382</y-m>
+		<z-m> 0.13158</z-m>
+	</center>
+  </animation>
 
 </PropertyList>

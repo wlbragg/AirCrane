@@ -1,16 +1,14 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
-
 <!-- Specular effect -->
 <PropertyList>
   <name>exterior</name>
   <inherits-from>Effects/model-pbr</inherits-from>
   <parameters>
-  
-  	<metallic-factor type="float">1.0</metallic-factor>
-	<roughness-factor type="float">0.6</roughness-factor>
-
+    <!--metallic-factor type="float">1.0</metallic-factor>
+	<roughness-factor type="float">0.6</roughness-factor-->
+	<metallic-factor type="float"><use>/pbr/effects/dynamic/metallic-factor</use></metallic-factor>
+	<roughness-factor type="float"><use>/pbr/effects/dynamic/roughness-factor</use></roughness-factor>
     <rain-enabled type="int">2</rain-enabled>
     <lightmap-enabled type="int"> 0 </lightmap-enabled>
   </parameters>
-
 </PropertyList>

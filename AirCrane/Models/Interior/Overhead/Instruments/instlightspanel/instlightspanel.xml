@@ -51,4 +51,55 @@
     </hovered>
   </animation>
 
+  <animation>
+    <type>pick</type>
+    <object-name>switchpilotfan</object-name>
+    <visible>true</visible>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>property-toggle</command>
+        <property>controls/switches/switchpilotfan</property>
+      </binding>
+      <binding>
+        <command>nasal</command>
+        <script>
+          aircrane.click("avionics");
+        </script>
+      </binding>
+    </action>
+    <hovered>
+      <binding>
+        <command>set-tooltip</command>
+        <tooltip-id>switchpilotfan</tooltip-id>
+        <label>Washer Switch: %s</label>
+        <property>controls/switches/switchpilotfan</property>
+        <mapping>nasal</mapping>
+        <script>
+          var modes = ['Off', 'On'];
+          return modes[arg[0]];
+        </script>
+      </binding>
+    </hovered>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>switchpilotfan</object-name>
+    <property>controls/switches/switchpilotfan</property>
+    <factor>-45</factor>
+    <offset-deg>10</offset-deg>
+    <center>
+      <x-m> 0.004746</x-m>
+      <y-m> 0.060934 </y-m>
+      <z-m>-0.041073</z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+
 </PropertyList>

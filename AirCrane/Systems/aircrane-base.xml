@@ -336,6 +336,15 @@
 
     </sim>
 
+	<pbr>
+		<effects>
+			<dynamic>
+				<metallic-factor type="float">1.0</metallic-factor>
+				<roughness-factor type="float">0.4</roughness-factor>
+			</dynamic>
+		</effects>
+	</pbr>
+
     <input include="aircrane-keyboard.xml"/>
 
     <environment include="environment.xml"/>
