@@ -3,7 +3,7 @@
     <name>exterior-glass-reflection</name>
     <inherits-from>Effects/model-pbr-transparent</inherits-from>
     <parameters>
-		<metallic-factor type="float">0.5</metallic-factor>
-		<roughness-factor type="float">0.01</roughness-factor>
+		<metallic-factor type="float">1.0</metallic-factor>
+		<roughness-factor type="float">0.3</roughness-factor>
     </parameters>
 </PropertyList>
