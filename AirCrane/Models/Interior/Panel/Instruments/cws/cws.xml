@@ -690,10 +690,10 @@
   <model>
     <name>1-eng-anti-ice-procedural</name>
     <path>Aircraft/AirCrane/Models/Effects/Interior/procedural_light_cw_indicator_md_green.xml</path>
-    <offsets>
+	<offsets>
         <x-m> 0.006</x-m>
-        <y-m>-0.037321</y-m>
-        <z-m>-0.081437</z-m>
+        <y-m>-0.037226</y-m>
+        <z-m> 0.032302</z-m>
     </offsets>
     <condition>
       <or>
@@ -716,10 +716,10 @@
   <model>
     <name>2-eng-anti-ice-procedural</name>
     <path>Aircraft/AirCrane/Models/Effects/Interior/procedural_light_cw_indicator_md_green.xml</path>
-    <offsets>
+	<offsets>
         <x-m> 0.006</x-m>
-        <y-m> 0.03775</y-m>
-        <z-m>-0.081115</z-m>
+        <y-m> 0.037423</y-m>
+        <z-m> 0.032551</z-m>
     </offsets>
     <condition>
         <or>
@@ -843,10 +843,10 @@
   <model>
     <name>1-eng-anti-ice-on-procedural</name>
     <path>Aircraft/AirCrane/Models/Effects/Interior/procedural_light_cw_indicator_md_green.xml</path>
-    <offsets>
+	<offsets>
         <x-m> 0.006</x-m>
-        <y-m>-0.037226</y-m>
-        <z-m> 0.032302</z-m>
+        <y-m>-0.037321</y-m>
+        <z-m>-0.081437</z-m>
     </offsets>
     <condition>
       <or>
@@ -869,10 +869,10 @@
   <model>
     <name>2-eng-anti-ice-on-procedural</name>
     <path>Aircraft/AirCrane/Models/Effects/Interior/procedural_light_cw_indicator_md_green.xml</path>
-    <offsets>
+	<offsets>
         <x-m> 0.006</x-m>
-        <y-m> 0.037423</y-m>
-        <z-m> 0.032551</z-m>
+        <y-m> 0.03775</y-m>
+        <z-m>-0.081115</z-m>
     </offsets>
     <condition>
       <or>
