@@ -20,6 +20,6 @@
 			<internal-format>normalized</internal-format>
 		</texture>
 		<metallic-factor type="float">1.0</metallic-factor>
-		<roughness-factor type="float"><use>1.0</roughness-factor>
+		<roughness-factor type="float">1.0</roughness-factor>
 	</parameters>
 </PropertyList>
