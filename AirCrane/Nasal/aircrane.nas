@@ -762,6 +762,12 @@ setlistener("/sim/signals/fdm-initialized", func {
   setprop("instrumentation/comm/volume", 0);
 
   settimer(func {
+    var oat = getprop("/environment/temperature-degf");
+    setprop("/systems/fuel/tank[0]/temp", oat); #fwd eng1
+    setprop("/systems/fuel/tank[1]/temp", oat); #aft eng2
+    setprop("/systems/fuel/temp-line-eng1", oat);
+    setprop("/systems/fuel/temp-line-eng2", oat);
+    setprop("/systems/fuel/tank[2]/temp", oat); #aux
     setprop("/systems/fuel/temp-start-calc", 1);
   }, 10);
 
@@ -796,13 +802,10 @@ var clean_timer = maketimer(.15, func {
 
 var wiper_timer = maketimer(1, func {
     var wipers_position = getprop("/controls/electric/wipers/position-norm");
-    var use_wipers = getprop("/environment/aircraft-effects/use-wipers");
     var wiper_speed = getprop("/controls/knobs/knob-wiper");
     if (wipers_position <= 0) {
-        setprop("/environment/aircraft-effects/use-wipers", 0);
         interpolate("/controls/electric/wipers/position-norm", 1, 0.3);
     } else if (wipers_position >= 1){
-        setprop("/environment/aircraft-effects/use-wipers", 0);
         interpolate("/controls/electric/wipers/position-norm", 0, 0.3);
     }
     if (wiper_speed == 1)

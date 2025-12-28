@@ -383,19 +383,21 @@
           </outputs>
         </electrical>
         <fuel>
-            <temp-fwd type="float">0</temp-fwd>
-            <temp-aft type="float">0</temp-aft>
-            <temp-aux type="float">0</temp-aux>
             <temp-start-calc type="bool">false</temp-start-calc>
-
+            <!-- fwd -->
             <tank n="0">
                 <fuel-press type="int">0</fuel-press>
+                <temp type="float">0</temp>
             </tank>
+            <!-- aft -->
             <tank n="1">
                 <fuel-press type="int">0</fuel-press>
+                <temp type="float">0</temp>
             </tank>
+            <!-- aux -->
             <tank n="2">
                 <fuel-press type="int">0</fuel-press>
+                <temp type="float">0</temp>
             </tank>
         </fuel>
       </systems>

@@ -2,125 +2,189 @@
 
 <PropertyList>
 
-  <filter>
-      <name>Fuel Temp Heat Fwd Tank Eng 1</name>
+    <!-- fwd tank temperature -->
+    <filter>
+      <name>Fuel Temp Tank Fwd</name>
       <type>noise-spike</type>
-      <max-rate-of-change>.5</max-rate-of-change>
-      <enable>
-          <condition>
-              <and>
-                <not>
-                  <property>/sim/freeze/replay-state</property>
-                </not>
-                <property>/systems/fuel/temp-start-calc</property>
-              </and>
-          </condition>
-      </enable>
-      <input>
-          <expression>
-            <sum>
-              <product>
-                <property>/systems/fuel/temp-fwd-heat-on</property>
-                <product>
-                  <property>/controls/switches/fuelheatereng1</property>
-                  <value>60</value>
-                </product>
-              </product>
-              <property>/environment/temperature-degf</property>
-            </sum>
-          </expression>
-          <max>60</max>
-      </input>
-      <output>
-        <property>/systems/fuel/temp-fwd-heat</property>
-      </output>
-  </filter>
+      <max-rate-of-change>0.05</max-rate-of-change>
 
-  <filter>
-      <name>Fuel Temp Cool Fwd Tank Eng 1</name>
+      <enable>
+        <property>/systems/fuel/temp-start-calc</property>
+      </enable>
+
+      <input>
+        <property>/environment/temperature-degf</property>
+      </input>
+
+      <output>
+        <property>/systems/fuel/tank[0]/temp</property>
+      </output>
+    </filter>
+
+    <!-- aft tank temperature -->
+    <filter>
+      <name>Fuel Temp Tank Aft</name>
       <type>noise-spike</type>
-      <max-rate-of-change>.005</max-rate-of-change>
-      <enable>
-          <condition>
-              <and>
-                <not>
-                  <property>/sim/freeze/replay-state</property>
-                </not>
-                <not>
-                  <property>/controls/switches/fuelheatereng1</property>
-                </not>
-                <property>/systems/fuel/temp-start-calc</property>
-              </and>
-          </condition>
-      </enable>
-      <input>
-        <property>/systems/fuel/temp-fwd-heat</property>
-      </input>
-      <output>
-        <property>/systems/fuel/temp-fwd-heat</property>
-      </output>
-  </filter>
+      <max-rate-of-change>0.05</max-rate-of-change>
 
-  <filter>
-      <name>Fuel Temp Heat Aft Tank Eng 2</name>
+      <enable>
+        <property>/systems/fuel/temp-start-calc</property>
+      </enable>
+
+      <input>
+        <property>/environment/temperature-degf</property>
+      </input>
+
+      <output>
+        <property>/systems/fuel/tank[1]/temp</property>
+      </output>
+    </filter>
+    <!-- aux tank temperature -->
+    <filter>
+      <name>Fuel Temp Tank Aux</name>
       <type>noise-spike</type>
-      <max-rate-of-change>.5</max-rate-of-change>
-      <enable>
-          <condition>
-              <and>
-                <not>
-                  <property>/sim/freeze/replay-state</property>
-                </not>
-                <property>/systems/fuel/temp-start-calc</property>
-              </and>
-          </condition>
-      </enable>
-      <input>
-          <expression>
-            <sum>
-              <product>
-                <property>/systems/fuel/temp-aft-heat-on</property>
-                <product>
-                  <property>/controls/switches/fuelheatereng2</property>
-                  <value>60</value>
-                </product>
-              </product>
-              <property>/environment/temperature-degf</property>
-            </sum>
-          </expression>
-          <max>60</max>
-      </input>
-      <output>
-        <property>/systems/fuel/temp-aft-heat</property>
-      </output>
-  </filter>
+      <max-rate-of-change>0.05</max-rate-of-change>
 
-  <filter>
-      <name>Fuel Temp Cool Aft Tank Eng 2</name>
+      <enable>
+        <property>/systems/fuel/temp-start-calc</property>
+      </enable>
+
+      <input>
+        <property>/environment/temperature-degf</property>
+      </input>
+
+      <output>
+        <property>/systems/fuel/tank[2]/temp</property>
+      </output>
+    </filter>
+
+    <!-- Engine 1 heater ON -->
+    <logic>
+      <name>Fuel Heat Eng1 On</name>
+      <input>
+        <and>
+          <greater-than>
+            <property>systems/electrical/outputs/main-left/fuel-heat-eng1</property>
+            <value>20.0</value>
+          </greater-than>
+          <property>controls/switches/fuelheatereng1</property>
+        </and>
+      </input>
+      <input><value>0</value></input>
+      <output>
+        <property>systems/fuel/heat-eng1-on</property>
+      </output>
+    </logic>
+
+    <!-- Engine 2 heater ON -->
+    <logic>
+      <name>Fuel Heat Eng2 On</name>
+      <input>
+        <and>
+          <greater-than>
+            <property>systems/electrical/outputs/main-right/fuel-heat-eng2</property>
+            <value>20.0</value>
+          </greater-than>
+          <property>controls/switches/fuelheatereng2</property>
+        </and>
+      </input>
+      <input><value>0</value></input>
+      <output>
+        <property>systems/fuel/heat-eng2-on</property>
+      </output>
+    </logic>
+    
+    <!-- Engine 1 fuel line temperature -->
+    <filter>
+      <name>Fuel Temp Line Eng1</name>
       <type>noise-spike</type>
-      <max-rate-of-change>.005</max-rate-of-change>
-      <enable>
-          <condition>
-              <and>
-                <not>
-                  <property>/sim/freeze/replay-state</property>
-                </not>
-                <not>
-                  <property>/controls/switches/fuelheatereng2</property>
-                </not>
-                <property>/systems/fuel/temp-start-calc</property>
-              </and>
-          </condition>
-      </enable>
-      <input>
-        <property>/systems/fuel/temp-aft-heat</property>
-      </input>
-      <output>
-        <property>/systems/fuel/temp-aft-heat</property>
-      </output>
-  </filter>
+      <max-rate-of-change>0.5</max-rate-of-change>
 
-  <filter>
+      <enable>
+        <property>/systems/fuel/temp-start-calc</property>
+      </enable>
+
+      <input>
+        <expression>
+          <sum>
+            <!-- Base: forward tank temp -->
+            <property>/systems/fuel/tank[0]/temp</property>
+
+            <!-- Heater adds +60°F when ON -->
+            <product>
+              <property>/systems/fuel/heat-eng1-on</property>
+              <value>60</value>
+            </product>
+          </sum>
+        </expression>
+      </input>
+
+      <output>
+        <property>/systems/fuel/temp-line-eng1</property>
+      </output>
+    </filter>
+
+    <!-- Engine 2 fuel line temperature -->
+    <filter>
+      <name>Fuel Temp Line Eng2</name>
+      <type>noise-spike</type>
+      <max-rate-of-change>0.5</max-rate-of-change>
+
+      <enable>
+        <property>/systems/fuel/temp-start-calc</property>
+      </enable>
+
+      <input>
+        <expression>
+          <sum>
+            <!-- Base: aft tank temp -->
+            <property>/systems/fuel/tank[1]/temp</property>
+
+            <!-- Heater adds +60°F when ON -->
+            <product>
+              <property>/systems/fuel/heat-eng2-on</property>
+              <value>60</value>
+            </product>
+          </sum>
+        </expression>
+      </input>
+
+      <output>
+        <property>/systems/fuel/temp-line-eng2</property>
+      </output>
+    </filter>
+
+    <filter>
+      <name>Bell Temp Eng1</name>
+      <type>noise-spike</type>
+      <max-rate-of-change>1000</max-rate-of-change> <!-- effectively instant -->
+      <enable><value>1</value></enable>
+
+      <input>
+        <property>systems/fuel/temp-line-eng1</property>
+      </input>
+
+      <output>
+        <property>systems/fuel/belltemp-eng1</property>
+      </output>
+    </filter>
+
+    <filter>
+      <name>Bell Temp Eng2</name>
+      <type>noise-spike</type>
+      <max-rate-of-change>1000</max-rate-of-change>
+      <enable><value>1</value></enable>
+
+      <input>
+        <property>systems/fuel/temp-line-eng2</property>
+      </input>
+
+      <output>
+        <property>systems/fuel/belltemp-eng2</property>
+      </output>
+    </filter>
+
+    <!--filter>
 	  <name>Fwd Tank Low Fuel</name>
 	  <type>gain</type>
 	  <input>
@@ -138,9 +202,9 @@
 	  <output>
 		<property>/systems/fuel/fwd-fuel-low</property>
 	  </output>
-  </filter>
+    </filter>
 
-  <filter>
+    <filter>
 	  <name>Aft Tank Low Fuel</name>
 	  <type>gain</type>
 	  <input>
@@ -158,7 +222,7 @@
 	  <output>
 		<property>/systems/fuel/aft-fuel-low</property>
 	  </output>
-  </filter>
+    </filter-->
 
 <!--filter>
         <name>Tank 0 Indicated Level</name>

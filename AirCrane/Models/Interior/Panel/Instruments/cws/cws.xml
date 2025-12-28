@@ -682,7 +682,7 @@
     <object-name>1-eng-anti-ice</object-name>
     <condition>
       <or>
-        <property>/systems/fuel/temp-fwd-heat-low</property>
+        <property>/systems/fuel/low-temp-eng1</property>
         <property>/systems/electrical/outputs/cws-test-power</property>
       </or>
     </condition>
@@ -697,7 +697,7 @@
     </offsets>
     <condition>
       <or>
-        <property>/systems/fuel/temp-fwd-heat-low</property>
+        <property>/systems/fuel/low-temp-eng1</property>
         <property>/systems/electrical/outputs/cws-test-power</property>
       </or>
     </condition>
@@ -708,7 +708,7 @@
     <object-name>2-eng-anti-ice</object-name>
     <condition>
       <or>
-        <property>/systems/fuel/temp-aft-heat-low</property>
+        <property>/systems/fuel/low-temp-eng2</property>
         <property>/systems/electrical/outputs/cws-test-power</property>
       </or>
     </condition>
@@ -723,7 +723,7 @@
     </offsets>
     <condition>
         <or>
-        <property>/systems/fuel/temp-aft-heat-low</property>
+        <property>/systems/fuel/low-temp-eng2</property>
         <property>/systems/electrical/outputs/cws-test-power</property>
       </or>
     </condition>
