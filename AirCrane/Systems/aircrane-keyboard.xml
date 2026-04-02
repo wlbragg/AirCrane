@@ -51,7 +51,7 @@
 
     <key n="70">
       <name>F</name>
-      <desc>Toggle flashlight</desc>
+      <desc>Toggle Flashlight</desc>
       <repeatable type="bool">true</repeatable>
       <binding>
         <command>nasal</command>
@@ -61,7 +61,7 @@
 
     <key n="102">
       <name>f</name>
-      <desc>Toggle flashlight</desc>
+      <desc>Toggle Flashlight</desc>
       <repeatable type="bool">true</repeatable>
       <binding>
         <command>nasal</command>
@@ -71,28 +71,30 @@
 
     <key n="82">
       <name>R</name>
-      <desc>Toggle rotor brake</desc>
+      <desc>Cycle rotor brake relief valve</desc>
       <binding>
         <command>nasal</command>
         <script>
-          setprop("/controls/rotor/brake", 0.834);
+          setprop("controls/rotorbrake/rotorbrake", 0);
         </script>
       </binding>
     </key>
 
     <key n="114">
       <name>r</name>
-      <desc>Apply rotor brake</desc>
+      <desc>Toggle rotor brake</desc>
       <binding>
         <command>nasal</command>
-        <script>interpolate("/controls/rotor/brake", 0,834, 2);</script>
+        <script>
+            var brake = getprop("/controls/switches/rotor-brake");
+            var pressure = getprop("controls/rotorbrake/rotorbrake");
+            if (brake == -1 or brake == 1) {
+                setprop("/controls/switches/rotor-brake", 0);
+            } else if (brake == 0) {
+                setprop("/controls/switches/rotor-brake", -1);
+            }
+        </script>
       </binding>
-      <mod-up>
-        <binding>
-          <command>nasal</command>
-          <script>interpolate("/controls/rotor/brake", 0.0, 2);</script>
-        </binding>
-      </mod-up>
     </key>
 
     <key n="125">
