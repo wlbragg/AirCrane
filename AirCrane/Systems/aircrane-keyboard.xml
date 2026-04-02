@@ -92,6 +92,7 @@
                 setprop("/controls/switches/rotor-brake", 0);
             } else if (brake == 0) {
                 setprop("/controls/switches/rotor-brake", -1);
+                setprop("controls/rotor/brake", pressure * .05);
             }
         </script>
       </binding>
