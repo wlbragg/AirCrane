@@ -6,8 +6,18 @@
   <!-- Basic Lighting                                                     -->
   <!-- ================================================================== -->
   <model>
-    <name>spotlightDEF</name>
-    <path>Aircraft/AirCrane/Models/light/DEFAULT/SpotLight.xml</path>
+    <name>spotlightfrontDEF</name>
+    <path>Aircraft/AirCrane/Models/light/DEFAULT/SpotLightFront.xml</path>
+    <offsets>
+      <x-m> -9.92556 </x-m>
+      <y-m>  0.10741 </y-m>
+      <z-m> -2.79311 </z-m>
+      <pitch-deg> -105 </pitch-deg>
+    </offsets>
+  </model>
+  <model>
+    <name>spotlightrearDEF</name>
+    <path>Aircraft/AirCrane/Models/light/DEFAULT/SpotLightRear.xml</path>
     <offsets>
       <x-m> -7.78415 </x-m>
       <y-m>  0.00000 </y-m>
@@ -18,7 +28,8 @@
 
   <animation>
     <type>select</type>
-    <object-name>spotlightDEF</object-name>
+    <object-name>spotlightfrontDEF</object-name>
+    <object-name>spotlightrearDEF</object-name>
     <condition>
       <not><property>/sim/rendering/shaders/skydome</property></not>
     </condition>
@@ -28,15 +39,19 @@
   <!-- ALS Lighting                                                       -->
   <!-- ================================================================== -->
   
-  <!-- Done in main aircraft.xml -->
   <model>
-    <name>spotlightALS</name>
-    <path>Aircraft/AirCrane/Models/light/ALS/SpotLight.xml</path>
+    <name>spotlightfrontALS</name>
+    <path>Aircraft/AirCrane/Models/light/ALS/SpotLightFront.xml</path>
   </model>
-
+  <model>
+    <name>spotlightrearALS</name>
+    <path>Aircraft/AirCrane/Models/light/ALS/SpotLightRear.xml</path>
+  </model>
+ 
   <animation>
     <type>select</type>
-    <object-name>spotlightALS</object-name>
+    <object-name>spotlightfrontALS</object-name>
+    <object-name>spotlightrearALS</object-name>
     <condition>
       <property>/sim/rendering/shaders/skydome</property>
     </condition>

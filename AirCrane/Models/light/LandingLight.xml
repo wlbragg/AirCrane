@@ -9,9 +9,9 @@
     <name>landinglightDEF</name>
     <path>Aircraft/AirCrane/Models/light/DEFAULT/LandingLight.xml</path>
     <offsets>
-      <x-m> -9.93245 </x-m>
-      <y-m>  0.00000 </y-m>
-      <z-m> -2.78235 </z-m>
+      <x-m> -9.95483 </x-m>
+      <y-m> -0.108311 </y-m>
+      <z-m> -2.78737 </z-m>
       <pitch-deg> -25 </pitch-deg>
     </offsets>
   </model>

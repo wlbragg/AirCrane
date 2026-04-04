@@ -91,8 +91,9 @@
     <object-name>lampetail</object-name>
     <object-name>tankpins</object-name>
     <object-name>winchcover</object-name>
-    <object-name>landinglampbase</object-name>
-    <object-name>spotlampbase</object-name>
+    <object-name>lamplandingbase</object-name>
+    <object-name>lampspotfrontbase</object-name>
+    <object-name>lampspotrearbase</object-name>
     <object-name>axetail</object-name>
     <object-name>supports</object-name>
     <object-name>tampons</object-name>
@@ -189,10 +190,12 @@
     <object-name>lampetail</object-name>
     <object-name>tankpins</object-name>
     <object-name>winchcover</object-name>
-    <object-name>landinglampbase</object-name>
-    <object-name>spotlampbase</object-name>
-    <object-name>lightlanding</object-name>
-    <object-name>lightspot</object-name>
+    <object-name>lamplandingbase</object-name>
+    <object-name>lamplanding</object-name>
+    <object-name>lampspotfrontbase</object-name>
+    <object-name>lampspotrearbase</object-name>
+    <object-name>lampspotfront</object-name>
+    <object-name>lampspotrear</object-name>
     <object-name>fuselageF</object-name>
     <object-name>reardoorF</object-name>
     <object-name>startboarddoorF</object-name>
@@ -228,6 +231,28 @@
     <object-name>lampeW</object-name>
     <object-name>lampstrobe</object-name>
   </effect>
+
+  <animation>
+    <type>material</type>
+    <object-name>lamplanding</object-name>
+    <emission>
+        <red>  0.697</red>
+        <green>0.689</green>
+        <blue> 0.445</blue>
+        <factor-prop>sim/model/aircrane/lighting/landing-light</factor-prop>
+    </emission>
+    </animation>
+        <animation>
+    <type>material</type>
+    <object-name>lampspotfront</object-name>
+    <object-name>lampspotrear</object-name>
+    <emission>
+        <red>  0.697</red>
+        <green>0.689</green>
+        <blue> 0.445</blue>
+        <factor-prop>sim/model/aircrane/lighting/spot-light</factor-prop>
+    </emission>
+  </animation>
 
   <animation>
     <type>select</type>

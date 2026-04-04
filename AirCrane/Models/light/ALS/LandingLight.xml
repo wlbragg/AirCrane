@@ -18,9 +18,9 @@
     <type>flash</type>
     <object-name>landinglightals</object-name>
     <center>
-      <x-m>-9.96423</x-m>
-      <y-m>-0.00191</y-m>
-      <z-m>-2.79107</z-m>
+      <x-m> -9.97848 </x-m>
+      <y-m> -0.10257 </y-m>
+      <z-m> -2.81476 </z-m>
     </center>
     <axis>
       <x>-1</x>

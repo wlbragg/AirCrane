@@ -47,9 +47,9 @@
 		<name>ProceduralLandingLight</name>
 		<type>spot</type>
 		<position>
-			<x-m> -9.93245 </x-m>
-			<y-m>  0.00000 </y-m>
-			<z-m> -2.78235 </z-m>
+			<x-m> -9.97848 </x-m>
+			<y-m> -0.10257 </y-m>
+			<z-m> -2.81476 </z-m>
 		</position>
 		<direction>
 			<lookat-x-m>-20</lookat-x-m>
@@ -93,24 +93,71 @@
 	<!-- Procedural Spot Light -->
     <animation>
         <type>select</type>
-        <object-name>ProceduralSpotLight</object-name>
+        <object-name>ProceduralSpotFrontLight</object-name>
+        <object-name>ProceduralSpotRearLight</object-name>
         <nopreview/>
         <condition>
 			<property alias="/params/spot-light"/>
         </condition>
     </animation>
 	<light>
-		<name>ProceduralSpotLight</name>
+		<name>ProceduralSpotFrontLight</name>
 		<type>spot</type>
 		<position>
-			<x-m> -7.78415 </x-m>
-			<y-m>  0.00000 </y-m>
-			<z-m> -3.21645 </z-m>
+			<x-m> -9.94634 </x-m>
+			<y-m>  0.11694 </y-m>
+			<z-m> -2.80141 </z-m>
 		</position>
 		<direction>
-			<lookat-x-m>  -8</lookat-x-m>
-			<lookat-y-m>   0</lookat-y-m>
-			<lookat-z-m>-700</lookat-z-m>
+			<lookat-x-m>-15</lookat-x-m>
+			<lookat-y-m>  0</lookat-y-m>
+			<lookat-z-m>-45</lookat-z-m>
+		</direction>
+		<ambient>
+			<r>0.95</r>
+			<g>0.95</g>
+			<b>0.95</b>
+			<a>1</a>
+		</ambient>
+		<diffuse>
+			<r>0.95</r>
+			<g>0.95</g>
+			<b>0.95</b>
+			<a>1</a>
+		</diffuse>
+		<specular>
+			<r>0.95</r>
+			<g>0.95</g>
+			<b>0.95</b>
+			<a>1</a>
+		</specular>
+		<attenuation>
+			<c>1.0</c>
+			<l>0.0014</l>
+			<q>0.000007</q>
+		</attenuation>
+		<spot-exponent>100</spot-exponent>
+		<spot-cutoff>20</spot-cutoff>
+		<range-m>1000</range-m>
+		<debug-color>
+			<r>1</r>
+			<g>1</g>
+			<b>1</b>
+			<a>1</a>
+		</debug-color>
+	</light>
+    <light>
+		<name>ProceduralSpotRearLight</name>
+		<type>spot</type>
+		<position>
+          <x-m>-7.77048</x-m>
+          <y-m> 0.00837</y-m>
+          <z-m>-3.25036</z-m>
+		</position>
+		<direction>
+			<lookat-x-m>  5</lookat-x-m>
+			<lookat-y-m>  0</lookat-y-m>
+			<lookat-z-m> -45</lookat-z-m>
 		</direction>
 		<ambient>
 			<r>0.95</r>

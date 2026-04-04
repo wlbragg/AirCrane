@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+ <PropertyList>
+
+	<nasal>
+		<load>
+			var rplayer = cmdarg();
+			rplayer.initNode("sim/multiplay/generic/bool[14]", 0, "BOOL");
+		</load>
+		<unload>
+		</unload>
+	</nasal>
+
+    <params>
+		<spot-lights>sim/multiplay/generic/bool[14]</spot-lights>
+    </params>
+
+   <path>light-cone.ac</path>
+   <nopreview/>
+
+   <animation>
+     <object-name>Light</object-name>
+   </animation>
+
+   <animation>
+     <type>noshadow</type>
+     <object-name>Light</object-name>
+   </animation>
+
+   <animation>
+     <type>material</type>
+     <object-name>Light</object-name>
+     <emission>
+       <red>   2 </red>
+       <green> 2 </green>
+       <blue>  2 </blue>
+     </emission>
+   </animation>
+
+   <animation>
+    <type>select</type>
+    <object-name>Light</object-name>
+    <condition>
+	  <property alias="/params/spot-lights"/>
+    </condition>
+  </animation>
+
+</PropertyList>
