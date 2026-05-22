@@ -7,7 +7,8 @@
   <animation>
     <object-name>fond</object-name>
     <object-name>face</object-name>
-    <object-name>needle</object-name>
+    <object-name>needle1</object-name>
+    <object-name>needle2</object-name>
 
     <object-name>vitre</object-name>
   </animation>
@@ -16,7 +17,8 @@
     <inherits-from>Aircraft/AirCrane/Models/Effects/Interior/cockpit-interior</inherits-from>
     <object-name>fond</object-name>
     <object-name>face</object-name>
-    <object-name>needle</object-name>
+    <object-name>needle1</object-name>
+    <object-name>needle2</object-name>
   </effect>
 
   <effect>
@@ -41,7 +43,7 @@
 
   <animation>
     <type>rotate</type>
-    <object-name>needle</object-name>
+    <object-name>needle1</object-name>
     <property>sim/model/aircrane/torque-pct</property>
     <interpolation>
       <entry><ind> -999 </ind><dep>    1 </dep></entry>

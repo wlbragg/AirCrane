@@ -7,9 +7,9 @@
   <animation>
     <object-name>fond</object-name>
     <object-name>face</object-name>
-    <object-name>needle-c</object-name>
-    <object-name>needle-p</object-name>
-
+    <object-name>needle-rmpR</object-name>
+    <object-name>needle-rmpL</object-name>
+    <object-name>needle-percent</object-name>
     <object-name>vitre</object-name>
   </animation>
 
@@ -17,8 +17,9 @@
     <inherits-from>Aircraft/AirCrane/Models/Effects/Interior/cockpit-interior</inherits-from>
     <object-name>fond</object-name>
     <object-name>face</object-name>
-    <object-name>needle-c</object-name>
-    <object-name>needle-p</object-name>
+    <object-name>needle-rmp1</object-name>
+    <object-name>needle-rmp2</object-name>
+    <object-name>needle-percent</object-name>
   </effect>
 
   <effect>
@@ -29,8 +30,9 @@
   <animation>
     <type>material</type>
     <object-name>face</object-name>
-    <object-name>needle-c</object-name>
-    <object-name>needle-p</object-name>
+    <object-name>needle-rmp1</object-name>
+    <object-name>needle-rmp2</object-name>
+    <object-name>needle-percent</object-name>
     <condition>
       <property>systems/electrical/outputs/cabin-power</property>
     </condition>
@@ -44,7 +46,7 @@
 
   <animation>
     <type>rotate</type>
-    <object-name>needle-c</object-name>
+    <object-name>needle-percent</object-name>
     <property>sim/model/aircrane/main-rpm-pct</property>
     <interpolation>
       <entry><ind> -999.00 </ind><dep>   64.0 </dep></entry>
@@ -74,7 +76,7 @@
 
   <animation>
     <type>rotate</type>
-    <object-name>needle-p</object-name>
+    <object-name>needle-rpm1</object-name>
     <property>sim/model/aircrane/tail-rpm-pct</property>
     <interpolation>
       <entry><ind> -999.00 </ind><dep>   64.0 </dep></entry>
