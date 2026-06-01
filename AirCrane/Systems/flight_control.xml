@@ -1,0 +1,122 @@
+<?xml version="1.0"?>
+
+<!--
+**************************************************************************
+
+Copyright (c) 2026 Simon 'bomber' Morley
+simonbomber64 at googlemail.com
+
+**************************************************************************
+
+
+Vectors along the axis
+x = u
+y = v
+z = w
+Rotation around the axis
+x = p
+y = q
+z = r
+Moments around the axis
+x = l
+y = m
+z = n
+
+engine[0] = APP
+engine[1] = Main Rotor
+engine[2] = Tail Rotor
+engine[3] = Turbine No.1
+engine[4] = Turbine No.2
+
+-->
+
+<system name="flight_control">
+
+	<!-- <property type="double" value="1">T4T/AGP/augmentation_factor</property>
+	<property type="double" value="0">T4T/AGP/PID/collective/cmd-norm</property>
+
+	<property type="double" value="0">T4T/AGP/trim</property>
+	<property type="double" value="1">T4T/AGP/mode</property>
+	<property type="double" value="1">T4T/AGP/mode-1</property>
+	<property type="double" value="1">T4T/AGP/mode-1-pos</property>
+	<property type="double" value="0">T4T/AGP/mode-2</property>
+	<property type="double" value="0">T4T/AGP/mode-2-pos</property>
+	<property type="double" value="0">T4T/AGP/mode-3</property>
+	<property type="double" value="0">T4T/AGP/mode-3-pos</property>
+	<property type="double" value="0">T4T/AGP/mode-4</property>
+	<property type="double" value="0">T4T/AGP/mode-4-pos</property>
+	<property type="double" value="0">T4T/AGP/mode-5</property>
+	<property type="double" value="0">T4T/AGP/mode-5-pos</property>
+	<property type="double" value="0">T4T/AGP/mode-6</property>
+	<property type="double" value="0">T4T/AGP/mode-6-pos</property>
+	<property type="double" value="0">T4T/AGP/PID/alt/error</property> -->
+
+	<property type="double" value="0">fcs/collective-cmd-pos</property>
+	<property type="double" value="0">fcs/cyclic_roll-cmd-pos</property>
+	<property type="double" value="0">fcs/cyclic_pitch-cmd-pos</property>
+	<property type="double" value="0">fcs/rudder-cmd-pos</property>
+
+	<channel name="Flight">
+
+	<!-- Collective Adjust -->
+
+		<scheduled_gain>
+			<input>T4T/one</input>
+			<table>
+				<independentVar>fcs/collective-cmd-pos</independentVar>
+				<tableData>
+				-0.6		-5
+				0.6			8.645
+				</tableData>
+			</table>
+			<output>propulsion/engine[1]/blade-angle</output>
+		</scheduled_gain>
+
+	<!-- Roll Adjust -->
+
+		<scheduled_gain>
+			<input>T4T/one</input>
+			<table>
+				<independentVar>fcs/cyclic_roll-cmd-pos</independentVar>
+				<tableData>
+					-1		12
+					1		-12
+				</tableData>
+			</table>
+			<output>external_reactions/rotor_main/cyclic_roll-in</output>
+		</scheduled_gain>
+
+	<!-- Pitch Adjust -->
+
+		<scheduled_gain>
+			<input>T4T/one</input>
+			<table>
+				<independentVar>fcs/cyclic_pitch-cmd-pos</independentVar>
+				<tableData>
+					-1		-12
+					1		12
+				</tableData>
+			</table>
+			<output>external_reactions/rotor_main/cyclic_pitch-in</output>
+		</scheduled_gain>
+
+	<!-- Anti-Torque Adjust -->
+	
+		<scheduled_gain>
+			<input>T4T/one</input>
+			<table>
+				<independentVar>fcs/rudder-cmd-pos</independentVar>
+				<tableData>
+					-1		-10
+					1		10
+				</tableData>
+			</table>
+			<output>propulsion/engine[2]/rotor/torque-target</output>
+		</scheduled_gain>	
+	
+	</channel>
+
+
+
+</system>
+			

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<!--
+************************************************************************
+Keyboard configuration file
+
+Copyright (c) 2026 Simon 'bomber' Morley																												
+simonbomber64 at googlemail.com
+************************************************************************
+-->
+
+<PropertyList>
+	<keyboard>
+		
+		<key n="115">
+			<name>s</name>
+			<desc>turbines start stop</desc>
+			<binding>
+				<command>property-toggle</command>
+				<property>/controls/electric/engine[3]/generator</property>
+			</binding>
+<!-- 			<binding>
+				<command>property-toggle</command>
+				<property>/controls/engines/engine[3]/cutoff</property>
+			</binding> -->			
+			<binding>
+				<command>property-toggle</command>
+				<property>/controls/engines/engine[3]/starter</property>
+			</binding>
+			<binding>
+				<command>property-toggle</command>
+				<property>/controls/electric/engine[4]/generator</property>
+			</binding>
+			<binding>
+				<command>property-toggle</command>
+				<property>/controls/engines/engine[4]/cutoff</property>
+			</binding>
+			<binding>
+				<command>property-toggle</command>
+				<property>/controls/engines/engine[4]/starter</property>
+			</binding>
+		</key>
+
+
+<!-- 		<key n="362">
+			<name>Home</name>
+			<desc>set trim</desc>
+			<repeatable type="bool">true</repeatable>
+			<binding>
+				<command>property-toggle</command>
+				<property>/fdm/jsbsim/T4T/AGP/trim</property>
+			</binding>
+			<mod-shift>
+				<desc>Look front left</desc>
+				<binding>
+					<command>property-assign</command>
+					<property>/sim/current-view/goal-heading-offset-deg</property>
+					<property>/sim/view/config/front-left-direction-deg</property>
+				</binding>
+			</mod-shift>
+		</key> -->
+		
+		<key n="362">
+			<name>Home</name>
+			<desc>set trim</desc>
+			<repeatable type="bool">true</repeatable>
+				<binding>
+					<command>property-assign</command>
+					<property>/fdm/jsbsim/T4T/AGP/trim</property>
+					<value type="int">1</value>
+				</binding>
+			<mod-shift>
+				<desc>Look front left</desc>
+				<binding>
+					<command>property-assign</command>
+					<property>/sim/current-view/goal-heading-offset-deg</property>
+					<property>/sim/view/config/front-left-direction-deg</property>
+				</binding>
+			</mod-shift>
+			<mod-up>
+				<binding>
+					<command>property-assign</command>
+					<property>/fdm/jsbsim/T4T/AGP/trim</property>
+					<value type="int">0</value>
+				</binding>
+			</mod-up>			
+		</key>		
+		
+	</keyboard>	
+</PropertyList>

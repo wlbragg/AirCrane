@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+
+  <path>engtemp.ac</path>
+
+  <animation>
+    <object-name>fond</object-name>
+    <object-name>face</object-name>
+    <object-name>needle</object-name>
+
+    <object-name>vitre</object-name>
+  </animation>
+
+  <effect>
+    <inherits-from>Aircraft/AirCrane/Models/Effects/Interior/cockpit-interior</inherits-from>
+    <object-name>fond</object-name>
+    <object-name>face</object-name>
+    <object-name>needle</object-name>
+  </effect>
+
+  <effect>
+    <inherits-from>Aircraft/AirCrane/Models/Effects/Interior/interior-glass-reflection-panel-front</inherits-from>
+    <object-name>vitre</object-name>
+  </effect>
+
+  <animation>
+    <type>material</type>
+    <object-name>face</object-name>
+    <object-name>needle</object-name>
+    <condition>
+      <property>/controls/electric/cab_power</property>
+    </condition>
+    <emission>
+      <factor-prop>/controls/lighting/luminosite-lights</factor-prop>
+      <red>   0.50 </red>
+      <green> 0.40 </green>
+      <blue>  0.30 </blue>
+    </emission>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>needle</object-name>
+    <property>/controls/electric/turbine_2-engtemp-c</property>
+    <interpolation>
+      <entry><ind>-99</ind><dep>-100</dep></entry>	
+      <entry><ind>0</ind><dep>-110</dep></entry>
+      <entry><ind>500</ind><dep>-222.5</dep></entry>
+      <entry><ind>1000</ind><dep>-335</dep></entry>	 
+    </interpolation>
+    <axis>
+      <x> 1 </x>
+      <y> 0 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+
+</PropertyList>

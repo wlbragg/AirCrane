@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<!--
+**************************************************************************
+
+Copyright (c) 2025 Simon 'bomber' Morley
+
+**************************************************************************
+-->
+
+  <PropertyList> 
+  <help>
+   <title>Siskorsky S-64e 'Skycrane'</title>
+    <line></line>    
+  	<line>Max take-off weight 9,500lbs</line>
+    <line>17.4m(L) x 2.62m(W) x 4.39m(H)</line> 		
+    <line></line> 	
+	<line>Engine Start</line>
+    <line>1. The s key toggles the turbine APU generators</line>		
+    <line>2. The s key also initiated the turbine starters</line>
+    <line>   keep pressed for 3 seconds until starter full engaged</line>
+    <line>3. The UH-1H is equiped with a 1,400 shp (1,000 kW) Lycoming T53-L-13 engine</line>
+	<line></line>	
+	<line>Normal Flight Mode</line>
+    <line>1. Adjust rotor pitch using the throttle collective</line>
+    <line>2. Adjust Pitch and Roll using yoke cyclic</line>
+    <line>3. Adjust Yaw using rudder peddles</line>	
+	<line></line>
+	<line>Trim</line>
+    <line>1. At desired attitude press the home key and imediatley release cyclic</line>
+	<line></line>
+	<line>Engine off Flight</line>
+    <line>Upon detection of engine failure</line>
+    <line>1. The pilots MUST reduce the throttle collective to maximise rotor rpm's.</line>
+    <line>3. The pilot should endeavour to identify a suitable landing zone</line>
+    <line>4. Use of the throttle collective to flair upon landing is advised, push throttle collective forward imediateley on touch-down</line>	
+	<line></line>
+	<line>Slide Door Gunner</line>
+    <line>In this position the pilot will fly the helicopter in a straight direction maintaining the height above ground/sea level</line>	
+	<line></line>	
+  </help>
+
+  </PropertyList>

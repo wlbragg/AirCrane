@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+	
+<!--
+**************************************************************************
+
+Copyright (c) 2026 Simon 'bomber' Morley
+simonbomber64 at googlemail.com
+
+**************************************************************************
+-->	
+	
+<propeller name="internal load">
+	
+<ixx>1.3773</ixx>
+
+<diameter unit="IN">23</diameter>
+
+<numblades>20</numblades>
+
+<constspeed>1</constspeed>
+
+<!-- <minpitch>5.045</minpitch> -->
+
+<minpitch>0</minpitch>
+
+<maxpitch>90</maxpitch>
+
+<minrpm>0</minrpm>
+
+<maxrpm>9000</maxrpm>
+
+<ct_factor>0.0</ct_factor>
+	
+<cp_factor>1.0</cp_factor> 
+
+  <table name="C_THRUST" type="internal">
+	
+    <tableData>
+	
+         0    10   20   30   40   50   60   70   80   90
+	
+    0.0  0.0  0.0  0.0  0.0  0.0  0.0  0.0  0.0  0.0  0.0
+	
+    1.0  0.0  0.0  0.0  0.0  0.0  0.0  0.0  0.0  0.0  0.0
+	
+    </tableData>
+	
+  </table>
+	
+  <table name="C_POWER" type = "internal">
+	
+    <tableData>
+	
+          0		90
+	
+     0.0  0		100
+	
+     1.0  0		100
+	
+    </tableData>
+	
+  </table>
+	
+	
+</propeller>

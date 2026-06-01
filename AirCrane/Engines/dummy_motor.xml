@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<!--
+
+dummy
+
+-->
+
+
+<electric_engine name="electric motor">
+    <power>0</power> 
+</electric_engine>

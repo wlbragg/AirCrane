@@ -1,0 +1,365 @@
+<?xml version="1.0"?>
+
+<!--
+**************************************************************************
+
+Copyright (c) 2020 Simon 'bomber' Morley
+simonbomber64 at googlemail.com
+
+**************************************************************************
+-->
+
+<system name="angle_of_attack">
+
+	<property type="double" value="0">T4T/aero/h-tail_right/rigging-deg</property>
+	<property type="double" value="1">propulsion/engine[1]/rotor/vortex_ring</property>
+
+	<channel name="rotation_velocities">
+
+		<!-- #### h-tail #### -->
+
+		<pure_gain name="T4T/velocities/h-tail/p_rotational-fps">
+			<input>velocities/p-rad_sec</input>
+			<gain>3.28083989501312</gain>   <!-- Y armature -->
+		</pure_gain>
+		<pure_gain name="T4T/velocities/h-tail/q_rotational-fps">
+			<input>velocities/q-rad_sec</input>
+			<gain>68.8976377952755</gain>   <!-- X armature -->
+		</pure_gain>
+		<pure_gain name="T4T/velocities/h-tail/r_rotational-fps">
+			<input>velocities/r-rad_sec</input>
+			<gain>68.8976377952755</gain>   <!-- X armature -->
+		</pure_gain>
+
+		<!-- #### v-tail #### -->
+
+		<pure_gain name="T4T/velocities/v-tail/p_rotational-fps">
+			<input>velocities/p-rad_sec</input>
+			<gain>0</gain>   <!-- Y armature -->
+		</pure_gain>
+		<pure_gain name="T4T/velocities/v-tail/q_rotational-fps">
+			<input>velocities/q-rad_sec</input>
+			<gain>67.3884514435695</gain>   <!-- X armature -->
+		</pure_gain>
+		<pure_gain name="T4T/velocities/v-tail/r_rotational-fps">
+			<input>velocities/r-rad_sec</input>
+			<gain>67.3884514435695</gain>   <!-- X armature -->
+		</pure_gain>
+
+		<!-- #### fuselage #### -->
+
+		<fcs_function>
+			<function>
+				<ifthen>
+					<eq>
+						<p>gear/wow</p>
+						<v>1</v>
+					</eq>
+					<product>		<!-- rotating around the undercarriage  -->
+						<value>0.08333</value>				<!-- convert inch to ft  -->
+						<difference>
+							<property>gear/unit[0]/z-position</property>
+							<property>inertia/cg-z-in</property>
+						</difference>
+					</product>
+					<product>		<!-- rotating around the rotor  -->
+						<value>0.08333</value>				<!-- convert inch to ft  -->
+						<difference>
+							<value>255.7</value>
+							<property>inertia/cg-z-in</property>
+						</difference>
+					</product>
+				</ifthen>
+			</function>
+			<output>T4T/aero/directionV</output>
+			<output>T4T/velocities/fuselage/Z_armature-ft</output>
+		</fcs_function>
+
+		<pure_gain name="T4T/velocities/fuselage/q_rotational-fps">
+			<input>velocities/q-rad_sec</input>
+			<gain>T4T/velocities/fuselage/Z_armature-ft</gain>   <!-- Z armature -->
+		</pure_gain>
+		<pure_gain name="T4T/velocities/fuselage/p_rotational-fps">
+			<input>-velocities/p-rad_sec</input>
+			<gain>T4T/velocities/fuselage/Z_armature-ft</gain>   <!-- Z armature -->
+		</pure_gain>
+
+	</channel>
+
+	<channel name="true velocities">
+
+		<!-- #### h-tail #### -->
+
+		<summer name="T4T/velocities/h-tail/v-aero-fps">
+			<input>velocities/v-aero-fps</input>
+			<input>T4T/velocities/h-tail/r_rotational-fps</input>
+		</summer>
+
+		<summer name="T4T/velocities/h-tail_right/w-aero-fps">
+			<input>velocities/w-aero-fps</input>
+			<input>T4T/velocities/h-tail/p_rotational-fps</input>
+			<input>T4T/velocities/h-tail/q_rotational-fps</input>
+		</summer>
+
+		<fcs_function name="T4T/velocities/h-tail_right/true-fps">
+			<function>
+				<pow>
+					<sum>
+						<pow>
+							<property>velocities/u-aero-fps</property>
+							<value> 2 </value>
+						</pow>
+						<pow>
+							<property>T4T/velocities/h-tail/v-aero-fps</property>
+							<value> 2 </value>
+						</pow>
+						<pow>
+							<property>T4T/velocities/h-tail_right/w-aero-fps</property>
+							<value> 2 </value>
+						</pow>
+					</sum>
+					<value> 0.5 </value>
+				</pow>
+			</function>
+		</fcs_function>
+
+		<!-- #### v-tail #### -->
+
+		<summer name="T4T/velocities/v-tail/v-aero-fps">
+			<input>velocities/v-aero-fps</input>
+			<input>-T4T/velocities/v-tail/r_rotational-fps</input>
+		</summer>
+
+		<summer name="T4T/velocities/v-tail/w-aero-fps">
+			<input>velocities/w-aero-fps</input>
+			<input>-T4T/velocities/v-tail/p_rotational-fps</input>
+			<input>T4T/velocities/v-tail/q_rotational-fps</input>
+		</summer>
+
+		<fcs_function name="T4T/velocities/v-tail/true-fps">
+			<function>
+				<pow>
+					<sum>
+						<pow>
+							<property>velocities/u-aero-fps</property>
+							<value>2</value>
+						</pow>
+						<pow>
+							<property>T4T/velocities/v-tail/v-aero-fps</property>
+							<value>2</value>
+						</pow>
+						<pow>
+							<property>T4T/velocities/v-tail/w-aero-fps</property>
+							<value>2</value>
+						</pow>
+					</sum>
+					<value>0.5</value>
+				</pow>
+			</function>
+		</fcs_function>
+
+		<!-- #### fuselage #### -->
+
+		<summer name="T4T/velocities/fuselage/u-aero-fps">
+			<input>velocities/u-aero-fps</input>
+			<input>T4T/velocities/fuselage/q_rotational-fps</input>
+		</summer>
+
+		<summer name="T4T/velocities/fuselage/v-aero-fps">
+			<input>velocities/v-aero-fps</input>
+			<input>T4T/velocities/fuselage/p_rotational-fps</input>
+		</summer>
+
+			<fcs_function name="velocities/uv-aero-fps">
+				<function>
+					<pow>
+						<sum>
+							<pow>
+								<property>velocities/u-aero-fps</property>
+								<value>2</value>
+							</pow>
+							<pow>
+								<property>velocities/v-aero-fps</property>
+								<value>2</value>
+							</pow>
+						</sum>
+						<value>0.5</value>
+					</pow>
+				</function>
+			</fcs_function>
+
+	</channel>
+
+	<channel name="Vortex Ring State">
+
+		<scheduled_gain> <!-- Conditions correct for VRS -->
+			<input>T4T/one</input>
+			<table>
+				<independentVar lookup="row">velocities/w-aero-fps</independentVar>
+				<independentVar lookup="column">velocities/uv-aero-fps</independentVar>
+				<tableData>
+							-2	3	8
+					7		0	0	0
+					12		0	-0.001	0
+					17		0	0	0
+				</tableData>
+			</table>
+			<output>propulsion/engine[1]/rotor/vortex_ring-adjust</output>
+		</scheduled_gain>
+
+		<switch> <!-- Getting deeper into VRS -->
+			<default value="propulsion/engine[1]/rotor/vortex_ring-hold"/>
+			<test logic="OR" value="propulsion/engine[1]/rotor/vortex_ring-adjust">
+				propulsion/engine[1]/rotor/vortex_ring-adjust lt propulsion/engine[1]/rotor/vortex_ring-hold
+				propulsion/engine[1]/rotor/vortex_ring eq 1
+			</test>
+			<output>propulsion/engine[1]/rotor/vortex_ring-hold</output>
+		</switch>
+
+		<summer> <!-- VRS -->
+			<input>propulsion/engine[1]/rotor/vortex_ring</input>
+			<input>propulsion/engine[1]/rotor/vortex_ring-hold</input>
+			<clipto>
+				<min>0.25</min> <!-- Deep into VRS  -->
+				<max>1.00</max> <!-- Out of VRS  -->
+			</clipto>
+			<output>propulsion/engine[1]/rotor/vortex_ring</output>
+		</summer>
+
+		<switch> <!-- Getting out of VRS -->
+			<default value="propulsion/engine[1]/rotor/vortex_ring"/>
+			<test logic="OR" value="1">
+				velocities/uv-aero-fps gt 60
+				gear/wow eq 1
+			</test>
+			<output>propulsion/engine[1]/rotor/vortex_ring</output>
+		</switch>
+
+		<scheduled_gain> <!-- adjustment in cyclic turbulence due to VRS bubble -->
+			<input>T4T/one</input>
+			<table>
+				<independentVar>propulsion/engine[1]/rotor/vortex_ring</independentVar>
+				<tableData>
+					0.25		7
+					1		0
+				</tableData>
+			</table>
+			<output>propulsion/engine[1]/rotor/vortex_ring-magnitude-adjust</output>
+		</scheduled_gain>
+
+		<switch> <!-- turbulence severity prior to VRS -->
+			<default value="atmosphere/turbulence/milspec/severity"/>
+			<test value="atmosphere/turbulence/milspec/severity-hold">
+				propulsion/engine[1]/rotor/vortex_ring lt 1
+			</test>
+			<output>atmosphere/turbulence/milspec/severity-hold</output>
+		</switch>
+
+		<summer> <!-- total and reset of cyclic turbulence -->
+			<input>atmosphere/turbulence/milspec/severity-hold</input>
+			<input>propulsion/engine[1]/rotor/vortex_ring-magnitude-adjust</input>
+			<output>atmosphere/turbulence/milspec/severity-new</output>
+		</summer>
+
+	</channel>
+
+	<channel name="beta">
+
+		<!-- #### h-tail #### -->
+
+		<fcs_function name="T4T/aero/h-tail_right/beta-deg">
+			<function>
+				<todegrees>
+					<atan2 name="T4T/aero/h-tail_right/beta-rad">
+						<property>T4T/velocities/h-tail/v-aero-fps</property>
+						<sum>
+							<abs><property>velocities/u-aero-fps</property></abs>
+							<property>T4T/velocities/h-tail_right/w-aero-fps</property>
+						</sum>
+					</atan2>
+				</todegrees>
+			</function>
+		</fcs_function>
+
+		<!-- #### v-tail #### -->
+
+		<fcs_function name="T4T/aero/v-tail/beta-deg">
+			<function>
+				<todegrees>
+					<atan2 name="T4T/aero/v-tail/beta-rad">
+						<property>T4T/velocities/v-tail/v-aero-fps</property>
+						<sum>
+							<abs><property>velocities/u-aero-fps</property></abs>
+							<property>T4T/velocities/v-tail/w-aero-fps</property>
+						</sum>
+					</atan2>
+				</todegrees>
+			</function>
+		</fcs_function>
+
+		<!-- #### fuselage #### -->
+
+		<fcs_function name="T4T/aero/fuselage/alpha-deg">
+			<function>
+				<todegrees>
+					<atan2 name="T4T/aero/fuselage/alpha-rad">
+						<property>velocities/w-aero-fps</property>
+						<property>T4T/velocities/fuselage/u-aero-fps</property>
+					</atan2>
+				</todegrees>
+			</function>
+		</fcs_function>
+
+		<fcs_function name="T4T/aero/fuselage/beta-deg">
+			<function>
+				<todegrees>
+					<atan2 name="T4T/aero/fuselage/beta-rad">
+						<property>T4T/velocities/fuselage/v-aero-fps</property>
+						<property>T4T/velocities/fuselage/u-aero-fps</property>
+					</atan2>
+				</todegrees>
+			</function>
+		</fcs_function>
+
+	</channel>
+
+	<channel name="alpha">
+
+		<!-- #### h-tail #### -->
+
+		<fcs_function name="T4T/aero/h-tail_right/alpha_true-deg">
+			<function>
+				<sum>
+					<property>T4T/aero/h-tail_right/rigging-deg</property>
+					<todegrees name="T4T/aero/h-tail_right/alpha-deg">
+						<atan2 name="T4T/aero/h-tail_right/alpha-rad">
+							<property>T4T/velocities/h-tail_right/w-aero-fps</property>
+							<sum>
+								<abs><property>velocities/u-aero-fps</property></abs>
+								<abs><property>T4T/velocities/h-tail/v-aero-fps</property></abs>
+							</sum>
+						</atan2>
+					</todegrees>
+				</sum>
+			</function>
+		</fcs_function>
+
+		<!-- #### v-tail #### -->
+
+		<fcs_function name="T4T/aero/v-tail/alpha-deg">
+			<function>
+				<todegrees>
+					<atan2>
+						<property>T4T/velocities/v-tail/w-aero-fps</property>
+						<sum>
+							<abs><property>velocities/u-aero-fps</property></abs>
+							<abs><property>T4T/velocities/v-tail/v-aero-fps</property></abs>
+						</sum>
+					</atan2>
+				</todegrees>
+			</function>
+		</fcs_function>
+
+	</channel>
+
+</system>

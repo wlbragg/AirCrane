@@ -34,74 +34,60 @@
     <object-name>needle-rmp2</object-name>
     <object-name>needle-percent</object-name>
     <condition>
-      <property>systems/electrical/outputs/cabin-power</property>
+      <property>/controls/electric/cab_power</property>
     </condition>
     <emission>
-      <factor-prop>controls/lighting/luminosite-lights</factor-prop>
+      <factor-prop>/controls/lighting/luminosite-lights</factor-prop>
       <red>   0.50 </red>
       <green> 0.40 </green>
       <blue>  0.30 </blue>
     </emission>
   </animation>
 
-  <animation>
-    <type>rotate</type>
-    <object-name>needle-percent</object-name>
-    <property>sim/model/aircrane/main-rpm-pct</property>
-    <interpolation>
-      <entry><ind> -999.00 </ind><dep>   64.0 </dep></entry>
-      <entry><ind>    0.00 </ind><dep>   65.0 </dep></entry>
-      <entry><ind>    0.10 </ind><dep>   41.0 </dep></entry>
-      <entry><ind>    0.20 </ind><dep>   16.5 </dep></entry>
-      <entry><ind>    0.30 </ind><dep>   -8.5 </dep></entry>
-      <entry><ind>    0.40 </ind><dep>  -32.5 </dep></entry>
-      <entry><ind>    0.50 </ind><dep>  -56.0 </dep></entry>
-      <entry><ind>    0.60 </ind><dep>  -80.0 </dep></entry>
-      <entry><ind>    0.70 </ind><dep> -103.0 </dep></entry>
-      <entry><ind>    0.80 </ind><dep> -126.0 </dep></entry>
-      <entry><ind>    0.90 </ind><dep> -150.0 </dep></entry>
-      <entry><ind>    1.00 </ind><dep> -175.0 </dep></entry>
-      <entry><ind>    1.10 </ind><dep> -201.0 </dep></entry>
-      <entry><ind>    1.20 </ind><dep> -226.0 </dep></entry>
-      <entry><ind>    1.30 </ind><dep> -251.0 </dep></entry>
-      <entry><ind>    1.40 </ind><dep> -274.0 </dep></entry>
-      <entry><ind> 9999.00 </ind><dep> -275.0 </dep></entry>
-    </interpolation>
-    <axis>
-      <x> 1 </x>
-      <y> 0 </y>
-      <z> 0 </z>
-    </axis>
-  </animation>
+	<animation>
+		<type>rotate</type>
+		<object-name>needle-percent</object-name>
+		<property>/controls/electric/rotor-rpm</property>
+		<interpolation>
+			<entry><ind>-99</ind><dep>10</dep></entry>		
+			<entry><ind>0</ind><dep>0</dep></entry>
+			<entry><ind>203.5</ind><dep>-275.0</dep></entry>
+			<entry><ind>259</ind><dep>-350</dep></entry>			
+		</interpolation>
+		<axis>
+			<x>1</x>
+		</axis>
+	</animation>
 
-  <animation>
-    <type>rotate</type>
-    <object-name>needle-rpm1</object-name>
-    <property>sim/model/aircrane/tail-rpm-pct</property>
-    <interpolation>
-      <entry><ind> -999.00 </ind><dep>   64.0 </dep></entry>
-      <entry><ind>    0.00 </ind><dep>   65.0 </dep></entry>
-      <entry><ind>    0.10 </ind><dep>   41.0 </dep></entry>
-      <entry><ind>    0.20 </ind><dep>   16.5 </dep></entry>
-      <entry><ind>    0.30 </ind><dep>   -8.5 </dep></entry>
-      <entry><ind>    0.40 </ind><dep>  -32.5 </dep></entry>
-      <entry><ind>    0.50 </ind><dep>  -56.0 </dep></entry>
-      <entry><ind>    0.60 </ind><dep>  -80.0 </dep></entry>
-      <entry><ind>    0.70 </ind><dep> -103.0 </dep></entry>
-      <entry><ind>    0.80 </ind><dep> -126.0 </dep></entry>
-      <entry><ind>    0.90 </ind><dep> -150.0 </dep></entry>
-      <entry><ind>    1.00 </ind><dep> -175.0 </dep></entry>
-      <entry><ind>    1.10 </ind><dep> -201.0 </dep></entry>
-      <entry><ind>    1.20 </ind><dep> -226.0 </dep></entry>
-      <entry><ind>    1.30 </ind><dep> -251.0 </dep></entry>
-      <entry><ind>    1.40 </ind><dep> -274.0 </dep></entry>
-      <entry><ind> 9999.00 </ind><dep> -275.0 </dep></entry>
-    </interpolation>
-    <axis>
-      <x> 1 </x>
-      <y> 0 </y>
-      <z> 0 </z>
-    </axis>
-  </animation>
+	<animation>
+		<type>rotate</type>
+		<object-name>needle-rpm1</object-name>
+		<property>/controls/electric/turbine_1-hp</property>
+		<interpolation>
+			<entry><ind>-99</ind><dep>10</dep></entry>	
+			<entry><ind>0</ind><dep>0</dep></entry>
+			<entry><ind>4400</ind><dep>-275</dep></entry>			
+			<entry><ind>5600</ind><dep>-350</dep></entry>
+		</interpolation>
+		<axis>
+			<x>1</x>
+		</axis>
+	</animation>
+	
+	<animation>
+		<type>rotate</type>
+		<object-name>needle-rpm2</object-name>
+		<property>/controls/electric/turbine_2-hp</property>
+		<interpolation>
+			<entry><ind>-99</ind><dep>10</dep></entry>	
+			<entry><ind>0</ind><dep>0</dep></entry>
+			<entry><ind>4400</ind><dep>-275</dep></entry>			
+			<entry><ind>5600</ind><dep>-350</dep></entry>
+		</interpolation>
+		<axis>
+			<x>1</x>
+		</axis>
+	</animation>
+
 
 </PropertyList>

@@ -15,7 +15,7 @@
     <object-name>switch</object-name>
   </effect>
 
-  <animation>
+<!--   <animation>
     <type>material</type>
     <object-name>base</object-name>
     <object-name>switch</object-name>
@@ -23,12 +23,12 @@
       <property>systems/electrical/outputs/cabin-power</property>
     </condition>
     <emission>
-      <factor-prop>controls/lighting/luminosite-lights</factor-prop>
+      <factor-prop>/controls/lighting/luminosite-lights</factor-prop>
       <red>   0.50 </red>
       <green> 0.40 </green>
       <blue>  0.30 </blue>
     </emission>
-  </animation>
+  </animation> -->
 
   <animation>
     <type>pick</type>
@@ -39,31 +39,15 @@
       <repeatable>false</repeatable>
       <binding>
         <command>property-toggle</command>
-        <property>controls/switches/cws-bright</property>
+        <property>/controls/electric/cws_brightness-sw</property>
       </binding>
     </action>
-    <release>
-      <binding>
-        <command>property-assign</command>
-        <property>controls/switches/cws-bright</property>
-        <value>0</value>
-      </binding>
-    </release>
-    <hovered>
-      <binding>
-        <command>set-tooltip</command>
-        <tooltip-id>cpswitch</tooltip-id>
-        <label>CWS Brightness: %s</label>
-        <mapping>Dim-Bright</mapping>
-        <property>controls/switches/cws-bright</property>
-      </binding>
-    </hovered>
   </animation>
 
   <animation>
     <type>rotate</type>
     <object-name>switch</object-name>
-    <property>controls/switches/cws-bright</property>
+    <property>/controls/electric/cws_brightness-sw</property>
     <factor>-45</factor>
     <offset-deg>20</offset-deg>
     <axis>

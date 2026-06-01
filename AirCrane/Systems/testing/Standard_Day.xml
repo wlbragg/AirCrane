@@ -1,0 +1,267 @@
+<?xml version="1.0"?>
+
+
+ <!--   https://www.digitaldutch.com/atmoscalc/    -->
+
+<system name="Standard Day">
+
+	<property type="double" value="0">T4T/test/alt-ft-cmd</property>
+ 	<property type="double" value="0">T4T/test/velocity-kts-cmd</property>
+ 	<property type="double" value="0">T4T/test/beta-cmd</property>
+
+	<channel name="setup">
+
+		<fcs_function>
+			<function>
+				<table>
+					<independentVar>T4T/test/alt-ft-cmd</independentVar>
+					<tableData>
+						-1000	30.9843
+						0		29.92
+						1000	28.8557
+						2000	27.8211
+						3000	26.8167
+						4000	25.8419
+						5000	24.8959
+						6000	23.9782
+						7000	23.0881
+						8000	22.2250
+						9000	21.3881
+						10000	20.5770
+						11000	19.7932
+						12000	19.0294
+						13000	18.2917
+						14000	17.5774
+						15000	16.8858
+						16000	16.2165
+						17000	15.5687
+						18000	14.9421
+						19000	14.3361
+						20000	13.7501
+						21000	13.1837
+						22000	12.6363
+						23000	12.1075
+						24000	11.5967
+						25000	11.1035
+						26000	10.6275
+						27000	10.1681
+						28000	9.72492
+						29000	9.29752
+						30000	8.88545
+						31000	8.4883
+						32000	8.10565
+						33000	7.7373
+						34000	7.38221
+						35000	7.04063
+						36000	6.71196
+						37000	6.397
+						38000	6.09681
+						39000	5.81071
+						40000	5.43803
+					</tableData>
+				</table>
+			</function>
+			<output>/environment/config/boundary/entry/pressure-inhg</output>
+			<output>/environment/config/boundary/entry[1]/pressure-inhg</output>
+			<output>/environment/config/aloft/entry/pressure-inhg</output>
+			<output>/environment/config/aloft/entry[1]/pressure-inhg</output>
+			<output>/environment/config/aloft/entry[2]/pressure-inhg</output>
+			<output>/environment/config/aloft/entry[3]/pressure-inhg</output>
+			<output>/environment/config/aloft/entry[4]/pressure-inhg</output>
+		</fcs_function>
+
+		<fcs_function name="T4T/test/alt-ft-current">
+			<function>
+				<difference>
+					<table>
+						<independentVar>atmosphere/P-psf</independentVar>
+						<tableData>
+							391.686		40000
+							410.972		39000
+							431.207		38000
+							452.438		37000
+							474.714		36000
+							497.959		35000
+							522.118		34000
+							547.217		33000
+							573.285		32000
+							600.348		31000
+							628.438		30000
+							657.582		29000
+							687.81		28000
+							719.155		27000
+							751.646		26000
+							785.316		25000
+							820.196		24000
+							856.321		23000
+							893.725		22000
+							932.438		21000
+							972.499		20000
+							1013.94		19000
+							1056.81		18000
+							1101.12		17000
+							1146.93		16000
+							1194.28		15000
+							1243.19		14000
+							1293.71		13000
+							1345.88		12000
+							1399.74		11000
+							1455.34		10000
+							1512.71		9000
+							1571.9		8000
+							1632.94		7000
+							1695.9		6000
+							1760.8		5000
+							1827.71		4000
+							1896.65		3000
+							1967.69		2000
+							2040.86		1000
+							2116.23		0
+							2191.6		-1000
+						</tableData>
+					</table>
+					<property>position/h-sl-ft</property>
+				</difference>
+			</function>
+		</fcs_function>
+
+		<fcs_function>
+			<function>
+				<table>
+					<independentVar>T4T/test/alt-ft-current</independentVar>
+					<tableData>
+						-1000	16.981
+						0		15
+						1000	13.019
+						2000	11.038
+						3000	9.056
+						4000	7.075
+						5000	5.094
+						6000	3.113
+						7000	1.132
+						8000	-0.85
+						9000	-2.831
+						10000	-4.812
+						11000	-6.793
+						12000	-8.774
+						13000	-10.756
+						14000	-12.737
+						15000	-14.718
+						16000	-16.699
+						17000	-18.68
+						18000	-20.662
+						19000	-22.643
+						20000	-24.624
+						21000	-26.605
+						22000	-28.586
+						23000	-30.568
+						24000	-32.549
+						25000	-34.53
+						26000	-36.511
+						27000	-38.492
+						28000	-40.474
+						29000	-42.455
+						30000	-44.436
+						31000	-46.417
+						32000	-48.398
+						33000	-50.38
+						34000	-52.361
+						35000	-54.342
+						36000	-56.323
+						37000	-56.5
+					</tableData>
+				</table>
+			</function>
+			<output>/environment/config/boundary/entry/temperature-degc</output>
+			<output>/environment/config/boundary/entry[1]/temperature-degc</output>
+			<output>/environment/config/aloft/entry/temperature-degc</output>
+			<output>/environment/config/aloft/entry[1]/temperature-degc</output>
+			<output>/environment/config/aloft/entry[2]/temperature-degc</output>
+			<output>/environment/config/aloft/entry[3]/temperature-degc</output>
+			<output>/environment/config/aloft/entry[4]/temperature-degc</output>
+		</fcs_function>
+
+		<fcs_function>
+			<function>
+				<table>
+					<independentVar>T4T/test/alt-ft-current</independentVar>
+					<tableData>
+						-1000	-0.6
+						0		-2.4
+						1000	-4.2
+						2000	-6.1
+						3000	-7.9
+						4000	-9.7
+						5000	-11.5
+						6000	-13.4
+						7000	-15.2
+						8000	-17.0
+						9000	-18.8
+						10000	-20.7
+						11000	-22.5
+						12000	-24.3
+						13000	-26.2
+						14000	-28.0
+						15000	-29.8
+						16000	-31.6
+						17000	-33.5
+						18000	-35.3
+						19000	-37.1
+						20000	-38.9
+						21000	-40.8
+						22000	-42.6
+						23000	-44.4
+						24000	-46.2
+						25000	-48.1
+						26000	-49.9
+						27000	-51.7
+						28000	-53.6
+						29000	-55.4
+						30000	-57.2
+						31000	-59.0
+						32000	-60.9
+						33000	-62.7
+						34000	-64.5
+						35000	-66.3
+						36000	-68.2
+						37000	-70.0
+					</tableData>
+				</table>
+			</function>
+			<output>/environment/config/boundary/entry/dewpoint-degc</output>
+			<output>/environment/config/boundary/entry[1]/dewpoint-degc</output>
+			<output>/environment/config/aloft/entry/dewpoint-degc</output>
+			<output>/environment/config/aloft/entry[1]/dewpoint-degc</output>
+			<output>/environment/config/aloft/entry[2]/dewpoint-degc</output>
+			<output>/environment/config/aloft/entry[3]/dewpoint-degc</output>
+			<output>/environment/config/aloft/entry[4]/dewpoint-degc</output>
+		</fcs_function>
+
+		<summer>
+			<input>T4T/test/beta-cmd</input>
+			<input>/orientation/heading-deg</input>
+			<output>/environment/config/boundary/entry/wind-from-heading-deg</output>
+			<output>/environment/config/boundary/entry[1]/wind-from-heading-deg</output>
+			<output>/environment/config/aloft/entry/wind-from-heading-deg</output>
+			<output>/environment/config/aloft/entry[1]/wind-from-heading-deg</output>
+			<output>/environment/config/aloft/entry[2]/wind-from-heading-deg</output>
+			<output>/environment/config/aloft/entry[3]/wind-from-heading-deg</output>
+			<output>/environment/config/aloft/entry[4]/wind-from-heading-deg</output>
+		</summer>
+
+		<fcs_function>
+			<function>
+				<property>T4T/test/velocity-kts-cmd</property>
+			</function>
+			<output>/environment/config/boundary/entry/velocity-kts-cmd</output>
+			<output>/environment/config/boundary/entry[1]/velocity-kts-cmd</output>
+			<output>/environment/config/aloft/entry/velocity-kts-cmd</output>
+			<output>/environment/config/aloft/entry[1]/velocity-kts-cmd</output>
+			<output>/environment/config/aloft/entry[2]/velocity-kts-cmd</output>
+			<output>/environment/config/aloft/entry[3]/velocity-kts-cmd</output>
+			<output>/environment/config/aloft/entry[4]/velocity-kts-cmd</output>
+		</fcs_function>
+
+	</channel>
+
+</system>

@@ -148,19 +148,6 @@
         <script>aircrane.click("avionics")</script>
       </binding>
     </action>
-    <hovered>
-      <binding>
-        <command>set-tooltip</command>
-        <tooltip-id>fuelxfeed</tooltip-id>
-        <label>X-Feed: %s</label>
-        <property>/controls/switches/fuelxfeed</property>
-        <mapping>nasal</mapping>
-        <script>
-          var modes = ['Close', 'Open'];
-          return modes[arg[0]];
-        </script>
-      </binding>
-    </hovered>
   </animation>
 
   <!-- FWD Tank Pump 1 "Switch" -->

@@ -1,0 +1,473 @@
+<?xml version="1.0"?>
+
+<!--
+**************************************************************************
+
+Copyright (c) 2026 Simon 'bomber' Morley
+simonbomber64 at googlemail.com
+
+**************************************************************************
+-->
+
+<?xml-stylesheet type="text/xsl" href="http://jsbsim.sourceforge.net/JSBSim.xsl"?>
+<fdm_config name="Sikorsky S-64e 'Skycrane' (JSBSim)" version="2.0" release="BETA"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:noNamespaceSchemaLocation="http://jsbsim.sourceforge.net/JSBSim.xsd">
+
+<fileheader>
+<author>Simon 'bomber' Morley</author>
+<filecreationdate> 2026-04-21 </filecreationdate>
+<version> $Revision: 1.0 $ </version>
+<description>Sikorsky S-64e</description>
+</fileheader>
+
+	<metrics>
+
+		<wingspan unit="FT">71.9999999999999</wingspan>
+		<wingarea unit="FT2">141.9</wingarea>
+		<cord unit="FT">1.97083333333333</cord>				<!-- @ 50% ft-->
+
+		<htailarea unit="FT2">22.4965727709233</htailarea>
+		<htailarm unit="FT">68.8976377952755</htailarm>
+
+		<vtailarea unit="FT2">16.0565251686059</vtailarea>
+		<vtailarm unit="FT">67.3884514435695</vtailarm>
+		
+		<location name="AERORP" unit="IN">
+			<x>332.9</x>
+			<y>0</y>
+			<z>255.7</z>
+		</location>	
+
+	</metrics>
+	
+	<mass_balance>
+
+		<!-- inertia values to rotor co-ords -->
+		<ixx unit="SLUG*FT2">27694.4873365324</ixx>
+		<iyy unit="SLUG*FT2">114649.698211743</iyy>
+		<izz unit="SLUG*FT2">87685.8426603184</izz>
+		<ixy unit="SLUG*FT2">17.7787492543483</ixy>
+		<iyz unit="SLUG*FT2">58.6294394007179</iyz>
+		<ixz unit="SLUG*FT2">-23446.2701315553</ixz>				<!-- IMPORTANT always use a negative value -->
+		<emptywt unit="LBS">22885.9773901477</emptywt>
+		<location name="CG" unit="IN">
+			<x>300.64215469126</x>
+			<y>-0.435446716791536</y>
+			<z>190.006393638143</z>
+		</location>
+
+	</mass_balance>
+
+	<ground_reactions>
+
+		<contact type="BOGEY" name="nose_gear">
+			<location unit="FT">
+				<x>8.33333333333333</x>
+				<y>0</y>
+				<z>4.33070866141732</z>
+			</location>
+			<static_friction>0.8</static_friction>
+			<dynamic_friction>0.05</dynamic_friction>
+			<rolling_friction>1</rolling_friction>
+			<spring_coeff unit="LBS/FT">20400</spring_coeff>
+			<damping_coeff unit="LBS/FT/SEC">1020</damping_coeff>
+			<damping_coeff_rebound unit="LBS/FT/SEC">2040</damping_coeff_rebound>
+			<retractable>0</retractable>
+		</contact>
+
+		<contact type="BOGEY" name="left_main_gear">
+			<location unit="FT">
+				<x>32.75</x>
+				<y>-9.84251968503936</y>
+				<z>4.33070866141732</z>
+			</location>
+			<static_friction>0.8</static_friction>
+			<dynamic_friction>0.05</dynamic_friction>
+			<rolling_friction>1</rolling_friction>
+			<spring_coeff unit="LBS/FT">17000</spring_coeff>
+			<damping_coeff unit="LBS/FT/SEC">850</damping_coeff>
+			<damping_coeff_rebound unit="LBS/FT/SEC">1700</damping_coeff_rebound>
+			<retractable>0</retractable>
+		</contact>
+
+		<contact type="BOGEY" name="right_main_gear">
+			<location unit="FT">
+				<x>32.75</x>
+				<y>9.84251968503936</y>
+				<z>4.33070866141732</z>
+			</location>
+			<static_friction>0.8</static_friction>
+			<dynamic_friction>0.05</dynamic_friction>
+			<rolling_friction>1</rolling_friction>
+			<spring_coeff unit="LBS/FT">17000</spring_coeff>
+			<damping_coeff unit="LBS/FT/SEC">850</damping_coeff>
+			<damping_coeff_rebound unit="LBS/FT/SEC">1700</damping_coeff_rebound>
+			<retractable>0</retractable>
+		</contact>
+
+		<contact type="STRUCTURE" name="NOSE">
+			<location unit="FT">
+				<x>3.5761154855643</x>
+				<y>0</y>
+				<z>7.34908136482939</z>
+			</location>
+			<static_friction>100</static_friction>
+			<dynamic_friction>100</dynamic_friction>
+			<spring_coeff unit="LBS/FT">136000</spring_coeff>			<!-- weight * 4 -->
+			<damping_coeff unit="LBS/FT/SEC">4080</damping_coeff>			<!-- spring_coeff * 0.03 -->
+			<damping_coeff_rebound unit="LBS/FT/SEC">8160</damping_coeff_rebound>			<!-- damping_coeff * 2 -->
+		</contact>
+
+		<contact type="STRUCTURE" name="CANOPY_LEFT">
+			<location unit="FT">
+				<x>6.92257217847768</x>
+				<y>0</y>
+				<z>14.6653543307086</z>
+			</location>
+			<static_friction>100</static_friction>
+			<dynamic_friction>100</dynamic_friction>
+			<spring_coeff unit="LBS/FT">136000</spring_coeff>			<!-- weight * 4 -->
+			<damping_coeff unit="LBS/FT/SEC">4080</damping_coeff>			<!-- spring_coeff * 0.03 -->
+			<damping_coeff_rebound unit="LBS/FT/SEC">8160</damping_coeff_rebound>			<!-- damping_coeff * 2 -->
+		</contact>
+
+		<contact type="STRUCTURE" name="CANOPY_RIGHT">
+			<location unit="FT">
+				<x>6.92257217847768</x>
+				<y>0</y>
+				<z>14.6653543307086</z>
+			</location>
+			<static_friction>100</static_friction>
+			<dynamic_friction>100</dynamic_friction>
+			<spring_coeff unit="LBS/FT">136000</spring_coeff>			<!-- weight * 4 -->
+			<damping_coeff unit="LBS/FT/SEC">4080</damping_coeff>			<!-- spring_coeff * 0.03 -->
+			<damping_coeff_rebound unit="LBS/FT/SEC">8160</damping_coeff_rebound>			<!-- damping_coeff * 2 -->
+		</contact>
+
+		<contact type="STRUCTURE" name="TAILSKID">
+			<location unit="FT">
+				<x>68.4383202099737</x>
+				<y>0</y>
+				<z>10.4002624671916</z>
+			</location>
+			<static_friction>100</static_friction>
+			<dynamic_friction>100</dynamic_friction>
+			<spring_coeff unit="LBS/FT">136000</spring_coeff>			<!-- weight * 4 -->
+			<damping_coeff unit="LBS/FT/SEC">4080</damping_coeff>			<!-- spring_coeff * 0.03 -->
+			<damping_coeff_rebound unit="LBS/FT/SEC">8160</damping_coeff_rebound>			<!-- damping_coeff * 2 -->
+		</contact>
+
+		<contact type="STRUCTURE" name="VSTAB">
+			<location unit="FT">
+				<x>72.1784776902887</x>
+				<y>0</y>
+				<z>20.505249343832</z>
+			</location>
+			<static_friction>100</static_friction>
+			<dynamic_friction>100</dynamic_friction>
+			<spring_coeff unit="LBS/FT">136000</spring_coeff>			<!-- weight * 4 -->
+			<damping_coeff unit="LBS/FT/SEC">4080</damping_coeff>			<!-- spring_coeff * 0.03 -->
+			<damping_coeff_rebound unit="LBS/FT/SEC">8160</damping_coeff_rebound>			<!-- damping_coeff * 2 -->
+		</contact>
+
+	</ground_reactions>
+
+<propulsion>
+
+		<engine file="dummy_motor">				<!-- reserved for the APP -->
+			<location unit="FT">			
+				<x>72.4324999999999</x>		
+				<z>21.3083333333333</z>		
+			</location>			
+			<thruster file="dummy_prop">			
+				<location unit="FT">		
+					<x>72.4324999999999</x>	
+					<z>21.3083333333333</z>	
+				</location>		
+				<orient unit="DEG">		
+					<yaw>90</yaw>	
+				</orient>		
+				<sense>1</sense>		
+				<p_factor>0</p_factor>		
+			</thruster>			
+		</engine>				
+						
+		<engine file="Main-gearbox">					
+			<location unit="FT">				
+				<x>27.755905511811</x>			
+				<z>17.6181102362205</z>			
+			</location>				
+			<orient unit="DEG">				
+				<pitch>90</pitch>			
+			</orient>				
+			<thruster file="Rotor_main">				
+				<location unit="FT">			
+					<x>27.7416666666666</x>		
+					<z>21.3083333333333</z>		
+				</location>			
+				<orient unit="DEG">			
+					<pitch>90</pitch>		
+				</orient>			
+				<sense>1</sense>			
+				<p_factor>0</p_factor>			
+			</thruster>				
+		</engine>					
+							
+		<engine file="Tail-gearbox">					
+			<location unit="FT">				
+				<x>72.4324999999999</x>			
+				<z>21.3083333333333</z>			
+			</location>				
+			<orient unit="DEG">				
+				<yaw>90</yaw>			
+			</orient>				
+			<thruster file="Rotor_tail">				
+				<location unit="FT">			
+					<x>72.4324999999999</x>		
+					<y>-2.64583333333333</y>		
+					<z>21.3083333333333</z>		
+				</location>			
+				<orient unit="DEG">			
+					<yaw>90</yaw>		
+				</orient>			
+				<sense>1</sense>			
+				<p_factor>0</p_factor>			
+			</thruster>				
+		</engine>					
+							
+	<!-- #### Tubines #### -->						
+							
+		<engine file="Pratt_Whitney-T73">					
+			<location unit="FT">				
+				<x>21.5223097112861</x>			
+				<y>-2.03412073490813</y>			
+				<z>17.6181102362205</z>			
+			</location>				
+			<feed>1</feed>				
+			<feed>2</feed>
+			<feed>5</feed>				
+			<thruster file="Pratt_Whitney-T73_load">				
+				<location unit="FT">			
+					<x>27.7416666666666</x>		
+					<z>17.6181102362205</z>		
+				</location>			
+				<orient unit="DEG">			
+					<yaw>90</yaw>		
+				</orient>			
+				<sense>1</sense>			
+			</thruster>				
+		</engine>					
+							
+		<engine file="Pratt_Whitney-T73">					
+			<location unit="FT">				
+				<x>21.5223097112861</x>			
+				<y>2.03412073490813</y>			
+				<z>17.6181102362205</z>			
+			</location>				
+			<feed>3</feed>				
+			<feed>4</feed>
+			<feed>5</feed>				
+			<thruster file="Pratt_Whitney-T73_load">				
+				<location unit="FT">			
+					<x>27.7416666666666</x>		
+					<z>17.6181102362205</z>		
+				</location>			
+				<orient unit="DEG">			
+					<yaw>90</yaw>		
+				</orient>			
+				<sense>-1</sense>			
+			</thruster>				
+		</engine>											
+								
+		<tank type="FUEL" number="0">				<!-- Used so as tanks start at 1 -->		
+			<location unit="FT">					
+			</location>					
+			<capacity unit="LBS">0</capacity>					
+			<contents unit="LBS">0</contents>					
+		</tank>						
+								
+	<!-- #### Fuel tanks #### -->							
+								
+		<tank type="FUEL" number="1">						
+			<location unit="FT">					
+				<x>21.1614173228346</x>				
+				<z>14.4356955380577</z>				
+			</location>					
+			<capacity unit="LBS">1472.25</capacity>					
+			<contents unit="LBS">1472.25</contents>						
+			<drain_location unit="FT">					
+				<x>20.7020997375328</x>				
+				<z>13.1233595800525</z>				
+			</drain_location>					
+			<priority>1</priority>					
+		</tank>						
+								
+		<tank type="FUEL" number="2">						
+			<location unit="FT">					
+				<x>24.1141732283464</x>				
+				<z>14.4356955380577</z>				
+			</location>					
+			<capacity unit="LBS">1472.25</capacity>					
+			<contents unit="LBS">1472.25</contents>						
+			<drain_location unit="FT">					
+				<x>23.6548556430446</x>				
+				<z>13.1233595800525</z>				
+			</drain_location>					
+			<priority>1</priority>					
+		</tank>						
+								
+		<tank type="FUEL" number="3">						
+			<location unit="FT">					
+				<x>30.6430446194225</x>				
+				<z>14.4356955380577</z>				
+			</location>					
+			<capacity unit="LBS">1472.25</capacity>					
+			<contents unit="LBS">1472.25</contents>					
+			<drain_location unit="FT">					
+				<x>30.1837270341207</x>				
+				<z>13.1233595800525</z>				
+			</drain_location>					
+			<priority>1</priority>					
+		</tank>						
+								
+		<tank type="FUEL" number="4">						
+			<location unit="FT">					
+				<x>33.5958005249344</x>				
+				<z>14.4356955380577</z>				
+			</location>					
+			<capacity unit="LBS">1472.25</capacity>					
+			<contents unit="LBS">1472.25</contents>					
+			<drain_location unit="FT">					
+				<x>33.1036745406824</x>				
+				<z>13.1233595800525</z>				
+			</drain_location>					
+			<priority>1</priority>					
+		</tank>						
+								
+		<tank type="FUEL" number="5">						
+			<location unit="FT">					
+				<x>37.9593175853018</x>				
+				<z>14.4356955380577</z>				
+			</location>					
+			<capacity unit="LBS">2925</capacity>					
+			<contents unit="LBS">2925</contents>					
+			<drain_location unit="FT">					
+				<x>37.5</x>				
+				<z>13.1233595800525</z>				
+			</drain_location>					
+			<priority>2</priority>					
+		</tank>						
+
+	</propulsion>
+	
+	<flight_control>
+	
+		<property type="double" value="0">OWS/testing</property>
+
+	</flight_control>
+
+<!--  	<system file = "TurboProp_Test"/> -->
+
+	<system file = "testing/Standard_Day"/>
+
+ 	<system file = "electrical system"/>
+ 	<system file = "fuel system"/>
+ 	<system file = "hydraulic system"/>
+ 	<system file = "engine management system"/>	
+
+ 	<system file = "propulsion"/>	
+ 	<system file = "angle_of_attack"/>
+	<system file = "co-efficients"/>
+	<system file = "force_calcs"/>
+	
+	<system file = "flight_control"/>		
+
+
+	<!--
+	<system file = "load_master"/>
+	<system file = "T4T/test"/>
+	-->
+
+	<aerodynamics>
+	</aerodynamics>
+
+	<!-- STRUCTURAL frame (x +ve aft, y +ve right, z +ve up) -->
+	<external_reactions>
+
+		<force name="htail" frame="BODY">
+			<function>
+				<property>OWS/testing</property>
+			</function>
+			<location unit="FT">
+				<x>26.509186351706</x>
+				<z>2.46062992125984</z>
+			</location>
+			<direction>
+			</direction>
+		</force>
+
+		<force name="vtail" frame="BODY">
+			<function>
+				<property>OWS/testing</property>
+			</function>
+			<location unit="FT">
+				<x>34.0223097112861</x>
+				<z>6.23359580052493</z>
+			</location>
+			<direction>
+			</direction>
+		</force>
+
+		<force name="fuselage" frame="BODY">
+			<function>
+				<property>OWS/testing</property>
+			</function>
+			<location unit="FT">
+			</location>
+			<direction>
+			</direction>
+		</force>
+
+		<force name="pendulum" frame="BODY">
+			<function>
+				<property>OWS/testing</property>
+			</function>
+			<location unit="FT">
+			</location>
+			<direction>
+			</direction>
+		</force>
+
+		<force name="rotor_main" frame="BODY">
+			<function>
+				<property>OWS/testing</property>
+			</function>
+			<location unit="FT">
+				<x>7.64435695538057</x>
+				<y>0</y>
+				<z>9.61286089238844</z>
+			</location>
+			<direction>
+			</direction>
+		</force>
+
+		<force name="ground_effect" frame="LOCAL">
+			<function>
+				<property>OWS/testing</property>
+			</function>
+			<location unit="FT">
+				<x>7.64435695538057</x>
+				<z>9.61286089238844</z>
+			</location>
+			<direction>
+			</direction>
+		</force>
+
+	</external_reactions>
+
+<!--	<output name="Test_Output.csv" type="CSV" rate="10">
+		<position> ON </position>
+	</output> -->
+
+</fdm_config>

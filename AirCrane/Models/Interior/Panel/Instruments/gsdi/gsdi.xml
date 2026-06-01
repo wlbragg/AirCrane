@@ -51,7 +51,7 @@
   <animation>
     <type>translate</type>
     <object-name>IndicU</object-name>
-    <property>instrumentation/gsdi/drift-u-kt</property>
+    <property>fdm/jsbsim/velocities/u-fps</property>
     <interpolation>
       <entry><ind> -10 </ind><dep> -0.02 </dep></entry>
       <entry><ind>   0 </ind><dep>  0.00 </dep></entry>
@@ -67,7 +67,7 @@
   <animation>
     <type>translate</type>
     <object-name>IndicV</object-name>
-    <property>instrumentation/gsdi/drift-v-kt</property>
+    <property>fdm/jsbsim/velocities/v-fps</property>
     <interpolation>
       <entry><ind> -10 </ind><dep> -0.02 </dep></entry>
       <entry><ind>   0 </ind><dep>  0.00 </dep></entry>

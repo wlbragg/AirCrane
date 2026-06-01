@@ -1,0 +1,114 @@
+<?xml version="1.0"?>
+
+<!--
+**************************************************************************
+
+Copyright (c) 2026 Simon 'bomber' Morley
+simonbomber64 at googlemail.com
+
+**************************************************************************
+-->
+
+
+<system name="Engine">
+
+	<channel name="hydraulic Gauges">
+
+		<fcs_function name="propulsion/gearbox/hyd_1st_stage-psi">
+			<function>
+				<ifthen>
+					<eq>
+						<p>/controls/electric/cab_power</p>
+						<v>1</v>
+					</eq>
+					<max>
+						<table>
+							<independentVar>propulsion/engine[3]/engine-rpm</independentVar>
+							<tableData>
+								0	0
+								6800	2.6
+								9000	3
+								11189	3.3
+								12600	5
+							</tableData>
+						</table>
+						<table>
+							<independentVar>propulsion/engine[3]/engine-rpm</independentVar>
+							<tableData>
+								0	0
+								6800	2.6
+								9000	3
+								11189	3.3
+								12600	5
+							</tableData>
+						</table>
+					</max>
+					<value>-99</value>
+				</ifthen>
+			</function>
+		</fcs_function>
+		<actuator>
+			<input>propulsion/gearbox/hyd_1st_stage-psi</input>
+			<rate_limit>30</rate_limit>
+			<output>/controls/electric/hyd_1st_stage-psi</output>
+		</actuator>
+
+		<fcs_function name="propulsion/gearbox/hyd_2nd_stage-psi">
+			<function>
+				<ifthen>
+					<eq>
+						<p>/controls/electric/cab_power</p>
+						<v>1</v>
+					</eq>
+					<table>
+						<independentVar>propulsion/engine[3]/engine-rpm</independentVar>
+						<tableData>
+							0	0
+							4127	1.7
+							5127	2
+							9000	2
+							10000	2.3
+							12600	5
+						</tableData>
+					</table>
+					<value>-99</value>
+				</ifthen>
+			</function>
+		</fcs_function>
+		<actuator>
+			<input>propulsion/gearbox/hyd_2nd_stage-psi</input>
+			<rate_limit>30</rate_limit>
+			<output>/controls/electric/hyd_2nd_stage-psi</output>
+		</actuator>
+
+		<fcs_function name="propulsion/gearbox/hyd_utilities-psi">
+			<function>
+				<ifthen>
+					<eq>
+						<p>/controls/electric/cab_power</p>
+						<v>1</v>
+					</eq>
+					<table>
+						<independentVar>propulsion/engine[3]/engine-rpm</independentVar>
+						<tableData>
+							0	0
+							4127	13
+							5127	15
+							9000	15
+							10000	17
+							12600	25
+						</tableData>
+					</table>
+					<value>-99</value>
+				</ifthen>
+			</function>
+		</fcs_function>
+		<actuator>
+			<input>propulsion/gearbox/hyd_utilities-psi</input>
+			<rate_limit>30</rate_limit>
+			<output>/controls/electric/hyd_utilities-psi</output>
+		</actuator>
+		
+	</channel>
+
+</system>

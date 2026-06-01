@@ -26,43 +26,48 @@
     <object-name>vitre</object-name>
   </effect>
 
-  <animation>
-    <type>material</type>
-    <object-name>face</object-name>
-    <object-name>needle</object-name>
-    <condition>
-      <property>systems/electrical/outputs/cabin-power</property>
-    </condition>
-    <emission>
-      <factor-prop>controls/lighting/luminosite-lights</factor-prop>
-      <red>   0.50 </red>
-      <green> 0.40 </green>
-      <blue>  0.30 </blue>
-    </emission>
-  </animation>
+	<animation>
+		<type>material</type>
+		<object-name>face</object-name>
+		<object-name>needle1</object-name>
+		<object-name>needle2</object-name>
+		<condition>
+			<property>/controls/electric/cab_power</property>
+		</condition>
+		<emission>
+			<factor-prop>/controls/lighting/luminosite-lights</factor-prop>
+			<red>0.50</red>
+			<green>0.40</green>
+			<blue>0.30</blue>
+		</emission>
+	</animation>
 
-  <animation>
-    <type>rotate</type>
-    <object-name>needle1</object-name>
-    <property>sim/model/aircrane/torque-pct</property>
-    <interpolation>
-      <entry><ind> -999 </ind><dep>    1 </dep></entry>
-      <entry><ind>    0 </ind><dep>    0 </dep></entry>
-      <entry><ind>  100 </ind><dep>  -24 </dep></entry>
-      <entry><ind>  200 </ind><dep>  -49 </dep></entry>
-      <entry><ind>  300 </ind><dep>  -71 </dep></entry>
-      <entry><ind>  400 </ind><dep>  -95 </dep></entry>
-      <entry><ind>  500 </ind><dep> -119 </dep></entry>
-      <entry><ind>  600 </ind><dep> -143 </dep></entry>
-      <entry><ind>  700 </ind><dep> -167 </dep></entry>
-      <entry><ind> 1300 </ind><dep> -312 </dep></entry>
-      <entry><ind> 9999 </ind><dep> -313 </dep></entry>
-    </interpolation>
-    <axis>
-      <x> 1 </x>
-      <y> 0 </y>
-      <z> 0 </z>
-    </axis>
-  </animation>
+	<animation>
+		<type>rotate</type>
+		<object-name>needle1</object-name>
+		<property>/controls/electric/turbine_1-torque-lbsft</property>
+		<interpolation>
+			<entry><ind>-99</ind><dep>10</dep></entry>			
+			<entry><ind>0</ind><dep>0</dep></entry>
+			<entry><ind>3000 </ind><dep>-300 </dep></entry>
+		</interpolation>
+		<axis>
+			<x> 1 </x>
+		</axis>
+	</animation>
+	
+	<animation>
+		<type>rotate</type>
+		<object-name>needle2</object-name>
+		<property>/controls/electric/turbine_2-torque-lbsft</property>
+		<interpolation>
+			<entry><ind>-99</ind><dep>10</dep></entry>	
+			<entry><ind>0</ind><dep>0</dep></entry>
+			<entry><ind>3000 </ind><dep>-300 </dep></entry>
+		</interpolation>
+		<axis>
+			<x> 1 </x>
+		</axis>
+	</animation>	
 
 </PropertyList>

@@ -1,0 +1,100 @@
+<?xml version="1.0"?>
+
+<turboprop_engine name="Pratt_Whitney-T73_turboshaft">
+	<milthrust unit="LBS"></milthrust>
+	<idlen1>0</idlen1>
+	<maxn1>110.0</maxn1>
+	<maxpower unit="HP">4500</maxpower>
+	<psfc unit="LBS/HR/HP">0.55</psfc>
+	<n1idle_max_delay>2</n1idle_max_delay>
+	<maxstartingtime>3</maxstartingtime>
+	<startern1>50</startern1>
+	<ielumaxtorque unit="FT*LB">0</ielumaxtorque>
+	<itt_delay>0.15</itt_delay>
+	<betarangeend>0</betarangeend>
+	<reversemaxpower>0</reversemaxpower>
+
+	<function name="EnginePowerVC">
+		<table>
+			<description> Engine power, function of ram air </description>
+			<independentVar lookup="row">aero/qbar-psf</independentVar>
+			<tableData>
+				0		1.000
+				2.8		1.012
+				5.6		1.013
+				8.3		1.013
+				11.1	1.014
+				13.9	1.015
+				16.7	1.016
+				19.4	1.018
+				22.2	1.020
+				25.0	1.022
+				27.8	1.025
+				30.6	1.029
+				33.3	1.034
+				36.1	1.040
+				38.9	1.047
+				41.7	1.056
+				44.4	1.068
+				47.2	1.082
+				50.0	1.100
+				52.8	1.122
+				55.6	1.150
+				58.3	1.186
+				61.1	1.229
+				63.9	1.284
+				66.7	1.353
+				69.4	1.438
+			</tableData>
+		</table>
+	</function>
+
+	<table name="EnginePowerRPM_N1" type="internal">
+		<description> Engine Power, function of Engine RPM(N2) and (N1) </description>
+			<tableData>
+						5	10	20	40	80		85		90		95		100		105		110
+				0		4	7	15	29	58		95		135		175		196		211		218
+				900		22	47	95	189	378		611		876		1124	1265	1368	1420
+				1800	40	80	156	316	629		1018	1462	1869	2113	2280	2369
+				2700	51	105	207	418	833		1240	1778	2222	2502	2698	2805
+				3600	65	127	255	509	1018	1444	2036	2593	2927	3157	3282
+				4500	73	142	287	575	1149	1538	2258	2964	3335	3600	3741
+				5400	80	156	316	629	1258	1629	2335	3185	3629	3917	4071
+				6300	84	167	338	676	1353	1724	2407	3335	3833	4139	4302
+				7200	87	175	353	705	1407	1851	2520	3353	3945	4259	4427
+				8100	91	178	356	713	1425	1909	2611	3371	3982	4297	4468
+				9000	80	164	324	647	1295	1887	2593	3407	4000	4318	4488
+				9900	65	145	291	575	1149	1858	2564	3451	4018	4332	4500
+			</tableData>
+	</table>
+
+
+	<table name="ITT_N1" type="internal">
+		<description> Inter-Turbine Temperature ITT [deg C] depending on N1 and engine run (0=off / 1=running) </description>
+			<tableData>
+						0		1
+				0		0		0
+				25		75		200
+				50		150		400
+				100		300		800
+				110		330		880
+			</tableData>
+	</table>
+
+	<table name="CombustionEfficiency_N1" type="internal">
+		<description> Burn Efficiency, function of Throttle setting(N1) </description>
+			<tableData>
+				0	0.2
+				42	0.85
+				55	0.92
+				65	0.95
+				75	0.968
+				85	0.982
+				90	0.988
+				95	0.994
+				100	1
+			</tableData>
+	</table>
+
+</turboprop_engine>
+

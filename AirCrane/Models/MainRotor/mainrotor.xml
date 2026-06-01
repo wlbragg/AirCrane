@@ -4,26 +4,29 @@
 
   <path>mainrotor.ac</path>
 
-  <animation>
+<!--   <animation>
     <object-name>rotor</object-name>
     <object-name>assemble</object-name>
     <object-name>axeH</object-name>
     <object-name>axeV</object-name>
     <object-name>plateau</object-name>
     <object-name>pistons</object-name>
-  </animation>
+  </animation> -->
 
   <!-- Blades -->
   <model>
     <name>Blade1</name>
     <path>Aircraft/AirCrane/Models/MainRotor/blade1.xml</path>
+    <offsets>
+      <heading-deg>180</heading-deg>
+    </offsets>
   </model>
 
-  <model>
+   <model>
     <name>Blade2</name>
     <path>Aircraft/AirCrane/Models/MainRotor/blade2.xml</path>
     <offsets>
-      <heading-deg> 60 </heading-deg>
+      <heading-deg>240</heading-deg>
     </offsets>
   </model>
 
@@ -31,7 +34,7 @@
     <name>Blade3</name>
     <path>Aircraft/AirCrane/Models/MainRotor/blade3.xml</path>
     <offsets>
-      <heading-deg> 120 </heading-deg>
+      <heading-deg>300</heading-deg>
     </offsets>
   </model>
 
@@ -39,7 +42,7 @@
     <name>Blade4</name>
     <path>Aircraft/AirCrane/Models/MainRotor/blade4.xml</path>
     <offsets>
-      <heading-deg> 180 </heading-deg>
+      <heading-deg>360</heading-deg>
     </offsets>
   </model>
 
@@ -47,7 +50,7 @@
     <name>Blade5</name>
     <path>Aircraft/AirCrane/Models/MainRotor/blade5.xml</path>
     <offsets>
-      <heading-deg> 240 </heading-deg>
+      <heading-deg>420</heading-deg>
     </offsets>
   </model>
 
@@ -55,11 +58,11 @@
     <name>Blade6</name>
     <path>Aircraft/AirCrane/Models/MainRotor/blade6.xml</path>
     <offsets>
-      <heading-deg> 300 </heading-deg>
+      <heading-deg>480</heading-deg>
     </offsets>
   </model>
 
-  <animation>
+<!--   <animation>
     <name>touteslespales</name>
     <object-name>Blade1</object-name>
     <object-name>Blade2</object-name>
@@ -67,7 +70,7 @@
     <object-name>Blade4</object-name>
     <object-name>Blade5</object-name>
     <object-name>Blade6</object-name>
-  </animation>
+  </animation> -->
 
   <!-- Rotation du rotor
   <animation>
@@ -110,15 +113,23 @@
     <object-name>Blade6</object-name>
   </animation>
 
-  <animation>
-    <type>rotate</type>
-    <object-name>rotorcomplet</object-name>
-    <property>rotors/main/blade[0]/position-deg</property>
-    <axis>
-      <x> 0 </x>
-      <y> 0 </y>
-      <z> 1 </z>
-    </axis>
-  </animation>
+<!-- 	<animation>
+		<type>spin</type>
+		<object-name>rotorcomplet</object-name>
+		<property>fdm/jsbsim/propulsion/engine[1]/engine-rpm</property>
+		<factor>1</factor>
+		<axis>
+			<z>1</z>
+		</axis>
+	</animation> -->
+	
+	<animation>
+		<type>rotate</type>
+		<object-name>rotorcomplet</object-name>
+		<property>/fdm/jsbsim/propulsion/engine[1]/rotor/blade_1-deg</property>
+		<axis>
+			<z>1</z>
+		</axis>
+	</animation>
 
 </PropertyList>

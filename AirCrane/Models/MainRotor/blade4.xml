@@ -149,7 +149,7 @@
   <animation>
     <type>rotate</type>
     <object-name>Total0</object-name>
-    <property>rotors/main/cone1-deg</property>
+    <property>/fdm/jsbsim/propulsion/engine[1]/rotor/flex-deg</property>
     <factor> -1 </factor>
     <center>
        <x-m> 0.702 </x-m>
@@ -180,7 +180,7 @@
   <animation>
     <type>rotate</type>
     <object-name>Total1</object-name>
-    <property>rotors/main/cone2-deg</property>
+    <property>/fdm/jsbsim/propulsion/engine[1]/rotor/flex-deg</property>
     <factor> -1 </factor>
     <center>
        <x-m>  4.101 </x-m>
@@ -208,7 +208,7 @@
   <animation>
     <type>rotate</type>
     <object-name>Total2</object-name>
-    <property>rotors/main/cone3-deg</property>
+    <property>/fdm/jsbsim/propulsion/engine[1]/rotor/flex-deg</property>
     <factor> -1 </factor>
     <center>
        <x-m>  6.482 </x-m>
@@ -233,7 +233,7 @@
   <animation>
     <type>rotate</type>
     <object-name>Total3</object-name>
-    <property>rotors/main/cone4-deg</property>
+    <property>/fdm/jsbsim/propulsion/engine[1]/rotor/flex-deg</property>
     <factor> -1 </factor>
     <center>
        <x-m>  8.863 </x-m>
@@ -264,7 +264,7 @@
   <animation>
     <type>rotate</type>
     <object-name>TotalBlade</object-name>
-    <property>rotors/main/blade[3]/incidence-deg</property>
+    <property>/fdm/jsbsim/propulsion/engine[1]/rotor/blade_4-angle</property>
     <center>
        <x-m> 0.702 </x-m>
        <y-m> 0.000 </y-m>
@@ -280,7 +280,7 @@
   <animation>
     <type>rotate</type>
     <object-name>bielle2</object-name>
-    <property>rotors/main/blade[3]/incidence-deg</property>
+    <property>/fdm/jsbsim/propulsion/engine[1]/rotor/blade_4-angle</property>
     <center>
        <x-m> 0.763 </x-m>
        <y-m> 0.246 </y-m>

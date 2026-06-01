@@ -51,17 +51,15 @@
     <object-name>Blade3</object-name>
     <object-name>Blade4</object-name>
   </animation>
-
-  <!-- Rotation du rotor -->
-  <animation>
-    <type>rotate</type>
-    <object-name>rotorcomplet</object-name>
-    <property>rotors/tail/blade[0]/position-deg</property>
-    <axis>
-      <x>  0 </x>
-      <y>  0 </y>
-      <z>  1 </z>
-    </axis>
-  </animation>
+ 
+	<animation>
+		<type>spin</type>
+		<object-name>rotorcomplet</object-name>
+		<property>fdm/jsbsim/propulsion/engine[2]/engine-rpm</property>
+		<factor>1</factor>
+		<axis>
+			<z>1</z>
+		</axis>
+	</animation>
 
 </PropertyList>

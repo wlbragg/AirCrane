@@ -1,0 +1,838 @@
+<?xml version="1.0"?>
+
+<!--
+**************************************************************************
+
+Copyright (c) 2026 Simon 'bomber' Morley
+simonbomber64 at googlemail.com
+
+**************************************************************************
+
+engine[0] = APP
+engine[1] = Main Rotor
+engine[2] = Tail Rotor
+engine[3] = Turbine No.1
+engine[4] = Turbine No.2
+
+-->
+
+<system name="Engine">
+
+<property type="double" value="40">propulsion/engine[1]/rotor/damping-factor</property>
+<property type="double" value="1">T4T/one</property>
+<property type="double" value="0">external_reactions/rotor_main/cyclic_roll-in</property>
+<property type="double" value="0">external_reactions/rotor_main/cyclic_pitch-in</property>
+<property type="double" value="1">propulsion/engine[1]/rotor/vortex_ring</property>
+<property type="double" value="0">propulsion/engine[2]/rotor/torque-target</property>
+<property type="double" value="1">T4T/AGP/augmentation_factor</property>
+
+	<channel name="Rotor Power demand">
+
+		<fcs_function name="propulsion/Power-hp">
+			<function>
+				<sum>
+					<product>		<!-- main rotor gearbox losses -->
+						<value>1.1364</value>
+						<property>propulsion/engine[1]/power-hp</property>
+					</product>
+					<product>		<!-- tail rotor gearbox+drivetrain losses -->
+						<value>1.25</value>
+						<property>propulsion/engine[2]/power-hp</property>
+					</product>
+				</sum>
+			</function>
+		</fcs_function>
+
+		<fcs_function name="propulsion/gearbox/engine_1-hp">
+			<function>
+				<product>
+					<property>propulsion/Power-hp</property>
+					<table>
+						<independentVar lookup="row">propulsion/gearbox/engine_1-clutch</independentVar>
+						<independentVar lookup="column">propulsion/gearbox/engine_2-clutch</independentVar>
+						<tableData>
+								0	1
+							0	0	0
+							1	1	0.5
+						</tableData>
+					</table>
+				</product>
+			</function>
+		</fcs_function>
+
+		<fcs_function name="propulsion/gearbox/engine_2-hp">
+			<function>
+				<product>
+					<property>propulsion/Power-hp</property>
+					<table>
+						<independentVar lookup="row">propulsion/gearbox/engine_1-clutch</independentVar>
+						<independentVar lookup="column">propulsion/gearbox/engine_2-clutch</independentVar>
+						<tableData>
+								0	1
+							0	0	1
+							1	0	0.5
+						</tableData>
+					</table>
+				</product>
+			</function>
+		</fcs_function>
+
+	</channel>
+
+<property type="double" value="0">propulsion/engine[3]/governor/n1-lever</property>
+
+	<channel name="Engine Management No.1">
+
+<!--   engine[3] = Turbine No.1   -->
+
+<!--
+0.1	3780rpm
+0.2	4360
+0.3	4940
+0.4	5520
+0.5	6100
+0.6	6685
+0.7	7263
+0.8	7835
+0.9	8420
+1.0 9000
+-->
+
+		<kinematic>
+			<input>propulsion/engine[3]/governor/n1-lever</input>
+			<traverse>
+				<setting>
+					<position>0</position>
+					<time>0</time>
+				</setting>
+				<setting>
+					<position>0.1</position>
+					<time>5</time>
+				</setting>
+				<setting>
+					<position>0.6</position>
+					<time>20</time>
+				</setting>
+				<setting>
+					<position>1.0</position>
+					<time>80</time>
+				</setting>
+			</traverse>
+			<output>propulsion/engine[3]/governor/n1-pos</output>
+		</kinematic>
+
+		<fcs_function>
+			<function>
+				<table>
+					<independentVar>propulsion/engine[3]/governor/n1-pos</independentVar>
+					<tableData>
+						0	0
+						0.1	0.42
+						1	1
+					</tableData>
+				</table>
+			</function>
+			<output>/controls/engines/engine[3]/propeller-pitch</output>
+		</fcs_function>
+
+		<fcs_function>
+			<function>
+				<max>
+					<table>
+						<independentVar>propulsion/engine[3]/engine-rpm</independentVar>
+						<tableData>
+							0	0
+							12650	1757
+						</tableData>
+					</table>
+					<property>propulsion/gearbox/engine_1-hp</property>
+				</max>
+			</function>
+			<output>propulsion/engine[3]/governor/cmd-hp</output>
+		</fcs_function>
+
+		<fcs_function name="propulsion/engine[3]/governor/error-hp">
+			<function>
+				<sum>
+					<property>propulsion/engine[3]/governor/cmd-hp</property>
+					<property>-propulsion/engine[3]/power-hp</property>
+				</sum>
+			</function>
+		</fcs_function>
+
+		<pid>
+			<input>propulsion/engine[3]/governor/error-hp</input>
+			<kp>0.0000005</kp>
+			<ki>0.0</ki>
+			<kd>0.000001</kd>
+			<output>propulsion/engine[3]/governor/output-hp</output>
+		</pid>
+
+		<summer>
+			<input>/controls/engines/engine[3]/throttle</input>
+			<input>propulsion/engine[3]/governor/output-hp</input>
+			<output>/controls/engines/engine[3]/throttle</output>
+		</summer>
+
+<!-- CLUTCH -->
+
+		<scheduled_gain name="propulsion/gearbox/engine_1-rpm">
+			<input>propulsion/engine[3]/engine-rpm</input>
+			<gain>propulsion/gearbox/ratio</gain>
+			<table name="propulsion/gearbox/engine_1-clutch"> <!-- Clutch Engagement -->
+				<independentVar>propulsion/engine[3]/engine-rpm</independentVar>
+				<tableData>
+					6840	0
+					6945	0.01
+					7050	0.02
+					7155	0.04
+					7260	0.07
+					7365	0.11
+					7470	0.15
+					7575	0.2
+					7680	0.26
+					7785	0.35
+					7890	0.5
+					7995	0.7
+					8100	1
+				</tableData>
+			</table>
+		</scheduled_gain>
+
+		<fcs_function name="propulsion/engine[3]/torque-lbsft">
+			<function>
+					<quotient>
+						<property>propulsion/gearbox/engine_1-hp</property>
+						<product>
+							<value>0.0001904</value> <!-- 1/5252 -->
+							<sum>
+								<property>propulsion/engine[3]/engine-rpm</property>
+								<value>0.0001</value>
+							</sum>
+						</product>
+					</quotient>
+			</function>
+		</fcs_function>
+
+	</channel>
+
+<property type="double" value="0">propulsion/engine[4]/governor/n1-lever</property>
+
+	<channel name="Engine Management No.2">
+
+<!--   engine[4] = Turbine No.2   -->
+
+<!--
+0.1	3780rpm
+0.2	4360
+0.3	4940
+0.4	5520
+0.5	6100
+0.6	6685
+0.7	7263
+0.8	7835
+0.9	8420
+1.0 9000
+-->
+
+		<kinematic>
+			<input>propulsion/engine[4]/governor/n1-lever</input>
+			<traverse>
+				<setting>
+					<position>0</position>
+					<time>0</time>
+				</setting>
+				<setting>
+					<position>0.1</position>
+					<time>5</time>
+				</setting>
+				<setting>
+					<position>0.6</position>
+					<time>20</time>
+				</setting>
+				<setting>
+					<position>1.0</position>
+					<time>80</time>
+				</setting>
+			</traverse>
+			<output>propulsion/engine[4]/governor/n1-pos</output>
+		</kinematic>
+
+		<fcs_function>
+			<function>
+				<table>
+					<independentVar>propulsion/engine[4]/governor/n1-pos</independentVar>
+					<tableData>
+						0	0
+						0.1	0.42
+						1	1
+					</tableData>
+				</table>
+			</function>
+			<output>/controls/engines/engine[4]/propeller-pitch</output>
+		</fcs_function>
+
+		<fcs_function>
+			<function>
+				<max>
+					<table>
+						<independentVar>propulsion/engine[4]/engine-rpm</independentVar>
+						<tableData>
+							0	0
+							12650	1757
+						</tableData>
+					</table>
+					<property>propulsion/gearbox/engine_2-hp</property>
+				</max>
+			</function>
+			<output>propulsion/engine[4]/governor/cmd-hp</output>
+		</fcs_function>
+
+		<fcs_function name="propulsion/engine[4]/governor/error-hp">
+			<function>
+				<sum>
+					<property>propulsion/engine[4]/governor/cmd-hp</property>
+					<property>-propulsion/engine[4]/power-hp</property>
+				</sum>
+			</function>
+		</fcs_function>
+
+		<pid>
+			<input>propulsion/engine[4]/governor/error-hp</input>
+			<kp>0.0000005</kp>
+			<ki>0.0</ki>
+			<kd>0.000001</kd>
+			<output>propulsion/engine[4]/governor/output-hp</output>
+		</pid>
+
+		<summer>
+			<input>/controls/engines/engine[4]/throttle</input>
+			<input>propulsion/engine[4]/governor/output-hp</input>
+			<output>/controls/engines/engine[4]/throttle</output>
+		</summer>
+
+<!-- CLUTCH -->
+
+		<scheduled_gain name="propulsion/gearbox/engine_2-rpm">
+			<input>propulsion/engine[4]/engine-rpm</input>
+			<gain>propulsion/gearbox/ratio</gain>
+			<table name="propulsion/gearbox/engine_2-clutch"> <!-- Clutch Engagement -->
+				<independentVar>propulsion/engine[4]/engine-rpm</independentVar>
+				<tableData>
+					6840	0
+					6945	0.01
+					7050	0.02
+					7155	0.04
+					7260	0.07
+					7365	0.11
+					7470	0.15
+					7575	0.2
+					7680	0.26
+					7785	0.35
+					7890	0.5
+					7995	0.7
+					8100	1
+				</tableData>
+			</table>
+		</scheduled_gain>
+
+		<fcs_function name="propulsion/engine[4]/torque-lbsft">
+			<function>
+					<quotient>
+						<property>propulsion/gearbox/engine_2-hp</property>
+						<product>
+							<value>0.0001904</value> <!-- 1/5252 -->
+							<sum>
+								<property>propulsion/engine[4]/engine-rpm</property>
+								<value>0.0001</value>
+							</sum>
+						</product>
+					</quotient>
+			</function>
+		</fcs_function>
+
+	</channel>
+
+<property type="double" value="0.02056">propulsion/gearbox/ratio</property>
+<property type="double" value="0">propulsion/engine[1]/governor/cmd-rpm</property>
+
+<property type="double" value="0">propulsion/engine[1]/rotor/blade_1-rad</property>
+<property type="double" value="1.0472">propulsion/engine[1]/rotor/blade_2-rad</property>
+<property type="double" value="2.0944">propulsion/engine[1]/rotor/blade_3-rad</property>
+<property type="double" value="3.14159">propulsion/engine[1]/rotor/blade_4-rad</property>
+<property type="double" value="4.18879">propulsion/engine[1]/rotor/blade_5-rad</property>
+<property type="double" value="5.23599">propulsion/engine[1]/rotor/blade_6-rad</property>
+
+	<channel name="Main Rotor">
+
+<!--   engine[1] = Main Rotor   -->
+
+		<fcs_function name="propulsion/engine[1]/governor/cmd-rpm">
+			<function>
+				<max>
+					<property>propulsion/gearbox/engine_1-rpm</property>
+					<property>propulsion/gearbox/engine_2-rpm</property>
+				</max>
+			</function>
+		</fcs_function>
+
+		<summer name="propulsion/engine[1]/governor/error-rpm">
+			<input>propulsion/engine[1]/engine-rpm</input>
+			<input>-propulsion/engine[1]/governor/cmd-rpm</input>
+		</summer>
+
+		<pid>
+			<input>-propulsion/engine[1]/governor/error-rpm</input>
+			<kp>0.00005</kp>
+			<ki>0.0000000001</ki>
+			<kd>0.0001</kd>
+			<output>propulsion/engine[1]/governor/output-rpm</output>
+		</pid>
+
+		<summer>
+			<input>/controls/engines/engine[1]/throttle</input>
+			<input>propulsion/engine[1]/governor/output-rpm</input>
+			<output>/controls/engines/engine[1]/throttle</output>
+		</summer>
+		
+
+		
+		<fcs_function name="propulsion/engine[1]/rotor/frequency">
+			<function>
+				<product>
+					<value>0.0167</value>
+					<property>propulsion/engine[1]/engine-rpm</property> 
+					<value>6.2831853</value>							<!-- pi * 2 -->
+					<property>simulation/dt</property>
+				</product>
+			</function>
+		</fcs_function>
+		
+		<fcs_function name="propulsion/engine[1]/rotor/blade_1-rad">
+			<function>
+				<ifthen>
+					<le>
+						<property>propulsion/engine[1]/rotor/blade_1-rad</property>
+						<value>6.2831853</value>
+					</le>
+					<sum>
+						<property>propulsion/engine[1]/rotor/blade_1-rad</property>
+						<property>propulsion/engine[1]/rotor/frequency</property>
+					</sum>
+					<value>0</value>
+				</ifthen>
+			</function>
+		</fcs_function>		
+		<fcs_function name="propulsion/engine[1]/rotor/blade_1-deg">
+			<function>
+				<todegrees>
+					<property>propulsion/engine[1]/rotor/blade_1-rad</property> 
+				</todegrees>
+			</function>
+		</fcs_function>
+		
+		<fcs_function name="propulsion/engine[1]/rotor/blade_2-rad">
+			<function>
+				<ifthen>
+					<le>
+						<property>propulsion/engine[1]/rotor/blade_2-rad</property>
+						<value>6.2831853</value>
+					</le>
+					<sum>
+						<property>propulsion/engine[1]/rotor/blade_2-rad</property>
+						<property>propulsion/engine[1]/rotor/frequency</property>
+					</sum>
+					<value>0</value>
+				</ifthen>
+			</function>
+		</fcs_function>		
+		<fcs_function name="propulsion/engine[1]/rotor/blade_2-deg">
+			<function>
+				<todegrees>
+					<property>propulsion/engine[1]/rotor/blade_2-rad</property> 
+				</todegrees>
+			</function>
+		</fcs_function>
+
+		<fcs_function name="propulsion/engine[1]/rotor/blade_3-rad">
+			<function>
+				<ifthen>
+					<le>
+						<property>propulsion/engine[1]/rotor/blade_3-rad</property>
+						<value>6.2831853</value>
+					</le>
+					<sum>
+						<property>propulsion/engine[1]/rotor/blade_3-rad</property>
+						<property>propulsion/engine[1]/rotor/frequency</property>
+					</sum>
+					<value>0</value>
+				</ifthen>
+			</function>
+		</fcs_function>		
+		<fcs_function name="propulsion/engine[1]/rotor/blade_3-deg">
+			<function>
+				<todegrees>
+					<property>propulsion/engine[1]/rotor/blade_3-rad</property> 
+				</todegrees>
+			</function>
+		</fcs_function>
+		
+		<fcs_function name="propulsion/engine[1]/rotor/blade_4-rad">
+			<function>
+				<ifthen>
+					<le>
+						<property>propulsion/engine[1]/rotor/blade_4-rad</property>
+						<value>6.2831853</value>
+					</le>
+					<sum>
+						<property>propulsion/engine[1]/rotor/blade_4-rad</property>
+						<property>propulsion/engine[1]/rotor/frequency</property>
+					</sum>
+					<value>0</value>
+				</ifthen>
+			</function>
+		</fcs_function>		
+		<fcs_function name="propulsion/engine[1]/rotor/blade_4-deg">
+			<function>
+				<todegrees>
+					<property>propulsion/engine[1]/rotor/blade_4-rad</property> 
+				</todegrees>
+			</function>
+		</fcs_function>		
+		
+		<fcs_function name="propulsion/engine[1]/rotor/blade_5-rad">
+			<function>
+				<ifthen>
+					<le>
+						<property>propulsion/engine[1]/rotor/blade_5-rad</property>
+						<value>6.2831853</value>
+					</le>
+					<sum>
+						<property>propulsion/engine[1]/rotor/blade_5-rad</property>
+						<property>propulsion/engine[1]/rotor/frequency</property>
+					</sum>
+					<value>0</value>
+				</ifthen>
+			</function>
+		</fcs_function>		
+		<fcs_function name="propulsion/engine[1]/rotor/blade_5-deg">
+			<function>
+				<todegrees>
+					<property>propulsion/engine[1]/rotor/blade_5-rad</property> 
+				</todegrees>
+			</function>
+		</fcs_function>			
+		
+		<fcs_function name="propulsion/engine[1]/rotor/blade_6-rad">
+			<function>
+				<ifthen>
+					<le>
+						<property>propulsion/engine[1]/rotor/blade_6-rad</property>
+						<value>6.2831853</value>
+					</le>
+					<sum>
+						<property>propulsion/engine[1]/rotor/blade_6-rad</property>
+						<property>propulsion/engine[1]/rotor/frequency</property>
+					</sum>
+					<value>0</value>
+				</ifthen>
+			</function>
+		</fcs_function>		
+		<fcs_function name="propulsion/engine[1]/rotor/blade_6-deg">
+			<function>
+				<todegrees>
+					<property>propulsion/engine[1]/rotor/blade_6-rad</property> 
+				</todegrees>
+			</function>
+		</fcs_function>
+
+				
+	<!-- Blade Angle	 -->
+		
+		<fcs_function name="propulsion/engine[1]/rotor/blade_1-angle">
+			<function>
+				<todegrees>
+					<sum>
+						<toradians>
+							<property>propulsion/engine[1]/blade-angle</property>
+						</toradians>
+						<product>
+							<sin>
+								<property>propulsion/engine[1]/rotor/blade_1-rad</property>					
+							</sin>
+							<table>
+								<independentVar>fcs/cyclic_roll-cmd-pos</independentVar>
+								<tableData>
+									-1	-0.174533
+									1	0.174533
+								</tableData>
+							</table>						
+						</product>
+						<product>
+							<cos>
+								<property>propulsion/engine[1]/rotor/blade_1-rad</property>					
+							</cos>
+							<table>
+								<independentVar>fcs/cyclic_pitch-cmd-pos</independentVar>
+								<tableData>
+									-1	0.174533
+									1	-0.174533
+								</tableData>
+							</table>						
+						</product>						
+					</sum>
+				</todegrees>
+			</function>
+		</fcs_function>
+		
+		<fcs_function name="propulsion/engine[1]/rotor/blade_2-angle">
+			<function>
+				<todegrees>
+					<sum>
+						<toradians>
+							<property>propulsion/engine[1]/blade-angle</property>
+						</toradians>
+						<product>
+							<sin>
+								<property>propulsion/engine[1]/rotor/blade_2-rad</property>					
+							</sin>
+							<table>
+								<independentVar>fcs/cyclic_roll-cmd-pos</independentVar>
+								<tableData>
+									-1	-0.174533
+									1	0.174533
+								</tableData>
+							</table>						
+						</product>
+						<product>
+							<cos>
+								<property>propulsion/engine[1]/rotor/blade_2-rad</property>					
+							</cos>
+							<table>
+								<independentVar>fcs/cyclic_pitch-cmd-pos</independentVar>
+								<tableData>
+									-1	0.174533
+									1	-0.174533
+								</tableData>
+							</table>						
+						</product>							
+					</sum>
+				</todegrees>
+			</function>
+		</fcs_function>	
+
+		<fcs_function name="propulsion/engine[1]/rotor/blade_3-angle">
+			<function>
+				<todegrees>
+					<sum>
+						<toradians>
+							<property>propulsion/engine[1]/blade-angle</property>
+						</toradians>
+						<product>
+							<sin>
+								<property>propulsion/engine[1]/rotor/blade_3-rad</property>					
+							</sin>
+							<table>
+								<independentVar>fcs/cyclic_roll-cmd-pos</independentVar>
+								<tableData>
+									-1	-0.174533
+									1	0.174533
+								</tableData>
+							</table>						
+						</product>
+						<product>
+							<cos>
+								<property>propulsion/engine[1]/rotor/blade_3-rad</property>					
+							</cos>
+							<table>
+								<independentVar>fcs/cyclic_pitch-cmd-pos</independentVar>
+								<tableData>
+									-1	0.174533
+									1	-0.174533
+								</tableData>
+							</table>						
+						</product>							
+					</sum>
+				</todegrees>
+			</function>
+		</fcs_function>	
+		
+		<fcs_function name="propulsion/engine[1]/rotor/blade_4-angle">
+			<function>
+				<todegrees>
+					<sum>
+						<toradians>
+							<property>propulsion/engine[1]/blade-angle</property>
+						</toradians>
+						<product>
+							<sin>
+								<property>propulsion/engine[1]/rotor/blade_4-rad</property>					
+							</sin>
+							<table>
+								<independentVar>fcs/cyclic_roll-cmd-pos</independentVar>
+								<tableData>
+									-1	-0.174533
+									1	0.174533
+								</tableData>
+							</table>						
+						</product>
+						<product>
+							<cos>
+								<property>propulsion/engine[1]/rotor/blade_4-rad</property>					
+							</cos>
+							<table>
+								<independentVar>fcs/cyclic_pitch-cmd-pos</independentVar>
+								<tableData>
+									-1	0.174533
+									1	-0.174533
+								</tableData>
+							</table>						
+						</product>						
+					</sum>
+				</todegrees>
+			</function>
+		</fcs_function>			
+		
+		<fcs_function name="propulsion/engine[1]/rotor/blade_5-angle">
+			<function>
+				<todegrees>
+					<sum>
+						<toradians>
+							<property>propulsion/engine[1]/blade-angle</property>
+						</toradians>
+						<product>
+							<sin>
+								<property>propulsion/engine[1]/rotor/blade_5-rad</property>					
+							</sin>
+							<table>
+								<independentVar>fcs/cyclic_roll-cmd-pos</independentVar>
+								<tableData>
+									-1	-0.174533
+									1	0.174533
+								</tableData>
+							</table>						
+						</product>
+						<product>
+							<cos>
+								<property>propulsion/engine[1]/rotor/blade_5-rad</property>					
+							</cos>
+							<table>
+								<independentVar>fcs/cyclic_pitch-cmd-pos</independentVar>
+								<tableData>
+									-1	0.174533
+									1	-0.174533
+								</tableData>
+							</table>						
+						</product>							
+					</sum>
+				</todegrees>
+			</function>
+		</fcs_function>		
+		
+		<fcs_function name="propulsion/engine[1]/rotor/blade_6-angle">
+			<function>
+				<todegrees>
+					<sum>
+						<toradians>
+							<property>propulsion/engine[1]/blade-angle</property>
+						</toradians>
+						<product>
+							<sin>
+								<property>propulsion/engine[1]/rotor/blade_6-rad</property>					
+							</sin>
+							<table>
+								<independentVar>fcs/cyclic_roll-cmd-pos</independentVar>
+								<tableData>
+									-1	-0.174533
+									1	0.174533
+								</tableData>
+							</table>						
+						</product>
+						<product>
+							<cos>
+								<property>propulsion/engine[1]/rotor/blade_6-rad</property>					
+							</cos>
+							<table>
+								<independentVar>fcs/cyclic_pitch-cmd-pos</independentVar>
+								<tableData>
+									-1	0.174533
+									1	-0.174533
+								</tableData>
+							</table>						
+						</product>							
+					</sum>
+				</todegrees>
+			</function>
+		</fcs_function>			
+					
+	</channel>
+
+	<channel name="Tail Rotor">
+
+<!--   engine[2] = Tail Rotor   -->
+
+	<!-- rpm -->
+
+		<fcs_function name="propulsion/engine[2]/governor/cmd-rpm">
+			<function>
+				<product>
+					<value>4.59</value> <!-- 850/185 -->
+					<property>propulsion/engine[1]/engine-rpm</property>
+				</product>
+			</function>
+		</fcs_function>
+
+		<summer name="propulsion/engine[2]/governor/error-rpm">
+			<input>propulsion/engine[2]/engine-rpm</input>
+			<input>-propulsion/engine[2]/governor/cmd-rpm</input>
+		</summer>
+
+		<pid>
+			<input>-propulsion/engine[2]/governor/error-rpm</input>
+			<kp>0.0001</kp>
+			<ki>0.0</ki>
+			<kd>0.0001</kd>
+			<output>propulsion/engine[2]/governor/output-rpm</output>
+		</pid>
+
+		<summer>
+			<input>/controls/engines/engine[2]/throttle</input>
+			<input>propulsion/engine[2]/governor/output-rpm</input>
+			<output>/controls/engines/engine[2]/throttle</output>
+		</summer>
+		
+	<!-- Torque Management -->	
+
+		<summer name="propulsion/engine[2]/rotor/torque-error">
+			<input>moments/n-prop-lbsft</input>
+			<input>propulsion/engine[2]/rotor/torque-target</input>
+		</summer>
+
+		<pure_gain>
+			<input>propulsion/engine[2]/rotor/torque-error</input>
+			<gain>0.000001</gain>
+			<output>propulsion/engine[2]/rotor/torque-output</output>
+		</pure_gain>
+
+		<summer>
+			<input>propulsion/engine[2]/rotor/torque-output</input>
+			<input>propulsion/engine[2]/blade-angle</input>
+			<clipto>
+				<min>-6.1</min>
+				<max>4.3</max>
+			</clipto>
+			<output>propulsion/engine[2]/blade-angle</output>
+		</summer>
+
+	</channel>
+
+</system>
+
+
+
+
+
+
+
+
+

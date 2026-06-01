@@ -3,123 +3,75 @@
 <PropertyList>
 
   <path>rotorbrake.ac</path>
+ 
+	<effect>
+		<inherits-from>Aircraft/AirCrane/Models/Effects/Interior/lm-interior-rotorbrakepanel</inherits-from>
+		<object-name>base</object-name>
+		<object-name>switchrotorbrake</object-name>
+ 		<object-name>rotorbrakeon</object-name>  	<!--  This order  -->
+		 <object-name>rotorbrakeoff</object-name>  	<!--  is impotant -->		
+	</effect>
+	
+<!-- Toggle Switch -->
 
-  <animation>
-    <type>select</type>
-    <object-name>rotorbrakeoff</object-name>
-    <condition>
-      <or>
-        <equals>
-          <property>/controls/switches/rotor-brake</property>
-          <value>0</value>
-        </equals>
-        <equals>
-          <property>/controls/switches/rotor-brake</property>
-          <value>1</value>
-        </equals>
-        <and>
-          <equals>
-            <property>/controls/switches/rotor-brake</property>
-            <value>-1</value>
-          </equals>
-          <equals>
-            <property>/systems/electrical/outputs/rotor-brake</property>
-            <value>0</value>
-          </equals>
-        </and>
-      </or>
-    </condition>
-  </animation>
+	<animation>
+		<type>pick</type>
+		<object-name>switchrotorbrake</object-name>
+		<visible>true</visible>
+		<action>
+			<button>0</button>
+			<repeatable>false</repeatable>
+			<binding>
+				<command>property-toggle</command>
+				<property>/controls/electric/rotor_brake-sw</property>
+			</binding>
+			<binding>
+				<command>nasal</command>
+				<script>aircrane.click("avionics")</script>
+			</binding>
+		</action>
+	</animation>
+	<animation>
+		<type>rotate</type>
+		<object-name>switchrotorbrake</object-name>
+		<property>/controls/electric/rotor_brake-sw</property>
+		<factor>-40</factor>
+		<offset-deg>20</offset-deg>
+		<center>
+			<x-m>0.00516</x-m>
+			<y-m>-0.01268</y-m>
+			<z-m>0.00704</z-m>
+		</center>
+		<axis>
+			<y>1</y>
+		</axis>
+	</animation>
+	
+<!-- Indicator Lamp -->
 
-  <animation>
-    <type>select</type>
-    <object-name>rotorbrakeon</object-name>
-    <condition>
-      <and>
-        <equals>
-          <property>/controls/switches/rotor-brake</property>
-          <value>-1</value>
-        </equals>
-        <property>/systems/electrical/outputs/rotor-brake</property>
-      </and>
-    </condition>
-  </animation>
-
-  <animation>
-    <type>knob</type>
-    <object-name>switchrotorbrake</object-name>
-    <property>/controls/switches/rotor-brake</property>
-    <factor>50</factor>
-    <center>
-      <x-m>  0.00516 </x-m>
-      <y-m> -0.01268 </y-m>
-      <z-m>  0.00704 </z-m>
-    </center>
-    <axis>
-      <x>0.0</x>
-      <y>1.0</y>
-      <z>0.0</z>
-    </axis>
-    <action>
-      <repeatable>false</repeatable>
-      <binding>
-        <command>property-adjust</command>
-        <property>/controls/switches/rotor-brake</property>
-        <factor>1</factor>
-        <min> -1 </min>
-        <max>  1 </max>
-        <wrap> 0 </wrap>
-      </binding>
-      <binding>
-        <command>nasal</command>
-        <script>
-          var brake = getprop("/controls/switches/rotor-brake");
-          var pressure = getprop("controls/rotorbrake/rotorbrake");
-          if(brake == -1) {
-            setprop("controls/rotor/brake", pressure * .05);
-          }
-          if(brake == 1) {
-            setprop("controls/rotorbrake/rotorbrake", 0);
-          }
-          aircrane.click("avionics");
-        </script>
-      </binding>
-    </action>
-    <hovered>
-      <binding>
-        <command>set-tooltip</command>
-        <tooltip-id>rotorbrake</tooltip-id>
-        <label>Rotor Brake: %s</label>
-        <property>controls/switches/rotor-brake</property>
-      </binding>
-    </hovered>
-  </animation>
-
-  <animation>
-    <type>material</type>
-    <object-name>rotorbrakeon</object-name>
-    <condition>
-      <and>
-        <equals>
-          <property>/controls/switches/rotor-brake</property>
-          <value>-1</value>
-        </equals>
-        <property>/systems/electrical/outputs/rotor-brake</property>
-      </and>
-    </condition>
-    <emission>
-      <red>   1 </red>
-      <green> 0 </green>
-      <blue>  0 </blue>
-    </emission>
-  </animation>
-
-  <effect>
-    <inherits-from>Aircraft/AirCrane/Models/Effects/Interior/lm-interior-rotorbrakepanel</inherits-from>
-    <object-name>base</object-name>
-    <object-name>switchrotorbrake</object-name>
-    <object-name>rotorbrakeoff</object-name>
-    <object-name>rotorbrakeon</object-name>
-  </effect>
+	<animation>
+		<type>translate</type>
+		<object-name>rotorbrakeon</object-name>
+		<offset-m>-0.001</offset-m>
+		<property>/controls/electric/alarms/rotor_brake</property>	
+		<factor>0.002</factor>
+		<axis>
+			<z>1.0</z>
+		</axis>
+	</animation>
+	<animation>
+		<type>material</type>
+		<object-name>rotorbrakeon</object-name>
+		<condition>
+			<equals>
+				<property>/controls/electric/alarms/rotor_brake</property>
+				<value>1</value>
+			</equals>
+		</condition>
+		<emission>
+			<factor-prop>/controls/electric/alarms/rotor_brake</factor-prop>
+			<red>1</red>
+		</emission>
+	</animation>
 
 </PropertyList>

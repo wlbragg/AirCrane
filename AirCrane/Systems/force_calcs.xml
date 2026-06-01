@@ -1,0 +1,517 @@
+<?xml version="1.0"?>
+
+<!--
+**************************************************************************
+
+Copyright (c) 2020 Simon 'bomber' Morley
+simonbomber64 at googlemail.com
+
+**************************************************************************
+-->
+
+<system name="Force Calcs">
+
+	<property type="double" value="1">T4T/damage/fuselage_for</property>
+	<property type="double" value="1">T4T/damage/fuselage_mid</property>
+	<property type="double" value="1">T4T/damage/fuselage_aft</property>
+	<property type="double" value="0">T4T/aero/h-tail/rigging-rad</property>
+	<property type="double" value="0">external_reactions/rotor_tail/rudder_adjust</property>
+	<property type="double" value="0">propulsion/engine[1]/rotor/thrust-lbs</property>
+
+	<channel name="dynamic_pressures">
+
+		<!-- ####   tail   #### -->
+
+		<fcs_function name="T4T/aero/h-tail_right/qbar-psf">
+			<function>
+				<product>
+					<value>0.5</value>
+					<property>atmosphere/rho-slugs_ft3</property>
+					<property>T4T/velocities/h-tail_right/true-fps</property>
+					<property>T4T/velocities/h-tail_right/true-fps</property>
+				</product>
+			</function>
+		</fcs_function>
+
+		<fcs_function name="T4T/aero/v-tail/qbar-psf">
+			<function>
+				<product>
+					<value>0.5</value>
+					<property>atmosphere/rho-slugs_ft3</property>
+					<property>T4T/velocities/v-tail/true-fps</property>
+					<property>T4T/velocities/v-tail/true-fps</property>
+				</product>
+			</function>
+		</fcs_function>
+
+		<!-- #### fuselage #### -->
+
+		<switch name="T4T/aero/directionU">
+			<default value="1"/>   <!-- swinging/moving backwards  -->
+			<test value="-1">   <!-- swinging/moving forwards  -->
+				T4T/velocities/fuselage/u-aero-fps GT 0
+			</test>
+			<output>T4T/aero/directionU</output>
+		</switch>
+
+		<fcs_function name="T4T/aero/fuselage/qbarU-psf">
+			<function>
+				<product>
+					<property>T4T/aero/directionU</property>
+					<value>0.5</value>
+					<property>atmosphere/rho-slugs_ft3</property>
+					<property>velocities/u-aero-fps</property>
+					<property>velocities/u-aero-fps</property>
+				</product>
+			</function>
+		</fcs_function>
+
+		<switch name="T4T/aero/directionV">
+			<default value="1"/>   <!-- swinging/moving to the left  -->
+			<test value="-1">   <!-- swinging/moving to the right  -->
+				T4T/velocities/fuselage/v-aero-fps GT 0
+			</test>
+			<output>T4T/aero/directionV</output>
+		</switch>
+
+		<fcs_function name="T4T/aero/fuselage/qbarV-psf">
+			<function>
+				<product>
+					<property>T4T/aero/directionV</property>
+					<value>0.5</value>
+					<property>atmosphere/rho-slugs_ft3</property>
+					<property>T4T/velocities/fuselage/v-aero-fps</property>
+					<property>T4T/velocities/fuselage/v-aero-fps</property>
+				</product>
+			</function>
+		</fcs_function>
+
+		<switch name="T4T/aero/directionW">
+			<default value="1"/>   <!-- dynamic pressure from the top  -->
+			<test value="-1">   <!-- dynamic pressure from the bottom  -->
+				velocities/w-aero-fps GT 0
+			</test>
+			<output>T4T/aero/directionW</output>
+		</switch>
+
+		<fcs_function name="T4T/aero/fuselage/qbarW-psf">
+			<function>
+				<product>
+					<property>T4T/aero/directionW</property>
+					<value>0.5</value>
+					<property>atmosphere/rho-slugs_ft3</property>
+					<property>velocities/w-aero-fps</property>
+					<property>velocities/w-aero-fps</property>
+				</product>
+			</function>
+		</fcs_function>
+
+		<!-- #### Rotor Induced #### -->
+
+		<fcs_function name="T4T/aero/rotor/qbarW-psf">
+			<function>
+				<product>
+					<value>0.5</value>
+					<property>atmosphere/rho-slugs_ft3</property>
+					<property>propulsion/engine[1]/prop-induced-velocity_fps</property>
+					<property>propulsion/engine[1]/prop-induced-velocity_fps</property>
+				</product>
+			</function>
+		</fcs_function>
+
+	</channel>
+
+	<channel name="Tail_forces">
+
+		<!-- ####   Z vector   #### -->
+
+		<fcs_function name="T4T/forces/h-tail_right/z-lbs">
+			<function>
+				<product>
+					<sum>
+						<product>
+							<cos><property>T4T/aero/h-tail/rigging-rad</property></cos>
+							<property>T4T/coefficients/h-tail_right/Cn</property>
+						</product>
+						<product>
+							<sin><property>T4T/aero/h-tail/rigging-rad</property></sin>
+							<property>T4T/coefficients/h-tail_right/Ca</property>
+						</product>
+					</sum>
+					<property>T4T/aero/h-tail_right/qbar-psf</property>
+					<value>-22.4965727709233</value>
+				</product>
+			</function>
+			<output>T4T/forces/tail/Z-lbs</output>
+		</fcs_function>
+
+		<!-- ####   Y vector   #### -->
+
+		<fcs_function name="T4T/forces/v-tail/y-lbs">
+			<function>
+				<product>
+					<property>T4T/coefficients/v-tail/Cs</property>
+					<property>T4T/aero/v-tail/qbar-psf</property>
+					<value>-16.0565251686059</value>
+				</product>
+			</function>
+			<output>T4T/forces/tail/Y-lbs</output>
+		</fcs_function>
+
+		<!-- ####   X vector   #### -->
+
+		<fcs_function>
+			<function>
+				<sum>
+					<product name="T4T/forces/h-tail_right/x-lbs">
+						<sum>
+							<product>
+								<sin><property>T4T/aero/h-tail/rigging-rad</property></sin>
+								<property>T4T/coefficients/h-tail_right/Cn</property>
+							</product>
+							<product>
+								<cos><property>T4T/aero/h-tail/rigging-rad</property></cos>
+								<property>T4T/coefficients/h-tail_right/Ca</property>
+							</product>
+						</sum>
+						<property>T4T/aero/h-tail_right/qbar-psf</property>
+						<value>-22.4965727709233</value>
+					</product>
+					<product name="T4T/forces/v-tail/x-lbs">
+						<property>T4T/coefficients/v-tail/Ca</property>
+						<property>T4T/aero/v-tail/qbar-psf</property>
+						<value>-16.0565251686059</value>
+					</product>
+				</sum>
+			</function>
+			<output>T4T/forces/tail/X-lbs</output>
+		</fcs_function>
+
+	</channel>
+
+	<channel name="fuselage_forces">
+
+		<fcs_function name="T4T/damage/fuselage_avg">
+			<function>
+				<avg>
+					<property>T4T/damage/fuselage_for</property>
+					<property>T4T/damage/fuselage_mid</property>
+					<property>T4T/damage/fuselage_aft</property>
+				</avg>
+			</function>
+		</fcs_function>
+
+		<!-- ####   X vector   #### -->
+
+		<fcs_function name="T4T/forces/fuselageU-lbs">
+			<function>
+				<product>
+					<property>T4T/damage/fuselage_avg</property>
+					<value>0.42</value>   <!-- drag coefficient -->
+					<property>T4T/aero/fuselage/qbarU-psf</property>   <!-- dynamic pressure -->
+					<value>154.171488898533</value>   <!-- front area -->
+				</product>
+			</function>
+			<output>external_reactions/fuselage/x</output>
+		</fcs_function>
+
+		<fcs_function name="external_reactions/pendulum/x">
+			<function>
+				<product>
+					<table>
+						<independentVar>propulsion/engine[1]/rotor/thrust-lbs</independentVar>
+						<tableData>
+						-7000			-1
+						0			0
+						</tableData>
+					</table>
+					<property>inertia/weight-lbs</property>
+					<sin>
+						<property>attitude/pitch-rad</property>
+					</sin>
+				</product>
+			</function>
+			<output>external_reactions/pendulum/x</output>
+		</fcs_function>
+
+		<fcs_function>
+			<function>
+				<product>
+					<table>
+						<independentVar>propulsion/engine[1]/rotor/thrust-lbs</independentVar>
+						<tableData>
+						-7000			1
+						0			0
+						</tableData>
+					</table>
+					<difference>
+						<property>inertia/cg-z-in</property>
+						<difference>
+							<property>external_reactions/rotor_main/location-z-in</property>
+							<property>inertia/cg-z-in</property>
+						</difference>
+					</difference>
+				</product>
+			</function>
+			<output>external_reactions/pendulum/location-z-in</output>
+		</fcs_function>
+
+		<!-- ####   Y vector   #### -->
+
+		<fcs_function name="T4T/forces/fuselageV-lbs">
+			<function>
+				<product>
+					<property>T4T/damage/fuselage_avg</property>
+					<value>0.95</value>   <!-- drag coefficient -->
+					<property>T4T/aero/fuselage/qbarV-psf</property>   <!-- dynamic pressure -->
+					<value>370.686470539607</value>   <!-- side area -->
+				</product>
+			</function>
+			<output>external_reactions/fuselage/y</output>
+		</fcs_function>
+
+		<fcs_function name="external_reactions/pendulum/y">
+			<function>
+				<product>
+					<table>
+						<independentVar>propulsion/engine[1]/rotor/thrust-lbs</independentVar>
+						<tableData>
+						-7000			1
+						0			0
+						</tableData>
+					</table>
+					<property>inertia/weight-lbs</property>
+					<sin>
+						<property>attitude/roll-rad</property>
+					</sin>
+				</product>
+			</function>
+			<output>external_reactions/pendulum/y</output>
+		</fcs_function>
+
+		<!-- ####   Z vector   #### -->
+
+		<fcs_function name="T4T/forces/fuselageW-lbs">
+			<function>
+				<product>
+					<property>T4T/damage/fuselage_avg</property>
+					<value>0.95</value>   <!-- drag coefficient -->
+					<property>T4T/aero/fuselage/qbarW-psf</property>  													<!-- dynamic pressure -->
+					<value>378.067283912345</value>													<!-- plan area -->
+				</product>
+			</function>
+			<output>external_reactions/fuselage/z</output>
+		</fcs_function>
+
+		<!-- ####   location-in  #### -->
+
+		<summer>
+			<input>inertia/cg-x-in</input>
+			<input></input>
+			<output>external_reactions/fuselage/location-x-in</output>
+			<output>external_reactions/pendulum/location-x-in</output>
+		</summer>
+		<summer>
+			<input>inertia/cg-y-in</input>
+			<input></input>
+			<output>external_reactions/fuselage/location-y-in</output>
+		</summer>
+		<summer>
+			<input>inertia/cg-z-in</input>
+			<input></input>
+			<output>external_reactions/fuselage/location-z-in</output>
+		</summer>
+
+	</channel>
+
+	<property type="double" value="44.6908333333333">propulsion/engine[2]/rotor/x_armature-ft</property>
+	<property type="double" value="-2.64583333333333">propulsion/engine[2]/rotor/y_armature-ft</property>
+	<property type="double" value="0">propulsion/engine[2]/rotor/z_armature-ft</property>
+
+	<property type="double" value="1">propulsion/engine[1]/rotor/flapping-factor</property>
+
+	<channel name="rotor_forces">
+
+		<!-- ####   Tail Rotor   #### -->
+
+		<fcs_function name="propulsion/engine[2]/rotor/thrust-lbs">
+			<function>
+				<quotient>
+					<product>
+						<property>external_reactions/rotor_tail/rudder_adjust</property>
+						<property>moments/n-prop-lbsft</property>
+					</product>
+					<property>propulsion/engine[2]/rotor/x_armature-ft</property>
+				</quotient>
+			</function>
+		</fcs_function>
+
+		<fcs_function name="propulsion/engine[2]/rotor/l-lbsft">
+			<function>
+				<product>
+					<property>propulsion/engine[2]/rotor/thrust-lbs</property>
+					<property>propulsion/engine[2]/rotor/z_armature-ft</property>
+				</product>
+			</function>
+		</fcs_function>
+
+		<fcs_function name="propulsion/engine[2]/rotor/n-lbsft">
+			<function>
+				<product>
+					<property>propulsion/engine[2]/rotor/thrust-lbs</property>
+					<property>propulsion/engine[2]/rotor/x_armature-ft</property>
+				</product>
+			</function>
+		</fcs_function>
+
+
+		<!-- ####   Main Rotor   #### -->
+
+		<fcs_function name="propulsion/engine[1]/rotor/thrust-lbs">
+			<function>
+				<product>
+					<property>propulsion/engine[1]/rotor/vortex_ring</property>
+					<property>propulsion/engine[1]/thrust-lbs</property>
+					<value>100000000</value>
+				</product>
+			</function>
+		</fcs_function>
+
+		<!-- Blade Flapping -->
+
+		<scheduled_gain>
+			<input>T4T/one</input>
+			<table>
+				<independentVar lookup="row">propulsion/engine[1]/rotor/thrust-lbs</independentVar>
+				<independentVar lookup="column">propulsion/engine[1]/engine-rpm</independentVar>
+				<tableData>
+									0			185	
+					0			-1.25			0.00	
+					5000		-1.25			0.01	
+					10000		-1.25			0.03	
+					15000		-1.25			0.05	
+					20000		-1.25			0.1	
+					25000		-1.25			0.25	
+					30000		-1.25			0.5	
+					35000		-1.25			0.9	
+					40000		-1.25			1.5	
+					45000		-1.25			2.5		
+				</tableData>
+			</table>
+			<output>propulsion/engine[1]/rotor/flex-deg</output>
+		</scheduled_gain>
+
+		<!-- p & q Flapping -->
+
+		<scheduled_gain name="propulsion/engine[1]/rotor/q-rad">
+			<input>propulsion/engine[1]/rotor/flapping-factor</input>
+			<table>
+				<independentVar>external_reactions/rotor_main/cyclic_pitch-in</independentVar>
+				<tableData>
+				-100			0.2618										<!-- 15 degs -->
+				100			-0.0873										<!-- 5 degs -->
+				</tableData>
+			</table>
+		</scheduled_gain>
+
+		<scheduled_gain name="propulsion/engine[1]/rotor/p-rad">
+			<input>propulsion/engine[1]/rotor/flapping-factor</input>
+			<table>
+				<independentVar>external_reactions/rotor_main/cyclic_roll-in</independentVar>
+				<tableData>
+					-100			0.2618									<!-- 15 degs -->
+					100			-0.2618									<!-- 15 degs -->
+				</tableData>
+			</table>
+		</scheduled_gain>
+
+		<!-- p & q Damping -->
+
+		<pure_gain>
+			<input>velocities/q-rad_sec</input>
+			<gain>propulsion/engine[1]/rotor/damping-factor</gain>														<!-- arbitary value in inches -->
+			<output>propulsion/engine[1]/rotor/damping_q-rad_sec-in</output>
+		</pure_gain>
+
+		<pure_gain>
+			<input>velocities/p-rad_sec</input>
+			<gain>propulsion/engine[1]/rotor/damping-factor</gain>														<!-- arbitary value in inches -->
+			<output>propulsion/engine[1]/rotor/damping_p-rad_sec-in</output>
+		</pure_gain>
+
+
+
+<!--
+		<summer>
+			<input>propulsion/engine[1]/pitch-angle-rad</input>
+			<bias>1.51843644923507</bias>
+			<output>propulsion/engine[1]/pitch-angle-rad</output>
+		</summer>
+-->
+
+		<fcs_function>
+			<function>
+				<product>
+					<property>-propulsion/engine[1]/rotor/thrust-lbs</property>
+					<cos><property>propulsion/engine[1]/rotor/q-rad</property></cos>
+				</product>
+			</function>
+			<output>external_reactions/rotor_main/x2</output>
+		</fcs_function>
+
+		<fcs_function>
+			<function>
+				<product>
+					<property>propulsion/engine[1]/rotor/thrust-lbs</property>
+					<sin><property>propulsion/engine[1]/rotor/p-rad</property></sin>
+				</product>
+			</function>
+			<output>external_reactions/rotor_main/y2</output>
+		</fcs_function>
+
+		<fcs_function>
+			<function>
+				<product>
+					<property>propulsion/engine[1]/rotor/thrust-lbs</property>
+					<sin><property>propulsion/engine[1]/pitch-angle-rad</property></sin>
+					<cos><property>propulsion/engine[1]/rotor/p-rad</property></cos>
+				</product>
+			</function>
+			<output>external_reactions/rotor_main/z2</output>
+		</fcs_function>
+
+		<!-- Ground Effect -->
+
+		<fcs_function name="propulsion/engine[1]/rotor/vertical-lbs">
+			<function>
+				<product>
+					<cos><property>attitude/pitch-rad</property></cos>
+					<cos><property>attitude/roll-rad</property></cos>
+					<property>external_reactions/rotor_main/z</property>
+				</product>
+			</function>
+		</fcs_function>
+
+		<scheduled_gain name="propulsion/engine[1]/rotor/ground_effect-lbs">
+			<!-- 	http://www.copters.com/aero/ground_effect.html											-->
+			<input>propulsion/engine[1]/rotor/vertical-lbs</input>
+			<table>
+				<independentVar lookup="row">position/h-agl-ft</independentVar>
+				<independentVar lookup="column">velocities/vg-fps</independentVar>
+				<tableData>
+								0.000		8.44
+					2.74		0.500		0.00		<!-- 1/8 -->
+					5.49		0.150		0.00		<!-- 1/4 -->
+					10.97		0.070		0.00		<!-- 1/2 -->
+					16.46		0.025		0.00		<!-- 3/4 -->
+					21.95		0.020		0.00		<!-- 1 -->
+					27.43		0.005		0.00		<!-- 1 1/4 -->
+					32.92		0.000		0.00		<!-- 1 1/2 -->
+				</tableData>
+			</table>
+			<output>external_reactions/ground_effect/z</output>
+		</scheduled_gain>
+
+	</channel>
+
+</system>

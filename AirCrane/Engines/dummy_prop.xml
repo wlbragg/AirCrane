@@ -1,0 +1,101 @@
+<?xml version="1.0"?>
+
+
+<propeller name="dummy prop">
+
+	<!-- 
+	<ixx> is the rotational moment of inertia for the propeller/engine combination.
+	Small numbers accelerate faster but bounce around more. Large numbers
+	accelerate slower and regulate smoother.
+	-->
+	
+	<ixx unit="SLUG*FT2">0</ixx>
+	
+	<!-- 
+	Prop Characteristics
+	-->
+	
+	<diameter unit="IN">137.8</diameter>
+	<numblades>3</numblades>
+	<constspeed>1</constspeed>
+	
+	<!-- 
+	<gearratio> is the gearing between the prop and the engine,
+	Normally it's defined from the engine to the propeller and is a value below zero
+	9/16 = 0.5265
+	To specify from the propeller to the engine use 1/X = gearration = 1/0.5265 = 1.78
+	-->
+	
+	<gearratio>0</gearratio>
+	
+	<!-- 
+	<minpitch> is the Prop min AoA setting
+	<maxpitch> is the Prop max AoA setting
+	-->
+	<minpitch>0</minpitch>
+	<maxpitch>0</maxpitch>
+	
+	<!--
+	Typical idle = 800rmp
+	Set the minrpm of the propeller to the idle rpm*engine to prop gearratio.
+		800/1.5 = 450rpm
+	This means the propeller will not try to slow the engine below that point.
+	-->
+	
+	<minrpm>0</minrpm>
+
+	<!--	
+	Set maxrpm so as to avoid the tip going supersonic.
+	We KNOW that the engine can be run at 2700rpm for take-off
+
+	2700/1.5 = 1800 prop rmp
+	
+	See PROP.xls for radius of prop required to be below supersonic helical tip speed
+	
+	<maxrpm> is the Prop Govenors max setting
+	-->
+
+	<maxrpm>0</maxrpm>
+	
+	<!-- 
+	<ct_factor> is the props co-efficent of thrust 'tuning' factor
+	<cp_factor> is the props co-efficent of power 'tuning' factor
+	-->
+	<ct_factor>0</ct_factor>
+	<cp_factor>0</cp_factor>
+
+	<p_factor>0</p_factor>
+
+ <!-- thrust coefficient as a function of advance ratio and blade angle -->
+  <table name="C_THRUST" type="internal">
+      <tableData>
+			0	0
+			1	0
+      </tableData>
+  </table>
+
+ <!-- power coefficient as a function of advance ratio and blade angle -->
+  <table name="C_POWER" type="internal">
+     <tableData>
+			0	0
+			1	0
+     </tableData>
+  </table>
+
+	<!-- thrust effects of helical tip Mach -->
+	<table name="CT_MACH" type="internal">
+		<tableData>
+			0.85   1.0
+			1.05   0.8
+		</tableData>
+	</table>
+
+	<!-- power-required effects of helical tip Mach -->
+	<table name="CP_MACH" type="internal">
+		<tableData>
+			0.85   1.0
+			1.05   1.8
+		</tableData>
+	</table>
+
+</propeller>

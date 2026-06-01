@@ -2,117 +2,97 @@
 
 <PropertyList>
 
-  <path>fuel.ac</path>
+	<path>fuel.ac</path>
 
-  <animation>
-    <object-name>fond</object-name>
-    <object-name>face</object-name>
-    <object-name>needle</object-name>
-	<object-name>bug</object-name>
-	<object-name>knob</object-name>
+	<effect>
+		<inherits-from>Aircraft/AirCrane/Models/Effects/Interior/cockpit-interior</inherits-from>
+		<object-name>fond</object-name>
+		<object-name>face</object-name>
+		<object-name>needle</object-name>
+		<object-name>bug</object-name>
+		<object-name>knob</object-name>
+	</effect>
 
-    <object-name>vitre</object-name>
-  </animation>
+	<effect>
+		<inherits-from>Aircraft/AirCrane/Models/Effects/Interior/interior-glass-reflection-panel-front</inherits-from>
+		<object-name>vitre</object-name>
+	</effect>
 
-  <effect>
-    <inherits-from>Aircraft/AirCrane/Models/Effects/Interior/cockpit-interior</inherits-from>
-    <object-name>fond</object-name>
-    <object-name>face</object-name>
-    <object-name>needle</object-name>
-	<object-name>bug</object-name>
-	<object-name>knob</object-name>
-  </effect>
+	<animation>
+		<type>material</type>
+		<object-name>face</object-name>
+		<object-name>needle</object-name>
+		<object-name>bug</object-name>
+		<condition>
+			<property>/controls/electric/cab_power</property>
+		</condition>
+		<emission>
+		<factor-prop>controls/lighting/luminosite-lights</factor-prop>
+			<red>0.50</red>
+			<green>0.40</green>
+			<blue>0.30</blue>
+		</emission>
+	</animation>
 
-  <effect>
-    <inherits-from>Aircraft/AirCrane/Models/Effects/Interior/interior-glass-reflection-panel-front</inherits-from>
-    <object-name>vitre</object-name>
-  </effect>
+	<animation>
+		<type>rotate</type>
+		<object-name>needle</object-name>
+		<property>/controls/electric/tank_fwd-lbs</property>		
+		<interpolation>
+			<entry><ind>-99</ind><dep>10</dep></entry>			
+			<entry><ind>0</ind><dep>0</dep></entry>
+			<entry><ind>3000</ind><dep>-282.5</dep></entry>
+		</interpolation>
+		<axis>
+			<x>1</x>
+		</axis>
+	</animation>
+  
+	<animation>
+		<type>knob</type>
+		<object-name>knob</object-name>
+		<property>/fdm/jsbsim/propulsion/tank_fwd/fuel-bug</property>
+		<factor>0.01</factor>
+		<center>
+			<y-m>0.0264</y-m>
+			<z-m>-0.02804</z-m>
+		</center>
+		<axis>
+			<x>1</x>
+		</axis>
+		<action>
+			<binding>
+				<command>property-adjust</command>
+				<property>/fdm/jsbsim/propulsion/tank_fwd/fuel-bug</property>
+				<factor>100</factor>
+				<min>0</min>
+				<max>3300</max>
+				<wrap>false</wrap>
+			</binding>
+		</action>
+		<hovered>
+			<binding>
+				<command>set-tooltip</command>
+				<tooltip-id>alt-setting</tooltip-id>
+				<label>Refueling @: %1.1f</label>
+				<property>/fdm/jsbsim/propulsion/tank_fwd/fuel-bug</property>
+			</binding>
+		</hovered>
+	</animation>
 
-  <animation>
-    <type>material</type>
-    <object-name>face</object-name>
-    <object-name>needle</object-name>
-	<object-name>bug</object-name>
-    <condition>
-      <property>systems/electrical/outputs/cabin-power</property>
-    </condition>
-    <emission>
-      <factor-prop>controls/lighting/luminosite-lights</factor-prop>
-      <red>   0.50 </red>
-      <green> 0.40 </green>
-      <blue>  0.30 </blue>
-    </emission>
-  </animation>
+	<animation>
+		<type>rotate</type>
+		<object-name>bug</object-name>
+		<property>/fdm/jsbsim/propulsion/tank_fwd/fuel-bug</property>
+		<interpolation>
+			<entry><ind>0</ind><dep>0</dep></entry>
+			<entry><ind>3300</ind><dep>-310</dep></entry>
+		</interpolation>
+		<axis>
+			<x>1</x>
+		</axis>
+	</animation>
 
-  <animation>
-    <type>rotate</type>
-    <object-name>needle</object-name>
-    <property>consumables/fuel/fwd/level-lbs</property>
-    <interpolation>
-      <entry><ind> -1  		</ind><dep>   1</dep></entry>
-      <entry><ind>  0  		</ind><dep>   0</dep></entry>
-      <entry><ind>  1650	</ind><dep>-150</dep></entry>
-	  <entry><ind>  3300	</ind><dep>-310</dep></entry>
-      <entry><ind>  3301  	</ind><dep>-311</dep></entry>
-    </interpolation>
-    <axis>
-      <x> 1 </x>
-      <y> 0 </y>
-      <z> 0 </z>
-    </axis>
-  </animation>
 
-  <animation>
-    <type>rotate</type>
-    <object-name>bug</object-name>
-    <property>consumables/fuel/fwd/fuel-limit-bug</property>
-    <interpolation>
-      <entry><ind> -1  		</ind><dep>   1</dep></entry>
-      <entry><ind>  0  		</ind><dep>   0</dep></entry>
-      <entry><ind>  1.515	</ind><dep>-150</dep></entry>
-	  <entry><ind>  3.3		</ind><dep>-310</dep></entry>
-      <entry><ind>  3.4  	</ind><dep>-311</dep></entry>
-    </interpolation>
-    <axis>
-      <x> 1 </x>
-      <y> 0 </y>
-      <z> 0 </z>
-    </axis>
-  </animation>
-
-  <animation>
-    <type>knob</type>
-    <object-name>knob</object-name>
-    <property>/consumables/fuel/fwd/fuel-limit-bug</property>
-    <factor>.01</factor>
-    <center>
-      <x-m>  0.00991 </x-m>
-      <y-m>  0.02788 </y-m>
-      <z-m> -0.02804 </z-m>
-    </center>
-    <axis>
-      <x> 1 </x>
-      <y> 0 </y>
-      <z> 0 </z>
-    </axis>
-    <action>
-      <binding>
-        <command>property-adjust</command>
-        <property>/consumables/fuel/fwd/fuel-limit-bug</property>
-        <factor>0.01</factor>
-        <min>0</min>
-        <max>3.3</max>
-        <wrap>false</wrap>
-      </binding>
-    </action>
-    <hovered>
-      <binding>
-        <command>set-tooltip</command>
-        <tooltip-id>alt-setting</tooltip-id>
-        <label>Pressure Ratio: %1.1f</label>
-        <property>/consumables/fuel/fwd/fuel-limit-bug</property>
-      </binding>
-    </hovered>
-  </animation>
 
 </PropertyList>

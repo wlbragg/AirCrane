@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+
+	<path>hydr1st.ac</path>
+
+	<animation>
+		<object-name>fond</object-name>
+		<object-name>face</object-name>
+		<object-name>needle</object-name>
+		<object-name>vitre</object-name>
+	</animation>
+
+	<effect>
+		<inherits-from>/Aircraft/AirCrane/Models/Effects/Interior/cockpit-interior</inherits-from>
+		<object-name>fond</object-name>
+		<object-name>face</object-name>
+		<object-name>needle</object-name>
+	</effect>
+
+	<effect>
+		<inherits-from>/Aircraft/AirCrane/Models/Effects/Interior/interior-glass-reflection-panel-front</inherits-from>
+		<object-name>vitre</object-name>
+	</effect>
+
+	<animation>
+		<type>material</type>
+		<object-name>face</object-name>
+		<object-name>needle</object-name>
+		<condition>
+			<property>/controls/electric/cab_power</property>
+		</condition>
+		<emission>
+		<factor-prop>/controls/lighting/luminosite-lights</factor-prop>
+			<red>0.50</red>
+			<green>0.40</green>
+			<blue>0.30</blue>
+		</emission>
+	</animation>
+
+	<animation>
+		<type>rotate</type>
+		<object-name>needle</object-name>
+		<property>/controls/electric/hyd_1st_stage-psi</property>
+		<interpolation>
+			<entry><ind>-99</ind><dep>10</dep></entry>		
+			<entry><ind>0</ind><dep>0</dep></entry>
+			<entry><ind>2.6</ind><dep>-165</dep></entry>
+			<entry><ind>3</ind><dep>-190</dep></entry>
+			<entry><ind>3.3</ind><dep>-215</dep></entry>			
+			<entry><ind>5</ind><dep>-340</dep></entry>
+		</interpolation>
+		<axis>
+			<x>1</x>
+		</axis>
+	</animation>
+
+</PropertyList>

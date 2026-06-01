@@ -1,0 +1,98 @@
+<?xml version="1.0"?>
+
+
+ <!--   https://www.digitaldutch.com/atmoscalc/    -->
+
+<system name="Standard Day">
+
+	<channel name="setup">
+	
+		<summer>
+			<input></input>
+			<bias>29.94</bias>
+			<output>/environment/config/boundary/entry/pressure-sea-level-inhg</output>
+			<output>/environment/config/aloft/entry/pressure-sea-level-inhg</output>			
+		</summer>
+		<summer>
+			<input></input>
+			<bias>15</bias>
+			<output>/environment/config/boundary/entry/temperature-sea-level-degc</output>
+			<output>/environment/config/aloft/entry/temperature-sea-level-degc</output>
+		</summer>
+
+	
+		<summer>
+			<input></input>
+			<bias>15</bias>
+			<output>/environment/config/boundary/entry/temperature-degc</output>
+		</summer>
+		<summer>
+			<input></input>
+			<bias>4.7</bias>
+			<output>/environment/config/boundary/entry/dewpoint-degc</output>
+		</summer>
+		<summer>
+			<input></input>
+			<bias>14</bias>
+			<output>/environment/config/boundary/entry[1]/temperature-degc</output>
+		</summer>
+		<summer>
+			<input></input>
+			<bias>3.7</bias>
+			<output>/environment/config/boundary/entry[1]/dewpoint-degc</output>
+		</summer>
+
+ 		<summer>
+			<input></input>
+			<bias>5.094</bias>
+			<output>/environment/config/aloft/entry/temperature-degc</output>
+		</summer>
+		<summer>
+			<input></input>
+			<bias>-4.5</bias>
+			<output>/environment/config/aloft/entry/dewpoint-degc</output>
+		</summer>
+		<summer>
+			<input></input>
+			<bias>-4.812</bias>
+			<output>/environment/config/aloft/entry[1]/temperature-degc</output>
+		</summer>
+		<summer>
+			<input></input>
+			<bias>-13.8</bias>
+			<output>/environment/config/aloft/entry[1]/dewpoint-degc</output>
+		</summer>
+		<summer>
+			<input></input>
+			<bias>-20.662</bias>
+			<output>/environment/config/aloft/entry[2]/temperature-degc</output>
+		</summer>
+		<summer>
+			<input></input>
+			<bias>-28.4</bias>
+			<output>/environment/config/aloft/entry[2]/dewpoint-degc</output>
+		</summer>
+		<summer>
+			<input></input>
+			<bias>-32.549</bias>
+			<output>/environment/config/aloft/entry[3]/temperature-degc</output>
+		</summer>
+		<summer>
+			<input></input>
+			<bias>-39.4</bias>
+			<output>/environment/config/aloft/entry[3]/dewpoint-degc</output>
+		</summer>		
+		<summer>
+			<input></input>
+			<bias>-44.436</bias>
+			<output>/environment/config/aloft/entry[4]/temperature-degc</output>
+		</summer>
+		<summer>
+			<input></input>
+			<bias>-50.5</bias>
+			<output>/environment/config/aloft/entry[4]/dewpoint-degc</output>
+		</summer>		
+		
+	</channel>
+
+</system>

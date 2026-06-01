@@ -1,0 +1,88 @@
+<?xml version="1.0"?>
+
+<!--
+**************************************************************************
+
+Copyright (c) 2026 Simon 'bomber' Morley
+simonbomber64 at googlemail.com
+
+**************************************************************************
+-->
+
+<propeller name="6 blade rotor for Sykorsky Skycrane" version="1.01">
+
+	<ixx unit="SLUG*FT2">42889</ixx>
+
+	<!--
+	Prop Characteristics
+	-->
+
+	<diameter unit="IN">864</diameter>
+	<numblades>6</numblades>
+	<constspeed>0</constspeed>
+	<gearratio>1</gearratio>
+
+	<minpitch>-5</minpitch>					<!-- is the Prop min AoA setting -->
+	<maxpitch>8.645</maxpitch>					<!-- is the Prop max AoA setting -->
+
+	<minrpm>183</minrpm>
+	<maxrpm>185</maxrpm>					<!-- is the Prop Govenors max setting -->
+
+<!-- 	<ct_factor>0.00000001</ct_factor> -->					<!-- is the props co-efficent of thrust 'tuning' factor -->
+<!-- 	<cp_factor>1</cp_factor> -->					<!-- is the props co-efficent of power 'tuning' factor -->
+	
+	<ct_factor>0.00000001</ct_factor>
+	<cp_factor>1</cp_factor>
+
+	<table name="C_THRUST" type="internal">
+		<tableData>
+					-13			-6.5		0			6.5			13
+			-0.50	0.018924	0.025726	0.087000	0.160000	0.212603
+			-0.40	0.004580	0.004834	0.072000	0.140379	0.189849
+			-0.30	0.000645	-0.002118	0.058846	0.118532	0.169296
+			-0.20	0.000168	-0.003275	0.043707	0.100657	0.148741
+			-0.10	0.000091	-0.004400	0.030261	0.082598	0.133167
+			0.00	0.000000	-0.005700	0.016000	0.065000	0.118519
+			0.10	-0.000091	-0.007000	0.001739	0.047402	0.103871
+			0.20	-0.000168	-0.008125	-0.011707	0.029343	0.088297
+			0.30	-0.000645	-0.009282	-0.026846	0.011468	0.067742
+			0.40	-0.004580	-0.016234	-0.040000	-0.010379	0.047189
+			0.50	-0.018924	-0.037126	-0.055000	-0.030000	0.024435
+		</tableData>
+	</table>
+
+	<table name="C_POWER" type="internal">
+		<tableData>
+					-13			-6.5		0			6.5			13
+			-0.50	0.002960	0.002272	-0.016000	-0.008000	0.022429
+			-0.40	0.000403	0.000845	-0.007000	0.002208	0.031818
+			-0.30	0.000028	0.000675	-0.000373	0.009597	0.038369
+			-0.20	0.000015	0.000650	0.002605	0.014180	0.043723
+			-0.10	0.000006	0.000635	0.004501	0.017498	0.045245
+			0.00	0.000000	0.000625	0.006000	0.018549	0.046000
+			0.10	0.000006	0.000635	0.004501	0.017498	0.045245
+			0.20	0.000015	0.000650	0.002605	0.014180	0.043723
+			0.30	0.000028	0.000675	-0.000373	0.009597	0.038369
+			0.40	0.000403	0.000845	-0.007000	0.002208	0.031818
+			0.50	0.002960	0.002272	-0.016000	-0.008000	0.022429
+		</tableData>
+	</table>
+	
+
+	<!-- thrust effects of helical tip Mach -->
+	<table name="CT_MACH" type="internal">
+		<tableData>
+			0.85   1.0
+			1.05   0.8
+		</tableData>
+	</table>
+
+	<!-- power-required effects of helical tip Mach -->
+	<table name="CP_MACH" type="internal">
+		<tableData>
+			0.85   1.0
+			1.05   1.8
+		</tableData>
+	</table>
+
+</propeller>

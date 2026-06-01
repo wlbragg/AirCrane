@@ -29,7 +29,7 @@
     <object-name>face</object-name>
     <object-name>needle</object-name>
     <condition>
-      <property>systems/electrical/outputs/cabin-power</property>
+			<property>/controls/electric/cab_power</property>
     </condition>
     <emission>
       <factor-prop>controls/lighting/luminosite-lights</factor-prop>
@@ -39,28 +39,18 @@
     </emission>
   </animation>
 
-  <animation>
-    <type>rotate</type>
-    <object-name>needle</object-name>
-    <property>consumables/fuel/aft/flow</property>
-    <interpolation>
-      <entry><ind> -999 </ind><dep>    1 </dep></entry>
-      <entry><ind>    0 </ind><dep>    0 </dep></entry>
-      <entry><ind>    5 </ind><dep>  -39 </dep></entry>
-      <entry><ind>   10 </ind><dep>  -77 </dep></entry>
-      <entry><ind>   15 </ind><dep> -116 </dep></entry>
-      <entry><ind>   20 </ind><dep> -153 </dep></entry>
-      <entry><ind>   25 </ind><dep> -192 </dep></entry>
-      <entry><ind>   30 </ind><dep> -230 </dep></entry>
-      <entry><ind>   35 </ind><dep> -269 </dep></entry>
-      <entry><ind>   40 </ind><dep> -309 </dep></entry>
-      <entry><ind>  999 </ind><dep> -310 </dep></entry>
-    </interpolation>
-    <axis>
-      <x> 1 </x>
-      <y> 0 </y>
-      <z> 0 </z>
-    </axis>
-  </animation>
+	<animation>
+		<type>rotate</type>
+		<object-name>needle</object-name>
+		<property>/controls/electric/turbine_2-flow-ppm</property>
+		<interpolation>
+			<entry><ind>-99</ind><dep>10</dep></entry>			
+			<entry><ind>0</ind><dep>0</dep></entry>
+			<entry><ind>40</ind><dep>-310</dep></entry>
+		</interpolation>
+		<axis>
+			<x>1</x>
+		</axis>
+	</animation>
 
 </PropertyList>

@@ -1,0 +1,209 @@
+<?xml version="1.0"?>
+
+<!--
+************************************************************************
+T4T-S-64 simulation config. This files ties together all the components
+used by FGFS to represent the Sikorsky S-64 Skycrane Helicopter. Components include the flight data
+model, instrument panel, and external 3D model.
+
+Copyright (c) 2026 Simon 'bomber' Morley
+simonbomber64 at googlemail.com
+************************************************************************
+-->
+
+<PropertyList include="Systems/aircrane-base.xml">
+
+	<sim include="help.xml">
+		<description>Sikosky S-64e 'Skycrane' (T4T JSBSim)</description>
+		<author>Simon'bomber'Morley(FDM), BARANGER Emmanuel (3D), Wayne Bragg (3D)</author>
+
+		<status>early T4T Trial</status>
+		<rating>
+			<FDM type="int">     0 </FDM>
+			<systems type="int"> 0 </systems>
+			<cockpit type="int"> 0 </cockpit>
+			<model type="int">   0 </model>
+		</rating>
+
+		<flight-model>jsb</flight-model>
+		<aero>Flight-Damage-Model</aero>
+		
+		<!-- Splash screens. One is randomly chosen when FlightGear starts -->
+		<previews>
+			<preview>
+				<type>cockpit</type>
+				<path>Previews/aircrane-preview1.jpg</path>
+				<splash type="bool">true</splash>
+			</preview>
+			<preview>
+				<type>exterior</type>
+				<path>Previews/aircrane-preview2.jpg</path>
+				<splash type="bool">true</splash>
+			</preview>
+			<preview>
+				<type>exterior</type>
+				<path>Previews/aircrane-preview3.jpg</path>
+				<splash type="bool">true</splash>
+			</preview>
+			<preview>
+				<type>cockpit</type>
+				<path>Previews/aircrane-preview4.jpg</path>
+				<splash type="bool">true</splash>
+			</preview>
+			<preview>
+				<type>exterior</type>
+				<path>Previews/aircrane-preview5.jpg</path>
+				<splash type="bool">true</splash>
+			</preview>
+			<preview>
+				<type>exterior</type>
+				<path>Previews/aircrane-preview6.jpg</path>
+				<splash type="bool">true</splash>
+			</preview>
+			<preview>
+				<type>cockpit</type>
+				<path>Previews/aircrane-preview7.jpg</path>
+				<splash type="bool">true</splash>
+			</preview>
+			<preview>
+				<type>exterior</type>
+				<path>Previews/aircrane-preview8.jpg</path>
+				<splash type="bool">true</splash>
+			</preview>
+			<preview>
+				<type>exterior</type>
+				<path>Previews/aircrane-preview9.jpg</path>
+				<splash type="bool">true</splash>
+			</preview>
+			<preview>
+				<type>cockpit</type>
+				<path>Previews/aircrane-preview10.jpg</path>
+				<splash type="bool">true</splash>
+			</preview>
+			<preview>
+				<type>exterior</type>
+				<path>Previews/aircrane-preview11.jpg</path>
+				<splash type="bool">true</splash>
+			</preview>
+			<preview>
+				<type>exterior</type>
+				<path>Previews/aircrane-preview12.jpg</path>
+				<splash type="bool">true</splash>
+			</preview>
+			<preview>
+				<type>cockpit</type>
+				<path>Previews/aircrane-preview13.jpg</path>
+				<splash type="bool">true</splash>
+			</preview>
+			<preview>
+				<type>exterior</type>
+				<path>Previews/aircrane-preview14.jpg</path>
+				<splash type="bool">true</splash>
+			</preview>
+			<preview>
+				<type>exterior</type>
+				<path>Previews/aircrane-preview15.jpg</path>
+				<splash type="bool">true</splash>
+			</preview>
+		</previews>
+		
+		<tags>
+			<tag>Sikorsky</tag>
+			<tag>helicopter</tag>
+			<tag>2-engine</tag>
+			<tag>1960s</tag>
+			<tag>1970s</tag>
+			<tag>1980s</tag>
+			<tag>1990s</tag>
+			<tag>2000s</tag>
+			<tag>2010s</tag>
+			<tag>2020s</tag>
+			<tag>compositor</tag>
+		</tags>
+
+		<model>
+			<variant type="int">0</variant>
+		</model>
+
+<!-- 		<hud>
+			<path n="1">Aircraft/AH-1/Hud/Scorpion-hud.xml</path>
+			<visibility n="1">true</visibility>
+
+			<palette>
+				<color n="0">
+					<alpha type="float">0.85</alpha>
+					<antialiased type="bool">true</antialiased>
+					<brightness type="float">0.85</brightness>
+					<transparent type="bool">true</transparent>
+					<red type="float">0.38</red>
+					<green type="float">1.0</green>
+					<blue type="float">0.22</blue>
+				</color>
+				<color n="1">
+					<alpha type="float">0.85</alpha>
+					<antialiased type="bool">true</antialiased>
+					<brightness type="float">0.85</brightness>
+					<transparent type="bool">true</transparent>
+					<red type="float">1.0</red>
+					<green type="float">0.2</green>
+					<blue type="float">0.0</blue>
+				</color>
+			</palette>
+			<clipping>
+				<left type="double">-70</left>
+				<right type="double">65</right>
+				<top type="double">45</top>
+				<bottom type="double">-110</bottom>
+			</clipping>
+
+		</hud> -->
+
+	</sim>
+
+<!--  	<input include="keyboard-T4T.xml"> -->
+
+ 	<input>
+		<joysticks>	
+			<js>
+				<axis>
+					<desc type="string">Aileron</desc>
+					<binding>
+						<command type="string">property-scale</command>
+						<property type="string">/fdm/jsbsim/fcs/cyclic_roll-cmd-pos</property>
+						<factor type="double">1</factor>
+						<offset type="double">0</offset>
+						<power type="double">1</power>
+					</binding>
+				</axis>
+				<axis n="1">
+					<desc type="string">Elevator</desc>
+					<binding>
+						<command type="string">property-scale</command>
+						<property type="string">/fdm/jsbsim/fcs/cyclic_pitch-cmd-pos</property>
+						<factor type="double">-1</factor>
+						<offset type="double">0</offset>
+						<power type="double">1</power>
+					</binding>
+				</axis>
+				<axis n="2">
+					<desc>Throttle</desc>
+					<binding>
+						<command>property-scale</command>
+						<property>/fdm/jsbsim/fcs/collective-cmd-pos</property>
+					</binding>
+				</axis>
+				<axis>
+					<desc>Rudder</desc>
+					<binding>
+						<command>property-scale</command>
+						<property>/fdm/jsbsim/fcs/rudder-cmd-pos</property>
+						<factor type="double">-1</factor>
+						<offset type="double">0</offset>
+						<power type="double">1</power>
+					</binding>
+				</axis>		
+			</js>
+		</joysticks>		
+	</input>	
+	
+</PropertyList>

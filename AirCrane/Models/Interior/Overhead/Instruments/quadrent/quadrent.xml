@@ -29,485 +29,393 @@
     <object-name>n1leverlplastic</object-name>
     <object-name>n1leverrplastic</object-name>
   </effect>
+  
+<!-- TURBINE No.1 -->
 
-  <animation>
-    <type>select</type>
-    <object-name>redoffl</object-name>
-    <condition>
-      <equals>
-        <property>/sim/model/lightmap/eng1-underspeed/factor</property>
-        <value>0</value>
-      </equals>
-    </condition>
-  </animation>
+	<animation>
+		<type>select</type>
+		<object-name>redoffl</object-name>
+		<condition>
+			<greater-than>
+				<property>fdm/jsbsim/propulsion/engine[3]/n1</property>
+				<value>60</value>
+			</greater-than>
+		</condition>
+	</animation>
 
-  <animation>
-    <type>select</type>
-    <object-name>redonl</object-name>
-    <condition>
-      <equals>
-        <property>sim/model/lightmap/eng1-underspeed/factor</property>
-        <value>1</value>
-      </equals>
-    </condition>
-  </animation>
+	<animation>
+		<type>select</type>
+		<object-name>redonl</object-name>
+		<condition>
+			<less-than>
+				<property>fdm/jsbsim/propulsion/engine[3]/n1</property>
+				<value>60</value>
+			</less-than>
+		</condition>
+	</animation>
 
-  <animation>
-    <type>select</type>
-    <object-name>redoffr</object-name>
-    <condition>
-      <equals>
-        <property>sim/model/lightmap/eng2-underspeed/factor</property>
-        <value>0</value>
-      </equals>
-    </condition>
-  </animation>
+	<animation>
+		<type>material</type>
+		<object-name>redonl</object-name>
+		<condition>
+			<less-than>
+				<property>fdm/jsbsim/propulsion/engine[3]/n1</property>
+				<value>60</value>
+			</less-than>
+		</condition>	
+		<emission>
+			<red>0.7</red>
+			<green>0.5</green>
+			<blue>0.5</blue>
+		</emission>
+	</animation>
 
-  <animation>
-    <type>select</type>
-    <object-name>redonr</object-name>
-    <condition>
-      <equals>
-        <property>sim/model/lightmap/eng2-underspeed/factor</property>
-        <value>1</value>
-      </equals>
-    </condition>
-  </animation>
+	<model>
+		<name>low-turbine-pwr-quad-eng1</name>
+		<path>Aircraft/AirCrane/Models/Effects/Interior/procedural_light_indicator_red.xml</path>
+		<offsets>
+			<x-m>0.025062</x-m>
+			<y-m>-0.147786</y-m>
+			<z-m>0.057731</z-m>
+		</offsets>
+		<condition>
+			<less-than>
+				<property>fdm/jsbsim/propulsion/engine[3]/n1</property>
+				<value>60</value>
+			</less-than>
+		</condition>
+	</model>
 
-  <animation>
-    <type>material</type>
-    <object-name>redonl</object-name>
-    <emission>
-      <factor-prop>sim/model/lightmap/eng1-underspeed/factor</factor-prop>
-      <red>   0.7 </red>
-      <green> 0.5 </green>
-      <blue>  0.5 </blue>
-    </emission>
-  </animation>
+  	<animation>
+		<type>pick</type>
+		<object-name>fuelshutoffl</object-name>
+		<visible>true</visible>
+		<action>
+			<button>0</button>
+			<repeatable>false</repeatable>
+			<binding>
+				<command>property-toggle</command>
+				<property>controls/engines/engine[3]/cutoff</property>
+			</binding>
+			<binding>
+				<command>nasal</command>
+				<script>aircrane.click("avionics")</script>
+			</binding>
+		</action>
+	</animation>
+	<animation>
+		<type>rotate</type>
+		<object-name>fuelshutoffl</object-name>
+		<property>controls/engines/engine[3]/cutoff</property>
+		<factor>-50</factor>
+		<offset-deg>60</offset-deg>
+		<center>
+			<x-m>0.01717</x-m>
+			<y-m>0.00000</y-m>
+			<z-m>-0.01691</z-m>
+		</center>
+		<axis>
+			<y>1</y>
+		</axis>
+	</animation>  
 
-  <animation>
-    <type>material</type>
-    <object-name>redonr</object-name>
-    <emission>
-      <factor-prop>sim/model/lightmap/eng2-underspeed/factor</factor-prop>
-      <red>   0.7 </red>
-      <green> 0.5 </green>
-      <blue>  0.5 </blue>
-    </emission>
-  </animation>
+	<animation>
+		<type>knob</type>
+		<object-name>n1leverl</object-name>
+		<object-name>n1leverlplastic</object-name>
+		<condition>
+			<equals>
+				<property>/controls/engines/engine[3]/indent</property>
+				<value>1</value>
+			</equals>
+		</condition>		
+		<property>/fdm/jsbsim/propulsion/engine[3]/governor/n1-lever</property>
+		<factor>40</factor>
+		<center>
+			<x-m>-0.03</x-m>
+			<z-m>-0.01691</z-m>
+		</center>
+		<axis>
+			<y>1</y>
+		</axis>
+		<action>
+			<repeatable>false</repeatable>
+			<binding>
+				<command>property-adjust</command>
+				<property>/fdm/jsbsim/propulsion/engine[3]/governor/n1-lever</property>
+				<factor>0.02</factor>
+				<min>0</min>
+				<max>1</max>
+				<wrap>0</wrap>
+			</binding>
+		</action>
+		<hovered>
+			<binding>
+				<command>set-tooltip</command>
+				<tooltip-id>eng1-n1</tooltip-id>
+				<label>Engine 1 N1:  %3d</label>
+				<mapping>percent</mapping>
+				<property>/fdm/jsbsim/propulsion/engine[3]/governor/n1-lever</property>
+			</binding>
+		</hovered>
+	</animation>
 
-  <model>
-    <name>low-turbine-pwr-quad-eng1</name>
-    <path>Aircraft/AirCrane/Models/Effects/Interior/procedural_light_indicator_red.xml</path>
-    <offsets>
-        <x-m> 0.025062</x-m>
-        <y-m>-0.147786</y-m>
-        <z-m> 0.057731</z-m>
-    </offsets>
-    <condition>
-        <property>sim/model/lightmap/eng1-underspeed/factor</property>
-    </condition>
-  </model>
+	<animation>
+		<type>rotate</type>
+		<object-name>n1leverlstart</object-name>
+		<property>/fdm/jsbsim/propulsion/engine[3]/governor/n1-lever</property>
+		<factor>40</factor>
+		<center>
+			<x-m>-0.03</x-m>
+			<z-m>-0.01691</z-m>
+		</center>
+		<axis>
+			<y>1</y>
+		</axis>
+	</animation>
 
-  <model>
-    <name>low-turbine-pwr-quad-eng2</name>
-    <path>Aircraft/AirCrane/Models/Effects/Interior/procedural_light_indicator_red.xml</path>
-    <offsets>
-        <x-m> 0.026894</x-m>
-        <y-m> 0.149898</y-m>
-        <z-m> 0.056639</z-m>
-    </offsets>
-    <condition>
-        <property>sim/model/lightmap/eng2-underspeed/factor</property>
-    </condition>
-  </model>
+	<animation>
+		<type>pick</type>
+		<object-name>n1leverlstart</object-name>
+		<condition>
+			<equals>
+				<property>/fdm/jsbsim/propulsion/engine[3]/governor/n1-lever</property>
+				<value>0</value>
+			</equals>
+		</condition>
+		<visible>true</visible>
+		<action>
+			<button>0</button>
+			<repeatable>false</repeatable>
+			<binding>
+				<command>property-toggle</command>
+				<property>/controls/engines/engine[3]/starter</property>
+			</binding>
+			<binding>
+				<command>property-toggle</command>
+				<property>/controls/engines/engine[3]/indent</property>
+			</binding>
+			<binding>
+				<command>nasal</command>
+				<script>aircrane.click("avionics")</script>
+			</binding>
+		</action>
+		<hovered>
+			<binding>
+				<command>set-tooltip</command>
+				<tooltip-id>eng1-start</tooltip-id>
+				<label>Engine 1 start</label>
+				<property>/controls/engines/engine[3]/starter</property>
+			</binding>
+		</hovered>
+	</animation>						
+	
+	<animation>
+		<type>translate</type>
+		<object-name>n1leverl</object-name>
+		<object-name>n1leverlstart</object-name>
+		<object-name>n1leverlplastic</object-name>
+		<property>/controls/engines/engine[3]/indent</property>	
+		<factor>0.003</factor>
+		<axis>
+			<x>1</x>
+			<z>1</z>
+		</axis>
+	</animation>
+	
+	
+	
+<!-- TURBINE No.2 -->
 
-  <animation>
-    <type>knob</type>
-    <object-name>fuelshutoffl</object-name>
-    <property>/consumables/fuel/shutoff/lever/left</property>
-    <factor>40</factor>
-    <center>
-      <x-m>  0.01717 </x-m>
-      <y-m>  0.00000 </y-m>
-      <z-m> -0.01691 </z-m>
-    </center>
-    <axis>
-      <x> 0 </x>
-      <y> 1 </y>
-      <z> 0 </z>
-    </axis>
-    <action>
-      <repeatable>false</repeatable>
-      <binding>
-        <command>property-adjust</command>
-        <property>/consumables/fuel/shutoff/lever/left</property>
-        <factor>1</factor>
-        <min>0</min>
-        <max>1</max>
-        <wrap>0</wrap>
-      </binding>
-      <binding>
-        <command>nasal</command>
-        <script>aircrane.click("avionics")</script>
-      </binding>
-    </action>
-    <hovered>
-      <binding>
-        <command>set-tooltip</command>
-        <tooltip-id>FuelShutoff</tooltip-id>
-        <label>Fuel Shutoff Engine 1: %s</label>
-        <property>/consumables/fuel/shutoff/lever/left</property>
-        <mapping>on-off</mapping>
-      </binding>
-    </hovered>
-  </animation>
+	<animation>
+		<type>select</type>
+		<object-name>redoffr</object-name>
+		<condition>
+			<greater-than>
+				<property>fdm/jsbsim/propulsion/engine[4]/n1</property>
+				<value>60</value>
+			</greater-than>
+		</condition>
+	</animation>
 
-  <animation>
-    <type>knob</type>
-    <object-name>fuelshutoffr</object-name>
-    <property>/consumables/fuel/shutoff/lever/right</property>
-    <factor>40</factor>
-    <center>
-      <x-m>  0.01717 </x-m>
-      <y-m>  0.00000 </y-m>
-      <z-m> -0.01691 </z-m>
-    </center>
-    <axis>
-      <x> 0 </x>
-      <y> 1 </y>
-      <z> 0 </z>
-    </axis>
-    <action>
-      <repeatable>false</repeatable>
-      <binding>
-        <command>property-adjust</command>
-        <property>/consumables/fuel/shutoff/lever/right</property>
-        <factor>1</factor>
-        <min>0</min>
-        <max>1</max>
-        <wrap>0</wrap>
-      </binding>
-      <binding>
-        <command>nasal</command>
-        <script>aircrane.click("avionics")</script>
-      </binding>
-    </action>
-    <hovered>
-      <binding>
-        <command>set-tooltip</command>
-        <tooltip-id>FuelShutoff</tooltip-id>
-        <label>Fuel Shutoff Engine 2: %s</label>
-        <property>/consumables/fuel/shutoff/lever/right</property>
-        <mapping>on-off</mapping>
-      </binding>
-    </hovered>
-  </animation>
+	<animation>
+		<type>select</type>
+		<object-name>redonr</object-name>
+		<condition>
+			<less-than>
+				<property>fdm/jsbsim/propulsion/engine[4]/n1</property>
+				<value>60</value>
+			</less-than>
+		</condition>
+	</animation>
 
-  <!-- N1 Engine 1 -->
-  <animation>
-    <type>knob</type>
-    <object-name>n1leverl</object-name>
-    <object-name>n1leverlplastic</object-name>
-    <property>/engines/one/n1</property>
-    <factor>80</factor>
-    <center>
-      <x-m>  0.01717 </x-m>
-      <y-m>  0.00000 </y-m>
-      <z-m> -0.01691 </z-m>
-    </center>
-    <axis>
-      <x> 0 </x>
-      <y> 1 </y>
-      <z> 0 </z>
-    </axis>
-    <action>
-      <repeatable>false</repeatable>
-      <!--
-      condition>
-        <not>
-          <property>/engines/one/n1-indent</property>
-        </not>
-      </condition>
-      -->
-      <binding>
-        <command>property-adjust</command>
-        <property>/engines/one/n1</property>
-        <factor>.05</factor>
-        <min>0</min>
-        <max>.5</max>
-        <wrap>0</wrap>
-      </binding>
-      <binding>
-        <command>nasal</command>
-        <script>
-          var n1_state = getprop("/engines/one/n1");
-          if (n1_state == .15) setprop("/engines/one/n1-indent", 1);
-          if (!n1_state) setprop("/consumables/fuel/shutoff/lever/left", 0);
-          aircrane.click("avionics");
-        </script>
-      </binding>
-    </action>
-    <hovered>
-      <binding>
-        <command>set-tooltip</command>
-        <tooltip-id>eng1-n1</tooltip-id>
-        <label>Engine 1 N1:  %3d</label>
-        <mapping>percent</mapping>
-        <property>engines/one/n1</property>
-      </binding>
-    </hovered>
-  </animation>
+	<animation>
+		<type>material</type>
+		<object-name>redonr</object-name>
+		<condition>
+			<less-than>
+				<property>fdm/jsbsim/propulsion/engine[4]/n1</property>
+				<value>60</value>
+			</less-than>
+		</condition>	
+		<emission>
+			<red>0.7</red>
+			<green>0.5</green>
+			<blue>0.5</blue>
+		</emission>
+	</animation>
 
-  <animation>
-    <type>rotate</type>
-    <object-name>n1leverlstart</object-name>
-    <property>/engines/one/n1</property>
-    <factor>80</factor>
-    <center>
-      <x-m>  0.01717 </x-m>
-      <y-m>  0.00000 </y-m>
-      <z-m> -0.01691 </z-m>
-    </center>
-    <axis>
-      <x> 0 </x>
-      <y> 1 </y>
-      <z> 0 </z>
-    </axis>
-  </animation>
-  <!--
-  <animation>
-    <type>pick</type>
-    <object-name>n1leverl</object-name>
-    <object-name>n1leverlplastic</object-name>
-    <visible>true</visible>
-    <action>
-      <button>0</button>
-      <repeatable>false</repeatable>
-      <binding>
-        <command>property-assign</command>
-        <property>/engines/one/n1-indent</property>
-        <value>0</value>
-      </binding>
-    </action>
-    <hovered>
-      <binding>
-        <command>set-tooltip</command>
-        <tooltip-id>eng1-n1-indent</tooltip-id>
-        <label>Engine 1 N1 Indent:(%1d)</label>
-        <property>/engines/one/n1-indent</property>
-      </binding>
-    </hovered>
-  </animation>
-  -->
-  <animation>
-    <type>translate</type>
-    <object-name>n1leverl</object-name>
-    <object-name>n1leverlplastic</object-name>
-    <property>/engines/one/n1-indent</property>
-    <factor>-0.0057</factor>
-    <axis>
-      <x> 0.75 </x>
-      <y> 0.00 </y>
-      <z> 0.25 </z>
-    </axis>
-  </animation>
+	<model>
+		<name>low-turbine-pwr-quad-eng2</name>
+		<path>Aircraft/AirCrane/Models/Effects/Interior/procedural_light_indicator_red.xml</path>
+		<offsets>
+			<x-m>0.026894</x-m>
+			<y-m>0.149898</y-m>
+			<z-m>0.056639</z-m>
+		</offsets>
+		<condition>
+			<less-than>
+				<property>fdm/jsbsim/propulsion/engine[4]/n1</property>
+				<value>60</value>
+			</less-than>
+		</condition>
+	</model>
 
-  <!-- N1 Engine 1 Start -->
-  <animation>
-    <type>pick</type>
-    <object-name>n1leverlstart</object-name>
-    <visible>true</visible>
-    <action>
-      <button>0</button>
-      <repeatable>false</repeatable>
-      <binding>
-        <command>nasal</command>
-        <script>aircrane.cycleN1Start("eng1-n1-start")</script>
-      </binding>
-      <binding>
-        <command>nasal</command>
-        <script>aircrane.click("avionics")</script>
-      </binding>
-    </action>
-    <hovered>
-      <binding>
-        <command>set-tooltip</command>
-        <tooltip-id>eng1-n1-start</tooltip-id>
-        <label>Engine 1 N1: %s</label>
-        <property>controls/switches/eng1-n1-start</property>
-        <mapping>nasal</mapping>
-        <script>
-            var modes = ['Neutral', 'Start'];
-            return modes[arg[0]];
-        </script>
-      </binding>
-    </hovered>
-  </animation>
+  	<animation>
+		<type>pick</type>
+		<object-name>fuelshutoffr</object-name>
+		<visible>true</visible>
+		<action>
+			<button>0</button>
+			<repeatable>false</repeatable>
+			<binding>
+				<command>property-toggle</command>
+				<property>controls/engines/engine[4]/cutoff</property>
+			</binding>
+			<binding>
+				<command>nasal</command>
+				<script>aircrane.click("avionics")</script>
+			</binding>
+		</action>
+	</animation>
+	<animation>
+		<type>rotate</type>
+		<object-name>fuelshutoffr</object-name>
+		<property>controls/engines/engine[4]/cutoff</property>
+		<factor>-50</factor>
+		<offset-deg>60</offset-deg>
+		<center>
+			<x-m>0.01717</x-m>
+			<y-m>0.00000</y-m>
+			<z-m>-0.01691</z-m>
+		</center>
+		<axis>
+			<y>1</y>
+		</axis>
+	</animation>  
 
-  <animation>
-    <type>translate</type>
-    <object-name>n1leverlstart</object-name>
-    <property>controls/switches/eng1-n1-start</property>
-    <factor>-0.0057</factor>
-    <axis>
-      <x> 0.75 </x>
-      <y> 0.00 </y>
-      <z> 0.25 </z>
-    </axis>
-  </animation>
+	<animation>
+		<type>knob</type>
+		<object-name>n1leverr</object-name>
+		<object-name>n1leverrplastic</object-name>
+		<condition>
+			<equals>
+				<property>/controls/engines/engine[4]/indent</property>
+				<value>1</value>
+			</equals>
+		</condition>		
+		<property>/fdm/jsbsim/propulsion/engine[4]/governor/n1-lever</property>
+		<factor>40</factor>
+		<center>
+			<x-m>-0.03</x-m>
+			<z-m>-0.01691</z-m>
+		</center>
+		<axis>
+			<y>1</y>
+		</axis>
+		<action>
+			<repeatable>false</repeatable>
+			<binding>
+				<command>property-adjust</command>
+				<property>/fdm/jsbsim/propulsion/engine[4]/governor/n1-lever</property>
+				<factor>0.02</factor>
+				<min>0</min>
+				<max>1</max>
+				<wrap>0</wrap>
+			</binding>
+		</action>
+		<hovered>
+			<binding>
+				<command>set-tooltip</command>
+				<tooltip-id>eng2-n1</tooltip-id>
+				<label>Engine 2 N1:  %3d</label>
+				<mapping>percent</mapping>
+				<property>/fdm/jsbsim/propulsion/engine[4]/governor/n1-lever</property>
+			</binding>
+		</hovered>
+	</animation>
 
-  <!-- N1 Engine 2 -->
-  <animation>
-    <type>knob</type>
-    <object-name>n1leverr</object-name>
-    <object-name>n1leverrplastic</object-name>
-    <property>/engines/two/n1</property>
-    <factor>80</factor>
-    <center>
-      <x-m>  0.01717 </x-m>
-      <y-m>  0.00000 </y-m>
-      <z-m> -0.01691 </z-m>
-    </center>
-    <axis>
-      <x> 0 </x>
-      <y> 1 </y>
-      <z> 0 </z>
-    </axis>
-    <action>
-      <repeatable>false</repeatable>
-      <!--
-      condition>
-        <not>
-          <property>/engines/two/n1-indent</property>
-        </not>
-      </condition>
-      -->
-      <binding>
-        <command>property-adjust</command>
-        <property>/engines/two/n1</property>
-        <factor>.05</factor>
-        <min>0</min>
-        <max>.5</max>
-        <wrap>0</wrap>
-      </binding>
-      <binding>
-        <command>nasal</command>
-        <script>
-          var n1_state = getprop("/engines/two/n1");
-          if (n1_state == "0.15") setprop("/engines/two/n1-indent", 1);
-          if (!n1_state) setprop("/consumables/fuel/shutoff/lever/right", 0);
-          aircrane.click("avionics");
-        </script>
-      </binding>
-    </action>
-    <hovered>
-      <binding>
-        <command>set-tooltip</command>
-        <tooltip-id>eng2-n1</tooltip-id>
-        <label>Engine 2 N1: %3d</label>
-        <mapping>percent</mapping>
-        <property>/engines/two/n1</property>
-      </binding>
-    </hovered>
-  </animation>
+	<animation>
+		<type>rotate</type>
+		<object-name>n1leverrstart</object-name>
+		<property>/fdm/jsbsim/propulsion/engine[4]/governor/n1-lever</property>
+		<factor>40</factor>
+		<center>
+			<x-m>-0.03</x-m>
+			<z-m>-0.01691</z-m>
+		</center>
+		<axis>
+			<y>1</y>
+		</axis>
+	</animation>
 
-  <animation>
-    <type>rotate</type>
-    <object-name>n1leverrstart</object-name>
-    <property>/engines/two/n1</property>
-    <factor>80</factor>
-    <center>
-      <x-m>  0.01717 </x-m>
-      <y-m>  0.00000 </y-m>
-      <z-m> -0.01691 </z-m>
-    </center>
-    <axis>
-      <x> 0 </x>
-      <y> 1 </y>
-      <z> 0 </z>
-    </axis>
-  </animation>
-  <!--
-  <animation>
-    <type>pick</type>
-    <object-name>n1leverr</object-name>
-    <object-name>n1leverrplastic</object-name>
-    <visible>true</visible>
-    <action>
-      <button>0</button>
-      <repeatable>false</repeatable>
-      <binding>
-        <command>property-assign</command>
-        <property>/engines/two/n1-indent</property>
-        <value>0</value>
-      </binding>
-    </action>
-    <hovered>
-      <binding>
-        <command>set-tooltip</command>
-        <tooltip-id>eng2-n1-indent</tooltip-id>
-        <label>Engine 2 N1 Indent:(%1d)</label>
-        <property>/engines/two/n1-indent</property>
-      </binding>
-    </hovered>
-  </animation>
-  -->
-  <animation>
-    <type>translate</type>
-    <object-name>n1leverr</object-name>
-    <object-name>n1leverrplastic</object-name>
-    <property>/engines/two/n1-indent</property>
-    <factor>-0.0057</factor>
-    <axis>
-      <x> 0.75 </x>
-      <y> 0.00 </y>
-      <z> 0.25 </z>
-    </axis>
-  </animation>
-
-  <!-- N1 Engine 2 Start -->
-  <animation>
-    <type>pick</type>
-    <object-name>n1leverrstart</object-name>
-    <visible>true</visible>
-    <action>
-      <button>0</button>
-      <repeatable>false</repeatable>
-      <binding>
-        <command>nasal</command>
-        <script>aircrane.cycleN1Start("eng2-n1-start")</script>
-      </binding>
-      <binding>
-        <command>nasal</command>
-        <script>aircrane.click("avionics")</script>
-      </binding>
-    </action>
-    <hovered>
-      <binding>
-        <command>set-tooltip</command>
-        <tooltip-id>eng2-n1-start</tooltip-id>
-        <label>Engine 2 N1: %s</label>
-        <property>controls/switches/eng2-n1-start</property>
-        <mapping>nasal</mapping>
-        <script>
-            var modes = ['Neutral', 'Start'];
-            return modes[arg[0]];
-        </script>
-      </binding>
-    </hovered>
-  </animation>
-
-  <animation>
-    <type>translate</type>
-    <object-name>n1leverrstart</object-name>
-    <property>controls/switches/eng2-n1-start</property>
-    <factor>-0.0057</factor>
-    <axis>
-      <x> 0.75 </x>
-      <y> 0.00 </y>
-      <z> 0.25 </z>
-    </axis>
-  </animation>
+	<animation>
+		<type>pick</type>
+		<object-name>n1leverrstart</object-name>
+		<condition>
+			<equals>
+				<property>/fdm/jsbsim/propulsion/engine[4]/governor/n1-lever</property>
+				<value>0</value>
+			</equals>
+		</condition>
+		<visible>true</visible>
+		<action>
+			<button>0</button>
+			<repeatable>false</repeatable>
+			<binding>
+				<command>property-toggle</command>
+				<property>/controls/engines/engine[4]/starter</property>
+			</binding>
+			<binding>
+				<command>property-toggle</command>
+				<property>/controls/engines/engine[4]/indent</property>
+			</binding>
+			<binding>
+				<command>nasal</command>
+				<script>aircrane.click("avionics")</script>
+			</binding>
+		</action>
+		<hovered>
+			<binding>
+				<command>set-tooltip</command>
+				<tooltip-id>eng2-start</tooltip-id>
+				<label>Engine 2 start</label>
+				<property>/controls/engines/engine[4]/starter</property>
+			</binding>
+		</hovered>
+	</animation>						
+	
+	<animation>
+		<type>translate</type>
+		<object-name>n1leverr</object-name>
+		<object-name>n1leverrstart</object-name>
+		<object-name>n1leverrplastic</object-name>
+		<property>/controls/engines/engine[4]/indent</property>	
+		<factor>0.003</factor>
+		<axis>
+			<x>1</x>
+			<z>1</z>
+		</axis>
+	</animation>
 
 </PropertyList>

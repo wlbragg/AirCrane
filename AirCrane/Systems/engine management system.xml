@@ -1,0 +1,211 @@
+<?xml version="1.0"?>
+
+<!--
+**************************************************************************
+
+Copyright (c) 2026 Simon 'bomber' Morley
+simonbomber64 at googlemail.com
+
+**************************************************************************
+-->
+
+
+<system name="Engine">
+
+<property type="double" value="0">propulsion/tank_aft/fuel-bug</property>		
+				
+	<channel name="engine">
+
+		<!-- n1 -->	
+		
+ 		<fcs_function>
+			<function>
+				<ifthen>
+					<eq>
+						<p>/controls/electric/cab_power</p>
+						<v>1</v>
+					</eq>
+					<property>/fdm/jsbsim/propulsion/engine[3]/n1</property>
+					<value>-99</value>
+				</ifthen>
+			</function>
+			<output>propulsion/turbine_1/n1</output>
+		</fcs_function>	
+		<actuator>
+			<input>propulsion/turbine_1/n1</input>
+			<rate_limit>10</rate_limit>
+			<output>/controls/electric/turbine_1-n1</output>
+		</actuator>
+
+ 		<fcs_function>
+			<function>
+				<ifthen>
+					<eq>
+						<p>/controls/electric/cab_power</p>
+						<v>1</v>
+					</eq>
+					<property>/fdm/jsbsim/propulsion/engine[4]/n1</property>
+					<value>-99</value>
+				</ifthen>
+			</function>
+			<output>propulsion/turbine_2/n1</output>
+		</fcs_function>	
+		<actuator>
+			<input>propulsion/turbine_2/n1</input>
+			<rate_limit>10</rate_limit>
+			<output>/controls/electric/turbine_2-n1</output>
+		</actuator>
+
+		<!-- T5 temp -->
+
+ 		<fcs_function>
+			<function>
+				<ifthen>
+					<eq>
+						<p>/controls/electric/cab_power</p>
+						<v>1</v>
+					</eq>
+					<property>/fdm/jsbsim/propulsion/engine[3]/engtemp-c</property>
+					<value>-99</value>
+				</ifthen>
+			</function>
+			<output>propulsion/turbine_1/engtemp-c</output>
+		</fcs_function>	
+		<actuator>
+			<input>propulsion/turbine_1/engtemp-c</input>
+			<rate_limit>10</rate_limit>
+			<output>/controls/electric/turbine_1-engtemp-c</output>
+		</actuator>
+
+ 		<fcs_function>
+			<function>
+				<ifthen>
+					<eq>
+						<p>/controls/electric/cab_power</p>
+						<v>1</v>
+					</eq>
+					<property>/fdm/jsbsim/propulsion/engine[4]/engtemp-c</property>
+					<value>-99</value>
+				</ifthen>
+			</function>
+			<output>propulsion/turbine_2/engtemp-c</output>
+		</fcs_function>	
+		<actuator>
+			<input>propulsion/turbine_2/engtemp-c</input>
+			<rate_limit>10</rate_limit>
+			<output>/controls/electric/turbine_2-engtemp-c</output>
+		</actuator>
+
+		<!-- Torque -->
+
+ 		<fcs_function>
+			<function>
+				<ifthen>
+					<eq>
+						<p>/controls/electric/cab_power</p>
+						<v>1</v>
+					</eq>
+					<property>/fdm/jsbsim/propulsion/engine[3]/torque-lbsft</property>
+					<value>-99</value>
+				</ifthen>
+			</function>
+			<output>propulsion/turbine_1/torque-lbsft</output>
+		</fcs_function>	
+		<actuator>
+			<input>propulsion/turbine_1/torque-lbsft</input>
+			<rate_limit>10</rate_limit>
+			<output>/controls/electric/turbine_1-torque-lbsft</output>
+		</actuator>
+
+ 		<fcs_function>
+			<function>
+				<ifthen>
+					<eq>
+						<p>/controls/electric/cab_power</p>
+						<v>1</v>
+					</eq>
+					<property>/fdm/jsbsim/propulsion/engine[4]/torque-lbsft</property>
+					<value>-99</value>
+				</ifthen>
+			</function>
+			<output>propulsion/turbine_2/torque-lbsft</output>
+		</fcs_function>	
+		<actuator>
+			<input>propulsion/turbine_2/torque-lbsft</input>
+			<rate_limit>10</rate_limit>
+			<output>/controls/electric/turbine_2-torque-lbsft</output>
+		</actuator>
+
+		<!-- RPM's -->
+
+ 		<fcs_function>
+			<function>
+				<ifthen>
+					<eq>
+						<p>/controls/electric/cab_power</p>
+						<v>1</v>
+					</eq>
+					<property>/fdm/jsbsim/propulsion/engine[3]/power-hp</property>
+					<value>-99</value>
+				</ifthen>
+			</function>
+			<output>propulsion/turbine_1/power-hp</output>
+		</fcs_function>	
+		<actuator>
+			<input>propulsion/turbine_1/power-hp</input>
+			<rate_limit>20</rate_limit>
+			<output>/controls/electric/turbine_1-hp</output>
+		</actuator>
+
+ 		<fcs_function>
+			<function>
+				<ifthen>
+					<eq>
+						<p>/controls/electric/cab_power</p>
+						<v>1</v>
+					</eq>
+					<property>/fdm/jsbsim/propulsion/engine[4]/power-hp</property>
+					<value>-99</value>
+				</ifthen>
+			</function>
+			<output>propulsion/turbine_2/power-hp</output>
+		</fcs_function>	
+		<actuator>
+			<input>propulsion/turbine_2/power-hp</input>
+			<rate_limit>20</rate_limit>
+			<output>/controls/electric/turbine_2-hp</output>
+		</actuator>
+
+ 		<fcs_function>
+			<function>
+				<ifthen>
+					<eq>
+						<p>/controls/electric/cab_power</p>
+						<v>1</v>
+					</eq>
+					<property>/fdm/jsbsim/propulsion/engine[1]/engine-rpm</property>
+					<value>-99</value>
+				</ifthen>
+			</function>
+			<output>propulsion/rotor/rpm</output>
+		</fcs_function>	
+		<actuator>
+			<input>propulsion/rotor/rpm</input>
+			<rate_limit>10</rate_limit>
+			<output>/controls/electric/rotor-rpm</output>
+		</actuator>
+
+
+
+
+
+
+
+
+
+
+		
+		
+	</channel>		
+
+</system>

@@ -13,15 +13,11 @@
         <and>
           <or>
             <equals>
-              <property>controls/engines/engine[0]/starting</property>
+              <property>controls/engines/engine[2]/starter</property>
               <value>1</value>
             </equals>
             <equals>
-              <property>controls/engines/engine[1]/starting</property>
-              <value>1</value>
-            </equals>
-            <equals>
-              <property>controls/engines/engine[2]/starting</property>
+              <property>controls/engines/engine[3]/starter</property>
               <value>1</value>
             </equals>
           </or>
@@ -65,15 +61,11 @@
         <and>
           <or>
             <equals>
-              <property>controls/engines/engine[0]/starting</property>
+              <property>controls/engines/engine[2]/starter</property>
               <value>1</value>
             </equals>
             <equals>
-              <property>controls/engines/engine[1]/starting</property>
-              <value>1</value>
-            </equals>
-            <equals>
-              <property>controls/engines/engine[2]/starting</property>
+              <property>controls/engines/engine[3]/starter</property>
               <value>1</value>
             </equals>
           </or>
@@ -97,7 +89,7 @@
         </and>
       </condition>
       <volume>
-        <factor>0.12</factor>
+        <factor>1</factor>
       </volume>
       <reference-dist>50</reference-dist>
       <max-dist>200</max-dist>
@@ -111,15 +103,11 @@
         <and>
           <or>
             <equals>
-              <property>controls/engines/engine[0]/running</property>
-              <value>1</value>
-            </equals>
-            <equals>
-              <property>controls/engines/engine[1]/running</property>
-              <value>1</value>
-            </equals>
-            <equals>
               <property>controls/engines/engine[2]/running</property>
+              <value>1</value>
+            </equals>
+            <equals>
+              <property>controls/engines/engine[3]/running</property>
               <value>1</value>
             </equals>
           </or>
@@ -163,15 +151,11 @@
         <and>
           <or>
             <equals>
-              <property>controls/engines/engine[0]/running</property>
-              <value>1</value>
-            </equals>
-            <equals>
-              <property>controls/engines/engine[1]/running</property>
-              <value>1</value>
-            </equals>
-            <equals>
               <property>controls/engines/engine[2]/running</property>
+              <value>1</value>
+            </equals>
+            <equals>
+              <property>controls/engines/engine[3]/running</property>
               <value>1</value>
             </equals>
           </or>
@@ -251,15 +235,11 @@
         <and>
           <or>
             <equals>
-              <property>controls/engines/engine[0]/shutdown</property>
-              <value>1</value>
-            </equals>
-            <equals>
-              <property>controls/engines/engine[1]/shutdown</property>
-              <value>1</value>
-            </equals>
-            <equals>
               <property>controls/engines/engine[2]/shutdown</property>
+              <value>1</value>
+            </equals>
+            <equals>
+              <property>controls/engines/engine[3]/shutdown</property>
               <value>1</value>
             </equals>
           </or>
@@ -303,15 +283,11 @@
         <and>
           <or>
             <equals>
-              <property>controls/engines/engine[0]/shutdown</property>
-              <value>1</value>
-            </equals>
-            <equals>
-              <property>controls/engines/engine[1]/shutdown</property>
-              <value>1</value>
-            </equals>
-            <equals>
               <property>controls/engines/engine[2]/shutdown</property>
+              <value>1</value>
+            </equals>
+            <equals>
+              <property>controls/engines/engine[3]/shutdown</property>
               <value>1</value>
             </equals>
           </or>

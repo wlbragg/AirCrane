@@ -17,15 +17,15 @@
             <value>0</value>
             </greater-than-->
             <equals>
-              <property>controls/engines/engine[0]/starting</property>
-              <value>1</value>
-            </equals>
-            <equals>
               <property>controls/engines/engine[1]/starting</property>
               <value>1</value>
             </equals>
             <equals>
               <property>controls/engines/engine[2]/starting</property>
+              <value>1</value>
+            </equals>
+            <equals>
+              <property>controls/engines/engine[3]/starting</property>
               <value>1</value>
             </equals>
           </or>
@@ -73,15 +73,15 @@
             <value>0</value>
             </greater-than-->
             <equals>
-              <property>controls/engines/engine[0]/starting</property>
-              <value>1</value>
-            </equals>
-            <equals>
               <property>controls/engines/engine[1]/starting</property>
               <value>1</value>
             </equals>
             <equals>
               <property>controls/engines/engine[2]/starting</property>
+              <value>1</value>
+            </equals>
+            <equals>
+              <property>controls/engines/engine[3]/starting</property>
               <value>1</value>
             </equals>
           </or>
@@ -123,15 +123,15 @@
             <value>0</value>
             </greater-than-->
             <equals>
-              <property>controls/engines/engine[0]/running</property>
-              <value>1</value>
-            </equals>
-            <equals>
               <property>controls/engines/engine[1]/running</property>
               <value>1</value>
             </equals>
             <equals>
               <property>controls/engines/engine[2]/running</property>
+              <value>1</value>
+            </equals>
+            <equals>
+              <property>controls/engines/engine[3]/running</property>
               <value>1</value>
             </equals>
           </or>
@@ -179,15 +179,15 @@
             <value>0</value>
             </greater-than-->
             <equals>
-              <property>controls/engines/engine[0]/running</property>
-              <value>1</value>
-            </equals>
-            <equals>
               <property>controls/engines/engine[1]/running</property>
               <value>1</value>
             </equals>
             <equals>
               <property>controls/engines/engine[2]/running</property>
+              <value>1</value>
+            </equals>
+            <equals>
+              <property>controls/engines/engine[3]/running</property>
               <value>1</value>
             </equals>
           </or>
@@ -267,15 +267,15 @@
         <and>
           <or>
             <equals>
-              <property>controls/engines/engine[0]/shutdown</property>
-              <value>1</value>
-            </equals>
-            <equals>
               <property>controls/engines/engine[1]/shutdown</property>
               <value>1</value>
             </equals>
             <equals>
               <property>controls/engines/engine[2]/shutdown</property>
+              <value>1</value>
+            </equals>
+            <equals>
+              <property>controls/engines/engine[3]/shutdown</property>
               <value>1</value>
             </equals>
           </or>
@@ -319,15 +319,15 @@
         <and>
           <or>
             <equals>
-              <property>controls/engines/engine[0]/shutdown</property>
-              <value>1</value>
-            </equals>
-            <equals>
               <property>controls/engines/engine[1]/shutdown</property>
               <value>1</value>
             </equals>
             <equals>
               <property>controls/engines/engine[2]/shutdown</property>
+              <value>1</value>
+            </equals>
+            <equals>
+              <property>controls/engines/engine[3]/shutdown</property>
               <value>1</value>
             </equals>
           </or>

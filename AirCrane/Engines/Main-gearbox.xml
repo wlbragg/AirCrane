@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<!--
+
+	Main Rotor Gearbox
+	
+	6562.159kW
+
+-->
+
+
+<electric_engine name="transmission_system">
+    <power>6562159</power> 
+</electric_engine>

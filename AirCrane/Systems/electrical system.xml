@@ -1,0 +1,1898 @@
+<?xml version="1.0"?>
+
+<!--
+**************************************************************************
+
+Copyright (c) 2026 Simon 'bomber' Morley
+simonbomber64 at googlemail.com
+
+**************************************************************************
+-->
+
+
+<system name="Engine">
+
+<property type="double" value="0">/controls/electric/external_power</property>
+<property type="double" value="0">/controls/electric/battery-isol</property>
+<property type="double" value="0">/controls/electric/battery-switch</property>
+<property type="double" value="0">/controls/electric/inverter</property>
+<property type="double" value="0">/controls/electric/pitot-heat</property>
+
+<property type="double" value="0">/controls/electric/engine[3]/generator</property>
+<property type="double" value="0">/controls/electric/engine[4]/generator</property>
+
+<property type="double" value="0">/controls/electric/engine[3]/rectifier</property>
+<property type="double" value="0">/controls/electric/engine[4]/rectifier</property>
+
+<property type="double" value="0">/controls/electric/engine[3]/ignition</property>
+<property type="double" value="0">/controls/electric/engine[4]/ignition</property>
+
+<property type="double" value="0">/controls/electric/cws_power-up</property>
+<property type="double" value="0">/controls/electric/cws_lamptest-sw</property>
+
+<property type="double" value="0">/fdm/jsbsim/propulsion/engine[3]/chip</property>
+<property type="double" value="0">/fdm/jsbsim/propulsion/engine[4]/chip</property>
+
+
+<!-- <property type="double" value="0">/controls/electric/engine[3]/generator-sw</property> -->
+
+	<channel name="Cab Power">
+	
+		<!-- Beginnings of cab power logic -->
+
+		<fcs_function>
+			<function>
+				<ifthen>
+					<and>
+						<or>
+							<eq>
+								<p>/controls/electric/external_power</p>
+								<v>1</v>
+							</eq>
+							<eq>
+								<p>/controls/electric/APU-generator</p>
+								<v>1</v>
+							</eq>
+							<and>
+								<gt>
+									<p>/fdm/jsbsim/propulsion/engine[3]/n1</p>
+									<v>40</v>
+								</gt>
+								<eq>
+									<p>/controls/electric/engine[3]/generator</p>
+									<v>1</v>
+								</eq>
+							</and>								
+							<and>								
+								<gt>
+									<p>/fdm/jsbsim/propulsion/engine[4]/n1</p>
+									<v>40</v>
+								</gt>															
+								<eq>
+									<p>/controls/electric/engine[4]/generator</p>
+									<v>1</v>
+								</eq>
+							</and>
+						</or>
+						<eq>
+							<p>/controls/electric/battery-isol</p>
+							<v>1</v>
+						</eq>
+					</and>
+					<value>1</value>
+					<value>0</value>
+				</ifthen>
+			</function>
+			<output>/controls/electric/battery-switch</output>
+			<output>/controls/electric/cab_power</output>			
+		</fcs_function>
+		
+ 		<kinematic>
+			<input>/controls/electric/cab_power</input>
+			<traverse>
+				<setting>
+					<position>0</position>
+					<time>0</time>
+				</setting>
+				<setting>
+					<position>1</position>
+					<time>5</time>
+				</setting>
+			</traverse>
+			<output>/controls/electric/cws_power-up</output>
+		</kinematic>
+
+	</channel>
+
+	<channel name="switches/alarms/transducers">	
+
+ 		<fcs_function>
+			<function>
+				<ifthen>
+					<and>
+						<eq>
+							<p>/controls/electric/cws/initialise-1</p>
+							<v>1</v>
+						</eq>
+						<eq>
+							<p>/controls/electric/cws_lamptest-sw</p>
+							<v>1</v>
+						</eq>
+					</and>
+					<value>1</value>
+					<value>0</value>
+				</ifthen>
+			</function>
+			<output>/controls/electric/cws_lamptest</output>
+		</fcs_function>
+		
+ 		<fcs_function>
+			<function>
+				<ifthen>
+					<eq>
+						<p>/controls/electric/cws_brightness-sw</p>
+						<v>1</v>
+					</eq>
+					<value>1</value>
+					<value>0.4</value>
+				</ifthen>
+			</function>
+			<output>/controls/electric/cws_brightness</output>
+		</fcs_function>
+		
+	<!-- Alarm Signals -->
+		
+ 		<fcs_function>
+			<function>
+				<ifthen>
+					<and>
+						<eq>
+							<p>/controls/electric/cab_power</p>
+							<v>1</v>
+						</eq>						
+						<eq>
+							<p>/controls/electric/rotor_brake-sw</p>
+							<v>1</v>
+						</eq>
+					</and>
+					<value>1</value>
+					<value>0</value>
+				</ifthen>
+			</function>
+			<output>/controls/electric/alarms/rotor_brake</output>
+		</fcs_function>
+		
+	<!-- Caution Warning Panel -->
+		
+ 		<fcs_function>
+			<function>
+				<ifthen>
+					<and>
+						<eq>
+							<p>/controls/electric/cab_power</p>
+							<v>1</v>
+						</eq>
+						<eq>
+							<p>/controls/electric/cws_lamptest-sw</p>
+							<v>1</v>
+						</eq>
+					</and>
+					<value>1</value>
+					<value>0</value>
+				</ifthen>
+			</function>
+			<output>/controls/electric/cws_lamptest</output>
+		</fcs_function>
+		
+ 		<fcs_function>
+			<function>
+				<ifthen>
+					<eq>
+						<p>/controls/electric/cws_brightness-sw</p>
+						<v>1</v>
+					</eq>
+					<value>1</value>
+					<value>0.4</value>
+				</ifthen>
+			</function>
+			<output>/controls/electric/cws_brightness</output>
+		</fcs_function>
+
+	</channel>
+	
+	<channel name="Caution Warning Panel">
+	
+	<!-- Caution Warning Panel Initialise -->
+	
+		<fcs_function name="/controls/electric/cws/initialise-0.5">
+			<function>
+				<ifthen>
+					<and>
+						<eq>
+							<p>/controls/electric/cab_power</p>
+							<v>1</v>
+						</eq>					
+						<gt>
+							<p>/controls/electric/cws_power-up</p>
+							<v>0</v>
+						</gt>
+						<lt>
+							<p>/controls/electric/cws_power-up</p>
+							<v>0.5</v>
+						</lt>
+					</and>
+					<value>1</value>
+					<value>0</value>
+				</ifthen>
+			</function>
+		</fcs_function>	
+	
+ 		<fcs_function name="/controls/electric/cws/initialise-0.6">
+			<function>
+				<ifthen>
+					<and>
+						<eq>
+							<p>/controls/electric/cab_power</p>
+							<v>1</v>
+						</eq>					
+						<gt>
+							<p>/controls/electric/cws_power-up</p>
+							<v>0</v>
+						</gt>
+						<lt>
+							<p>/controls/electric/cws_power-up</p>
+							<v>0.6</v>
+						</lt>
+					</and>
+					<value>1</value>
+					<value>0</value>
+				</ifthen>
+			</function>
+		</fcs_function>		
+	
+ 		<fcs_function name="/controls/electric/cws/initialise-0.7">
+			<function>
+				<ifthen>
+					<and>
+						<eq>
+							<p>/controls/electric/cab_power</p>
+							<v>1</v>
+						</eq>					
+						<gt>
+							<p>/controls/electric/cws_power-up</p>
+							<v>0</v>
+						</gt>
+						<lt>
+							<p>/controls/electric/cws_power-up</p>
+							<v>0.7</v>
+						</lt>
+					</and>
+					<value>1</value>
+					<value>0</value>
+				</ifthen>
+			</function>
+		</fcs_function>		
+	
+ 		<fcs_function name="/controls/electric/cws/initialise-0.8">
+			<function>
+				<ifthen>
+					<and>
+						<eq>
+							<p>/controls/electric/cab_power</p>
+							<v>1</v>
+						</eq>					
+						<gt>
+							<p>/controls/electric/cws_power-up</p>
+							<v>0</v>
+						</gt>
+						<lt>
+							<p>/controls/electric/cws_power-up</p>
+							<v>0.8</v>
+						</lt>
+					</and>
+					<value>1</value>
+					<value>0</value>
+				</ifthen>
+			</function>
+		</fcs_function>		
+	
+ 		<fcs_function name="/controls/electric/cws/initialise-0.9">
+			<function>
+				<ifthen>
+					<and>
+						<eq>
+							<p>/controls/electric/cab_power</p>
+							<v>1</v>
+						</eq>					
+						<gt>
+							<p>/controls/electric/cws_power-up</p>
+							<v>0</v>
+						</gt>
+						<lt>
+							<p>/controls/electric/cws_power-up</p>
+							<v>0.9</v>
+						</lt>
+					</and>
+					<value>1</value>
+					<value>0</value>
+				</ifthen>
+			</function>
+		</fcs_function>		
+	
+ 		<fcs_function name="/controls/electric/cws/initialise-1">
+			<function>
+				<ifthen>
+					<and>
+						<eq>
+							<p>/controls/electric/cab_power</p>
+							<v>1</v>
+						</eq>					
+						<gt>
+							<p>/controls/electric/cws_power-up</p>
+							<v>0</v>
+						</gt>
+						<lt>
+							<p>/controls/electric/cws_power-up</p>
+							<v>1</v>
+						</lt>
+					</and>
+					<value>1</value>
+					<value>0</value>
+				</ifthen>
+			</function>
+		</fcs_function>
+
+	<!-- Alarms -->
+		
+ 		<fcs_function name="/controls/electric/cws/eng_1-chip">
+			<function>
+				<ifthen>
+					<or>
+						<eq>
+							<p>/controls/electric/cws/initialise-0.5</p>
+							<v>1</v>
+						</eq>	
+						<eq>
+							<p>/controls/electric/cws_lamptest</p>
+							<v>1</v>
+						</eq>
+						<and>
+							<eq>
+								<p>/fdm/jsbsim/propulsion/engine[3]/set-running</p>
+								<v>1</v>
+							</eq>						
+							<eq>
+								<p>/fdm/jsbsim/propulsion/engine[3]/chip</p>
+								<v>1</v>
+							</eq>
+						</and>
+					</or>
+					<value>1</value>
+					<value>0</value>
+				</ifthen>
+			</function>
+		</fcs_function>
+		
+ 		<fcs_function name="/controls/electric/cws/eng_2-chip">
+			<function>
+				<ifthen>
+					<or>
+						<eq>
+							<p>/controls/electric/cws/initialise-0.5</p>
+							<v>1</v>
+						</eq>	
+						<eq>
+							<p>/controls/electric/cws_lamptest</p>
+							<v>1</v>
+						</eq>
+						<and>
+							<eq>
+								<p>/fdm/jsbsim/propulsion/engine[4]/set-running</p>
+								<v>1</v>
+							</eq>						
+							<eq>
+								<p>/fdm/jsbsim/propulsion/engine[4]/chip</p>
+								<v>1</v>
+							</eq>
+						</and>
+					</or>
+					<value>1</value>
+					<value>0</value>
+				</ifthen>
+			</function>
+		</fcs_function>
+		
+ 		<fcs_function name="/controls/electric/cws/eng_1-t5">
+			<function>
+				<ifthen>					
+					<or>
+						<eq>
+							<p>/controls/electric/cws/initialise-1</p>
+							<v>1</v>
+						</eq>
+						<eq>
+							<p>/controls/electric/cws_lamptest</p>
+							<v>1</v>
+						</eq>
+						<and>
+							<eq>
+								<p>/fdm/jsbsim/propulsion/engine[3]/set-running</p>
+								<v>1</v>
+							</eq>						
+							<lt>
+								<p>/fdm/jsbsim/propulsion/engine[3]/n1</p>
+								<v>40</v>
+							</lt>
+						</and>
+					</or>
+					<value>1</value>
+					<value>0</value>
+				</ifthen>
+			</function>
+		</fcs_function>		
+		
+ 		<fcs_function name="/controls/electric/cws/eng_2-t5">
+			<function>
+				<ifthen>
+					<or>
+						<eq>
+							<p>/controls/electric/cws/initialise-1</p>
+							<v>1</v>
+						</eq>
+						<eq>
+							<p>/controls/electric/cws_lamptest</p>
+							<v>1</v>
+						</eq>
+						<and>
+							<eq>
+								<p>/fdm/jsbsim/propulsion/engine[4]/set-running</p>
+								<v>1</v>
+							</eq>						
+							<lt>
+								<p>/fdm/jsbsim/propulsion/engine[4]/n1</p>
+								<v>40</v>
+							</lt>
+						</and>
+					</or>
+					<value>1</value>
+					<value>0</value>
+				</ifthen>
+			</function>
+		</fcs_function>			
+		
+ 		<fcs_function name="/controls/electric/cws/eng_1-fuel-bypass">
+			<function>
+				<ifthen>
+					<or>
+						<eq>
+							<p>/controls/electric/cws/initialise-0.8</p>
+							<v>1</v>
+						</eq>
+						<eq>
+							<p>/controls/electric/cws_lamptest</p>
+							<v>1</v>
+						</eq>					
+<!-- 						<lt>
+							<p>/fdm/jsbsim/propulsion/engine[4]/chip</p>
+							<v>60</v>
+						</lt> -->
+					</or>
+					<value>1</value>
+					<value>0</value>
+				</ifthen>
+			</function>
+		</fcs_function>			
+		
+ 		<fcs_function name="/controls/electric/cws/eng_2-fuel-bypass">
+			<function>
+				<ifthen>
+					<or>
+						<eq>
+							<p>/controls/electric/cws/initialise-0.8</p>
+							<v>1</v>
+						</eq>
+						<eq>
+							<p>/controls/electric/cws_lamptest</p>
+							<v>1</v>
+						</eq>					
+<!-- 						<lt>
+							<p>/fdm/jsbsim/propulsion/engine[4]/chip</p>
+							<v>60</v>
+						</lt> -->
+					</or>
+					<value>1</value>
+					<value>0</value>
+				</ifthen>
+			</function>
+		</fcs_function>			
+		
+ 		<fcs_function name="/controls/electric/cws/chip_inter_trans">
+			<function>
+				<ifthen>
+					<or>
+						<eq>
+							<p>/controls/electric/cws/initialise-1</p>
+							<v>1</v>
+						</eq>
+						<eq>
+							<p>/controls/electric/cws_lamptest</p>
+							<v>1</v>
+						</eq>					
+<!-- 						<lt>
+							<p>/fdm/jsbsim/propulsion/engine[4]/chip</p>
+							<v>60</v>
+						</lt> -->
+					</or>
+					<value>1</value>
+					<value>0</value>
+				</ifthen>
+			</function>
+		</fcs_function>			
+		
+ 		<fcs_function name="/controls/electric/cws/chip_main_trans">
+			<function>
+				<ifthen>
+					<or>
+						<eq>
+							<p>/controls/electric/cws/initialise-1</p>
+							<v>1</v>
+						</eq>
+						<eq>
+							<p>/controls/electric/cws_lamptest</p>
+							<v>1</v>
+						</eq>					
+<!-- 						<lt>
+							<p>/fdm/jsbsim/propulsion/engine[4]/chip</p>
+							<v>60</v>
+						</lt> -->
+					</or>
+					<value>1</value>
+					<value>0</value>
+				</ifthen>
+			</function>
+		</fcs_function>			
+		
+ 		<fcs_function name="/controls/electric/cws/chip_tail_trans">
+			<function>
+				<ifthen>
+					<or>
+						<eq>
+							<p>/controls/electric/cws/initialise-1</p>
+							<v>1</v>
+						</eq>
+						<eq>
+							<p>/controls/electric/cws_lamptest</p>
+							<v>1</v>
+						</eq>					
+<!-- 						<lt>
+							<p>/fdm/jsbsim/propulsion/engine[4]/chip</p>
+							<v>60</v>
+						</lt> -->
+					</or>
+					<value>1</value>
+					<value>0</value>
+				</ifthen>
+			</function>
+		</fcs_function>			
+		
+ 		<fcs_function name="/controls/electric/cws/external-power">
+			<function>
+				<ifthen>
+					<or>
+						<eq>
+							<p>/controls/electric/cws/initialise-0.7</p>
+							<v>1</v>
+						</eq>
+						<eq>
+							<p>/controls/electric/cws_lamptest</p>
+							<v>1</v>
+						</eq>
+						<and>
+							<eq>
+								<p>/controls/electric/cab_power</p>
+								<v>1</v>
+							</eq>
+							<eq>
+								<p>/controls/electric/external_power</p>
+								<v>1</v>
+							</eq>
+						</and>	
+					</or>
+					<value>1</value>
+					<value>0</value>
+				</ifthen>
+			</function>
+		</fcs_function>			
+		
+ 		<fcs_function name="/controls/electric/cws/hoist_oil-hot">
+			<function>
+				<ifthen>
+					<or>
+						<eq>
+							<p>/controls/electric/cws/initialise-1</p>
+							<v>1</v>
+						</eq>
+						<eq>
+							<p>/controls/electric/cws_lamptest</p>
+							<v>1</v>
+						</eq>					
+<!-- 						<lt>
+							<p>/fdm/jsbsim/propulsion/engine[4]/chip</p>
+							<v>60</v>
+						</lt> -->
+					</or>
+					<value>1</value>
+					<value>0</value>
+				</ifthen>
+			</function>
+		</fcs_function>			
+		
+ 		<fcs_function name="/controls/electric/cws/hoist-overspeed">
+			<function>
+				<ifthen>
+					<or>
+						<eq>
+							<p>/controls/electric/cws/initialise-0.6</p>
+							<v>1</v>
+						</eq>
+						<eq>
+							<p>/controls/electric/cws_lamptest</p>
+							<v>1</v>
+						</eq>					
+<!-- 						<lt>
+							<p>/fdm/jsbsim/propulsion/engine[4]/chip</p>
+							<v>60</v>
+						</lt> -->
+					</or>
+					<value>1</value>
+					<value>0</value>
+				</ifthen>
+			</function>
+		</fcs_function>			
+		
+ 		<fcs_function name="/controls/electric/cws/hoist_shear-armed">
+			<function>
+				<ifthen>
+					<or>
+						<eq>
+							<p>/controls/electric/cws/initialise-0.6</p>
+							<v>1</v>
+						</eq>
+						<eq>
+							<p>/controls/electric/cws_lamptest</p>
+							<v>1</v>
+						</eq>					
+<!-- 						<lt>
+							<p>/fdm/jsbsim/propulsion/engine[4]/chip</p>
+							<v>60</v>
+						</lt> -->
+					</or>
+					<value>1</value>
+					<value>0</value>
+				</ifthen>
+			</function>
+		</fcs_function>			
+		
+ 		<fcs_function name="/controls/electric/cws/pitot_left-heat">
+			<function>
+				<ifthen>
+					<or>
+						<eq>
+							<p>/controls/electric/cws/initialise-0.6</p>
+							<v>1</v>
+						</eq>
+						<eq>
+							<p>/controls/electric/cws_lamptest</p>
+							<v>1</v>
+						</eq>					
+<!-- 						<lt>
+							<p>/fdm/jsbsim/propulsion/engine[4]/chip</p>
+							<v>60</v>
+						</lt> -->
+					</or>
+					<value>1</value>
+					<value>0</value>
+				</ifthen>
+			</function>
+		</fcs_function>			
+		
+ 		<fcs_function name="/controls/electric/cws/pitot_right-heat">
+			<function>
+				<ifthen>
+					<or>
+						<eq>
+							<p>/controls/electric/cws/initialise-0.6</p>
+							<v>1</v>
+						</eq>
+						<eq>
+							<p>/controls/electric/cws_lamptest</p>
+							<v>1</v>
+						</eq>					
+<!-- 						<lt>
+							<p>/fdm/jsbsim/propulsion/engine[4]/chip</p>
+							<v>60</v>
+						</lt> -->
+					</or>
+					<value>1</value>
+					<value>0</value>
+				</ifthen>
+			</function>
+		</fcs_function>			
+		
+ 		<fcs_function name="/controls/electric/cws/turn_left-slip">
+			<function>
+				<ifthen>
+					<or>
+						<eq>
+							<p>/controls/electric/cws/initialise-0.6</p>
+							<v>1</v>
+						</eq>
+						<eq>
+							<p>/controls/electric/cws_lamptest</p>
+							<v>1</v>
+						</eq>					
+<!-- 						<lt>
+							<p>/fdm/jsbsim/propulsion/engine[4]/chip</p>
+							<v>60</v>
+						</lt> -->
+					</or>
+					<value>1</value>
+					<value>0</value>
+				</ifthen>
+			</function>
+		</fcs_function>			
+		
+ 		<fcs_function name="/controls/electric/cws/turn_right-slip">
+			<function>
+				<ifthen>
+					<or>
+						<eq>
+							<p>/controls/electric/cws/initialise-0.6</p>
+							<v>1</v>
+						</eq>
+						<eq>
+							<p>/controls/electric/cws_lamptest</p>
+							<v>1</v>
+						</eq>					
+<!-- 						<lt>
+							<p>/fdm/jsbsim/propulsion/engine[4]/chip</p>
+							<v>60</v>
+						</lt> -->
+					</or>
+					<value>1</value>
+					<value>0</value>
+				</ifthen>
+			</function>
+		</fcs_function>			
+		
+ 		<fcs_function name="/controls/electric/cws/oil_cooler">
+			<function>
+				<ifthen>
+					<or>
+						<eq>
+							<p>/controls/electric/cws/initialise-0.6</p>
+							<v>1</v>
+						</eq>
+						<eq>
+							<p>/controls/electric/cws_lamptest</p>
+							<v>1</v>
+						</eq>					
+<!-- 						<lt>
+							<p>/fdm/jsbsim/propulsion/engine[4]/chip</p>
+							<v>60</v>
+						</lt> -->
+					</or>
+					<value>1</value>
+					<value>0</value>
+				</ifthen>
+			</function>
+		</fcs_function>			
+		
+ 		<fcs_function name="/controls/electric/cws/rear-control-engaged">
+			<function>
+				<ifthen>
+					<or>
+						<eq>
+							<p>/controls/electric/cws/initialise-0.6</p>
+							<v>1</v>
+						</eq>
+						<eq>
+							<p>/controls/electric/cws_lamptest</p>
+							<v>1</v>
+						</eq>					
+<!-- 						<lt>
+							<p>/fdm/jsbsim/propulsion/engine[4]/chip</p>
+							<v>60</v>
+						</lt> -->
+					</or>
+					<value>1</value>
+					<value>0</value>
+				</ifthen>
+			</function>
+		</fcs_function>			
+		
+ 		<fcs_function name="/controls/electric/cws/pitot_left-heat">
+			<function>
+				<ifthen>
+					<or>
+						<eq>
+							<p>/controls/electric/cws/initialise-0.6</p>
+							<v>1</v>
+						</eq>
+						<eq>
+							<p>/controls/electric/cws_lamptest</p>
+							<v>1</v>
+						</eq>					
+<!-- 						<lt>
+							<p>/fdm/jsbsim/propulsion/engine[4]/chip</p>
+							<v>60</v>
+						</lt> -->
+					</or>
+					<value>1</value>
+					<value>0</value>
+				</ifthen>
+			</function>
+		</fcs_function>			
+		
+ 		<fcs_function name="/controls/electric/cws/pitot_right-heat">
+			<function>
+				<ifthen>
+					<or>
+						<eq>
+							<p>/controls/electric/cws/initialise-0.6</p>
+							<v>1</v>
+						</eq>
+						<eq>
+							<p>/controls/electric/cws_lamptest</p>
+							<v>1</v>
+						</eq>					
+<!-- 						<lt>
+							<p>/fdm/jsbsim/propulsion/engine[4]/chip</p>
+							<v>60</v>
+						</lt> -->
+					</or>
+					<value>1</value>
+					<value>0</value>
+				</ifthen>
+			</function>
+		</fcs_function>			
+		
+ 		<fcs_function name="/controls/electric/cws/trans_oil-hot">
+			<function>
+				<ifthen>
+					<or>
+						<eq>
+							<p>/controls/electric/cws/initialise-0.6</p>
+							<v>1</v>
+						</eq>
+						<eq>
+							<p>/controls/electric/cws_lamptest</p>
+							<v>1</v>
+						</eq>					
+<!-- 						<lt>
+							<p>/fdm/jsbsim/propulsion/engine[4]/chip</p>
+							<v>60</v>
+						</lt> -->
+					</or>
+					<value>1</value>
+					<value>0</value>
+				</ifthen>
+			</function>
+		</fcs_function>			
+		
+ 		<fcs_function name="/controls/electric/cws/hook-unlocked">
+			<function>
+				<ifthen>
+					<or>
+						<eq>
+							<p>/controls/electric/cws/initialise-0.6</p>
+							<v>1</v>
+						</eq>
+						<eq>
+							<p>/controls/electric/cws_lamptest</p>
+							<v>1</v>
+						</eq>					
+<!-- 						<lt>
+							<p>/fdm/jsbsim/propulsion/engine[4]/chip</p>
+							<v>60</v>
+						</lt> -->
+					</or>
+					<value>1</value>
+					<value>0</value>
+				</ifthen>
+			</function>
+		</fcs_function>			
+		
+ 		<fcs_function name="/controls/electric/cws/auto_hook-release">
+			<function>
+				<ifthen>
+					<or>
+						<eq>
+							<p>/controls/electric/cws/initialise-0.6</p>
+							<v>1</v>
+						</eq>
+						<eq>
+							<p>/controls/electric/cws_lamptest</p>
+							<v>1</v>
+						</eq>					
+<!-- 						<lt>
+							<p>/fdm/jsbsim/propulsion/engine[4]/chip</p>
+							<v>60</v>
+						</lt> -->
+					</or>
+					<value>1</value>
+					<value>0</value>
+				</ifthen>
+			</function>
+		</fcs_function>			
+		
+ 		<fcs_function name="/controls/electric/cws/isolation_valve-open">
+			<function>
+				<ifthen>
+					<or>
+						<eq>
+							<p>/controls/electric/cws/initialise-0.6</p>
+							<v>1</v>
+						</eq>
+						<eq>
+							<p>/controls/electric/cws_lamptest</p>
+							<v>1</v>
+						</eq>					
+<!-- 						<lt>
+							<p>/fdm/jsbsim/propulsion/engine[4]/chip</p>
+							<v>60</v>
+						</lt> -->
+					</or>
+					<value>1</value>
+					<value>0</value>
+				</ifthen>
+			</function>
+		</fcs_function>			
+		
+ 		<fcs_function name="/controls/electric/cws/four_point_jettison-armed">
+			<function>
+				<ifthen>
+					<or>
+						<eq>
+							<p>/controls/electric/cws/initialise-0.6</p>
+							<v>1</v>
+						</eq>
+						<eq>
+							<p>/controls/electric/cws_lamptest</p>
+							<v>1</v>
+						</eq>					
+<!-- 						<lt>
+							<p>/fdm/jsbsim/propulsion/engine[4]/chip</p>
+							<v>60</v>
+						</lt> -->
+					</or>
+					<value>1</value>
+					<value>0</value>
+				</ifthen>
+			</function>
+		</fcs_function>			
+		
+ 		<fcs_function name="/controls/electric/cws/tail_skid-up">
+			<function>
+				<ifthen>
+					<or>
+						<eq>
+							<p>/controls/electric/cws/initialise-0.6</p>
+							<v>1</v>
+						</eq>
+						<eq>
+							<p>/controls/electric/cws_lamptest</p>
+							<v>1</v>
+						</eq>					
+<!-- 						<lt>
+							<p>/fdm/jsbsim/propulsion/engine[4]/chip</p>
+							<v>60</v>
+						</lt> -->
+					</or>
+					<value>1</value>
+					<value>0</value>
+				</ifthen>
+			</function>
+		</fcs_function>			
+		
+ 		<fcs_function name="/controls/electric/cws/heater-hot">
+			<function>
+				<ifthen>
+					<or>
+						<eq>
+							<p>/controls/electric/cws/initialise-0.6</p>
+							<v>1</v>
+						</eq>
+						<eq>
+							<p>/controls/electric/cws_lamptest</p>
+							<v>1</v>
+						</eq>					
+<!-- 						<lt>
+							<p>/fdm/jsbsim/propulsion/engine[4]/chip</p>
+							<v>60</v>
+						</lt> -->
+					</or>
+					<value>1</value>
+					<value>0</value>
+				</ifthen>
+			</function>
+		</fcs_function>			
+		
+ 		<fcs_function name="/controls/electric/cws/eaps-press">
+			<function>
+				<ifthen>
+					<or>
+						<eq>
+							<p>/controls/electric/cws/initialise-0.6</p>
+							<v>1</v>
+						</eq>
+						<eq>
+							<p>/controls/electric/cws_lamptest</p>
+							<v>1</v>
+						</eq>					
+<!-- 						<lt>
+							<p>/fdm/jsbsim/propulsion/engine[4]/chip</p>
+							<v>60</v>
+						</lt> -->
+					</or>
+					<value>1</value>
+					<value>0</value>
+				</ifthen>
+			</function>
+		</fcs_function>			
+		
+ 		<fcs_function name="/controls/electric/cws/hook-unlocked">
+			<function>
+				<ifthen>
+					<or>
+						<eq>
+							<p>/controls/electric/cws/initialise-0.6</p>
+							<v>1</v>
+						</eq>
+						<eq>
+							<p>/controls/electric/cws_lamptest</p>
+							<v>1</v>
+						</eq>					
+<!-- 						<lt>
+							<p>/fdm/jsbsim/propulsion/engine[4]/chip</p>
+							<v>60</v>
+						</lt> -->
+					</or>
+					<value>1</value>
+					<value>0</value>
+				</ifthen>
+			</function>
+		</fcs_function>			
+		
+ 		<fcs_function name="/controls/electric/cws/eng_1-starter">
+			<function>
+				<ifthen>
+					<or>
+						<eq>
+							<p>/controls/electric/cws/initialise-0.6</p>
+							<v>1</v>
+						</eq>
+						<eq>
+							<p>/controls/electric/cws_lamptest</p>
+							<v>1</v>
+						</eq>					
+						<and>
+							<eq>
+								<p>/controls/electric/cab_power</p>
+								<v>1</v>
+							</eq>
+							<eq>
+								<p>/controls/engines/engine[3]/starter</p>
+								<v>1</v>
+							</eq>
+						</and>
+					</or>
+					<value>1</value>
+					<value>0</value>
+				</ifthen>
+			</function>
+		</fcs_function>			
+		
+ 		<fcs_function name="/controls/electric/cws/eng_2-starter">
+			<function>
+				<ifthen>
+					<or>
+						<eq>
+							<p>/controls/electric/cws/initialise-0.6</p>
+							<v>1</v>
+						</eq>
+						<eq>
+							<p>/controls/electric/cws_lamptest</p>
+							<v>1</v>
+						</eq>					
+						<and>
+							<eq>
+								<p>/controls/electric/cab_power</p>
+								<v>1</v>
+							</eq>
+							<eq>
+								<p>/controls/engines/engine[4]/starter</p>
+								<v>1</v>
+							</eq>
+						</and>
+					</or>
+					<value>1</value>
+					<value>0</value>
+				</ifthen>
+			</function>
+		</fcs_function>			
+		
+ 		<fcs_function name="/controls/electric/cws/rotor_brake">
+			<function>
+				<ifthen>
+					<or>
+						<eq>
+							<p>/controls/electric/cws/initialise-0.6</p>
+							<v>1</v>
+						</eq>
+						<eq>
+							<p>/controls/electric/cws_lamptest</p>
+							<v>1</v>
+						</eq>					
+						<and>
+							<eq>
+								<p>/controls/electric/cab_power</p>
+								<v>1</v>
+							</eq>						
+							<eq>
+								<p>/controls/electric/rotor_brake-sw</p>
+								<v>1</v>
+							</eq>
+						</and>
+					</or>
+					<value>1</value>
+					<value>0</value>
+				</ifthen>
+			</function>
+		</fcs_function>			
+		
+ 		<fcs_function name="/controls/electric/cws/rotor_brake-press">
+			<function>
+				<ifthen>
+					<or>
+						<eq>
+							<p>/controls/electric/cws/initialise-0.6</p>
+							<v>1</v>
+						</eq>
+						<eq>
+							<p>/controls/electric/cws_lamptest</p>
+							<v>1</v>
+						</eq>					
+<!-- 						<lt>
+							<p>/fdm/jsbsim/propulsion/engine[4]/chip</p>
+							<v>60</v>
+						</lt> -->
+					</or>
+					<value>1</value>
+					<value>0</value>
+				</ifthen>
+			</function>
+		</fcs_function>
+
+ 		<fcs_function name="/controls/electric/cws/tail_rotor-1st_stage">
+			<function>
+				<ifthen>
+					<or>
+						<eq>
+							<p>/controls/electric/cws/initialise-0.6</p>
+							<v>1</v>
+						</eq>
+						<eq>
+							<p>/controls/electric/cws_lamptest</p>
+							<v>1</v>
+						</eq>					
+<!-- 						<lt>
+							<p>/fdm/jsbsim/propulsion/engine[4]/chip</p>
+							<v>60</v>
+						</lt> -->
+					</or>
+					<value>1</value>
+					<value>0</value>
+				</ifthen>
+			</function>
+		</fcs_function>			
+		
+ 		<fcs_function name="/controls/electric/cws/parking-brake">
+			<function>
+				<ifthen>
+					<or>
+						<eq>
+							<p>/controls/electric/cws/initialise-0.6</p>
+							<v>1</v>
+						</eq>
+						<eq>
+							<p>/controls/electric/cws_lamptest</p>
+							<v>1</v>
+						</eq>					
+						<and>
+							<eq>
+								<p>/controls/electric/cab_power</p>
+								<v>1</v>
+							</eq>
+							<eq>
+								<p>/controls/gear/brake-parking</p>
+								<v>1</v>
+							</eq>
+						</and>
+					</or>
+					<value>1</value>
+					<value>0</value>
+				</ifthen>
+			</function>
+		</fcs_function>			
+		
+ 		<fcs_function name="/controls/electric/cws/eng_1-anti-ice">
+			<function>
+				<ifthen>
+					<or>
+						<eq>
+							<p>/controls/electric/cws/initialise-0.6</p>
+							<v>1</v>
+						</eq>
+						<eq>
+							<p>/controls/electric/cws_lamptest</p>
+							<v>1</v>
+						</eq>					
+<!-- 						<lt>
+							<p>/fdm/jsbsim/propulsion/engine[4]/chip</p>
+							<v>60</v>
+						</lt> -->
+					</or>
+					<value>1</value>
+					<value>0</value>
+				</ifthen>
+			</function>
+		</fcs_function>			
+		
+ 		<fcs_function name="/controls/electric/cws/eng_2-anti-ice">
+			<function>
+				<ifthen>
+					<or>
+						<eq>
+							<p>/controls/electric/cws/initialise-0.6</p>
+							<v>1</v>
+						</eq>
+						<eq>
+							<p>/controls/electric/cws_lamptest</p>
+							<v>1</v>
+						</eq>					
+<!-- 						<lt>
+							<p>/fdm/jsbsim/propulsion/engine[4]/chip</p>
+							<v>60</v>
+						</lt> -->
+					</or>
+					<value>1</value>
+					<value>0</value>
+				</ifthen>
+			</function>
+		</fcs_function>
+
+ 		<fcs_function name="/controls/electric/cws/eng_1-anti-ice-on">
+			<function>
+				<ifthen>
+					<or>
+						<eq>
+							<p>/controls/electric/cws/initialise-0.6</p>
+							<v>1</v>
+						</eq>
+						<eq>
+							<p>/controls/electric/cws_lamptest</p>
+							<v>1</v>
+						</eq>					
+<!-- 						<lt>
+							<p>/fdm/jsbsim/propulsion/engine[4]/chip</p>
+							<v>60</v>
+						</lt> -->
+					</or>
+					<value>1</value>
+					<value>0</value>
+				</ifthen>
+			</function>
+		</fcs_function>			
+		
+ 		<fcs_function name="/controls/electric/cws/eng_2-anti-ice-on">
+			<function>
+				<ifthen>
+					<or>
+						<eq>
+							<p>/controls/electric/cws/initialise-0.6</p>
+							<v>1</v>
+						</eq>
+						<eq>
+							<p>/controls/electric/cws_lamptest</p>
+							<v>1</v>
+						</eq>					
+<!-- 						<lt>
+							<p>/fdm/jsbsim/propulsion/engine[4]/chip</p>
+							<v>60</v>
+						</lt> -->
+					</or>
+					<value>1</value>
+					<value>0</value>
+				</ifthen>
+			</function>
+		</fcs_function>			
+		
+ 		<fcs_function name="/controls/electric/cws/fuel_fwd-low">
+			<function>
+				<ifthen>
+					<or>
+						<eq>
+							<p>/controls/electric/cws/initialise-0.9</p>
+							<v>1</v>
+						</eq>
+						<eq>
+							<p>/controls/electric/cws_lamptest</p>
+							<v>1</v>
+						</eq>					
+<!-- 						<lt>
+							<p>/fdm/jsbsim/propulsion/engine[4]/chip</p>
+							<v>60</v>
+						</lt> -->
+					</or>
+					<value>1</value>
+					<value>0</value>
+				</ifthen>
+			</function>
+		</fcs_function>			
+		
+ 		<fcs_function name="/controls/electric/cws/fuel_aft-low">
+			<function>
+				<ifthen>
+					<or>
+						<eq>
+							<p>/controls/electric/cws/initialise-0.9</p>
+							<v>1</v>
+						</eq>
+						<eq>
+							<p>/controls/electric/cws_lamptest</p>
+							<v>1</v>
+						</eq>					
+<!-- 						<lt>
+							<p>/fdm/jsbsim/propulsion/engine[4]/chip</p>
+							<v>60</v>
+						</lt> -->
+					</or>
+					<value>1</value>
+					<value>0</value>
+				</ifthen>
+			</function>
+		</fcs_function>			
+		
+ 		<fcs_function name="/controls/electric/cws/fuel_aux-low">
+			<function>
+				<ifthen>
+					<or>
+						<eq>
+							<p>/controls/electric/cws/initialise-0.9</p>
+							<v>1</v>
+						</eq>
+						<eq>
+							<p>/controls/electric/cws_lamptest</p>
+							<v>1</v>
+						</eq>					
+<!-- 						<lt>
+							<p>/fdm/jsbsim/propulsion/engine[4]/chip</p>
+							<v>60</v>
+						</lt> -->
+					</or>
+					<value>1</value>
+					<value>0</value>
+				</ifthen>
+			</function>
+		</fcs_function>			
+		
+ 		<fcs_function name="/controls/electric/cws/fuel_temp-low">
+			<function>
+				<ifthen>
+					<or>
+						<eq>
+							<p>/controls/electric/cws/initialise-0.9</p>
+							<v>1</v>
+						</eq>
+						<eq>
+							<p>/controls/electric/cws_lamptest</p>
+							<v>1</v>
+						</eq>					
+<!-- 						<lt>
+							<p>/fdm/jsbsim/propulsion/engine[4]/chip</p>
+							<v>60</v>
+						</lt> -->
+					</or>
+					<value>1</value>
+					<value>0</value>
+				</ifthen>
+			</function>
+		</fcs_function>			
+		
+ 		<fcs_function name="/controls/electric/cws/generator_1">
+			<function>
+				<ifthen>
+					<or>
+						<eq>
+							<p>/controls/electric/cws/initialise-1</p>
+							<v>1</v>
+						</eq>
+						<eq>
+							<p>/controls/electric/cws_lamptest</p>
+							<v>1</v>
+						</eq>					
+						<and>
+							<eq>
+								<p>/controls/electric/cab_power</p>
+								<v>1</v>
+							</eq>
+							<not>
+								<p>/controls/electric/engine[3]/generator</p>
+							</not>
+						</and>
+					</or>
+					<value>1</value>
+					<value>0</value>
+				</ifthen>
+			</function>
+		</fcs_function>			
+		
+ 		<fcs_function name="/controls/electric/cws/generator_2">
+			<function>
+				<ifthen>
+					<or>
+						<eq>
+							<p>/controls/electric/cws/initialise-1</p>
+							<v>1</v>
+						</eq>
+						<eq>
+							<p>/controls/electric/cws_lamptest</p>
+							<v>1</v>
+						</eq>					
+						<and>
+							<eq>
+								<p>/controls/electric/cab_power</p>
+								<v>1</v>
+							</eq>
+							<not>
+								<p>/controls/electric/engine[4]/generator</p>
+							</not>
+						</and>
+					</or>
+					<value>1</value>
+					<value>0</value>
+				</ifthen>
+			</function>
+		</fcs_function>			
+		
+ 		<fcs_function name="/controls/electric/cws/rectifier_1">
+			<function>
+				<ifthen>
+					<or>
+						<eq>
+							<p>/controls/electric/cws/initialise-0.9</p>
+							<v>1</v>
+						</eq>
+						<eq>
+							<p>/controls/electric/cws_lamptest</p>
+							<v>1</v>
+						</eq>
+						<and>
+							<eq>
+								<p>/controls/electric/cab_power</p>
+								<v>1</v>
+							</eq>
+							<not>
+								<p>/controls/electric/engine[3]/rectifier</p>
+							</not>
+						</and>
+					</or>
+					<value>1</value>
+					<value>0</value>
+				</ifthen>
+			</function>
+		</fcs_function>			
+		
+ 		<fcs_function name="/controls/electric/cws/rectifier_2">
+			<function>
+				<ifthen>
+					<or>
+						<eq>
+							<p>/controls/electric/cws/initialise-0.9</p>
+							<v>1</v>
+						</eq>
+						<eq>
+							<p>/controls/electric/cws_lamptest</p>
+							<v>1</v>
+						</eq>					
+						<and>
+							<eq>
+								<p>/controls/electric/cab_power</p>
+								<v>1</v>
+							</eq>
+							<not>
+								<p>/controls/electric/engine[4]/rectifier</p>
+							</not>
+						</and>
+					</or>
+					<value>1</value>
+					<value>0</value>
+				</ifthen>
+			</function>
+		</fcs_function>			
+		
+ 		<fcs_function name="/controls/electric/cws/app">
+			<function>
+				<ifthen>
+					<or>
+						<eq>
+							<p>/controls/electric/cws/initialise-0.9</p>
+							<v>1</v>
+						</eq>
+						<eq>
+							<p>/controls/electric/cws_lamptest</p>
+							<v>1</v>
+						</eq>					
+<!-- 						<lt>
+							<p>/fdm/jsbsim/propulsion/engine[4]/chip</p>
+							<v>60</v>
+						</lt> -->
+					</or>
+					<value>1</value>
+					<value>0</value>
+				</ifthen>
+			</function>
+		</fcs_function>			
+		
+ 		<fcs_function name="/controls/electric/cws/app_hyd_press-low">
+			<function>
+				<ifthen>
+					<or>
+						<eq>
+							<p>/controls/electric/cws/initialise-0.9</p>
+							<v>1</v>
+						</eq>
+						<eq>
+							<p>/controls/electric/cws_lamptest</p>
+							<v>1</v>
+						</eq>					
+<!-- 						<lt>
+							<p>/fdm/jsbsim/propulsion/engine[4]/chip</p>
+							<v>60</v>
+						</lt> -->
+					</or>
+					<value>1</value>
+					<value>0</value>
+				</ifthen>
+			</function>
+		</fcs_function>			
+		
+ 		<fcs_function name="/controls/electric/cws/afcs">
+			<function>
+				<ifthen>
+					<or>
+						<eq>
+							<p>/controls/electric/cws/initialise-0.9</p>
+							<v>1</v>
+						</eq>
+						<eq>
+							<p>/controls/electric/cws_lamptest</p>
+							<v>1</v>
+						</eq>					
+<!-- 						<lt>
+							<p>/fdm/jsbsim/propulsion/engine[4]/chip</p>
+							<v>60</v>
+						</lt> -->
+					</or>
+					<value>1</value>
+					<value>0</value>
+				</ifthen>
+			</function>
+		</fcs_function>			
+		
+ 		<fcs_function name="/controls/electric/cws/afcs_servo-press">
+			<function>
+				<ifthen>
+					<or>
+						<eq>
+							<p>/controls/electric/cws/initialise-0.9</p>
+							<v>1</v>
+						</eq>
+						<eq>
+							<p>/controls/electric/cws_lamptest</p>
+							<v>1</v>
+						</eq>					
+<!-- 						<lt>
+							<p>/fdm/jsbsim/propulsion/engine[4]/chip</p>
+							<v>60</v>
+						</lt> -->
+					</or>
+					<value>1</value>
+					<value>0</value>
+				</ifthen>
+			</function>
+		</fcs_function>			
+		
+ 		<fcs_function name="/controls/electric/cws/fuel_1-press">
+			<function>
+				<ifthen>
+					<or>
+						<eq>
+							<p>/controls/electric/cws/initialise-0.9</p>
+							<v>1</v>
+						</eq>
+						<eq>
+							<p>/controls/electric/cws_lamptest</p>
+							<v>1</v>
+						</eq>					
+<!-- 						<lt>
+							<p>/fdm/jsbsim/propulsion/engine[4]/chip</p>
+							<v>60</v>
+						</lt> -->
+					</or>
+					<value>1</value>
+					<value>0</value>
+				</ifthen>
+			</function>
+		</fcs_function>				
+		
+ 		<fcs_function name="/controls/electric/cws/fuel_2-press">
+			<function>
+				<ifthen>
+					<or>
+						<eq>
+							<p>/controls/electric/cws/initialise-0.9</p>
+							<v>1</v>
+						</eq>
+						<eq>
+							<p>/controls/electric/cws_lamptest</p>
+							<v>1</v>
+						</eq>					
+<!-- 						<lt>
+							<p>/fdm/jsbsim/propulsion/engine[4]/chip</p>
+							<v>60</v>
+						</lt> -->
+					</or>
+					<value>1</value>
+					<value>0</value>
+				</ifthen>
+			</function>
+		</fcs_function>				
+		
+ 		<fcs_function name="/controls/electric/cws/fuel_aux-press">
+			<function>
+				<ifthen>
+					<or>
+						<eq>
+							<p>/controls/electric/cws/initialise-0.9</p>
+							<v>1</v>
+						</eq>
+						<eq>
+							<p>/controls/electric/cws_lamptest</p>
+							<v>1</v>
+						</eq>					
+<!-- 						<lt>
+							<p>/fdm/jsbsim/propulsion/engine[4]/chip</p>
+							<v>60</v>
+						</lt> -->
+					</or>
+					<value>1</value>
+					<value>0</value>
+				</ifthen>
+			</function>
+		</fcs_function>			
+		
+ 		<fcs_function name="/controls/electric/cws/eng_1_oil-press">
+			<function>
+				<ifthen>
+					<or>
+						<eq>
+							<p>/controls/electric/cws/initialise-0.9</p>
+							<v>1</v>
+						</eq>
+						<eq>
+							<p>/controls/electric/cws_lamptest</p>
+							<v>1</v>
+						</eq>					
+<!-- 						<lt>
+							<p>/fdm/jsbsim/propulsion/engine[4]/chip</p>
+							<v>60</v>
+						</lt> -->
+					</or>
+					<value>1</value>
+					<value>0</value>
+				</ifthen>
+			</function>
+		</fcs_function>			
+		
+ 		<fcs_function name="/controls/electric/cws/eng_2_oil-press">
+			<function>
+				<ifthen>
+					<or>
+						<eq>
+							<p>/controls/electric/cws/initialise-0.9</p>
+							<v>1</v>
+						</eq>
+						<eq>
+							<p>/controls/electric/cws_lamptest</p>
+							<v>1</v>
+						</eq>					
+<!-- 						<lt>
+							<p>/fdm/jsbsim/propulsion/engine[4]/chip</p>
+							<v>60</v>
+						</lt> -->
+					</or>
+					<value>1</value>
+					<value>0</value>
+				</ifthen>
+			</function>
+		</fcs_function>			
+		
+ 		<fcs_function name="/controls/electric/cws/trans_oil-press">
+			<function>
+				<ifthen>
+					<or>
+						<eq>
+							<p>/controls/electric/cws/initialise-0.9</p>
+							<v>1</v>
+						</eq>
+						<eq>
+							<p>/controls/electric/cws_lamptest</p>
+							<v>1</v>
+						</eq>					
+<!-- 						<lt>
+							<p>/fdm/jsbsim/propulsion/engine[4]/chip</p>
+							<v>60</v>
+						</lt> -->
+					</or>
+					<value>1</value>
+					<value>0</value>
+				</ifthen>
+			</function>
+		</fcs_function>			
+		
+ 		<fcs_function name="/controls/electric/cws/inter_trans_oil-press">
+			<function>
+				<ifthen>
+					<or>
+						<eq>
+							<p>/controls/electric/cws/initialise-0.9</p>
+							<v>1</v>
+						</eq>
+						<eq>
+							<p>/controls/electric/cws_lamptest</p>
+							<v>1</v>
+						</eq>					
+<!-- 						<lt>
+							<p>/fdm/jsbsim/propulsion/engine[4]/chip</p>
+							<v>60</v>
+						</lt> -->
+					</or>
+					<value>1</value>
+					<value>0</value>
+				</ifthen>
+			</function>
+		</fcs_function>			
+		
+ 		<fcs_function name="/controls/electric/cws/hyd_1st_stage-servo">
+			<function>
+				<ifthen>
+					<or>
+						<eq>
+							<p>/controls/electric/cws/initialise-0.9</p>
+							<v>1</v>
+						</eq>
+						<eq>
+							<p>/controls/electric/cws_lamptest</p>
+							<v>1</v>
+						</eq>					
+<!-- 						<lt>
+							<p>/fdm/jsbsim/propulsion/engine[4]/chip</p>
+							<v>60</v>
+						</lt> -->
+					</or>
+					<value>1</value>
+					<value>0</value>
+				</ifthen>
+			</function>
+		</fcs_function>			
+		
+ 		<fcs_function name="/controls/electric/cws/hyd_2st_stage-servo">
+			<function>
+				<ifthen>
+					<or>
+						<eq>
+							<p>/controls/electric/cws/initialise-0.9</p>
+							<v>1</v>
+						</eq>
+						<eq>
+							<p>/controls/electric/cws_lamptest</p>
+							<v>1</v>
+						</eq>					
+<!-- 						<lt>
+							<p>/fdm/jsbsim/propulsion/engine[4]/chip</p>
+							<v>60</v>
+						</lt> -->
+					</or>
+					<value>1</value>
+					<value>0</value>
+				</ifthen>
+			</function>
+		</fcs_function>			
+		
+ 		<fcs_function name="/controls/electric/cws/hyd_1st_stage_servo-press">
+			<function>
+				<ifthen>
+					<or>
+						<eq>
+							<p>/controls/electric/cws/initialise-0.9</p>
+							<v>1</v>
+						</eq>
+						<eq>
+							<p>/controls/electric/cws_lamptest</p>
+							<v>1</v>
+						</eq>
+						<and>
+							<eq>
+								<p>/controls/electric/cab_power</p>
+								<v>1</v>
+							</eq>
+							<or>
+								<eq>
+									<p>/fdm/jsbsim/propulsion/engine[3]/set-running</p>
+									<v>1</v>
+								</eq>
+								<eq>
+									<p>/fdm/jsbsim/propulsion/engine[4]/set-running</p>
+									<v>1</v>
+								</eq>
+							</or>
+							<lt>
+								<p>/fdm/jsbsim/propulsion/gearbox/hyd_1st_stage-psi</p>
+								<v>2.6</v>
+							</lt>
+						</and>
+					</or>
+					<value>1</value>
+					<value>0</value>
+				</ifthen>
+			</function>
+		</fcs_function>			
+		
+ 		<fcs_function name="/controls/electric/cws/hyd_2nd_stage_servo-press">
+			<function>
+				<ifthen>
+					<or>
+						<eq>
+							<p>/controls/electric/cws/initialise-0.9</p>
+							<v>1</v>
+						</eq>
+						<eq>
+							<p>/controls/electric/cws_lamptest</p>
+							<v>1</v>
+						</eq>					
+						<and>
+							<eq>
+								<p>/controls/electric/cab_power</p>
+								<v>1</v>
+							</eq>
+							<eq>
+								<p>/fdm/jsbsim/propulsion/engine[3]/set-running</p>
+								<v>1</v>
+							</eq>														
+							<lt>
+								<p>/fdm/jsbsim/propulsion/gearbox/hyd_2nd_stage-psi</p>
+								<v>1.7</v>
+							</lt>
+						</and>
+					</or>
+					<value>1</value>
+					<value>0</value>
+				</ifthen>
+			</function>
+		</fcs_function>					
+		
+	</channel>
+
+</system>

@@ -3,71 +3,46 @@
 <PropertyList>
 
   <path>buttonW.ac</path>
-
-	<animation>
-		<object-name>base</object-name>
-		<object-name>button</object-name>
-	</animation>
-
-    <animation>
-        <type>slider</type>
-        <object-name>button</object-name>
-        <property>controls/switches/cws-test</property>
-        <repeatable>false</repeatable>
-        <factor>0.001</factor>
-        <axis>
-            <x>-1</x>
-            <y>0</y>
-            <z>0</z>
-        </axis>
-        <action>
-            <repeatable>false</repeatable>
-            <binding>
-                <command>nasal</command>
-                <script>
-                    setprop("/controls/switches/cws-test", 1);
-                </script>
-            </binding>
-        </action>
-        <release>
-            <binding>
-                <command>nasal</command>
-                <script>
-                    setprop("/controls/switches/cws-test", 0);
-                    aircrane.click("avionics");
-                </script>
-            </binding>
-        </release>
-        <hovered>
-            <binding>
-                <command>set-tooltip</command>
-                <tooltip-id>cplamptest</tooltip-id>
-                <label>CWS Test: %s</label>
-                <mapping>on-off</mapping>
-                <property>controls/switches/cws-test</property>
-            </binding>
-        </hovered>
-    </animation>
-
-	<animation>
-		<type>material</type>
-		<object-name>base</object-name>
-		<object-name>button</object-name>
-		<condition>
-		  <property>systems/electrical/outputs/cabin-power</property>
-		</condition>
-		<emission>
-		  <factor-prop>controls/lighting/luminosite-lights</factor-prop>
-		  <red>   0.50 </red>
-		  <green> 0.40 </green>
-		  <blue>  0.30 </blue>
-		</emission>
-	</animation>
-
+  
 	<effect>
 		<inherits-from>Aircraft/AirCrane/Models/Effects/Interior/cockpit-interior</inherits-from>
 		<object-name>base</object-name>
 		<object-name>button</object-name>
 	</effect>
+	
+	<animation>
+		<type>pick</type>
+		<object-name>button</object-name>
+		<visible>true</visible>
+		<action>
+			<button>0</button>
+			<repeatable>false</repeatable>			
+			<binding>
+				<command>property-assign</command>
+				<property>/controls/electric/cws_lamptest-sw</property>
+				<value>1</value>
+			</binding>
+			<mod-up>
+				<binding>
+					<command>property-assign</command>
+					<property>/controls/electric/cws_lamptest-sw</property>
+					<value>0</value>
+				</binding>
+			</mod-up>			
+			<binding>
+				<command>nasal</command>
+				<script>aircrane.click("avionics")</script>
+			</binding>
+		</action>
+	</animation>
+	<animation>
+		<type>translate</type>
+		<object-name>button</object-name>
+		<property>/controls/electric/cws_lamptest-sw</property>	
+		<factor>-0.003</factor>
+		<axis>
+			<x>1</x>
+		</axis>
+	</animation>	
 
 </PropertyList>

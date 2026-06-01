@@ -1,0 +1,117 @@
+<?xml version="1.0"?>
+
+<!--
+
+Copyright (c) 2021 Simon 'bomber' Morley
+simonbomber64 at googlemail.com
+
+This work is licensed under the
+Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License.
+To view a copy of this license,
+visit http://creativecommons.org/licenses/by-nc-sa/_3.0/ or
+send a letter to Creative Commons, PO Box 1866, Mountain View, Cd 94042, USA.
+
+Attribution,  You must give appropriate credit, provide a link to the license,
+and indicate if changes were made. You may do so in any reasonable manner,
+but not in any way that suggests the licensor endorses you or your use.
+
+NonCommercial,  You may not use the material for commercial purposes.
+
+ShareAlike,  If you remix, transform, or build upon the material,
+you must distribute your contributions under the same license as the original.
+
+**************************************************************************
+-->
+
+<propeller name="2 blade tail rotor for Bell UH-1" version="1.01">
+
+	<!--
+	<ixx> is the rotational moment of inertia for the propeller/engine combination.
+	Small numbers accelerate faster but bounce around more. Large numbers
+	accelerate slower and regulate smoother.
+
+	I = m*D^2/12
+
+	m=	6.65	kg
+	d=	2.92	m
+	-->
+
+	<ixx unit="SLUG*FT2">3.48406673087781</ixx>
+
+	<!--
+	Prop Characteristics
+	-->
+
+	<diameter unit="IN">114.96062992126</diameter>
+	<numblades>2</numblades>
+	<constspeed>0</constspeed>
+	<gearratio>1</gearratio>
+
+	<minpitch>-6.1</minpitch>					<!-- is the Prop min AoA setting -->
+	<maxpitch>4.3</maxpitch>					<!-- is the Prop max AoA setting -->
+
+	<minrpm>1619</minrpm>
+	<maxrpm>1621</maxrpm>					<!-- is the Prop Govenors max setting -->
+
+	<ct_factor>1</ct_factor>					<!-- is the props co-efficent of thrust 'tuning' factor -->
+	<cp_factor>1</cp_factor>					<!-- is the props co-efficent of power 'tuning' factor -->
+
+	<table name="C_THRUST" type="internal">
+	<tableData>
+			-6.1	-3.1	0.2	4.3
+		-0.35	0.022455	0.052553	0.125896	0.132629
+		-0.30	0.020746	0.047924	0.118168	0.123637
+		-0.25	0.019037	0.043295	0.110440	0.114534
+		-0.20	0.016846	0.038666	0.102712	0.108324
+		-0.15	0.015462	0.035151	0.095830	0.101353
+		-0.10	0.014494	0.032522	0.091323	0.093968
+		-0.05	0.013552	0.030576	0.085181	0.084107
+		0.00	0.003571	0.015281	0.047459	0.060740
+		0.05	-0.006410	-0.000014	0.009737	0.037373
+		0.10	-0.007352	-0.001960	0.003595	0.027512
+		0.15	-0.008320	-0.004589	-0.000912	0.020127
+		0.20	-0.009704	-0.008104	-0.007794	0.013156
+		0.25	-0.011895	-0.012733	-0.015522	0.006946
+		0.30	-0.013604	-0.017362	-0.023250	-0.002157
+		0.35	-0.015313	-0.021991	-0.030978	-0.011149
+	</tableData>
+	</table>
+
+	<table name="C_POWER" type="internal">
+	<tableData>
+			-6.1	-3.1	0.2	4.3
+		-0.35	-0.000371	-0.001310	-0.002845	0.000166
+		-0.30	-0.000011	-0.000594	-0.001173	0.003127
+		-0.25	0.000349	0.000122	0.000499	0.005654
+		-0.20	0.000606	0.000838	0.002171	0.007103
+		-0.15	0.000768	0.001271	0.003329	0.008465
+		-0.10	0.000860	0.001501	0.003970	0.009644
+		-0.05	0.000889	0.001619	0.004592	0.010395
+		0.00	0.000950	0.001700	0.004988	0.010700
+		0.05	0.000889	0.001619	0.004592	0.010395
+		0.10	0.000860	0.001501	0.003970	0.009644
+		0.15	0.000768	0.001271	0.003329	0.008465
+		0.20	0.000606	0.000838	0.002171	0.007103
+		0.25	0.000349	0.000122	0.000499	0.005654
+		0.30	-0.000011	-0.000594	-0.001173	0.003127
+		0.35	-0.000371	-0.001310	-0.002845	0.000166
+	</tableData>
+	</table>
+
+	<!-- thrust effects of helical tip Mach -->
+	<table name="CT_MACH" type="internal">
+		<tableData>
+			0.85   1.0
+			1.05   0.8
+		</tableData>
+	</table>
+
+	<!-- power-required effects of helical tip Mach -->
+	<table name="CP_MACH" type="internal">
+		<tableData>
+			0.85   1.0
+			1.05   1.8
+		</tableData>
+	</table>
+
+</propeller>

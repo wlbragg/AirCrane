@@ -73,7 +73,8 @@
     </offsets>
   </model>
 
-  <model>
+
+<!--   <model>
     <path>Aircraft/AirCrane/Models/Interior/Panel/Instruments/switch/t5switch.xml</path>
     <offsets>
       <x-m>  0.02000 </x-m>
@@ -81,7 +82,7 @@
       <z-m> -0.17369 </z-m>
       <pitch-deg> -5.7 </pitch-deg>
     </offsets>
-  </model>
+  </model>  -->
 
   <model>
     <path>Aircraft/AirCrane/Models/Interior/Panel/Instruments/switch/cwsswitch.xml</path>
@@ -93,7 +94,7 @@
     </offsets>
   </model>
 
-  <model>
+<!--   <model>
     <path>Aircraft/AirCrane/Models/Interior/Panel/Instruments/switch/c14gyro1.xml</path>
     <offsets>
       <x-m>  0.01971 </x-m>
@@ -111,18 +112,7 @@
       <z-m> -0.17327 </z-m>
       <pitch-deg> -5.7 </pitch-deg>
     </offsets>
-  </model>
-
-  <!-- AUX Fuel test button-->
-  <model>
-    <path>Aircraft/AirCrane/Models/Interior/Panel/Instruments/switch/auxtanktest.xml</path>
-    <offsets>
-      <x-m>  0.027 </x-m>
-      <y-m> -0.160 </y-m>
-      <z-m> -0.156 </z-m>
-      <pitch-deg> -5.7 </pitch-deg>
-    </offsets>
-  </model>
+  </model> -->
 
   <!-- CWS test button-->
   <model>
@@ -147,7 +137,7 @@
   </model>
 
   <!-- ai -->
-  <model>
+ <!--  <model>
     <path>Aircraft/AirCrane/Models/Interior/Panel/Instruments/ai/ai.xml</path>
     <offsets>
       <x-m> -0.00572 </x-m>
@@ -155,10 +145,10 @@
       <z-m>  0.04751 </z-m>
       <pitch-deg> -6 </pitch-deg>
     </offsets>
-  </model>
+  </model> -->
 
   <!-- adi -->
-  <model>
+ <!--  <model>
     <path>Aircraft/AirCrane/Models/Interior/Panel/Instruments/adi/adi.xml</path>
     <offsets>
       <x-m> -0.00368 </x-m>
@@ -166,10 +156,10 @@
       <z-m>  0.05157 </z-m>
       <pitch-deg> -6 </pitch-deg>
     </offsets>
-  </model>
+  </model> -->
 
   <!-- asi -->
-  <model>
+ <!--  <model>
     <path>Aircraft/AirCrane/Models/Interior/Panel/Instruments/asi/asi.xml</path>
     <offsets>
       <x-m> -0.00604 </x-m>
@@ -187,10 +177,10 @@
       <z-m>  0.06719 </z-m>
       <pitch-deg> -6 </pitch-deg>
     </offsets>
-  </model>
+  </model> -->
 
   <!-- alt -->
-  <model>
+ <!--  <model>
     <path>Aircraft/AirCrane/Models/Interior/Panel/Instruments/alt/altl.xml</path>
     <offsets>
       <x-m> -0.00997 </x-m>
@@ -208,10 +198,10 @@
       <z-m>  0.07150 </z-m>
       <pitch-deg> -6 </pitch-deg>
     </offsets>
-  </model>
+  </model> -->
 
   <!-- chcl -->
-  <model>
+<!--   <model>
     <path>Aircraft/AirCrane/Models/Interior/Panel/Instruments/chcl/chcl.xml</path>
     <offsets>
       <x-m> -0.01604 </x-m>
@@ -219,10 +209,10 @@
       <z-m>  0.15275 </z-m>
       <pitch-deg> -6 </pitch-deg>
     </offsets>
-  </model>
+  </model> -->
 
-  <!-- digital-clock-left -->
-  <model>
+  <!-- digital-clock -->
+<!--   <model>
     <path>Aircraft/AirCrane/Models/Interior/Panel/Instruments/digitalclock/digitalclock.xml</path>
     <offsets>
       <x-m>  0.01247 </x-m>
@@ -232,7 +222,6 @@
     </offsets>
   </model>
 
-  <!-- digital-clock-right -->
   <model>
     <path>Aircraft/AirCrane/Models/Interior/Panel/Instruments/digitalclock/digitalclock.xml</path>
     <offsets>
@@ -241,10 +230,10 @@
       <z-m> -0.17448 </z-m>
       <pitch-deg> -6 </pitch-deg>
     </offsets>
-  </model>
+  </model> -->
 
   <!-- fuel -->
-  <model>
+   <model>
     <path>Aircraft/AirCrane/Models/Interior/Panel/Instruments/fuel/fuelfwd.xml</path>
     <offsets>
       <x-m> -0.00044 </x-m>
@@ -263,6 +252,16 @@
       <pitch-deg> -6 </pitch-deg>
     </offsets>
   </model>
+  
+  <model>
+    <path>Aircraft/AirCrane/Models/Interior/Panel/Instruments/switch/auxtanktest.xml</path>
+    <offsets>
+      <x-m>  0.027 </x-m>
+      <y-m> -0.160 </y-m>
+      <z-m> -0.156 </z-m>
+      <pitch-deg> -5.7 </pitch-deg>
+    </offsets>
+  </model> 
 
   <model>
     <path>Aircraft/AirCrane/Models/Interior/Panel/Instruments/fuel/fuelaux.xml</path>
@@ -278,6 +277,16 @@
   <model>
     <path>Aircraft/AirCrane/Models/Interior/Panel/Instruments/fuel/fuelflowfwd.xml</path>
     <offsets>
+      <x-m> -0.00438 </x-m>
+      <y-m> -0.00145 </y-m>
+      <z-m>  0.05327 </z-m>
+      <pitch-deg> -6 </pitch-deg>
+    </offsets>
+  </model>
+  
+  <model>
+    <path>Aircraft/AirCrane/Models/Interior/Panel/Instruments/fuel/fuelflowaft.xml</path>
+    <offsets>
       <x-m> -0.00459 </x-m>
       <y-m>  0.09950 </y-m>
       <z-m>  0.05323 </z-m>
@@ -285,18 +294,8 @@
     </offsets>
   </model>
 
-  <model>
-    <path>Aircraft/AirCrane/Models/Interior/Panel/Instruments/fuel/fuelflowaft.xml</path>
-    <offsets>
-      <x-m> -0.00438 </x-m>
-      <y-m> -0.00145 </y-m>
-      <z-m>  0.05327 </z-m>
-      <pitch-deg> -6 </pitch-deg>
-    </offsets>
-  </model>
-
   <!-- fuelpress -->
-  <model>
+<!--   <model>
     <path>Aircraft/AirCrane/Models/Interior/Panel/Instruments/fuel/fuelpressfwd.xml</path>
     <offsets>
       <x-m>  0.00068 </x-m>
@@ -314,11 +313,21 @@
       <z-m> -0.01670 </z-m>
       <pitch-deg> -6 </pitch-deg>
     </offsets>
-  </model>
+  </model> -->
 
-  <!-- engtemp -->
+  <!-- engtemp --> 
+    <model>
+    <path>Aircraft/AirCrane/Models/Interior/Panel/Instruments/engtemp/engtemp1.xml</path>
+    <offsets>
+      <x-m> -0.01137 </x-m>
+      <y-m> -0.00140 </y-m>
+      <z-m>  0.11621 </z-m>
+      <pitch-deg> -6 </pitch-deg>
+    </offsets>
+  </model>
+  
   <model>
-    <path>Aircraft/AirCrane/Models/Interior/Panel/Instruments/engtemp/engtemp.xml</path>
+    <path>Aircraft/AirCrane/Models/Interior/Panel/Instruments/engtemp/engtemp2.xml</path>
     <offsets>
       <x-m> -0.01167 </x-m>
       <y-m>  0.09952 </y-m>
@@ -327,18 +336,8 @@
     </offsets>
   </model>
 
-  <model>
-    <path>Aircraft/AirCrane/Models/Interior/Panel/Instruments/engtemp/engtemp.xml</path>
-    <offsets>
-      <x-m> -0.01137 </x-m>
-      <y-m> -0.00140 </y-m>
-      <z-m>  0.11621 </z-m>
-      <pitch-deg> -6 </pitch-deg>
-    </offsets>
-  </model>
-
   <!-- gsdi -->
-  <model>
+<!--   <model>
     <path>Aircraft/AirCrane/Models/Interior/Panel/Instruments/gsdi/gsdi.xml</path>
     <offsets>
       <x-m>  0.00520 </x-m>
@@ -346,7 +345,7 @@
       <z-m> -0.05810 </z-m>
       <pitch-deg> -6 </pitch-deg>
     </offsets>
-  </model>
+  </model> -->
 
   <!-- ggt -->
   <model>
@@ -371,7 +370,7 @@
 
   <!-- hydrfst-->
   <model>
-    <path>Aircraft/AirCrane/Models/Interior/Panel/Instruments/hydr/hydrfst.xml</path>
+    <path>Aircraft/AirCrane/Models/Interior/Panel/Instruments/hydr/hydr1st.xml</path>
     <offsets>
       <x-m> -0.01863 </x-m>
       <y-m> -0.10836 </y-m>
@@ -382,7 +381,7 @@
 
   <!-- hydrsnd -->
   <model>
-    <path>Aircraft/AirCrane/Models/Interior/Panel/Instruments/hydr/hydrsnd.xml</path>
+    <path>Aircraft/AirCrane/Models/Interior/Panel/Instruments/hydr/hydr2nd.xml</path>
     <offsets>
       <x-m> -0.01333 </x-m>
       <y-m> -0.10837 </y-m>
@@ -403,7 +402,7 @@
   </model>
 
   <!-- oilpressure -->
-  <model>
+<!--   <model>
     <path>Aircraft/AirCrane/Models/Interior/Panel/Instruments/oil/oilpressure.xml</path>
     <offsets>
       <x-m>  0.01664 </x-m>
@@ -421,10 +420,10 @@
       <z-m> -0.15092 </z-m>
       <pitch-deg> -6 </pitch-deg>
     </offsets>
-  </model>
+  </model> -->
 
   <!-- oiltemp -->
-  <model>
+  <!-- <model>
     <path>Aircraft/AirCrane/Models/Interior/Panel/Instruments/oil/oiltemp.xml</path>
     <offsets>
       <x-m>  0.01019 </x-m>
@@ -442,10 +441,10 @@
       <z-m> -0.08721 </z-m>
       <pitch-deg> -6 </pitch-deg>
     </offsets>
-  </model>
+  </model> -->
 
   <!-- xmsnoilpressure -->
-  <model>
+<!--   <model>
     <path>Aircraft/AirCrane/Models/Interior/Panel/Instruments/oil/xoilpressure.xml</path>
     <offsets>
       <x-m>  0.01472 </x-m>
@@ -453,10 +452,10 @@
       <z-m> -0.15266 </z-m>
       <pitch-deg> -6 </pitch-deg>
     </offsets>
-  </model>
+  </model> -->
 
   <!-- xmsnoiltemp -->
-  <model>
+<!--   <model>
     <path>Aircraft/AirCrane/Models/Interior/Panel/Instruments/oil/xoiltemp.xml</path>
     <offsets>
       <x-m>  0.01472 </x-m>
@@ -464,10 +463,10 @@
       <z-m> -0.15266 </z-m>
       <pitch-deg> -6 </pitch-deg>
     </offsets>
-  </model>
+  </model> -->
 
   <!-- pi -->
-  <model>
+<!--   <model>
     <path>Aircraft/AirCrane/Models/Interior/Panel/Instruments/pi/pi.xml</path>
     <offsets>
       <x-m> -0.01506 </x-m>
@@ -475,10 +474,10 @@
       <z-m>  0.12507 </z-m>
       <pitch-deg> -6 </pitch-deg>
     </offsets>
-  </model>
+  </model> -->
 
   <!-- rmi -->
-  <model>
+<!--   <model>
     <path>Aircraft/AirCrane/Models/Interior/Panel/Instruments/rmi/rmi.xml</path>
     <offsets>
       <x-m>  0.00780 </x-m>
@@ -496,7 +495,7 @@
       <z-m> -0.09507 </z-m>
       <pitch-deg> -6 </pitch-deg>
     </offsets>
-  </model>
+  </model> -->
 
   <!-- rotorpcnt -->
   <model>
@@ -530,7 +529,7 @@
     </offsets>
   </model>
 
-  <model>
+   <model>
     <path>Aircraft/AirCrane/Models/Interior/Panel/Instruments/torquepcnt/torquepcnt.xml</path>
     <offsets>
       <x-m>  0.00540 </x-m>
@@ -541,7 +540,7 @@
   </model>
 
   <!-- turn -->
-  <model>
+<!--   <model>
     <path>Aircraft/AirCrane/Models/Interior/Panel/Instruments/turn/turn.xml</path>
     <offsets>
       <x-m>  0.01478 </x-m>
@@ -559,10 +558,10 @@
       <z-m> -0.13435 </z-m>
       <pitch-deg> -6 </pitch-deg>
     </offsets>
-  </model>
+  </model> -->
 
   <!-- vor -->
-  <model>
+<!--   <model>
     <path>Aircraft/AirCrane/Models/Interior/Panel/Instruments/vor/vor.xml</path>
     <offsets>
       <x-m> -0.00255 </x-m>
@@ -570,10 +569,10 @@
       <z-m>  0.01773 </z-m>
       <pitch-deg> -6 </pitch-deg>
     </offsets>
-  </model>
+  </model> -->
 
   <!-- vsi -->
-  <model>
+<!--   <model>
     <path>Aircraft/AirCrane/Models/Interior/Panel/Instruments/vsi/vsi.xml</path>
     <offsets>
       <x-m>  0.00207 </x-m>
@@ -591,10 +590,10 @@
       <z-m> -0.03739 </z-m>
       <pitch-deg> -6 </pitch-deg>
     </offsets>
-  </model>
+  </model> -->
 
   <!-- wl -->
-  <model>
+<!--   <model>
     <path>Aircraft/AirCrane/Models/Interior/Panel/Instruments/wl/wl.xml</path>
     <offsets>
       <x-m> -0.00669 </x-m>
@@ -602,10 +601,10 @@
       <z-m>  0.04937 </z-m>
       <pitch-deg> -6 </pitch-deg>
     </offsets>
-  </model>
+  </model> -->
 
   <!-- wt -->
-  <model>
+<!--   <model>
     <path>Aircraft/AirCrane/Models/Interior/Panel/Instruments/wt/wt.xml</path>
     <offsets>
       <x-m>  0.00873 </x-m>
@@ -613,10 +612,10 @@
       <z-m> -0.08552 </z-m>
       <pitch-deg> -6 </pitch-deg>
     </offsets>
-  </model>
+  </model> -->
 
   <!-- tank qty -->
-  <model>
+<!--   <model>
     <path>Aircraft/AirCrane/Models/Interior/Panel/Instruments/tankqty/tankqty.xml</path>
     <offsets>
       <x-m> -0.00329 </x-m>
@@ -624,15 +623,15 @@
       <z-m>  0.06134 </z-m>
       <pitch-deg> -6 </pitch-deg>
     </offsets>
-  </model>
+  </model> -->
 
-  <model>
+<!--   <model>
     <path>Aircraft/AirCrane/Models/Interior/Panel/Instruments/compass/compass.xml</path>
     <offsets>
       <x-m> 0.026 </x-m>
       <y-m> 0.000 </y-m>
       <z-m> 0.293 </z-m>
     </offsets>
-  </model>
+  </model> --> 
 
 </PropertyList>

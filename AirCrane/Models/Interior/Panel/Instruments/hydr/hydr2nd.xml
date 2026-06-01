@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+
+	<path>hydr2nd.ac</path>
+	
+<!--   	
+	<offsets>
+        <x-m>0.0</x-m>
+        <y-m>0.0</y-m>
+        <z-m>0.0</z-m>
+        <pitch-deg>0.0</pitch-deg>
+        <roll-deg>-65</roll-deg>
+        <heading-deg>0.0</heading-deg>	
+	</offsets>
+-->
+
+	<effect>
+		<inherits-from>/Aircraft/AirCrane/Models/Effects/Interior/cockpit-interior</inherits-from>
+		<object-name>fond</object-name>
+		<object-name>face</object-name>
+		<object-name>needle</object-name>
+	</effect>
+
+	<effect>
+		<inherits-from>/Aircraft/AirCrane/Models/Effects/Interior/interior-glass-reflection-panel-front</inherits-from>
+		<object-name>vitre</object-name>
+	</effect>
+
+	<animation>
+		<type>material</type>
+		<object-name>face</object-name>
+		<object-name>needle</object-name>
+		<condition>
+			<property>/controls/electric/cab_power</property>
+		</condition>
+		<emission>
+		<factor-prop>/controls/lighting/luminosite-lights</factor-prop>
+			<red>0.50</red>
+			<green>0.40</green>
+			<blue>0.30</blue>
+		</emission>
+	</animation>
+	
+	<animation>  <!-- rotates the dial and needle leaving the screws in place -->
+		<type>rotate</type>
+		<object-name>face</object-name>
+		<object-name>needle</object-name>
+		<offset-deg>-65</offset-deg>
+		<axis>
+			<x>1</x>
+		</axis>
+	</animation>	
+
+	<animation>
+		<type>rotate</type>
+		<object-name>needle</object-name>
+		<property>/controls/electric/hyd_2nd_stage-psi</property>
+		<interpolation>
+			<entry><ind>-99</ind><dep>10</dep></entry>
+			<entry><ind>0</ind><dep>0</dep></entry>
+			<entry><ind>1</ind><dep>-60</dep></entry>
+			<entry><ind>1.7</ind><dep>-100</dep></entry>			
+			<entry><ind>2</ind><dep>-127</dep></entry>	
+			<entry><ind>2.3</ind><dep>-145</dep></entry>			
+			<entry><ind>5</ind><dep>-340</dep></entry>			
+		</interpolation>
+		<axis>
+			<x>1</x>
+		</axis>
+	</animation>
+
+</PropertyList>

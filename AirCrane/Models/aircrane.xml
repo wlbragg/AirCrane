@@ -4,6 +4,10 @@
 <PropertyList>
 
   <path>aircrane.ac</path>
+  
+  	<offsets>
+		<z-m>5.2</z-m>
+	</offsets>
 
   <!-- MP sound call -->
   <sound>
