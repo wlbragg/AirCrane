@@ -27,234 +27,132 @@
     <object-name>btn3</object-name>
     <object-name>chapeau</object-name>
   </animation>
+  
+  	<animation>
+		<type>rotate</type>
+		<object-name>Yoke</object-name>
+		<property>/fdm/jsbsim/fcs/Helicopter/cyclic_roll-pos-norm</property>
+		<factor>-2</factor>
+		<axis>
+			<x>1</x>
+		</axis>
+	</animation>
 
-  <animation>
-    <type>rotate</type>
-    <object-name>Yoke</object-name>
-    <property>controls/flight/elevator</property>
-    <factor> -10 </factor>
-    <axis>
-      <x> 0 </x>
-      <y> 1 </y>
-      <z> 0 </z>
-    </axis>
-  </animation>
+	<animation>
+		<type>rotate</type>
+		<object-name>Yoke</object-name>
+		<property>/fdm/jsbsim/fcs/Helicopter/cyclic_pitch-pos-norm</property>
+		<factor>-2</factor>
+		<axis>
+			<y>1</y>
+		</axis>
+	</animation>
 
-  <animation>
-    <type>rotate</type>
-    <object-name>Yoke</object-name>
-   <property>controls/flight/aileron</property>
-    <factor> -10 </factor>
-    <axis>
-      <x> 1 </x>
-      <y> 0 </y>
-      <z> 0 </z>
-    </axis>
-  </animation>
+	<!--===== Boot =====-->
+  
+	<!--   Left to Right -->
 
-  <!--===== Boot =====-->
-  <animation>
-    <type>rotate</type>
-    <object-name>boot6</object-name>
-    <property>controls/flight/aileron</property>
-    <factor>-1</factor>
-    <center>
-      <x-m> 0.0 </x-m>
-      <y-m> 0.0 </y-m>
-      <z-m> 0.0 </z-m>
-    </center>
-    <axis>
-      <x> 1 </x>
-      <y> 0 </y>
-      <z> 0 </z>
-    </axis>
-  </animation>
+	<animation>
+		<type>rotate</type>
+		<object-name>boot5</object-name>
+		<property>/fdm/jsbsim/fcs/Helicopter/cyclic_roll-pos-norm</property>
+		<factor>-0.63</factor>
+		<axis>
+			<x> 1 </x>
+		</axis>
+	</animation>
 
-  <animation>
-    <type>rotate</type>
-    <object-name>boot6</object-name>
-    <property>controls/flight/elevator</property>
-    <factor>-1</factor>
-    <center>
-      <x-m> 0.0 </x-m>
-      <y-m> 0.0 </y-m>
-      <z-m> 0.0 </z-m>
-    </center>
-    <axis>
-      <x> 0 </x>
-      <y> 1 </y>
-      <z> 0 </z>
-    </axis>
-  </animation>
+	<animation>
+		<type>rotate</type>
+		<object-name>boot4</object-name>
+		<property>/fdm/jsbsim/fcs/Helicopter/cyclic_roll-pos-norm</property>
+		<factor>-0.84</factor>
+		<axis>
+			<x> 1 </x>
+		</axis>
+	</animation>
 
-  <animation>
-    <type>rotate</type>
-    <object-name>boot5</object-name>
-    <property>controls/flight/aileron</property>
-    <factor>-2</factor>
-    <center>
-      <x-m> 0.0 </x-m>
-      <y-m> 0.0 </y-m>
-      <z-m> 0.0 </z-m>
-    </center>
-    <axis>
-      <x> 1 </x>
-      <y> 0 </y>
-      <z> 0 </z>
-    </axis>
-  </animation>
+	<animation>
+		<type>rotate</type>
+		<object-name>boot3</object-name>
+		<property>/fdm/jsbsim/fcs/Helicopter/cyclic_roll-pos-norm</property>
+		<factor>-1.125</factor>
+		<axis>
+			<x> 1 </x>
+		</axis>
+	</animation>
 
-  <animation>
-    <type>rotate</type>
-    <object-name>boot5</object-name>
-    <property>controls/flight/elevator</property>
-    <factor>-2</factor>
-    <center>
-      <x-m> 0.0 </x-m>
-      <y-m> 0.0 </y-m>
-      <z-m> 0.0 </z-m>
-    </center>
-    <axis>
-      <x> 0 </x>
-      <y> 1 </y>
-      <z> 0 </z>
-    </axis>
-  </animation>
+	<animation>
+		<type>rotate</type>
+		<object-name>boot2</object-name>
+		<property>/fdm/jsbsim/fcs/Helicopter/cyclic_roll-pos-norm</property>
+		<factor>-1.5</factor>
+		<axis>
+			<x> 1 </x>
+		</axis>
+	</animation>
 
-  <animation>
-    <type>rotate</type>
-    <object-name>boot4</object-name>
-    <property>controls/flight/aileron</property>
-    <factor>-4</factor>
-    <center>
-      <x-m> 0.0 </x-m>
-      <y-m> 0.0 </y-m>
-      <z-m> 0.0 </z-m>
-    </center>
-    <axis>
-      <x> 1 </x>
-      <y> 0 </y>
-      <z> 0 </z>
-    </axis>
-  </animation>
+	<animation>
+		<type>rotate</type>
+		<object-name>boot1</object-name>
+		<property>/fdm/jsbsim/fcs/Helicopter/cyclic_roll-pos-norm</property>
+		<factor>-2</factor>
+		<axis>
+			<x>1</x>
+		</axis>
+	</animation>
 
-  <animation>
-    <type>rotate</type>
-    <object-name>boot4</object-name>
-    <property>controls/flight/elevator</property>
-    <factor>-4</factor>
-    <center>
-      <x-m> 0.0 </x-m>
-      <y-m> 0.0 </y-m>
-      <z-m> 0.0 </z-m>
-    </center>
-    <axis>
-      <x> 0 </x>
-      <y> 1 </y>
-      <z> 0 </z>
-    </axis>
-  </animation>
 
-  <animation>
-    <type>rotate</type>
-    <object-name>boot3</object-name>
-    <property>controls/flight/aileron</property>
-    <factor>-6</factor>
-    <center>
-      <x-m> 0.0 </x-m>
-      <y-m> 0.0 </y-m>
-      <z-m> 0.0 </z-m>
-    </center>
-    <axis>
-      <x> 1 </x>
-      <y> 0 </y>
-      <z> 0 </z>
-    </axis>
-  </animation>
+	<!--  Front to Back  -->
+  
+	<animation>
+		<type>rotate</type>
+		<object-name>boot5</object-name>
+		<property>/fdm/jsbsim/fcs/Helicopter/cyclic_pitch-pos-norm</property>
+		<factor>-0.63</factor>
+		<axis>
+			<y>1</y>
+		</axis>
+	</animation>
 
-  <animation>
-    <type>rotate</type>
-    <object-name>boot3</object-name>
-    <property>controls/flight/elevator</property>
-    <factor>-6</factor>
-    <center>
-      <x-m> 0.0 </x-m>
-      <y-m> 0.0 </y-m>
-      <z-m> 0.0 </z-m>
-    </center>
-    <axis>
-      <x> 0 </x>
-      <y> 1 </y>
-      <z> 0 </z>
-    </axis>
-  </animation>
+	<animation>
+		<type>rotate</type>
+		<object-name>boot4</object-name>
+		<property>/fdm/jsbsim/fcs/Helicopter/cyclic_pitch-pos-norm</property>
+		<factor>-0.84</factor>
+		<axis>
+			<y>1</y>
+		</axis>
+	</animation>  
 
-  <animation>
-    <type>rotate</type>
-    <object-name>boot2</object-name>
-    <property>controls/flight/aileron</property>
-    <factor>-8</factor>
-    <center>
-      <x-m> 0.0 </x-m>
-      <y-m> 0.0 </y-m>
-      <z-m> 0.0 </z-m>
-    </center>
-    <axis>
-      <x> 1 </x>
-      <y> 0 </y>
-      <z> 0 </z>
-    </axis>
-  </animation>
+	<animation>
+		<type>rotate</type>
+		<object-name>boot3</object-name>
+		<property>/fdm/jsbsim/fcs/Helicopter/cyclic_pitch-pos-norm</property>
+		<factor>-1.125</factor>
+		<axis>		
+			<y>1</y>
+		</axis>
+	</animation> 
 
-  <animation>
-    <type>rotate</type>
-    <object-name>boot2</object-name>
-    <property>controls/flight/elevator</property>
-    <factor>-8</factor>
-    <center>
-      <x-m> 0.0 </x-m>
-      <y-m> 0.0 </y-m>
-      <z-m> 0.0 </z-m>
-    </center>
-    <axis>
-      <x> 0 </x>
-      <y> 1 </y>
-      <z> 0 </z>
-    </axis>
-  </animation>
+	<animation>
+		<type>rotate</type>
+		<object-name>boot2</object-name>
+		<property>/fdm/jsbsim/fcs/Helicopter/cyclic_pitch-pos-norm</property>
+		<factor>-1.5</factor>
+		<axis>
+			<y>1</y>
+		</axis>
+	</animation>
 
-  <animation>
-    <type>rotate</type>
-    <object-name>boot1</object-name>
-    <property>controls/flight/aileron</property>
-    <factor>-10</factor>
-    <center>
-      <x-m> 0.0 </x-m>
-      <y-m> 0.0 </y-m>
-      <z-m> 0.0 </z-m>
-    </center>
-    <axis>
-      <x> 1 </x>
-      <y> 0 </y>
-      <z> 0 </z>
-    </axis>
-  </animation>
-
-  <animation>
-    <type>rotate</type>
-    <object-name>boot1</object-name>
-    <property>controls/flight/elevator</property>
-    <factor>-10</factor>
-    <center>
-      <x-m> 0.0 </x-m>
-      <y-m> 0.0 </y-m>
-      <z-m> 0.0 </z-m>
-    </center>
-    <axis>
-      <x> 0 </x>
-      <y> 1 </y>
-      <z> 0 </z>
-    </axis>
-  </animation>
+	<animation>
+		<type>rotate</type>
+		<object-name>boot1</object-name>
+		<property>/fdm/jsbsim/fcs/Helicopter/cyclic_pitch-pos-norm</property>
+		<factor>-2</factor>
+		<axis>
+			<y>1</y>
+		</axis>
+	</animation> 
 
 </PropertyList>

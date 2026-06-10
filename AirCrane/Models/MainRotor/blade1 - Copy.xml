@@ -73,7 +73,7 @@
     <object-name>DiscComplet</object-name>
     <condition>
       <greater-than>
-        <property>rotors/main/rpm</property>
+        <property>/fdm/jsbsim/propulsion/engine[1]/engine-rpm</property>
         <value>150</value>
       </greater-than>
     </condition>
@@ -93,11 +93,11 @@
     <condition>
       <and>
         <greater-than>
-          <property>rotors/main/rpm</property>
+          <property>/fdm/jsbsim/propulsion/engine[1]/engine-rpm</property>
           <value>60</value>
         </greater-than>
         <less-than>
-          <property>rotors/main/rpm</property>
+          <property>/fdm/jsbsim/propulsion/engine[1]/engine-rpm</property>
           <value>150.001</value>
         </less-than>
       </and>
@@ -118,7 +118,7 @@
     <object-name>PaleComplete</object-name>
     <condition>
       <less-than>
-        <property>rotors/main/rpm</property>
+        <property>/fdm/jsbsim/propulsion/engine[1]/engine-rpm</property>
         <value>150</value>
       </less-than>
     </condition>

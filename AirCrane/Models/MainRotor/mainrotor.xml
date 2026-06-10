@@ -22,11 +22,11 @@
     </offsets>
   </model>
 
-   <model>
+ <model>
     <name>Blade2</name>
     <path>Aircraft/AirCrane/Models/MainRotor/blade2.xml</path>
     <offsets>
-      <heading-deg>240</heading-deg>
+      <heading-deg>120</heading-deg>
     </offsets>
   </model>
 
@@ -34,7 +34,7 @@
     <name>Blade3</name>
     <path>Aircraft/AirCrane/Models/MainRotor/blade3.xml</path>
     <offsets>
-      <heading-deg>300</heading-deg>
+      <heading-deg>60</heading-deg>
     </offsets>
   </model>
 
@@ -42,15 +42,15 @@
     <name>Blade4</name>
     <path>Aircraft/AirCrane/Models/MainRotor/blade4.xml</path>
     <offsets>
-      <heading-deg>360</heading-deg>
+      <heading-deg>0</heading-deg>
     </offsets>
   </model>
-
+   
   <model>
     <name>Blade5</name>
     <path>Aircraft/AirCrane/Models/MainRotor/blade5.xml</path>
     <offsets>
-      <heading-deg>420</heading-deg>
+      <heading-deg>-60</heading-deg>
     </offsets>
   </model>
 
@@ -58,7 +58,7 @@
     <name>Blade6</name>
     <path>Aircraft/AirCrane/Models/MainRotor/blade6.xml</path>
     <offsets>
-      <heading-deg>480</heading-deg>
+      <heading-deg>-120</heading-deg>
     </offsets>
   </model>
 
@@ -126,7 +126,7 @@
 	<animation>
 		<type>rotate</type>
 		<object-name>rotorcomplet</object-name>
-		<property>/fdm/jsbsim/propulsion/engine[1]/rotor/blade_1-deg</property>
+		<property>/fdm/jsbsim/propulsion/engine[1]/rotor/blade_1/rotation-deg</property>
 		<axis>
 			<z>1</z>
 		</axis>

@@ -73,7 +73,7 @@
     <object-name>DiscComplet</object-name>
     <condition>
       <greater-than>
-        <property>rotors/main/rpm</property>
+        <property>/fdm/jsbsim/propulsion/engine[1]/engine-rpm</property>
         <value>150</value>
       </greater-than>
     </condition>
@@ -93,11 +93,11 @@
     <condition>
       <and>
         <greater-than>
-          <property>rotors/main/rpm</property>
+          <property>/fdm/jsbsim/propulsion/engine[1]/engine-rpm</property>
           <value>60</value>
         </greater-than>
         <less-than>
-          <property>rotors/main/rpm</property>
+          <property>/fdm/jsbsim/propulsion/engine[1]/engine-rpm</property>
           <value>150.001</value>
         </less-than>
       </and>
@@ -118,7 +118,7 @@
     <object-name>PaleComplete</object-name>
     <condition>
       <less-than>
-        <property>rotors/main/rpm</property>
+        <property>/fdm/jsbsim/propulsion/engine[1]/engine-rpm</property>
         <value>150</value>
       </less-than>
     </condition>
@@ -148,7 +148,7 @@
   <animation>
     <type>rotate</type>
     <object-name>Total0</object-name>
-    <property>/fdm/jsbsim/propulsion/engine[1]/rotor/flex-deg</property>
+    <property>/fdm/jsbsim/propulsion/engine[1]/rotor/blade_1/flex-deg</property>
     <factor> -1 </factor>
     <center>
        <x-m> 0.702 </x-m>
@@ -179,7 +179,7 @@
   <animation>
     <type>rotate</type>
     <object-name>Total1</object-name>
-    <property>/fdm/jsbsim/propulsion/engine[1]/rotor/flex-deg</property>
+    <property>/fdm/jsbsim/propulsion/engine[1]/rotor/blade_1/flex-deg</property>
     <factor> -1 </factor>
     <center>
        <x-m>  4.101 </x-m>
@@ -207,7 +207,7 @@
   <animation>
     <type>rotate</type>
     <object-name>Total2</object-name>
-    <property>/fdm/jsbsim/propulsion/engine[1]/rotor/flex-deg</property>
+    <property>/fdm/jsbsim/propulsion/engine[1]/rotor/blade_1/flex-deg</property>
     <factor> -1 </factor>
     <center>
        <x-m>  6.482 </x-m>
@@ -232,7 +232,7 @@
   <animation>
     <type>rotate</type>
     <object-name>Total3</object-name>
-    <property>/fdm/jsbsim/propulsion/engine[1]/rotor/flex-deg</property>
+    <property>/fdm/jsbsim/propulsion/engine[1]/rotor/blade_1/flex-deg</property>
     <factor> -1 </factor>
     <center>
        <x-m>  8.863 </x-m>
@@ -263,7 +263,7 @@
 	<animation>
 		<type>rotate</type>
 		<object-name>TotalBlade</object-name>
-		<property>/fdm/jsbsim/propulsion/engine[1]/rotor/blade_1-angle</property>
+		<property>/fdm/jsbsim/propulsion/engine[1]/rotor/blade_1/blade-angle</property>
 		<center>
 			<x-m> 0.702 </x-m>
 		</center>
@@ -275,7 +275,7 @@
 	<animation>
 		<type>rotate</type>
 		<object-name>bielle2</object-name>
-		<property>/fdm/jsbsim/propulsion/engine[1]/rotor/blade_1-angle</property>
+		<property>/fdm/jsbsim/propulsion/engine[1]/rotor/blade_1/blade-angle</property>
 		<center>
 			<x-m> 0.763 </x-m>
 			<y-m> 0.246 </y-m>

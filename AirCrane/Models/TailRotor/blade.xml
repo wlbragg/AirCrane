@@ -30,7 +30,7 @@
     <object-name>propdisc</object-name>
     <condition>
       <greater-than>
-        <property>rotors/tail/rpm</property>
+        <property>/fdm/jsbsim/propulsion/engine[2]/rotor-rpm</property>
         <value>150</value>
       </greater-than>
     </condition>
@@ -42,7 +42,7 @@
     <condition>
       <and>
         <greater-than>
-          <property>rotors/tail/rpm</property>
+          <property>/fdm/jsbsim/propulsion/engine[2]/rotor-rpm</property>
           <value>60</value>
         </greater-than>
         <less-than>
@@ -78,16 +78,14 @@
   </animation>
   -->
   <!-- Incidence de la pale -->
-  <animation>
-    <type>rotate</type>
-    <object-name>blade</object-name>
-    <property>controls/flight/rudder</property>
-    <factor> 15 </factor>
-    <axis>
-      <x> 1 </x>
-      <y> 0 </y>
-      <z> 0 </z>
-    </axis>
-  </animation>
+	<animation>
+		<type>rotate</type>
+		<object-name>blade</object-name>
+		<property>/fdm/jsbsim/fcs/Helicopter/rudder-pos-norm</property>
+		<factor> 15 </factor>
+		<axis>
+			<x>1</x>
+		</axis>
+	</animation>
 
 </PropertyList>

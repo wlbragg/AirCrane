@@ -55,7 +55,7 @@
 	<animation>
 		<type>spin</type>
 		<object-name>rotorcomplet</object-name>
-		<property>fdm/jsbsim/propulsion/engine[2]/engine-rpm</property>
+		<property>fdm/jsbsim/propulsion/engine[2]/rotor-rpm</property>
 		<factor>1</factor>
 		<axis>
 			<z>1</z>

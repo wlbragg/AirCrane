@@ -1,13 +1,13 @@
 <?xml version="1.0"?>
 <!--
 
-	Main Rotor Gearbox
+	Tail Rotor Gearbox
 	
-	466.69kW
+	50.00kW
 
 -->
 
 
 <electric_engine name="anti-torque_system">
-    <power> 466690 </power> 
+    <power>50000</power> 
 </electric_engine>

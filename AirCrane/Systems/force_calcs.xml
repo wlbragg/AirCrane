@@ -212,10 +212,10 @@ simonbomber64 at googlemail.com
 					<value>154.171488898533</value>   <!-- front area -->
 				</product>
 			</function>
-			<output>external_reactions/fuselage/x</output>
+			<output>external_reactions/fuselage/x2</output>
 		</fcs_function>
 
-		<fcs_function name="external_reactions/pendulum/x">
+		<fcs_function name="external_reactions/pendulum/x2">
 			<function>
 				<product>
 					<table>
@@ -231,7 +231,7 @@ simonbomber64 at googlemail.com
 					</sin>
 				</product>
 			</function>
-			<output>external_reactions/pendulum/x</output>
+			<output>external_reactions/pendulum/x2</output>
 		</fcs_function>
 
 		<fcs_function>
@@ -267,10 +267,10 @@ simonbomber64 at googlemail.com
 					<value>370.686470539607</value>   <!-- side area -->
 				</product>
 			</function>
-			<output>external_reactions/fuselage/y</output>
+			<output>external_reactions/fuselage/y2</output>
 		</fcs_function>
 
-		<fcs_function name="external_reactions/pendulum/y">
+		<fcs_function name="external_reactions/pendulum/y2">
 			<function>
 				<product>
 					<table>
@@ -286,7 +286,7 @@ simonbomber64 at googlemail.com
 					</sin>
 				</product>
 			</function>
-			<output>external_reactions/pendulum/y</output>
+			<output>external_reactions/pendulum/y2</output>
 		</fcs_function>
 
 		<!-- ####   Z vector   #### -->
@@ -300,7 +300,7 @@ simonbomber64 at googlemail.com
 					<value>378.067283912345</value>													<!-- plan area -->
 				</product>
 			</function>
-			<output>external_reactions/fuselage/z</output>
+			<output>external_reactions/fuselage/z2</output>
 		</fcs_function>
 
 		<!-- ####   location-in  #### -->
@@ -324,29 +324,39 @@ simonbomber64 at googlemail.com
 
 	</channel>
 
-	<property type="double" value="44.6908333333333">propulsion/engine[2]/rotor/x_armature-ft</property>
-	<property type="double" value="-2.64583333333333">propulsion/engine[2]/rotor/y_armature-ft</property>
-	<property type="double" value="0">propulsion/engine[2]/rotor/z_armature-ft</property>
+<!-- 	<property type="double" value="-2.64583333333333">propulsion/engine[2]/rotor/y_armature-ft</property> -->
+<!-- 	<property type="double" value="0">propulsion/engine[2]/rotor/z_armature-ft</property> -->
 
-	<property type="double" value="1">propulsion/engine[1]/rotor/flapping-factor</property>
-
-	<channel name="rotor_forces">
+	<channel name="tail rotor_forces">
 
 		<!-- ####   Tail Rotor   #### -->
 
-		<fcs_function name="propulsion/engine[2]/rotor/thrust-lbs">
+		<fcs_function name="propulsion/engine[2]/rotor/x_armature-ft">
 			<function>
-				<quotient>
-					<product>
-						<property>external_reactions/rotor_tail/rudder_adjust</property>
-						<property>moments/n-prop-lbsft</property>
-					</product>
-					<property>propulsion/engine[2]/rotor/x_armature-ft</property>
-				</quotient>
+				<product>
+					<sum>
+						<value>869.190000000001</value>
+						<property>-inertia/cg-x-in</property>
+					</sum>
+					<value>0.08333</value>
+				</product>
 			</function>
 		</fcs_function>
 
-		<fcs_function name="propulsion/engine[2]/rotor/l-lbsft">
+		<fcs_function name="propulsion/engine[2]/rotor/thrust-lbs">
+			<function>
+				<sum>
+					<quotient>
+						<property>moments/n-prop-lbsft</property>
+						<property>propulsion/engine[2]/rotor/x_armature-ft</property>
+					</quotient>
+					<property>propulsion/engine[2]/rotor/thrust_delta-lbs</property>
+				</sum>
+			</function>
+			<output>external_reactions/rotor_tail/y</output>			
+		</fcs_function>
+
+<!-- 		<fcs_function name="propulsion/engine[2]/rotor/l-lbsft">
 			<function>
 				<product>
 					<property>propulsion/engine[2]/rotor/thrust-lbs</property>
@@ -362,122 +372,575 @@ simonbomber64 at googlemail.com
 					<property>propulsion/engine[2]/rotor/x_armature-ft</property>
 				</product>
 			</function>
-		</fcs_function>
+		</fcs_function> -->
 
+	</channel>
 
-		<!-- ####   Main Rotor   #### -->
+	<property type="double" value="100">propulsion/engine[1]/rotor/CoP_displacement-in</property>
+	<property type="double" value="2">propulsion/engine[1]/rotor/damping-factor</property>	
+	
+<!-- 	<property type="double" value="0">external_reactions/rotor_main/cyclic_roll-in</property>	
+	<property type="double" value="0">external_reactions/rotor_main/cyclic_pitch-in</property>	 -->
+
+	<channel name="main rotor_forces">
+
+		<!-- ####   Main Rotor Thrust   #### -->
 
 		<fcs_function name="propulsion/engine[1]/rotor/thrust-lbs">
 			<function>
 				<product>
 					<property>propulsion/engine[1]/rotor/vortex_ring</property>
 					<property>propulsion/engine[1]/thrust-lbs</property>
-					<value>100000000</value>
+					<value>-100000000</value>
 				</product>
 			</function>
 		</fcs_function>
 
-		<!-- Blade Flapping -->
+		<!-- Blade Thrust -->
 
-		<scheduled_gain>
+		<fcs_function name="propulsion/engine[1]/rotor/blade_thrust-lbs">
+			<function>
+				<quotient>
+					<property>propulsion/engine[1]/rotor/thrust-lbs</property>
+					<value>6</value>		<!-- No. of Blades  -->
+				</quotient>
+			</function>
+		</fcs_function>
+
+		<!-- Force Distribution -->
+
+		<fcs_function name="propulsion/engine[1]/rotor/blade_1/thrust-lbs">
+			<function>
+				<sum>
+					<property>propulsion/engine[1]/rotor/blade_thrust-lbs</property>				
+					<product>
+						<property>propulsion/engine[1]/rotor/blade_thrust-lbs</property>					
+						<sin>
+							<property>propulsion/engine[1]/rotor/blade_1/rotation-rad</property>					
+						</sin>
+						<table>
+							<independentVar>fcs/Helicopter/cyclic_roll-pos-norm</independentVar>
+							<tableData>
+								-1	-0.1
+								1	0.1
+							</tableData>
+						</table>						
+					</product>				
+					<product>
+						<property>propulsion/engine[1]/rotor/blade_thrust-lbs</property>					
+						<cos>
+							<property>propulsion/engine[1]/rotor/blade_1/rotation-rad</property>					
+						</cos>
+						<table>
+							<independentVar>fcs/Helicopter/cyclic_pitch-pos-norm</independentVar>
+							<tableData>
+								-1	0.1
+								1	-0.1
+							</tableData>
+						</table>						
+					</product>
+				</sum>
+			</function>
+		</fcs_function>
+
+		<fcs_function name="propulsion/engine[1]/rotor/blade_2/thrust-lbs">
+			<function>
+				<sum>
+					<property>propulsion/engine[1]/rotor/blade_thrust-lbs</property>				
+					<product>
+						<property>propulsion/engine[1]/rotor/blade_thrust-lbs</property>					
+						<sin>
+							<property>propulsion/engine[1]/rotor/blade_2/rotation-rad</property>					
+						</sin>
+						<table>
+							<independentVar>fcs/Helicopter/cyclic_roll-pos-norm</independentVar>
+							<tableData>
+								-1	-0.1
+								1	0.1
+							</tableData>
+						</table>						
+					</product>				
+					<product>
+						<property>propulsion/engine[1]/rotor/blade_thrust-lbs</property>					
+						<cos>
+							<property>propulsion/engine[1]/rotor/blade_2/rotation-rad</property>					
+						</cos>
+						<table>
+							<independentVar>fcs/Helicopter/cyclic_pitch-pos-norm</independentVar>
+							<tableData>
+								-1	0.1
+								1	-0.1
+							</tableData>
+						</table>						
+					</product>
+				</sum>
+			</function>
+		</fcs_function>
+
+		<fcs_function name="propulsion/engine[1]/rotor/blade_3/thrust-lbs">
+			<function>
+				<sum>
+					<property>propulsion/engine[1]/rotor/blade_thrust-lbs</property>				
+					<product>
+						<property>propulsion/engine[1]/rotor/blade_thrust-lbs</property>					
+						<sin>
+							<property>propulsion/engine[1]/rotor/blade_3/rotation-rad</property>					
+						</sin>
+						<table>
+							<independentVar>fcs/Helicopter/cyclic_roll-pos-norm</independentVar>
+							<tableData>
+								-1	-0.1
+								1	0.1
+							</tableData>
+						</table>						
+					</product>				
+					<product>
+						<property>propulsion/engine[1]/rotor/blade_thrust-lbs</property>					
+						<cos>
+							<property>propulsion/engine[1]/rotor/blade_3/rotation-rad</property>					
+						</cos>
+						<table>
+							<independentVar>fcs/Helicopter/cyclic_pitch-pos-norm</independentVar>
+							<tableData>
+								-1	0.1
+								1	-0.1
+							</tableData>
+						</table>						
+					</product>
+				</sum>
+			</function>
+		</fcs_function>	
+
+		<fcs_function name="propulsion/engine[1]/rotor/blade_4/thrust-lbs">
+			<function>
+				<sum>
+					<property>propulsion/engine[1]/rotor/blade_thrust-lbs</property>				
+					<product>
+						<property>propulsion/engine[1]/rotor/blade_thrust-lbs</property>					
+						<sin>
+							<property>propulsion/engine[1]/rotor/blade_4/rotation-rad</property>					
+						</sin>
+						<table>
+							<independentVar>fcs/Helicopter/cyclic_roll-pos-norm</independentVar>
+							<tableData>
+								-1	-0.1
+								1	0.1
+							</tableData>
+						</table>						
+					</product>				
+					<product>
+						<property>propulsion/engine[1]/rotor/blade_thrust-lbs</property>					
+						<cos>
+							<property>propulsion/engine[1]/rotor/blade_4/rotation-rad</property>					
+						</cos>
+						<table>
+							<independentVar>fcs/Helicopter/cyclic_pitch-pos-norm</independentVar>
+							<tableData>							
+								-1	0.1
+								1	-0.1
+							</tableData>
+						</table>						
+					</product>
+				</sum>
+			</function>
+		</fcs_function>
+
+		<fcs_function name="propulsion/engine[1]/rotor/blade_5/thrust-lbs">
+			<function>
+				<sum>
+					<property>propulsion/engine[1]/rotor/blade_thrust-lbs</property>				
+					<product>
+						<property>propulsion/engine[1]/rotor/blade_thrust-lbs</property>					
+						<sin>
+							<property>propulsion/engine[1]/rotor/blade_5/rotation-rad</property>					
+						</sin>
+						<table>
+							<independentVar>fcs/Helicopter/cyclic_roll-pos-norm</independentVar>
+							<tableData>
+								-1	-0.1
+								1	0.1
+							</tableData>
+						</table>						
+					</product>				
+					<product>
+						<property>propulsion/engine[1]/rotor/blade_thrust-lbs</property>					
+						<cos>
+							<property>propulsion/engine[1]/rotor/blade_5/rotation-rad</property>					
+						</cos>
+						<table>
+							<independentVar>fcs/Helicopter/cyclic_pitch-pos-norm</independentVar>
+							<tableData>
+								-1	0.1
+								1	-0.1
+							</tableData>
+						</table>						
+					</product>
+				</sum>
+			</function>
+		</fcs_function>
+
+		<fcs_function name="propulsion/engine[1]/rotor/blade_6/thrust-lbs">
+			<function>
+				<sum>
+					<property>propulsion/engine[1]/rotor/blade_thrust-lbs</property>				
+					<product>
+						<property>propulsion/engine[1]/rotor/blade_thrust-lbs</property>					
+						<sin>
+							<property>propulsion/engine[1]/rotor/blade_6/rotation-rad</property>					
+						</sin>
+						<table>
+							<independentVar>fcs/Helicopter/cyclic_roll-pos-norm</independentVar>
+							<tableData>
+								-1	-0.1
+								1	0.1
+							</tableData>
+						</table>						
+					</product>				
+					<product>
+						<property>propulsion/engine[1]/rotor/blade_thrust-lbs</property>					
+						<cos>
+							<property>propulsion/engine[1]/rotor/blade_6/rotation-rad</property>					
+						</cos>
+						<table>
+							<independentVar>fcs/Helicopter/cyclic_pitch-pos-norm</independentVar>
+							<tableData>
+								-1	0.1
+								1	-0.1
+							</tableData>
+						</table>						
+					</product>
+				</sum>
+			</function>
+		</fcs_function>		
+
+		<!-- Blade Flapping -->
+		
+		<scheduled_gain name="propulsion/engine[1]/rotor/blade_1/flex-deg">
 			<input>T4T/one</input>
 			<table>
-				<independentVar lookup="row">propulsion/engine[1]/rotor/thrust-lbs</independentVar>
+				<independentVar lookup="row">-propulsion/engine[1]/rotor/blade_1/thrust-lbs</independentVar>
 				<independentVar lookup="column">propulsion/engine[1]/engine-rpm</independentVar>
 				<tableData>
-									0			185	
-					0			-1.25			0.00	
-					5000		-1.25			0.01	
-					10000		-1.25			0.03	
-					15000		-1.25			0.05	
-					20000		-1.25			0.1	
-					25000		-1.25			0.25	
-					30000		-1.25			0.5	
-					35000		-1.25			0.9	
-					40000		-1.25			1.5	
-					45000		-1.25			2.5		
+									0				75
+					0				-2.00			0.00
+					355				0.00			0.00
+					833				0.01			0.01
+					1667			0.03			0.03
+					2500			0.05			0.05
+					3333			0.10			0.10
+					4167			0.25			0.25
+					5000			0.50			0.50
+					5833			0.90			0.90
+					6667			1.50			1.50
+					7500			2.50			2.50
 				</tableData>
-			</table>
-			<output>propulsion/engine[1]/rotor/flex-deg</output>
+			</table>				
 		</scheduled_gain>
-
-		<!-- p & q Flapping -->
-
-		<scheduled_gain name="propulsion/engine[1]/rotor/q-rad">
-			<input>propulsion/engine[1]/rotor/flapping-factor</input>
+		
+		<scheduled_gain name="propulsion/engine[1]/rotor/blade_2/flex-deg">
+			<input>T4T/one</input>
 			<table>
-				<independentVar>external_reactions/rotor_main/cyclic_pitch-in</independentVar>
+				<independentVar lookup="row">-propulsion/engine[1]/rotor/blade_2/thrust-lbs</independentVar>
+				<independentVar lookup="column">propulsion/engine[1]/engine-rpm</independentVar>
 				<tableData>
-				-100			0.2618										<!-- 15 degs -->
-				100			-0.0873										<!-- 5 degs -->
+									0				75
+					0				-2.00			0.00
+					355				0.00			0.00
+					833				0.01			0.01
+					1667			0.03			0.03
+					2500			0.05			0.05
+					3333			0.10			0.10
+					4167			0.25			0.25
+					5000			0.50			0.50
+					5833			0.90			0.90
+					6667			1.50			1.50
+					7500			2.50			2.50
 				</tableData>
-			</table>
+			</table>					
 		</scheduled_gain>
-
-		<scheduled_gain name="propulsion/engine[1]/rotor/p-rad">
-			<input>propulsion/engine[1]/rotor/flapping-factor</input>
+		
+		<scheduled_gain name="propulsion/engine[1]/rotor/blade_3/flex-deg">
+			<input>T4T/one</input>
 			<table>
-				<independentVar>external_reactions/rotor_main/cyclic_roll-in</independentVar>
+				<independentVar lookup="row">-propulsion/engine[1]/rotor/blade_3/thrust-lbs</independentVar>
+				<independentVar lookup="column">propulsion/engine[1]/engine-rpm</independentVar>
 				<tableData>
-					-100			0.2618									<!-- 15 degs -->
-					100			-0.2618									<!-- 15 degs -->
+									0				75
+					0				-2.00			0.00
+					355				0.00			0.00
+					833				0.01			0.01
+					1667			0.03			0.03
+					2500			0.05			0.05
+					3333			0.10			0.10
+					4167			0.25			0.25
+					5000			0.50			0.50
+					5833			0.90			0.90
+					6667			1.50			1.50
+					7500			2.50			2.50
 				</tableData>
-			</table>
+			</table>					
 		</scheduled_gain>
+		
+		<scheduled_gain name="propulsion/engine[1]/rotor/blade_4/flex-deg">
+			<input>T4T/one</input>
+			<table>
+				<independentVar lookup="row">-propulsion/engine[1]/rotor/blade_4/thrust-lbs</independentVar>
+				<independentVar lookup="column">propulsion/engine[1]/engine-rpm</independentVar>
+				<tableData>
+									0				75
+					0				-2.00			0.00
+					355				0.00			0.00
+					833				0.01			0.01
+					1667			0.03			0.03
+					2500			0.05			0.05
+					3333			0.10			0.10
+					4167			0.25			0.25
+					5000			0.50			0.50
+					5833			0.90			0.90
+					6667			1.50			1.50
+					7500			2.50			2.50
+				</tableData>
+			</table>					
+		</scheduled_gain>
+		
+		<scheduled_gain name="propulsion/engine[1]/rotor/blade_5/flex-deg">
+			<input>T4T/one</input>
+			<table>
+				<independentVar lookup="row">-propulsion/engine[1]/rotor/blade_5/thrust-lbs</independentVar>
+				<independentVar lookup="column">propulsion/engine[1]/engine-rpm</independentVar>
+				<tableData>
+									0				75
+					0				-2.00			0.00
+					355				0.00			0.00
+					833				0.01			0.01
+					1667			0.03			0.03
+					2500			0.05			0.05
+					3333			0.10			0.10
+					4167			0.25			0.25
+					5000			0.50			0.50
+					5833			0.90			0.90
+					6667			1.50			1.50
+					7500			2.50			2.50
+				</tableData>
+			</table>					
+		</scheduled_gain>
+		
+		<scheduled_gain name="propulsion/engine[1]/rotor/blade_6/flex-deg">
+			<input>T4T/one</input>
+			<table>
+				<independentVar lookup="row">-propulsion/engine[1]/rotor/blade_6/thrust-lbs</independentVar>
+				<independentVar lookup="column">propulsion/engine[1]/engine-rpm</independentVar>
+				<tableData>
+									0				75
+					0				-2.00			0.00
+					355				0.00			0.00
+					833				0.01			0.01
+					1667			0.03			0.03
+					2500			0.05			0.05
+					3333			0.10			0.10
+					4167			0.25			0.25
+					5000			0.50			0.50
+					5833			0.90			0.90
+					6667			1.50			1.50
+					7500			2.50			2.50
+				</tableData>
+			</table>					
+		</scheduled_gain>
+		
+		<!-- Rotor Tilt -->
+		
+		<fcs_function name="propulsion/engine[1]/rotor/dihedral_0-deg">
+			<function>
+				<ifthen>
+					<or>
+						<gt>
+							<property>propulsion/engine[1]/rotor/blade_1/rotation-deg</property>
+							<value>357</value>
+						</gt>
+						<lt>
+							<property>propulsion/engine[1]/rotor/blade_1/rotation-deg</property>
+							<value>3</value>
+						</lt>
+					</or>
+					<product>
+						<property>propulsion/engine[1]/rotor/blade_1/flex-deg</property>
+						<value>4</value>
+					</product>
+					<property>propulsion/engine[1]/rotor/dihedral_0-deg</property>
+				</ifthen>
+			</function>
+		</fcs_function>
+		
+		<fcs_function name="propulsion/engine[1]/rotor/dihedral_90-deg">
+			<function>
+				<ifthen>
+					<and>
+						<gt>
+							<property>propulsion/engine[1]/rotor/blade_1/rotation-deg</property>
+							<value>87</value>
+						</gt>
+						<lt>
+							<property>propulsion/engine[1]/rotor/blade_1/rotation-deg</property>
+							<value>93</value>
+						</lt>
+					</and>
+					<product>
+						<property>propulsion/engine[1]/rotor/blade_1/flex-deg</property>
+						<value>4</value>
+					</product>
+					<property>propulsion/engine[1]/rotor/dihedral_90-deg</property>
+				</ifthen>
+			</function>
+		</fcs_function>
+		
+		<fcs_function name="propulsion/engine[1]/rotor/dihedral_180-deg">
+			<function>
+				<ifthen>
+					<and>
+						<gt>
+							<property>propulsion/engine[1]/rotor/blade_1/rotation-deg</property>
+							<value>177</value>
+						</gt>
+						<lt>
+							<property>propulsion/engine[1]/rotor/blade_1/rotation-deg</property>
+							<value>183</value>
+						</lt>
+					</and>
+					<product>
+						<property>propulsion/engine[1]/rotor/blade_1/flex-deg</property>
+						<value>4</value>
+					</product>
+					<property>propulsion/engine[1]/rotor/dihedral_180-deg</property>
+				</ifthen>
+			</function>
+		</fcs_function>
+		
+		<fcs_function name="propulsion/engine[1]/rotor/dihedral_270-deg">
+			<function>
+				<ifthen>
+					<and>
+						<gt>
+							<property>propulsion/engine[1]/rotor/blade_1/rotation-deg</property>
+							<value>267</value>
+						</gt>
+						<lt>
+							<property>propulsion/engine[1]/rotor/blade_1/rotation-deg</property>
+							<value>273</value>
+						</lt>
+					</and>
+					<product>
+						<property>propulsion/engine[1]/rotor/blade_1/flex-deg</property>
+						<value>4</value>
+					</product>
+					<property>propulsion/engine[1]/rotor/dihedral_270-deg</property>
+				</ifthen>
+			</function>
+		</fcs_function>
+		
+		<fcs_function name="propulsion/engine[1]/rotor/dihedral_roll-rad">
+			<function>
+				<toradians>
+					<sum>
+						<value>-3</value> <!-- rotor rigging angle -->
+						<property>propulsion/engine[1]/rotor/dihedral_90-deg</property>
+						<property>-propulsion/engine[1]/rotor/dihedral_270-deg</property>					
+					</sum>
+				</toradians>
+			</function>
+		</fcs_function>			
+		
+		<fcs_function name="propulsion/engine[1]/rotor/dihedral_pitch-rad">
+			<function>
+				<toradians>
+					<sum>
+						<value>-3</value> <!-- rotor rigging angle -->
+						<property>propulsion/engine[1]/rotor/dihedral_0-deg</property>
+						<property>-propulsion/engine[1]/rotor/dihedral_180-deg</property>					
+					</sum>
+				</toradians>
+			</function>
+		</fcs_function>
 
-		<!-- p & q Damping -->
-
-		<pure_gain>
-			<input>velocities/q-rad_sec</input>
-			<gain>propulsion/engine[1]/rotor/damping-factor</gain>														<!-- arbitary value in inches -->
-			<output>propulsion/engine[1]/rotor/damping_q-rad_sec-in</output>
-		</pure_gain>
-
-		<pure_gain>
-			<input>velocities/p-rad_sec</input>
-			<gain>propulsion/engine[1]/rotor/damping-factor</gain>														<!-- arbitary value in inches -->
-			<output>propulsion/engine[1]/rotor/damping_p-rad_sec-in</output>
-		</pure_gain>
-
-
-
-<!--
-		<summer>
-			<input>propulsion/engine[1]/pitch-angle-rad</input>
-			<bias>1.51843644923507</bias>
-			<output>propulsion/engine[1]/pitch-angle-rad</output>
-		</summer>
--->
+		<!-- Centre of Pressure -->	
+		
+		<fcs_function>
+			<function>
+				<product>
+					<abs><property>fcs/Helicopter/cyclic_roll-pos-norm</property></abs>	
+					<property>propulsion/engine[1]/rotor/CoP_displacement-in</property>
+					<sin>
+						<atan2>
+							<sum name="fcs/Helicopter/cyclic_roll-pos-norm">
+								<property>fcs/Helicopter/cyclic_roll-cmd-norm</property>							
+								<product> <!-- p damping -->
+									<property>velocities/p-rad_sec</property>	
+									<property>propulsion/engine[1]/rotor/damping-factor</property>	
+								</product>
+							</sum>	
+							<sum name="fcs/Helicopter/cyclic_pitch-pos-norm">
+								<property>fcs/Helicopter/cyclic_pitch-cmd-norm</property>
+								<product> <!-- q damping -->
+									<property>velocities/q-rad_sec</property>	
+									<property>propulsion/engine[1]/rotor/damping-factor</property>	
+								</product>
+							</sum>	
+						</atan2>
+					</sin>				
+				</product>
+			</function>
+			<output>external_reactions/rotor_main/location-y-in</output>			
+		</fcs_function>
 
 		<fcs_function>
+			<function>
+				<sum>
+					<value>333.0709</value>			
+					<product>
+						<property>propulsion/engine[1]/rotor/CoP_displacement-in</property>
+						<cos>
+							<atan2>
+								<property>fcs/Helicopter/cyclic_roll-pos-norm</property>		
+								<property>fcs/Helicopter/cyclic_pitch-pos-norm</property>							
+							</atan2>
+						</cos>
+						<abs><property>fcs/Helicopter/cyclic_pitch-pos-norm</property></abs>				
+					</product>
+				</sum>
+			</function>
+			<output>external_reactions/rotor_main/location-x-in</output>			
+		</fcs_function>	
+		
+		<!-- Forces -->	
+		
+		<fcs_function name="propulsion/engine[1]/rotor/Y-lbs">
 			<function>
 				<product>
 					<property>-propulsion/engine[1]/rotor/thrust-lbs</property>
-					<cos><property>propulsion/engine[1]/rotor/q-rad</property></cos>
+					<sin><property>propulsion/engine[1]/rotor/dihedral_roll-rad</property></sin>
 				</product>
 			</function>
-			<output>external_reactions/rotor_main/x2</output>
+			<output>external_reactions/rotor_main/y</output>
 		</fcs_function>
 
-		<fcs_function>
+		<fcs_function name="propulsion/engine[1]/rotor/X-lbs">
 			<function>
 				<product>
 					<property>propulsion/engine[1]/rotor/thrust-lbs</property>
-					<sin><property>propulsion/engine[1]/rotor/p-rad</property></sin>
+					<sin><property>propulsion/engine[1]/rotor/dihedral_pitch-rad</property></sin>
 				</product>
 			</function>
-			<output>external_reactions/rotor_main/y2</output>
+			<output>external_reactions/rotor_main/x</output>
 		</fcs_function>
 
-		<fcs_function>
+		<fcs_function name="propulsion/engine[1]/rotor/Z-lbs">
 			<function>
 				<product>
 					<property>propulsion/engine[1]/rotor/thrust-lbs</property>
-					<sin><property>propulsion/engine[1]/pitch-angle-rad</property></sin>
-					<cos><property>propulsion/engine[1]/rotor/p-rad</property></cos>
+					<cos><property>propulsion/engine[1]/rotor/dihedral_roll-rad</property></cos>
+					<cos><property>propulsion/engine[1]/rotor/dihedral_pitch-rad</property></cos>
 				</product>
 			</function>
-			<output>external_reactions/rotor_main/z2</output>
+			<output>external_reactions/rotor_main/z</output>
 		</fcs_function>
 
 		<!-- Ground Effect -->
@@ -485,9 +948,9 @@ simonbomber64 at googlemail.com
 		<fcs_function name="propulsion/engine[1]/rotor/vertical-lbs">
 			<function>
 				<product>
+					<property>propulsion/engine[1]/rotor/Z-lbs</property>				
 					<cos><property>attitude/pitch-rad</property></cos>
 					<cos><property>attitude/roll-rad</property></cos>
-					<property>external_reactions/rotor_main/z</property>
 				</product>
 			</function>
 		</fcs_function>
@@ -511,7 +974,7 @@ simonbomber64 at googlemail.com
 			</table>
 			<output>external_reactions/ground_effect/z</output>
 		</scheduled_gain>
-
+				
 	</channel>
 
 </system>

@@ -24,37 +24,39 @@ xsi:noNamespaceSchemaLocation="http://jsbsim.sourceforge.net/JSBSim.xsd">
 	<metrics>
 
 		<wingspan unit="FT">71.9999999999999</wingspan>
-		<wingarea unit="FT2">141.9</wingarea>
-		<cord unit="FT">1.97083333333333</cord>				<!-- @ 50% ft-->
+		<wingarea unit="FT2">144.094488188976</wingarea>
+		<cord unit="FT">2.001312335958</cord>				<!-- @ 50% ft-->
 
 		<htailarea unit="FT2">22.4965727709233</htailarea>
 		<htailarm unit="FT">68.8976377952755</htailarm>
 
 		<vtailarea unit="FT2">16.0565251686059</vtailarea>
 		<vtailarm unit="FT">67.3884514435695</vtailarm>
-		
+
+		<property type="double" value="-3">propulsion/engine[1]/blade-angle</property>
+
 		<location name="AERORP" unit="IN">
 			<x>332.9</x>
 			<y>0</y>
 			<z>255.7</z>
-		</location>	
+		</location>
 
 	</metrics>
-	
+
 	<mass_balance>
 
 		<!-- inertia values to rotor co-ords -->
-		<ixx unit="SLUG*FT2">27694.4873365324</ixx>
-		<iyy unit="SLUG*FT2">114649.698211743</iyy>
-		<izz unit="SLUG*FT2">87685.8426603184</izz>
-		<ixy unit="SLUG*FT2">17.7787492543483</ixy>
-		<iyz unit="SLUG*FT2">58.6294394007179</iyz>
-		<ixz unit="SLUG*FT2">-23446.2701315553</ixz>				<!-- IMPORTANT always use a negative value -->
-		<emptywt unit="LBS">22885.9773901477</emptywt>
+		<ixx unit="SLUG*FT2">23147.4868624898</ixx>
+		<iyy unit="SLUG*FT2">115246.096540798</iyy>
+		<izz unit="SLUG*FT2">92932.8435011326</izz>
+		<ixy unit="SLUG*FT2">-68.2268702684095</ixy>
+		<iyz unit="SLUG*FT2">-36.1941253296374</iyz>
+		<ixz unit="SLUG*FT2">-6028.93723753757</ixz>				<!-- IMPORTANT always use a negative value -->
+		<emptywt unit="LBS">23031.5035900449</emptywt>
 		<location name="CG" unit="IN">
-			<x>300.64215469126</x>
-			<y>-0.435446716791536</y>
-			<z>190.006393638143</z>
+			<x>333.644346023099</x>
+			<y>0.0000435039722318263</y>
+			<z>194.966759617349</z>
 		</location>
 
 	</mass_balance>
@@ -176,194 +178,191 @@ xsi:noNamespaceSchemaLocation="http://jsbsim.sourceforge.net/JSBSim.xsd">
 <propulsion>
 
 		<engine file="dummy_motor">				<!-- reserved for the APP -->
-			<location unit="FT">			
-				<x>72.4324999999999</x>		
-				<z>21.3083333333333</z>		
-			</location>			
-			<thruster file="dummy_prop">			
-				<location unit="FT">		
-					<x>72.4324999999999</x>	
-					<z>21.3083333333333</z>	
-				</location>		
-				<orient unit="DEG">		
-					<yaw>90</yaw>	
-				</orient>		
-				<sense>1</sense>		
-				<p_factor>0</p_factor>		
-			</thruster>			
-		</engine>				
-						
-		<engine file="Main-gearbox">					
-			<location unit="FT">				
-				<x>27.755905511811</x>			
-				<z>17.6181102362205</z>			
-			</location>				
-			<orient unit="DEG">				
-				<pitch>90</pitch>			
-			</orient>				
-			<thruster file="Rotor_main">				
-				<location unit="FT">			
-					<x>27.7416666666666</x>		
-					<z>21.3083333333333</z>		
-				</location>			
-				<orient unit="DEG">			
-					<pitch>90</pitch>		
-				</orient>			
-				<sense>1</sense>			
-				<p_factor>0</p_factor>			
-			</thruster>				
-		</engine>					
-							
-		<engine file="Tail-gearbox">					
-			<location unit="FT">				
-				<x>72.4324999999999</x>			
-				<z>21.3083333333333</z>			
-			</location>				
-			<orient unit="DEG">				
-				<yaw>90</yaw>			
-			</orient>				
-			<thruster file="Rotor_tail">				
-				<location unit="FT">			
-					<x>72.4324999999999</x>		
-					<y>-2.64583333333333</y>		
-					<z>21.3083333333333</z>		
-				</location>			
-				<orient unit="DEG">			
-					<yaw>90</yaw>		
-				</orient>			
-				<sense>1</sense>			
-				<p_factor>0</p_factor>			
-			</thruster>				
-		</engine>					
-							
-	<!-- #### Tubines #### -->						
-							
-		<engine file="Pratt_Whitney-T73">					
-			<location unit="FT">				
-				<x>21.5223097112861</x>			
-				<y>-2.03412073490813</y>			
-				<z>17.6181102362205</z>			
-			</location>				
-			<feed>1</feed>				
+			<location unit="FT">
+				<x>72.4324999999999</x>
+				<z>21.3083333333333</z>
+			</location>
+			<thruster file="dummy_prop">
+				<location unit="FT">
+					<x>72.4324999999999</x>
+					<z>21.3083333333333</z>
+				</location>
+				<orient unit="DEG">
+					<yaw>90</yaw>
+				</orient>
+				<sense>1</sense>
+				<p_factor>0</p_factor>
+			</thruster>
+		</engine>
+
+		<engine file="Main-gearbox">
+			<location unit="FT">
+				<x>27.755905511811</x>
+				<z>17.6181102362205</z>
+			</location>
+			<orient unit="DEG">
+				<pitch>90</pitch>
+			</orient>
+			<thruster file="Rotor_main">
+				<location unit="FT">
+					<x>27.7416666666666</x>
+					<z>21.3083333333333</z>
+				</location>
+				<orient unit="DEG">
+					<pitch>90</pitch>
+				</orient>
+				<sense>1</sense>
+				<p_factor>0</p_factor>
+			</thruster>
+		</engine>
+
+		<engine file="dummy_motor">
+			<location unit="FT">
+				<x>72.4324999999999</x>
+				<z>21.3083333333333</z>
+			</location>
+			<thruster file="dummy_prop">
+				<location unit="FT">
+					<x>72.4324999999999</x>
+					<z>21.3083333333333</z>
+				</location>
+				<orient unit="DEG">
+					<yaw>90</yaw>
+				</orient>
+				<sense>1</sense>
+				<p_factor>0</p_factor>
+			</thruster>
+		</engine>
+
+	<!-- #### Tubines #### -->
+
+		<engine file="Pratt_Whitney-T73">
+			<location unit="FT">
+				<x>21.5223097112861</x>
+				<y>-2.03412073490813</y>
+				<z>17.6181102362205</z>
+			</location>
+			<feed>1</feed>
 			<feed>2</feed>
-			<feed>5</feed>				
-			<thruster file="Pratt_Whitney-T73_load">				
-				<location unit="FT">			
-					<x>27.7416666666666</x>		
-					<z>17.6181102362205</z>		
-				</location>			
-				<orient unit="DEG">			
-					<yaw>90</yaw>		
-				</orient>			
-				<sense>1</sense>			
-			</thruster>				
-		</engine>					
-							
-		<engine file="Pratt_Whitney-T73">					
-			<location unit="FT">				
-				<x>21.5223097112861</x>			
-				<y>2.03412073490813</y>			
-				<z>17.6181102362205</z>			
-			</location>				
-			<feed>3</feed>				
+			<feed>5</feed>
+			<thruster file="Pratt_Whitney-T73_load">
+				<location unit="FT">
+					<x>27.7416666666666</x>
+					<z>17.6181102362205</z>
+				</location>
+				<orient unit="DEG">
+					<yaw>90</yaw>
+				</orient>
+				<sense>1</sense>
+			</thruster>
+		</engine>
+
+		<engine file="Pratt_Whitney-T73">
+			<location unit="FT">
+				<x>21.5223097112861</x>
+				<y>2.03412073490813</y>
+				<z>17.6181102362205</z>
+			</location>
+			<feed>3</feed>
 			<feed>4</feed>
-			<feed>5</feed>				
-			<thruster file="Pratt_Whitney-T73_load">				
-				<location unit="FT">			
-					<x>27.7416666666666</x>		
-					<z>17.6181102362205</z>		
-				</location>			
-				<orient unit="DEG">			
-					<yaw>90</yaw>		
-				</orient>			
-				<sense>-1</sense>			
-			</thruster>				
-		</engine>											
-								
-		<tank type="FUEL" number="0">				<!-- Used so as tanks start at 1 -->		
-			<location unit="FT">					
-			</location>					
-			<capacity unit="LBS">0</capacity>					
-			<contents unit="LBS">0</contents>					
-		</tank>						
-								
-	<!-- #### Fuel tanks #### -->							
-								
-		<tank type="FUEL" number="1">						
-			<location unit="FT">					
-				<x>21.1614173228346</x>				
-				<z>14.4356955380577</z>				
-			</location>					
-			<capacity unit="LBS">1472.25</capacity>					
-			<contents unit="LBS">1472.25</contents>						
-			<drain_location unit="FT">					
-				<x>20.7020997375328</x>				
-				<z>13.1233595800525</z>				
-			</drain_location>					
-			<priority>1</priority>					
-		</tank>						
-								
-		<tank type="FUEL" number="2">						
-			<location unit="FT">					
-				<x>24.1141732283464</x>				
-				<z>14.4356955380577</z>				
-			</location>					
-			<capacity unit="LBS">1472.25</capacity>					
-			<contents unit="LBS">1472.25</contents>						
-			<drain_location unit="FT">					
-				<x>23.6548556430446</x>				
-				<z>13.1233595800525</z>				
-			</drain_location>					
-			<priority>1</priority>					
-		</tank>						
-								
-		<tank type="FUEL" number="3">						
-			<location unit="FT">					
-				<x>30.6430446194225</x>				
-				<z>14.4356955380577</z>				
-			</location>					
-			<capacity unit="LBS">1472.25</capacity>					
-			<contents unit="LBS">1472.25</contents>					
-			<drain_location unit="FT">					
-				<x>30.1837270341207</x>				
-				<z>13.1233595800525</z>				
-			</drain_location>					
-			<priority>1</priority>					
-		</tank>						
-								
-		<tank type="FUEL" number="4">						
-			<location unit="FT">					
-				<x>33.5958005249344</x>				
-				<z>14.4356955380577</z>				
-			</location>					
-			<capacity unit="LBS">1472.25</capacity>					
-			<contents unit="LBS">1472.25</contents>					
-			<drain_location unit="FT">					
-				<x>33.1036745406824</x>				
-				<z>13.1233595800525</z>				
-			</drain_location>					
-			<priority>1</priority>					
-		</tank>						
-								
-		<tank type="FUEL" number="5">						
-			<location unit="FT">					
-				<x>37.9593175853018</x>				
-				<z>14.4356955380577</z>				
-			</location>					
-			<capacity unit="LBS">2925</capacity>					
-			<contents unit="LBS">2925</contents>					
-			<drain_location unit="FT">					
-				<x>37.5</x>				
-				<z>13.1233595800525</z>				
-			</drain_location>					
-			<priority>2</priority>					
-		</tank>						
+			<feed>5</feed>
+			<thruster file="Pratt_Whitney-T73_load">
+				<location unit="FT">
+					<x>27.7416666666666</x>
+					<z>17.6181102362205</z>
+				</location>
+				<orient unit="DEG">
+					<yaw>90</yaw>
+				</orient>
+				<sense>-1</sense>
+			</thruster>
+		</engine>
+
+		<tank type="FUEL" number="0">				<!-- Used so as tanks start at 1 -->
+			<location unit="FT">
+			</location>
+			<capacity unit="LBS">0</capacity>
+			<contents unit="LBS">0</contents>
+		</tank>
+
+	<!-- #### Fuel tanks #### -->
+
+		<tank type="FUEL" number="1">
+			<location unit="FT">
+				<x>21.1614173228346</x>
+				<z>14.4356955380577</z>
+			</location>
+			<capacity unit="LBS">1472.25</capacity>
+			<contents unit="LBS">1472.25</contents>
+			<drain_location unit="FT">
+				<x>20.7020997375328</x>
+				<z>13.1233595800525</z>
+			</drain_location>
+			<priority>1</priority>
+		</tank>
+
+		<tank type="FUEL" number="2">
+			<location unit="FT">
+				<x>24.1141732283464</x>
+				<z>14.4356955380577</z>
+			</location>
+			<capacity unit="LBS">1472.25</capacity>
+			<contents unit="LBS">1472.25</contents>
+			<drain_location unit="FT">
+				<x>23.6548556430446</x>
+				<z>13.1233595800525</z>
+			</drain_location>
+			<priority>1</priority>
+		</tank>
+
+		<tank type="FUEL" number="3">
+			<location unit="FT">
+				<x>30.6430446194225</x>
+				<z>14.4356955380577</z>
+			</location>
+			<capacity unit="LBS">1472.25</capacity>
+			<contents unit="LBS">1472.25</contents>
+			<drain_location unit="FT">
+				<x>30.1837270341207</x>
+				<z>13.1233595800525</z>
+			</drain_location>
+			<priority>1</priority>
+		</tank>
+
+		<tank type="FUEL" number="4">
+			<location unit="FT">
+				<x>33.5958005249344</x>
+				<z>14.4356955380577</z>
+			</location>
+			<capacity unit="LBS">1472.25</capacity>
+			<contents unit="LBS">1472.25</contents>
+			<drain_location unit="FT">
+				<x>33.1036745406824</x>
+				<z>13.1233595800525</z>
+			</drain_location>
+			<priority>1</priority>
+		</tank>
+
+		<tank type="FUEL" number="5">
+			<location unit="FT">
+				<x>37.9593175853018</x>
+				<z>14.4356955380577</z>
+			</location>
+			<capacity unit="LBS">2925</capacity>
+			<contents unit="LBS">0</contents>
+			<drain_location unit="FT">
+				<x>37.5</x>
+				<z>13.1233595800525</z>
+			</drain_location>
+			<priority>2</priority>
+		</tank>
 
 	</propulsion>
-	
+
 	<flight_control>
-	
+
 		<property type="double" value="0">OWS/testing</property>
+		<property type="double" value="0">propulsion/engine[1]/rotor/thrust-lbs</property>
 
 	</flight_control>
 
@@ -374,14 +373,16 @@ xsi:noNamespaceSchemaLocation="http://jsbsim.sourceforge.net/JSBSim.xsd">
  	<system file = "electrical system"/>
  	<system file = "fuel system"/>
  	<system file = "hydraulic system"/>
- 	<system file = "engine management system"/>	
+ 	<system file = "engine management system"/>
 
- 	<system file = "propulsion"/>	
- 	<system file = "angle_of_attack"/>
+	<system file = "flight_control"/>
+
+ 	<system file = "propulsion"/>
+  	<system file = "angle_of_attack"/>
 	<system file = "co-efficients"/>
 	<system file = "force_calcs"/>
-	
-	<system file = "flight_control"/>		
+
+
 
 
 	<!--
@@ -441,12 +442,37 @@ xsi:noNamespaceSchemaLocation="http://jsbsim.sourceforge.net/JSBSim.xsd">
 
 		<force name="rotor_main" frame="BODY">
 			<function>
-				<property>OWS/testing</property>
+				<ifthen>
+					<gt>
+						<property>OWS/testing</property>
+						<value>0</value>
+					</gt>
+					<value>0</value>
+					<value>1</value>
+				</ifthen>
 			</function>
 			<location unit="FT">
-				<x>7.64435695538057</x>
-				<y>0</y>
-				<z>9.61286089238844</z>
+				<z>21.3083333333333</z>
+			</location>
+			<direction>
+			</direction>
+		</force>
+
+		<force name="rotor_tail" frame="BODY">
+			<function>
+				<ifthen>
+					<gt>
+						<property>OWS/testing</property>
+						<value>0</value>
+					</gt>
+					<value>0</value>
+					<value>1</value>
+				</ifthen>
+			</function>
+			<location unit="FT">
+				<x>72.4324999999999</x>
+				<y>-2.64583333333333</y>
+				<z>21.3083333333333</z>
 			</location>
 			<direction>
 			</direction>

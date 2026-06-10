@@ -169,7 +169,7 @@ simonbomber64 at googlemail.com
 					<desc type="string">Aileron</desc>
 					<binding>
 						<command type="string">property-scale</command>
-						<property type="string">/fdm/jsbsim/fcs/cyclic_roll-cmd-pos</property>
+						<property type="string">/controls/flight/aileron</property>
 						<factor type="double">1</factor>
 						<offset type="double">0</offset>
 						<power type="double">1</power>
@@ -179,7 +179,7 @@ simonbomber64 at googlemail.com
 					<desc type="string">Elevator</desc>
 					<binding>
 						<command type="string">property-scale</command>
-						<property type="string">/fdm/jsbsim/fcs/cyclic_pitch-cmd-pos</property>
+						<property type="string">/controls/flight/elevator</property>
 						<factor type="double">-1</factor>
 						<offset type="double">0</offset>
 						<power type="double">1</power>
@@ -196,7 +196,7 @@ simonbomber64 at googlemail.com
 					<desc>Rudder</desc>
 					<binding>
 						<command>property-scale</command>
-						<property>/fdm/jsbsim/fcs/rudder-cmd-pos</property>
+						<property>/controls/flight/rudder</property>
 						<factor type="double">-1</factor>
 						<offset type="double">0</offset>
 						<power type="double">1</power>
