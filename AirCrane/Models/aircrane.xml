@@ -319,7 +319,8 @@
       <x-m> -2.606 </x-m>
       <y-m>  0.000 </y-m>
       <z-m>  1.383 </z-m>
-      <pitch-deg> -3 </pitch-deg>
+      <pitch-deg>-3</pitch-deg>
+      <roll-deg>3</roll-deg>
     </offsets>
   </model>
 
@@ -539,21 +540,18 @@
     <object-name>articuleDB</object-name>
   </animation>
 
-  <animation>
-    <type>translate</type>
-    <object-name>RoueAvant</object-name>
-    <property>gear/gear[0]/compression-norm</property>
-    <interpolation>
-      <entry><ind> 0.000 </ind><dep> -0.10 </dep></entry>
-      <entry><ind> 0.086 </ind><dep>  0.00 </dep></entry>
-      <entry><ind> 1.000 </ind><dep>  0.11 </dep></entry>
-    </interpolation>
-    <axis>
-      <x> 0 </x>
-      <y> 0 </y>
-      <z> 1 </z>
-    </axis>
-  </animation>
+	<animation>
+		<type>translate</type>
+		<object-name>RoueAvant</object-name>
+		<property>fdm/jsbsim/gear/unit[0]/compression-ft</property>
+		<interpolation>
+			<entry><ind>0.000</ind><dep>-0.2</dep></entry>
+			<entry><ind>1.192</ind><dep>0.4</dep></entry>				
+		</interpolation>
+		<axis>
+			<z>1</z>
+		</axis>
+	</animation>
 
   <animation>
     <type>rotate</type>
@@ -597,72 +595,66 @@
     </axis>
   </animation>
 
-  <animation>
-    <type>translate</type>
-    <object-name>RoueGauche</object-name>
-    <property>gear/gear[1]/compression-norm</property>
-    <interpolation>
-      <entry><ind> 0.00 </ind><dep> -0.10 </dep></entry>
-      <entry><ind> 0.29 </ind><dep>  0.00 </dep></entry>
-      <entry><ind> 1.00 </ind><dep>  0.28 </dep></entry>
-    </interpolation>
-    <axis>
-      <x> 0 </x>
-      <y> 0 </y>
-      <z> 1 </z>
-    </axis>
-  </animation>
+	<animation>
+		<type>translate</type>
+		<object-name>RoueGauche</object-name>
+		<property>/fdm/jsbsim/gear/unit[1]/compression-ft</property>
+		<interpolation>
+			<entry><ind>0.0</ind><dep>-0.1</dep></entry>		
+			<entry><ind>0.539</ind><dep>0.0</dep></entry>
+			<entry><ind>1.078</ind><dep>0.1</dep></entry>			
+		</interpolation>
+		<axis>
+			<z>1</z>
+		</axis>
+	</animation>
 
-  <animation>
-    <type>rotate</type>
-    <object-name>articuleGH</object-name>
-    <property>gear/gear[1]/compression-norm</property>
-    <interpolation>
-      <entry><ind> 0.00 </ind><dep>  10 </dep></entry>
-      <entry><ind> 0.29 </ind><dep>   0 </dep></entry>
-      <entry><ind> 1.00 </ind><dep> -27 </dep></entry>
-    </interpolation>
-    <center>
-      <x-m> -1.081 </x-m>
-      <y-m> -3.027 </y-m>
-      <z-m> -2.465 </z-m>
-    </center>
-    <axis>
-      <x> 0 </x>
-      <y> 1 </y>
-      <z> 0 </z>
-    </axis>
-  </animation>
+	<animation>
+		<type>rotate</type>
+		<object-name>articuleGH</object-name>
+		<property>/fdm/jsbsim/gear/unit[1]/compression-ft</property>
+		<interpolation>
+			<entry><ind>0.0</ind><dep>10</dep></entry>		
+			<entry><ind>0.539</ind><dep>0</dep></entry>
+			<entry><ind>1.078</ind><dep>-10</dep></entry>
+		</interpolation>
+		<center>
+			<x-m> -1.081 </x-m>
+			<y-m> -3.027 </y-m>
+			<z-m> -2.465 </z-m>
+		</center>
+		<axis>
+			<y>1</y>
+		</axis>
+	</animation>
 
-  <animation>
-    <type>rotate</type>
-    <object-name>articuleGB</object-name>
-    <property>gear/gear[1]/compression-norm</property>
-    <interpolation>
-      <entry><ind> 0.00 </ind><dep> -10 </dep></entry>
-      <entry><ind> 0.29 </ind><dep>   0 </dep></entry>
-      <entry><ind> 1.00 </ind><dep>  30 </dep></entry>
-    </interpolation>
-    <center>
-      <x-m> -1.086 </x-m>
-      <y-m> -3.027 </y-m>
-      <z-m> -2.848 </z-m>
-    </center>
-    <axis>
-      <x> 0 </x>
-      <y> 1 </y>
-      <z> 0 </z>
-    </axis>
-  </animation>
+	<animation>
+		<type>rotate</type>
+		<object-name>articuleGB</object-name>
+		<property>/fdm/jsbsim/gear/unit[1]/compression-ft</property>
+		<interpolation>
+			<entry><ind>0.0</ind><dep>-10</dep></entry>		
+			<entry><ind>0.539</ind><dep>0</dep></entry>
+			<entry><ind>1.078</ind><dep>10</dep></entry>
+		</interpolation>
+		<center>
+			<x-m> -1.086 </x-m>
+			<y-m> -3.027 </y-m>
+			<z-m> -2.848 </z-m>
+		</center>
+		<axis>
+			<y>1</y>
+		</axis>
+	</animation>
 
   <animation>
     <type>translate</type>
     <object-name>RoueDroite</object-name>
     <property>gear/gear[2]/compression-norm</property>
     <interpolation>
-      <entry><ind> 0.00 </ind><dep> -0.10 </dep></entry>
-      <entry><ind> 0.29 </ind><dep>  0.00 </dep></entry>
-      <entry><ind> 1.00 </ind><dep>  0.28 </dep></entry>
+			<entry><ind>0.0</ind><dep>-0.1</dep></entry>		
+			<entry><ind>0.539</ind><dep>0.0</dep></entry>
+			<entry><ind>1.078</ind><dep>0.1</dep></entry>	
     </interpolation>
     <axis>
       <x> 0 </x>
@@ -675,11 +667,11 @@
     <type>rotate</type>
     <object-name>articuleDH</object-name>
     <property>gear/gear[2]/compression-norm</property>
-    <interpolation>
-      <entry><ind> 0.00 </ind><dep>  10 </dep></entry>
-      <entry><ind> 0.29 </ind><dep>   0 </dep></entry>
-      <entry><ind> 1.00 </ind><dep> -27 </dep></entry>
-    </interpolation>
+		<interpolation>
+			<entry><ind>0.0</ind><dep>10</dep></entry>		
+			<entry><ind>0.539</ind><dep>0</dep></entry>
+			<entry><ind>1.078</ind><dep>-10</dep></entry>
+		</interpolation>
     <center>
       <x-m> -1.081 </x-m>
       <y-m>  3.027 </y-m>
@@ -696,11 +688,11 @@
     <type>rotate</type>
     <object-name>articuleDB</object-name>
     <property>gear/gear[2]/compression-norm</property>
-    <interpolation>
-      <entry><ind> 0.00 </ind><dep> -10 </dep></entry>
-      <entry><ind> 0.29 </ind><dep>   0 </dep></entry>
-      <entry><ind> 1.00 </ind><dep>  30 </dep></entry>
-    </interpolation>
+		<interpolation>
+			<entry><ind>0.0</ind><dep>-10</dep></entry>		
+			<entry><ind>0.539</ind><dep>0</dep></entry>
+			<entry><ind>1.078</ind><dep>10</dep></entry>
+		</interpolation>
     <center>
       <x-m> -1.086 </x-m>
       <y-m>  3.027 </y-m>

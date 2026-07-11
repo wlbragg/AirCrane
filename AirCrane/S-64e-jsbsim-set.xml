@@ -197,7 +197,7 @@ simonbomber64 at googlemail.com
 					<binding>
 						<command>property-scale</command>
 						<property>/controls/flight/rudder</property>
-						<factor type="double">-1</factor>
+						<factor type="double">1</factor>
 						<offset type="double">0</offset>
 						<power type="double">1</power>
 					</binding>

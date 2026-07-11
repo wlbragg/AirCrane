@@ -94,6 +94,33 @@ engine[4] = Turbine No.2
 1.0 9000
 -->
 
+		<fcs_function>
+			<function>
+				<ifthen>
+					<eq>
+						<property>propulsion/engine[3]/set-running</property>
+						<value>1</value>
+					</eq>
+					<value>1</value>
+					<value>0</value>
+				</ifthen>
+			</function>
+			<output>propulsion/engine[3]/constant-speed-mode</output>
+		</fcs_function>
+		<fcs_function>
+			<function>
+				<ifthen>
+					<eq>
+						<property>propulsion/engine[3]/constant-speed-mode</property>
+						<value>1</value>
+					</eq>
+					<property>propulsion/engine[3]/blade-angle</property>
+					<value>90</value>
+				</ifthen>
+			</function>
+			<output>propulsion/engine[3]/blade-angle</output>
+		</fcs_function>
+
 		<kinematic>
 			<input>propulsion/engine[3]/governor/n1-lever</input>
 			<traverse>
@@ -137,8 +164,8 @@ engine[4] = Turbine No.2
 					<table>
 						<independentVar>propulsion/engine[3]/engine-rpm</independentVar>
 						<tableData>
-							0	0
-							12650	1757
+							0		0
+							12650	1500
 						</tableData>
 					</table>
 					<property>propulsion/gearbox/engine_1-hp</property>
@@ -231,6 +258,33 @@ engine[4] = Turbine No.2
 1.0 9000
 -->
 
+		<fcs_function>
+			<function>
+				<ifthen>
+					<eq>
+						<property>propulsion/engine[4]/set-running</property>
+						<value>1</value>
+					</eq>
+					<value>1</value>
+					<value>0</value>
+				</ifthen>
+			</function>
+			<output>propulsion/engine[4]/constant-speed-mode</output>
+		</fcs_function>
+		<fcs_function>
+			<function>
+				<ifthen>
+					<eq>
+						<property>propulsion/engine[4]/constant-speed-mode</property>
+						<value>1</value>
+					</eq>
+					<property>propulsion/engine[4]/blade-angle</property>
+					<value>90</value>
+				</ifthen>
+			</function>
+			<output>propulsion/engine[4]/blade-angle</output>
+		</fcs_function>
+
 		<kinematic>
 			<input>propulsion/engine[4]/governor/n1-lever</input>
 			<traverse>
@@ -275,7 +329,7 @@ engine[4] = Turbine No.2
 						<independentVar>propulsion/engine[4]/engine-rpm</independentVar>
 						<tableData>
 							0	0
-							12650	1757
+							12650	1500
 						</tableData>
 					</table>
 					<property>propulsion/gearbox/engine_2-hp</property>
@@ -355,6 +409,12 @@ engine[4] = Turbine No.2
 
 <property type="double" value="0">propulsion/engine[1]/rotor/blade-angle</property>
 
+<property type="double" value="0">propulsion/engine[1]/rotor/blade_1/rotation-rad</property>
+<property type="double" value="1.047198">propulsion/engine[1]/rotor/blade_2/rotation-rad</property>
+<property type="double" value="2.094395">propulsion/engine[1]/rotor/blade_3/rotation-rad</property>
+<property type="double" value="3.141593">propulsion/engine[1]/rotor/blade_4/rotation-rad</property>
+<property type="double" value="4.18879">propulsion/engine[1]/rotor/blade_5/rotation-rad</property>
+<property type="double" value="5.235988">propulsion/engine[1]/rotor/blade_6/rotation-rad</property>
 
 <property type="double" value="1">propulsion/engine[1]/rotor/vortex_ring</property>
 
@@ -417,387 +477,371 @@ engine[4] = Turbine No.2
 					<value>0</value>
 				</ifthen>
 			</function>
-		</fcs_function>		
+		</fcs_function>
 		<fcs_function name="propulsion/engine[1]/rotor/blade_1/rotation-deg">
 			<function>
 				<todegrees>
-					<property>propulsion/engine[1]/rotor/blade_1/rotation-rad</property> 
+					<property>propulsion/engine[1]/rotor/blade_1/rotation-rad</property>
 				</todegrees>
 			</function>
 		</fcs_function>
-				
+
 		<fcs_function name="propulsion/engine[1]/rotor/blade_2/rotation-rad">
 			<function>
 				<ifthen>
-					<le>
-						<property>propulsion/engine[1]/rotor/blade_1/rotation-rad</property>
-						<value>1.0472</value>
-					</le>
+					<and>
+						<le>
+							<property>propulsion/engine[1]/rotor/blade_1/rotation-rad</property>
+							<value>1.047198</value>
+						</le>
+						<ge>
+							<property>propulsion/engine[1]/rotor/blade_1/rotation-rad</property>
+							<value>0</value>
+						</ge>					
+					</and>
 					<sum>
 						<property>propulsion/engine[1]/rotor/blade_1/rotation-rad</property>
-						<value>5.23599</value>
+						<value>5.235988</value>
 					</sum>
-					<sum>			
+					<sum>
 						<property>propulsion/engine[1]/rotor/blade_1/rotation-rad</property>
-						<value>-1.0472</value>							
+						<value>-1.047198</value>
 					</sum>
 				</ifthen>
 			</function>
-		</fcs_function>
-		<fcs_function name="propulsion/engine[1]/rotor/blade_2/rotation-deg">
-			<function>
-				<todegrees>
-					<property>propulsion/engine[1]/rotor/blade_2/rotation-rad</property> 
-				</todegrees>
-			</function>
-		</fcs_function>		
-		
+		</fcs_function>	
+
 		<fcs_function name="propulsion/engine[1]/rotor/blade_3/rotation-rad">
 			<function>
 				<ifthen>
-					<le>
-						<property>propulsion/engine[1]/rotor/blade_2/rotation-rad</property>
-						<value>1.0472</value>
-					</le>
+					<and>
+						<le>
+							<property>propulsion/engine[1]/rotor/blade_2/rotation-rad</property>
+							<value>1.047198</value>
+						</le>
+						<ge>
+							<property>propulsion/engine[1]/rotor/blade_2/rotation-rad</property>
+							<value>0</value>
+						</ge>					
+					</and>
 					<sum>
 						<property>propulsion/engine[1]/rotor/blade_2/rotation-rad</property>
-						<value>5.23599</value>
+						<value>5.235988</value>
 					</sum>
-					<sum>			
+					<sum>
 						<property>propulsion/engine[1]/rotor/blade_2/rotation-rad</property>
-						<value>-1.0472</value>							
+						<value>-1.047198</value>
 					</sum>
 				</ifthen>
-			</function>
-		</fcs_function>
-		<fcs_function name="propulsion/engine[1]/rotor/blade_3/rotation-deg">
-			<function>
-				<todegrees>
-					<property>propulsion/engine[1]/rotor/blade_3/rotation-rad</property> 
-				</todegrees>
 			</function>
 		</fcs_function>
 
 		<fcs_function name="propulsion/engine[1]/rotor/blade_4/rotation-rad">
 			<function>
 				<ifthen>
-					<le>
-						<property>propulsion/engine[1]/rotor/blade_3/rotation-rad</property>
-						<value>1.0472</value>
-					</le>
+					<and>
+						<le>
+							<property>propulsion/engine[1]/rotor/blade_3/rotation-rad</property>
+							<value>1.047198</value>
+						</le>
+						<ge>
+							<property>propulsion/engine[1]/rotor/blade_3/rotation-rad</property>
+							<value>0</value>
+						</ge>					
+					</and>
 					<sum>
 						<property>propulsion/engine[1]/rotor/blade_3/rotation-rad</property>
-						<value>5.23599</value>
+						<value>5.235988</value>
 					</sum>
-					<sum>			
+					<sum>
 						<property>propulsion/engine[1]/rotor/blade_3/rotation-rad</property>
-						<value>-1.0472</value>							
+						<value>-1.047198</value>
 					</sum>
 				</ifthen>
-			</function>
-		</fcs_function>
-		<fcs_function name="propulsion/engine[1]/rotor/blade_4/rotation-deg">
-			<function>
-				<todegrees>
-					<property>propulsion/engine[1]/rotor/blade_4/rotation-rad</property> 
-				</todegrees>
 			</function>
 		</fcs_function>
 
 		<fcs_function name="propulsion/engine[1]/rotor/blade_5/rotation-rad">
 			<function>
 				<ifthen>
-					<le>
-						<property>propulsion/engine[1]/rotor/blade_4/rotation-rad</property>
-						<value>1.0472</value>
-					</le>
+					<and>
+						<le>
+							<property>propulsion/engine[1]/rotor/blade_4/rotation-rad</property>
+							<value>1.047198</value>
+						</le>
+						<ge>
+							<property>propulsion/engine[1]/rotor/blade_4/rotation-rad</property>
+							<value>0</value>
+						</ge>					
+					</and>
 					<sum>
 						<property>propulsion/engine[1]/rotor/blade_4/rotation-rad</property>
-						<value>5.23599</value>
+						<value>5.235988</value>
 					</sum>
-					<sum>			
+					<sum>
 						<property>propulsion/engine[1]/rotor/blade_4/rotation-rad</property>
-						<value>-1.0472</value>							
+						<value>-1.047198</value>
 					</sum>
 				</ifthen>
-			</function>
-		</fcs_function>
-		<fcs_function name="propulsion/engine[1]/rotor/blade_5/rotation-deg">
-			<function>
-				<todegrees>
-					<property>propulsion/engine[1]/rotor/blade_5/rotation-rad</property> 
-				</todegrees>
 			</function>
 		</fcs_function>
 
 		<fcs_function name="propulsion/engine[1]/rotor/blade_6/rotation-rad">
 			<function>
 				<ifthen>
-					<le>
-						<property>propulsion/engine[1]/rotor/blade_5/rotation-rad</property>
-						<value>1.0472</value>
-					</le>
+					<and>
+						<le>
+							<property>propulsion/engine[1]/rotor/blade_5/rotation-rad</property>
+							<value>1.047198</value>
+						</le>
+						<ge>
+							<property>propulsion/engine[1]/rotor/blade_5/rotation-rad</property>
+							<value>0</value>
+						</ge>					
+					</and>
 					<sum>
 						<property>propulsion/engine[1]/rotor/blade_5/rotation-rad</property>
-						<value>5.23599</value>
+						<value>5.235988</value>
 					</sum>
-					<sum>			
+					<sum>
 						<property>propulsion/engine[1]/rotor/blade_5/rotation-rad</property>
-						<value>-1.0472</value>							
+						<value>-1.047198</value>
 					</sum>
 				</ifthen>
 			</function>
 		</fcs_function>
-		<fcs_function name="propulsion/engine[1]/rotor/blade_6/rotation-deg">
-			<function>
-				<todegrees>
-					<property>propulsion/engine[1]/rotor/blade_6/rotation-rad</property> 
-				</todegrees>
-			</function>
-		</fcs_function>			
-				
+		
 	<!-- Blade incident Angle	 -->
-			
-		<fcs_function name="propulsion/engine[1]/rotor/blade_1/blade-angle">
+	
+		<fcs_function name="propulsion/engine[1]/rotor/blade-angle">
 			<function>
-				<todegrees>
-					<sum>
-						<toradians>
-							<property>propulsion/engine[1]/rotor/blade-angle</property>
-						</toradians>
-						<product>
-							<sin>
-								<property>propulsion/engine[1]/rotor/blade_1/rotation-rad</property>					
-							</sin>
-							<table>
-								<independentVar>fcs/Helicopter/cyclic_roll-pos-norm</independentVar>
-								<tableData>
-									-1	-0.0872665
-									1	0.0872665
-								</tableData>
-							</table>						
-						</product>
-						<product>
-							<cos>
-								<property>propulsion/engine[1]/rotor/blade_1/rotation-rad</property>					
-							</cos>
-							<table>
-								<independentVar>fcs/Helicopter/cyclic_pitch-pos-norm</independentVar>
-								<tableData>
-									-1	0.0872665
-									1	-0.0872665
-								</tableData>
-							</table>						
-						</product>						
-					</sum>
-				</todegrees>
+				<ifthen>
+					<eq>
+						<property>/controls/electric/rotor_brake-sw</property>
+						<value>1</value>
+					</eq>
+					<property>propulsion/engine[1]/rotor/blade-angle</property>
+					<property>propulsion/engine[1]/blade-angle</property>
+				</ifthen>
 			</function>
-			<clipto>						
-				<min>-5</min>				
-				<max>8.645</max>				
-			</clipto>							
 		</fcs_function>
 		
-		<fcs_function name="propulsion/engine[1]/rotor/blade_2/blade-angle">
-			<function>
-				<todegrees>
-					<sum>
-						<toradians>
-							<property>propulsion/engine[1]/rotor/blade-angle</property>
-						</toradians>
-						<product>
-							<sin>
-								<property>propulsion/engine[1]/rotor/blade_2/rotation-rad</property>					
-							</sin>
-							<table>
-								<independentVar>fcs/Helicopter/cyclic_roll-pos-norm</independentVar>
-								<tableData>
-									-1	-0.0872665
-									1	0.0872665
-								</tableData>
-							</table>						
-						</product>
-						<product>
-							<cos>
-								<property>propulsion/engine[1]/rotor/blade_2/rotation-rad</property>					
-							</cos>
-							<table>
-								<independentVar>fcs/Helicopter/cyclic_pitch-pos-norm</independentVar>
-								<tableData>
-									-1	0.0872665
-									1	-0.0872665
-								</tableData>
-							</table>						
-						</product>							
-					</sum>
-				</todegrees>
+		<fcs_function name="propulsion/engine[1]/rotor/blade_1/blade-angle">																		
+			<function>																	
+				<sum>																
+					<property>propulsion/engine[1]/rotor/blade-angle</property>															
+					<product>															
+						<sin>														
+							<property>propulsion/engine[1]/rotor/blade_1/rotation-rad</property>													
+						</sin>														
+						<table>														
+							<independentVar>fcs/Helicopter/cyclic_roll-cmd-norm</independentVar>													
+							<tableData>													
+								-1	-5											
+								1	5											
+							</tableData>													
+						</table>														
+					</product>															
+					<product>															
+						<cos>														
+							<property>propulsion/engine[1]/rotor/blade_1/rotation-rad</property>													
+						</cos>														
+						<table>														
+							<independentVar>fcs/Helicopter/cyclic_pitch-cmd-norm</independentVar>													
+							<tableData>													
+								-1	-5											
+								1	5											
+							</tableData>													
+						</table>														
+					</product>															
+				</sum>																
 			</function>
 			<clipto>						
 				<min>-5</min>				
 				<max>8.645</max>				
-			</clipto>			
-		</fcs_function>	
-
-		<fcs_function name="propulsion/engine[1]/rotor/blade_3/blade-angle">
-			<function>
-				<todegrees>
-					<sum>
-						<toradians>
-							<property>propulsion/engine[1]/rotor/blade-angle</property>
-						</toradians>
-						<product>
-							<sin>
-								<property>propulsion/engine[1]/rotor/blade_3/rotation-rad</property>					
-							</sin>
-							<table>
-								<independentVar>fcs/Helicopter/cyclic_roll-pos-norm</independentVar>
-								<tableData>
-									-1	-0.0872665
-									1	0.0872665
-								</tableData>
-							</table>						
-						</product>
-						<product>
-							<cos>
-								<property>propulsion/engine[1]/rotor/blade_3/rotation-rad</property>					
-							</cos>
-							<table>
-								<independentVar>fcs/Helicopter/cyclic_pitch-pos-norm</independentVar>
-								<tableData>
-									-1	0.0872665
-									1	-0.0872665
-								</tableData>
-							</table>						
-						</product>							
-					</sum>
-				</todegrees>
+			</clipto>				
+		</fcs_function>																		
+																				
+		<fcs_function name="propulsion/engine[1]/rotor/blade_2/blade-angle">																		
+			<function>																	
+				<sum>																
+					<property>propulsion/engine[1]/rotor/blade-angle</property>															
+					<product>															
+						<sin>														
+							<property>propulsion/engine[1]/rotor/blade_2/rotation-rad</property>													
+						</sin>														
+						<table>														
+							<independentVar>fcs/Helicopter/cyclic_roll-cmd-norm</independentVar>													
+							<tableData>													
+								-1	-5											
+								1	5											
+							</tableData>													
+						</table>														
+					</product>															
+					<product>															
+						<cos>														
+							<property>propulsion/engine[1]/rotor/blade_2/rotation-rad</property>													
+						</cos>														
+						<table>														
+							<independentVar>fcs/Helicopter/cyclic_pitch-cmd-norm</independentVar>													
+							<tableData>													
+								-1	-5											
+								1	5										
+							</tableData>													
+						</table>														
+					</product>															
+				</sum>																
 			</function>
 			<clipto>						
 				<min>-5</min>				
 				<max>8.645</max>				
-			</clipto>			
-		</fcs_function>	
+			</clipto>				
+		</fcs_function>																		
+																				
+		<fcs_function name="propulsion/engine[1]/rotor/blade_3/blade-angle">																		
+			<function>																	
+				<sum>																
+					<property>propulsion/engine[1]/rotor/blade-angle</property>															
+					<product>															
+						<sin>														
+							<property>propulsion/engine[1]/rotor/blade_3/rotation-rad</property>													
+						</sin>														
+						<table>														
+							<independentVar>fcs/Helicopter/cyclic_roll-cmd-norm</independentVar>													
+							<tableData>													
+								-1	-5											
+								1	5											
+							</tableData>													
+						</table>														
+					</product>															
+					<product>															
+						<cos>														
+							<property>propulsion/engine[1]/rotor/blade_3/rotation-rad</property>													
+						</cos>														
+						<table>														
+							<independentVar>fcs/Helicopter/cyclic_pitch-cmd-norm</independentVar>													
+							<tableData>													
+								-1	-5											
+								1	5											
+							</tableData>													
+						</table>														
+					</product>															
+				</sum>																
+			</function>
+			<clipto>						
+				<min>-5</min>				
+				<max>8.645</max>				
+			</clipto>				
+		</fcs_function>																		
+																				
+		<fcs_function name="propulsion/engine[1]/rotor/blade_4/blade-angle">																		
+			<function>																	
+				<sum>																
+					<property>propulsion/engine[1]/rotor/blade-angle</property>															
+					<product>															
+						<sin>														
+							<property>propulsion/engine[1]/rotor/blade_4/rotation-rad</property>													
+						</sin>														
+						<table>														
+							<independentVar>fcs/Helicopter/cyclic_roll-cmd-norm</independentVar>													
+							<tableData>													
+								-1	-5											
+								1	5											
+							</tableData>													
+						</table>														
+					</product>															
+					<product>															
+						<cos>														
+							<property>propulsion/engine[1]/rotor/blade_4/rotation-rad</property>													
+						</cos>														
+						<table>														
+							<independentVar>fcs/Helicopter/cyclic_pitch-cmd-norm</independentVar>													
+							<tableData>													
+								-1	-5											
+								1	5											
+							</tableData>													
+						</table>														
+					</product>															
+				</sum>																
+			</function>
+			<clipto>						
+				<min>-5</min>				
+				<max>8.645</max>				
+			</clipto>				
+		</fcs_function>																		
+																				
+		<fcs_function name="propulsion/engine[1]/rotor/blade_5/blade-angle">																		
+			<function>																	
+				<sum>																
+					<property>propulsion/engine[1]/rotor/blade-angle</property>															
+					<product>															
+						<sin>														
+							<property>propulsion/engine[1]/rotor/blade_5/rotation-rad</property>													
+						</sin>														
+						<table>														
+							<independentVar>fcs/Helicopter/cyclic_roll-cmd-norm</independentVar>													
+							<tableData>													
+								-1	-5											
+								1	5											
+							</tableData>													
+						</table>														
+					</product>															
+					<product>															
+						<cos>														
+							<property>propulsion/engine[1]/rotor/blade_5/rotation-rad</property>													
+						</cos>														
+						<table>														
+							<independentVar>fcs/Helicopter/cyclic_pitch-cmd-norm</independentVar>													
+							<tableData>													
+								-1	-5											
+								1	5											
+							</tableData>													
+						</table>														
+					</product>															
+				</sum>																
+			</function>
+			<clipto>						
+				<min>-5</min>				
+				<max>8.645</max>				
+			</clipto>				
+		</fcs_function>																		
+																				
+		<fcs_function name="propulsion/engine[1]/rotor/blade_6/blade-angle">																		
+			<function>																	
+				<sum>																
+					<property>propulsion/engine[1]/rotor/blade-angle</property>															
+					<product>															
+						<sin>														
+							<property>propulsion/engine[1]/rotor/blade_6/rotation-rad</property>													
+						</sin>														
+						<table>														
+							<independentVar>fcs/Helicopter/cyclic_roll-cmd-norm</independentVar>													
+							<tableData>													
+								-1	-5											
+								1	5											
+							</tableData>													
+						</table>														
+					</product>															
+					<product>															
+						<cos>														
+							<property>propulsion/engine[1]/rotor/blade_6/rotation-rad</property>													
+						</cos>														
+						<table>														
+							<independentVar>fcs/Helicopter/cyclic_pitch-cmd-norm</independentVar>													
+							<tableData>													
+								-1	-5											
+								1	5										
+							</tableData>													
+						</table>														
+					</product>															
+				</sum>																
+			</function>
+			<clipto>						
+				<min>-5</min>				
+				<max>8.645</max>				
+			</clipto>				
+		</fcs_function>																																				
 		
-		<fcs_function name="propulsion/engine[1]/rotor/blade_4/blade-angle">
-			<function>
-				<todegrees>
-					<sum>
-						<toradians>
-							<property>propulsion/engine[1]/rotor/blade-angle</property>
-						</toradians>
-						<product>
-							<sin>
-								<property>propulsion/engine[1]/rotor/blade_4/rotation-rad</property>					
-							</sin>
-							<table>
-								<independentVar>fcs/Helicopter/cyclic_roll-pos-norm</independentVar>
-								<tableData>
-									-1	-0.0872665
-									1	0.0872665
-								</tableData>
-							</table>						
-						</product>
-						<product>
-							<cos>
-								<property>propulsion/engine[1]/rotor/blade_4/rotation-rad</property>					
-							</cos>
-							<table>
-								<independentVar>fcs/Helicopter/cyclic_pitch-pos-norm</independentVar>
-								<tableData>
-									-1	0.0872665
-									1	-0.0872665
-								</tableData>
-							</table>						
-						</product>						
-					</sum>
-				</todegrees>
-			</function>
-			<clipto>						
-				<min>-5</min>				
-				<max>8.645</max>				
-			</clipto>			
-		</fcs_function>			
-		
-		<fcs_function name="propulsion/engine[1]/rotor/blade_5/blade-angle">
-			<function>
-				<todegrees>
-					<sum>
-						<toradians>
-							<property>propulsion/engine[1]/rotor/blade-angle</property>
-						</toradians>
-						<product>
-							<sin>
-								<property>propulsion/engine[1]/rotor/blade_5/rotation-rad</property>					
-							</sin>
-							<table>
-								<independentVar>fcs/Helicopter/cyclic_roll-pos-norm</independentVar>
-								<tableData>
-									-1	-0.0872665
-									1	0.0872665
-								</tableData>
-							</table>						
-						</product>
-						<product>
-							<cos>
-								<property>propulsion/engine[1]/rotor/blade_5/rotation-rad</property>					
-							</cos>
-							<table>
-								<independentVar>fcs/Helicopter/cyclic_pitch-pos-norm</independentVar>
-								<tableData>
-									-1	0.0872665
-									1	-0.0872665
-								</tableData>
-							</table>						
-						</product>							
-					</sum>
-				</todegrees>
-			</function>
-			<clipto>						
-				<min>-5</min>				
-				<max>8.645</max>				
-			</clipto>			
-		</fcs_function>		
-		
-		<fcs_function name="propulsion/engine[1]/rotor/blade_6/blade-angle">
-			<function>
-				<todegrees>
-					<sum>
-						<toradians>
-							<property>propulsion/engine[1]/rotor/blade-angle</property>
-						</toradians>
-						<product>
-							<sin>
-								<property>propulsion/engine[1]/rotor/blade_6/rotation-rad</property>					
-							</sin>
-							<table>
-								<independentVar>fcs/Helicopter/cyclic_roll-pos-norm</independentVar>
-								<tableData>
-									-1	-0.0872665
-									1	0.0872665
-								</tableData>
-							</table>						
-						</product>
-						<product>
-							<cos>
-								<property>propulsion/engine[1]/rotor/blade_6/rotation-rad</property>					
-							</cos>
-							<table>
-								<independentVar>fcs/Helicopter/cyclic_pitch-pos-norm</independentVar>
-								<tableData>
-									-1	0.0872665
-									1	-0.0872665
-								</tableData>
-							</table>						
-						</product>							
-					</sum>
-				</todegrees>
-			</function>
-			<clipto>						
-				<min>-5</min>				
-				<max>8.645</max>				
-			</clipto>			
-		</fcs_function>			
-					
 	</channel>
 
 <!-- <property type="double" value="0">propulsion/engine[2]/rotor/thrust-lbs</property> -->

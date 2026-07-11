@@ -33,12 +33,10 @@ xsi:noNamespaceSchemaLocation="http://jsbsim.sourceforge.net/JSBSim.xsd">
 		<vtailarea unit="FT2">16.0565251686059</vtailarea>
 		<vtailarm unit="FT">67.3884514435695</vtailarm>
 
-		<property type="double" value="-3">propulsion/engine[1]/blade-angle</property>
-
 		<location name="AERORP" unit="IN">
-			<x>332.9</x>
+			<x>333</x>
 			<y>0</y>
-			<z>255.7</z>
+			<z>256</z>
 		</location>
 
 	</metrics>
@@ -58,6 +56,15 @@ xsi:noNamespaceSchemaLocation="http://jsbsim.sourceforge.net/JSBSim.xsd">
 			<y>0.0000435039722318263</y>
 			<z>194.966759617349</z>
 		</location>
+		
+		<pointmass name="Max weight">														
+			<weight unit="LBS">13080</weight>													
+			<location name="POINTMASS" unit="IN">													
+				<x>333</x>												
+				<y>0</y>												
+				<z>100</z>												
+			</location>													
+		</pointmass>
 
 	</mass_balance>
 
@@ -67,14 +74,14 @@ xsi:noNamespaceSchemaLocation="http://jsbsim.sourceforge.net/JSBSim.xsd">
 			<location unit="FT">
 				<x>8.33333333333333</x>
 				<y>0</y>
-				<z>4.33070866141732</z>
+				<z>4.330709</z>
 			</location>
-			<static_friction>0.8</static_friction>
+			<static_friction>0.7</static_friction>
 			<dynamic_friction>0.05</dynamic_friction>
 			<rolling_friction>1</rolling_friction>
-			<spring_coeff unit="LBS/FT">20400</spring_coeff>
-			<damping_coeff unit="LBS/FT/SEC">1020</damping_coeff>
-			<damping_coeff_rebound unit="LBS/FT/SEC">2040</damping_coeff_rebound>
+			<spring_coeff unit="LBS/FT">50000</spring_coeff>
+			<damping_coeff unit="LBS/FT/SEC">10000</damping_coeff>
+			<damping_coeff_rebound unit="LBS/FT/SEC">000</damping_coeff_rebound>
 			<retractable>0</retractable>
 		</contact>
 
@@ -82,14 +89,14 @@ xsi:noNamespaceSchemaLocation="http://jsbsim.sourceforge.net/JSBSim.xsd">
 			<location unit="FT">
 				<x>32.75</x>
 				<y>-9.84251968503936</y>
-				<z>4.33070866141732</z>
+				<z>4.330709</z>
 			</location>
-			<static_friction>0.8</static_friction>
+			<static_friction>0.7</static_friction>
 			<dynamic_friction>0.05</dynamic_friction>
 			<rolling_friction>1</rolling_friction>
-			<spring_coeff unit="LBS/FT">17000</spring_coeff>
-			<damping_coeff unit="LBS/FT/SEC">850</damping_coeff>
-			<damping_coeff_rebound unit="LBS/FT/SEC">1700</damping_coeff_rebound>
+			<spring_coeff unit="LBS/FT">20000</spring_coeff>
+			<damping_coeff unit="LBS/FT/SEC">20000</damping_coeff>
+			<damping_coeff_rebound unit="LBS/FT/SEC">000</damping_coeff_rebound>
 			<retractable>0</retractable>
 		</contact>
 
@@ -97,14 +104,14 @@ xsi:noNamespaceSchemaLocation="http://jsbsim.sourceforge.net/JSBSim.xsd">
 			<location unit="FT">
 				<x>32.75</x>
 				<y>9.84251968503936</y>
-				<z>4.33070866141732</z>
+				<z>4.330709</z>
 			</location>
-			<static_friction>0.8</static_friction>
+			<static_friction>0.7</static_friction>
 			<dynamic_friction>0.05</dynamic_friction>
 			<rolling_friction>1</rolling_friction>
-			<spring_coeff unit="LBS/FT">17000</spring_coeff>
-			<damping_coeff unit="LBS/FT/SEC">850</damping_coeff>
-			<damping_coeff_rebound unit="LBS/FT/SEC">1700</damping_coeff_rebound>
+			<spring_coeff unit="LBS/FT">20000</spring_coeff>
+			<damping_coeff unit="LBS/FT/SEC">20000</damping_coeff>
+			<damping_coeff_rebound unit="LBS/FT/SEC">000</damping_coeff_rebound>
 			<retractable>0</retractable>
 		</contact>
 
@@ -363,7 +370,13 @@ xsi:noNamespaceSchemaLocation="http://jsbsim.sourceforge.net/JSBSim.xsd">
 
 		<property type="double" value="0">OWS/testing</property>
 		<property type="double" value="0">propulsion/engine[1]/rotor/thrust-lbs</property>
-
+		<property type="double" value="0">forces/fbx-lbs</property>
+		<property type="double" value="0">forces/fby-lbs</property>
+		<property type="double" value="0">forces/fbz-lbs</property>
+		<property type="double" value="0">moments/l-lbsft</property>
+		<property type="double" value="0">moments/m-lbsft</property>
+		<property type="double" value="0">moments/n-lbsft</property>
+		
 	</flight_control>
 
 <!--  	<system file = "TurboProp_Test"/> -->
@@ -378,12 +391,9 @@ xsi:noNamespaceSchemaLocation="http://jsbsim.sourceforge.net/JSBSim.xsd">
 	<system file = "flight_control"/>
 
  	<system file = "propulsion"/>
-  	<system file = "angle_of_attack"/>
+   	<system file = "angle_of_attack"/>
 	<system file = "co-efficients"/>
 	<system file = "force_calcs"/>
-
-
-
 
 	<!--
 	<system file = "load_master"/>
@@ -391,55 +401,79 @@ xsi:noNamespaceSchemaLocation="http://jsbsim.sourceforge.net/JSBSim.xsd">
 	-->
 
 	<aerodynamics>
+	
+		<axis name="ROLL">
+
+			<function>
+				<ifthen>
+					<gt>
+						<property>OWS/testing</property>
+						<value>0</value>
+					</gt>
+					<value>0</value>
+					<property>moments/l-lbsft</property>
+				</ifthen>
+			</function>
+
+		</axis>
+
+		<axis name="PITCH">
+
+			<function>
+				<ifthen>
+					<gt>
+						<property>OWS/testing</property>
+						<value>0</value>
+					</gt>
+					<value>0</value>
+					<property>moments/m-lbsft</property>
+				</ifthen>
+			</function>
+
+		</axis>
+	
 	</aerodynamics>
 
 	<!-- STRUCTURAL frame (x +ve aft, y +ve right, z +ve up) -->
 	<external_reactions>
-
-		<force name="htail" frame="BODY">
-			<function>
-				<property>OWS/testing</property>
-			</function>
-			<location unit="FT">
-				<x>26.509186351706</x>
-				<z>2.46062992125984</z>
-			</location>
-			<direction>
-			</direction>
-		</force>
-
-		<force name="vtail" frame="BODY">
-			<function>
-				<property>OWS/testing</property>
-			</function>
-			<location unit="FT">
-				<x>34.0223097112861</x>
-				<z>6.23359580052493</z>
-			</location>
-			<direction>
-			</direction>
-		</force>
-
+	
 		<force name="fuselage" frame="BODY">
 			<function>
-				<property>OWS/testing</property>
+				<ifthen>
+					<gt>
+						<property>OWS/testing</property>
+						<value>0</value>
+					</gt>
+					<value>0</value>
+					<value>1</value>
+				</ifthen>
 			</function>
-			<location unit="FT">
+			<location>
 			</location>
 			<direction>
 			</direction>
 		</force>
-
-		<force name="pendulum" frame="BODY">
+	
+		<force name="h-tail" frame="BODY">
 			<function>
-				<property>OWS/testing</property>
+				<ifthen>
+					<gt>
+						<property>OWS/testing</property>
+						<value>0</value>
+					</gt>
+					<value>0</value>
+					<value>1</value>
+				</ifthen>
 			</function>
 			<location unit="FT">
+				<x>68.89764</x>
+				<y>3.28084</y>				
+				<z>21.71916</z>
 			</location>
 			<direction>
 			</direction>
 		</force>
-
+	
 		<force name="rotor_main" frame="BODY">
 			<function>
 				<ifthen>
@@ -451,13 +485,13 @@ xsi:noNamespaceSchemaLocation="http://jsbsim.sourceforge.net/JSBSim.xsd">
 					<value>1</value>
 				</ifthen>
 			</function>
-			<location unit="FT">
-				<z>21.3083333333333</z>
+			<location unit="IN">
+				<z>256</z>
 			</location>
 			<direction>
 			</direction>
 		</force>
-
+		
 		<force name="rotor_tail" frame="BODY">
 			<function>
 				<ifthen>
@@ -469,26 +503,32 @@ xsi:noNamespaceSchemaLocation="http://jsbsim.sourceforge.net/JSBSim.xsd">
 					<value>1</value>
 				</ifthen>
 			</function>
-			<location unit="FT">
-				<x>72.4324999999999</x>
-				<y>-2.64583333333333</y>
-				<z>21.3083333333333</z>
+			<location unit="IN">
+				<x>869.29</x>
+				<y>-31.88</y>					
+				<z>256</z>
 			</location>
 			<direction>
 			</direction>
 		</force>
-
+		
 		<force name="ground_effect" frame="LOCAL">
 			<function>
-				<property>OWS/testing</property>
+				<ifthen>
+					<gt>
+						<property>OWS/testing</property>
+						<value>0</value>
+					</gt>
+					<value>0</value>
+					<value>1</value>
+				</ifthen>
 			</function>
-			<location unit="FT">
-				<x>7.64435695538057</x>
-				<z>9.61286089238844</z>
+			<location unit="IN">
+				<z>256</z>
 			</location>
 			<direction>
 			</direction>
-		</force>
+		</force>		
 
 	</external_reactions>
 

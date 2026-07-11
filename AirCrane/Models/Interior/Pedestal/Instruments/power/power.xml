@@ -47,7 +47,7 @@
 		<type>rotate</type>
 		<object-name>ext-power</object-name>
 		<property>/controls/electric/external_power</property>
-		<factor>-30</factor>
+		<factor>-40</factor>
 		<center>
 			<x-m>0.08419</x-m>
 			<y-m>-0.05778</y-m>
@@ -109,7 +109,7 @@
 		<type>rotate</type>
 		<object-name>inverter</object-name>
 		<property>/controls/electric/inverter</property>
-		<factor>-30</factor>
+		<factor>-40</factor>
 		<center>
 			<x-m>0.083457</x-m>
 			<y-m>-0.015645</y-m>
@@ -162,7 +162,7 @@
 			<repeatable>false</repeatable>			
 			<binding>
 				<command>property-toggle</command>
-				<property>/controls/electric/engine[3]/generator</property>
+				<property>/controls/engines/engine[3]/generator</property>
 			</binding>
 			<binding>
 				<command>nasal</command>
@@ -173,7 +173,7 @@
 	<animation>
 		<type>rotate</type>
 		<object-name>gen-1</object-name>
-		<property>/controls/electric/engine[3]/generator</property>
+		<property>/controls/engines/engine[3]/generator</property>
 		<factor>-20</factor>
 		<offset-deg>-20</offset-deg>
 		<center>
@@ -195,7 +195,7 @@
 			<repeatable>false</repeatable>			
 			<binding>
 				<command>property-toggle</command>
-				<property>/controls/electric/engine[4]/generator</property>
+				<property>/controls/engines/engine[4]/generator</property>
 			</binding>
 			<binding>
 				<command>nasal</command>
@@ -206,7 +206,7 @@
 	<animation>
 		<type>rotate</type>
 		<object-name>gen-2</object-name>
-		<property>/controls/electric/engine[4]/generator</property>
+		<property>/controls/engines/engine[4]/generator</property>
 		<factor>-20</factor>
 		<offset-deg>-20</offset-deg>
 		<center>
@@ -241,7 +241,7 @@
 		<type>rotate</type>
 		<object-name>rect-1</object-name>
 		<property>/controls/electric/engine[3]/rectifier</property>
-		<factor>-30</factor>
+		<factor>-40</factor>
 		<center>
 			<x-m>0.02602</x-m>
 			<y-m>0.03373</y-m>
@@ -273,7 +273,7 @@
 		<type>rotate</type>
 		<object-name>rect-2</object-name>
 		<property>/controls/electric/engine[4]/rectifier</property>
-		<factor>-30</factor>
+		<factor>-40</factor>
 		<center>
 			<x-m>0.02602</x-m>
 			<y-m>0.05682</y-m>
@@ -294,7 +294,7 @@
 			<repeatable>false</repeatable>
 			<binding>
 				<command>property-toggle</command>
-				<property>/controls/electric/engine[3]/ignition</property>
+				<property>/controls/engines/engine[3]/cutoff</property>
 			</binding>
 			<binding>
 				<command>nasal</command>
@@ -305,9 +305,9 @@
 	<animation>
 		<type>rotate</type>
 		<object-name>ignition-1</object-name>
-		<property>/controls/electric/engine[3]/ignition</property>
-		<factor>-20</factor>
-		<offset-deg>-20</offset-deg>
+		<property>/controls/engines/engine[3]/cutoff</property>
+		<factor>40</factor>
+		<offset-deg>-40</offset-deg>
 		<center>
 			<x-m>0.08313</x-m>
 			<y-m>0.02706</y-m>
@@ -327,7 +327,7 @@
 			<repeatable>false</repeatable>
 			<binding>
 				<command>property-toggle</command>
-				<property>/controls/electric/engine[4]/ignition</property>
+				<property>/controls/engines/engine[4]/cutoff</property>
 			</binding>
 			<binding>
 				<command>nasal</command>
@@ -338,9 +338,9 @@
 	<animation>
 		<type>rotate</type>
 		<object-name>ignition-2</object-name>
-		<property>/controls/electric/engine[4]/ignition</property>
-		<factor>-20</factor>
-		<offset-deg>-20</offset-deg>
+		<property>/controls/engines/engine[4]/cutoff</property>
+		<factor>40</factor>
+		<offset-deg>-40</offset-deg>
 		<center>
 			<x-m>0.08313</x-m>
 			<y-m>0.02706</y-m>

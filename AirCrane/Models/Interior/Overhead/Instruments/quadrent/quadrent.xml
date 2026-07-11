@@ -90,12 +90,18 @@
 		<type>pick</type>
 		<object-name>fuelshutoffl</object-name>
 		<visible>true</visible>
+		<condition>
+			<greater-than>
+				<property>/fdm/jsbsim/propulsion/engine[3]/governor/n1-lever</property>
+				<value>0.41</value>
+			</greater-than>
+		</condition>			
 		<action>
 			<button>0</button>
 			<repeatable>false</repeatable>
 			<binding>
 				<command>property-toggle</command>
-				<property>controls/engines/engine[3]/cutoff</property>
+				<property>/fdm/jsbsim/propulsion/engine[3]/fuel-cock</property>
 			</binding>
 			<binding>
 				<command>nasal</command>
@@ -106,9 +112,9 @@
 	<animation>
 		<type>rotate</type>
 		<object-name>fuelshutoffl</object-name>
-		<property>controls/engines/engine[3]/cutoff</property>
-		<factor>-50</factor>
-		<offset-deg>60</offset-deg>
+		<property>/fdm/jsbsim/propulsion/engine[3]/fuel-cock</property>
+		<factor>50</factor>
+		<offset-deg>0</offset-deg>
 		<center>
 			<x-m>0.01717</x-m>
 			<y-m>0.00000</y-m>
@@ -285,12 +291,18 @@
 		<type>pick</type>
 		<object-name>fuelshutoffr</object-name>
 		<visible>true</visible>
+		<condition>
+			<greater-than>
+				<property>/fdm/jsbsim/propulsion/engine[4]/governor/n1-lever</property>
+				<value>0.41</value>
+			</greater-than>
+		</condition>			
 		<action>
 			<button>0</button>
 			<repeatable>false</repeatable>
 			<binding>
 				<command>property-toggle</command>
-				<property>controls/engines/engine[4]/cutoff</property>
+				<property>/fdm/jsbsim/propulsion/engine[4]/fuel-cock</property>
 			</binding>
 			<binding>
 				<command>nasal</command>
@@ -301,9 +313,9 @@
 	<animation>
 		<type>rotate</type>
 		<object-name>fuelshutoffr</object-name>
-		<property>controls/engines/engine[4]/cutoff</property>
-		<factor>-50</factor>
-		<offset-deg>60</offset-deg>
+		<property>/fdm/jsbsim/propulsion/engine[4]/fuel-cock</property>
+		<factor>50</factor>
+		<offset-deg>0</offset-deg>
 		<center>
 			<x-m>0.01717</x-m>
 			<y-m>0.00000</y-m>

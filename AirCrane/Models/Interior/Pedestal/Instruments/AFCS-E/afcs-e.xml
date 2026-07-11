@@ -22,7 +22,7 @@
   </effect>
 
   <!-- AFCS "Button" -->
-  <animation>
+<!--   <animation>
     <type>slider</type>
     <object-name>afcson</object-name>
     <object-name>afcsoff</object-name>
@@ -67,40 +67,40 @@
         <label>AFCS</label>
       </binding>
     </hovered>
-  </animation>
+  </animation> -->
 
-  <animation>
-    <type>select</type>
-    <object-name>afcson</object-name>
-    <condition>
-      <property>/sim/model/lightmap/afcs-green/factor</property>
-    </condition>
-  </animation>
-  <animation>
-    <object-name>afcson</object-name>
-    <type>material</type>
-    <condition>
-        <property>/sim/model/lightmap/afcs-green/factor</property>
-    </condition>
-    <emission>
-      <red>   0.0 </red>
-      <green> 0.25 </green>
-      <blue>  0.25 </blue>
-    </emission>
-  </animation>
+	<animation>
+		<type>select</type>
+		<object-name>afcson</object-name>
+		<condition>
+			<property>/controls/electric/AFCS/Active</property>
+		</condition>
+	</animation>
+	
+	<animation>
+		<object-name>afcson</object-name>
+		<type>material</type>
+		<condition>
+			<property>/controls/electric/AFCS/Active</property>
+		</condition>
+		<emission>
+			<green>0.25</green>
+			<blue>0.25</blue>
+		</emission>
+	</animation>
 
-  <animation>
-    <type>select</type>
-    <object-name>afcsoff</object-name>
-    <condition>
-      <not>
-        <property>/sim/model/lightmap/afcs-green/factor</property>
-      </not>
-    </condition>
-  </animation>
+	<animation>
+		<type>select</type>
+		<object-name>afcsoff</object-name>
+		<condition>
+			<not>
+				<property>/controls/electric/AFCS/Active</property>
+			</not>
+		</condition>
+	</animation>
 
   <!-- BAR Alt "Button" -->
-  <animation>
+<!--   <animation>
     <type>slider</type>
     <object-name>baralton</object-name>
     <object-name>baraltoff</object-name>
@@ -145,39 +145,58 @@
         <label>BAR ALT</label>
       </binding>
     </hovered>
-  </animation>
+  </animation> -->
+  
+  
+	<animation>
+		<type>pick</type>
+		<object-name>baron</object-name>
+		<visible>true</visible>
+		<action>
+			<button>0</button>
+			<repeatable>false</repeatable>
+			<binding>
+				<command>property-toggle</command>
+				<property>/controls/electric/bar_alt-sw</property>
+			</binding>
+			<binding>
+				<command>nasal</command>
+				<script>aircrane.click("avionics")</script>
+			</binding>
+		</action>
+	</animation>
+	
+	<animation>
+		<type>select</type>
+		<object-name>baralton</object-name>
+		<condition>
+			<property>/controls/electric/AFCS/bar_alt</property>
+		</condition>
+	</animation>
 
-  <animation>
-    <type>select</type>
-    <object-name>baralton</object-name>
-    <condition>
-      <property>/sim/model/lightmap/bar-alt-green/factor</property>
-    </condition>
-  </animation>
-  <animation>
-    <object-name>baralton</object-name>
-    <type>material</type>
-    <condition>
-       <property>/sim/model/lightmap/bar-alt-green/factor</property>
-    </condition>
-    <emission>
-      <red>   0.0 </red>
-      <green> 0.25 </green>
-      <blue>  0.25 </blue>
-    </emission>
-  </animation>
+	<animation>
+		<object-name>baralton</object-name>
+		<type>material</type>
+		<condition>
+			<property>/controls/electric/AFCS/bar_alt</property>
+		</condition>
+		<emission>
+			<green>0.25</green>
+			<blue>0.25</blue>
+		</emission>
+	</animation>
 
-  <animation>
-    <type>select</type>
-    <object-name>baraltoff</object-name>
-    <condition>
-      <not>
-        <property>/sim/model/lightmap/bar-alt-green/factor</property>
-      </not>
-    </condition>
-  </animation>
+	<animation>
+		<type>select</type>
+		<object-name>baraltoff</object-name>
+		<condition>
+			<not>
+				<property>/controls/electric/AFCS/bar_alt</property>
+			</not>
+		</condition>
+	</animation>
 
-  <animation>
+<!--   <animation>
     <type>select</type>
     <object-name>baron</object-name>
     <condition>
@@ -241,7 +260,7 @@
         <property>/sim/model/lightmap/bar-alt-green/factor</property>
       </or>
     </condition>
-  </animation>
+  </animation> -->
 
   <!-- Yaw Trim "Knob" -->
   <animation>
@@ -369,45 +388,65 @@
     </hovered>
   </animation>
 
-  <!-- AFCS Servo -->
-  <animation>
-    <type>knob</type>
-    <object-name>afcsservo</object-name>
-    <property>/controls/switches/afcs-servo</property>
-    <offset-deg>-30</offset-deg>
-    <factor>-45</factor>
-    <center>
-      <x-m> -0.03247 </x-m>
-      <y-m>  0.05742 </y-m>
-      <z-m>  0.00695 </z-m>
-    </center>
-    <axis>
-      <x> 0 </x>
-      <y> 1 </y>
-      <z> 0 </z>
-    </axis>
-    <action>
-      <repeatable>false</repeatable>
-      <binding>
-        <command>property-toggle</command>
-        <property>/controls/switches/afcs-servo</property>
-      </binding>
-      <binding>
-        <command>nasal</command>
-        <script>
-          aircrane.click("avionics");
-        </script>
-      </binding>
-    </action>
-    <hovered>
-      <binding>
-        <command>set-tooltip</command>
-        <tooltip-id>afcsservo</tooltip-id>
-        <label>AFCS Servo: %s</label>
-        <property>/controls/switches/afcs-servo</property>
-      </binding>
-    </hovered>
-  </animation>
+	<!-- AFCS Servo -->
+	
+	<animation>
+		<type>pick</type>
+		<object-name>afcsservo</object-name>
+		<visible>true</visible>
+		<action>
+			<button>0</button>
+			<repeatable>false</repeatable>
+			<binding>
+				<command>property-toggle</command>
+				<property>/controls/electric/afcs-sw</property>
+			</binding>
+		</action>
+	</animation>
+	<animation>
+		<type>rotate</type>
+		<object-name>afcsservo</object-name>
+		<property>/controls/electric/afcs-sw</property>
+		<factor>-40</factor>
+		<center>
+			<x-m>-0.03247</x-m>
+			<y-m>0.05742</y-m>
+			<z-m>0.00695</z-m>
+		</center>
+		<axis>
+			<y>1</y>
+		</axis>
+	</animation>
+	
+	
+<!-- 	<animation>
+		<type>knob</type>
+		<object-name>afcsservo</object-name>
+		<property>/controls/switches/afcs-servo</property>
+		<offset-deg>-30</offset-deg>
+		<factor>-45</factor>
+		<center>
+			<x-m>-0.03247</x-m>
+			<y-m>0.05742</y-m>
+			<z-m>0.00695</z-m>
+		</center>
+		<axis>
+			<y>1</y>
+		</axis>
+		<action>
+			<repeatable>false</repeatable>
+			<binding>
+				<command>property-toggle</command>
+				<property>/controls/switches/afcs-servo</property>
+			</binding>
+			<binding>
+				<command>nasal</command>
+				<script>
+				aircrane.click("avionics");
+				</script>
+			</binding>
+		</action>
+	</animation> -->
 
   <!-- Stick Trim "Switch" -->
   <animation>

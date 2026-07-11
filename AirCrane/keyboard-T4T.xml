@@ -12,17 +12,13 @@ simonbomber64 at googlemail.com
 <PropertyList>
 	<keyboard>
 		
-		<key n="115">
+<!-- 		<key n="115">
 			<name>s</name>
 			<desc>turbines start stop</desc>
 			<binding>
 				<command>property-toggle</command>
 				<property>/controls/electric/engine[3]/generator</property>
-			</binding>
-<!-- 			<binding>
-				<command>property-toggle</command>
-				<property>/controls/engines/engine[3]/cutoff</property>
-			</binding> -->			
+			</binding>		
 			<binding>
 				<command>property-toggle</command>
 				<property>/controls/engines/engine[3]/starter</property>
@@ -33,13 +29,9 @@ simonbomber64 at googlemail.com
 			</binding>
 			<binding>
 				<command>property-toggle</command>
-				<property>/controls/engines/engine[4]/cutoff</property>
-			</binding>
-			<binding>
-				<command>property-toggle</command>
 				<property>/controls/engines/engine[4]/starter</property>
 			</binding>
-		</key>
+		</key> -->
 
 
 <!-- 		<key n="362">
@@ -84,6 +76,48 @@ simonbomber64 at googlemail.com
 					<value type="int">0</value>
 				</binding>
 			</mod-up>			
+		</key>
+
+		<key n="360">
+			<name>PageUp</name>
+			<desc>Increase collective</desc>
+			<repeatable type="bool">true</repeatable>
+			<binding>
+				<command>property-adjust</command>
+				<property>fdm/jsbsim/fcs/collective-cmd-pos</property>
+				<step type="double">-0.05</step>
+				<max type="int">1</max>
+			</binding>	
+			<mod-shift>
+				<desc>Look front right</desc>
+				<binding>
+					<command>property-assign</command>
+					<property>/sim/current-view/goal-heading-offset-deg</property>
+					<property>/sim/view/config/front-right-direction-deg</property>
+				</binding>
+			</mod-shift>
+		</key>
+		
+	
+
+		<key n="361">
+			<name>PageDown</name>
+			<desc>Decrease collective</desc>
+			<repeatable type="bool">true</repeatable>
+			<binding>
+				<command>property-adjust</command>
+				<property>fdm/jsbsim/fcs/collective-cmd-pos</property>
+				<step type="double">0.05</step>
+				<min type="int">-1</min>				
+			</binding>
+			<mod-shift>
+				<desc>Look back right</desc>
+				<binding>
+					<command>property-assign</command>
+					<property>/sim/current-view/goal-heading-offset-deg</property>
+					<property>/sim/view/config/back-right-direction-deg</property>
+				</binding>
+			</mod-shift>
 		</key>		
 		
 	</keyboard>	

@@ -17,6 +17,8 @@ simonbomber64 at googlemail.com
 <property type="double" value="0">/controls/electric/battery-switch</property>
 <property type="double" value="0">/controls/electric/inverter</property>
 <property type="double" value="0">/controls/electric/pitot-heat</property>
+<property type="double" value="0">/controls/electric/afcs-sw</property>
+<property type="double" value="0">/controls/electric/bar_alt-sw</property>
 
 <property type="double" value="0">/controls/electric/engine[3]/generator</property>
 <property type="double" value="0">/controls/electric/engine[4]/generator</property>
@@ -59,7 +61,7 @@ simonbomber64 at googlemail.com
 									<v>40</v>
 								</gt>
 								<eq>
-									<p>/controls/electric/engine[3]/generator</p>
+									<p>/controls/engines/engine[3]/generator</p>
 									<v>1</v>
 								</eq>
 							</and>								
@@ -69,7 +71,7 @@ simonbomber64 at googlemail.com
 									<v>40</v>
 								</gt>															
 								<eq>
-									<p>/controls/electric/engine[4]/generator</p>
+									<p>/controls/engines/engine[4]/generator</p>
 									<v>1</v>
 								</eq>
 							</and>
@@ -84,7 +86,9 @@ simonbomber64 at googlemail.com
 				</ifthen>
 			</function>
 			<output>/controls/electric/battery-switch</output>
-			<output>/controls/electric/cab_power</output>			
+			<output>/controls/electric/cab_power</output>
+			<output>/controls/electric/engine[3]/generator</output>
+			<output>/controls/electric/engine[4]/generator</output>			
 		</fcs_function>
 		
  		<kinematic>
@@ -104,7 +108,71 @@ simonbomber64 at googlemail.com
 
 	</channel>
 
-	<channel name="switches/alarms/transducers">	
+	<channel name="switches/alarms/transducers">
+
+ 		<fcs_function>
+			<function>
+				<ifthen>
+					<and>
+						<eq>
+							<p>/controls/electric/cab_power</p>
+							<v>1</v>
+						</eq>
+						<eq>
+							<p>/controls/electric/afcs-sw</p>
+							<v>1</v>
+						</eq>
+					</and>
+					<value>1</value>
+					<value>0</value>
+				</ifthen>
+			</function>
+			<output>/controls/electric/AFCS/Active</output>
+		</fcs_function>
+ 		<fcs_function>
+			<function>
+				<ifthen>
+					<not>
+						<p>/controls/electric/afcs-sw</p>
+					</not>
+					<value>1</value>
+					<value>0</value>
+				</ifthen>
+			</function>
+			<output>/controls/electric/AFCS/Manual</output>
+		</fcs_function>
+		
+ 		<fcs_function>
+			<function>
+				<ifthen>
+					<or>
+						<and>
+							<eq>
+								<p>/controls/electric/AFCS/bar_alt</p>
+								<v>1</v>
+							</eq>
+							<nq>
+								<p>fcs/Helicopter/collective-cmd-norm</p>
+								<p>fcs/Helicopter/collective-pos-norm</p>
+							</nq>
+						</and>	
+						<and>
+							<eq>
+								<p>/controls/electric/AFCS/Active</p>
+								<v>1</v>
+							</eq>
+							<eq>
+								<p>/controls/electric/bar_alt-sw</p>
+								<v>1</v>
+							</eq>
+						</and>
+					</or>
+					<value>1</value>
+					<value>0</value>
+				</ifthen>
+			</function>
+			<output>/controls/electric/AFCS/bar_alt</output>
+		</fcs_function>
 
  		<fcs_function>
 			<function>
@@ -1428,7 +1496,7 @@ simonbomber64 at googlemail.com
 								<v>1</v>
 							</eq>
 							<not>
-								<p>/controls/electric/engine[3]/generator</p>
+								<p>/controls/engines/engine[3]/generator</p>
 							</not>
 						</and>
 					</or>
@@ -1456,7 +1524,7 @@ simonbomber64 at googlemail.com
 								<v>1</v>
 							</eq>
 							<not>
-								<p>/controls/electric/engine[4]/generator</p>
+								<p>/controls/engines/engine[4]/generator</p>
 							</not>
 						</and>
 					</or>

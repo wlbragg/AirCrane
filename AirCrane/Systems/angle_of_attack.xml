@@ -11,10 +11,31 @@ simonbomber64 at googlemail.com
 
 <system name="angle_of_attack">
 
-	<property type="double" value="0">T4T/aero/h-tail_right/rigging-deg</property>
+	<property type="double" value="-4.5">T4T/aero/h-tail_right/rigging-deg</property>
 	<property type="double" value="1">propulsion/engine[1]/rotor/vortex_ring</property>
 
 	<channel name="rotation_velocities">
+
+		<!-- #### Main Rotor #### -->
+
+		<pure_gain name="T4T/velocities/rotor/p_rotational-fps">
+			<input>velocities/p-rad_sec</input>
+			<gain>15.2788745368219</gain>   <!-- armature @ 4*r/3*pi -->
+		</pure_gain>
+		<pure_gain name="T4T/velocities/rotor/q_rotational-fps">
+			<input>velocities/q-rad_sec</input>
+			<gain>15.2788745368219</gain>   <!-- armature @ 4*r/3*pi -->
+		</pure_gain>
+		<fcs_function name="T4T/velocities/rotor/r_rotational-fps">
+			<function>
+				<product>
+					<value>15.2788745368219</value>   <!-- armature @ 4*r/3*pi -->
+					<property>propulsion/engine[1]/engine-rpm</property>
+					<value>0.01667</value>				<!-- mins to secs -->
+					<value>6.28318</value>				<!-- 2 x Pi -->
+				</product>
+			</function>
+		</fcs_function>
 
 		<!-- #### h-tail #### -->
 
@@ -324,6 +345,64 @@ simonbomber64 at googlemail.com
 	</channel>
 
 	<channel name="alpha">
+
+		<!-- #### Main Rotor #### -->
+
+		<fcs_function name="T4T/aero/rotor/north/alpha-deg">
+			<function>
+				<sum>
+					<property>propulsion/engine[1]/rotor/north/blade-angle</property>
+					<todegrees>
+						<atan2>
+							<property>-T4T/velocities/rotor/q_rotational-fps</property>
+							<property>T4T/velocities/rotor/r_rotational-fps</property>
+						</atan2>
+					</todegrees>
+				</sum>
+			</function>
+		</fcs_function>
+
+		<fcs_function name="T4T/aero/rotor/south/alpha-deg">
+			<function>
+				<sum>
+					<property>propulsion/engine[1]/rotor/south/blade-angle</property>
+					<todegrees>
+						<atan2>
+							<property>T4T/velocities/rotor/q_rotational-fps</property>
+							<property>T4T/velocities/rotor/r_rotational-fps</property>
+						</atan2>
+					</todegrees>
+				</sum>
+			</function>
+		</fcs_function>
+
+		<fcs_function name="T4T/aero/rotor/east/alpha-deg">
+			<function>
+				<sum>
+					<property>propulsion/engine[1]/rotor/east/blade-angle</property>
+					<todegrees>
+						<atan2>
+							<property>T4T/velocities/rotor/p_rotational-fps</property>
+							<property>T4T/velocities/rotor/r_rotational-fps</property>
+						</atan2>
+					</todegrees>
+				</sum>
+			</function>
+		</fcs_function>
+
+		<fcs_function name="T4T/aero/rotor/west/alpha-deg">
+			<function>
+				<sum>
+					<property>propulsion/engine[1]/rotor/west/blade-angle</property>
+					<todegrees>
+						<atan2>
+							<property>-T4T/velocities/rotor/p_rotational-fps</property>
+							<property>T4T/velocities/rotor/r_rotational-fps</property>
+						</atan2>
+					</todegrees>
+				</sum>
+			</function>
+		</fcs_function>
 
 		<!-- #### h-tail #### -->
 
