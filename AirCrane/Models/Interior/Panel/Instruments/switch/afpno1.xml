@@ -19,7 +19,7 @@
 			<repeatable>false</repeatable>
 			<binding>
 				<command>property-toggle</command>
-				<property>/fdm/jsbsim/propulsion/tank[5]/pump-1</property>
+				<property>/controls/electric/tank_aux_pump-1-sw</property>
 			</binding>
 			<binding>
 				<command>nasal</command>
@@ -30,7 +30,7 @@
 	<animation>
 		<type>rotate</type>
 		<object-name>switch</object-name>
-		<property>/fdm/jsbsim/propulsion/tank[5]/pump-1</property>
+		<property>/controls/electric/tank_aux_pump-1-sw</property>
 		<factor>-60</factor>
 		<offset-deg>30</offset-deg>
 		<axis>

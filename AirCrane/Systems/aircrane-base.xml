@@ -18,45 +18,4 @@
 
     </sim>
 
- 	<input include="keyboard-T4T.xml">
-		<joysticks>	
-		<js>
-			<axis>
-				<desc type="string">Aileron</desc>
-				<binding>
-					<command type="string">property-scale</command>
-					<property type="string">/controls/flight/aileron</property>
-					<factor type="double">1</factor>
-					<offset type="double">0</offset>
-					<power type="double">1</power>
-				</binding>
-			</axis>
-			<axis n="1">
-				<desc type="string">Elevator</desc>
-				<binding>
-					<command type="string">property-scale</command>
-					<property type="string">/controls/flight/elevator</property>
-					<factor type="double">-1</factor>
-					<offset type="double">0</offset>
-					<power type="double">1</power>
-				</binding>
-			</axis>
-			<axis n="2">
-				<desc>Throttle</desc>
-				<binding>
-					<command>property-scale</command>
-					<property>fdm/jsbsim/fcs/collective-cmd-norm</property>
-				</binding>
-			</axis>
-			<axis>
-				<desc>Rudder</desc>
-				<binding>
-					<command>property-scale</command>
-					<property>/controls/flight/rudder</property>
-				</binding>
-			</axis>		
-		</js>
-		</joysticks>		
-	</input>
-
 </PropertyList>

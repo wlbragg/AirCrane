@@ -160,9 +160,7 @@ simonbomber64 at googlemail.com
 
 	</sim>
 
-<!--  	<input include="keyboard-T4T.xml"> -->
-
- 	<input>
+ 	<input include="keyboard-T4T.xml">
 		<joysticks>	
 			<js>
 				<axis>

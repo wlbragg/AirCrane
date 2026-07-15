@@ -99,7 +99,7 @@ engine[4] = Turbine No.2
 				</ifthen>					
 			</function>
 			<output>propulsion/engine[1]/blade-angle</output>			
-		</fcs_function>
+		</fcs_function>		
 		<fcs_function>
 			<function>						
 				<table>
@@ -215,20 +215,20 @@ engine[4] = Turbine No.2
 		</scheduled_gain>
 
 		<summer> <!-- error -->
-			<input>attitude/roll-rad</input>
-			<input>fcs/Helicopter/roll_target-rad</input>
+			<input>fcs/Helicopter/roll_target-rad</input>		
+			<input>-attitude/roll-rad</input>
 			<output>fcs/Helicopter/roll_error-rad</output>
 		</summer>
 		
 		<pure_gain> <!-- Rate of Change -->
 			<input>fcs/Helicopter/roll_error-rad</input>
-			<gain>0.0001</gain>
+			<gain>0.01</gain>
 			<output>fcs/Helicopter/roll_RoC-rad</output>
 		</pure_gain>
 		
 		<pure_gain> <!-- Acceleration Damping -->
 			<input>-accelerations/pdot-rad_sec2</input>
-			<gain>0.00005</gain>
+			<gain>0.005</gain>
 			<output>fcs/Helicopter/damping_RoC-p-fps2</output>
 		</pure_gain>
 		
@@ -250,28 +250,39 @@ engine[4] = Turbine No.2
 			<table>
 				<independentVar>fcs/Helicopter/cyclic_pitch-cmd-norm</independentVar>
 				<tableData>
-					-1		-0.087266
-					1		0.087266
+					-1		0.087266
+					1		-0.087266
 				</tableData>
 			</table>
 			<output>fcs/Helicopter/pitch_target-rad</output>
 		</scheduled_gain>
 
 		<summer>
-			<input>attitude/pitch-rad</input>
-			<input>fcs/Helicopter/pitch_target-rad</input>
+			<input>attitude/pitch-rad</input>			
+			<input>-fcs/Helicopter/pitch_target-rad</input>		
 			<output>fcs/Helicopter/pitch_error-rad</output>
 		</summer>
 		
 		<pure_gain> <!-- Rate of Change -->
 			<input>fcs/Helicopter/pitch_error-rad</input>
-			<gain>0.0001</gain>
+			<gain>0.01</gain>
 			<output>fcs/Helicopter/pitch_RoC-rad</output>
 		</pure_gain>
+		
+		<pure_gain> <!-- Acceleration Damping -->
+			<input>accelerations/qdot-rad_sec2</input>
+			<gain>0.005</gain>
+			<output>fcs/Helicopter/damping_RoC-q-fps2</output>
+		</pure_gain>		
 		
 		<summer>
 			<input>fcs/Helicopter/AFCS_pitch-cmd-norm</input>
 			<input>fcs/Helicopter/pitch_RoC-rad</input>
+			<input>fcs/Helicopter/damping_RoC-q-fps2</input>
+			<clipto>
+				<min>-1</min>
+				<max>1</max>
+			</clipto>			
 			<output>fcs/Helicopter/AFCS_pitch-cmd-norm</output>
 		</summer>
 		
@@ -303,13 +314,13 @@ engine[4] = Turbine No.2
 	
 		<pure_gain> <!-- Rate of Change -->
 			<input>fcs/Helicopter/v_error-fps</input>
-			<gain>0.0001</gain>
+			<gain>0.01</gain>
 			<output>fcs/Helicopter/roll_RoC-fps</output>
 		</pure_gain>
 
 		<pure_gain> <!-- Acceleration Damping -->
 			<input>-accelerations/vdot-ft_sec2</input>
-			<gain>0.00005</gain>
+			<gain>0.005</gain>
 			<output>fcs/Helicopter/damping_RoC-v-fps2</output>
 		</pure_gain>
 
@@ -325,18 +336,34 @@ engine[4] = Turbine No.2
 		</summer>
 
 	<!-- U-fps Adjust -->
+	
+		<scheduled_gain>
+			<input>T4T/one</input>
+			<table>
+				<independentVar>fcs/Helicopter/cyclic_pitch-cmd-norm</independentVar>
+				<tableData>
+					-1		-5
+					1		5
+				</tableData>
+			</table>
+			<output>fcs/Helicopter/u_target-fps</output>
+		</scheduled_gain>
 
-		<pid> <!-- Velocity Damping -->
-			<input>-velocities/u-fps</input>
-			<kp>0.00002</kp>
-			<ki>0</ki>
-			<kd>0.00001</kd>
-			<output>fcs/Helicopter/damping_RoC-u-fps</output>
-		</pid>
+		<summer> <!-- error -->
+			<input>velocities/u-fps</input>
+			<input>fcs/Helicopter/u_target-fps</input>
+			<output>fcs/Helicopter/u_error-fps</output>
+		</summer>		
 
+		<pure_gain> <!-- Rate of Change -->
+			<input>fcs/Helicopter/u_error-fps</input>
+			<gain>0.01</gain>
+			<output>fcs/Helicopter/pitch_RoC-fps</output>
+		</pure_gain>
+		
 		<pure_gain> <!-- Acceleration Damping -->
 			<input>-accelerations/udot-ft_sec2</input>
-			<gain>0.00005</gain>
+			<gain>0.005</gain>
 			<output>fcs/Helicopter/damping_RoC-u-fps2</output>
 		</pure_gain>
 

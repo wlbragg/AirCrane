@@ -20,6 +20,14 @@ simonbomber64 at googlemail.com
 <property type="double" value="0">/controls/electric/afcs-sw</property>
 <property type="double" value="0">/controls/electric/bar_alt-sw</property>
 
+<property type="double" value="0">/controls/electric/tank_x_feed-sw</property>
+<property type="double" value="0">/controls/electric/tank_aux_pump-1-sw</property>
+<property type="double" value="0">/controls/electric/tank_aux_pump-2-sw</property>
+<property type="double" value="0">/controls/electric/tank_fwd_pump-1-sw</property>
+<property type="double" value="0">/controls/electric/tank_fwd_pump-2-sw</property>
+<property type="double" value="0">/controls/electric/tank_aft_pump-1-sw</property>
+<property type="double" value="0">/controls/electric/tank_aft_pump-2-sw</property>
+
 <property type="double" value="0">/controls/electric/engine[3]/generator</property>
 <property type="double" value="0">/controls/electric/engine[4]/generator</property>
 
@@ -109,7 +117,147 @@ simonbomber64 at googlemail.com
 	</channel>
 
 	<channel name="switches/alarms/transducers">
+	
+ 		<fcs_function>
+			<function>
+				<ifthen>
+					<and>
+						<eq>
+							<p>/controls/electric/cab_power</p>
+							<v>1</v>
+						</eq>
+						<eq>
+							<p>/controls/electric/tank_aux_pump-1-sw</p>
+							<v>1</v>
+						</eq>
+					</and>
+					<value>1</value>
+					<value>0</value>
+				</ifthen>
+			</function>
+			<output>propulsion/tank_aux/pump-1</output>
+		</fcs_function>
+		
+ 		<fcs_function>
+			<function>
+				<ifthen>
+					<and>
+						<eq>
+							<p>/controls/electric/cab_power</p>
+							<v>1</v>
+						</eq>
+						<eq>
+							<p>/controls/electric/tank_aux_pump-2-sw</p>
+							<v>1</v>
+						</eq>
+					</and>
+					<value>1</value>
+					<value>0</value>
+				</ifthen>
+			</function>
+			<output>propulsion/tank_aux/pump-2</output>
+		</fcs_function>
+		
+ 		<fcs_function>
+			<function>
+				<ifthen>
+					<and>
+						<eq>
+							<p>/controls/electric/cab_power</p>
+							<v>1</v>
+						</eq>
+						<eq>
+							<p>/controls/electric/tank_x_feed-sw</p>
+							<v>1</v>
+						</eq>
+					</and>
+					<value>1</value>
+					<value>0</value>
+				</ifthen>
+			</function>
+			<output>propulsion/tank_x_feed</output>
+		</fcs_function>		
+	
+ 		<fcs_function>
+			<function>
+				<ifthen>
+					<and>
+						<eq>
+							<p>/controls/electric/cab_power</p>
+							<v>1</v>
+						</eq>
+						<eq>
+							<p>/controls/electric/tank_fwd_pump-1-sw</p>
+							<v>1</v>
+						</eq>
+					</and>
+					<value>1</value>
+					<value>0</value>
+				</ifthen>
+			</function>
+			<output>propulsion/tank_fwd/pump-1</output>
+		</fcs_function>
 
+ 		<fcs_function>
+			<function>
+				<ifthen>
+					<and>
+						<eq>
+							<p>/controls/electric/cab_power</p>
+							<v>1</v>
+						</eq>
+						<eq>
+							<p>/controls/electric/tank_fwd_pump-2-sw</p>
+							<v>1</v>
+						</eq>
+					</and>
+					<value>1</value>
+					<value>0</value>
+				</ifthen>
+			</function>
+			<output>propulsion/tank_fwd/pump-2</output>
+		</fcs_function>
+		
+ 		<fcs_function>
+			<function>
+				<ifthen>
+					<and>
+						<eq>
+							<p>/controls/electric/cab_power</p>
+							<v>1</v>
+						</eq>
+						<eq>
+							<p>/controls/electric/tank_aft_pump-1-sw</p>
+							<v>1</v>
+						</eq>
+					</and>
+					<value>1</value>
+					<value>0</value>
+				</ifthen>
+			</function>
+			<output>propulsion/tank_aft/pump-1</output>
+		</fcs_function>
+
+ 		<fcs_function>
+			<function>
+				<ifthen>
+					<and>
+						<eq>
+							<p>/controls/electric/cab_power</p>
+							<v>1</v>
+						</eq>
+						<eq>
+							<p>/controls/electric/tank_aft_pump-2-sw</p>
+							<v>1</v>
+						</eq>
+					</and>
+					<value>1</value>
+					<value>0</value>
+				</ifthen>
+			</function>
+			<output>propulsion/tank_aft/pump-2</output>
+		</fcs_function>
+		
  		<fcs_function>
 			<function>
 				<ifthen>
