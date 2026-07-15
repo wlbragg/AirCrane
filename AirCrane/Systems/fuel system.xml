@@ -168,21 +168,26 @@ simonbomber64 at googlemail.com
 	<channel name="Quadrant">
 		
 		<!-- Turbine No.1 -->
-
- 		<kinematic>
-			<input>/controls/engines/engine[3]/starter</input>
-			<traverse>
-				<setting>
-					<position>0</position>
-					<time>0</time>
-				</setting>
-				<setting>
-					<position>1</position>
-					<time>5</time>
-				</setting>
-			</traverse>
+		
+ 		<fcs_function> <!-- need this because of the way JSBsim turbine starter is coded -->
+			<function>
+				<ifthen>
+					<and>
+						<eq>
+							<p>/controls/engines/engine[3]/starter</p>
+							<v>1</v>
+						</eq>
+						<eq>
+							<p>/controls/electric/engine[3]/starter-sw</p>
+							<v>1</v>
+						</eq>
+					</and>
+					<value>1</value>					
+					<value>0</value>
+				</ifthen>
+			</function>
 			<output>propulsion/engine[3]/fuel-starter</output>
-		</kinematic>
+		</fcs_function>			
 
  		<fcs_function>
 			<function>
@@ -305,20 +310,25 @@ simonbomber64 at googlemail.com
 
 		<!-- Turbine No.2 -->
 		
-  		<kinematic>
-			<input>/controls/engines/engine[4]/starter</input>
-			<traverse>
-				<setting>
-					<position>0</position>
-					<time>0</time>
-				</setting>
-				<setting>
-					<position>1</position>
-					<time>5</time>
-				</setting>
-			</traverse>
+ 		<fcs_function> <!-- need this because of the way JSBsim turbine starter is coded -->
+			<function>
+				<ifthen>
+					<and>
+						<eq>
+							<p>/controls/engines/engine[4]/starter</p>
+							<v>1</v>
+						</eq>
+						<eq>
+							<p>/controls/electric/engine[4]/starter-sw</p>
+							<v>1</v>
+						</eq>
+					</and>
+					<value>1</value>					
+					<value>0</value>
+				</ifthen>
+			</function>
 			<output>propulsion/engine[4]/fuel-starter</output>
-		</kinematic>
+		</fcs_function>	
 
  		<fcs_function>
 			<function>
