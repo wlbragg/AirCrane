@@ -162,7 +162,7 @@
 			<repeatable>false</repeatable>			
 			<binding>
 				<command>property-toggle</command>
-				<property>/controls/engines/engine[3]/generator</property>
+				<property>/controls/electric/engine[3]/generator-sw</property>
 			</binding>
 			<binding>
 				<command>nasal</command>
@@ -173,7 +173,7 @@
 	<animation>
 		<type>rotate</type>
 		<object-name>gen-1</object-name>
-		<property>/controls/engines/engine[3]/generator</property>
+		<property>/controls/electric/engine[3]/generator-sw</property>
 		<factor>-20</factor>
 		<offset-deg>-20</offset-deg>
 		<center>
@@ -195,7 +195,7 @@
 			<repeatable>false</repeatable>			
 			<binding>
 				<command>property-toggle</command>
-				<property>/controls/engines/engine[4]/generator</property>
+				<property>/controls/electric/engine[4]/generator-sw</property>
 			</binding>
 			<binding>
 				<command>nasal</command>
@@ -206,7 +206,7 @@
 	<animation>
 		<type>rotate</type>
 		<object-name>gen-2</object-name>
-		<property>/controls/engines/engine[4]/generator</property>
+		<property>/controls/electric/engine[4]/generator-sw</property>
 		<factor>-20</factor>
 		<offset-deg>-20</offset-deg>
 		<center>

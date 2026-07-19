@@ -20,8 +20,17 @@ simonbomber64 at googlemail.com
 <property type="double" value="0">/controls/electric/afcs-sw</property>
 <property type="double" value="0">/controls/electric/bar_alt-sw</property>
 
-<property type="double" value="0">/controls/electric/engine[3]/generator</property>
-<property type="double" value="0">/controls/electric/engine[4]/generator</property>
+<property type="double" value="0">/controls/electric/tank_x_feed-sw</property>
+<property type="double" value="0">/controls/electric/tank_aux_pump-1-sw</property>
+<property type="double" value="0">/controls/electric/tank_aux_pump-2-sw</property>
+<property type="double" value="0">/controls/electric/tank_fwd_pump-1-sw</property>
+<property type="double" value="0">/controls/electric/tank_fwd_pump-2-sw</property>
+<property type="double" value="0">/controls/electric/tank_aft_pump-1-sw</property>
+<property type="double" value="0">/controls/electric/tank_aft_pump-2-sw</property>
+<property type="double" value="0">/controls/electric/engine[3]/generator-sw</property>
+<property type="double" value="0">/controls/electric/engine[4]/generator-sw</property>
+<property type="double" value="0">/controls/electric/engine[3]/starter-sw</property>
+<property type="double" value="0">/controls/electric/engine[4]/starter-sw</property>
 
 <property type="double" value="0">/controls/electric/engine[3]/rectifier</property>
 <property type="double" value="0">/controls/electric/engine[4]/rectifier</property>
@@ -55,26 +64,14 @@ simonbomber64 at googlemail.com
 								<p>/controls/electric/APU-generator</p>
 								<v>1</v>
 							</eq>
-							<and>
-								<gt>
-									<p>/fdm/jsbsim/propulsion/engine[3]/n1</p>
-									<v>40</v>
-								</gt>
-								<eq>
-									<p>/controls/engines/engine[3]/generator</p>
-									<v>1</v>
-								</eq>
-							</and>								
-							<and>								
-								<gt>
-									<p>/fdm/jsbsim/propulsion/engine[4]/n1</p>
-									<v>40</v>
-								</gt>															
-								<eq>
-									<p>/controls/engines/engine[4]/generator</p>
-									<v>1</v>
-								</eq>
-							</and>
+							<eq>
+								<p>propulsion/engine[3]/generator</p>
+								<v>1</v>
+							</eq>
+							<eq>
+								<p>propulsion/engine[4]/generator</p>
+								<v>1</v>
+							</eq>								
 						</or>
 						<eq>
 							<p>/controls/electric/battery-isol</p>
@@ -109,7 +106,195 @@ simonbomber64 at googlemail.com
 	</channel>
 
 	<channel name="switches/alarms/transducers">
+	
+ 		<fcs_function>
+			<function>
+				<ifthen>
+					<and>
+						<eq>
+							<p>/controls/electric/cab_power</p>
+							<v>1</v>
+						</eq>
+						<eq>
+							<p>/controls/electric/tank_aux_pump-1-sw</p>
+							<v>1</v>
+						</eq>
+					</and>
+					<value>1</value>
+					<value>0</value>
+				</ifthen>
+			</function>
+			<output>propulsion/tank_aux/pump-1</output>
+		</fcs_function>
+		
+ 		<fcs_function>
+			<function>
+				<ifthen>
+					<and>
+						<eq>
+							<p>/controls/electric/cab_power</p>
+							<v>1</v>
+						</eq>
+						<eq>
+							<p>/controls/electric/tank_aux_pump-2-sw</p>
+							<v>1</v>
+						</eq>
+					</and>
+					<value>1</value>
+					<value>0</value>
+				</ifthen>
+			</function>
+			<output>propulsion/tank_aux/pump-2</output>
+		</fcs_function>
+		
+ 		<fcs_function>
+			<function>
+				<ifthen>
+					<and>
+						<eq>
+							<p>/controls/electric/cab_power</p>
+							<v>1</v>
+						</eq>
+						<eq>
+							<p>/controls/electric/tank_x_feed-sw</p>
+							<v>1</v>
+						</eq>
+					</and>
+					<value>1</value>
+					<value>0</value>
+				</ifthen>
+			</function>
+			<output>propulsion/tank_x_feed</output>
+		</fcs_function>		
+	
+ 		<fcs_function>
+			<function>
+				<ifthen>
+					<and>
+						<eq>
+							<p>/controls/electric/cab_power</p>
+							<v>1</v>
+						</eq>
+						<eq>
+							<p>/controls/electric/tank_fwd_pump-1-sw</p>
+							<v>1</v>
+						</eq>
+					</and>
+					<value>1</value>
+					<value>0</value>
+				</ifthen>
+			</function>
+			<output>propulsion/tank_fwd/pump-1</output>
+		</fcs_function>
 
+ 		<fcs_function>
+			<function>
+				<ifthen>
+					<and>
+						<eq>
+							<p>/controls/electric/cab_power</p>
+							<v>1</v>
+						</eq>
+						<eq>
+							<p>/controls/electric/tank_fwd_pump-2-sw</p>
+							<v>1</v>
+						</eq>
+					</and>
+					<value>1</value>
+					<value>0</value>
+				</ifthen>
+			</function>
+			<output>propulsion/tank_fwd/pump-2</output>
+		</fcs_function>
+		
+ 		<fcs_function>
+			<function>
+				<ifthen>
+					<and>
+						<eq>
+							<p>/controls/electric/cab_power</p>
+							<v>1</v>
+						</eq>
+						<eq>
+							<p>/controls/electric/tank_aft_pump-1-sw</p>
+							<v>1</v>
+						</eq>
+					</and>
+					<value>1</value>
+					<value>0</value>
+				</ifthen>
+			</function>
+			<output>propulsion/tank_aft/pump-1</output>
+		</fcs_function>
+
+ 		<fcs_function>
+			<function>
+				<ifthen>
+					<and>
+						<eq>
+							<p>/controls/electric/cab_power</p>
+							<v>1</v>
+						</eq>
+						<eq>
+							<p>/controls/electric/tank_aft_pump-2-sw</p>
+							<v>1</v>
+						</eq>
+					</and>
+					<value>1</value>
+					<value>0</value>
+				</ifthen>
+			</function>
+			<output>propulsion/tank_aft/pump-2</output>
+		</fcs_function>
+		
+ 		<fcs_function>
+			<function>
+				<ifthen>
+					<and>
+						<eq>
+							<p>/controls/electric/cab_power</p>
+							<v>1</v>
+						</eq>							
+						<gt>
+							<p>/fdm/jsbsim/propulsion/engine[3]/n1</p>
+							<v>42</v>
+						</gt>															
+						<eq>
+							<p>/controls/electric/engine[3]/generator-sw</p>
+							<v>1</v>
+						</eq>
+					</and>
+					<value>1</value>
+					<value>0</value>
+				</ifthen>
+			</function>
+			<output>propulsion/engine[3]/generator</output>
+		</fcs_function>
+		
+ 		<fcs_function>
+			<function>
+				<ifthen>
+					<and>
+						<eq>
+							<p>/controls/electric/cab_power</p>
+							<v>1</v>
+						</eq>							
+						<gt>
+							<p>/fdm/jsbsim/propulsion/engine[4]/n1</p>
+							<v>42</v>
+						</gt>															
+						<eq>
+							<p>/controls/electric/engine[4]/generator-sw</p>
+							<v>1</v>
+						</eq>
+					</and>
+					<value>1</value>
+					<value>0</value>
+				</ifthen>
+			</function>
+			<output>propulsion/engine[4]/generator</output>
+		</fcs_function>
+		
  		<fcs_function>
 			<function>
 				<ifthen>
@@ -1150,7 +1335,7 @@ simonbomber64 at googlemail.com
 								<v>1</v>
 							</eq>
 							<eq>
-								<p>/controls/engines/engine[3]/starter</p>
+								<p>/fdm/jsbsim/propulsion/engine[3]/fuel-starter</p>
 								<v>1</v>
 							</eq>
 						</and>
@@ -1496,7 +1681,7 @@ simonbomber64 at googlemail.com
 								<v>1</v>
 							</eq>
 							<not>
-								<p>/controls/engines/engine[3]/generator</p>
+								<p>propulsion/engine[3]/generator</p>
 							</not>
 						</and>
 					</or>
@@ -1524,7 +1709,7 @@ simonbomber64 at googlemail.com
 								<v>1</v>
 							</eq>
 							<not>
-								<p>/controls/engines/engine[4]/generator</p>
+								<p>propulsion/engine[4]/generator</p>
 							</not>
 						</and>
 					</or>

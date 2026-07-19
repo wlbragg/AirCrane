@@ -12,26 +12,18 @@ simonbomber64 at googlemail.com
 <PropertyList>
 	<keyboard>
 		
-<!-- 		<key n="115">
+		<key n="115">
 			<name>s</name>
 			<desc>turbines start stop</desc>
 			<binding>
 				<command>property-toggle</command>
-				<property>/controls/electric/engine[3]/generator</property>
-			</binding>		
-			<binding>
-				<command>property-toggle</command>
-				<property>/controls/engines/engine[3]/starter</property>
+				<property>/controls/engines/engine[3]/starter2</property>
 			</binding>
 			<binding>
 				<command>property-toggle</command>
-				<property>/controls/electric/engine[4]/generator</property>
+				<property>/controls/engines/engine[4]/starter2</property>
 			</binding>
-			<binding>
-				<command>property-toggle</command>
-				<property>/controls/engines/engine[4]/starter</property>
-			</binding>
-		</key> -->
+		</key>
 
 
 <!-- 		<key n="362">

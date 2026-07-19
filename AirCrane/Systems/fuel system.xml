@@ -168,55 +168,105 @@ simonbomber64 at googlemail.com
 	<channel name="Quadrant">
 		
 		<!-- Turbine No.1 -->
-
- 		<kinematic>
-			<input>/controls/engines/engine[3]/starter</input>
-			<traverse>
-				<setting>
-					<position>0</position>
-					<time>0</time>
-				</setting>
-				<setting>
-					<position>1</position>
-					<time>5</time>
-				</setting>
-			</traverse>
-			<output>/fdm/jsbsim/propulsion/engine[3]/fuel-starter</output>
-		</kinematic>
-
- 		<fcs_function>
-			<function>
-				<ifthen>
-					<lt>
-						<p>/fdm/jsbsim/propulsion/engine[3]/governor/n1-lever</p>
-						<v>0.42</v>
-					</lt>
-					<value>0</value>
-					<p>/fdm/jsbsim/propulsion/engine[3]/fuel-cock</p>
-				</ifthen>
-			</function>
-			<output>/fdm/jsbsim/propulsion/engine[3]/fuel-cock</output>
-		</fcs_function>
 		
- 		<fcs_function>
+ 		<fcs_function> <!-- need this because of the way JSBsim turbine starter is coded -->
 			<function>
 				<ifthen>
-					<or>
-						<gt>
-							<p>/fdm/jsbsim/propulsion/engine[3]/fuel-starter</p>
-							<v>0</v>
-						</gt>
+					<and>
 						<eq>
-							<p>/fdm/jsbsim/propulsion/engine[3]/fuel-cock</p>
+							<p>/controls/engines/engine[3]/starter</p>
 							<v>1</v>
 						</eq>
-					</or>
-					<value>1</value>
+						<eq>
+							<p>/controls/electric/engine[3]/starter-sw</p>
+							<v>1</v>
+						</eq>
+					</and>
+					<value>1</value>					
 					<value>0</value>
 				</ifthen>
 			</function>
-			<output>/fdm/jsbsim/propulsion/tank[1]/priority</output>
-			<output>/fdm/jsbsim/propulsion/tank[2]/priority</output>
+			<output>propulsion/engine[3]/fuel-starter</output>
+		</fcs_function>			
+
+ 		<fcs_function>
+			<function>
+				<ifthen>
+					<gt>
+						<p>propulsion/engine[3]/governor/n1-lever</p>
+						<v>0.42</v>
+					</gt>
+					<p>propulsion/engine[3]/fuel-cock</p>						
+					<value>0</value>
+				</ifthen>
+			</function>
+			<output>propulsion/engine[3]/fuel-cock</output>
+		</fcs_function>
+
+ 		<fcs_function>
+			<function>
+				<ifthen>
+					<and>
+						<gt>
+							<p>propulsion/engine[3]/fuel-starter</p>
+							<v>0</v>
+						</gt>
+						<lt>
+							<p>propulsion/engine[3]/fuel-starter</p>
+							<v>1</v>
+						</lt>
+					</and>
+					<value>1</value>
+					<ifthen>
+						<and>
+							<or>
+								<eq>
+									<p>propulsion/tank_aux/pump-1</p>
+									<v>1</v>
+								</eq>
+								<eq>
+									<p>propulsion/tank_aux/pump-2</p>
+									<v>1</v>
+								</eq>							
+							</or>
+							<lt>
+								<sum>
+									<p>propulsion/tank_fwd/contents-lbs</p>
+									<v>-5</v>
+								</sum>							
+								<p>propulsion/tank_fwd/fuel-bug</p>
+							</lt>
+							<gt>
+								<p>propulsion/tank[5]/contents-lbs</p>
+								<p>propulsion/tank[5]/fuel-bug</p>
+							</gt>						
+						</and>
+						<v>0</v>
+						<ifthen>
+							<and>
+								<or>
+									<eq>
+										<p>propulsion/tank_fwd/pump-1</p>
+										<v>1</v>
+									</eq>
+									<eq>
+										<p>propulsion/tank_fwd/pump-2</p>
+										<v>1</v>
+									</eq>						
+								</or>
+								<eq>
+									<p>propulsion/engine[3]/fuel-cock</p>
+									<v>1</v>
+								</eq>						
+							</and>
+							<v>1</v>
+							<v>0</v>
+						</ifthen>
+					</ifthen>						
+				</ifthen>
+			</function>
+			<output>propulsion/tank[1]/priority</output>
+			<output>propulsion/tank[2]/priority</output>
 		</fcs_function>	
 		
 		
@@ -228,11 +278,11 @@ simonbomber64 at googlemail.com
 					<and>
 						<or>
 							<eq>
-								<p>propulsion/tank[5]/pump-1</p>
+								<p>propulsion/tank_aux/pump-1</p>
 								<v>1</v>
 							</eq>
 							<eq>
-								<p>propulsion/tank[5]/pump-2</p>
+								<p>propulsion/tank_aux/pump-2</p>
 								<v>1</v>
 							</eq>							
 						</or>
@@ -257,92 +307,107 @@ simonbomber64 at googlemail.com
 			<output>propulsion/tank[1]/external-flow-rate-pps</output>
 			<output>propulsion/tank[2]/external-flow-rate-pps</output>				
 		</pure_gain>
-		
-		
-		<fcs_function>
-			<function>
-				<ifthen>
-					<and>
-						<or>
-							<eq>
-								<p>propulsion/tank[5]/pump-1</p>
-								<v>1</v>
-							</eq>
-							<eq>
-								<p>propulsion/tank[5]/pump-2</p>
-								<v>1</v>
-							</eq>							
-						</or>
-						<lt>
-							<sum>
-								<p>propulsion/tank_fwd/contents-lbs</p>
-								<v>-5</v>
-							</sum>							
-							<p>propulsion/tank_fwd/fuel-bug</p>
-						</lt>
-						<gt>
-							<p>propulsion/tank[5]/contents-lbs</p>
-							<p>propulsion/tank[5]/fuel-bug</p>
-						</gt>						
-					</and>
-					<v>0</v>
-					<p>propulsion/tank[1]/priority</p>
-				</ifthen>
-			</function>
-			<output>propulsion/tank[1]/priority</output>
-			<output>propulsion/tank[2]/priority</output>
-		</fcs_function>
 
 		<!-- Turbine No.2 -->
 		
-  		<kinematic>
-			<input>/controls/engines/engine[4]/starter</input>
-			<traverse>
-				<setting>
-					<position>0</position>
-					<time>0</time>
-				</setting>
-				<setting>
-					<position>1</position>
-					<time>5</time>
-				</setting>
-			</traverse>
-			<output>/fdm/jsbsim/propulsion/engine[4]/fuel-starter</output>
-		</kinematic>
+ 		<fcs_function> <!-- need this because of the way JSBsim turbine starter is coded -->
+			<function>
+				<ifthen>
+					<and>
+						<eq>
+							<p>/controls/engines/engine[4]/starter</p>
+							<v>1</v>
+						</eq>
+						<eq>
+							<p>/controls/electric/engine[4]/starter-sw</p>
+							<v>1</v>
+						</eq>
+					</and>
+					<value>1</value>					
+					<value>0</value>
+				</ifthen>
+			</function>
+			<output>propulsion/engine[4]/fuel-starter</output>
+		</fcs_function>	
 
  		<fcs_function>
 			<function>
 				<ifthen>
-					<lt>
-						<p>/fdm/jsbsim/propulsion/engine[4]/governor/n1-lever</p>
+					<gt>
+						<p>propulsion/engine[4]/governor/n1-lever</p>
 						<v>0.42</v>
-					</lt>
+					</gt>
+					<p>propulsion/engine[4]/fuel-cock</p>					
 					<value>0</value>
-					<p>/fdm/jsbsim/propulsion/engine[4]/fuel-cock</p>
 				</ifthen>
 			</function>
-			<output>/fdm/jsbsim/propulsion/engine[4]/fuel-cock</output>
+			<output>propulsion/engine[4]/fuel-cock</output>
 		</fcs_function>
 		
  		<fcs_function>
 			<function>
 				<ifthen>
-					<or>
+					<and>
 						<gt>
-							<p>/fdm/jsbsim/propulsion/engine[4]/fuel-starter</p>
+							<p>propulsion/engine[4]/fuel-starter</p>
 							<v>0</v>
 						</gt>
-						<eq>
-							<p>/fdm/jsbsim/propulsion/engine[4]/fuel-cock</p>
+						<lt>
+							<p>propulsion/engine[4]/fuel-starter</p>
 							<v>1</v>
-						</eq>
-					</or>
+						</lt>
+					</and>
 					<value>1</value>
-					<value>0</value>
+					<ifthen>
+						<and>
+							<or>
+								<eq>
+									<p>propulsion/tank_aux/pump-1</p>
+									<v>1</v>
+								</eq>
+								<eq>
+									<p>propulsion/tank_aux/pump-2</p>
+									<v>1</v>
+								</eq>							
+							</or>
+							<lt>
+								<sum>
+									<p>propulsion/tank_aft/contents-lbs</p>
+									<v>-5</v>
+								</sum>							
+								<p>propulsion/tank_aft/fuel-bug</p>
+							</lt>
+							<gt>
+								<p>propulsion/tank[5]/contents-lbs</p>
+								<p>propulsion/tank[5]/fuel-bug</p>
+							</gt>						
+						</and>
+						<v>0</v>
+						<ifthen>
+							<and>
+								<or>
+									<eq>
+										<p>propulsion/tank_aft/pump-1</p>
+										<v>1</v>
+									</eq>
+									<eq>
+										<p>propulsion/tank_aft/pump-2</p>
+										<v>1</v>
+									</eq>						
+								</or>
+								<eq>
+									<p>propulsion/engine[4]/fuel-cock</p>
+									<v>1</v>
+								</eq>						
+							</and>
+							<v>1</v>
+							<v>0</v>
+						</ifthen>
+					</ifthen>						
 				</ifthen>
 			</function>
-			<output>/fdm/jsbsim/propulsion/tank[3]/priority</output>
-			<output>/fdm/jsbsim/propulsion/tank[4]/priority</output>
+			<output>propulsion/tank[3]/priority</output>
+			<output>propulsion/tank[4]/priority</output>
 		</fcs_function>	
 				
 		<!-- Fuel Content Bug -->
@@ -353,11 +418,11 @@ simonbomber64 at googlemail.com
 					<and>
 						<or>
 							<eq>
-								<p>propulsion/tank[5]/pump-1</p>
+								<p>propulsion/tank_aux/pump-1</p>
 								<v>1</v>
 							</eq>
 							<eq>
-								<p>propulsion/tank[5]/pump-2</p>
+								<p>propulsion/tank_aux/pump-2</p>
 								<v>1</v>
 							</eq>							
 						</or>
@@ -382,40 +447,6 @@ simonbomber64 at googlemail.com
 			<output>propulsion/tank[3]/external-flow-rate-pps</output>
 			<output>propulsion/tank[4]/external-flow-rate-pps</output>				
 		</pure_gain>
-	
-		<fcs_function>
-			<function>
-				<ifthen>
-					<and>
-						<or>
-							<eq>
-								<p>propulsion/tank[5]/pump-1</p>
-								<v>1</v>
-							</eq>
-							<eq>
-								<p>propulsion/tank[5]/pump-2</p>
-								<v>1</v>
-							</eq>							
-						</or>
-						<lt>
-							<sum>
-								<p>propulsion/tank_aft/contents-lbs</p>
-								<v>-5</v>
-							</sum>							
-							<p>propulsion/tank_aft/fuel-bug</p>
-						</lt>
-						<gt>
-							<p>propulsion/tank[5]/contents-lbs</p>
-							<p>propulsion/tank[5]/fuel-bug</p>
-						</gt>						
-					</and>
-					<v>0</v>
-					<p>propulsion/tank[1]/priority</p>
-				</ifthen>
-			</function>
-			<output>propulsion/tank[3]/priority</output>
-			<output>propulsion/tank[4]/priority</output>
-		</fcs_function>
 
 		<summer>
  			<input>-propulsion/tank[1]/external-flow-rate-pps</input>

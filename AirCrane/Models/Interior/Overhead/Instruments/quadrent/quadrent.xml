@@ -179,9 +179,9 @@
 			<y>1</y>
 		</axis>
 	</animation>
-
+	
 	<animation>
-		<type>pick</type>
+		<type>knob</type>
 		<object-name>n1leverlstart</object-name>
 		<condition>
 			<equals>
@@ -189,33 +189,42 @@
 				<value>0</value>
 			</equals>
 		</condition>
-		<visible>true</visible>
 		<action>
-			<button>0</button>
 			<repeatable>false</repeatable>
-			<binding>
-				<command>property-toggle</command>
+			<binding> <!-- need this because of the way JSBsim turbine starter is coded -->
+				<command>property-adjust</command>
 				<property>/controls/engines/engine[3]/starter</property>
+				<factor>0.1</factor>
+				<min>0</min>
+				<max>1</max>
+				<wrap>0</wrap>
 			</binding>
 			<binding>
-				<command>property-toggle</command>
+				<command>property-adjust</command>
+				<property>/controls/electric/engine[3]/starter-sw</property>
+				<factor>0.1</factor>
+				<min>0</min>
+				<max>1</max>
+				<wrap>0</wrap>
+			</binding>
+			<binding>
+				<command>property-adjust</command>
 				<property>/controls/engines/engine[3]/indent</property>
-			</binding>
-			<binding>
-				<command>nasal</command>
-				<script>aircrane.click("avionics")</script>
-			</binding>
+				<factor>0.1</factor>
+				<min>0</min>
+				<max>1</max>
+				<wrap>0</wrap>
+			</binding>			
 		</action>
 		<hovered>
 			<binding>
 				<command>set-tooltip</command>
 				<tooltip-id>eng1-start</tooltip-id>
-				<label>Engine 1 start</label>
-				<property>/controls/engines/engine[3]/starter</property>
+				<label>Turbine 1 start</label>
 			</binding>
 		</hovered>
-	</animation>						
-	
+	</animation>
+
 	<animation>
 		<type>translate</type>
 		<object-name>n1leverl</object-name>
@@ -382,7 +391,7 @@
 	</animation>
 
 	<animation>
-		<type>pick</type>
+		<type>knob</type>
 		<object-name>n1leverrstart</object-name>
 		<condition>
 			<equals>
@@ -390,29 +399,38 @@
 				<value>0</value>
 			</equals>
 		</condition>
-		<visible>true</visible>
 		<action>
-			<button>0</button>
 			<repeatable>false</repeatable>
-			<binding>
-				<command>property-toggle</command>
+			<binding> <!-- need this because of the way JSBsim turbine starter is coded -->
+				<command>property-adjust</command>
 				<property>/controls/engines/engine[4]/starter</property>
+				<factor>0.1</factor>
+				<min>0</min>
+				<max>1</max>
+				<wrap>0</wrap>
 			</binding>
 			<binding>
-				<command>property-toggle</command>
+				<command>property-adjust</command>
+				<property>/controls/electric/engine[4]/starter-sw</property>
+				<factor>0.1</factor>
+				<min>0</min>
+				<max>1</max>
+				<wrap>0</wrap>
+			</binding>
+			<binding>
+				<command>property-adjust</command>
 				<property>/controls/engines/engine[4]/indent</property>
-			</binding>
-			<binding>
-				<command>nasal</command>
-				<script>aircrane.click("avionics")</script>
-			</binding>
+				<factor>0.1</factor>
+				<min>0</min>
+				<max>1</max>
+				<wrap>0</wrap>
+			</binding>			
 		</action>
 		<hovered>
 			<binding>
 				<command>set-tooltip</command>
 				<tooltip-id>eng2-start</tooltip-id>
-				<label>Engine 2 start</label>
-				<property>/controls/engines/engine[4]/starter</property>
+				<label>Turbine 2 start</label>
 			</binding>
 		</hovered>
 	</animation>						
