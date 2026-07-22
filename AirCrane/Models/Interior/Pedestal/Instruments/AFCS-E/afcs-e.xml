@@ -263,130 +263,112 @@
   </animation> -->
 
   <!-- Yaw Trim "Knob" -->
-  <animation>
-    <type>knob</type>
-    <object-name>yawtrim</object-name>
-    <property>controls/knobs/yaw-trim</property>
-    <factor>-60</factor>
-    <offset-deg>0</offset-deg>
-    <center>
-      <x-m>  0.03346 </x-m>
-      <y-m> -0.04460 </y-m>
-      <z-m>  0.00448 </z-m>
-    </center>
-    <axis>
-      <x> 0 </x>
-      <y> 0 </y>
-      <z> 1 </z>
-    </axis>
-    <action>
-      <repeatable>true</repeatable>
-      <binding>
-        <command>property-adjust</command>
-        <property>controls/knobs/yaw-trim</property>
-        <factor>.01</factor>
-        <min>-3</min>
-        <max>3</max>
-        <wrap>false</wrap>
-      </binding>
-      <binding>
-        <command>nasal</command>
-        <script>aircrane.click("avionics")</script>
-      </binding>
-    </action>
-    <hovered>
-      <binding>
-        <command>set-tooltip</command>
-        <tooltip-id>yawtrim</tooltip-id>
-        <label>Yaw Trim: %s</label>
-        <property>controls/knobs/yaw-trim</property>
-      </binding>
-    </hovered>
-  </animation>
+	<animation>
+		<type>knob</type>
+		<object-name>yawtrim</object-name>
+		<property>/controls/electric/yaw-trim</property>
+		<factor>-60</factor>
+		<offset-deg>0</offset-deg>
+		<center>
+			<x-m>0.03346</x-m>
+			<y-m>-0.04460</y-m>
+			<z-m>0.00448</z-m>
+		</center>
+		<axis>
+			<z>1</z>
+		</axis>
+		<action>
+			<repeatable>true</repeatable>
+			<binding>
+				<command>property-adjust</command>
+				<property>/controls/electric/yaw-trim</property>
+				<factor>0.001</factor>
+				<min>-0.087266</min>
+				<max>0.087266</max>
+				<wrap>false</wrap>
+			</binding>
+		</action>
+		<hovered>
+			<binding>
+				<command>set-tooltip</command>
+				<tooltip-id>yawtrim</tooltip-id>
+				<label>Yaw Trim: %s</label>
+				<property>/controls/electric/yaw-trim</property>
+			</binding>
+		</hovered>
+	</animation>
 
   <!-- Roll Trim "Knob" -->
-  <animation>
-    <type>knob</type>
-    <object-name>rolltrim</object-name>
-    <property>controls/knobs/roll-trim</property>
-    <factor>-60</factor>
-    <offset-deg>0</offset-deg>
-    <center>
-      <x-m> -0.04683 </x-m>
-      <y-m>  0.01701 </y-m>
-      <z-m>  0.00492 </z-m>
-    </center>
-    <axis>
-      <x> 0 </x>
-      <y> 0 </y>
-      <z> 1 </z>
-    </axis>
-    <action>
-      <repeatable>true</repeatable>
-      <binding>
-        <command>property-adjust</command>
-        <property>controls/knobs/roll-trim</property>
-        <factor>.01</factor>
-        <min>-3</min>
-        <max>3</max>
-        <wrap>false</wrap>
-      </binding>
-      <binding>
-        <command>nasal</command>
-        <script>aircrane.click("avionics")</script>
-      </binding>
-    </action>
-    <hovered>
-      <binding>
-        <command>set-tooltip</command>
-        <tooltip-id>rolltrim</tooltip-id>
-        <label>Roll Trim: %s</label>
-        <property>controls/knobs/roll-trim</property>
-      </binding>
-    </hovered>
-  </animation>
+	<animation>
+		<type>knob</type>
+		<object-name>rolltrim</object-name>
+		<property>/controls/electric/roll-trim</property>
+		<factor>-60</factor>
+		<offset-deg>0</offset-deg>
+		<center>
+			<x-m>-0.04683</x-m>
+			<y-m>0.01701</y-m>
+			<z-m>0.00492</z-m>
+		</center>
+		<axis>
+			<z>1</z>
+		</axis>
+		<action>
+			<repeatable>true</repeatable>
+			<binding>
+				<command>property-adjust</command>
+				<property>/controls/electric/roll-trim</property>
+				<factor>0.001</factor>
+				<min>-0.087266</min>
+				<max>0.087266</max>
+				<wrap>false</wrap>
+			</binding>
+		</action>
+		<hovered>
+			<binding>
+				<command>set-tooltip</command>
+				<tooltip-id>rolltrim</tooltip-id>
+				<label>Roll Trim: %s</label>
+				<property>/controls/electric/roll-trim</property>
+			</binding>
+		</hovered>
+	</animation>
 
-  <!-- CG Trim "Knob" -->
-  <animation>
-    <type>knob</type>
-    <object-name>cgtrim</object-name>
-    <property>controls/knobs/cg-trim</property>
-    <factor>-60</factor>
-    <offset-deg>0</offset-deg>
-    <center>
-      <x-m> 0.02080 </x-m>
-      <y-m> 0.02782 </y-m>
-      <z-m> 0.00645 </z-m>
-    </center>
-    <axis>
-      <x> 0 </x>
-      <y> 0 </y>
-      <z> 1 </z>
-    </axis>
-    <action>
-      <repeatable>true</repeatable>
-      <binding>
-        <command>property-adjust</command>
-        <property>controls/knobs/cg-trim</property>
-        <factor>.01</factor>
-        <min>-1</min>
-        <max>1</max>
-        <wrap>false</wrap>
-      </binding>
-      <binding>
-        <command>nasal</command>
-        <script>aircrane.click("avionics")</script>
-      </binding>
-    </action>
-    <hovered>
-      <binding>
-        <command>set-tooltip</command>
-        <tooltip-id>cgtrim</tooltip-id>
-        <label>CG Trim: %s</label>
-        <property>controls/knobs/cg-trim</property>
-      </binding>
-    </hovered>
-  </animation>
+  <!-- Pitch Trim "Knob" -->
+	<animation>
+		<type>knob</type>
+		<object-name>cgtrim</object-name>
+		<property>/controls/electric/pitch-trim</property>
+		<factor>-60</factor>
+		<offset-deg>0</offset-deg>
+		<center>
+			<x-m>0.02080</x-m>
+			<y-m>0.02782</y-m>
+			<z-m>0.00645</z-m>
+		</center>
+		<axis>
+			<z>1</z>
+		</axis>
+		<action>
+			<repeatable>true</repeatable>
+			<binding>
+				<command>property-adjust</command>
+				<property>/controls/electric/pitch-trim</property>
+				<factor>0.001</factor>
+				<min>-0.087266</min>
+				<max>0.087266</max>
+				<wrap>false</wrap>
+			</binding>
+		</action>
+		<hovered>
+			<binding>
+				<command>set-tooltip</command>
+				<tooltip-id>cgtrim</tooltip-id>
+				<label>CG Trim: %s</label>
+				<property>/controls/electric/pitch-trim</property>
+			</binding>
+		</hovered>
+	</animation>
 
 	<!-- AFCS Servo -->
 	
@@ -449,91 +431,62 @@
 	</animation> -->
 
   <!-- Stick Trim "Switch" -->
-  <animation>
-    <type>knob</type>
-    <object-name>sticktrim</object-name>
-    <property>/controls/switches/stick-trim</property>
-    <factor>-45</factor>
-    <offset-deg>0</offset-deg>
-    <center>
-      <x-m> 0.02677 </x-m>
-      <y-m> 0.06055 </y-m>
-      <z-m> 0.00698 </z-m>
-    </center>
-    <axis>
-      <x> 0 </x>
-      <y> 1 </y>
-      <z> 0 </z>
-    </axis>
-    <action>
-      <binding>
-        <command>property-adjust</command>
-        <property>/controls/switches/stick-trim</property>
-        <factor>1</factor>
-        <min>0</min>
-        <max>1</max>
-        <wrap>false</wrap>
-      </binding>
-      <binding>
-        <command>nasal</command>
-        <script>aircrane.click("avionics")</script>
-      </binding>
-    </action>
-    <hovered>
-      <binding>
-        <command>set-tooltip</command>
-        <tooltip-id>sticktrim</tooltip-id>
-        <label>Stick Trim: %s</label>
-        <property>/controls/switches/stick-trim</property>
-        <mapping>nasal</mapping>
-        <script>
-          var modes = ['OFF', 'ON'];
-          return modes[arg[0]];
-        </script>
-      </binding>
-    </hovered>
-  </animation>
+ 	<animation>
+		<type>pick</type>
+		<object-name>sticktrim</object-name>
+		<visible>true</visible>
+		<action>
+			<button>0</button>
+			<repeatable>false</repeatable>
+			<binding>
+				<command>property-toggle</command>
+				<property>/controls/electric/AFCS/trim-sw</property>
+			</binding>
+		</action>
+	</animation>
+	<animation>
+		<type>rotate</type>
+		<object-name>sticktrim</object-name>
+		<property>/controls/electric/AFCS/trim-sw</property>
+		<factor>-40</factor>
+		<center>
+			<x-m>0.02677</x-m>
+			<y-m>0.06055</y-m>
+			<z-m>0.00698</z-m>
+		</center>
+		<axis>
+			<y>1</y>
+		</axis>
+	</animation> 
 
-  <!-- Stick Trim "Cover" -->
-  <animation>
-    <type>knob</type>
-    <object-name>sticktrimcover</object-name>
-    <property>/controls/switches/stick-trim-cover</property>
-    <factor>-70</factor>
-    <offset-deg>0</offset-deg>
-    <center>
-      <x-m> 0.00116 </x-m>
-      <y-m> 0.06033 </y-m>
-      <z-m> 0.00457 </z-m>
-    </center>
-    <axis>
-      <x> 0 </x>
-      <y> 1 </y>
-      <z> 0 </z>
-    </axis>
-    <action>
-      <binding>
-        <command>property-adjust</command>
-        <property>/controls/switches/stick-trim-cover</property>
-        <factor>1</factor>
-        <min>0</min>
-        <max>1</max>
-        <wrap>false</wrap>
-      </binding>
-      <binding>
-        <command>nasal</command>
-        <script>aircrane.click("cover")</script>
-      </binding>
-    </action>
-    <hovered>
-      <binding>
-        <command>set-tooltip</command>
-        <tooltip-id>sticktrimcover</tooltip-id>
-        <label>Stick Trim Cover</label>
-        <property>/controls/switches/stick-trim-cover</property>
-      </binding>
-    </hovered>
-  </animation>
+  <!-- Stick Trim "Cover" --> 
+   	<animation>
+		<type>pick</type>
+		<object-name>sticktrimcover</object-name>
+		<visible>true</visible>
+		<action>
+			<button>0</button>
+			<repeatable>false</repeatable>
+			<binding>
+				<command>property-toggle</command>
+				<property>/controls/electric/AFCS/trim_cover-sw</property>
+			</binding>
+		</action>
+	</animation>
+	<animation>
+		<type>rotate</type>
+		<object-name>sticktrimcover</object-name>
+		<property>/controls/electric/AFCS/trim_cover-sw</property>
+		<factor>-70</factor>
+		<center>
+			<x-m>0.00116</x-m>
+			<y-m>0.06033</y-m>
+			<z-m>0.00457</z-m>
+		</center>
+		<axis>
+			<y>1</y>
+		</axis>
+	</animation> 
 
   <model>
     <name>afcs-on-procedural</name>
