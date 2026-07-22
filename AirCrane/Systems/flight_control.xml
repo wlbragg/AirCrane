@@ -226,7 +226,7 @@ engine[4] = Turbine No.2
 	</channel>
 
 	<property type="double" value="-0.016">/controls/electric/pitch-trim</property>	
-	<property type="double" value="-0.013">/controls/electric/roll-trim</property>	
+	<property type="double" value="-0.007">/controls/electric/roll-trim</property>	
 	
 	<channel name="AFCS Control" execute="/controls/electric/AFCS/Active">
 
@@ -905,7 +905,7 @@ engine[4] = Turbine No.2
 							<v>1</v>
 						</eq>
 					</and>
-					<v>1</v> <!-- ground hud -->
+					<v>4</v> <!-- ground hud -->
 					<ifthen>
 						<and>
 							<eq>
@@ -922,22 +922,22 @@ engine[4] = Turbine No.2
 								<p>/controls/electric/AFCS/Active</p>
 								<v>1</v>
 							</eq>
-							<v>2</v>
+							<v>3</v> <!-- AFCS hud -->
 							<ifthen>
 								<eq>
 									<p>/controls/electric/AFCS/bar_alt</p>
 									<v>1</v>
 								</eq>
-								<v>3</v>
-								<v>2</v>
-							</ifthen>
+								<v>4</v> <!-- Bar Alt hud -->
+								<v>2</v> <!-- Manual hud -->
+							</ifthen>						
 						</ifthen>						
 						<ifthen>
 							<lt>
 								<p>/fdm/jsbsim/propulsion/engine[1]/rotor/vortex_ring</p>
 								<v>1</v>
 							</lt>
-							<v>4</v> <!-- Vortex Ring State -->
+							<v>5</v> <!-- Vortex Ring State -->
 							<v>0</v>
 						</ifthen>							
 					</ifthen>					
@@ -951,7 +951,7 @@ engine[4] = Turbine No.2
 				<ifthen>
 					<eq>
 						<p>/sim/hud/current-path</p>
-						<v>4</v>
+						<v>5</v>
 					</eq>
 					<v>1</v> <!-- red -->
 					<v>0</v> <!-- green -->
