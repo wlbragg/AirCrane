@@ -125,19 +125,10 @@ simonbomber64 at googlemail.com
 			<variant type="int">0</variant>
 		</model>
 
-		<hud>
-			<path n="0">Aircraft/AirCRane/Hud/Blank.xml</path>			
-			<path n="1">Aircraft/AirCRane/Hud/Ground.xml</path>		
-			<path n="2">Aircraft/AirCRane/Hud/Manual.xml</path>
-			<path n="3">Aircraft/AirCRane/Hud/AFCS.xml</path>
-			<path n="4">Aircraft/AirCRane/Hud/Hover.xml</path>
-			<path n="5">Aircraft/AirCRane/Hud/VRS.xml</path>			
+<!-- 		<hud>
+			<path n="1">Aircraft/AH-1/Hud/Scorpion-hud.xml</path>
 			<visibility n="1">true</visibility>
-			<visibility n="2">true</visibility>
-			<visibility n="3">true</visibility>
-			<visibility n="4">true</visibility>
-			<visibility n="5">true</visibility>
-			
+
 			<palette>
 				<color n="0">
 					<alpha type="float">0.85</alpha>
@@ -159,13 +150,13 @@ simonbomber64 at googlemail.com
 				</color>
 			</palette>
 			<clipping>
-				<left type="double">-90</left>
-				<right type="double">90</right>
-				<top type="double">120</top>
+				<left type="double">-70</left>
+				<right type="double">65</right>
+				<top type="double">45</top>
 				<bottom type="double">-110</bottom>
 			</clipping>
 
-		</hud>
+		</hud> -->
 
 	</sim>
 
