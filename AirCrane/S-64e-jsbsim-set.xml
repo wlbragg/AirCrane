@@ -210,7 +210,30 @@ simonbomber64 at googlemail.com
 					</binding>
 				</axis>		
 			</js>
-		</joysticks>		
+		</joysticks>
+        <controls>
+          <mouse>
+
+            <!-- Disable throttleMouse in mode 0 -->
+            <mode n="0">
+              <y-axis>
+                <binding>
+                  <command>none</command>
+                </binding>
+              </y-axis>
+            </mode>
+
+            <!-- Disable throttleMouse in mode 1 -->
+            <mode n="1">
+              <y-axis>
+                <binding>
+                  <command>none</command>
+                </binding>
+              </y-axis>
+            </mode>
+
+          </mouse>
+        </controls>		
 	</input>	
 	
 </PropertyList>

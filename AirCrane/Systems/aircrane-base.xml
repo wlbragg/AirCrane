@@ -18,4 +18,10 @@
 
     </sim>
 
+    <nasal>
+        <aircrane>
+          <file>Aircraft/AirCrane/Nasal/mouse-override.nas</file>
+        </aircrane>
+    </nasal>
+
 </PropertyList>
