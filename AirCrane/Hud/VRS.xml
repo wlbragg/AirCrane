@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+	<name>VRS HUD</name>
+
+	<enable3d>false</enable3d>
+
+	<label>
+		<name>Vortex Ring State</name>
+		<width>100</width>
+		<height>10</height>
+		<x>-45</x>
+		<y>-20</y>
+		<halign>l</halign>
+		<format>VORTEX RING STATE</format>
+		<box>true</box>
+		<option>center</option>
+		<condition>
+			<and>
+				<greater-than>
+					<property>/sim/hud/flashing</property>
+					<value>0.5</value>
+				</greater-than>
+				<less-than>
+					<property>fdm/jsbsim/propulsion/engine[1]/rotor/vortex_ring</property>
+					<value>1</value>
+				</less-than>
+			</and>
+		</condition>
+	</label>
+
+</PropertyList>

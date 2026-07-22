@@ -1,0 +1,884 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+<name>Avatar Scorpion HUD</name>
+
+<enable3d>false</enable3d>
+
+<label>
+	<name>GROUND MODE</name>
+	<width>1</width>
+	<height>1</height>
+	<x>-2</x>
+	<y>-107.5</y>
+	<halign>center</halign>
+	<format>GROUND</format>
+	<box>false</box>
+	<option>center</option>	
+</label>
+
+<label>
+	<name>Turbine 1</name>
+	<width>1</width>
+	<height>1</height>
+	<x>-60</x>
+	<y>40</y>
+	<halign>center</halign>
+	<format>Turbine 1</format>
+	<box>false</box>
+	<option>center</option>	
+</label>
+<label>
+	<name>Turbine 1 OK</name>
+	<width>1</width>
+	<height>1</height>
+	<x>-60</x>
+	<y>27</y>
+	<halign>center</halign>
+	<format>OK</format>
+	<box>false</box>
+	<option>center</option>
+  	<condition>
+		<greater-than>
+			<property>fdm/jsbsim/propulsion/engine[3]/propeller-rpm</property>
+			<value>5750</value>
+		</greater-than>
+	</condition>	
+</label>
+<label>
+	<name>Turbine 1 Stopped</name>
+	<width>1</width>
+	<height>1</height>
+	<x>-60</x>
+	<y>27</y>
+	<halign>center</halign>
+	<format>STOPPED</format>
+	<box>false</box>
+	<option>center</option>
+  	<condition>
+		<or>
+			<and>
+				<less-than>
+					<property>fdm/jsbsim/propulsion/engine[3]/propeller-rpm</property>
+					<value>10</value>
+				</less-than>			
+				<equals>
+					<property>/controls/electric/tank_fwd_pump-1-sw</property>
+					<value>0</value>
+				</equals>
+				<equals>
+					<property>/controls/electric/tank_fwd_pump-2-sw</property>
+					<value>0</value>
+				</equals>
+			</and>
+			<equals>
+				<property>/controls/engines/engine[3]/cutoff</property>
+				<value>1</value>
+			</equals>
+		</or>
+	</condition>	
+</label>
+<label>
+	<name>Turbine 1 Starter</name>
+	<width>1</width>
+	<height>1</height>
+	<x>-60</x>
+	<y>27</y>
+	<halign>center</halign>
+	<format>STARTER</format>
+	<box>false</box>
+	<option>center</option>
+  	<condition>
+		<and>
+			<less-than>
+				<property>fdm/jsbsim/propulsion/engine[3]/propeller-rpm</property>
+				<value>10</value>
+			</less-than>
+			<equals>
+				<property>/controls/engines/engine[3]/cutoff</property>
+				<value>0</value>
+			</equals>
+			<or>
+				<equals>
+					<property>/controls/electric/tank_fwd_pump-1-sw</property>
+					<value>1</value>
+				</equals>
+				<equals>
+					<property>/controls/electric/tank_fwd_pump-2-sw</property>
+					<value>1</value>
+				</equals>
+			</or>
+		</and>
+	</condition>	
+</label>
+<label>
+	<name>Turbine 1 rpm</name>
+	<width>1</width>
+	<height>5</height>
+	<x>-60</x>
+	<y>20</y>
+	<halign>right</halign>
+	<format>%.0f</format>
+	<box>false</box>
+	<option>center</option>
+	<input>
+		<property>fdm/jsbsim/propulsion/engine[3]/propeller-rpm</property>
+	</input>
+  	<condition>
+		<and>
+			<greater-than>
+				<property>fdm/jsbsim/propulsion/engine[3]/propeller-rpm</property>
+				<value>10</value>
+			</greater-than>
+			<less-than>
+				<property>fdm/jsbsim/propulsion/engine[3]/propeller-rpm</property>
+				<value>5750</value>
+			</less-than>
+		</and>
+	</condition>	
+</label>
+<gauge>
+	<name>Turbine 1 rpm</name>
+	<x>-60</x>
+	<y>-90</y>
+	<width>10</width>
+	<height>120</height>
+	<option>vertical</option>
+	<option>left</option>
+	<option>notext</option>
+	<major-divisions>1000</major-divisions>
+	<minor-divisions>0</minor-divisions>
+	<enable-pointer>true</enable-pointer>
+	<pointer-type>fixed</pointer-type>
+	<input>
+		<property>fdm/jsbsim/propulsion/engine[3]/propeller-rpm</property>
+		<max>9000</max>
+		<min>0</min>
+	</input>
+  	<condition>
+		<and>
+			<greater-than>
+				<property>fdm/jsbsim/propulsion/engine[3]/propeller-rpm</property>
+				<value>10</value>
+			</greater-than>
+			<less-than>
+				<property>fdm/jsbsim/propulsion/engine[3]/propeller-rpm</property>
+				<value>5750</value>
+			</less-than>
+		</and>
+	</condition>	
+</gauge>
+
+<label>
+	<name>Turbine 2</name>
+	<width>1</width>
+	<height>1</height>
+	<x>50</x>
+	<y>40</y>
+	<halign>center</halign>
+	<format>Turbine 2</format>
+	<box>false</box>
+	<option>center</option>	
+</label>
+<label>
+	<name>Turbine 2 OK</name>
+	<width>1</width>
+	<height>1</height>
+	<x>50</x>
+	<y>27</y>
+	<halign>center</halign>
+	<format>OK</format>
+	<box>false</box>
+	<option>center</option>
+  	<condition>
+		<greater-than>
+			<property>fdm/jsbsim/propulsion/engine[4]/propeller-rpm</property>
+			<value>5750</value>
+		</greater-than>
+	</condition>	
+</label>
+<label>
+	<name>Turbine 2 Stopped</name>
+	<width>1</width>
+	<height>1</height>
+	<x>50</x>
+	<y>27</y>
+	<halign>center</halign>
+	<format>STOPPED</format>
+	<box>false</box>
+	<option>center</option>
+  	<condition>
+		<or>
+			<and>
+				<less-than>
+					<property>fdm/jsbsim/propulsion/engine[4]/propeller-rpm</property>
+					<value>10</value>
+				</less-than>			
+				<equals>
+					<property>/controls/electric/tank_aft_pump-1-sw</property>
+					<value>0</value>
+				</equals>
+				<equals>
+					<property>/controls/electric/tank_aft_pump-2-sw</property>
+					<value>0</value>
+				</equals>
+			</and>
+			<equals>
+				<property>/controls/engines/engine[4]/cutoff</property>
+				<value>1</value>
+			</equals>
+		</or>
+	</condition>	
+</label>
+<label>
+	<name>Turbine 2 Starter</name>
+	<width>1</width>
+	<height>1</height>
+	<x>50</x>
+	<y>27</y>
+	<halign>center</halign>
+	<format>STARTER</format>
+	<box>false</box>
+	<option>center</option>
+  	<condition>
+		<and>
+			<less-than>
+				<property>fdm/jsbsim/propulsion/engine[4]/propeller-rpm</property>
+				<value>10</value>
+			</less-than>
+			<equals>
+				<property>/controls/engines/engine[4]/cutoff</property>
+				<value>0</value>
+			</equals>
+			<or>
+				<equals>
+					<property>/controls/electric/tank_aft_pump-1-sw</property>
+					<value>1</value>
+				</equals>
+				<equals>
+					<property>/controls/electric/tank_aft_pump-2-sw</property>
+					<value>1</value>
+				</equals>
+			</or>
+		</and>
+	</condition>	
+</label>
+<label>
+	<name>Turbine 2 rpm</name>
+	<width>1</width>
+	<height>5</height>
+	<x>55</x>
+	<y>20</y>
+	<halign>left</halign>
+	<format>%.0f</format>
+	<box>false</box>
+	<option>center</option>
+	<input>
+		<property>fdm/jsbsim/propulsion/engine[4]/propeller-rpm</property>
+	</input>
+  	<condition>
+		<and>
+			<greater-than>
+				<property>fdm/jsbsim/propulsion/engine[4]/propeller-rpm</property>
+				<value>10</value>
+			</greater-than>
+			<less-than>
+				<property>fdm/jsbsim/propulsion/engine[4]/propeller-rpm</property>
+				<value>5750</value>
+			</less-than>
+		</and>
+	</condition>	
+</label>
+<gauge>
+	<name>Turbine 2 rpm</name>
+	<x>50</x>
+	<y>-90</y>
+	<width>10</width>
+	<height>120</height>
+	<option>vertical</option>
+	<option>right</option>
+	<option>notext</option>
+	<major-divisions>1000</major-divisions>
+	<minor-divisions>0</minor-divisions>
+	<enable-pointer>true</enable-pointer>
+	<pointer-type>fixed</pointer-type>
+	<input>
+		<property>fdm/jsbsim/propulsion/engine[4]/propeller-rpm</property>
+		<max>9000</max>
+		<min>0</min>
+	</input>
+  	<condition>
+		<and>
+			<greater-than>
+				<property>fdm/jsbsim/propulsion/engine[4]/propeller-rpm</property>
+				<value>10</value>
+			</greater-than>
+			<less-than>
+				<property>fdm/jsbsim/propulsion/engine[4]/propeller-rpm</property>
+				<value>5750</value>
+			</less-than>
+		</and>
+	</condition>
+</gauge>
+
+
+<label>
+	<name>Rotor Brake on</name>
+	<width>45</width>
+	<height>10</height>
+	<x>-22</x>
+	<y>100</y>
+	<halign>l</halign>
+	<format>Brake on</format>
+	<box>true</box>
+	<option>center</option>
+  	<condition>
+		<and>
+			<greater-than>
+				<property>/sim/hud/flashing</property>
+				<value>0.5</value>
+			</greater-than>
+			<equals>
+				<property>/controls/electric/rotor_brake-sw</property>
+				<value>1</value>
+			</equals>			
+		</and>
+	</condition>
+</label>
+
+<label>
+	<name>Turbine 1 ignition</name>
+	<width>45</width>
+	<height>10</height>
+	<x>-82</x>
+	<y>10</y>
+	<halign>l</halign>
+	<format>IGNITION</format>
+	<box>true</box>
+	<option>center</option>
+  	<condition>
+		<and>
+			<greater-than>
+				<property>/sim/hud/flashing</property>
+				<value>0.5</value>
+			</greater-than>
+			<equals>
+				<property>/controls/engines/engine[3]/cutoff</property>
+				<value>1</value>
+			</equals>			
+		</and>
+	</condition>
+</label>
+
+<label>
+	<name>Turbine 2 ignition</name>
+	<width>45</width>
+	<height>10</height>
+	<x>28</x>
+	<y>10</y>
+	<halign>l</halign>
+	<format>IGNITION</format>
+	<box>true</box>
+	<option>center</option>
+  	<condition>
+		<and>
+			<greater-than>
+				<property>/sim/hud/flashing</property>
+				<value>0.5</value>
+			</greater-than>
+			<equals>
+				<property>/controls/engines/engine[4]/cutoff</property>
+				<value>1</value>
+			</equals>			
+		</and>
+	</condition>
+</label>
+
+<label>
+	<name>Turbine 1 Generator</name>
+	<width>60</width>
+	<height>10</height>
+	<x>-89</x>
+	<y>10</y>
+	<halign>l</halign>
+	<format>GENERATOR</format>
+	<box>true</box>
+	<option>center</option>
+  	<condition>
+		<and>
+			<greater-than>
+				<property>/sim/hud/flashing</property>
+				<value>0.5</value>
+			</greater-than>
+			<greater-than>
+				<property>fdm/jsbsim/propulsion/engine[3]/propeller-rpm</property>
+				<value>5750</value>
+			</greater-than>
+			<equals>
+				<property>/controls/electric/engine[3]/generator-sw</property>
+				<value>0</value>
+			</equals>			
+		</and>
+	</condition>
+</label>
+
+<label>
+	<name>Turbine 2 Generator</name>
+	<width>60</width>
+	<height>10</height>
+	<x>21</x>
+	<y>10</y>
+	<halign>l</halign>
+	<format>GENERATOR</format>
+	<box>true</box>
+	<option>center</option>
+  	<condition>
+		<and>
+			<greater-than>
+				<property>/sim/hud/flashing</property>
+				<value>0.5</value>
+			</greater-than>
+			<greater-than>
+				<property>fdm/jsbsim/propulsion/engine[4]/propeller-rpm</property>
+				<value>5750</value>
+			</greater-than>
+			<equals>
+				<property>/controls/electric/engine[4]/generator-sw</property>
+				<value>0</value>
+			</equals>			
+		</and>
+	</condition>
+</label>
+
+<label>
+	<name>Turbine 1 Rectifier</name>
+	<width>60</width>
+	<height>10</height>
+	<x>-89</x>
+	<y>10</y>
+	<halign>l</halign>
+	<format>RECTIFIER</format>
+	<box>true</box>
+	<option>center</option>
+  	<condition>
+		<and>
+			<greater-than>
+				<property>/sim/hud/flashing</property>
+				<value>0.5</value>
+			</greater-than>
+			<equals>
+				<property>/controls/electric/engine[3]/generator-sw</property>
+				<value>1</value>
+			</equals>
+			<equals>
+				<property>/controls/electric/engine[3]/rectifier</property>
+				<value>0</value>
+			</equals>			
+		</and>
+	</condition>
+</label>
+
+<label>
+	<name>Turbine 2 Rectifier</name>
+	<width>60</width>
+	<height>10</height>
+	<x>21</x>
+	<y>10</y>
+	<halign>l</halign>
+	<format>RECTIFIER</format>
+	<box>true</box>
+	<option>center</option>
+  	<condition>
+		<and>
+			<greater-than>
+				<property>/sim/hud/flashing</property>
+				<value>0.5</value>
+			</greater-than>
+			<equals>
+				<property>/controls/electric/engine[4]/generator-sw</property>
+				<value>1</value>
+			</equals>
+			<equals>
+				<property>/controls/electric/engine[4]/rectifier</property>
+				<value>0</value>
+			</equals>			
+		</and>
+	</condition>
+</label>
+
+<label>
+	<name>Turbine 1 Fuel Pump</name>
+	<width>60</width>
+	<height>10</height>
+	<x>-89</x>
+	<y>10</y>
+	<halign>l</halign>
+	<format>FUEL PUMP</format>
+	<box>true</box>
+	<option>center</option>
+  	<condition>
+		<and>
+			<greater-than>
+				<property>/sim/hud/flashing</property>
+				<value>0.5</value>
+			</greater-than>
+			<equals>
+				<property>/controls/engines/engine[3]/cutoff</property>
+				<value>0</value>
+			</equals>
+			<and>
+				<equals>
+					<property>/controls/electric/tank_fwd_pump-1-sw</property>
+					<value>0</value>
+				</equals>
+				<equals>
+					<property>/controls/electric/tank_fwd_pump-2-sw</property>
+					<value>0</value>
+				</equals>
+			</and>
+		</and>
+	</condition>
+</label>
+
+<label>
+	<name>Turbine 2 Fuel Pump</name>
+	<width>60</width>
+	<height>10</height>
+	<x>21</x>
+	<y>10</y>
+	<halign>l</halign>
+	<format>FUEL PUMP</format>
+	<box>true</box>
+	<option>center</option>
+  	<condition>
+		<and>
+			<greater-than>
+				<property>/sim/hud/flashing</property>
+				<value>0.5</value>
+			</greater-than>
+			<equals>
+				<property>/controls/engines/engine[4]/cutoff</property>
+				<value>0</value>
+			</equals>
+			<and>
+				<equals>
+					<property>/controls/electric/tank_aft_pump-1-sw</property>
+					<value>0</value>
+				</equals>
+				<equals>
+					<property>/controls/electric/tank_aft_pump-2-sw</property>
+					<value>0</value>
+				</equals>
+			</and>
+		</and>
+	</condition>
+</label>
+
+<label>
+	<name>Turbine 1 Starting</name>
+	<width>60</width>
+	<height>10</height>
+	<x>-89</x>
+	<y>48</y>
+	<halign>l</halign>
+	<format>ENGAGED</format>
+	<box>true</box>
+	<option>center</option>
+  	<condition>
+		<and>
+			<greater-than>
+				<property>/sim/hud/flashing</property>
+				<value>0.5</value>
+			</greater-than>
+			<equals>
+				<property>/controls/engines/engine[3]/starter</property>
+				<value>1</value>
+			</equals>
+		</and>
+	</condition>
+</label>
+
+<label>
+	<name>Turbine 2 Starting</name>
+	<width>60</width>
+	<height>10</height>
+	<x>21</x>
+	<y>48</y>
+	<halign>l</halign>
+	<format>ENGAGED</format>
+	<box>true</box>
+	<option>center</option>
+  	<condition>
+		<and>
+			<greater-than>
+				<property>/sim/hud/flashing</property>
+				<value>0.5</value>
+			</greater-than>
+			<equals>
+				<property>/controls/engines/engine[4]/starter</property>
+				<value>1</value>
+			</equals>
+		</and>
+	</condition>
+</label>
+
+
+<label>
+	<name>Turbine 1 n1</name>
+	<width>1</width>
+	<height>5</height>
+	<x>-45</x>
+	<y>20</y>
+	<halign>left</halign>
+	<prefix>n1:</prefix>	
+	<format>%.0f</format>
+	<box>false</box>
+	<option>center</option>
+	<input>
+		<property>/fdm/jsbsim/propulsion/engine[3]/n1</property>
+	</input>
+  	<condition>
+		<and>
+			<equals>
+				<property>/fdm/jsbsim/propulsion/engine[3]/set-running</property>
+				<value>1</value>
+			</equals>
+			<less-than>
+				<property>fdm/jsbsim/propulsion/engine[3]/propeller-rpm</property>
+				<value>5750</value>
+			</less-than>
+		</and>
+	</condition>	
+</label>
+
+<label>
+	<name>Turbine 2 n1</name>
+	<width>1</width>
+	<height>5</height>
+	<x>44</x>
+	<y>20</y>
+	<halign>right</halign>
+	<postfix>:n1</postfix>	
+	<format>%.0f</format>
+	<box>false</box>
+	<option>center</option>
+	<input>
+		<property>/fdm/jsbsim/propulsion/engine[4]/n1</property>
+	</input>
+  	<condition>
+		<and>
+			<equals>
+				<property>/fdm/jsbsim/propulsion/engine[4]/set-running</property>
+				<value>1</value>
+			</equals>
+			<less-than>
+				<property>fdm/jsbsim/propulsion/engine[4]/propeller-rpm</property>
+				<value>5750</value>
+			</less-than>
+		</and>
+	</condition>	
+</label>
+
+
+
+<!-- External Power -->
+
+<label>
+	<name>External Power</name>
+	<width>90</width>
+	<height>10</height>
+	<x>-45</x>
+	<y>-20</y>
+	<halign>l</halign>
+	<format>EXTERNAL POWER</format>
+	<box>true</box>
+	<option>center</option>
+  	<condition>
+		<and>
+			<greater-than>
+				<property>/sim/hud/flashing</property>
+				<value>0.5</value>
+			</greater-than>
+			<or>
+				<equals>
+					<property>/controls/electric/engine[3]/rectifier</property>
+					<value>1</value>
+				</equals>
+				<equals>
+					<property>/controls/electric/engine[4]/rectifier</property>
+					<value>1</value>
+				</equals>
+			</or>
+			<or>
+				<greater-than>
+					<property>/fdm/jsbsim/propulsion/engine[3]/n1</property>
+					<value>42</value>
+				</greater-than>
+				<greater-than>
+					<property>/fdm/jsbsim/propulsion/engine[4]/n1</property>
+					<value>42</value>
+				</greater-than>								
+			</or>
+			<equals>
+				<property>/controls/electric/external_power</property>
+				<value>1</value>
+			</equals>
+		</and>
+	</condition>
+</label>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Main Rotor -->
+
+<label>
+	<name>Main Rotor</name>
+	<width>1</width>
+	<height>1</height>
+	<x>0</x>
+	<y>92</y>
+	<halign>center</halign>
+	<format>Main Rotor</format>
+	<box>false</box>
+	<option>center</option>	
+</label>
+<label>
+	<name>Main Rotor OK</name>
+	<width>1</width>
+	<height>1</height>
+	<x>0</x>
+	<y>80</y>
+	<halign>center</halign>
+	<format>OK</format>
+	<box>false</box>
+	<option>center</option>
+  	<condition>
+		<greater-than>
+			<property>fdm/jsbsim/propulsion/engine[1]/propeller-rpm</property>
+			<value>180</value>
+		</greater-than>
+	</condition>	
+</label>
+<label>
+	<name>Main Rotor Stopped</name>
+	<width>1</width>
+	<height>1</height>
+	<x>0</x>
+	<y>80</y>
+	<halign>center</halign>
+	<format>STOPPED</format>
+	<box>false</box>
+	<option>center</option>
+  	<condition>
+		<less-than>
+			<property>fdm/jsbsim/propulsion/engine[1]/propeller-rpm</property>
+			<value>0.1</value>
+		</less-than>
+	</condition>	
+</label>
+<label>
+	<name>Main Rotor rpm</name>
+	<width>1</width>
+	<height>5</height>
+	<x>0</x>
+	<y>80</y>
+	<halign>center</halign>
+	<format>%.0f</format>
+	<postfix>:rpm</postfix>	
+	<box>false</box>
+	<option>center</option>
+	<input>
+		<property>fdm/jsbsim/propulsion/engine[1]/propeller-rpm</property>
+	</input>
+  	<condition>
+		<and>
+			<greater-than>
+				<property>fdm/jsbsim/propulsion/engine[1]/propeller-rpm</property>
+				<value>0.1</value>
+			</greater-than>
+			<less-than>
+				<property>fdm/jsbsim/propulsion/engine[1]/propeller-rpm</property>
+				<value>180</value>
+			</less-than>
+		</and>
+	</condition>	
+</label>
+<gauge>
+	<name>Main Rotor rpm</name>
+	<x>-60</x>
+	<y>70</y>
+	<width>120</width>
+	<height>10</height>
+	<option>horizontal</option>
+	<option>top</option>
+	<option>notext</option>
+	<major-divisions>20</major-divisions>
+	<minor-divisions>0</minor-divisions>
+	<enable-pointer>true</enable-pointer>
+	<pointer-type>fixed</pointer-type>
+	<input>
+		<property>fdm/jsbsim/propulsion/engine[1]/propeller-rpm</property>
+		<max>200</max>
+		<min>0</min>
+	</input>
+  	<condition>
+		<and>
+			<greater-than>
+				<property>fdm/jsbsim/propulsion/engine[1]/propeller-rpm</property>
+				<value>0.1</value>
+			</greater-than>
+			<less-than>
+				<property>fdm/jsbsim/propulsion/engine[1]/propeller-rpm</property>
+				<value>180</value>
+			</less-than>
+		</and>
+	</condition>
+</gauge>
+
+
+<label>
+	<name>Ok for take-off</name>
+	<width>90</width>
+	<height>10</height>
+	<x>-45</x>
+	<y>-20</y>
+	<halign>l</halign>
+	<format>OK FOR TAKE-OFF</format>
+	<box>true</box>
+	<option>center</option>
+  	<condition>
+		<and>
+			<greater-than>
+				<property>/sim/hud/flashing</property>
+				<value>0.5</value>
+			</greater-than>
+			<greater-than>
+				<property>fdm/jsbsim/propulsion/engine[1]/propeller-rpm</property>
+				<value>180</value>
+			</greater-than>
+			<greater-than>
+				<property>fdm/jsbsim/propulsion/engine[3]/propeller-rpm</property>
+				<value>8900</value>
+			</greater-than>
+			<greater-than>
+				<property>fdm/jsbsim/propulsion/engine[4]/propeller-rpm</property>
+				<value>8900</value>
+			</greater-than>
+		</and>
+	</condition>
+</label>
+
+</PropertyList>
