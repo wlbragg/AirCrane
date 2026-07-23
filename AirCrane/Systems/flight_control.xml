@@ -875,6 +875,19 @@ engine[4] = Turbine No.2
 	
 	<channel name="huds">
 	
+	
+ 		<fcs_function>
+			<function>
+				<sum>
+					<p>position/h-agl-ft</p>
+					<v>-8.489</v>						
+				</sum>
+			</function>
+			<output>/sim/hud/h-agl-ft</output>
+		</fcs_function>	
+	
+	
+	
  		<fcs_function>
 			<function>
 				<ifthen>

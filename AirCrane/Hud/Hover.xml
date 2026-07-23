@@ -3,7 +3,7 @@
 <PropertyList>
 <name>Hover-2 HUD</name>
 
-<enable3d>true</enable3d>
+<enable3d>false</enable3d>
 
 
 	<!-- HOVER MODE -->
@@ -1415,7 +1415,7 @@
 </gauge> -->
 
 
-<gauge>
+<!-- <gauge>
 	<name>AGL upper</name>
 	<x>-60</x>
 	<y>-77.5</y>
@@ -1435,7 +1435,7 @@
 	</input>
    	<condition>
 			<greater-than>
-				<property>/position/altitude-agl-ft</property>
+				<property>/sim/hud/h-agl-ft</property>
 				<value>1000</value>
 			</greater-than>	
 	</condition>  
@@ -1465,14 +1465,180 @@
 				<value>1000</value>
 			</less-than-equals>
 			<greater-than>
-				<property>/position/altitude-agl-ft</property>
+				<property>/sim/hud/h-agl-ft</property>
 				<value>100</value>
 			</greater-than>	
 		</and>
 	</condition>  
-</gauge>
+</gauge> -->
 
 <!-- Altitude Target Pointer -->
+
+<label>
+	<name>0-100ft</name>
+	<width>1</width>
+	<height>1</height>
+	<x>-72</x>
+	<y>15</y>
+	<halign>center</halign>	
+	<format>100ft</format>
+	<box>false</box>
+	<option>center</option>
+   	<condition>
+		<and>
+			<less-than-equals>
+				<property>/sim/hud/h-agl-ft</property>
+				<value>100</value>
+			</less-than-equals>
+			<greater-than>
+				<property>/sim/hud/h-agl-ft</property>
+				<value>50</value>
+			</greater-than>
+		</and>
+	</condition> 
+</label>
+<label>
+	<name>0-50ft</name>
+	<width>1</width>
+	<height>1</height>
+	<x>-72</x>
+	<y>15</y>
+	<halign>center</halign>	
+	<format>50ft</format>
+	<box>false</box>
+	<option>center</option>
+   	<condition>
+		<less-than-equals>
+			<property>/sim/hud/h-agl-ft</property>
+			<value>50</value>
+		</less-than-equals>
+	</condition> 
+</label>
+<label>
+	<name>0ft</name>
+	<width>1</width>
+	<height>1</height>
+	<x>-72</x>
+	<y>-97</y>
+	<halign>center</halign>	
+	<format>0ft</format>
+	<box>false</box>
+	<option>center</option>
+   	<condition>
+		<less-than-equals>
+			<property>/sim/hud/h-agl-ft</property>
+			<value>100</value>
+		</less-than-equals>
+	</condition> 
+</label>
+
+<!-- 0-50ft Target Pointer -->
+
+<gauge>
+	<name>AGL 0-50ft</name>
+	<x>-75</x>
+	<y>-90</y>
+	<width>5</width>
+	<height>100</height>
+	<option>vertical</option>
+	<option>left</option>
+	<option>notext</option>
+	<major-divisions>100</major-divisions>
+	<minor-divisions>5</minor-divisions>
+	<enable-pointer>true</enable-pointer>
+	<pointer-type>fixed</pointer-type>
+	<input>
+		<property>/sim/hud/h-agl-ft</property>
+		<max>50</max>
+		<min>0</min>
+	</input>
+   	<condition>
+		<less-than-equals>
+			<property>/sim/hud/h-agl-ft</property>
+			<value>100</value>
+		</less-than-equals>
+	</condition>  
+</gauge>
+<gauge>
+	<name>AGL 0-50ft</name>
+	<x>-70</x>
+	<y>-90</y>
+	<width>5</width>
+	<height>100</height>
+	<option>vertical</option>
+	<option>right</option>
+	<option>notext</option>
+	<major-divisions>0</major-divisions>
+	<minor-divisions>5</minor-divisions>
+	<enable-pointer>true</enable-pointer>
+	<pointer-type>fixed</pointer-type>
+	<input>
+		<property>/sim/hud/h-agl-ft</property>
+		<max>50</max>
+		<min>0</min>
+	</input>
+   	<condition>
+		<less-than-equals>
+			<property>/sim/hud/h-agl-ft</property>
+			<value>100</value>
+		</less-than-equals>
+	</condition>  
+</gauge>
+
+<!-- 0-100ft Pointer -->
+
+<gauge>
+	<name>AGL 0-50ft</name>
+	<x>-80</x>
+	<y>-90</y>
+	<width>10</width>
+	<height>100</height>
+	<option>vertical</option>
+	<option>left</option>
+	<option>notext</option>
+	<major-divisions>0</major-divisions>
+	<minor-divisions>0</minor-divisions>
+	<enable-pointer>true</enable-pointer>
+	<pointer-type>fixed</pointer-type>
+	<input>
+		<property>/sim/hud/h-agl-ft</property>
+		<max>50</max>
+		<min>8.5</min>
+	</input>
+   	<condition>
+		<less-than-equals>
+			<property>/sim/hud/h-agl-ft</property>
+			<value>50</value>
+		</less-than-equals>
+	</condition>  
+</gauge>
+<gauge>
+	<name>AGL 0-50ft</name>
+	<x>-70</x>
+	<y>-90</y>
+	<width>10</width>
+	<height>100</height>
+	<option>vertical</option>
+	<option>right</option>
+	<option>notext</option>
+	<major-divisions>0</major-divisions>
+	<minor-divisions>0</minor-divisions>
+	<enable-pointer>true</enable-pointer>
+	<pointer-type>fixed</pointer-type>
+	<input>
+		<property>/sim/hud/h-agl-ft</property>
+		<max>50</max>
+		<min>0</min>
+	</input>
+   	<condition>
+		<less-than-equals>
+			<property>/sim/hud/h-agl-ft</property>
+			<value>50</value>
+		</less-than-equals>
+	</condition>  
+</gauge>
+
+<!-- 0-100ft Target Pointer -->
 
 <gauge>
 	<name>AGL 0-100ft</name>
@@ -1483,20 +1649,26 @@
 	<option>vertical</option>
 	<option>left</option>
 	<option>notext</option>
-	<major-divisions>0</major-divisions>
-	<minor-divisions>0</minor-divisions>
+	<major-divisions>100</major-divisions>
+	<minor-divisions>10</minor-divisions>
 	<enable-pointer>true</enable-pointer>
 	<pointer-type>fixed</pointer-type>
 	<input>
-		<property>/position/altitude-agl-ft</property>
+		<property>/sim/hud/h-agl-ft</property>
 		<max>100</max>
-		<min>8.5</min>
+		<min>0</min>
 	</input>
    	<condition>
-		<less-than-equals>
-			<property>/position/altitude-agl-ft</property>
-			<value>100</value>
-		</less-than-equals>
+		<and>
+			<less-than-equals>
+				<property>/sim/hud/h-agl-ft</property>
+				<value>100</value>
+			</less-than-equals>
+			<greater-than>
+				<property>/sim/hud/h-agl-ft</property>
+				<value>50</value>
+			</greater-than>
+		</and>
 	</condition>  
 </gauge>
 <gauge>
@@ -1509,17 +1681,76 @@
 	<option>right</option>
 	<option>notext</option>
 	<major-divisions>0</major-divisions>
+	<minor-divisions>10</minor-divisions>
+	<enable-pointer>true</enable-pointer>
+	<pointer-type>fixed</pointer-type>
+	<input>
+		<property>/sim/hud/h-agl-ft</property>
+		<max>100</max>
+		<min>0</min>
+	</input>
+   	<condition>
+		<and>
+			<less-than-equals>
+				<property>/sim/hud/h-agl-ft</property>
+				<value>100</value>
+			</less-than-equals>
+			<greater-than>
+				<property>/sim/hud/h-agl-ft</property>
+				<value>50</value>
+			</greater-than>
+		</and>
+	</condition> 
+</gauge>
+
+<!-- 0-100ft Pointer -->
+
+<gauge>
+	<name>AGL 0-100ft</name>
+	<x>-80</x>
+	<y>-90</y>
+	<width>10</width>
+	<height>100</height>
+	<option>vertical</option>
+	<option>left</option>
+	<option>notext</option>
+	<major-divisions>0</major-divisions>
 	<minor-divisions>0</minor-divisions>
 	<enable-pointer>true</enable-pointer>
 	<pointer-type>fixed</pointer-type>
 	<input>
-		<property>/position/altitude-agl-ft</property>
+		<property>/sim/hud/h-agl-ft</property>
 		<max>100</max>
 		<min>8.5</min>
 	</input>
    	<condition>
 		<less-than-equals>
-			<property>/position/altitude-agl-ft</property>
+			<property>/sim/hud/h-agl-ft</property>
+			<value>100</value>
+		</less-than-equals>
+	</condition>  
+</gauge>
+<gauge>
+	<name>AGL 0-100ft</name>
+	<x>-70</x>
+	<y>-90</y>
+	<width>10</width>
+	<height>100</height>
+	<option>vertical</option>
+	<option>right</option>
+	<option>notext</option>
+	<major-divisions>0</major-divisions>
+	<minor-divisions>0</minor-divisions>
+	<enable-pointer>true</enable-pointer>
+	<pointer-type>fixed</pointer-type>
+	<input>
+		<property>/sim/hud/h-agl-ft</property>
+		<max>100</max>
+		<min>8.5</min>
+	</input>
+   	<condition>
+		<less-than-equals>
+			<property>/sim/hud/h-agl-ft</property>
 			<value>100</value>
 		</less-than-equals>
 	</condition>  
