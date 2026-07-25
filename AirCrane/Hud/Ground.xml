@@ -877,6 +877,10 @@
 				<property>fdm/jsbsim/propulsion/engine[4]/propeller-rpm</property>
 				<value>8900</value>
 			</greater-than>
+			<equals>
+				<property>/controls/electric/external_power</property>
+				<value>0</value>
+			</equals>			
 		</and>
 	</condition>
 </label>

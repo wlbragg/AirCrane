@@ -1,20 +1,20 @@
 <?xml version="1.0"?>
 
 <PropertyList>
-<name>AFCS HUD</name>
+<name>Bar_alt HUD</name>
 
 <enable3d>false</enable3d>
 
 <label>
-	<name>AFCS MODE</name>
+	<name>BAR-ALT MODE</name>
 	<width>1</width>
 	<height>1</height>
 	<x>0</x>
 	<y>-107.5</y>
 	<halign>center</halign>
-	<format>AFCS</format>
+	<format>BAR-ALT</format>
 	<box>false</box>
-	<option>center</option>
+	<option>center</option>	
 </label>
 
 <label>
@@ -53,7 +53,7 @@
 	<x>0</x>
 	<y>-30</y>
 	<halign>center</halign>
-	<format>%.0f</format>
+	<format>%.1f</format>
 	<box>false</box>
 	<option>center</option>
 	<input>
@@ -106,7 +106,7 @@
 	<x>0</x>
 	<y>-82</y>
 	<halign>center</halign>
-	<format>%.0f</format>
+	<format>%.1f</format>
 	<box>false</box>
 	<option>center</option>
 	<input>
@@ -159,7 +159,7 @@
 	<x>-23</x>
 	<y>-56</y>
 	<halign>right</halign>
-	<format>%.0f</format>
+	<format>%.1f</format>
 	<box>false</box>
 	<option>center</option>
 	<input>
@@ -180,7 +180,7 @@
 	<x>23</x>
 	<y>-56</y>
 	<halign>left</halign>
-	<format>%.0f</format>
+	<format>%.1f</format>
 	<box>false</box>
 	<option>center</option>
 	<input>
@@ -200,9 +200,9 @@
 	<name>AGL 0-100ft</name>
 	<width>1</width>
 	<height>5</height>
-	<x>-50</x>
+	<x>-55</x>
 	<y>-12.5</y>
-	<halign>right</halign>
+	<halign>left</halign>
 	<format>100ft</format>
 	<box>false</box>
 	<option>center</option>
@@ -217,9 +217,9 @@
 	<name>AGL 0-100ft</name>
 	<width>1</width>
 	<height>5</height>
-	<x>-50</x>
+	<x>-55</x>
 	<y>-97.5</y>
-	<halign>right</halign>
+	<halign>left</halign>
 	<format>0ft</format>
 	<box>false</box>
 	<option>center</option>
@@ -258,9 +258,9 @@
 	<name>AGL 100-1000ft</name>
 	<width>1</width>
 	<height>5</height>
-	<x>-50</x>
+	<x>-55</x>
 	<y>-12.5</y>
-	<halign>right</halign>
+	<halign>left</halign>
 	<format>1kft</format>
 	<box>false</box>
 	<option>center</option>
@@ -281,9 +281,9 @@
 	<name>AGL 100-1000ft</name>
 	<width>1</width>
 	<height>5</height>
-	<x>-50</x>
+	<x>-55</x>
 	<y>-97.5</y>
-	<halign>right</halign>
+	<halign>left</halign>
 	<format>100ft</format>
 	<box>false</box>
 	<option>center</option>
@@ -334,9 +334,9 @@
 	<name>AGL 1000-10000ft</name>
 	<width>1</width>
 	<height>5</height>
-	<x>-50</x>
+	<x>-55</x>
 	<y>-12.5</y>
-	<halign>right</halign>
+	<halign>left</halign>
 	<format>10kft</format>
 	<box>false</box>
 	<option>center</option>
@@ -351,9 +351,9 @@
 	<name>AGL 1000-10000ft</name>
 	<width>1</width>
 	<height>5</height>
-	<x>-50</x>
+	<x>-55</x>
 	<y>-97.5</y>
-	<halign>right</halign>
+	<halign>left</halign>
 	<format>1kft</format>
 	<box>false</box>
 	<option>center</option>
@@ -743,8 +743,8 @@
 	<minor-divisions>10</minor-divisions>
 	<input>
 		<property>/velocities/vertical-speed-fps</property>
-		<max>50</max>
-		<min>10</min>
+		<max>-10</max>
+		<min>-50</min>
 	</input>
    	<condition>	
 		<greater-than>
@@ -753,5 +753,321 @@
 		</greater-than>
 	</condition> 
 </gauge>
+
+<!-- Altitude agl -->
+
+<label> <!-- Top Label -->
+	<name>AGL 0-100ft</name>
+	<width>1</width>
+	<height>5</height>
+	<x>-65</x>
+	<y>-12.5</y>
+	<halign>right</halign>
+	<format>100ft</format>
+	<box>false</box>
+	<option>center</option>
+  	<condition>
+		<less-than-equals>
+			<property>/fdm/jsbsim/fcs/Helicopter/bar_alt-cmd</property>
+			<value>100</value>
+		</less-than-equals>
+	</condition>	
+</label>
+<label> <!-- Bottom Label -->
+	<name>AGL 0-100ft</name>
+	<width>1</width>
+	<height>5</height>
+	<x>-65</x>
+	<y>-97.5</y>
+	<halign>right</halign>
+	<format>0ft</format>
+	<box>false</box>
+	<option>center</option>
+  	<condition>
+		<less-than-equals>
+			<property>/fdm/jsbsim/fcs/Helicopter/bar_alt-cmd</property>
+			<value>100</value>
+		</less-than-equals>
+	</condition>
+</label>
+<gauge>
+	<name>AGL 0-100ft</name>
+	<x>-65</x>
+	<y>-90</y>
+	<width>10</width>
+	<height>75</height>
+	<option>vertical</option>
+	<option>right</option>
+	<option>notext</option>
+	<major-divisions>10</major-divisions>
+	<minor-divisions>0</minor-divisions>
+	<input>
+		<property>/fdm/jsbsim/fcs/Helicopter/bar_alt-cmd</property>
+		<max>100</max>
+		<min>0</min>
+	</input>
+   	<condition>
+		<less-than-equals>
+			<property>/fdm/jsbsim/fcs/Helicopter/bar_alt-cmd</property>
+			<value>100</value>
+		</less-than-equals>
+	</condition>  
+</gauge>
+
+<label> <!-- Top Label -->
+	<name>AGL 100-1000ft</name>
+	<width>1</width>
+	<height>5</height>
+	<x>-65</x>
+	<y>-12.5</y>
+	<halign>right</halign>
+	<format>1kft</format>
+	<box>false</box>
+	<option>center</option>
+  	<condition>
+		<and>
+			<less-than-equals>
+				<property>/fdm/jsbsim/fcs/Helicopter/bar_alt-cmd</property>
+				<value>1000</value>
+			</less-than-equals>
+			<greater-than>
+				<property>/fdm/jsbsim/fcs/Helicopter/bar_alt-cmd</property>
+				<value>100</value>
+			</greater-than>
+		</and>
+	</condition>	
+</label>
+<label> <!-- Bottom Label -->
+	<name>AGL 100-1000ft</name>
+	<width>1</width>
+	<height>5</height>
+	<x>-65</x>
+	<y>-97.5</y>
+	<halign>right</halign>
+	<format>100ft</format>
+	<box>false</box>
+	<option>center</option>
+  	<condition>
+		<and>
+			<less-than-equals>
+				<property>/fdm/jsbsim/fcs/Helicopter/bar_alt-cmd</property>
+				<value>1000</value>
+			</less-than-equals>
+			<greater-than>
+				<property>/fdm/jsbsim/fcs/Helicopter/bar_alt-cmd</property>
+				<value>100</value>
+			</greater-than>
+		</and>
+	</condition>	
+</label>		
+<gauge>
+	<name>AGL 100-1000ft</name>
+	<x>-65</x>
+	<y>-90</y>
+	<width>10</width>
+	<height>75</height>
+	<option>vertical</option>
+	<option>right</option>
+	<option>notext</option>
+	<major-divisions>100</major-divisions>
+	<minor-divisions>0</minor-divisions>
+	<input>
+		<property>/fdm/jsbsim/fcs/Helicopter/bar_alt-cmd</property>
+		<max>1000</max>
+		<min>100</min>
+	</input>
+   	<condition>
+		<and>
+			<less-than-equals>
+				<property>/fdm/jsbsim/fcs/Helicopter/bar_alt-cmd</property>
+				<value>1000</value>
+			</less-than-equals>
+			<greater-than>
+				<property>/fdm/jsbsim/fcs/Helicopter/bar_alt-cmd</property>
+				<value>100</value>
+			</greater-than>
+		</and>
+	</condition>  
+</gauge>
+
+<label> <!-- Top Label -->
+	<name>AGL 1000-10000ft</name>
+	<width>1</width>
+	<height>5</height>
+	<x>-65</x>
+	<y>-12.5</y>
+	<halign>right</halign>
+	<format>10kft</format>
+	<box>false</box>
+	<option>center</option>
+  	<condition>
+		<greater-than>
+			<property>/fdm/jsbsim/fcs/Helicopter/bar_alt-cmd</property>
+			<value>1000</value>
+		</greater-than>
+	</condition>	
+</label>
+<label> <!-- Bottom Label -->
+	<name>AGL 1000-10000ft</name>
+	<width>1</width>
+	<height>5</height>
+	<x>-65</x>
+	<y>-97.5</y>
+	<halign>right</halign>
+	<format>1kft</format>
+	<box>false</box>
+	<option>center</option>
+  	<condition>
+		<greater-than>
+			<property>/fdm/jsbsim/fcs/Helicopter/bar_alt-cmd</property>
+			<value>1000</value>
+		</greater-than>
+	</condition>	
+</label>
+<gauge>
+	<name>AGL 1000-10000ft</name>
+	<x>-65</x>
+	<y>-90</y>
+	<width>10</width>
+	<height>75</height>
+	<option>vertical</option>
+	<option>right</option>
+	<option>notext</option>
+	<major-divisions>1000</major-divisions>
+	<minor-divisions>0</minor-divisions>
+	<input>
+		<property>/fdm/jsbsim/fcs/Helicopter/bar_alt-cmd</property>
+		<max>10000</max>
+		<min>1000</min>
+	</input>
+   	<condition>
+		<greater-than>
+			<property>/fdm/jsbsim/fcs/Helicopter/bar_alt-cmd</property>
+			<value>1000</value>
+		</greater-than>
+	</condition>  
+</gauge>
+
+<!-- Trim -->
+
+<label> <!-- Top Label -->
+	<name>Pitch</name>
+	<width>1</width>
+	<height>5</height>
+	<x>-52</x>
+	<y>45</y>
+	<halign>center</halign>
+	<format>Pitch</format>
+	<box>false</box>
+	<option>center</option>
+</label>
+<label> <!-- Top Label -->
+	<name>Roll</name>
+	<width>1</width>
+	<height>5</height>
+	<x>0</x>
+	<y>45</y>
+	<halign>center</halign>
+	<format>Roll</format>
+	<box>false</box>
+	<option>center</option>
+</label>
+<label> <!-- Top Label -->
+	<name>Yaw</name>
+	<width>1</width>
+	<height>5</height>
+	<x>52</x>
+	<y>45</y>
+	<halign>center</halign>
+	<format>Yaw</format>
+	<box>false</box>
+	<option>center</option>
+</label>
+<!-- <label>
+	<name>Pitch trim</name>
+	<width>1</width>
+	<height>5</height>
+	<x>-52</x>
+	<y>17</y>
+	<halign>center</halign>
+	<format>%0.1f</format>
+	<box>false</box>
+	<option>center</option>
+	<input>
+		<property>/sim/hud/trim-pitch</property>
+	</input>	
+</label>
+<label>
+	<name>Roll trim</name>
+	<width>1</width>
+	<height>5</height>
+	<x>0</x>
+	<y>17</y>
+	<halign>center</halign>
+	<format>%0.1f</format>
+	<box>false</box>
+	<option>center</option>
+	<input>
+		<property>/sim/hud/trim-roll</property>
+	</input>	
+</label>
+<label>
+	<name>Yaw trim</name>
+	<width>1</width>
+	<height>5</height>
+	<x>52</x>
+	<y>17</y>
+	<halign>center</halign>
+	<format>%0.1f</format>
+	<box>false</box>
+	<option>center</option>
+	<input>
+		<property>/sim/hud/trim-yaw</property>
+	</input>	
+</label> -->
+<dial>
+	<name>Pitch</name>
+	<x>-52</x>
+	<y>20</y>
+	<width>10</width>
+	<height>75</height>
+	<input>
+		<property>/sim/hud/trim-pitch</property>
+		<max>180</max>
+		<min>-180</min>
+	</input>
+	<radius>20</radius>
+	<divisions>16</divisions>
+</dial>
+
+<dial>
+	<name>Roll</name>
+	<x>0</x>
+	<y>20</y>
+	<width>10</width>
+	<height>75</height>
+	<input>
+		<property>/sim/hud/trim-roll</property>
+		<max>180</max>
+		<min>-180</min>
+	</input>
+	<radius>20</radius>
+	<divisions>16</divisions>
+</dial>
+
+<dial>
+	<name>Yaw</name>
+	<x>52</x>
+	<y>20</y>
+	<width>10</width>
+	<height>75</height>
+	<input>
+		<property>/sim/hud/trim-yaw</property>
+		<max>180</max>
+		<min>-180</min>
+	</input>
+	<radius>20</radius>
+	<divisions>16</divisions>
+</dial>
 
 </PropertyList>

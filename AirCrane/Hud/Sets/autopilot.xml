@@ -1,0 +1,277 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+	
+	<!-- Roll -->
+	<label>
+		<width>60</width>
+		<height>10</height>
+		<box>true</box>
+		<format>ROLL %3.1f</format>
+		<halign>center</halign>
+		<input>
+			<property>/autopilot/settings/target-roll-deg</property>
+		</input>
+		<condition>
+			<equals>
+				<property>/autopilot/locks/heading</property>
+				<value>wing-leveler</value>
+			</equals>
+		</condition>
+	</label>
+	
+	<label>
+		<width>60</width>
+		<height>10</height>
+		<box>true</box>
+		<format>HDG %03d</format>
+		<halign>center</halign>
+		<input>
+			<property>/autopilot/settings/heading-bug-deg</property>
+		</input>
+		<condition>
+			<equals>
+				<property>/autopilot/locks/heading</property>
+				<value>dg-heading-hold</value>
+			</equals>
+		</condition>
+	</label>
+	
+	<label>
+		<width>60</width>
+		<height>10</height>
+		<box>true</box>
+		<format>HDG %03d</format>
+		<halign>center</halign>
+		<input>
+			<property>/autopilot/settings/true-heading-deg</property>
+		</input>
+		<condition>
+			<equals>
+				<property>/autopilot/locks/heading</property>
+				<value>true-heading-hold</value>
+			</equals>
+		</condition>
+	</label>
+	
+	<label>
+		<width>60</width>
+		<height>10</height>
+		<box>true</box>
+		<format>NAV1 CDI</format>
+		<halign>center</halign>
+		<condition>
+			<equals>
+				<property>/autopilot/locks/heading</property>
+				<value>nav1-hold</value>
+			</equals>
+		</condition>
+	</label>
+	
+	<!-- Pitch -->
+	<label>
+		<x>60</x>
+		<width>60</width>
+		<height>10</height>
+		<box>true</box>
+		<format>V/S %d</format>
+		<halign>center</halign>
+		<input>
+			<property>/autopilot/settings/vertical-speed-fpm</property>
+		</input>
+		<condition>
+			<not><property>/autopilot/internal/speed-on-pitch-active</property></not>
+			<equals>
+				<property>/autopilot/locks/altitude</property>
+				<value>vertical-speed-hold</value>
+			</equals>
+		</condition>
+	</label>
+	
+	<label>
+		<x>60</x>
+		<width>60</width>
+		<height>10</height>
+		<box>true</box>
+		<format>PITCH %3.1f</format>
+		<halign>center</halign>
+		<input>
+			<property>/autopilot/settings/target-pitch-deg</property>
+		</input>
+		<condition>
+			<not><property>/autopilot/internal/speed-on-pitch-active</property></not>
+			<equals>
+				<property>/autopilot/locks/altitude</property>
+				<value>pitch-hold</value>
+			</equals>
+		</condition>
+	</label>
+	
+	<label>
+		<x>60</x>
+		<width>60</width>
+		<height>10</height>
+		<box>true</box>
+		<format>FPA %3.1f</format>
+		<halign>center</halign>
+		<input>
+			<property>/autopilot/settings/target-fpa-deg</property>
+		</input>
+		<condition>
+			<not><property>/autopilot/internal/speed-on-pitch-active</property></not>
+			<equals>
+				<property>/autopilot/locks/altitude</property>
+				<value>fpa-hold</value>
+			</equals>
+		</condition>
+	</label>
+	
+	<label>
+		<x>60</x>
+		<width>60</width>
+		<height>10</height>
+		<box>true</box>
+		<format>ALT %03d</format>
+		<halign>center</halign>
+		<input>
+			<property>/autopilot/settings/target-altitude-ft</property>
+		</input>
+		<condition>
+			<not><property>/autopilot/internal/speed-on-pitch-active</property></not>
+			<equals>
+				<property>/autopilot/locks/altitude</property>
+				<value>altitude-hold</value>
+			</equals>
+		</condition>
+	</label>
+	
+	<label>
+		<x>60</x>
+		<width>60</width>
+		<height>10</height>
+		<format>AGL %03d</format>
+		<halign>center</halign>
+		<box>true</box>
+		<input>
+			<property>/autopilot/settings/target-agl-ft</property>
+		</input>
+		<condition>
+			<not><property>/autopilot/internal/speed-on-pitch-active</property></not>
+			<equals>
+				<property>/autopilot/locks/altitude</property>
+				<value>agl-hold</value>
+			</equals>
+		</condition>
+	</label>
+	
+	<label>
+		<x>60</x>
+		<width>60</width>
+		<height>10</height>
+		<format>NAV1 G/S</format>
+		<halign>center</halign>
+		<box>true</box>
+		<condition>
+			<not><property>/autopilot/internal/speed-on-pitch-active</property></not>
+			<equals>
+				<property>/autopilot/locks/altitude</property>
+				<value>gs1-hold</value>
+			</equals>
+		</condition>
+	</label>
+	
+	<label>
+		<x>60</x>
+		<width>60</width>
+		<height>10</height>
+		<format>IAS %3d</format>
+		<halign>center</halign>
+		<box>true</box>
+		<input>
+			<property>/autopilot/settings/target-speed-kt</property>
+		</input>
+		<condition>
+			<equals>
+				<property>/autopilot/locks/speed</property>
+				<value>speed-with-pitch-trim</value>
+			</equals>
+		</condition>
+	</label>
+	
+	<label>
+		<x>60</x>
+		<width>60</width>
+		<height>10</height>
+		<format>MACH %4.3f</format>
+		<halign>center</halign>
+		<box>true</box>
+		<input>
+			<property>/autopilot/settings/target-speed-mach</property>
+		</input>
+		<condition>
+			<equals>
+				<property>/autopilot/locks/speed</property>
+				<value>mach-with-pitch-trim</value>
+			</equals>
+		</condition>
+	</label>
+	
+	<!-- Speed -->
+	<label>
+		<x>120</x>
+		<width>60</width>
+		<height>10</height>
+		<format>IAS %3d</format>
+		<halign>center</halign>
+		<box>true</box>
+		<input>
+			<property>/autopilot/settings/target-speed-kt</property>
+		</input>
+		<condition>
+			<equals>
+				<property>/autopilot/locks/speed</property>
+				<value>speed-with-throttle</value>
+			</equals>
+		</condition>
+	</label>
+	
+	<label>
+		<x>120</x>
+		<width>60</width>
+		<height>10</height>
+		<format>MACH %4.3f</format>
+		<halign>center</halign>
+		<box>true</box>
+		<input>
+			<property>/autopilot/settings/target-speed-mach</property>
+		</input>
+		<condition>
+			<equals>
+				<property>/autopilot/locks/speed</property>
+				<value>mach-with-throttle</value>
+			</equals>
+		</condition>
+	</label>
+	
+	<label>
+		<x>120</x>
+		<width>60</width>
+		<height>10</height>
+		<format>UNLOCKED</format>
+		<halign>center</halign>
+		<box>true</box>
+		<condition>
+			<or>
+				<equals>
+					<property>/autopilot/locks/speed</property>
+					<value>speed-with-pitch-trim</value>
+				</equals>
+				<equals>
+					<property>/autopilot/locks/speed</property>
+					<value>mach-with-pitch-trim</value>
+				</equals>
+			</or>
+		</condition>
+	</label>
+
+</PropertyList>

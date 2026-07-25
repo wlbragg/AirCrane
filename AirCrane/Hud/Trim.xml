@@ -1,18 +1,18 @@
 <?xml version="1.0"?>
 
 <PropertyList>
-<name>AFCS HUD</name>
+<name>Trim HUD</name>
 
 <enable3d>false</enable3d>
 
 <label>
-	<name>AFCS MODE</name>
+	<name>TRIM MODE</name>
 	<width>1</width>
 	<height>1</height>
 	<x>0</x>
 	<y>-107.5</y>
 	<halign>center</halign>
-	<format>AFCS</format>
+	<format>TRIM</format>
 	<box>false</box>
 	<option>center</option>
 </label>
@@ -753,5 +753,127 @@
 		</greater-than>
 	</condition> 
 </gauge>
+
+<!-- Trim -->
+
+<label> <!-- Top Label -->
+	<name>Pitch</name>
+	<width>1</width>
+	<height>5</height>
+	<x>-52</x>
+	<y>45</y>
+	<halign>center</halign>
+	<format>Pitch</format>
+	<box>false</box>
+	<option>center</option>
+</label>
+<label> <!-- Top Label -->
+	<name>Roll</name>
+	<width>1</width>
+	<height>5</height>
+	<x>0</x>
+	<y>45</y>
+	<halign>center</halign>
+	<format>Roll</format>
+	<box>false</box>
+	<option>center</option>
+</label>
+<label> <!-- Top Label -->
+	<name>Yaw</name>
+	<width>1</width>
+	<height>5</height>
+	<x>52</x>
+	<y>45</y>
+	<halign>center</halign>
+	<format>Yaw</format>
+	<box>false</box>
+	<option>center</option>
+</label>
+<!-- <label>
+	<name>Pitch trim</name>
+	<width>1</width>
+	<height>5</height>
+	<x>-52</x>
+	<y>17</y>
+	<halign>center</halign>
+	<format>%0.1f</format>
+	<box>false</box>
+	<option>center</option>
+	<input>
+		<property>/sim/hud/trim-pitch</property>
+	</input>	
+</label>
+<label>
+	<name>Roll trim</name>
+	<width>1</width>
+	<height>5</height>
+	<x>0</x>
+	<y>17</y>
+	<halign>center</halign>
+	<format>%0.1f</format>
+	<box>false</box>
+	<option>center</option>
+	<input>
+		<property>/sim/hud/trim-roll</property>
+	</input>	
+</label>
+<label>
+	<name>Yaw trim</name>
+	<width>1</width>
+	<height>5</height>
+	<x>52</x>
+	<y>17</y>
+	<halign>center</halign>
+	<format>%0.1f</format>
+	<box>false</box>
+	<option>center</option>
+	<input>
+		<property>/sim/hud/trim-yaw</property>
+	</input>	
+</label> -->
+<dial>
+	<name>Pitch</name>
+	<x>-52</x>
+	<y>20</y>
+	<width>10</width>
+	<height>75</height>
+	<input>
+		<property>/sim/hud/trim-pitch</property>
+		<max>360</max>
+		<min>-360</min>
+	</input>
+	<radius>20</radius>
+	<divisions>16</divisions>
+</dial>
+
+<dial>
+	<name>Roll</name>
+	<x>0</x>
+	<y>20</y>
+	<width>10</width>
+	<height>75</height>
+	<input>
+		<property>/sim/hud/trim-roll</property>
+		<max>360</max>
+		<min>-360</min>
+	</input>
+	<radius>20</radius>
+	<divisions>16</divisions>
+</dial>
+
+<dial>
+	<name>Yaw</name>
+	<x>52</x>
+	<y>20</y>
+	<width>10</width>
+	<height>75</height>
+	<input>
+		<property>/sim/hud/trim-yaw</property>
+		<max>360</max>
+		<min>-360</min>
+	</input>
+	<radius>20</radius>
+	<divisions>16</divisions>
+</dial>
 
 </PropertyList>
