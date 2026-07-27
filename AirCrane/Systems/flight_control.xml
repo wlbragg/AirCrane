@@ -32,25 +32,6 @@ engine[4] = Turbine No.2
 
 <system name="flight_control">
 
-	<!-- <property type="double" value="1">T4T/AGP/augmentation_factor</property>
-	<property type="double" value="0">T4T/AGP/PID/collective/cmd-norm</property>
-
-	<property type="double" value="0">T4T/AGP/trim</property>
-	<property type="double" value="1">T4T/AGP/mode</property>
-	<property type="double" value="1">T4T/AGP/mode-1</property>
-	<property type="double" value="1">T4T/AGP/mode-1-pos</property>
-	<property type="double" value="0">T4T/AGP/mode-2</property>
-	<property type="double" value="0">T4T/AGP/mode-2-pos</property>
-	<property type="double" value="0">T4T/AGP/mode-3</property>
-	<property type="double" value="0">T4T/AGP/mode-3-pos</property>
-	<property type="double" value="0">T4T/AGP/mode-4</property>
-	<property type="double" value="0">T4T/AGP/mode-4-pos</property>
-	<property type="double" value="0">T4T/AGP/mode-5</property>
-	<property type="double" value="0">T4T/AGP/mode-5-pos</property>
-	<property type="double" value="0">T4T/AGP/mode-6</property>
-	<property type="double" value="0">T4T/AGP/mode-6-pos</property>
-	<property type="double" value="0">T4T/AGP/PID/alt/error</property> -->
-
 	<property type="double" value="0">fcs/collective-cmd-pos</property>
 	<property type="double" value="0">fcs/cyclic_roll-cmd-pos</property>
 	<property type="double" value="0">fcs/cyclic_pitch-cmd-pos</property>
@@ -59,30 +40,9 @@ engine[4] = Turbine No.2
 
 	<property type="double" value="5">propulsion/engine[1]/rotor/cyclic_delta-deg</property>		
 	<property type="double" value="1.5">propulsion/engine[1]/rotor/damping-factor</property>
-	<property type="double" value="0">/controls/electric/AFCS/Manual</property>
-	<property type="double" value="1">/controls/electric/AFCS/Active</property>	
-	
 	
 	<channel name="initial">
 	
-	<!-- Interlocks -->
-	
-		<switch>
-			<default value="/controls/electric/AFCS/Active"/>
-			<test value="0">
-				/controls/electric/AFCS/Manual eq 1
-			</test>
-			<output>/controls/electric/AFCS/Active</output>
-		</switch>
-		<switch>
-			<default value="/controls/electric/AFCS/Manual"/>
-			<test value="0">
-				/controls/electric/AFCS/Active eq 1
-			</test>
-			<output>/controls/electric/AFCS/Manual</output>
-		</switch>
-
-		
 	<!-- Rotor Brake -->
 
 		<fcs_function>
@@ -195,6 +155,48 @@ engine[4] = Turbine No.2
 			</clipto>						
 		</fcs_function>
 		
+	<!-- Interlocks -->
+		
+ 		<fcs_function>
+			<function>
+				<ifthen>
+					<lt>
+						<p>/fdm/jsbsim/propulsion/engine[1]/rotor/vortex_ring</p>
+						<v>1</v>
+					</lt>
+					<v>1</v>
+					<p>/controls/electric/AFCS/Manual</p>
+				</ifthen>
+			</function>
+			<output>/controls/electric/AFCS/Manual</output>
+		</fcs_function>		
+ 		<fcs_function>
+			<function>
+				<ifthen>
+					<lt>
+						<p>/fdm/jsbsim/propulsion/engine[1]/rotor/vortex_ring</p>
+						<v>1</v>
+					</lt>
+					<v>0</v>					
+					<p>/controls/electric/AFCS/Active</p>					
+				</ifthen>
+			</function>
+			<output>/controls/electric/AFCS/Active</output>
+		</fcs_function>			
+ 		<fcs_function>
+			<function>
+				<ifthen>
+					<lt>
+						<p>/controls/electric/AFCS/Active</p>
+						<v>1</v>
+					</lt>
+					<v>0</v>						
+					<p>/controls/electric/AFCS/bar_alt</p>														
+				</ifthen>
+			</function>
+			<output>/controls/electric/AFCS/bar_alt</output>
+		</fcs_function>			
+		
 	</channel>
 		
 	<channel name="Manual Control" execute="/controls/electric/AFCS/Manual">
@@ -229,14 +231,71 @@ engine[4] = Turbine No.2
 	<property type="double" value="-0.007">/controls/electric/roll-trim</property>	
 	
 	<channel name="AFCS Control" execute="/controls/electric/AFCS/Active">
-
+		
 	<!-- Alt Adjust -->
 	
-		<summer>
-			<input>fcs/Helicopter/collective-cmd-norm</input>
-			<input></input>
-			<output>fcs/Helicopter/manual_collective-cmd-norm</output>
+ 		<fcs_function>
+			<function>
+				<ifthen>
+					<eq>
+						<p>/controls/electric/AFCS/bar_alt</p>
+						<v>1</v>
+					</eq>
+					<table>
+						<independentVar>fcs/Helicopter/bar_alt_error-ft</independentVar>
+						<tableData>
+							-100	-5
+							100		5
+						</tableData>
+					</table>
+					<table>
+						<independentVar>fcs/Helicopter/collective-cmd-norm</independentVar>
+						<tableData>
+							0		5
+							1		-5
+						</tableData>
+					</table>
+				</ifthen>
+			</function>
+			<output>fcs/Helicopter/w_target-fps</output>
+		</fcs_function>
+
+		<summer> <!-- error -->
+			<input>velocities/w-fps</input>		
+			<input>-fcs/Helicopter/w_target-fps</input>
+			<output>fcs/Helicopter/w_error-fps</output>
 		</summer>
+		
+		<pure_gain> <!-- Rate of Change -->
+			<input>fcs/Helicopter/w_error-fps</input>
+			<gain>0.001</gain>
+			<output>fcs/Helicopter/alt_RoC-fps</output>
+		</pure_gain>
+				
+		<pure_gain> <!-- Acceleration Damping -->
+			<input>accelerations/wdot-ft_sec2</input>
+			<gain>0.001</gain>
+			<output>fcs/Helicopter/damping_RoC-w-fps2</output>
+		</pure_gain>
+		
+		<summer>
+			<input>fcs/Helicopter/AFCS_alt-cmd-norm</input>		
+			<input>fcs/Helicopter/alt_RoC-fps</input>
+			<input>fcs/Helicopter/damping_RoC-w-fps2</input>
+			<clipto>
+				<min>-1</min>
+				<max>1</max>
+			</clipto>
+			<output>fcs/Helicopter/AFCS_alt-cmd-norm</output>
+		</summer>
+		
+		<switch>
+			<default value="/sim/hud/h-agl-ft"/>
+			<test value="fcs/Helicopter/bar_alt-cmd">
+				/controls/electric/AFCS/bar_alt eq 1
+			</test>
+			<output>fcs/Helicopter/bar_alt-cmd</output>
+		</switch>	
 	
 	<!-- Pitch Adjust -->
 	
@@ -454,42 +513,42 @@ engine[4] = Turbine No.2
 		
 	</channel>
 		
-	<channel name="Hover Assist" execute="/controls/electric/AFCS/bar_alt">
-	
-	<!-- Interlocks -->
-	
-		<summer>
-			<input></input>
-			<input></input>			
-			<output>/controls/electric/AFCS/Active</output>
-		</summer>	
-	
-	<!-- Alt Adjust -->
-	
+	<channel name="Bar Alt" execute="/controls/electric/AFCS/bar_alt">
+
 		<scheduled_gain>
 			<input>T4T/one</input>
 			<table>
 				<independentVar>fcs/Helicopter/collective-cmd-norm</independentVar>
 				<tableData>
-					0		5
-					1		-5
+					0		-0.1
+					1		0.1
 				</tableData>
 			</table>
-			<output>fcs/Helicopter/w_target-fps</output>
+			<output>fcs/Helicopter/bar_alt-adjustment</output>
 		</scheduled_gain>
-
+		
+		<summer>
+			<input>fcs/Helicopter/bar_alt-cmd</input>		
+			<input>fcs/Helicopter/bar_alt-adjustment</input>
+			<output>fcs/Helicopter/bar_alt-cmd</output>
+			<clipto>
+				<min>0</min>
+				<max>100000</max>
+			</clipto>
+		</summer>
+		
 		<summer> <!-- error -->
-			<input>velocities/w-fps</input>		
-			<input>-fcs/Helicopter/w_target-fps</input>
-			<output>fcs/Helicopter/w_error-fps</output>
+			<input>/sim/hud/h-agl-ft</input>		
+			<input>-fcs/Helicopter/bar_alt-cmd</input>
+			<output>fcs/Helicopter/bar_alt_error-ft</output>
 		</summer>
 		
 		<pure_gain> <!-- Rate of Change -->
-			<input>fcs/Helicopter/w_error-fps</input>
+			<input>-fcs/Helicopter/bar_alt_error-ft</input>
 			<gain>0.001</gain>
-			<output>fcs/Helicopter/alt_RoC-fps</output>
+			<output>fcs/Helicopter/bar_alt_RoC-ft</output>
 		</pure_gain>
-				
+		
 		<pure_gain> <!-- Acceleration Damping -->
 			<input>accelerations/wdot-ft_sec2</input>
 			<gain>0.001</gain>
@@ -497,150 +556,18 @@ engine[4] = Turbine No.2
 		</pure_gain>
 		
 		<summer>
-			<input>fcs/Helicopter/hover_alt-cmd-norm</input>		
-			<input>fcs/Helicopter/alt_RoC-fps</input>
+			<input>fcs/Helicopter/bar_alt-cmd-norm</input>		
+			<input>fcs/Helicopter/bar_alt_RoC-ft</input>
 			<input>fcs/Helicopter/damping_RoC-w-fps2</input>
 			<clipto>
 				<min>-1</min>
 				<max>1</max>
 			</clipto>
-			<output>fcs/Helicopter/hover_alt-cmd-norm</output>
+			<output>fcs/Helicopter/bar_alt-cmd-norm</output>
 		</summer>
 		
-	<!-- U-fps Adjust -->
-	
-		<scheduled_gain>
-			<input>T4T/one</input>
-			<table>
-				<independentVar>fcs/Helicopter/cyclic_pitch-cmd-norm</independentVar>
-				<tableData>
-					-1		5
-					1		-5
-				</tableData>
-			</table>
-			<output>fcs/Helicopter/u_target-fps</output>
-		</scheduled_gain>
-		
-		<summer> <!-- error -->
-			<input>velocities/u-fps</input>		
-			<input>-fcs/Helicopter/u_target-fps</input>		
-			<output>fcs/Helicopter/u_error-fps</output>
-		</summer>
 
-		<pid> <!-- Rate of Change -->	
-			<input>-fcs/Helicopter/u_error-fps</input>
-			<kp>0.00002</kp>
-			<ki>0</ki>
-			<kd>0.00001</kd>
-			<output>fcs/Helicopter/pitch_RoC-fps</output>
-		</pid>		
-	
-		<pure_gain> <!-- Acceleration Damping -->
-			<input>-accelerations/udot-ft_sec2</input>
-			<gain>0.00001</gain>
-			<output>fcs/Helicopter/damping_u-ft_sec2</output>
-		</pure_gain>
 
-		<summer>
-			<input>fcs/Helicopter/hover_pitch-cmd-norm</input>		
-			<input>fcs/Helicopter/pitch_RoC-fps</input>
-			<input>fcs/Helicopter/damping_u-ft_sec2</input>
-			<clipto>
-				<min>-1</min>
-				<max>1</max>
-			</clipto>
-			<output>fcs/Helicopter/hover_pitch-cmd-norm</output>
-		</summer>
-	
-	<!-- v-fps Adjust -->
-	
-		<scheduled_gain>
-			<input>T4T/one</input>
-			<table>
-				<independentVar>fcs/Helicopter/cyclic_roll-cmd-norm</independentVar>
-				<tableData>
-					-1		-5
-					1		5
-				</tableData>
-			</table>
-			<output>fcs/Helicopter/v_target-fps</output>
-		</scheduled_gain>
-
-		<summer> <!-- error -->
-			<input>velocities/v-fps</input>		
-			<input>-fcs/Helicopter/v_target-fps</input>		
-			<output>fcs/Helicopter/v_error-fps</output>
-		</summer>		
-
-		<pid> <!-- Rate of Change -->
-			<input>-fcs/Helicopter/v_error-fps</input>
-			<kp>0.00002</kp>
-			<ki>0</ki>
-			<kd>0.00001</kd>
-			<output>fcs/Helicopter/roll_RoC-fps</output>
-		</pid>
-		
-		<pure_gain> <!-- Acceleration Damping -->
-			<input>-accelerations/vdot-ft_sec2</input>
-			<gain>0.00001</gain>
-			<output>fcs/Helicopter/damping_v-ft_sec2</output>
-		</pure_gain>		
-
-		<summer>
-			<input>fcs/Helicopter/hover_roll-cmd-norm</input>		
-			<input>fcs/Helicopter/roll_RoC-fps</input>
-			<input>fcs/Helicopter/damping_v-ft_sec2</input>
-			<clipto>
-				<min>-1</min>
-				<max>1</max>
-			</clipto>
-			<output>fcs/Helicopter/hover_roll-cmd-norm</output>
-		</summer>
-		
-	<!-- Yaw Adjust -->
-	
-		<scheduled_gain>
-			<input>T4T/one</input>
-			<table>
-				<independentVar>fcs/Helicopter/pedals-cmd-norm</independentVar>
-				<tableData>
-					-1		-0.5
-					1		0.5
-				</tableData>
-			</table>
-			<output>fcs/Helicopter/r_target-rad</output>
-		</scheduled_gain>
-
-		<summer> <!-- error -->
-			<input>fcs/Helicopter/r_target-rad</input>		
-			<input>-velocities/r-rad_sec</input>
-			<output>fcs/Helicopter/r_error-rad</output>
-		</summer>		
-
-		<pure_gain> <!-- Rate of Change -->
-			<input>fcs/Helicopter/r_error-rad</input>
-			<gain>0.01</gain>
-			<output>fcs/Helicopter/rudder_RoC-rad</output>
-		</pure_gain>
-		
-		<pure_gain> <!-- Acceleration Damping -->
-			<input>-accelerations/rdot-rad_sec2</input>
-			<gain>0.1</gain>
-			<output>fcs/Helicopter/damping_RoC-r-rad2</output>
-		</pure_gain>
-
-		<summer>
-			<input>fcs/Helicopter/AFCS_rudder-cmd-norm</input>		
-			<input>fcs/Helicopter/rudder_RoC-rad</input>
-			<input>fcs/Helicopter/damping_RoC-r-rad2</input>
-			<clipto>
-				<min>-1</min>
-				<max>1</max>
-			</clipto>
-			<output>fcs/Helicopter/hover_rudder-cmd-norm</output>
-		</summer>
-
-		
 	</channel>
 	
 	<channel name="Control">
@@ -648,21 +575,24 @@ engine[4] = Turbine No.2
 	<!-- Alt Control -->
 	
  		<fcs_function>
-			<function>
+			<function>					
 				<ifthen>
 					<eq>
-						<p>/controls/electric/AFCS/Manual</p>
+						<p>/controls/electric/AFCS/Active</p>
 						<v>1</v>
 					</eq>
-					<p>fcs/Helicopter/manual_collective-cmd-norm</p>					
 					<ifthen>
 						<eq>
-							<p>/controls/electric/AFCS/Active</p>
+							<p>/controls/electric/AFCS/bar_alt</p>
 							<v>1</v>
 						</eq>
-						<p>fcs/Helicopter/manual_collective-cmd-norm</p>							
-						<p>fcs/Helicopter/hover_alt-cmd-norm</p>						
+						<sum>
+							<p>fcs/Helicopter/bar_alt-cmd-norm</p>
+							<p>fcs/Helicopter/AFCS_alt-cmd-norm</p>
+						</sum>
+						<p>fcs/Helicopter/AFCS_alt-cmd-norm</p>						
 					</ifthen>
+					<p>fcs/Helicopter/manual_collective-cmd-norm</p>
 				</ifthen>
 			</function>
 			<clipto>
@@ -873,8 +803,55 @@ engine[4] = Turbine No.2
 		
 	</channel>
 	
-	<channel name="huds">
+	<channel name="Huds">
 	
+ 		<fcs_function>
+			<function>
+					<table>
+						<independentVar>/controls/electric/pitch-trim</independentVar>
+						<tableData>
+							-0.087266	-360
+							0.087266	360
+						</tableData>
+					</table>	
+			</function>
+			<output>/sim/hud/trim-pitch</output>
+		</fcs_function>
+ 		<fcs_function>
+			<function>
+					<table>
+						<independentVar>/controls/electric/roll-trim</independentVar>
+						<tableData>
+							-0.087266	-360
+							0.087266	360
+						</tableData>
+					</table>	
+			</function>
+			<output>/sim/hud/trim-roll</output>
+		</fcs_function>	
+ 		<fcs_function>
+			<function>
+					<table>
+						<independentVar>/controls/electric/yaw-trim</independentVar>
+						<tableData>
+							-0.087266	-360
+							0.087266	360
+						</tableData>
+					</table>	
+			</function>
+			<output>/sim/hud/trim-yaw</output>
+		</fcs_function>
+		
+ 		<fcs_function>
+			<function>
+				<sum>
+					<p>position/h-agl-ft</p>
+					<v>-8.489</v>						
+				</sum>
+			</function>
+			<output>/sim/hud/h-agl-ft</output>
+		</fcs_function>	
+		
  		<fcs_function>
 			<function>
 				<ifthen>
@@ -905,7 +882,7 @@ engine[4] = Turbine No.2
 							<v>1</v>
 						</eq>
 					</and>
-					<v>4</v> <!-- ground hud -->
+					<v>2</v> <!-- ground hud -->
 					<ifthen>
 						<and>
 							<eq>
@@ -921,24 +898,31 @@ engine[4] = Turbine No.2
 							<eq>
 								<p>/controls/electric/AFCS/Active</p>
 								<v>1</v>
-							</eq>
-							<v>3</v> <!-- AFCS hud -->
+							</eq>						
 							<ifthen>
 								<eq>
-									<p>/controls/electric/AFCS/bar_alt</p>
+									<p>/controls/electric/AFCS/trim-sw</p>
 									<v>1</v>
 								</eq>
-								<v>4</v> <!-- Bar Alt hud -->
-								<v>2</v> <!-- Manual hud -->
-							</ifthen>						
+								<ifthen>
+									<eq>
+										<p>/controls/electric/AFCS/bar_alt</p>
+										<v>1</v>
+									</eq>
+									<v>6</v> <!-- Bar-alt -->							
+									<v>5</v> <!-- Trim -->
+								</ifthen>						
+								<v>4</v> <!-- AFCS -->
+							</ifthen>
+							<v>3</v> <!-- default -->					
 						</ifthen>						
 						<ifthen>
 							<lt>
 								<p>/fdm/jsbsim/propulsion/engine[1]/rotor/vortex_ring</p>
 								<v>1</v>
 							</lt>
-							<v>5</v> <!-- Vortex Ring State -->
-							<v>0</v>
+							<v>7</v> <!-- Vortex Ring State -->
+							<v>1</v> <!-- Off -->
 						</ifthen>							
 					</ifthen>					
 				</ifthen>
@@ -951,7 +935,7 @@ engine[4] = Turbine No.2
 				<ifthen>
 					<eq>
 						<p>/sim/hud/current-path</p>
-						<v>5</v>
+						<v>7</v>
 					</eq>
 					<v>1</v> <!-- red -->
 					<v>0</v> <!-- green -->
@@ -959,6 +943,52 @@ engine[4] = Turbine No.2
 			</function>
 			<output>/sim/hud/current-color</output>
 		</fcs_function>
+		
+ 		<fcs_function>
+			<function>
+				<ifthen>
+					<or>
+						<eq>
+							<p>/sim/current-view/view-number</p>
+							<v>3</v>
+						</eq>
+						<eq>
+							<p>/sim/current-view/view-number</p>
+							<v>4</v>
+						</eq>
+						<eq>
+							<p>/sim/current-view/view-number</p>
+							<v>5</v>
+						</eq>
+						<eq>
+							<p>/sim/current-view/view-number</p>
+							<v>6</v>
+						</eq>
+						<eq>
+							<p>/sim/current-view/view-number</p>
+							<v>7</v>
+						</eq>
+						<eq>
+							<p>/sim/current-view/view-number</p>
+							<v>10</v>
+						</eq>
+						<and>
+							<eq>
+								<p>/sim/current-view/view-number</p>
+								<v>11</v>
+							</eq>
+							<eq>
+								<p>/fdm/jsbsim/gear/wow</p>
+								<v>1</v>
+							</eq>
+						</and>
+					</or>
+						<v>0</v>
+						<v>1</v>
+				</ifthen>
+			</function>
+			<output>/sim/hud/visibility[1]</output>
+		</fcs_function>		
 		
 	</channel>
 	

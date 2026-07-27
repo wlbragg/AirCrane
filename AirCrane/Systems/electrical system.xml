@@ -329,29 +329,17 @@ simonbomber64 at googlemail.com
 		
  		<fcs_function>
 			<function>
-				<ifthen>
-					<or>
-						<and>
-							<eq>
-								<p>/controls/electric/AFCS/bar_alt</p>
-								<v>1</v>
-							</eq>
-							<nq>
-								<p>fcs/Helicopter/collective-cmd-norm</p>
-								<p>fcs/Helicopter/collective-pos-norm</p>
-							</nq>
-						</and>	
-						<and>
-							<eq>
-								<p>/controls/electric/AFCS/Active</p>
-								<v>1</v>
-							</eq>
-							<eq>
-								<p>/controls/electric/bar_alt-sw</p>
-								<v>1</v>
-							</eq>
-						</and>
-					</or>
+				<ifthen>	
+					<and>
+						<eq>
+							<p>/controls/electric/afcs-sw</p>
+							<v>1</v>
+						</eq>
+						<eq>
+							<p>/controls/electric/bar_alt-sw</p>
+							<v>1</v>
+						</eq>
+					</and>
 					<value>1</value>
 					<value>0</value>
 				</ifthen>
