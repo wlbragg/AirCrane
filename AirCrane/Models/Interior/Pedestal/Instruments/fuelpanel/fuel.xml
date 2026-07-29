@@ -119,7 +119,7 @@
 
   <!-- X-Feed "Switch" -->
   
- 	<animation>
+	<animation>
 		<type>pick</type>
 		<object-name>fuelxfeed</object-name>
 		<visible>true</visible>
@@ -130,6 +130,10 @@
 				<command>property-toggle</command>
 				<property>/controls/electric/tank_x_feed-sw</property>
 			</binding>
+			<binding>
+				<command>nasal</command>
+				<script>aircrane.click("avionics")</script>
+			</binding>
 		</action>
 	</animation>
 	<animation>
@@ -138,9 +142,9 @@
 		<property>/controls/electric/tank_x_feed-sw</property>
 		<factor>-30</factor>
 		<center>
-		  <x-m>-0.00170</x-m>
-		  <y-m>0.00031</y-m>
-		  <z-m>0.00715</z-m>
+			<x-m>-0.00170</x-m>
+			<y-m>0.00031</y-m>
+			<z-m>0.00715</z-m>
 		</center>
 		<axis>
 			<y>1</y>

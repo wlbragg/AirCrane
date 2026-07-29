@@ -48,11 +48,17 @@ engine[4] = Turbine No.2
 		<fcs_function>
 			<function>	
 				<ifthen>
-					<eq>
-						<property>/controls/electric/rotor_brake-sw</property>
-						<value>1</value>
-					</eq>
-					<value>90</value>					
+					<gt>
+						<property>/controls/rotor_brake/pressure-cylinder</property>
+						<value>0</value>
+					</gt>
+					<table>
+						<independentVar>/controls/rotor_brake/pressure-cylinder</independentVar>
+						<tableData>
+							0		0
+							4		90
+						</tableData>
+					</table>					
 					<table>
 						<independentVar>fcs/Helicopter/collective-pos-norm</independentVar>
 						<tableData>
@@ -612,14 +618,7 @@ engine[4] = Turbine No.2
 						<v>1</v>
 					</eq>
 					<p>fcs/Helicopter/manual_pitch-cmd-norm</p>					
-					<ifthen>
-						<eq>
-							<p>/controls/electric/AFCS/Active</p>
-							<v>1</v>
-						</eq>
-						<p>fcs/Helicopter/AFCS_pitch-cmd-norm</p>						
-						<p>fcs/Helicopter/hover_pitch-cmd-norm</p>
-					</ifthen>
+					<p>fcs/Helicopter/AFCS_pitch-cmd-norm</p>						
 				</ifthen>
 			</function>
 			<clipto>
@@ -639,14 +638,7 @@ engine[4] = Turbine No.2
 						<v>1</v>
 					</eq>
 					<p>fcs/Helicopter/manual_roll-cmd-norm</p>					
-					<ifthen>
-						<eq>
-							<p>/controls/electric/AFCS/Active</p>
-							<v>1</v>
-						</eq>
-						<p>fcs/Helicopter/AFCS_roll-cmd-norm</p>						
-						<p>fcs/Helicopter/hover_roll-cmd-norm</p>					
-					</ifthen>
+					<p>fcs/Helicopter/AFCS_roll-cmd-norm</p>						
 				</ifthen>
 			</function>
 			<clipto>
@@ -665,15 +657,8 @@ engine[4] = Turbine No.2
 						<p>/controls/electric/AFCS/Manual</p>
 						<v>1</v>
 					</eq>
-					<p>fcs/Helicopter/manual_pedals-cmd-norm</p>
-					<ifthen>					
-						<eq>
-							<p>/controls/electric/AFCS/Active</p>
-							<v>1</v>
-						</eq>					
-						<p>fcs/Helicopter/AFCS_rudder-cmd-norm</p>					
-						<p>fcs/Helicopter/hover_rudder-cmd-norm</p>	
-					</ifthen>						
+					<p>fcs/Helicopter/manual_pedals-cmd-norm</p>				
+					<p>fcs/Helicopter/AFCS_rudder-cmd-norm</p>											
 				</ifthen>
 			</function>
 			<clipto>

@@ -19,6 +19,8 @@ simonbomber64 at googlemail.com
 <property type="double" value="0">/controls/electric/pitot-heat</property>
 <property type="double" value="0">/controls/electric/afcs-sw</property>
 <property type="double" value="0">/controls/electric/bar_alt-sw</property>
+<property type="double" value="1">/controls/electric/rotor_brake-sw</property>
+
 
 <property type="double" value="0">/controls/electric/tank_x_feed-sw</property>
 <property type="double" value="0">/controls/electric/tank_aux_pump-1-sw</property>
@@ -119,6 +121,10 @@ simonbomber64 at googlemail.com
 							<p>/controls/electric/tank_aux_pump-1-sw</p>
 							<v>1</v>
 						</eq>
+						<gt>
+							<p>propulsion/tank[5]/pct-full</p>
+							<v>0</v>
+						</gt>
 					</and>
 					<value>1</value>
 					<value>0</value>
@@ -139,6 +145,10 @@ simonbomber64 at googlemail.com
 							<p>/controls/electric/tank_aux_pump-2-sw</p>
 							<v>1</v>
 						</eq>
+						<gt>
+							<p>propulsion/tank[5]/pct-full</p>
+							<v>0</v>
+						</gt>
 					</and>
 					<value>1</value>
 					<value>0</value>
@@ -179,6 +189,10 @@ simonbomber64 at googlemail.com
 							<p>/controls/electric/tank_fwd_pump-1-sw</p>
 							<v>1</v>
 						</eq>
+						<gt>
+							<p>propulsion/tank[3]/pct-full</p>
+							<v>0</v>
+						</gt>
 					</and>
 					<value>1</value>
 					<value>0</value>
@@ -199,6 +213,10 @@ simonbomber64 at googlemail.com
 							<p>/controls/electric/tank_fwd_pump-2-sw</p>
 							<v>1</v>
 						</eq>
+						<gt>
+							<p>propulsion/tank[3]/pct-full</p>
+							<v>0</v>
+						</gt>	
 					</and>
 					<value>1</value>
 					<value>0</value>
@@ -219,6 +237,10 @@ simonbomber64 at googlemail.com
 							<p>/controls/electric/tank_aft_pump-1-sw</p>
 							<v>1</v>
 						</eq>
+						<gt>
+							<p>propulsion/tank[4]/pct-full</p>
+							<v>0</v>
+						</gt>						
 					</and>
 					<value>1</value>
 					<value>0</value>
@@ -239,6 +261,10 @@ simonbomber64 at googlemail.com
 							<p>/controls/electric/tank_aft_pump-2-sw</p>
 							<v>1</v>
 						</eq>
+						<gt>
+							<p>propulsion/tank[4]/pct-full</p>
+							<v>0</v>
+						</gt>	
 					</and>
 					<value>1</value>
 					<value>0</value>
@@ -382,25 +408,83 @@ simonbomber64 at googlemail.com
 		</fcs_function>
 		
 	<!-- Alarm Signals -->
+
+	<!-- Rotor Brake Pressure -->
+	
+	
+ 		<fcs_function>
+			<function>		
+				<max>
+					<p>/controls/rotor_brake/handle</p>				
+					<p>/controls/rotor_brake/pressure-pump</p>
+				</max>
+			</function>
+			<output>/controls/rotor_brake/pressure-pump</output>
+		</fcs_function>	
 		
  		<fcs_function>
 			<function>
 				<ifthen>
-					<and>
+					<lt>
+						<p>simulation/sim-time-sec</p>
+						<v>1</v>
+					</lt>
+					<v>4</v> <!-- yes -->
+					<ifthen> <!-- no -->
+						<eq>
+							<p>/controls/rotor_brake/handle</p>
+							<v>0</v>
+						</eq>
+						<ifthen> <!-- yes -->
+							<eq>
+								<p>/controls/electric/rotor_brake</p>
+								<v>1</v>
+							</eq>
+							<sum> <!-- yes -->
+								<p>/controls/rotor_brake/pressure-pump</p>
+								<p>/controls/rotor_brake/pressure-cylinder</p>
+							</sum>
+							<value>0</value> <!-- no -->
+						</ifthen>						
+						<p>/controls/rotor_brake/pressure-cylinder</p> <!-- no -->
+					</ifthen>
+				</ifthen>
+			</function>
+			<output>/controls/rotor_brake/pressure-cylinder</output>
+		</fcs_function>		
+ 		<fcs_function>
+			<function>		
+				<ifthen>
+					<eq>
+						<p>/controls/rotor_brake/handle</p>
+						<v>0</v>
+					</eq>
+					<value>0</value>					
+					<p>/controls/rotor_brake/pressure-pump</p>
+				</ifthen>
+			</function>
+			<output>/controls/rotor_brake/pressure-pump</output>
+		</fcs_function>
+		
+		
+ 		<fcs_function>
+			<function>
+				<ifthen>
+					<or>
 						<eq>
 							<p>/controls/electric/cab_power</p>
-							<v>1</v>
+							<v>0</v>
 						</eq>						
 						<eq>
 							<p>/controls/electric/rotor_brake-sw</p>
 							<v>1</v>
 						</eq>
-					</and>
+					</or>
 					<value>1</value>
 					<value>0</value>
 				</ifthen>
 			</function>
-			<output>/controls/electric/alarms/rotor_brake</output>
+			<output>/controls/electric/rotor_brake</output>
 		</fcs_function>
 		
 	<!-- Caution Warning Panel -->
@@ -606,6 +690,10 @@ simonbomber64 at googlemail.com
 								<p>/fdm/jsbsim/propulsion/engine[3]/chip</p>
 								<v>1</v>
 							</eq>
+							<gt>
+								<p>/sim/hud/flashing</p>
+								<v>0.5</v>
+							</gt>
 						</and>
 					</or>
 					<value>1</value>
@@ -635,6 +723,10 @@ simonbomber64 at googlemail.com
 								<p>/fdm/jsbsim/propulsion/engine[4]/chip</p>
 								<v>1</v>
 							</eq>
+							<gt>
+								<p>/sim/hud/flashing</p>
+								<v>0.5</v>
+							</gt>							
 						</and>
 					</or>
 					<value>1</value>
@@ -1380,10 +1472,14 @@ simonbomber64 at googlemail.com
 								<p>/controls/electric/cab_power</p>
 								<v>1</v>
 							</eq>						
-							<eq>
-								<p>/controls/electric/rotor_brake-sw</p>
-								<v>1</v>
-							</eq>
+							<gt>
+								<p>/controls/rotor_brake/pressure-cylinder</p>
+								<v>0</v>
+							</gt>
+							<gt>
+								<p>/sim/hud/flashing</p>
+								<v>0.5</v>
+							</gt>							
 						</and>
 					</or>
 					<value>1</value>
@@ -1570,11 +1666,17 @@ simonbomber64 at googlemail.com
 						<eq>
 							<p>/controls/electric/cws_lamptest</p>
 							<v>1</v>
-						</eq>					
-<!-- 						<lt>
-							<p>/fdm/jsbsim/propulsion/engine[4]/chip</p>
-							<v>60</v>
-						</lt> -->
+						</eq>
+						<and>
+							<lt>
+								<p>/fdm/jsbsim/propulsion/tank[3]/pct-full</p>
+								<v>20</v>
+							</lt>
+							<gt>
+								<p>/sim/hud/flashing</p>
+								<v>0.5</v>
+							</gt>
+						</and>
 					</or>
 					<value>1</value>
 					<value>0</value>
@@ -1594,10 +1696,16 @@ simonbomber64 at googlemail.com
 							<p>/controls/electric/cws_lamptest</p>
 							<v>1</v>
 						</eq>					
-<!-- 						<lt>
-							<p>/fdm/jsbsim/propulsion/engine[4]/chip</p>
-							<v>60</v>
-						</lt> -->
+						<and>
+							<lt>
+								<p>/fdm/jsbsim/propulsion/tank[4]/pct-full</p>
+								<v>20</v>
+							</lt>
+							<gt>
+								<p>/sim/hud/flashing</p>
+								<v>0.5</v>
+							</gt>
+						</and>
 					</or>
 					<value>1</value>
 					<value>0</value>
@@ -1617,10 +1725,16 @@ simonbomber64 at googlemail.com
 							<p>/controls/electric/cws_lamptest</p>
 							<v>1</v>
 						</eq>					
-<!-- 						<lt>
-							<p>/fdm/jsbsim/propulsion/engine[4]/chip</p>
-							<v>60</v>
-						</lt> -->
+						<and>
+							<lt>
+								<p>/fdm/jsbsim/propulsion/tank[5]/pct-full</p>
+								<v>20</v>
+							</lt>
+							<gt>
+								<p>/sim/hud/flashing</p>
+								<v>0.5</v>
+							</gt>
+						</and>
 					</or>
 					<value>1</value>
 					<value>0</value>
@@ -1820,11 +1934,21 @@ simonbomber64 at googlemail.com
 						<eq>
 							<p>/controls/electric/cws_lamptest</p>
 							<v>1</v>
-						</eq>					
-<!-- 						<lt>
-							<p>/fdm/jsbsim/propulsion/engine[4]/chip</p>
-							<v>60</v>
-						</lt> -->
+						</eq>
+						<and>
+							<eq>
+								<p>/controls/electric/cab_power</p>
+								<v>1</v>
+							</eq>						
+							<eq>
+								<p>/controls/electric/AFCS/Active</p>
+								<v>0</v>
+							</eq>
+							<gt>
+								<p>/sim/hud/flashing</p>
+								<v>0.5</v>
+							</gt>							
+						</and>
 					</or>
 					<value>1</value>
 					<value>0</value>
@@ -1867,10 +1991,14 @@ simonbomber64 at googlemail.com
 							<p>/controls/electric/cws_lamptest</p>
 							<v>1</v>
 						</eq>					
-<!-- 						<lt>
-							<p>/fdm/jsbsim/propulsion/engine[4]/chip</p>
-							<v>60</v>
-						</lt> -->
+						<eq>
+							<p>/fdm/jsbsim/propulsion/tank_fwd/pump-1</p>
+							<v>1</v>
+						</eq>
+						<eq>
+							<p>/fdm/jsbsim/propulsion/tank_fwd/pump-2</p>
+							<v>1</v>
+						</eq>
 					</or>
 					<value>1</value>
 					<value>0</value>
@@ -1890,10 +2018,14 @@ simonbomber64 at googlemail.com
 							<p>/controls/electric/cws_lamptest</p>
 							<v>1</v>
 						</eq>					
-<!-- 						<lt>
-							<p>/fdm/jsbsim/propulsion/engine[4]/chip</p>
-							<v>60</v>
-						</lt> -->
+						<eq>
+							<p>/fdm/jsbsim/propulsion/tank_aft/pump-1</p>
+							<v>1</v>
+						</eq>
+						<eq>
+							<p>/fdm/jsbsim/propulsion/tank_aft/pump-2</p>
+							<v>1</v>
+						</eq>
 					</or>
 					<value>1</value>
 					<value>0</value>
@@ -1913,10 +2045,14 @@ simonbomber64 at googlemail.com
 							<p>/controls/electric/cws_lamptest</p>
 							<v>1</v>
 						</eq>					
-<!-- 						<lt>
-							<p>/fdm/jsbsim/propulsion/engine[4]/chip</p>
-							<v>60</v>
-						</lt> -->
+						<eq>
+							<p>/fdm/jsbsim/propulsion/tank_aux/pump-1</p>
+							<v>1</v>
+						</eq>
+						<eq>
+							<p>/fdm/jsbsim/propulsion/tank_aux/pump-2</p>
+							<v>1</v>
+						</eq>
 					</or>
 					<value>1</value>
 					<value>0</value>

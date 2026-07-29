@@ -32,14 +32,22 @@
   
 <!-- TURBINE No.1 -->
 
+<!-- Low n1 -->
+
 	<animation>
 		<type>select</type>
 		<object-name>redoffl</object-name>
 		<condition>
-			<greater-than>
-				<property>fdm/jsbsim/propulsion/engine[3]/n1</property>
-				<value>60</value>
-			</greater-than>
+			<or>
+				<equals>
+					<property>/controls/electric/cab_power</property>
+					<value>0</value>
+				</equals>
+				<greater-than>
+					<property>fdm/jsbsim/propulsion/engine[3]/n1</property>
+					<value>60</value>
+				</greater-than>
+			</or>
 		</condition>
 	</animation>
 
@@ -47,10 +55,16 @@
 		<type>select</type>
 		<object-name>redonl</object-name>
 		<condition>
-			<less-than>
-				<property>fdm/jsbsim/propulsion/engine[3]/n1</property>
-				<value>60</value>
-			</less-than>
+			<and>
+				<equals>
+					<property>/controls/electric/cab_power</property>
+					<value>1</value>
+				</equals>
+				<less-than>
+					<property>fdm/jsbsim/propulsion/engine[3]/n1</property>
+					<value>60</value>
+				</less-than>			
+			</and>	
 		</condition>
 	</animation>
 
@@ -58,10 +72,16 @@
 		<type>material</type>
 		<object-name>redonl</object-name>
 		<condition>
-			<less-than>
-				<property>fdm/jsbsim/propulsion/engine[3]/n1</property>
-				<value>60</value>
-			</less-than>
+			<and>
+				<equals>
+					<property>/controls/electric/cab_power</property>
+					<value>1</value>
+				</equals>
+				<less-than>
+					<property>fdm/jsbsim/propulsion/engine[3]/n1</property>
+					<value>60</value>
+				</less-than>			
+			</and>	
 		</condition>	
 		<emission>
 			<red>0.7</red>
@@ -74,17 +94,25 @@
 		<name>low-turbine-pwr-quad-eng1</name>
 		<path>Aircraft/AirCrane/Models/Effects/Interior/procedural_light_indicator_red.xml</path>
 		<offsets>
-			<x-m>0.025062</x-m>
-			<y-m>-0.147786</y-m>
-			<z-m>0.057731</z-m>
+			<x-m>0.026</x-m> <!-- -ve noseward +ve tailward -->
+			<y-m>-0.148</y-m> <!-- -ve left +ve right -->
+			<z-m>0.058</z-m> <!-- -ve down +ve up -->		
 		</offsets>
 		<condition>
-			<less-than>
-				<property>fdm/jsbsim/propulsion/engine[3]/n1</property>
-				<value>60</value>
-			</less-than>
+			<and>
+				<equals>
+					<property>/controls/electric/cab_power</property>
+					<value>1</value>
+				</equals>
+				<less-than>
+					<property>fdm/jsbsim/propulsion/engine[3]/n1</property>
+					<value>60</value>
+				</less-than>			
+			</and>	
 		</condition>
 	</model>
+	
+<!-- Full Isolation Cock -->
 
   	<animation>
 		<type>pick</type>
@@ -242,14 +270,22 @@
 	
 <!-- TURBINE No.2 -->
 
+<!-- Low n1 -->
+
 	<animation>
 		<type>select</type>
 		<object-name>redoffr</object-name>
 		<condition>
-			<greater-than>
-				<property>fdm/jsbsim/propulsion/engine[4]/n1</property>
-				<value>60</value>
-			</greater-than>
+			<or>
+				<equals>
+					<property>/controls/electric/cab_power</property>
+					<value>0</value>
+				</equals>
+				<greater-than>
+					<property>fdm/jsbsim/propulsion/engine[4]/n1</property>
+					<value>60</value>
+				</greater-than>
+			</or>
 		</condition>
 	</animation>
 
@@ -257,10 +293,16 @@
 		<type>select</type>
 		<object-name>redonr</object-name>
 		<condition>
-			<less-than>
-				<property>fdm/jsbsim/propulsion/engine[4]/n1</property>
-				<value>60</value>
-			</less-than>
+			<and>
+				<equals>
+					<property>/controls/electric/cab_power</property>
+					<value>1</value>
+				</equals>
+				<less-than>
+					<property>fdm/jsbsim/propulsion/engine[4]/n1</property>
+					<value>60</value>
+				</less-than>			
+			</and>	
 		</condition>
 	</animation>
 
@@ -268,10 +310,16 @@
 		<type>material</type>
 		<object-name>redonr</object-name>
 		<condition>
-			<less-than>
-				<property>fdm/jsbsim/propulsion/engine[4]/n1</property>
-				<value>60</value>
-			</less-than>
+			<and>
+				<equals>
+					<property>/controls/electric/cab_power</property>
+					<value>1</value>
+				</equals>
+				<less-than>
+					<property>fdm/jsbsim/propulsion/engine[4]/n1</property>
+					<value>60</value>
+				</less-than>			
+			</and>	
 		</condition>	
 		<emission>
 			<red>0.7</red>
@@ -279,22 +327,32 @@
 			<blue>0.5</blue>
 		</emission>
 	</animation>
-
+	
 	<model>
-		<name>low-turbine-pwr-quad-eng2</name>
+		<name>low-turbine-pwr-quad-eng2</name>	
 		<path>Aircraft/AirCrane/Models/Effects/Interior/procedural_light_indicator_red.xml</path>
 		<offsets>
-			<x-m>0.026894</x-m>
-			<y-m>0.149898</y-m>
-			<z-m>0.056639</z-m>
+			<x-m>0.0275</x-m> 	<!-- -ve noseward +ve tailward -->
+			<y-m>0.15</y-m>	<!-- -ve left +ve right -->
+			<z-m>0.056</z-m> 	<!-- -ve down +ve up -->		
 		</offsets>
 		<condition>
-			<less-than>
-				<property>fdm/jsbsim/propulsion/engine[4]/n1</property>
-				<value>60</value>
-			</less-than>
-		</condition>
+			<and>
+				<equals>
+					<property>/controls/electric/cab_power</property>
+					<value>1</value>
+				</equals>
+				<less-than>
+					<property>fdm/jsbsim/propulsion/engine[4]/n1</property>
+					<value>60</value>
+				</less-than>			
+			</and>	
+		</condition>		
 	</model>
+	
+	
+	
+<!-- Full Isolation Cock -->
 
   	<animation>
 		<type>pick</type>

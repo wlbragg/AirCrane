@@ -53,23 +53,49 @@
 		<type>translate</type>
 		<object-name>rotorbrakeon</object-name>
 		<offset-m>-0.001</offset-m>
-		<property>/controls/electric/alarms/rotor_brake</property>	
-		<factor>0.002</factor>
+		<property>/controls/rotor_brake/pressure-cylinder</property>	
+		<factor>0.0005</factor>
 		<axis>
 			<z>1.0</z>
 		</axis>
+		<condition>
+			<and>
+				<equals>
+					<property>/controls/electric/cab_power</property>
+					<value>1</value>
+				</equals>			
+				<greater-than>
+					<property>/sim/hud/flashing</property>
+					<value>0.5</value>
+				</greater-than>
+				<greater-than>
+					<property>/controls/rotor_brake/pressure-cylinder</property>
+					<value>0</value>
+				</greater-than>		
+			</and>
+		</condition>
 	</animation>
 	<animation>
 		<type>material</type>
 		<object-name>rotorbrakeon</object-name>
 		<condition>
-			<equals>
-				<property>/controls/electric/alarms/rotor_brake</property>
-				<value>1</value>
-			</equals>
-		</condition>
+			<and>
+				<equals>
+					<property>/controls/electric/cab_power</property>
+					<value>1</value>
+				</equals>			
+				<greater-than>
+					<property>/sim/hud/flashing</property>
+					<value>0.5</value>
+				</greater-than>
+				<greater-than>
+					<property>/controls/rotor_brake/pressure-cylinder</property>
+					<value>0</value>
+				</greater-than>		
+			</and>
+		</condition>	
 		<emission>
-			<factor-prop>/controls/electric/alarms/rotor_brake</factor-prop>
+			<factor-prop>/controls/electric/rotor_brake</factor-prop>
 			<red>1</red>
 		</emission>
 	</animation>

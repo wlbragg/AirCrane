@@ -62,7 +62,7 @@
 	<animation>
 		<type>knob</type>
 		<object-name>knob</object-name>
-		<property>/fdm/jsbsim/propulsion/tank[5]/fuel-bug</property>
+		<property>/fdm/jsbsim/propulsion/tank_aux/fuel-bug</property>
 		<factor>0.01</factor>
 		<center>
 			<y-m>0.0264</y-m>
@@ -74,7 +74,7 @@
 		<action>
 			<binding>
 				<command>property-adjust</command>
-				<property>/fdm/jsbsim/propulsion/tank[5]/fuel-bug</property>
+				<property>/fdm/jsbsim/propulsion/tank_aux/fuel-bug</property>
 				<factor>100</factor>
 				<min>0</min>
 				<max>3300</max>
@@ -86,7 +86,7 @@
 				<command>set-tooltip</command>
 				<tooltip-id>alt-setting</tooltip-id>
 				<label>Refueling Stops @: %1.1f</label>
-				<property>/fdm/jsbsim/propulsion/tank[5]/fuel-bug</property>
+				<property>/fdm/jsbsim/propulsion/tank_aux/fuel-bug</property>
 			</binding>
 		</hovered>
 	</animation>
@@ -94,7 +94,7 @@
 	<animation>
 		<type>rotate</type>
 		<object-name>bug</object-name>
-		<property>/fdm/jsbsim/propulsion/tank[5]/fuel-bug</property>
+		<property>/fdm/jsbsim/propulsion/tank_aux/fuel-bug</property>
 		<interpolation>
 			<entry><ind>0</ind><dep>0</dep></entry>
 			<entry><ind>3300</ind><dep>-310</dep></entry>
