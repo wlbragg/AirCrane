@@ -2,11 +2,11 @@
 
 <PropertyList>
 
-  <params>
+<!--   <params>
     <controls>
 	  <rotorbrake-handle-animation>/sim/model/aircrane/cockpit/rotorbrake-handle-animation</rotorbrake-handle-animation>
     </controls>
-  </params>
+  </params> -->
 
   <path>brake.ac</path>
 
@@ -21,74 +21,76 @@
     <object-name>pivot</object-name>
     <object-name>hydline</object-name>
   </effect>
+  
+ 	<animation>
+		<type>knob</type>
+		<object-name>rotorbrakehandle</object-name>		
+		<property>/controls/rotor_brake/handle</property>
+		<factor>40</factor>
+		<center>
+			<x-m>0.000011</x-m>
+			<y-m>0.000000</y-m>
+			<z-m>-0.00973</z-m>
+		</center>
+		<axis>
+			<y>1</y>
+		</axis>
+		<action>
+			<repeatable>true</repeatable>
+			<binding>
+				<command>property-adjust</command>
+				<property>/controls/rotor_brake/handle</property>
+				<factor>0.25</factor>
+				<min>0</min>
+				<max>1</max>
+				<wrap>0</wrap>
+			</binding>
+		</action>
+		<hovered>
+			<binding>
+				<command>set-tooltip</command>
+				<tooltip-id>rotor-brake</tooltip-id>
+				<label>Pump Rotor Brake:(%1d)</label>
+				<property>/controls/rotor_brake/pressure</property>
+			</binding>
+		</hovered>
+	</animation>
 
-  <animation>
-    <type>pick</type>
-    <object-name>rotorbrakehandle</object-name>
-    <visible>true</visible>
-    <action>
-      <button>0</button>
-      <repeatable>false</repeatable>
-      <binding>
-        <command>nasal</command>
-        <script>aircrane.pumpRotorBrake()</script>
-      </binding>
-      <binding>
-        <command>nasal</command>
-        <script>aircrane.click("avionics")</script>
-      </binding>
-    </action>
-    <hovered>
-      <binding>
-        <command>set-tooltip</command>
-        <tooltip-id>rotor-brake</tooltip-id>
-        <label>Pump Rotor Brake:(%1d)</label>
-        <property>controls/rotorbrake/pressure</property>
-      </binding>
-    </hovered>
-  </animation>
+	<animation>
+		<type>rotate</type>
+		<object-name>rotorbrakehandle</object-name>
+		<property>/controls/rotor_brake/handle</property>
+		<factor>40</factor>
+		<axis>
+			<y>1</y>
+		</axis>
+	</animation>
 
-  <animation>
-    <type>rotate</type>
-    <object-name>rotorbrakehandle</object-name>
-    <property alias="/params/controls/rotorbrake-handle-animation"/>
-    <factor>40</factor>
-    <axis>
-      <x> 0 </x>
-      <y> 1 </y>
-      <z> 0 </z>
-    </axis>
-  </animation>
+	<animation>
+		<type>rotate</type>
+		<object-name>hydrod</object-name>
+		<property>/controls/rotor_brake/handle</property>
+		<factor>-5</factor>
+		<center>
+			<x-m>0.000011</x-m>
+			<y-m>0.000000</y-m>
+			<z-m>-0.00973</z-m>
+		</center>
+		<axis>
+			<y>1</y>
+		</axis>
+	</animation>
 
-  <animation>
-    <type>rotate</type>
-    <object-name>hydrod</object-name>
-    <property alias="/params/controls/rotorbrake-handle-animation"/>
-    <factor>-5</factor>
-    <center>
-      <x-m>  0.000011 </x-m>
-      <y-m>  0.000000 </y-m>
-      <z-m> -0.00973 </z-m>
-    </center>
-    <axis>
-      <x> 0 </x>
-      <y> 1 </y>
-      <z> 0 </z>
-    </axis>
-  </animation>
-
-  <animation>
-    <type>translate</type>
-    <object-name>hydpiston</object-name>
-    <object-name>hydrod</object-name>
-    <object-name>connector</object-name>
-    <property alias="/params/controls/rotorbrake-handle-animation"/>
-    <factor>-0.00691</factor>
-    <axis>
-      <x> 1 </x>
-      <y> 0 </y>
-      <z> 0 </z>
-    </axis>
-  </animation>
+	<animation>
+		<type>translate</type>
+		<object-name>hydpiston</object-name>
+		<object-name>hydrod</object-name>
+		<object-name>connector</object-name>
+		<property>/controls/rotor_brake/handle</property>
+		<factor>-0.00691</factor>
+		<axis>
+			<x>1</x>
+		</axis>
+	</animation>
 
 </PropertyList>

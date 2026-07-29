@@ -13,18 +13,17 @@
     <path>Aircraft/AirCrane/Models/Interior/Overhead/Instruments/empty/all-empty.xml</path>
   </model>
 
-   <model>
-    <path>Aircraft/AirCrane/Models/Interior/Overhead/Instruments/quadrent/quadrent.xml</path>
-    <offsets>
-      <x-m> -0.36918 </x-m>
-      <y-m> -0.00263 </y-m>
-      <z-m> -0.07506 </z-m>
-      <pitch-deg> 51.26 </pitch-deg>
-    </offsets>
-  </model>
+ 	<model>
+		<path>Aircraft/AirCrane/Models/Interior/Overhead/Instruments/quadrent/quadrent.xml</path>
+		<offsets>
+			<x-m>-0.36918</x-m> <!-- -ve noseward +ve tailward -->
+			<y-m>-0.00263</y-m> <!-- -ve left +ve right -->
+			<z-m>-0.07506</z-m> <!-- -ve down +ve up -->		
+		<pitch-deg>51.26</pitch-deg>
+		</offsets>
+	</model>
 
-<!--
-   <model>
+  <!--  <model>
     <path>Aircraft/AirCrane/Models/Interior/Overhead/Instruments/auxheat/auxheat.xml</path>
     <offsets>
       <x-m>  0.15814 </x-m>
@@ -72,7 +71,7 @@
       <z-m>  0.00158 </z-m>
       <pitch-deg> 87 </pitch-deg>
     </offsets>
-  </model>
+  </model> -->
 
   <model>
     <path>Aircraft/AirCrane/Models/Interior/Overhead/Instruments/instlightspanel/instlightspanel.xml</path>
@@ -84,7 +83,7 @@
     </offsets>
   </model>
 
-  <model>
+  <!-- <model>
     <path>Aircraft/AirCrane/Models/Interior/Overhead/Instruments/overspeed/overspeed.xml</path>
     <offsets>
       <x-m> -0.18238 </x-m>
@@ -132,9 +131,9 @@
       <z-m> -0.002663 </z-m>
       <pitch-deg> 87 </pitch-deg>
     </offsets>
-  </model> -->
+  </model>
 
-<!--   <model>
+  <model>
     <path>Aircraft/AirCrane/Models/Interior/Overhead/Instruments/omcp/omcp.xml</path>
     <offsets>
       <x-m> -0.04227 </x-m>
@@ -142,9 +141,9 @@
       <z-m> -0.00286 </z-m>
       <pitch-deg> 87 </pitch-deg>
     </offsets>
-  </model> -->
+  </model>
 
-  <!-- <model>
+  <model>
     <path>Aircraft/AirCrane/Models/Interior/Overhead/Instruments/afcsf/afcsf.xml</path>
     <offsets>
       <x-m> 0.17398 </x-m>
@@ -152,7 +151,7 @@
       <z-m> 0.00919 </z-m>
       <pitch-deg> 87 </pitch-deg>
     </offsets>
-  </model>
+  </model> -->
 
   <model>
     <path>Aircraft/AirCrane/Models/Interior/Overhead/Instruments/brake/brake.xml</path>
@@ -163,7 +162,7 @@
     </offsets>
   </model>
 
-  <model>
+  <!-- <model>
     <path>Aircraft/AirCrane/Models/Interior/Overhead/Instruments/quadrentlight/all-lightquadrent.xml</path>
   </model>
 

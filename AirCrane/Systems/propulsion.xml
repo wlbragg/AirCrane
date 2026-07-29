@@ -20,7 +20,6 @@ engine[4] = Turbine No.2
 
 
 <property type="double" value="1">T4T/one</property>
-<property type="double" value="1">T4T/AGP/augmentation_factor</property>
 
 	<channel name="Rotor Power demand">
 
@@ -416,7 +415,7 @@ engine[4] = Turbine No.2
 	</channel>
 
 <property type="double" value="0.02056">propulsion/gearbox/ratio</property>
-<property type="double" value="1">/controls/electric/rotor_brake-sw</property>
+<property type="double" value="4">/controls/rotor_brake/pressure-cylinder</property>
 <property type="double" value="0">propulsion/engine[1]/governor/cmd-rpm</property>
 
 <property type="double" value="0">propulsion/engine[1]/rotor/blade-angle</property>

@@ -338,10 +338,10 @@
 				<property>/sim/hud/flashing</property>
 				<value>0.5</value>
 			</greater-than>
-			<equals>
-				<property>/controls/electric/rotor_brake-sw</property>
-				<value>1</value>
-			</equals>			
+			<greater-than>
+				<property>/controls/rotor_brake/pressure-cylinder</property>
+				<value>0</value>
+			</greater-than>		
 		</and>
 	</condition>
 </label>
@@ -570,6 +570,30 @@
 					<value>0</value>
 				</equals>
 			</and>
+		</and>
+	</condition>
+</label>
+
+<label>
+	<name>Cross-feed activated</name>
+	<width>120</width>
+	<height>10</height>
+	<x>-60</x>
+	<y>-5</y>
+	<halign>l</halign>
+	<format>CROSS-FEED ACTIVATED</format>
+	<box>true</box>
+	<option>center</option>
+  	<condition>
+		<and>
+			<greater-than>
+				<property>/sim/hud/flashing</property>
+				<value>0.5</value>
+			</greater-than>
+			<equals>
+				<property>/fdm/jsbsim/propulsion/tank_x_feed</property>
+				<value>1</value>
+			</equals>
 		</and>
 	</condition>
 </label>

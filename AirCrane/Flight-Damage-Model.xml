@@ -250,7 +250,6 @@ xsi:noNamespaceSchemaLocation="http://jsbsim.sourceforge.net/JSBSim.xsd">
 				<z>17.6181102362205</z>
 			</location>
 			<feed>1</feed>
-			<feed>2</feed>
 			<feed>5</feed>
 			<thruster file="Pratt_Whitney-T73_load">
 				<location unit="FT">
@@ -270,8 +269,7 @@ xsi:noNamespaceSchemaLocation="http://jsbsim.sourceforge.net/JSBSim.xsd">
 				<y>2.03412073490813</y>
 				<z>17.6181102362205</z>
 			</location>
-			<feed>3</feed>
-			<feed>4</feed>
+			<feed>2</feed>
 			<feed>5</feed>
 			<thruster file="Pratt_Whitney-T73_load">
 				<location unit="FT">
@@ -293,14 +291,16 @@ xsi:noNamespaceSchemaLocation="http://jsbsim.sourceforge.net/JSBSim.xsd">
 		</tank>
 
 	<!-- #### Fuel tanks #### -->
+	
+		<!-- Control Tanks for Cross-feed -->
 
 		<tank type="FUEL" number="1">
 			<location unit="FT">
 				<x>21.1614173228346</x>
 				<z>14.4356955380577</z>
 			</location>
-			<capacity unit="LBS">1472.25</capacity>
-			<contents unit="LBS">1472.25</contents>
+			<capacity unit="LBS">10</capacity>
+			<contents unit="LBS">10</contents>
 			<drain_location unit="FT">
 				<x>20.7020997375328</x>
 				<z>13.1233595800525</z>
@@ -313,27 +313,29 @@ xsi:noNamespaceSchemaLocation="http://jsbsim.sourceforge.net/JSBSim.xsd">
 				<x>24.1141732283464</x>
 				<z>14.4356955380577</z>
 			</location>
-			<capacity unit="LBS">1472.25</capacity>
-			<contents unit="LBS">1472.25</contents>
+			<capacity unit="LBS">10</capacity>
+			<contents unit="LBS">10</contents>
 			<drain_location unit="FT">
 				<x>23.6548556430446</x>
 				<z>13.1233595800525</z>
 			</drain_location>
 			<priority>1</priority>
 		</tank>
+		
+		<!-- Fuel Tanks -->
 
 		<tank type="FUEL" number="3">
 			<location unit="FT">
 				<x>30.6430446194225</x>
 				<z>14.4356955380577</z>
 			</location>
-			<capacity unit="LBS">1472.25</capacity>
-			<contents unit="LBS">1472.25</contents>
+			<capacity unit="LBS">2945</capacity>
+			<contents unit="LBS">1000</contents>
 			<drain_location unit="FT">
 				<x>30.1837270341207</x>
 				<z>13.1233595800525</z>
 			</drain_location>
-			<priority>1</priority>
+			<priority>0</priority>
 		</tank>
 
 		<tank type="FUEL" number="4">
@@ -341,14 +343,16 @@ xsi:noNamespaceSchemaLocation="http://jsbsim.sourceforge.net/JSBSim.xsd">
 				<x>33.5958005249344</x>
 				<z>14.4356955380577</z>
 			</location>
-			<capacity unit="LBS">1472.25</capacity>
-			<contents unit="LBS">1472.25</contents>
+			<capacity unit="LBS">2945</capacity>
+			<contents unit="LBS">1000</contents>
 			<drain_location unit="FT">
 				<x>33.1036745406824</x>
 				<z>13.1233595800525</z>
 			</drain_location>
-			<priority>1</priority>
+			<priority>0</priority>
 		</tank>
+		
+		<!-- Aux Fuel Tank -->
 
 		<tank type="FUEL" number="5">
 			<location unit="FT">
@@ -356,12 +360,12 @@ xsi:noNamespaceSchemaLocation="http://jsbsim.sourceforge.net/JSBSim.xsd">
 				<z>14.4356955380577</z>
 			</location>
 			<capacity unit="LBS">2925</capacity>
-			<contents unit="LBS">0</contents>
+			<contents unit="LBS">1000</contents>
 			<drain_location unit="FT">
 				<x>37.5</x>
 				<z>13.1233595800525</z>
 			</drain_location>
-			<priority>2</priority>
+			<priority>0</priority>
 		</tank>
 
 	</propulsion>

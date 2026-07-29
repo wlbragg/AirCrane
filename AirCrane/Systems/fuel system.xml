@@ -12,17 +12,15 @@ simonbomber64 at googlemail.com
 
 <system name="Engine">
 
-<property type="double" value="0">propulsion/tank[5]/fuel-bug</property>	
+<property type="double" value="0">propulsion/tank_aux/fuel-bug</property>	
 <property type="double" value="0">propulsion/tank_fwd/fuel-bug</property>	
+<property type="double" value="0">propulsion/tank_aft/fuel-bug</property>
+<property type="double" value="0">propulsion/tank[5]/test</property>	
 
-	<channel name="Fwd Fuel Tank">
+	<channel name="Fuel Tank Content">
 	
-		<!-- Fuel Content -->
-
-		<summer name="propulsion/tank_fwd/contents-lbs">
-			<input>propulsion/tank[1]/contents-lbs</input>
-			<input>propulsion/tank[2]/contents-lbs</input>
-		</summer>		
+		<!-- FWD Content -->
+		
  		<fcs_function>
 			<function>
 				<ifthen>
@@ -30,7 +28,7 @@ simonbomber64 at googlemail.com
 						<p>/controls/electric/cab_power</p>
 						<v>1</v>
 					</eq>
-					<property>propulsion/tank_fwd/contents-lbs</property>
+					<property>propulsion/tank[3]/contents-lbs</property>
 					<value>-99</value>
 				</ifthen>
 			</function>
@@ -41,19 +39,9 @@ simonbomber64 at googlemail.com
 			<rate_limit>300</rate_limit>
 			<output>/controls/electric/tank_fwd-lbs</output>
 		</actuator>
-							
-	</channel>
 
-<property type="double" value="0">propulsion/tank_aft/fuel-bug</property>		
-				
-	<channel name="Aft Fuel Tank">
-
-		<!-- Fuel Content -->	
-		
-		<summer name="propulsion/tank_aft/contents-lbs">
- 			<input>propulsion/tank[3]/contents-lbs</input>
-			<input>propulsion/tank[4]/contents-lbs</input>
-		</summer>
+		<!-- AFT Content -->	
+	
  		<fcs_function>
 			<function>
 				<ifthen>
@@ -61,7 +49,7 @@ simonbomber64 at googlemail.com
 						<p>/controls/electric/cab_power</p>
 						<v>1</v>
 					</eq>
-					<property>propulsion/tank_aft/contents-lbs</property>
+					<property>propulsion/tank[4]/contents-lbs</property>
 					<value>-99</value>
 				</ifthen>
 			</function>
@@ -72,12 +60,6 @@ simonbomber64 at googlemail.com
 			<rate_limit>290</rate_limit>
 			<output>/controls/electric/tank_aft-lbs</output>
 		</actuator>
-						
-	</channel>		
-
-<property type="double" value="0">propulsion/tank[5]/test</property>
-	
-	<channel name="Aux Fuel Tank Gauge">
 	
  		<fcs_function>
 			<function>
@@ -165,10 +147,41 @@ simonbomber64 at googlemail.com
 		
 	</channel>
 
+	<channel name="Auxiliary Fuel Transfer">
+
+		<!-- Fuel Content Bug -->
+			
+		<fcs_function>
+			<function>		
+				<sum>
+					<ifthen>
+						<eq>
+							<p>propulsion/tank_aux/pump-1</p>
+							<v>1</v>
+						</eq>
+						<v>2.5</v>					
+						<v>0</v>						
+					</ifthen>					
+					<ifthen>
+						<eq>
+							<p>propulsion/tank_aux/pump-2</p>
+							<v>1</v>
+						</eq>
+						<v>2.5</v>					
+						<v>0</v>						
+					</ifthen>
+				</sum>
+			</function>
+			<output>propulsion/tank_aux/fuel_transfer-pps</output>
+		</fcs_function>		
+
+	</channel>
+
+
 <property type="double" value="0">/controls/engines/engine[3]/fuel-cock</property>	
 <property type="double" value="0">/controls/engines/engine[4]/fuel-cock</property>	
 
-	<channel name="Quadrant">
+	<channel name="Starter Fuel Line">
 		
 		<!-- Turbine No.1 -->
 		
@@ -207,7 +220,7 @@ simonbomber64 at googlemail.com
 			<output>propulsion/engine[3]/fuel-starter-delay</output>
 		</kinematic>		
 
- 		<fcs_function>
+ 		<fcs_function> <!-- isolates fuel if n1 lever less than 0.42 -->
 			<function>
 				<ifthen>
 					<gt>
@@ -220,106 +233,7 @@ simonbomber64 at googlemail.com
 			</function>
 			<output>propulsion/engine[3]/fuel-cock</output>
 		</fcs_function>
-
- 		<fcs_function>
-			<function>
-				<ifthen>
-					<gt>
-						<p>propulsion/engine[3]/fuel-starter-delay</p>
-						<v>0</v>
-					</gt>
-					<value>1</value>
-					<ifthen>
-						<and>
-							<or>
-								<eq>
-									<p>propulsion/tank_aux/pump-1</p>
-									<v>1</v>
-								</eq>
-								<eq>
-									<p>propulsion/tank_aux/pump-2</p>
-									<v>1</v>
-								</eq>							
-							</or>
-							<lt>
-								<sum>
-									<p>propulsion/tank_fwd/contents-lbs</p>
-									<v>-5</v>
-								</sum>							
-								<p>propulsion/tank_fwd/fuel-bug</p>
-							</lt>
-							<gt>
-								<p>propulsion/tank[5]/contents-lbs</p>
-								<p>propulsion/tank[5]/fuel-bug</p>
-							</gt>						
-						</and>
-						<v>0</v>
-						<ifthen>
-							<and>
-								<or>
-									<eq>
-										<p>propulsion/tank_fwd/pump-1</p>
-										<v>1</v>
-									</eq>
-									<eq>
-										<p>propulsion/tank_fwd/pump-2</p>
-										<v>1</v>
-									</eq>						
-								</or>
-								<eq>
-									<p>propulsion/engine[3]/fuel-cock</p>
-									<v>1</v>
-								</eq>						
-							</and>
-							<v>1</v>
-							<v>0</v>
-						</ifthen>
-					</ifthen>						
-				</ifthen>
-			</function>
-			<output>propulsion/tank[1]/priority</output>
-			<output>propulsion/tank[2]/priority</output>
-		</fcs_function>	
 		
-		
-		<!-- Fuel Content Bug -->
-
-		<fcs_function>
-			<function>
-				<ifthen>
-					<and>
-						<or>
-							<eq>
-								<p>propulsion/tank_aux/pump-1</p>
-								<v>1</v>
-							</eq>
-							<eq>
-								<p>propulsion/tank_aux/pump-2</p>
-								<v>1</v>
-							</eq>							
-						</or>
-						<lt>
-							<p>propulsion/tank_fwd/contents-lbs</p>
-							<p>propulsion/tank_fwd/fuel-bug</p>
-						</lt>							
-						<gt>
-							<p>propulsion/tank[5]/contents-lbs</p>
-							<p>propulsion/tank[5]/fuel-bug</p>
-						</gt>						
-					</and>
-					<v>-5</v>
-					<v>0</v>
-				</ifthen>
-			</function>
-			<output>propulsion/tank_fwd/external-flow-rate-pps</output>
-		</fcs_function>
-		<pure_gain>
- 			<input>-propulsion/tank_fwd/external-flow-rate-pps</input>
-			<gain>0.5</gain>
-			<output>propulsion/tank[1]/external-flow-rate-pps</output>
-			<output>propulsion/tank[2]/external-flow-rate-pps</output>				
-		</pure_gain>
-
 		<!-- Turbine No.2 -->
 		
  		<fcs_function> <!-- need this because of the way JSBsim turbine starter is coded -->
@@ -357,7 +271,7 @@ simonbomber64 at googlemail.com
 			<output>propulsion/engine[4]/fuel-starter-delay</output>
 		</kinematic>		
 
- 		<fcs_function>
+ 		<fcs_function> <!-- isolates fuel if n1 lever less than 0.42 -->
 			<function>
 				<ifthen>
 					<gt>
@@ -369,43 +283,157 @@ simonbomber64 at googlemail.com
 				</ifthen>
 			</function>
 			<output>propulsion/engine[4]/fuel-cock</output>
-		</fcs_function>
+		</fcs_function>		
+				
+	</channel>
+	
+	<channel name="Main Fuel Line">
+		
+		<!-- Fuel Isolation Cocks -->
 		
  		<fcs_function>
 			<function>
 				<ifthen>
-					<gt>
-						<p>propulsion/engine[4]/fuel-starter-delay</p>
-						<v>0</v>
-					</gt>
-					<value>1</value>
-					<ifthen>
-						<and>
+					<or>
+						<gt>
+							<p>propulsion/engine[3]/fuel-starter-delay</p>
+							<v>0</v>
+						</gt>
+						<eq>
+							<p>propulsion/engine[3]/fuel-cock</p>
+							<v>1</v>
+						</eq>
+					</or>
+					<v>1</v>
+					<v>0</v>					
+				</ifthen>
+			</function>
+			<output>propulsion/tank[1]/priority</output>
+		</fcs_function>
+ 		<fcs_function>
+			<function>
+				<ifthen>		
+					<or>
+						<gt>
+							<p>propulsion/engine[4]/fuel-starter-delay</p>
+							<v>0</v>
+						</gt>
+						<eq>
+							<p>propulsion/engine[4]/fuel-cock</p>
+							<v>1</v>
+						</eq>
+					</or>					
+					<v>1</v>
+					<v>0</v>					
+				</ifthen>
+			</function>
+			<output>propulsion/tank[2]/priority</output>
+		</fcs_function>
+		
+		<!-- Fuel Enters Tank 1  -->
+		
+ 		<fcs_function>
+			<function>
+				<ifthen>			
+					<eq>
+						<p>propulsion/tank_x_feed</p>
+						<v>1</v>
+					</eq>
+					<ifthen> <!-- yes -->
+						<or>
+							<eq>
+								<p>propulsion/tank_fwd/pump-1</p>
+								<v>1</v>
+							</eq>
+							<eq>
+								<p>propulsion/tank_fwd/pump-2</p>
+								<v>1</v>
+							</eq>
+						</or>
+						<p>propulsion/engine[3]/fuel-flow-rate-pps</p> <!-- yes -->						
+						<ifthen> <!-- no -->
 							<or>
 								<eq>
-									<p>propulsion/tank_aux/pump-1</p>
+									<p>propulsion/tank_aft/pump-1</p>
 									<v>1</v>
 								</eq>
 								<eq>
-									<p>propulsion/tank_aux/pump-2</p>
-									<v>1</v>
-								</eq>							
+									<p>propulsion/tank_aft/pump-2</p>
+									<v>1</v>								
+								</eq>				
 							</or>
-							<lt>
-								<sum>
-									<p>propulsion/tank_aft/contents-lbs</p>
-									<v>-5</v>
-								</sum>							
-								<p>propulsion/tank_aft/fuel-bug</p>
-							</lt>
-							<gt>
-								<p>propulsion/tank[5]/contents-lbs</p>
-								<p>propulsion/tank[5]/fuel-bug</p>
-							</gt>						
-						</and>
-						<v>0</v>
-						<ifthen>
-							<and>
+							<p>propulsion/engine[3]/fuel-flow-rate-pps</p> <!-- yes -->
+							<v>0</v> <!-- no -->
+						</ifthen>
+					</ifthen>
+					<ifthen> <!-- no -->
+						<or>
+							<eq>
+								<p>propulsion/tank_fwd/pump-1</p>
+								<v>1</v>
+							</eq>
+							<eq>
+								<p>propulsion/tank_fwd/pump-2</p>
+								<v>1</v>
+							</eq>
+						</or>
+						<p>propulsion/engine[3]/fuel-flow-rate-pps</p> <!-- yes -->	
+						<v>0</v> <!-- no -->
+					</ifthen>						
+				</ifthen>					
+			</function>
+			<output>propulsion/tank[1]/external-flow-rate-pps</output>
+		</fcs_function>
+
+		<!-- Fuel Exits Tank 3  -->
+	
+ 		<fcs_function>
+			<function>
+				<ifthen>
+					<and>
+						<gt>
+							<p>propulsion/tank_aux/fuel_transfer-pps</p>
+							<v>0</v>
+						</gt>
+						<lt>
+							<p>propulsion/tank_fwd/contents-lbs</p>
+							<p>propulsion/tank_fwd/fuel-bug</p>
+						</lt>
+					</and>
+					<ifthen> <!-- yes -->			
+						<lt>
+							<p>propulsion/tank_aft/contents-lbs</p>
+							<p>propulsion/tank_aft/fuel-bug</p>
+						</lt>
+						<sum> <!-- yes -->	
+							<product> 
+								<v>0.5</v>
+								<p>propulsion/tank_aux/fuel_transfer-pps</p>
+							</product>
+							<p>-propulsion/tank[1]/external-flow-rate-pps</p>
+						</sum>							
+						<sum> <!-- no -->
+							<p>propulsion/tank_aux/fuel_transfer-pps</p>
+							<p>-propulsion/tank[1]/external-flow-rate-pps</p>
+						</sum>
+					</ifthen>						
+					<ifthen> <!-- no -->
+						<eq>
+							<p>propulsion/tank_x_feed</p>
+							<v>1</v>
+						</eq>			
+						<ifthen> <!-- yes -->
+							<or>
+								<eq>
+									<p>propulsion/tank_fwd/pump-1</p>
+									<v>1</v>
+								</eq>
+								<eq>
+									<p>propulsion/tank_fwd/pump-2</p>
+									<v>1</v>
+								</eq>
+							</or>				
+							<ifthen> <!-- yes -->
 								<or>
 									<eq>
 										<p>propulsion/tank_aft/pump-1</p>
@@ -414,69 +442,198 @@ simonbomber64 at googlemail.com
 									<eq>
 										<p>propulsion/tank_aft/pump-2</p>
 										<v>1</v>
-									</eq>						
+									</eq>
 								</or>
-								<eq>
-									<p>propulsion/engine[4]/fuel-cock</p>
-									<v>1</v>
-								</eq>						
-							</and>
-							<v>1</v>
-							<v>0</v>
-						</ifthen>
-					</ifthen>						
+								<sum> <!-- yes -->
+									<product> 
+										<v>0.5</v>
+										<p>-propulsion/engine[3]/fuel-flow-rate-pps</p> 
+									</product>
+									<product> 
+										<v>0.5</v>
+										<p>-propulsion/engine[4]/fuel-flow-rate-pps</p> 
+									</product>
+								</sum>
+								<sum> <!-- no -->
+									<p>-propulsion/engine[3]/fuel-flow-rate-pps</p> 
+									<p>-propulsion/engine[4]/fuel-flow-rate-pps</p> 									
+								</sum>
+							</ifthen>
+							<v>0</v> <!-- no -->						
+						</ifthen>						
+						<p>-propulsion/tank[1]/external-flow-rate-pps</p> <!-- no -->
+					</ifthen>
 				</ifthen>
 			</function>
-			<output>propulsion/tank[3]/priority</output>
-			<output>propulsion/tank[4]/priority</output>
-		</fcs_function>	
-				
-		<!-- Fuel Content Bug -->
+			<output>propulsion/tank[3]/external-flow-rate-pps</output>
+		</fcs_function>
+		
+		<!-- Fuel Enters Tank 2  -->
+		
+ 		<fcs_function>
+			<function>
+				<ifthen>			
+					<eq>
+						<p>propulsion/tank_x_feed</p>
+						<v>1</v>
+					</eq>
+					<ifthen> <!-- yes -->
+						<or>
+							<eq>
+								<p>propulsion/tank_aft/pump-1</p>
+								<v>1</v>
+							</eq>
+							<eq>
+								<p>propulsion/tank_aft/pump-2</p>
+								<v>1</v>
+							</eq>
+						</or>
+						<p>propulsion/engine[4]/fuel-flow-rate-pps</p> <!-- yes -->						
+						<ifthen> <!-- no -->
+							<or>
+								<eq>
+									<p>propulsion/tank_fwd/pump-1</p>
+									<v>1</v>
+								</eq>
+								<eq>
+									<p>propulsion/tank_fwd/pump-2</p>
+									<v>1</v>								
+								</eq>				
+							</or>
+							<p>propulsion/engine[4]/fuel-flow-rate-pps</p> <!-- yes -->
+							<v>0</v> <!-- no -->
+						</ifthen>
+					</ifthen>
+					<ifthen> <!-- no -->
+						<or>
+							<eq>
+								<p>propulsion/tank_aft/pump-1</p>
+								<v>1</v>
+							</eq>
+							<eq>
+								<p>propulsion/tank_aft/pump-2</p>
+								<v>1</v>
+							</eq>
+						</or>
+						<p>propulsion/engine[4]/fuel-flow-rate-pps</p> <!-- yes -->	
+						<v>0</v> <!-- no -->
+					</ifthen>						
+				</ifthen>					
+			</function>
+			<output>propulsion/tank[2]/external-flow-rate-pps</output>
+		</fcs_function>
 
+		<!-- Fuel Exits Tank 4  -->
+	
 		<fcs_function>
 			<function>
 				<ifthen>
 					<and>
-						<or>
-							<eq>
-								<p>propulsion/tank_aux/pump-1</p>
-								<v>1</v>
-							</eq>
-							<eq>
-								<p>propulsion/tank_aux/pump-2</p>
-								<v>1</v>
-							</eq>							
-						</or>
+						<gt>
+							<p>propulsion/tank_aux/fuel_transfer-pps</p>
+							<v>0</v>
+						</gt>
 						<lt>
 							<p>propulsion/tank_aft/contents-lbs</p>
 							<p>propulsion/tank_aft/fuel-bug</p>
-						</lt>							
-						<gt>
-							<p>propulsion/tank[5]/contents-lbs</p>
-							<p>propulsion/tank[5]/fuel-bug</p>
-						</gt>						
+						</lt>
 					</and>
-					<v>-5</v>
-					<v>0</v>
+					<ifthen> <!-- yes -->			
+						<lt>
+							<p>propulsion/tank_fwd/contents-lbs</p>
+							<p>propulsion/tank_fwd/fuel-bug</p>
+						</lt>
+						<sum> <!-- yes -->	
+							<product> 
+								<v>0.5</v>
+								<p>propulsion/tank_aux/fuel_transfer-pps</p>
+							</product>
+							<p>-propulsion/tank[2]/external-flow-rate-pps</p>
+						</sum>							
+						<sum> <!-- no -->
+							<p>propulsion/tank_aux/fuel_transfer-pps</p>
+							<p>-propulsion/tank[2]/external-flow-rate-pps</p>
+						</sum>
+					</ifthen>						
+					<ifthen> <!-- no -->
+						<eq>
+							<p>propulsion/tank_x_feed</p>
+							<v>1</v>
+						</eq>			
+						<ifthen> <!-- yes -->
+							<or>
+								<eq>
+									<p>propulsion/tank_aft/pump-1</p>
+									<v>1</v>
+								</eq>
+								<eq>
+									<p>propulsion/tank_aft/pump-2</p>
+									<v>1</v>
+								</eq>
+							</or>				
+							<ifthen> <!-- yes -->
+								<or>
+									<eq>
+										<p>propulsion/tank_fwd/pump-1</p>
+										<v>1</v>
+									</eq>
+									<eq>
+										<p>propulsion/tank_fwd/pump-2</p>
+										<v>1</v>
+									</eq>
+								</or>
+								<sum> <!-- yes -->
+									<product> 
+										<v>0.5</v>
+										<p>-propulsion/engine[4]/fuel-flow-rate-pps</p> 
+									</product>
+									<product> 
+										<v>0.5</v>
+										<p>-propulsion/engine[3]/fuel-flow-rate-pps</p> 
+									</product>
+								</sum>
+								<sum> <!-- no -->
+									<p>-propulsion/engine[4]/fuel-flow-rate-pps</p> 
+									<p>-propulsion/engine[3]/fuel-flow-rate-pps</p> 									
+								</sum>									
+							</ifthen>
+							<v>0</v> <!-- no -->						
+						</ifthen>						
+						<p>-propulsion/tank[2]/external-flow-rate-pps</p> <!-- no -->
+					</ifthen>
 				</ifthen>
 			</function>
-			<output>propulsion/tank_aft/external-flow-rate-pps</output>
+			<output>propulsion/tank[4]/external-flow-rate-pps</output>
 		</fcs_function>
-		<pure_gain>
- 			<input>-propulsion/tank_aft/external-flow-rate-pps</input>
-			<gain>0.5</gain>
-			<output>propulsion/tank[3]/external-flow-rate-pps</output>
-			<output>propulsion/tank[4]/external-flow-rate-pps</output>				
-		</pure_gain>
-
-		<summer>
- 			<input>-propulsion/tank[1]/external-flow-rate-pps</input>
- 			<input>-propulsion/tank[2]/external-flow-rate-pps</input>
- 			<input>-propulsion/tank[3]/external-flow-rate-pps</input>
- 			<input>-propulsion/tank[4]/external-flow-rate-pps</input>			
-			<output>propulsion/tank[5]/external-flow-rate-pps</output>				
-		</summer>		
 		
+		<!-- Fuel Exits Tank 5  -->
+
+ 		<fcs_function>
+			<function>
+				<ifthen>
+					<and>
+						<or>
+							<lt>
+								<p>propulsion/tank_fwd/contents-lbs</p>
+								<p>propulsion/tank_fwd/fuel-bug</p>
+							</lt>
+							<lt>
+								<p>propulsion/tank_aft/contents-lbs</p>
+								<p>propulsion/tank_aft/fuel-bug</p>
+							</lt>							
+						</or>
+						<gt>
+							<p>propulsion/tank_aux/contents-lbs</p>
+							<p>propulsion/tank_aux/fuel-bug</p>
+						</gt>
+					</and>
+					<p>-propulsion/tank_aux/fuel_transfer-pps</p>  <!-- yes -->
+					<v>0</v> <!-- no -->
+				</ifthen>
+			</function>
+			<output>propulsion/tank[5]/external-flow-rate-pps</output>
+		</fcs_function>		
+						
 	</channel>
 
 </system>
