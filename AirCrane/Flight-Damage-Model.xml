@@ -57,13 +57,49 @@ xsi:noNamespaceSchemaLocation="http://jsbsim.sourceforge.net/JSBSim.xsd">
 			<z>194.966759617349</z>
 		</location>
 		
-		<pointmass name="Max weight">														
-			<weight unit="LBS">13080</weight>													
-			<location name="POINTMASS" unit="IN">													
-				<x>333</x>												
-				<y>0</y>												
-				<z>100</z>												
+		<!--pointmass name="Max weight">
+			<weight unit="LBS">13080</weight>
+			<location name="POINTMASS" unit="IN">
+				<x>333</x>
+				<y>0</y>
+				<z>100</z>
+			</location>
+		</pointmass-->
+
+		<pointmass name="Left Pilot">
+			<weight unit="LBS">0</weight>
+			<location name="POINTMASS" unit="IN">
+				<x>100</x>
+				<y>-28</y>
+				<z>140</z>
 			</location>													
+		</pointmass>
+
+		<pointmass name="Right Pilot">
+			<weight unit="LBS">180</weight>
+			<location name="POINTMASS" unit="IN">
+				<x>100</x>
+				<y> 28</y>
+				<z>140</z>
+			</location>
+		</pointmass>
+
+		<pointmass name="Engineer">
+			<weight unit="LBS">0</weight>
+			<location name="POINTMASS" unit="IN">
+				<x>120</x>
+				<y>-28</y>
+				<z>100</z>
+			</location>
+		</pointmass>
+
+		<pointmass name="Load Point">
+			<weight unit="LBS">0</weight>
+			<location name="POINTMASS" unit="IN">
+				<x>333</x>
+				<y>  0</y>
+				<z>100</z>
+			</location>
 		</pointmass>
 
 	</mass_balance>
