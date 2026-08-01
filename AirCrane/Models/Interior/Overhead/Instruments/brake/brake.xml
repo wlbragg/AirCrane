@@ -22,10 +22,37 @@
     <object-name>hydline</object-name>
   </effect>
   
- 	<animation>
+	<animation>
+		<type>pick</type>
+		<object-name>rotorbrakehandle</object-name>
+		<visible>true</visible>
+		<action>
+			<button>0</button>
+			<repeatable>false</repeatable>
+			<binding>
+				<command>property-toggle</command>
+				<property>/controls/rotor_brake/handle_cmd_norm</property>
+			</binding>
+			<binding>
+				<command>nasal</command>
+				<script>aircrane.click("avionics")</script>
+			</binding>
+		</action>
+		<hovered>
+			<binding>
+				<command>set-tooltip</command>
+				<tooltip-id>rotor-brake</tooltip-id>
+				<label>Pump Rotor Brake:(%1d)</label>
+				<property>/controls/rotor_brake/pressure-cylinder</property>
+			</binding>
+		</hovered>
+	</animation>
+ 
+	<!-- Alternative method  -->
+<!--  	<animation> 
 		<type>knob</type>
 		<object-name>rotorbrakehandle</object-name>		
-		<property>/controls/rotor_brake/handle</property>
+		<property>/controls/rotor_brake/handle_cmd_norm</property>
 		<factor>40</factor>
 		<center>
 			<x-m>0.000011</x-m>
@@ -39,7 +66,7 @@
 			<repeatable>true</repeatable>
 			<binding>
 				<command>property-adjust</command>
-				<property>/controls/rotor_brake/handle</property>
+				<property>/controls/rotor_brake/handle_cmd_norm</property>
 				<factor>0.25</factor>
 				<min>0</min>
 				<max>1</max>
@@ -51,15 +78,15 @@
 				<command>set-tooltip</command>
 				<tooltip-id>rotor-brake</tooltip-id>
 				<label>Pump Rotor Brake:(%1d)</label>
-				<property>/controls/rotor_brake/pressure</property>
+				<property>/controls/rotor_brake/pressure-cylinder</property>
 			</binding>
 		</hovered>
-	</animation>
+	</animation> -->
 
 	<animation>
 		<type>rotate</type>
 		<object-name>rotorbrakehandle</object-name>
-		<property>/controls/rotor_brake/handle</property>
+		<property>/controls/rotor_brake/handle_pos_norm</property>
 		<factor>40</factor>
 		<axis>
 			<y>1</y>
@@ -69,7 +96,7 @@
 	<animation>
 		<type>rotate</type>
 		<object-name>hydrod</object-name>
-		<property>/controls/rotor_brake/handle</property>
+		<property>/controls/rotor_brake/handle_pos_norm</property>
 		<factor>-5</factor>
 		<center>
 			<x-m>0.000011</x-m>
@@ -86,7 +113,7 @@
 		<object-name>hydpiston</object-name>
 		<object-name>hydrod</object-name>
 		<object-name>connector</object-name>
-		<property>/controls/rotor_brake/handle</property>
+		<property>/controls/rotor_brake/handle_pos_norm</property>
 		<factor>-0.00691</factor>
 		<axis>
 			<x>1</x>

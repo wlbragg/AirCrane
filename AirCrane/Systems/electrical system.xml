@@ -33,6 +33,9 @@ simonbomber64 at googlemail.com
 <property type="double" value="0">/controls/electric/engine[4]/generator-sw</property>
 <property type="double" value="0">/controls/electric/engine[3]/starter-sw</property>
 <property type="double" value="0">/controls/electric/engine[4]/starter-sw</property>
+<property type="double" value="0">/controls/rotor_brake/handle_cmd_norm</property>
+
+<property type="double" value="0">/controls/rotor_brake/handle_pos_norm</property> <!-- remove once working -->
 
 <property type="double" value="0">/controls/electric/engine[3]/rectifier</property>
 <property type="double" value="0">/controls/electric/engine[4]/rectifier</property>
@@ -411,11 +414,39 @@ simonbomber64 at googlemail.com
 
 	<!-- Rotor Brake Pressure -->
 	
+ 		<fcs_function>
+			<function>
+				<ifthen>
+					<eq>
+						<p>/controls/rotor_brake/handle_pos_norm</p>
+						<v>1</v>
+					</eq>						
+					<value>0</value>
+					<p>/controls/rotor_brake/handle_cmd_norm</p>
+				</ifthen>
+			</function>
+			<output>/controls/rotor_brake/handle_cmd_norm</output>
+		</fcs_function>
 	
+ 		<kinematic>
+			<input>/controls/rotor_brake/handle_cmd_norm</input>
+			<traverse>
+				<setting>
+					<position>0</position>
+					<time>0</time>
+				</setting>
+				<setting>
+					<position>1</position>
+					<time>2</time>
+				</setting>
+			</traverse>
+			<output>/controls/rotor_brake/handle_pos_norm</output>
+		</kinematic>
+		
  		<fcs_function>
 			<function>		
 				<max>
-					<p>/controls/rotor_brake/handle</p>				
+					<p>/controls/rotor_brake/handle_pos_norm</p>				
 					<p>/controls/rotor_brake/pressure-pump</p>
 				</max>
 			</function>
@@ -432,7 +463,7 @@ simonbomber64 at googlemail.com
 					<v>4</v> <!-- yes -->
 					<ifthen> <!-- no -->
 						<eq>
-							<p>/controls/rotor_brake/handle</p>
+							<p>/controls/rotor_brake/handle_pos_norm</p>
 							<v>0</v>
 						</eq>
 						<ifthen> <!-- yes -->
@@ -450,13 +481,17 @@ simonbomber64 at googlemail.com
 					</ifthen>
 				</ifthen>
 			</function>
+			<clipto>
+				<min>0</min>
+				<max>4</max>
+			</clipto>
 			<output>/controls/rotor_brake/pressure-cylinder</output>
 		</fcs_function>		
  		<fcs_function>
 			<function>		
 				<ifthen>
 					<eq>
-						<p>/controls/rotor_brake/handle</p>
+						<p>/controls/rotor_brake/handle_pos_norm</p>
 						<v>0</v>
 					</eq>
 					<value>0</value>					
