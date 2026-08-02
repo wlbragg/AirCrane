@@ -977,5 +977,50 @@ engine[4] = Turbine No.2
 		
 	</channel>
 	
+	<channel name="gear">
+	
+<!--   		<fcs_function>
+			<function>
+					<table>
+						<independentVar>gear/unit[0]/compression-ft</independentVar>
+						<tableData>
+							0		36
+							0.51	57
+						</tableData>
+					</table>	
+			</function>
+			<output>gear/unit[0]/z-position</output>
+		</fcs_function>	
+		
+	
+ 		<fcs_function>
+			<function>
+					<table>
+						<independentVar>gear/unit[1]/compression-ft</independentVar>
+						<tableData>
+							0	33.44
+							3.1	57
+						</tableData>
+					</table>	
+			</function>
+			<output>gear/unit[1]/z-position</output>
+		</fcs_function>	
+	
+ 		<fcs_function>
+			<function>
+					<table>
+						<independentVar>gear/unit[2]/compression-ft</independentVar>
+						<tableData>
+							0	33.44
+							3.1	57
+						</tableData>
+					</table>	
+			</function>
+			<output>gear/unit[2]/z-position</output>
+		</fcs_function>	 -->	
+	
+	
+	</channel>
+	
 </system>
 			

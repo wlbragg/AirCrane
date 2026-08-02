@@ -44,24 +44,51 @@ xsi:noNamespaceSchemaLocation="http://jsbsim.sourceforge.net/JSBSim.xsd">
 	<mass_balance>
 
 		<!-- inertia values to rotor co-ords -->
-		<ixx unit="SLUG*FT2">23147.4868624898</ixx>
-		<iyy unit="SLUG*FT2">115246.096540798</iyy>
-		<izz unit="SLUG*FT2">92932.8435011326</izz>
+		<ixx unit="SLUG*FT2">21949.3448227057</ixx>
+		<iyy unit="SLUG*FT2">108713.026785167</iyy>
+		<izz unit="SLUG*FT2">87494.3383127195</izz>
 		<ixy unit="SLUG*FT2">-68.2268702684095</ixy>
 		<iyz unit="SLUG*FT2">-36.1941253296374</iyz>
-		<ixz unit="SLUG*FT2">-6028.93723753757</ixz>				<!-- IMPORTANT always use a negative value -->
-		<emptywt unit="LBS">23031.5035900449</emptywt>
+		<ixz unit="SLUG*FT2">-3547.80096331286</ixz>												<!-- IMPORTANT always use a negative value -->
+		<emptywt unit="LBS">23032.5535900449</emptywt>	
 		<location name="CG" unit="IN">
-			<x>333.644346023099</x>
-			<y>0.0000435039722318263</y>
-			<z>194.966759617349</z>
+			<x>333.644319879499</x>
+			<y>0.0000435019889879508</y>
+			<z>194.965768614171</z>
 		</location>
 
-		<pointmass name="Max weight">
-			<weight unit="LBS">27000</weight>
+		<pointmass name="Left Pilot">
+			<weight unit="LBS">0</weight>
+			<location name="POINTMASS" unit="FT">
+				<x>7.70997375328083</x>
+				<y>1.96850393700787</y>
+				<z>12.0406824146982</z>
+			</location>
+		</pointmass>
+
+		<pointmass name="Right Pilot">
+			<weight unit="LBS">0</weight>
+			<location name="POINTMASS" unit="FT">
+				<x>7.70997375328083</x>
+				<y>-1.96850393700787</y>
+				<z>12.0406824146982</z>
+			</location>
+		</pointmass>
+
+		<pointmass name="Engineer">
+			<weight unit="LBS">0</weight>
+			<location name="POINTMASS" unit="IN">
+				<x>9.64566929133857</x>
+				<y>-1.96850393700787</y>
+				<z>9.61286089238844</z>
+			</location>
+		</pointmass>
+
+		<pointmass name="Load Point">
+			<weight unit="LBS">0</weight>
 			<location name="POINTMASS" unit="IN">
 				<x>333</x>
-				<y>0</y>
+				<y>  0</y>
 				<z>100</z>
 			</location>
 		</pointmass>
@@ -74,14 +101,14 @@ xsi:noNamespaceSchemaLocation="http://jsbsim.sourceforge.net/JSBSim.xsd">
 			<location unit="FT">
 				<x>8.33333333333333</x>
 				<y>0</y>
-				<z>3</z>
+				<z>3.3375</z>
 			</location>
 			<static_friction>0.7</static_friction>
 			<dynamic_friction>0.05</dynamic_friction>
 			<rolling_friction>1</rolling_friction>
-			<spring_coeff unit="LBS/FT">8000</spring_coeff>
-			<damping_coeff unit="LBS/FT/SEC">8000</damping_coeff>
-			<damping_coeff_rebound unit="LBS/FT/SEC">1000</damping_coeff_rebound>
+			<spring_coeff unit="LBS/FT">12000</spring_coeff>
+			<damping_coeff unit="LBS/FT/SEC">12000</damping_coeff>
+			<damping_coeff_rebound unit="LBS/FT/SEC">2000</damping_coeff_rebound>
 			<retractable>0</retractable>
 		</contact>
 
@@ -89,13 +116,13 @@ xsi:noNamespaceSchemaLocation="http://jsbsim.sourceforge.net/JSBSim.xsd">
 			<location unit="FT">
 				<x>32.75</x>
 				<y>-9.84251968503936</y>
-				<z>2.8</z>
+				<z>3.09</z>
 			</location>
 			<static_friction>0.7</static_friction>
 			<dynamic_friction>0.05</dynamic_friction>
 			<rolling_friction>1</rolling_friction>
-			<spring_coeff unit="LBS/FT">8000</spring_coeff>
-			<damping_coeff unit="LBS/FT/SEC">8000</damping_coeff>
+			<spring_coeff unit="LBS/FT">15000</spring_coeff>
+			<damping_coeff unit="LBS/FT/SEC">15000</damping_coeff>
 			<damping_coeff_rebound unit="LBS/FT/SEC">1000</damping_coeff_rebound>
 			<retractable>0</retractable>
 		</contact>
@@ -104,24 +131,24 @@ xsi:noNamespaceSchemaLocation="http://jsbsim.sourceforge.net/JSBSim.xsd">
 			<location unit="FT">
 				<x>32.75</x>
 				<y>9.84251968503936</y>
-				<z>2.8</z>
+				<z>3.09</z>
 			</location>
 			<static_friction>0.7</static_friction>
 			<dynamic_friction>0.05</dynamic_friction>
 			<rolling_friction>1</rolling_friction>
-			<spring_coeff unit="LBS/FT">8000</spring_coeff>
-			<damping_coeff unit="LBS/FT/SEC">8000</damping_coeff>
+			<spring_coeff unit="LBS/FT">15000</spring_coeff>
+			<damping_coeff unit="LBS/FT/SEC">15000</damping_coeff>
 			<damping_coeff_rebound unit="LBS/FT/SEC">1000</damping_coeff_rebound>
 			<retractable>0</retractable>
 		</contact>
-		
+
 	<!-- JACKS -->
-		
+
 <!-- 		<contact type="BOGEY" name="nose_jack">
 			<location unit="FT">
 				<x>8.33333333333333</x>
 				<y>0</y>
-				<z>3</z>
+				<z>3.333333</z>
 			</location>
 			<static_friction>0.7</static_friction>
 			<dynamic_friction>0.05</dynamic_friction>
@@ -136,7 +163,7 @@ xsi:noNamespaceSchemaLocation="http://jsbsim.sourceforge.net/JSBSim.xsd">
 			<location unit="FT">
 				<x>32.75</x>
 				<y>-9.84251968503936</y>
-				<z>2.8</z>
+				<z>3.083333</z>
 			</location>
 			<static_friction>0.7</static_friction>
 			<dynamic_friction>0.05</dynamic_friction>
@@ -151,7 +178,7 @@ xsi:noNamespaceSchemaLocation="http://jsbsim.sourceforge.net/JSBSim.xsd">
 			<location unit="FT">
 				<x>32.75</x>
 				<y>9.84251968503936</y>
-				<z>2.8</z>
+				<z>3.083333</z>
 			</location>
 			<static_friction>0.7</static_friction>
 			<dynamic_friction>0.05</dynamic_friction>
@@ -161,7 +188,7 @@ xsi:noNamespaceSchemaLocation="http://jsbsim.sourceforge.net/JSBSim.xsd">
 			<damping_coeff_rebound unit="LBS/FT/SEC">10000</damping_coeff_rebound>
 			<retractable>0</retractable>
 		</contact> -->
-		
+
 	<!-- STRUCTURES -->
 
 <!-- 		<contact type="STRUCTURE" name="NOSE">
@@ -347,7 +374,7 @@ xsi:noNamespaceSchemaLocation="http://jsbsim.sourceforge.net/JSBSim.xsd">
 				<z>14.4356955380577</z>
 			</location>
 			<capacity unit="LBS">10</capacity>
-			<contents unit="LBS">10</contents>
+			<contents unit="LBS">1</contents>
 			<drain_location unit="FT">
 				<x>22.8346456692913</x>
 				<z>13.1233595800525</z>
@@ -361,7 +388,7 @@ xsi:noNamespaceSchemaLocation="http://jsbsim.sourceforge.net/JSBSim.xsd">
 				<z>14.4356955380577</z>
 			</location>
 			<capacity unit="LBS">10</capacity>
-			<contents unit="LBS">10</contents>
+			<contents unit="LBS">1</contents>
 			<drain_location unit="FT">
 				<x>32.6771653543307</x>
 				<z>13.1233595800525</z>
@@ -377,7 +404,7 @@ xsi:noNamespaceSchemaLocation="http://jsbsim.sourceforge.net/JSBSim.xsd">
 				<z>14.4356955380577</z>
 			</location>
 			<capacity unit="LBS">2945</capacity>
-			<contents unit="LBS">2945</contents>
+			<contents unit="LBS">1</contents>
 			<drain_location unit="FT">
 				<x>22.8346456692913</x>
 				<z>13.1233595800525</z>
@@ -391,7 +418,7 @@ xsi:noNamespaceSchemaLocation="http://jsbsim.sourceforge.net/JSBSim.xsd">
 				<z>14.4356955380577</z>
 			</location>
 			<capacity unit="LBS">2945</capacity>
-			<contents unit="LBS">2945</contents>
+			<contents unit="LBS">1</contents>
 			<drain_location unit="FT">
 				<x>32.6771653543307</x>
 				<z>13.1233595800525</z>
@@ -407,7 +434,7 @@ xsi:noNamespaceSchemaLocation="http://jsbsim.sourceforge.net/JSBSim.xsd">
 				<z>14.4356955380577</z>
 			</location>
 			<capacity unit="LBS">2925</capacity>
-			<contents unit="LBS">2925</contents>
+			<contents unit="LBS">1</contents>
 			<drain_location unit="FT">
 				<x>37.5</x>
 				<z>13.1233595800525</z>
@@ -434,7 +461,7 @@ xsi:noNamespaceSchemaLocation="http://jsbsim.sourceforge.net/JSBSim.xsd">
 
 <!-- 	<system file = "testing/Standard_Day"/> -->
 
- 	<system file = "electrical system"/>
+<!--  	<system file = "electrical system"/>
  	<system file = "fuel system"/>
  	<system file = "hydraulic system"/>
  	<system file = "engine management system"/>
@@ -444,7 +471,7 @@ xsi:noNamespaceSchemaLocation="http://jsbsim.sourceforge.net/JSBSim.xsd">
  	<system file = "propulsion"/>
    	<system file = "angle_of_attack"/>
 	<system file = "co-efficients"/>
-	<system file = "force_calcs"/>
+	<system file = "force_calcs"/> -->
 
 	<!--
 	<system file = "load_master"/>
@@ -453,7 +480,7 @@ xsi:noNamespaceSchemaLocation="http://jsbsim.sourceforge.net/JSBSim.xsd">
 
 	<aerodynamics>
 
-		<axis name="ROLL">
+<!-- 		<axis name="ROLL">
 
 			<function>
 				<ifthen>
@@ -481,14 +508,14 @@ xsi:noNamespaceSchemaLocation="http://jsbsim.sourceforge.net/JSBSim.xsd">
 				</ifthen>
 			</function>
 
-		</axis>
+		</axis> -->
 
 	</aerodynamics>
 
 	<!-- STRUCTURAL frame (x +ve aft, y +ve right, z +ve up) -->
 	<external_reactions>
 
-		<force name="fuselage" frame="BODY">
+<!-- 		<force name="fuselage" frame="BODY">
 			<function>
 				<ifthen>
 					<gt>
@@ -579,7 +606,7 @@ xsi:noNamespaceSchemaLocation="http://jsbsim.sourceforge.net/JSBSim.xsd">
 			</location>
 			<direction>
 			</direction>
-		</force>
+		</force> -->
 
 	</external_reactions>
 

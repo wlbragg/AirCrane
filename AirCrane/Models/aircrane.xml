@@ -6,6 +6,7 @@
   <path>aircrane.ac</path>
   
   	<offsets>
+		<x-m>11</x-m>	
 		<z-m>5.2</z-m>
 	</offsets>
 
@@ -545,8 +546,8 @@
 		<object-name>RoueAvant</object-name>
 		<property>fdm/jsbsim/gear/unit[0]/compression-ft</property>
 		<interpolation>
-			<entry><ind>0.000</ind><dep>-0.2</dep></entry>
-			<entry><ind>1.192</ind><dep>0.4</dep></entry>				
+			<entry><ind>0.3858</ind><dep>-0.1</dep></entry>
+			<entry><ind>0.998</ind><dep>0.05</dep></entry>				
 		</interpolation>
 		<axis>
 			<z>1</z>
@@ -558,9 +559,8 @@
     <object-name>articuleAH</object-name>
     <property>gear/gear[0]/compression-norm</property>
     <interpolation>
-      <entry><ind> 0.000 </ind><dep>50</dep></entry>
-      <entry><ind> 0.086 </ind><dep>   0 </dep></entry>
-      <entry><ind> 1.000 </ind><dep> -15 </dep></entry>
+      <entry><ind>0.3858</ind><dep>17</dep></entry>
+      <entry><ind>0.998</ind><dep>-8</dep></entry>
     </interpolation>
     <center>
       <x-m> -8.692 </x-m>
@@ -579,9 +579,8 @@
     <object-name>articuleAB</object-name>
     <property>gear/gear[0]/compression-norm</property>
     <interpolation>
-      <entry><ind> 0.000 </ind><dep>-50</dep></entry>
-      <entry><ind> 0.086 </ind><dep>   0 </dep></entry>
-      <entry><ind> 1.000 </ind><dep>  14 </dep></entry>
+      <entry><ind>0.3858</ind><dep>-17</dep></entry>
+      <entry><ind>0.998</ind><dep>8</dep></entry>
     </interpolation>
     <center>
       <x-m> -8.702 </x-m>
@@ -600,8 +599,8 @@
 		<object-name>RoueGauche</object-name>
 		<property>/fdm/jsbsim/gear/unit[1]/compression-ft</property>
 		<interpolation>
-			<entry><ind>0.0</ind><dep>-0.25</dep></entry>
-			<entry><ind>3</ind><dep>0.25</dep></entry>			
+			<entry><ind>0.0566</ind><dep>-0.25</dep></entry>
+			<entry><ind>2.115</ind><dep>0.35</dep></entry>		
 		</interpolation>
 		<axis>
 			<z>1</z>
@@ -613,8 +612,8 @@
 		<object-name>articuleGH</object-name>
 		<property>/fdm/jsbsim/gear/unit[1]/compression-ft</property>
 		<interpolation>
-			<entry><ind>0.0</ind><dep>40</dep></entry>
-			<entry><ind>3</ind><dep>-25</dep></entry>		
+			<entry><ind>0.0566</ind><dep>27</dep></entry>
+			<entry><ind>2.115</ind><dep>-37</dep></entry>	
 		</interpolation>
 		<center>
 			<x-m> -1.081 </x-m>
@@ -631,8 +630,8 @@
 		<object-name>articuleGB</object-name>
 		<property>/fdm/jsbsim/gear/unit[1]/compression-ft</property>
 		<interpolation>
-			<entry><ind>0.0</ind><dep>-37</dep></entry>
-			<entry><ind>3</ind><dep>25</dep></entry>					
+			<entry><ind>0.0566</ind><dep>-27</dep></entry>
+			<entry><ind>2.115</ind><dep>37</dep></entry>					
 		</interpolation>
 		<center>
 			<x-m> -1.086 </x-m>
@@ -649,8 +648,8 @@
     <object-name>RoueDroite</object-name>
     <property>gear/gear[2]/compression-norm</property>
     <interpolation>
-			<entry><ind>0.0</ind><dep>-0.25</dep></entry>
-			<entry><ind>3</ind><dep>0.25</dep></entry>
+			<entry><ind>0.0566</ind><dep>-0.25</dep></entry>
+			<entry><ind>2.115</ind><dep>0.35</dep></entry>
     </interpolation>
     <axis>
       <x> 0 </x>
@@ -664,8 +663,8 @@
     <object-name>articuleDH</object-name>
     <property>gear/gear[2]/compression-norm</property>
 		<interpolation>
-			<entry><ind>0.0</ind><dep>40</dep></entry>
-			<entry><ind>3</ind><dep>-25</dep></entry>
+			<entry><ind>0.0566</ind><dep>27</dep></entry>
+			<entry><ind>2.115</ind><dep>-37</dep></entry>	
 		</interpolation>
     <center>
       <x-m> -1.081 </x-m>
@@ -684,8 +683,8 @@
     <object-name>articuleDB</object-name>
     <property>gear/gear[2]/compression-norm</property>
 		<interpolation>
-			<entry><ind>0.0</ind><dep>-37</dep></entry>
-			<entry><ind>3</ind><dep>25</dep></entry>
+			<entry><ind>0.0566</ind><dep>-27</dep></entry>
+			<entry><ind>2.115</ind><dep>37</dep></entry>	
 		</interpolation>
     <center>
       <x-m> -1.086 </x-m>

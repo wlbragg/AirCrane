@@ -1703,6 +1703,10 @@ simonbomber64 at googlemail.com
 							<v>1</v>
 						</eq>
 						<and>
+							<eq>
+								<p>/controls/electric/cab_power</p>
+								<v>1</v>
+							</eq>
 							<lt>
 								<p>/fdm/jsbsim/propulsion/tank[3]/pct-full</p>
 								<v>20</v>
@@ -1732,6 +1736,10 @@ simonbomber64 at googlemail.com
 							<v>1</v>
 						</eq>					
 						<and>
+							<eq>
+								<p>/controls/electric/cab_power</p>
+								<v>1</v>
+							</eq>
 							<lt>
 								<p>/fdm/jsbsim/propulsion/tank[4]/pct-full</p>
 								<v>20</v>
@@ -1761,6 +1769,10 @@ simonbomber64 at googlemail.com
 							<v>1</v>
 						</eq>					
 						<and>
+							<eq>
+								<p>/controls/electric/cab_power</p>
+								<v>1</v>
+							</eq>
 							<lt>
 								<p>/fdm/jsbsim/propulsion/tank[5]/pct-full</p>
 								<v>20</v>
