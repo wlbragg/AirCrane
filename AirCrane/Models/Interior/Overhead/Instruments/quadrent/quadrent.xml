@@ -129,7 +129,7 @@
 			<repeatable>false</repeatable>
 			<binding>
 				<command>property-toggle</command>
-				<property>/controls/engines/engine[3]/fuel-cock</property>
+				<property>/fdm/jsbsim/propulsion/engine[3]/fuel-cock</property>
 			</binding>
 			<binding>
 				<command>nasal</command>
@@ -369,7 +369,7 @@
 			<repeatable>false</repeatable>
 			<binding>
 				<command>property-toggle</command>
-				<property>/controls/engines/engine[4]/fuel-cock</property>
+				<property>/fdm/jsbsim/propulsion/engine[4]/fuel-cock</property>
 			</binding>
 			<binding>
 				<command>nasal</command>

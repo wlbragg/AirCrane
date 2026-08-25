@@ -203,22 +203,7 @@ simonbomber64 at googlemail.com
 				</ifthen>
 			</function>
 			<output>propulsion/engine[3]/fuel-starter</output>
-		</fcs_function>
-
- 		<kinematic>
-			<input>propulsion/engine[3]/fuel-starter</input>
-			<traverse>
-				<setting>
-					<position>0</position>
-					<time>0</time>
-				</setting>
-				<setting>
-					<position>1</position>
-					<time>5</time>
-				</setting>
-			</traverse>
-			<output>propulsion/engine[3]/fuel-starter-delay</output>
-		</kinematic>		
+		</fcs_function>			
 
  		<fcs_function> <!-- isolates fuel if n1 lever less than 0.42 -->
 			<function>
@@ -227,7 +212,7 @@ simonbomber64 at googlemail.com
 						<p>propulsion/engine[3]/governor/n1-lever</p>
 						<v>0.42</v>
 					</gt>
-					<p>/controls/engines/engine[3]/fuel-cock</p>						
+					<p>propulsion/engine[3]/fuel-cock</p>						
 					<value>0</value>
 				</ifthen>
 			</function>
@@ -254,22 +239,7 @@ simonbomber64 at googlemail.com
 				</ifthen>
 			</function>
 			<output>propulsion/engine[4]/fuel-starter</output>
-		</fcs_function>
-
- 		<kinematic>
-			<input>propulsion/engine[4]/fuel-starter</input>
-			<traverse>
-				<setting>
-					<position>0</position>
-					<time>0</time>
-				</setting>
-				<setting>
-					<position>1</position>
-					<time>5</time>
-				</setting>
-			</traverse>
-			<output>propulsion/engine[4]/fuel-starter-delay</output>
-		</kinematic>		
+		</fcs_function>	
 
  		<fcs_function> <!-- isolates fuel if n1 lever less than 0.42 -->
 			<function>
@@ -278,7 +248,7 @@ simonbomber64 at googlemail.com
 						<p>propulsion/engine[4]/governor/n1-lever</p>
 						<v>0.42</v>
 					</gt>
-					<p>/controls/engines/engine[4]/fuel-cock</p>					
+					<p>propulsion/engine[4]/fuel-cock</p>					
 					<value>0</value>
 				</ifthen>
 			</function>

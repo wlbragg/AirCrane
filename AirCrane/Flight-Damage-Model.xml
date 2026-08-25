@@ -459,7 +459,7 @@ xsi:noNamespaceSchemaLocation="http://jsbsim.sourceforge.net/JSBSim.xsd">
 
 <!--  	<system file = "TurboProp_Test"/> -->
 
-<!-- 	<system file = "testing/Standard_Day"/> -->
+	<system file = "testing/Standard_Day"/>
 
   	<system file = "electrical system"/>
  	<system file = "fuel system"/>
