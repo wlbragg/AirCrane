@@ -114,7 +114,13 @@ engine[4] = Turbine No.2
 						<value>1</value>
 					</eq>
 					<property>propulsion/engine[3]/blade-angle</property>
-					<value>90</value>
+					<table>
+						<independentVar>propulsion/engine[3]/propeller-rpm</independentVar>
+						<tableData>
+							0		20
+							9000	5
+						</tableData>
+					</table>
 				</ifthen>
 			</function>
 			<output>propulsion/engine[3]/blade-angle</output>
@@ -278,7 +284,13 @@ engine[4] = Turbine No.2
 						<value>1</value>
 					</eq>
 					<property>propulsion/engine[4]/blade-angle</property>
-					<value>90</value>
+					<table>
+						<independentVar>propulsion/engine[4]/propeller-rpm</independentVar>
+						<tableData>
+							0		20
+							9000	5
+						</tableData>
+					</table>
 				</ifthen>
 			</function>
 			<output>propulsion/engine[4]/blade-angle</output>

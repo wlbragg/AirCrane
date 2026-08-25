@@ -35,6 +35,7 @@ engine[4] = Turbine No.2
 	<property type="double" value="0">fcs/collective-cmd-pos</property>
 	<property type="double" value="0">fcs/cyclic_roll-cmd-pos</property>
 	<property type="double" value="0">fcs/cyclic_pitch-cmd-pos</property>
+	<property type="double" value="0">controls/electric/pitch-trim</property>
 	<property type="double" value="0">fcs/rudder-cmd-pos</property>
 
 	<property type="double" value="5">propulsion/engine[1]/rotor/cyclic_delta-deg</property>		
@@ -231,6 +232,9 @@ engine[4] = Turbine No.2
 		</summer>
 
 	</channel>
+
+	<property type="double" value="-0.016">/controls/electric/pitch-trim</property>	
+	<property type="double" value="-0.007">/controls/electric/roll-trim</property>	
 	
 	<channel name="AFCS Control" execute="/controls/electric/AFCS/Active">
 		
@@ -301,20 +305,41 @@ engine[4] = Turbine No.2
 	
 	<!-- Pitch Adjust -->
 	
-		<scheduled_gain>
-			<input>T4T/one</input>
-			<table>
-				<independentVar>fcs/Helicopter/cyclic_pitch-cmd-norm</independentVar>
-				<tableData>
-					-1		0.087266
-					1		-0.087266
-				</tableData>
-			</table>
+	 	<fcs_function>
+			<function>
+				<ifthen>
+					<eq>
+						<p>/controls/electric/AFCS/trim-sw</p>
+						<v>1</v>
+					</eq>
+					<sum>
+	,					<property>-/controls/electric/pitch-trim</property>				
+						<table>
+							<independentVar>fcs/Helicopter/cyclic_pitch-cmd-norm</independentVar>
+							<tableData>
+								-1		0.174533 <!-- 5 degrees -->
+								1		-0.174533
+							</tableData>
+						</table>
+					</sum>
+					<table>
+						<independentVar>fcs/Helicopter/cyclic_pitch-cmd-norm</independentVar>
+						<tableData>
+							-1		0.174533
+							1		-0.174533
+						</tableData>
+					</table>						
+				</ifthen>
+			</function>
+			<clipto>
+				<min>-0.174533</min>
+				<max>0.174533</max>
+			</clipto>
 			<output>fcs/Helicopter/pitch_target-rad</output>
-		</scheduled_gain>
+		</fcs_function>
 
 		<summer>
-			<input>attitude/pitch-rad</input>			
+			<input>attitude/pitch-rad</input>
 			<input>-fcs/Helicopter/pitch_target-rad</input>		
 			<output>fcs/Helicopter/pitch_error-rad</output>
 		</summer>
@@ -344,17 +369,38 @@ engine[4] = Turbine No.2
 
 	<!-- Roll Adjust -->
 	
-		<scheduled_gain>
-			<input>T4T/one</input>
-			<table>
-				<independentVar>fcs/Helicopter/cyclic_roll-cmd-norm</independentVar>
-				<tableData>
-					-1		-0.087266
-					1		0.087266
-				</tableData>
-			</table>
+	 	<fcs_function>
+			<function>
+				<ifthen>
+					<eq>
+						<p>/controls/electric/AFCS/trim-sw</p>
+						<v>1</v>
+					</eq>
+					<sum>
+	,					<property>/controls/electric/roll-trim</property>				
+						<table>
+							<independentVar>fcs/Helicopter/cyclic_roll-cmd-norm</independentVar>
+							<tableData>
+								-1		-0.174533 <!-- 5 degrees -->
+								1		0.174533
+							</tableData>
+						</table>
+					</sum>
+					<table>
+						<independentVar>fcs/Helicopter/cyclic_roll-cmd-norm</independentVar>
+						<tableData>
+							-1		-0.174533
+							1		0.174533
+						</tableData>
+					</table>						
+				</ifthen>
+			</function>
+			<clipto>
+				<min>-0.174533</min>
+				<max>0.174533</max>
+			</clipto>
 			<output>fcs/Helicopter/roll_target-rad</output>
-		</scheduled_gain>
+		</fcs_function>
 
 		<summer> <!-- error -->
 			<input>fcs/Helicopter/roll_target-rad</input>		
@@ -387,17 +433,60 @@ engine[4] = Turbine No.2
 		
 	<!-- Yaw Adjust -->
 	
-		<scheduled_gain>
-			<input>T4T/one</input>
-			<table>
-				<independentVar>fcs/Helicopter/pedals-cmd-norm</independentVar>
-				<tableData>
-					-1		-0.5
-					1		0.5
-				</tableData>
-			</table>
+	 	<fcs_function>
+			<function>
+				<ifthen>
+					<eq>
+						<p>/controls/electric/AFCS/trim-sw</p>
+						<v>1</v>
+					</eq>
+					<sum>
+	,					<property>/controls/electric/yaw-trim</property>				
+						<table>
+							<independentVar>fcs/Helicopter/pedals-cmd-norm</independentVar>
+							<tableData>
+								-1		-1.0
+								1		1.0
+							</tableData>
+						</table>
+					</sum>
+					<ifthen>
+						<lt>
+							<p>/fdm/jsbsim/velocities/vtrue-kts</p>
+							<v>25</v>
+						</lt>
+						<table>
+							<independentVar>fcs/Helicopter/pedals-cmd-norm</independentVar>
+							<tableData>
+								-1		-1.0
+								1		1.0
+							</tableData>
+						</table>
+						<sum>
+							<table>
+								<independentVar>fcs/Helicopter/pedals-cmd-norm</independentVar>
+								<tableData>
+									-1		-1.0
+									1		1.0
+								</tableData>
+							</table>
+							<table>
+								<independentVar>/fdm/jsbsim/aero/beta-deg</independentVar>
+								<tableData>
+									-30		-1.0
+									30		1.0
+								</tableData>
+							</table>
+						</sum>
+					</ifthen>						
+				</ifthen>
+			</function>
+			<clipto>
+				<min>-1.0</min>
+				<max>1.0</max>
+			</clipto>
 			<output>fcs/Helicopter/r_target-rad</output>
-		</scheduled_gain>
+		</fcs_function>	
 
 		<summer> <!-- error -->
 			<input>fcs/Helicopter/r_target-rad</input>		
