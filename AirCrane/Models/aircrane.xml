@@ -6,7 +6,7 @@
   <path>aircrane.ac</path>
   
   	<offsets>
-		<x-m>11</x-m>	
+		<!--x-m>11</x-m-->	
 		<z-m>5.2</z-m>
 	</offsets>
 
