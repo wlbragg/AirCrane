@@ -51,8 +51,9 @@
 
     <nasal>
         <aircrane>
-          <file>Aircraft/AirCrane/Nasal/click-sound.nas</file>
-          <file>Aircraft/AirCrane/Nasal/mouse-override.nas</file>
+            <file>Aircraft/AirCrane/Nasal/autostart.nas</file>
+            <file>Aircraft/AirCrane/Nasal/click-sound.nas</file>
+            <file>Aircraft/AirCrane/Nasal/mouse-override.nas</file>
         </aircrane>
     </nasal>
 
